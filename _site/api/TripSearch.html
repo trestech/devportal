@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Proxima+Nova" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Cousine|Inconsolata" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tripsearch | Tres Technologies Documentation</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Tripsearch" />
+<meta name="author" content="GitHub User" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TripSearch TripSearch returns data for trips and reservations." />
+<meta property="og:description" content="TripSearch TripSearch returns data for trips and reservations." />
+<link rel="canonical" href="/api/TripSearch.html" />
+<meta property="og:url" content="/api/TripSearch.html" />
+<meta property="og:site_name" content="Tres Technologies Documentation" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-16T15:11:51-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tripsearch" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-16T15:11:51-07:00","datePublished":"2022-06-16T15:11:51-07:00","description":"TripSearch TripSearch returns data for trips and reservations.","headline":"Tripsearch","mainEntityOfPage":{"@type":"WebPage","@id":"/api/TripSearch.html"},"url":"/api/TripSearch.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Tres Technologies Documentation" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">
+      <img src="/assets/images/tres_logo-main.png" />
+      Documentation
+    </a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tripsearch</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-06-16T15:11:51-07:00" itemprop="datePublished">
+        Jun 16, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="tripsearch">TripSearch</h1>
+<p>TripSearch returns data for trips and reservations.</p>
+
+<p>User needs at least select permission for trips. Results may be filtered if trip permission includes OnlySelf (based on user’s linked advisors) or if trip permission includes OnlyBranch (based on user’s branch).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Type</th>
+      <th>Size</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>recNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tagValue</td>
+      <td>string</td>
+      <td>1024</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>summaryCount</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>startDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>endDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>targetTravelDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clientProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clientProfileName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>advisorProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>advisorProfileName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>advisorProfileId</td>
+      <td>string</td>
+      <td>32</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>remarks</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>advisorRemarks</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>cancelled</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationName</td>
+      <td>string</td>
+      <td>64</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationRegionRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationRegionName</td>
+      <td>string</td>
+      <td>64</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>branchRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>branchName</td>
+      <td>string</td>
+      <td>64</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>createDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lastModifiedDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTagValue</td>
+      <td>string</td>
+      <td>1024</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierProfileName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommisionTriggerIndex</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommisionTriggerDaysOffset</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationClientBalance</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierBalance</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTrackClientPayments</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationStatus</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTravelCategoryRecNo</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTravelCategoryName</td>
+      <td>string</td>
+      <td>32</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTotalFare</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommissionAmount</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommissionRate</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationBaseFare</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTaxAmount</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationHighFare</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationLowFare</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationBookDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationStartDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationEndDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommissionDatePayable</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTicketNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmationNo</td>
+      <td>string</td>
+      <td>64</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationRecordLocator</td>
+      <td>string</td>
+      <td>32</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDepositRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDepositDueDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td>Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria</td>
+    </tr>
+    <tr>
+      <td>reservationDepositDueAmount</td>
+      <td>long</td>
+      <td> </td>
+      <td>Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria</td>
+    </tr>
+    <tr>
+      <td>reservationDepositCompleted</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationFinalPayDueDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationARCBSPNumber</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationProviderProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationProviderProfileName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTicketNumber</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmationNumber</td>
+      <td>string</td>
+      <td>64</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmedDateTime</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationPromoId</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSource</td>
+      <td>string</td>
+      <td>32</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationPrimaryTravelerRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationPrimaryTravelerName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemTriggerIndex</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemTriggerFixedDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemDescription</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemCompleted</td>
+      <td>DateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorProfileName</td>
+      <td>string</td>
+      <td>256</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorProfileId</td>
+      <td>string</td>
+      <td>32</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorCommissionAmount</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorCommissionRate</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorReconciliationRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorReconciliationDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAccountingEntryRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAccountingEntryCreateDate</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Linked Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>recNo [inherited]</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>recNoList [inherited]</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>startingRow [inherited]</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>rowCount [inherited]</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>topRows [inherited]</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>distinct [inherited]</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>includeCols [inherited]</td>
+      <td>string[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>includeColsExtended [inherited]</td>
+      <td><a href="/includeColsExtended">includeColsExtended[]</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>baseUrl [inherited]</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tagRecNo [inherited]</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tagValueCond [inherited]</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tagValue [inherited]</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>displayTagRecNo [inherited]</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tags [inherited]</td>
+      <td><a href="/TagsSearch">TagsSearch[]</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clientProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clientProfileRecNoCond</td>
+      <td>short</td>
+      <td>clientProfileRecNo</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>advisorProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>targetTravelDateFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>targetTravelDateTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripStartDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripStartDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripEndDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripEndDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>cancelled</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripName</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripNameCond</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationRecNo</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>branchRecNo</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripCreateDateTimeFrom</td>
+      <td>DateTimeOffset</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripCreateDateTimeTo</td>
+      <td>DateTimeOffset</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripModifiedDateTimeFrom</td>
+      <td>DateTimeOffset</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripModifiedDateTimeTo</td>
+      <td>DateTimeOffset</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationRecNo</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationBookDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationBookDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationStartDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationStartDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationEndDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationEndDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDepositDueDateFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDepositDueDateTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDepositCompleted</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationFinalPayDueDateFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationFinalPayDueDateTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTravelCategory</td>
+      <td>short[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTrackClientPayments</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationStatus</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationClientBalanceNonZero</td>
+      <td>bool</td>
+      <td> </td>
+      <td>ReservationClientBalance parameters are meant to be used in conjunction with ReservationTrackClientPayments = true. For reservations where ReservationTrackClientPayments = false, clientBalance will be NULL.</td>
+    </tr>
+    <tr>
+      <td>reservationClientBalanceMin</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationClientBalanceMax</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierBalanceNonZero</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierBalanceMin</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationSupplierBalanceMax</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTagRecNo</td>
+      <td>long[]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTagValueCond</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTagValue</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationDisplayTagRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationARCBSPNumber</td>
+      <td>int</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationARCBSPNumberCond</td>
+      <td>short</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationProviderProfileRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTravelerRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTicketNumber</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmationNumber</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmedDateTimeFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationConfirmedDateTimeTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationRecordLocator</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationPromoId</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemCompleted</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemDateFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tripActionItemDateTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorReconciliationRecNo</td>
+      <td>long</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAdvisorReconciled</td>
+      <td>bool</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationCommissionDatePayableFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td>Filter results based on calculated date payable column</td>
+    </tr>
+    <tr>
+      <td>reservationCommissionDatePayableTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td>Filter results based on calculated date payable column</td>
+    </tr>
+    <tr>
+      <td>reservationAccountingEntryCreateDateFrom</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationAccountingEntryCreateDateTo</td>
+      <td>Date</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>reservationTags</td>
+      <td><a href="/TagsSearch">TagsSearch[]</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clientProfileSearchParams</td>
+      <td><a href="/profileSearch">profileSearch</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>destinationSearchParams</td>
+      <td><a href="/destinationSearch">destinationSearch</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>Ok</td>
+    </tr>
+    <tr>
+      <td>401</td>
+      <td>Unauthorized</td>
+    </tr>
+    <tr>
+      <td>403</td>
+      <td>Forbidden</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-request">Example request</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST https://api-dev.trestechnologies.com/tripSearch
+Content-Type: application/json
+Authorization: Bearer &lt;session-token&gt;
+<span class="o">{</span>
+  <span class="s2">"targetTravelDateFrom"</span>: <span class="s2">"2022-12-31T00:00:00"</span>,
+  <span class="s2">"targetTravelDateTo"</span>: <span class="s2">"2023-01-15T00:00:00"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="example-response">Example response</h4>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/json
+Status: 200 Ok
+<span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"recNo"</span>: 1969697,
+    <span class="s2">"name"</span>: <span class="s2">"Hawaii 2023"</span>
+  <span class="o">}</span>,
+  <span class="o">{</span>
+    <span class="s2">"recNo"</span>: 1969698,
+    <span class="s2">"name"</span>: <span class="s2">"50th Anniversary"</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/api/TripSearch.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">GitHub User</li>
+          <li><a class="u-email" href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p>Copyright © 2022 TRES. All rights reserved.</p>
+      </div>
+    </div>
+
+    <!-- <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/jekyll" target="_blank" title="jekyll"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/jekyllrb" target="_blank" title="jekyllrb"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div> -->
+
+  </div>
+
+</footer>
+</body>
+
+</html>
