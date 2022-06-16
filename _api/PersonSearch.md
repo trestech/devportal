@@ -2,33 +2,35 @@
 layout: post
 ---
 
-# PersonSearch
+﻿# PersonSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| tagValue | string | 1024 | 
-| summaryCount | int |  | 
-| name | string | 256 | 
-| firstName | string | 64 | 
-| middleName | string | 64 | 
-| lastName | string | 64 | 
-| primaryPhone | string | 256 | 
-| primaryPhoneMarketingPermission | bool |  | 
-| primaryEmail | string | 256 | 
-| primaryEmailMarketingPermission | bool |  | 
-| birthdayDay | short |  | 
-| birthdayMonth | short |  | 
-| birthdayYear | short |  | 
-| birthdayNote | string | 256 | 
-| remarks | string | 256 | 
-| createDateTime | DateTime |  | 
-| lastModifiedDateTime | DateTime |  | 
-| cardType | short |  | 
-| cardNumber | string | 64 | 
-| cardExpDate | Date |  | 
-| cardDescription | string | 128 | 
+Referenced Table: [person](/person)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | person | 
+| tagValue | string | 1024 | person | 
+| summaryCount | int |  | person | 
+| name | string | 256 | person | 
+| firstName | string | 64 | person | 
+| middleName | string | 64 | person | 
+| lastName | string | 64 | person | 
+| primaryPhone | string | 256 | person | 
+| primaryPhoneMarketingPermission | bool |  | person | 
+| primaryEmail | string | 256 | person | 
+| primaryEmailMarketingPermission | bool |  | person | 
+| birthdayDay | short |  | person | 
+| birthdayMonth | short |  | person | 
+| birthdayYear | short |  | person | 
+| birthdayNote | string | 256 | person | 
+| remarks | string | 256 | person | 
+| createDateTime | DateTime |  | person | 
+| lastModifiedDateTime | DateTime |  | person | 
+| cardType | short |  | person | 
+| cardNumber | string | 64 | card | 
+| cardExpDate | Date |  | card | 
+| cardDescription | string | 128 | card | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -86,25 +88,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/personSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

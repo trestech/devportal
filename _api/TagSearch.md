@@ -2,16 +2,18 @@
 layout: post
 ---
 
-# TagSearch
+﻿# TagSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| name | string | 64 | 
-| referenced | bool |  | 
-| activeStatus | bool |  | 
+Referenced Table: [tag](/tag)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | tag | 
+| summaryCount | int |  | tag | 
+| name | string | 64 | tag | 
+| referenced | bool |  | tag | 
+| activeStatus | bool |  | tag | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -38,25 +40,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/tagSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

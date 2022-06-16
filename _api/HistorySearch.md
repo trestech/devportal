@@ -2,23 +2,25 @@
 layout: post
 ---
 
-# HistorySearch
+﻿# HistorySearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| timestamp | DateTimeOffset |  | 
-| appUser_recNo | long |  | 
-| appUser_id | string | 64 | 
-| action | string | 64 | 
-| tableName | string | 64 | 
-| tableRecNo | long |  | 
-| columnName | string | 64 | 
-| description | string | 256 | 
-| oldValue | string | 256 | 
-| newValue | string | 256 | 
+Referenced Table: [history](/history)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | history | 
+| summaryCount | int |  | history | 
+| timestamp | DateTimeOffset |  | history | 
+| appUser_recNo | long |  | history | 
+| appUser_id | string | 64 | history | 
+| action | string | 64 | history | 
+| tableName | string | 64 | history | 
+| tableRecNo | long |  | history | 
+| columnName | string | 64 | history | 
+| description | string | 256 | history | 
+| oldValue | string | 256 | history | 
+| newValue | string | 256 | history | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -50,25 +52,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/historySearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

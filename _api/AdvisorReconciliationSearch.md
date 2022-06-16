@@ -2,15 +2,17 @@
 layout: post
 ---
 
-# AdvisorReconciliationSearch
+﻿# AdvisorReconciliationSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| reconciliationDate | Date |  | 
-| description | string | 64 | 
+Referenced Table: [advisorReconciliation](/advisorReconciliation)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | advisorReconciliation | 
+| summaryCount | int |  | advisorReconciliation | 
+| reconciliationDate | Date |  | advisorReconciliation | 
+| description | string | 64 | advisorReconciliation | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -37,25 +39,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/advisorReconciliationSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

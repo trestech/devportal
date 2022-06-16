@@ -5,16 +5,18 @@ layout: post
 ﻿# BankTransactionSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| transactionDate | Date |  | 
-| amount | long |  | 
-| bankRecNo | long |  | 
-| bankName | string | 64 | 
-| voided | bool |  | 
-| remarks | string |  | 
+Referenced Table: [bankTransaction](/bankTransaction)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | bankTransaction | 
+| summaryCount | int |  | bankTransaction | 
+| transactionDate | Date |  | bankTransaction | 
+| amount | long |  | bankTransaction | 
+| bankRecNo | long |  | bankTransaction | 
+| bankName | string | 64 | bankTransaction | 
+| voided | bool |  | bankTransaction | 
+| remarks | string |  | bankTransaction | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -41,25 +43,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/bankTransactionSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

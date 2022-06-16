@@ -5,29 +5,31 @@ layout: post
 ﻿# ActivitySearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| tagValue | string | 1024 | 
-| summaryCount | int |  | 
-| type | short |  | 
-| appUser_recNo | long |  | 
-| appUserId | string | 64 | 
-| subject | string | 64 | 
-| priority | short |  | 
-| targetDateTime | DateTimeOffset |  | 
-| targetDate | Date |  | 
-| completionDateTime | DateTime |  | 
-| clientProfileRecNo | long |  | 
-| clientProfileName | string | 256 | 
-| supplierProfileRecNo | long |  | 
-| supplierProfileName | string | 256 | 
-| personRecNo | long |  | 
-| personName | string | 256 | 
-| tripRecNo | long |  | 
-| tripName | string | 256 | 
-| createDateTime | DateTimeOffset |  | 
-| remarks | string |  | 
+Referenced Table: [activity](/activity)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | activity | 
+| tagValue | string | 1024 | activity | 
+| summaryCount | int |  | activity | 
+| type | short |  | activity | 
+| appUser_recNo | long |  | activity | 
+| appUserId | string | 64 | activity | 
+| subject | string | 64 | activity | 
+| priority | short |  | activity | 
+| targetDateTime | DateTimeOffset |  | activity | 
+| targetDate | Date |  | activity | 
+| completionDateTime | DateTime |  | activity | 
+| clientProfileRecNo | long |  | activity | 
+| clientProfileName | string | 256 | activity | 
+| supplierProfileRecNo | long |  | activity | 
+| supplierProfileName | string | 256 | activity | 
+| personRecNo | long |  | activity | 
+| personName | string | 256 | activity | 
+| tripRecNo | long |  | activity | 
+| tripName | string | 256 | activity | 
+| createDateTime | DateTimeOffset |  | activity | 
+| remarks | string |  | activity | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -68,25 +70,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/activitySearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

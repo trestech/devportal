@@ -5,13 +5,15 @@ layout: post
 ﻿# AccountingEntrySearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| createDate | Date |  | 
-| postDate | Date |  | 
-| description | string | 512 | 
+Referenced Table: [accountingEntry](/accountingEntry)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | accountingEntry | 
+| summaryCount | int |  | accountingEntry | 
+| createDate | Date |  | accountingEntry | 
+| postDate | Date |  | accountingEntry | 
+| description | string | 512 | accountingEntry | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -39,25 +41,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/accountingEntrySearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

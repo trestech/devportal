@@ -2,31 +2,33 @@
 layout: post
 ---
 
-# PaymentSearch
+﻿# PaymentSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| tagValue | string | 1024 | 
-| summaryCount | int |  | 
-| profileType | short |  | 
-| profileRecNo | long |  | 
-| profileName | string | 256 | 
-| amount | long |  | 
-| paymentDate | Date |  | 
-| payType | short |  | 
-| method | short |  | 
-| bankRecNo | long |  | 
-| bankName | string | 64 | 
-| agencyProcessed | bool |  | 
-| cardNumber | string | 64 | 
-| nameOnCard | string | 64 | 
-| checkNumber | long |  | 
-| reservationRecNo | long |  | 
-| reservationAmount | long |  | 
-| voided | bool |  | 
-| accountingEntryRecNo | long |  | 
+Referenced Table: [payment](/payment)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | payment | 
+| tagValue | string | 1024 | payment | 
+| summaryCount | int |  | payment | 
+| profileType | short |  | payment | 
+| profileRecNo | long |  | payment | 
+| profileName | string | 256 | payment | 
+| amount | long |  | payment | 
+| paymentDate | Date |  | payment | 
+| payType | short |  | payment | 
+| method | short |  | payment | 
+| bankRecNo | long |  | payment | 
+| bankName | string | 64 | payment | 
+| agencyProcessed | bool |  | payment | 
+| cardNumber | string | 64 | payment | 
+| nameOnCard | string | 64 | payment | 
+| checkNumber | long |  | payment | 
+| reservationRecNo | long |  | payment | 
+| reservationAmount | long |  | payment | 
+| voided | bool |  | payment | 
+| accountingEntryRecNo | long |  | payment | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -69,25 +71,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/paymentSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

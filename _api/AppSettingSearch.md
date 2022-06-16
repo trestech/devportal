@@ -2,18 +2,20 @@
 layout: post
 ---
 
-# AppSettingSearch
+﻿# AppSettingSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| appUser_recNo | long |  | 
-| area | string | 64 | 
-| name | string | 64 | 
-| description | string | 64 | 
-| data | string |  | 
+Referenced Table: [appSetting](/appSetting)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | appSetting | 
+| summaryCount | int |  | appSetting | 
+| appUser_recNo | long |  | appSetting | 
+| area | string | 64 | appSetting | 
+| name | string | 64 | appSetting | 
+| description | string | 64 | appSetting | 
+| data | string |  | appSetting | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -39,25 +41,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/appSettingSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```

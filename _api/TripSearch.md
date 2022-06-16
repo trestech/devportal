@@ -2,93 +2,95 @@
 layout: post
 ---
 
-# TripSearch
+﻿# TripSearch
 TripSearch returns data for trips and reservations.
 
 User needs at least select permission for trips. Results may be filtered if trip permission includes OnlySelf (based on user's linked advisors) or if trip permission includes OnlyBranch (based on user's branch).
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| tagValue | string | 1024 | 
-| summaryCount | int |  | 
-| name | string | 256 | 
-| startDateTime | DateTime |  | 
-| endDateTime | DateTime |  | 
-| targetTravelDate | Date |  | 
-| clientProfileRecNo | long |  | 
-| clientProfileName | string | 256 | 
-| advisorProfileRecNo | long |  | 
-| advisorProfileName | string | 256 | 
-| advisorProfileId | string | 32 | 
-| remarks | string | 256 | 
-| advisorRemarks | string | 256 | 
-| cancelled | bool |  | 
-| destinationRecNo | long |  | 
-| destinationName | string | 64 | 
-| destinationRegionRecNo | long |  | 
-| destinationRegionName | string | 64 | 
-| branchRecNo | long |  | 
-| branchName | string | 64 | 
-| createDateTime | DateTime |  | 
-| lastModifiedDateTime | DateTime |  | 
-| reservationRecNo | long |  | 
-| reservationTagValue | string | 1024 | 
-| reservationSupplierProfileRecNo | long |  | 
-| reservationSupplierProfileName | string | 256 | 
-| reservationCommisionTriggerIndex | short |  | 
-| reservationCommisionTriggerDaysOffset | short |  | 
-| reservationClientBalance | long |  | 
-| reservationSupplierBalance | long |  | 
-| reservationTrackClientPayments | bool |  | 
-| reservationStatus | short |  | 
-| reservationTravelCategoryRecNo | short |  | 
-| reservationTravelCategoryName | string | 32 | 
-| reservationTotalFare | long |  | 
-| reservationCommissionAmount | long |  | 
-| reservationCommissionRate | long |  | 
-| reservationBaseFare | long |  | 
-| reservationTaxAmount | long |  | 
-| reservationHighFare | long |  | 
-| reservationLowFare | long |  | 
-| reservationBookDateTime | DateTime |  | 
-| reservationStartDateTime | DateTime |  | 
-| reservationEndDateTime | DateTime |  | 
-| reservationCommissionDatePayable | Date |  | 
-| reservationTicketNo | long |  | 
-| reservationConfirmationNo | string | 64 | 
-| reservationRecordLocator | string | 32 | 
-| reservationDepositRecNo | long |  | 
-| reservationDepositDueDate | Date |  | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
-| reservationDepositDueAmount | long |  | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
-| reservationDepositCompleted | DateTime |  | 
-| reservationFinalPayDueDate | Date |  | 
-| reservationARCBSPNumber | int |  | 
-| reservationProviderProfileRecNo | long |  | 
-| reservationProviderProfileName | string | 256 | 
-| reservationTicketNumber | long |  | 
-| reservationConfirmationNumber | string | 64 | 
-| reservationConfirmedDateTime | DateTime |  | 
-| reservationPromoId | string | 256 | 
-| reservationSource | string | 32 | 
-| reservationPrimaryTravelerRecNo | long |  | 
-| reservationPrimaryTravelerName | string | 256 | 
-| tripActionRecNo | long |  | 
-| tripActionItemTriggerIndex | short |  | 
-| tripActionItemDate | Date |  | 
-| tripActionItemTriggerFixedDate | Date |  | 
-| tripActionItemDescription | string | 256 | 
-| tripActionItemCompleted | DateTime |  | 
-| reservationAdvisorRecNo | long |  | 
-| reservationAdvisorProfileRecNo | long |  | 
-| reservationAdvisorProfileName | string | 256 | 
-| reservationAdvisorProfileId | string | 32 | 
-| reservationAdvisorCommissionAmount | long |  | 
-| reservationAdvisorCommissionRate | long |  | 
-| reservationAdvisorReconciliationRecNo | long |  | 
-| reservationAdvisorReconciliationDate | Date |  | 
-| reservationAccountingEntryRecNo | long |  | 
-| reservationAccountingEntryCreateDate | Date |  | 
+Referenced Table: [trip](/trip)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | trip | 
+| tagValue | string | 1024 | trip | 
+| summaryCount | int |  | trip | 
+| name | string | 256 | trip | 
+| startDateTime | DateTime |  | trip | 
+| endDateTime | DateTime |  | trip | 
+| targetTravelDate | Date |  | trip | 
+| clientProfileRecNo | long |  | trip | 
+| clientProfileName | string | 256 | trip | 
+| advisorProfileRecNo | long |  | trip | 
+| advisorProfileName | string | 256 | trip | 
+| advisorProfileId | string | 32 | trip | 
+| remarks | string | 256 | trip | 
+| advisorRemarks | string | 256 | trip | 
+| cancelled | bool |  | trip | 
+| destinationRecNo | long |  | trip | 
+| destinationName | string | 64 | trip | 
+| destinationRegionRecNo | long |  | trip | 
+| destinationRegionName | string | 64 | trip | 
+| branchRecNo | long |  | trip | 
+| branchName | string | 64 | trip | 
+| createDateTime | DateTime |  | trip | 
+| lastModifiedDateTime | DateTime |  | trip | 
+| reservationRecNo | long |  | trip | 
+| reservationTagValue | string | 1024 | trip | 
+| reservationSupplierProfileRecNo | long |  | trip | 
+| reservationSupplierProfileName | string | 256 | trip | 
+| reservationCommisionTriggerIndex | short |  | trip | 
+| reservationCommisionTriggerDaysOffset | short |  | trip | 
+| reservationClientBalance | long |  | trip | 
+| reservationSupplierBalance | long |  | trip | 
+| reservationTrackClientPayments | bool |  | trip | 
+| reservationStatus | short |  | trip | 
+| reservationTravelCategoryRecNo | short |  | trip | 
+| reservationTravelCategoryName | string | 32 | trip | 
+| reservationTotalFare | long |  | trip | 
+| reservationCommissionAmount | long |  | trip | 
+| reservationCommissionRate | long |  | trip | 
+| reservationBaseFare | long |  | trip | 
+| reservationTaxAmount | long |  | trip | 
+| reservationHighFare | long |  | trip | 
+| reservationLowFare | long |  | trip | 
+| reservationBookDateTime | DateTime |  | trip | 
+| reservationStartDateTime | DateTime |  | trip | 
+| reservationEndDateTime | DateTime |  | trip | 
+| reservationCommissionDatePayable | Date |  | trip | 
+| reservationTicketNo | long |  | trip | 
+| reservationConfirmationNo | string | 64 | trip | 
+| reservationRecordLocator | string | 32 | trip | 
+| reservationDepositRecNo | long |  | trip | 
+| reservationDepositDueDate | Date |  | trip | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
+| reservationDepositDueAmount | long |  | trip | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
+| reservationDepositCompleted | DateTime |  | trip | 
+| reservationFinalPayDueDate | Date |  | trip | 
+| reservationARCBSPNumber | int |  | trip | 
+| reservationProviderProfileRecNo | long |  | trip | 
+| reservationProviderProfileName | string | 256 | trip | 
+| reservationTicketNumber | long |  | trip | 
+| reservationConfirmationNumber | string | 64 | trip | 
+| reservationConfirmedDateTime | DateTime |  | trip | 
+| reservationPromoId | string | 256 | trip | 
+| reservationSource | string | 32 | trip | 
+| reservationPrimaryTravelerRecNo | long |  | trip | 
+| reservationPrimaryTravelerName | string | 256 | trip | 
+| tripActionRecNo | long |  | trip | 
+| tripActionItemTriggerIndex | short |  | trip | 
+| tripActionItemDate | Date |  | trip | 
+| tripActionItemTriggerFixedDate | Date |  | trip | 
+| tripActionItemDescription | string | 256 | trip | 
+| tripActionItemCompleted | DateTime |  | trip | 
+| reservationAdvisorRecNo | long |  | trip | 
+| reservationAdvisorProfileRecNo | long |  | trip | 
+| reservationAdvisorProfileName | string | 256 | trip | 
+| reservationAdvisorProfileId | string | 32 | trip | 
+| reservationAdvisorCommissionAmount | long |  | trip | 
+| reservationAdvisorCommissionRate | long |  | trip | 
+| reservationAdvisorReconciliationRecNo | long |  | trip | 
+| reservationAdvisorReconciliationDate | Date |  | trip | 
+| reservationAccountingEntryRecNo | long |  | trip | 
+| reservationAccountingEntryCreateDate | Date |  | trip | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -187,7 +189,11 @@ Content-Type: application/json
 Authorization: Bearer <session-token>
 {
   "targetTravelDateFrom": "2022-12-31T00:00:00",
-  "targetTravelDateTo": "2023-01-15T00:00:00"
+  "targetTravelDateTo": "2023-01-15T00:00:00",
+  "includeCols": [
+    "recNo",
+    "name"
+  ]
 }
 ```
 

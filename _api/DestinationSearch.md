@@ -2,17 +2,19 @@
 layout: post
 ---
 
-# DestinationSearch
+﻿# DestinationSearch
 
 
-| Column | Type | Size | Description | 
-| ------ | ---- | ---- | ----------- | 
-| recNo | long |  | 
-| summaryCount | int |  | 
-| name | string | 64 | 
-| country | string | 4 | 
-| regionRecNo | long |  | 
-| regionName | string | 64 | 
+Referenced Table: [destination](/destination)
+
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | destination | 
+| summaryCount | int |  | destination | 
+| name | string | 64 | destination | 
+| country | string | 4 | destination | 
+| regionRecNo | long |  | destination | 
+| regionName | string | 64 | destination | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -40,25 +42,10 @@ layout: post
 POST https://api-dev.trestechnologies.com/destinationSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
-{
-	"targetDateFrom": "12/31/2001",
-	"targetDateFrom": "12/31/2001",
-	"includeCols": ["recNo", "name"]
-}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
-{
-	{
-		"recNo": 1969697,
-		"name": "Anderson/Jennifer"
-	},
-	{
-		"recNo": 1969733,
-		"name": "Abler/K"
-	},
-}
 ```
