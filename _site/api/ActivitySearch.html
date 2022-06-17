@@ -19,11 +19,11 @@
 <meta property="og:url" content="/api/ActivitySearch.html" />
 <meta property="og:site_name" content="Tres Technologies Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-06-16T15:11:51-07:00" />
+<meta property="article:published_time" content="2022-06-16T20:01:23-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Activitysearch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-16T15:11:51-07:00","datePublished":"2022-06-16T15:11:51-07:00","description":"﻿# ActivitySearch","headline":"Activitysearch","mainEntityOfPage":{"@type":"WebPage","@id":"/api/ActivitySearch.html"},"url":"/api/ActivitySearch.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-16T20:01:23-07:00","datePublished":"2022-06-16T20:01:23-07:00","description":"﻿# ActivitySearch","headline":"Activitysearch","mainEntityOfPage":{"@type":"WebPage","@id":"/api/ActivitySearch.html"},"url":"/api/ActivitySearch.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Tres Technologies Documentation" />
 </head>
@@ -42,7 +42,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/api/">API</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -51,7 +51,7 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Activitysearch</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2022-06-16T15:11:51-07:00" itemprop="datePublished">
+    <p class="post-meta"><time class="dt-published" datetime="2022-06-16T20:01:23-07:00" itemprop="datePublished">
         Jun 16, 2022
       </time></p>
   </header>
@@ -59,12 +59,16 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>﻿# ActivitySearch</p>
 
+<p>Referenced Table: <a href="/activity">activity</a></p>
+
 <table>
   <thead>
     <tr>
       <th>Column</th>
       <th>Type</th>
       <th>Size</th>
+      <th>Flags</th>
+      <th>Table</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -73,17 +77,23 @@
       <td>recNo</td>
       <td>long</td>
       <td> </td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>tagValue</td>
       <td>string</td>
       <td>1024</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>summaryCount</td>
       <td>int</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -91,11 +101,15 @@
       <td>type</td>
       <td>short</td>
       <td> </td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>appUser_recNo</td>
       <td>long</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -103,17 +117,23 @@
       <td>appUserId</td>
       <td>string</td>
       <td>64</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>subject</td>
       <td>string</td>
       <td>64</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>priority</td>
       <td>short</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -121,11 +141,15 @@
       <td>targetDateTime</td>
       <td>DateTimeOffset</td>
       <td> </td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>targetDate</td>
       <td>Date</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -133,11 +157,15 @@
       <td>completionDateTime</td>
       <td>DateTime</td>
       <td> </td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>clientProfileRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -145,11 +173,15 @@
       <td>clientProfileName</td>
       <td>string</td>
       <td>256</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>supplierProfileRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -157,11 +189,15 @@
       <td>supplierProfileName</td>
       <td>string</td>
       <td>256</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>personRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -169,11 +205,15 @@
       <td>personName</td>
       <td>string</td>
       <td>256</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>tripRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -181,17 +221,23 @@
       <td>tripName</td>
       <td>string</td>
       <td>256</td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>createDateTime</td>
       <td>DateTimeOffset</td>
       <td> </td>
+      <td>activity</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>remarks</td>
       <td>string</td>
+      <td> </td>
+      <td>activity</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -388,26 +434,11 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST https://api-dev.trestechnologies.com/activitySearch
 Content-Type: application/json
 Authorization: Bearer &lt;session-token&gt;
-<span class="o">{</span>
-	<span class="s2">"targetDateFrom"</span>: <span class="s2">"12/31/2001"</span>,
-	<span class="s2">"targetDateFrom"</span>: <span class="s2">"12/31/2001"</span>,
-	<span class="s2">"includeCols"</span>: <span class="o">[</span><span class="s2">"recNo"</span>, <span class="s2">"name"</span><span class="o">]</span>
-<span class="o">}</span>
 </code></pre></div></div>
 
 <h4 id="example-response">Example response</h4>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/json
 Status: 200 Ok
-<span class="o">{</span>
-	<span class="o">{</span>
-		<span class="s2">"recNo"</span>: 1969697,
-		<span class="s2">"name"</span>: <span class="s2">"Anderson/Jennifer"</span>
-	<span class="o">}</span>,
-	<span class="o">{</span>
-		<span class="s2">"recNo"</span>: 1969733,
-		<span class="s2">"name"</span>: <span class="s2">"Abler/K"</span>
-	<span class="o">}</span>,
-<span class="o">}</span>
 </code></pre></div></div>
 
   </div><a class="u-url" href="/api/ActivitySearch.html" hidden></a>

@@ -13,17 +13,17 @@
 <meta property="og:title" content="Paymentsearch" />
 <meta name="author" content="GitHub User" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="PaymentSearch" />
-<meta property="og:description" content="PaymentSearch" />
+<meta name="description" content="﻿# PaymentSearch" />
+<meta property="og:description" content="﻿# PaymentSearch" />
 <link rel="canonical" href="/api/PaymentSearch.html" />
 <meta property="og:url" content="/api/PaymentSearch.html" />
 <meta property="og:site_name" content="Tres Technologies Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-06-16T15:11:51-07:00" />
+<meta property="article:published_time" content="2022-06-16T20:01:23-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Paymentsearch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-16T15:11:51-07:00","datePublished":"2022-06-16T15:11:51-07:00","description":"PaymentSearch","headline":"Paymentsearch","mainEntityOfPage":{"@type":"WebPage","@id":"/api/PaymentSearch.html"},"url":"/api/PaymentSearch.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-16T20:01:23-07:00","datePublished":"2022-06-16T20:01:23-07:00","description":"﻿# PaymentSearch","headline":"Paymentsearch","mainEntityOfPage":{"@type":"WebPage","@id":"/api/PaymentSearch.html"},"url":"/api/PaymentSearch.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Tres Technologies Documentation" />
 </head>
@@ -42,7 +42,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/api/">API</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -51,13 +51,15 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Paymentsearch</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2022-06-16T15:11:51-07:00" itemprop="datePublished">
+    <p class="post-meta"><time class="dt-published" datetime="2022-06-16T20:01:23-07:00" itemprop="datePublished">
         Jun 16, 2022
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="paymentsearch">PaymentSearch</h1>
+    <p>﻿# PaymentSearch</p>
+
+<p>Referenced Table: <a href="/payment">payment</a></p>
 
 <table>
   <thead>
@@ -65,6 +67,8 @@
       <th>Column</th>
       <th>Type</th>
       <th>Size</th>
+      <th>Flags</th>
+      <th>Table</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -73,17 +77,23 @@
       <td>recNo</td>
       <td>long</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>tagValue</td>
       <td>string</td>
       <td>1024</td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>summaryCount</td>
       <td>int</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -91,11 +101,15 @@
       <td>profileType</td>
       <td>short</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>profileRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -103,11 +117,15 @@
       <td>profileName</td>
       <td>string</td>
       <td>256</td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>amount</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -115,11 +133,15 @@
       <td>paymentDate</td>
       <td>Date</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>payType</td>
       <td>short</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -127,11 +149,15 @@
       <td>method</td>
       <td>short</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>bankRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -139,11 +165,15 @@
       <td>bankName</td>
       <td>string</td>
       <td>64</td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>agencyProcessed</td>
       <td>bool</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -151,17 +181,23 @@
       <td>cardNumber</td>
       <td>string</td>
       <td>64</td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>nameOnCard</td>
       <td>string</td>
       <td>64</td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>checkNumber</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -169,11 +205,15 @@
       <td>reservationRecNo</td>
       <td>long</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>reservationAmount</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -181,11 +221,15 @@
       <td>voided</td>
       <td>bool</td>
       <td> </td>
+      <td>payment</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>accountingEntryRecNo</td>
       <td>long</td>
+      <td> </td>
+      <td>payment</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -394,26 +438,11 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST https://api-dev.trestechnologies.com/paymentSearch
 Content-Type: application/json
 Authorization: Bearer &lt;session-token&gt;
-<span class="o">{</span>
-	<span class="s2">"targetDateFrom"</span>: <span class="s2">"12/31/2001"</span>,
-	<span class="s2">"targetDateFrom"</span>: <span class="s2">"12/31/2001"</span>,
-	<span class="s2">"includeCols"</span>: <span class="o">[</span><span class="s2">"recNo"</span>, <span class="s2">"name"</span><span class="o">]</span>
-<span class="o">}</span>
 </code></pre></div></div>
 
 <h4 id="example-response">Example response</h4>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/json
 Status: 200 Ok
-<span class="o">{</span>
-	<span class="o">{</span>
-		<span class="s2">"recNo"</span>: 1969697,
-		<span class="s2">"name"</span>: <span class="s2">"Anderson/Jennifer"</span>
-	<span class="o">}</span>,
-	<span class="o">{</span>
-		<span class="s2">"recNo"</span>: 1969733,
-		<span class="s2">"name"</span>: <span class="s2">"Abler/K"</span>
-	<span class="o">}</span>,
-<span class="o">}</span>
 </code></pre></div></div>
 
   </div><a class="u-url" href="/api/PaymentSearch.html" hidden></a>
