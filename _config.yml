@@ -44,6 +44,7 @@ collections:
 
 exclude:
   - .jekyll-cache/
+  - Rakefile
   - Gemfile
   - Gemfile.lock
   - README
