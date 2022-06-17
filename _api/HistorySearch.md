@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "HistorySearch"
+description: ""
 ---
 
-﻿# HistorySearch
 
 
 Referenced Table: [history](/history)
@@ -59,3 +60,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

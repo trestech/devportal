@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "TripImportSearch"
+description: ""
 ---
 
-﻿# TripImportSearch
 
 
 Referenced Table: [tripImport](/tripImport)
@@ -59,3 +60,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

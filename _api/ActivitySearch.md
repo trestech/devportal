@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "ActivitySearch"
+description: ""
 ---
 
-﻿# ActivitySearch
 
 
 Referenced Table: [activity](/activity)
@@ -77,3 +78,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

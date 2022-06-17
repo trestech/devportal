@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "BankTransaction"
+description: ""
 ---
 
-﻿# BankTransaction
 
 
 | Column | Type | Size | Table | Description |
@@ -15,3 +16,5 @@ layout: post
 | voided | bool |  | {string.Join(',', flags)} | bankTransaction | 
 | remarks | string |  | {string.Join(',', flags)} | bankTransaction | 
 | clearedDate | Date |  | {string.Join(',', flags)} | bankTransaction | 
+
+

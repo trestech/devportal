@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "DestinationSearch"
+description: ""
 ---
 
-﻿# DestinationSearch
 
 
 Referenced Table: [destination](/destination)
@@ -49,3 +50,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

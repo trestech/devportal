@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "MerchantTransaction"
+description: ""
 ---
 
-﻿# MerchantTransaction
 
 
 | Column | Type | Size | Table | Description |
@@ -25,3 +26,5 @@ layout: post
 | authorizationMessage | string | 256 | {string.Join(',', flags)} | merchantTransaction | 
 | orderId | string | 16 | {string.Join(',', flags)} | merchantTransaction | 
 | payment_recNo | long |  | {string.Join(',', flags)} | merchantTransaction | 
+
+

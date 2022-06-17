@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AccountingEntry"
+description: ""
 ---
 
-﻿# AccountingEntry
 
 
 | Column | Type | Size | Table | Description |
@@ -20,3 +21,5 @@ layout: post
 | accountNumber | int |  | {string.Join(',', flags)} | accountingEntryDetail | 
 | debitAmount | long |  | {string.Join(',', flags)} | accountingEntryDetail | 
 | creditAmount | long |  | {string.Join(',', flags)} | accountingEntryDetail | 
+
+

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "PersonSearch"
+description: ""
 ---
 
-﻿# PersonSearch
 
 
 Referenced Table: [person](/person)
@@ -95,3 +96,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

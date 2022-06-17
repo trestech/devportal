@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "ClientPayment"
+description: ""
 ---
 
-﻿# ClientPayment
 
 
 | Column | Type | Size | Table | Description |
@@ -57,3 +58,5 @@ layout: post
 | tag_recNo | long |  | {string.Join(',', flags)} | paymentTag | 
 | name | string | 64 | {string.Join(',', flags)} | paymentTag | 
 | value | string | 1024 | {string.Join(',', flags)} | paymentTag | 
+
+

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "TripImport"
+description: ""
 ---
 
-﻿# TripImport
 
 
 | Column | Type | Size | Table | Description |
@@ -21,3 +22,5 @@ layout: post
 | branch_name | string | 64 | {string.Join(',', flags)} | tripImport | 
 | tripReference | string | 64 | {string.Join(',', flags)} | tripImport | 
 | trip_RecNo | long |  | {string.Join(',', flags)} | tripImport | 
+
+

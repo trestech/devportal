@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AdvisorReconciliationSearch"
+description: ""
 ---
 
-﻿# AdvisorReconciliationSearch
 
 
 Referenced Table: [advisorReconciliation](/advisorReconciliation)
@@ -46,3 +47,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

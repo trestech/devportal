@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Person"
+description: ""
 ---
 
-﻿# Person
 
 
 | Column | Type | Size | Table | Description |
@@ -79,3 +80,5 @@ layout: post
 | tag_recNo | long |  | {string.Join(',', flags)} | personTag | 
 | name | string | 64 | {string.Join(',', flags)} | personTag | 
 | value | string | 1024 | {string.Join(',', flags)} | personTag | 
+
+

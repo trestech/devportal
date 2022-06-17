@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AppUserSearch"
+description: ""
 ---
 
-﻿# AppUserSearch
 
 
 Referenced Table: [appUser](/appUser)
@@ -53,3 +54,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

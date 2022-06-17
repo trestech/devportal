@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "BranchSearch"
+description: ""
 ---
 
-﻿# BranchSearch
 
 
 Referenced Table: [branch](/branch)
@@ -45,3 +46,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

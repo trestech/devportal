@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "TagSearch"
+description: ""
 ---
 
-﻿# TagSearch
 
 
 Referenced Table: [tag](/tag)
@@ -47,3 +48,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

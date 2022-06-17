@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Affiliation"
+description: ""
 ---
 
-﻿# Affiliation
 
 
 | Column | Type | Size | Table | Description |
@@ -19,3 +20,5 @@ layout: post
 | affiliationMarketingCategory_recNo | long |  | {string.Join(',', flags)} | affiliationMarketingElement | 
 | name | string | 64 | {string.Join(',', flags)} | affiliationMarketingElement | 
 | id | string | 16 | {string.Join(',', flags)} | affiliationMarketingElement | 
+
+

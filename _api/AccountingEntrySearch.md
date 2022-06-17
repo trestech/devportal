@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AccountingEntrySearch"
+description: ""
 ---
 
-﻿# AccountingEntrySearch
 
 
 Referenced Table: [accountingEntry](/accountingEntry)
@@ -48,3 +49,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

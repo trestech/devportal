@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "History"
+description: ""
 ---
 
-﻿# History
 
 
 | Column | Type | Size | Table | Description |
@@ -18,3 +19,5 @@ layout: post
 | description | string | 256 | {string.Join(',', flags)} | history | 
 | oldValue | string | 256 | {string.Join(',', flags)} | history | 
 | newValue | string | 256 | {string.Join(',', flags)} | history | 
+
+

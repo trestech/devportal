@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Agency"
+description: ""
 ---
 
-﻿# Agency
 
 
 | Column | Type | Size | Table | Description |
@@ -36,3 +37,5 @@ layout: post
 | agency_recNo | int |  | {string.Join(',', flags)} | agencyAdvisorReconciliation | 
 | travelCategory_recNo | short |  | {string.Join(',', flags)} | agencyAdvisorReconciliation | 
 | paymentTrigger | short |  | {string.Join(',', flags)} | agencyAdvisorReconciliation | 
+
+

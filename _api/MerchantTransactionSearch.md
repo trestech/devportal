@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "MerchantTransactionSearch"
+description: ""
 ---
 
-﻿# MerchantTransactionSearch
 
 
 Referenced Table: [merchantTransaction](/merchantTransaction)
@@ -50,3 +51,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

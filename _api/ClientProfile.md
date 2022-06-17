@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "ClientProfile"
+description: ""
 ---
 
-﻿# ClientProfile
 
 
 | Column | Type | Size | Table | Description |
@@ -91,3 +92,5 @@ layout: post
 | clientProfile_recNo | long |  | {string.Join(',', flags)} | clientProfileMarketing | 
 | affiliation_recNo | int |  | {string.Join(',', flags)} | clientProfileMarketing | 
 | marketingElement_recNo | long |  | {string.Join(',', flags)} | clientProfileMarketing | 
+
+

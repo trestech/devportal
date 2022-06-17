@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "ProfileSearch"
+description: ""
 ---
 
-﻿# ProfileSearch
 
 
 Referenced Table: [profile](/profile)
@@ -133,3 +134,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

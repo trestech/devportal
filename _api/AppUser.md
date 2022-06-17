@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AppUser"
+description: ""
 ---
 
-﻿# AppUser
 
 
 | Column | Type | Size | Table | Description |
@@ -46,3 +47,5 @@ layout: post
 | advisorProfile_recNo | long |  | {string.Join(',', flags)} | appUserAdvisor | 
 | advisorName | string | 256 | {string.Join(',', flags)} | appUserAdvisor | 
 | isPrimary | bool |  | {string.Join(',', flags)} | appUserAdvisor | 
+
+

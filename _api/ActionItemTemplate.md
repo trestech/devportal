@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "ActionItemTemplate"
+description: ""
 ---
 
-﻿# ActionItemTemplate
 
 
 | Column | Type | Size | Table | Description |
@@ -27,3 +28,5 @@ layout: post
 | completedBy_appUserRecNo | long |  | {string.Join(',', flags)} | actionItem | 
 | completedBy_appUserId | string | 64 | {string.Join(',', flags)} | actionItem | 
 | notes | string | 256 | {string.Join(',', flags)} | actionItem | 
+
+

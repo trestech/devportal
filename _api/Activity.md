@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Activity"
+description: ""
 ---
 
-﻿# Activity
 
 
 | Column | Type | Size | Table | Description |
@@ -54,3 +55,5 @@ layout: post
 | tag_recNo | long |  | {string.Join(',', flags)} | activityTag | 
 | name | string | 64 | {string.Join(',', flags)} | activityTag | 
 | value | string | 1024 | {string.Join(',', flags)} | activityTag | 
+
+

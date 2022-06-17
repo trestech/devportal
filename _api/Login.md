@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: page
 title:  "Login"
-date:   2022-06-03 15:11:54 -0700
-categories: api
+description: "The login method initiates a connection to an agency context on the server"
 ---
 
 The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication.

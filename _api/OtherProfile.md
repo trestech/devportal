@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "OtherProfile"
+description: ""
 ---
 
-﻿# OtherProfile
 
 
 | Column | Type | Size | Table | Description |
@@ -75,3 +76,5 @@ layout: post
 | tag_recNo | long |  | {string.Join(',', flags)} | profileTag | 
 | name | string | 64 | {string.Join(',', flags)} | profileTag | 
 | value | string | 1024 | {string.Join(',', flags)} | profileTag | 
+
+

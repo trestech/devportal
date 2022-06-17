@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AdvisorReconciliation"
+description: ""
 ---
 
-﻿# AdvisorReconciliation
 
 
 | Column | Type | Size | Table | Description |
@@ -13,3 +14,5 @@ layout: post
 | advisorReconciliationDetail  | table |  |  |  | 
 | reservationAdvisor_recNo | long |  | {string.Join(',', flags)} | advisorReconciliationDetail | 
 | advisorReconciliation_recNo | long |  | {string.Join(',', flags)} | advisorReconciliationDetail | 
+
+

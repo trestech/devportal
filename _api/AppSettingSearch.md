@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AppSettingSearch"
+description: ""
 ---
 
-﻿# AppSettingSearch
 
 
 Referenced Table: [appSetting](/appSetting)
@@ -48,3 +49,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+

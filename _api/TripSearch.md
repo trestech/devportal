@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "TripSearch"
+description: "TripSearch returns data for trips and reservations"
 ---
 
-﻿# TripSearch
 TripSearch returns data for trips and reservations.
 
 User needs at least select permission for trips. Results may be filtered if trip permission includes OnlySelf (based on user's linked advisors) or if trip permission includes OnlyBranch (based on user's branch).
@@ -34,63 +35,63 @@ Referenced Table: [trip](/trip)
 | branchName | string | 64 | trip | 
 | createDateTime | DateTime |  | trip | 
 | lastModifiedDateTime | DateTime |  | trip | 
-| reservationRecNo | long |  | trip | 
-| reservationTagValue | string | 1024 | trip | 
-| reservationSupplierProfileRecNo | long |  | trip | 
-| reservationSupplierProfileName | string | 256 | trip | 
-| reservationCommisionTriggerIndex | short |  | trip | 
-| reservationCommisionTriggerDaysOffset | short |  | trip | 
-| reservationClientBalance | long |  | trip | 
-| reservationSupplierBalance | long |  | trip | 
-| reservationTrackClientPayments | bool |  | trip | 
-| reservationStatus | short |  | trip | 
-| reservationTravelCategoryRecNo | short |  | trip | 
-| reservationTravelCategoryName | string | 32 | trip | 
-| reservationTotalFare | long |  | trip | 
-| reservationCommissionAmount | long |  | trip | 
-| reservationCommissionRate | long |  | trip | 
-| reservationBaseFare | long |  | trip | 
-| reservationTaxAmount | long |  | trip | 
-| reservationHighFare | long |  | trip | 
-| reservationLowFare | long |  | trip | 
-| reservationBookDateTime | DateTime |  | trip | 
-| reservationStartDateTime | DateTime |  | trip | 
-| reservationEndDateTime | DateTime |  | trip | 
-| reservationCommissionDatePayable | Date |  | trip | 
-| reservationTicketNo | long |  | trip | 
-| reservationConfirmationNo | string | 64 | trip | 
-| reservationRecordLocator | string | 32 | trip | 
-| reservationDepositRecNo | long |  | trip | 
-| reservationDepositDueDate | Date |  | trip | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
-| reservationDepositDueAmount | long |  | trip | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
-| reservationDepositCompleted | DateTime |  | trip | 
-| reservationFinalPayDueDate | Date |  | trip | 
-| reservationARCBSPNumber | int |  | trip | 
-| reservationProviderProfileRecNo | long |  | trip | 
-| reservationProviderProfileName | string | 256 | trip | 
-| reservationTicketNumber | long |  | trip | 
-| reservationConfirmationNumber | string | 64 | trip | 
-| reservationConfirmedDateTime | DateTime |  | trip | 
-| reservationPromoId | string | 256 | trip | 
-| reservationSource | string | 32 | trip | 
-| reservationPrimaryTravelerRecNo | long |  | trip | 
-| reservationPrimaryTravelerName | string | 256 | trip | 
-| tripActionRecNo | long |  | trip | 
-| tripActionItemTriggerIndex | short |  | trip | 
-| tripActionItemDate | Date |  | trip | 
-| tripActionItemTriggerFixedDate | Date |  | trip | 
-| tripActionItemDescription | string | 256 | trip | 
-| tripActionItemCompleted | DateTime |  | trip | 
-| reservationAdvisorRecNo | long |  | trip | 
-| reservationAdvisorProfileRecNo | long |  | trip | 
-| reservationAdvisorProfileName | string | 256 | trip | 
-| reservationAdvisorProfileId | string | 32 | trip | 
-| reservationAdvisorCommissionAmount | long |  | trip | 
-| reservationAdvisorCommissionRate | long |  | trip | 
-| reservationAdvisorReconciliationRecNo | long |  | trip | 
-| reservationAdvisorReconciliationDate | Date |  | trip | 
-| reservationAccountingEntryRecNo | long |  | trip | 
-| reservationAccountingEntryCreateDate | Date |  | trip | 
+| reservationRecNo | long |  | reservation | 
+| reservationTagValue | string | 1024 | reservation | 
+| reservationSupplierProfileRecNo | long |  | reservation | 
+| reservationSupplierProfileName | string | 256 | reservation | 
+| reservationCommisionTriggerIndex | short |  | reservation | 
+| reservationCommisionTriggerDaysOffset | short |  | reservation | 
+| reservationClientBalance | long |  | reservation | 
+| reservationSupplierBalance | long |  | reservation | 
+| reservationTrackClientPayments | bool |  | reservation | 
+| reservationStatus | short |  | reservation | 
+| reservationTravelCategoryRecNo | short |  | reservation | 
+| reservationTravelCategoryName | string | 32 | reservation | 
+| reservationTotalFare | long |  | reservation | 
+| reservationCommissionAmount | long |  | reservation | 
+| reservationCommissionRate | long |  | reservation | 
+| reservationBaseFare | long |  | reservation | 
+| reservationTaxAmount | long |  | reservation | 
+| reservationHighFare | long |  | reservation | 
+| reservationLowFare | long |  | reservation | 
+| reservationBookDateTime | DateTime |  | reservation | 
+| reservationStartDateTime | DateTime |  | reservation | 
+| reservationEndDateTime | DateTime |  | reservation | 
+| reservationCommissionDatePayable | Date |  | reservation | 
+| reservationTicketNo | long |  | reservation | 
+| reservationConfirmationNo | string | 64 | reservation | 
+| reservationRecordLocator | string | 32 | reservation | 
+| reservationDepositRecNo | long |  | reservationDeposit | 
+| reservationDepositDueDate | Date |  | reservationDeposit | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
+| reservationDepositDueAmount | long |  | reservationDeposit | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
+| reservationDepositCompleted | DateTime |  | reservationDeposit | 
+| reservationFinalPayDueDate | Date |  | reservation | 
+| reservationARCBSPNumber | int |  | reservation | 
+| reservationProviderProfileRecNo | long |  | reservation | 
+| reservationProviderProfileName | string | 256 | reservation | 
+| reservationTicketNumber | long |  | reservation | 
+| reservationConfirmationNumber | string | 64 | reservation | 
+| reservationConfirmedDateTime | DateTime |  | reservation | 
+| reservationPromoId | string | 256 | reservation | 
+| reservationSource | string | 32 | reservation | 
+| reservationPrimaryTravelerRecNo | long |  | reservation | 
+| reservationPrimaryTravelerName | string | 256 | reservation | 
+| tripActionRecNo | long |  | tripActionItem | 
+| tripActionItemTriggerIndex | short |  | tripActionItem | 
+| tripActionItemDate | Date |  | tripActionItem | 
+| tripActionItemTriggerFixedDate | Date |  | tripActionItem | 
+| tripActionItemDescription | string | 256 | tripActionItem | 
+| tripActionItemCompleted | DateTime |  | tripActionItem | 
+| reservationAdvisorRecNo | long |  | reservationAdvisor | 
+| reservationAdvisorProfileRecNo | long |  | reservationAdvisor | 
+| reservationAdvisorProfileName | string | 256 | reservationAdvisor | 
+| reservationAdvisorProfileId | string | 32 | reservationAdvisor | 
+| reservationAdvisorCommissionAmount | long |  | reservationAdvisor | 
+| reservationAdvisorCommissionRate | long |  | reservationAdvisor | 
+| reservationAdvisorReconciliationRecNo | long |  | reservationAdvisor | 
+| reservationAdvisorReconciliationDate | Date |  | reservationAdvisor | 
+| reservationAccountingEntryRecNo | long |  | reservation | 
+| reservationAccountingEntryCreateDate | Date |  | reservation | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -212,3 +213,4 @@ Status: 200 Ok
   }
 ]
 ```
+

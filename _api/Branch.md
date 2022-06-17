@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Branch"
+description: ""
 ---
 
-﻿# Branch
 
 
 | Column | Type | Size | Table | Description |
@@ -21,3 +22,5 @@ layout: post
 | headerInfo | string | 512 | {string.Join(',', flags)} | branch | 
 | logoData | byte[] |  | {string.Join(',', flags)} | branch | 
 | itineraryRemarks | string |  | {string.Join(',', flags)} | branch | 
+
+

@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "Bank"
+description: ""
 ---
 
-﻿# Bank
 
 
 | Column | Type | Size | Table | Description |
@@ -11,3 +12,5 @@ layout: post
 | name | string | 64 | {string.Join(',', flags)} | bank | 
 | description | string | 128 | {string.Join(',', flags)} | bank | 
 | accountingReference | string | 64 | {string.Join(',', flags)} | bank | 
+
+

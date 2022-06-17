@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "AppSetting"
+description: ""
 ---
 
-﻿# AppSetting
 
 
 | Column | Type | Size | Table | Description |
@@ -13,3 +14,5 @@ layout: post
 | name | string | 64 | {string.Join(',', flags)} | appSetting | 
 | description | string | 64 | {string.Join(',', flags)} | appSetting | 
 | data | string |  | {string.Join(',', flags)} | appSetting | 
+
+

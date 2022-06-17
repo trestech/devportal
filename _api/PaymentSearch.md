@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
+title: "PaymentSearch"
+description: ""
 ---
 
-﻿# PaymentSearch
 
 
 Referenced Table: [payment](/payment)
@@ -25,8 +26,8 @@ Referenced Table: [payment](/payment)
 | cardNumber | string | 64 | payment | 
 | nameOnCard | string | 64 | payment | 
 | checkNumber | long |  | payment | 
-| reservationRecNo | long |  | payment | 
-| reservationAmount | long |  | payment | 
+| reservationRecNo | long |  | paymentDetail | 
+| reservationAmount | long |  | paymentDetail | 
 | voided | bool |  | payment | 
 | accountingEntryRecNo | long |  | payment | 
 
@@ -78,3 +79,4 @@ Authorization: Bearer <session-token>
 Content-Type: application/json
 Status: 200 Ok
 ```
+
