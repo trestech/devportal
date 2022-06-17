@@ -68,7 +68,7 @@ task :build do
   sh cmd
 end
 
-desc 'Commit site.'
+desc 'Commit site.  Note, this is performed automatically by github.'
 task commit: [:build] do
   cmd = 'git add _site && git commit _site -m "jekyll base sources"'
     
