@@ -13,17 +13,17 @@
 <meta property="og:title" content="Login" />
 <meta name="author" content="GitHub User" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. The method returns a Json response that includes an identity token which is needed for subsequent operations for the same agency context. Input Parameter Required/Optional Description alias Required Identifies the targeted context for login Output Parameter Description resultCode Result code, 0 = success (status 200) resultDescription Text that describes the result method Calling method identityToken If resultCode = 0, identityToken value is used for subsequent requests exception Additional information in the event of an error Status code Description 200 Ok 401 Unauthorized Example request GET {url}/login/{alias} Authorization: Basic Auth (Username, Password) curl --location --request GET &#39;https://dev.trestechnologies.com/login/0001&#39; \ --header &#39;Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==&#39; \ Example success response Status: 200 Ok { &quot;identityToken&quot;: &quot;ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAiZXhwaXJlRGF0ZSI6ICIyMDIyLTAzLTI0VDAwOjUwOjI5LjExNzI1OTIrMDA6MDAiLA0KICAiZXhwaXJlSW50ZXJ2YWwiOiAzMCwNCiAgImFnZW5jeVJlY05vIjogMSwNCiAgImFwcFVzZXJSZWNObyI6IDEzNzQsDQogICJhZG1pblVzZXJSZWNObyI6IG51bGwsDQogICJ1c2VyTmFtZSI6ICJBZG1pbiIsDQogICJhbGlhcyI6ICIwMDAxIiwNCiAgInRva2VuUmVjTm8iOiAxMDUxMjUsDQogICJhcHBOYW1lIjogIlBvc3RtYW4iLA0KICAiY2xpZW50SVBBZGRyZXNzIjogIjEwLjEuMi42IiwNCiAgImFmZmlsaWF0aW9uUmVjTm8iOiBudWxsDQp9.0eXC554Z9iscFE0T_lNg4F4ymfILE4tXDN28UAB6Xwk&quot;, &quot;resultCode&quot;: 0, &quot;resultDescription&quot;: &quot;Login Successful&quot; } Example error response Status: 401 Unauthorized { &quot;resultCode&quot;: 101, &quot;resultDescription&quot;: &quot;Invalid Username/Password&quot;, &quot;method&quot;: &quot;login&quot;, }" />
-<meta property="og:description" content="The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. The method returns a Json response that includes an identity token which is needed for subsequent operations for the same agency context. Input Parameter Required/Optional Description alias Required Identifies the targeted context for login Output Parameter Description resultCode Result code, 0 = success (status 200) resultDescription Text that describes the result method Calling method identityToken If resultCode = 0, identityToken value is used for subsequent requests exception Additional information in the event of an error Status code Description 200 Ok 401 Unauthorized Example request GET {url}/login/{alias} Authorization: Basic Auth (Username, Password) curl --location --request GET &#39;https://dev.trestechnologies.com/login/0001&#39; \ --header &#39;Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==&#39; \ Example success response Status: 200 Ok { &quot;identityToken&quot;: &quot;ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAiZXhwaXJlRGF0ZSI6ICIyMDIyLTAzLTI0VDAwOjUwOjI5LjExNzI1OTIrMDA6MDAiLA0KICAiZXhwaXJlSW50ZXJ2YWwiOiAzMCwNCiAgImFnZW5jeVJlY05vIjogMSwNCiAgImFwcFVzZXJSZWNObyI6IDEzNzQsDQogICJhZG1pblVzZXJSZWNObyI6IG51bGwsDQogICJ1c2VyTmFtZSI6ICJBZG1pbiIsDQogICJhbGlhcyI6ICIwMDAxIiwNCiAgInRva2VuUmVjTm8iOiAxMDUxMjUsDQogICJhcHBOYW1lIjogIlBvc3RtYW4iLA0KICAiY2xpZW50SVBBZGRyZXNzIjogIjEwLjEuMi42IiwNCiAgImFmZmlsaWF0aW9uUmVjTm8iOiBudWxsDQp9.0eXC554Z9iscFE0T_lNg4F4ymfILE4tXDN28UAB6Xwk&quot;, &quot;resultCode&quot;: 0, &quot;resultDescription&quot;: &quot;Login Successful&quot; } Example error response Status: 401 Unauthorized { &quot;resultCode&quot;: 101, &quot;resultDescription&quot;: &quot;Invalid Username/Password&quot;, &quot;method&quot;: &quot;login&quot;, }" />
+<meta name="description" content="The login method initiates a connection to an agency context on the server" />
+<meta property="og:description" content="The login method initiates a connection to an agency context on the server" />
 <link rel="canonical" href="/api/Login.html" />
 <meta property="og:url" content="/api/Login.html" />
 <meta property="og:site_name" content="Tres Technologies Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-06-03T15:11:54-07:00" />
+<meta property="article:published_time" content="2022-06-17T08:44:52-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Login" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-03T15:11:54-07:00","datePublished":"2022-06-03T15:11:54-07:00","description":"The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. The method returns a Json response that includes an identity token which is needed for subsequent operations for the same agency context. Input Parameter Required/Optional Description alias Required Identifies the targeted context for login Output Parameter Description resultCode Result code, 0 = success (status 200) resultDescription Text that describes the result method Calling method identityToken If resultCode = 0, identityToken value is used for subsequent requests exception Additional information in the event of an error Status code Description 200 Ok 401 Unauthorized Example request GET {url}/login/{alias} Authorization: Basic Auth (Username, Password) curl --location --request GET &#39;https://dev.trestechnologies.com/login/0001&#39; \\ --header &#39;Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==&#39; \\ Example success response Status: 200 Ok { &quot;identityToken&quot;: &quot;ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAiZXhwaXJlRGF0ZSI6ICIyMDIyLTAzLTI0VDAwOjUwOjI5LjExNzI1OTIrMDA6MDAiLA0KICAiZXhwaXJlSW50ZXJ2YWwiOiAzMCwNCiAgImFnZW5jeVJlY05vIjogMSwNCiAgImFwcFVzZXJSZWNObyI6IDEzNzQsDQogICJhZG1pblVzZXJSZWNObyI6IG51bGwsDQogICJ1c2VyTmFtZSI6ICJBZG1pbiIsDQogICJhbGlhcyI6ICIwMDAxIiwNCiAgInRva2VuUmVjTm8iOiAxMDUxMjUsDQogICJhcHBOYW1lIjogIlBvc3RtYW4iLA0KICAiY2xpZW50SVBBZGRyZXNzIjogIjEwLjEuMi42IiwNCiAgImFmZmlsaWF0aW9uUmVjTm8iOiBudWxsDQp9.0eXC554Z9iscFE0T_lNg4F4ymfILE4tXDN28UAB6Xwk&quot;, &quot;resultCode&quot;: 0, &quot;resultDescription&quot;: &quot;Login Successful&quot; } Example error response Status: 401 Unauthorized { &quot;resultCode&quot;: 101, &quot;resultDescription&quot;: &quot;Invalid Username/Password&quot;, &quot;method&quot;: &quot;login&quot;, }","headline":"Login","mainEntityOfPage":{"@type":"WebPage","@id":"/api/Login.html"},"url":"/api/Login.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-06-17T08:44:52-07:00","datePublished":"2022-06-17T08:44:52-07:00","description":"The login method initiates a connection to an agency context on the server","headline":"Login","mainEntityOfPage":{"@type":"WebPage","@id":"/api/Login.html"},"url":"/api/Login.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Tres Technologies Documentation" />
 </head>
@@ -47,16 +47,13 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Login</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2022-06-03T15:11:54-07:00" itemprop="datePublished">
-        Jun 3, 2022
-      </time></p>
+    <h1 class="post-title">Login</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content">
     <p>The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication.</p>
 
 <p>The method returns a Json response that includes an identity token which is needed for subsequent operations for the same agency context.</p>
@@ -154,7 +151,8 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> GET <s
 <span class="o">}</span>
 </code></pre></div></div>
 
-  </div><a class="u-url" href="/api/Login.html" hidden></a>
+  </div>
+
 </article>
 
       </div>
