@@ -21,6 +21,7 @@ description: ""
 | anniversaryNote | string | 256 | {string.Join(',', flags)} | clientProfile | 
 | formalSalutation | string | 128 | {string.Join(',', flags)} | clientProfile | 
 | informalSalutation | string | 128 | {string.Join(',', flags)} | clientProfile | 
+| travelPolicy | string | 1024 | {string.Join(',', flags)} | clientProfile | 
 | profile  [shared] | table |  |  |  | 
 | recNo | long |  | {string.Join(',', flags)} | profile | 
 | name | string | 256 | {string.Join(',', flags)} | profile | 

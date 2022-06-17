@@ -12,5 +12,6 @@ description: ""
 | name | string | 64 | {string.Join(',', flags)} | bank | 
 | description | string | 128 | {string.Join(',', flags)} | bank | 
 | accountingReference | string | 64 | {string.Join(',', flags)} | bank | 
+| balance | long |  | {string.Join(',', flags)} | bank | 
 
 
