@@ -1,25 +1,48 @@
-# Introduction 
+<div class="pull-right"><img src="logo.png" /></div>
 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Tres Technologies API Portal
 
-# Getting Started
+The following API documents provide details on how to interact with the Tres Application database API.
 
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
+## Develop
 
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+The Tres Portal was built with [Jekyll](http://jekyllrb.com/) version 4.2.2, but should support newer versions as well.
 
-# Build and Test
+Install the dependencies with [Bundler](http://bundler.io/):
 
-TODO: Describe and show how to build your code and run the tests. 
+~~~bash
+$ bundle install
+~~~
 
-# Contribute
+In case of installation problems, make sure you have a ruby development environment installed. If not, install it with:
 
-TODO: Explain how other users and developers can contribute to make your code better. 
+```bash
+sudo apt-get install ruby-dev
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Run `jekyll` commands through Bundler to ensure you're using the right versions:
+
+~~~bash
+$ bundle exec jekyll serve
+~~~
+
+You can now test locally at
+~~~bash
+http://localhost:4000
+~~~
+
+Optionally, when running `jekyll` commands through Bundler, append `--host x.x.x.x` with the external IP address of the server to be able to connect remotely:
+~~~bash
+$ bundle exec jekyll serve --host x.x.x.x
+~~~
+~~~bash
+http://x.x.x.x:4000
+~~~
+
+## Rake Tasks
+
+This application uses `rake` (Ruby's make command) to execute maintenance tasks.  You can see the complete list of tasks by typing:
+
+```bash
+$ bundle exec rake -vT
+```
