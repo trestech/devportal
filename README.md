@@ -1,4 +1,4 @@
-<div class="pull-right"><img src="logo.png" /></div>
+<div class="pull-right"><img src="https://github.com/inertia186/doctres/raw/main/logo.png" /></div>
 
 # Tres Technologies API Portal
 
