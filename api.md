@@ -4,49 +4,17 @@ title: API
 permalink: /api/
 ---
 
-* [ARCBSPNo](ARCBSPNo.html)
-* [AccountingEntry](AccountingEntry.html)
-* [AccountingEntrySearch](AccountingEntrySearch.html)
-* [ActionItemTemplate](ActionItemTemplate.html)
-* [Activity](Activity.html)
-* [ActivitySearch](ActivitySearch.html)
-* [AdvisorProfile](AdvisorProfile.html)
-* [AdvisorReconciliation](AdvisorReconciliation.html)
-* [AdvisorReconciliationSearch](AdvisorReconciliationSearch.html)
-* [Affiliation](Affiliation.html)
-* [Agency](Agency.html)
-* [AppSetting](AppSetting.html)
-* [AppSettingSearch](AppSettingSearch.html)
-* [AppUser](AppUser.html)
-* [AppUserSearch](AppUserSearch.html)
-* [Bank](Bank.html)
-* [BankTransaction](BankTransaction.html)
-* [BankTransactionSearch](BankTransactionSearch.html)
-* [Branch](Branch.html)
-* [BranchSearch](BranchSearch.html)
-* [CardCodes](CardCodes.html)
-* [ClientPayment](ClientPayment.html)
-* [ClientProfile](ClientProfile.html)
-* [Destination](Destination.html)
-* [DestinationSearch](DestinationSearch.html)
-* [DirectConnectProvider](DirectConnectProvider.html)
-* [History](History.html)
-* [HistorySearch](HistorySearch.html)
-* [MerchantTransaction](MerchantTransaction.html)
-* [MerchantTransactionSearch](MerchantTransactionSearch.html)
-* [OtherPayment](OtherPayment.html)
-* [OtherProfile](OtherProfile.html)
-* [PaymentSearch](PaymentSearch.html)
-* [Person](Person.html)
-* [PersonSearch](PersonSearch.html)
-* [ProfileSearch](ProfileSearch.html)
-* [Region](Region.html)
-* [SupplierPayment](SupplierPayment.html)
-* [SupplierProfile](SupplierProfile.html)
-* [Tag](Tag.html)
-* [TagSearch](TagSearch.html)
-* [Trip](Trip.html)
-* [TripImport](TripImport.html)
-* [TripImportSearch](TripImportSearch.html)
-* [TripSearch](TripSearch.html)
-* [Login](Login.html)
+<table>
+{%- for post in site.api -%}
+  <tr>
+    <th style="padding: 4px;">
+      <a class="post-link" href="{{ post.url | relative_url }}" style="font-size: 11px;">
+        {{ post.title | escape }}
+      </a>
+    </th>
+    <td style="padding: 4px;">
+      <span style="font-size: 11px;">{{ post.description | escape }}</span>
+    </td>
+  </tr>
+{%- endfor -%}
+</table>
