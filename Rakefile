@@ -21,6 +21,7 @@ task :import, :folder do |t, args|
       title = data.split("# ")[1].split("\n").first
       description = data.split("# #{title}")[1].lstrip.split("\n").first.split(".").first
       body = data.split("# #{title}")[1]
+      skip = false
       
       description = "" if description.start_with? 'Referenced Table:'
       description = "" if description == '| Column | Type | Size | Table | Description |'
@@ -34,13 +35,21 @@ task :import, :folder do |t, args|
         #{body}
       DONE
       
-      new_post_path = "_api/#{f}"
+      new_page_path = "_api/#{f}"
       
-      File.open(new_post_path, 'w') do |f|
+      if File.file? new_page_path
+        File.open(new_page_path, mode: 'r') do |f|
+          skip = true if f.read == output
+        end
+      end
+      
+      next if skip
+      
+      File.open(new_page_path, mode: 'w') do |f|
         f.write(output)
       end
       
-      puts "Wrote to: #{new_post_path} - title: #{title}; description: #{description}"
+      puts "Wrote to: #{new_page_path} - title: #{title}; description: #{description}"
     end
   end
 end
@@ -50,9 +59,9 @@ task :list do
   Dir.glob("_api/*").sort_by{|f| f}.each do |filename|
     next if File.directory? filename
     
-    post = File.open(filename).read
+    page = File.open(filename).read
     
-    puts post.split('title: ').last.split("\n").first.split("\"")[1]
+    puts page.split('title: ').last.split("\n").first.split("\"")[1]
   end
 end
 
