@@ -56,7 +56,7 @@ task :list do
   end
 end
 
-desc 'Build site to docs for release.'
+desc 'Build site for release.'
 task :build do
   baseurl = ENV.fetch('BASEURL', '/')
   cmd = 'JEKYLL_ENV=production bundle exec jekyll build --destination _site'
@@ -68,9 +68,9 @@ task :build do
   sh cmd
 end
 
-desc 'Commit docs.'
+desc 'Commit site.'
 task commit: [:build] do
-  cmd = 'git add docs && git commit docs -m "jekyll base sources"'
+  cmd = 'git add _site && git commit _site -m "jekyll base sources"'
     
   sh cmd
 end
