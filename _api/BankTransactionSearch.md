@@ -32,6 +32,7 @@ Referenced Table: [bankTransaction](/bankTransaction)
 | baseUrl [inherited] | string |  | 
 | transactionDateFrom | Date |  | 
 | transactionDateTo | Date |  | 
+| bankRecNo | long |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
