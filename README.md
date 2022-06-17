@@ -11,6 +11,8 @@ The Tres Portal was built with [Jekyll](http://jekyllrb.com/) version 4.2.2, but
 Install the dependencies with [Bundler](http://bundler.io/):
 
 ~~~bash
+$ git clone https://github.com/inertia186/doctres.git
+$ cd doctres
 $ bundle install
 ~~~
 
