@@ -8,11 +8,11 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | advisorReconciliation | 
-| reconciliationDate | Date |  | {string.Join(',', flags)} | advisorReconciliation | 
-| description | string | 64 | {string.Join(',', flags)} | advisorReconciliation | 
+| recNo | long |  | Key | advisorReconciliation | 
+| reconciliationDate | Date |  |  | advisorReconciliation | 
+| description | string | 64 |  | advisorReconciliation | 
 | advisorReconciliationDetail  | table |  |  |  | 
-| reservationAdvisor_recNo | long |  | {string.Join(',', flags)} | advisorReconciliationDetail | 
-| advisorReconciliation_recNo | long |  | {string.Join(',', flags)} | advisorReconciliationDetail | 
+| reservationAdvisor_recNo | long |  | Key,FKey | advisorReconciliationDetail | 
+| advisorReconciliation_recNo | long |  | FKey | advisorReconciliationDetail | 
 
 

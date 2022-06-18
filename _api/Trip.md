@@ -8,430 +8,430 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | trip | 
-| clientProfile_recNo | long |  | {string.Join(',', flags)} | trip | 
-| clientName_Lookup | string | 256 | {string.Join(',', flags)} | trip | 
-| branch_recNo | long |  | {string.Join(',', flags)} | trip | 
-| branch_name | string | 64 | {string.Join(',', flags)} | trip | 
-| name | string | 256 | {string.Join(',', flags)} | trip | 
-| advisorProfile_recNo | long |  | {string.Join(',', flags)} | trip | 
-| advisorName_Lookup | string | 256 | {string.Join(',', flags)} | trip | 
-| advisorId_Lookup | string | 256 | {string.Join(',', flags)} | trip | 
-| uniqueId | string | 64 | {string.Join(',', flags)} | trip | 
-| cancelled | bool |  | {string.Join(',', flags)} | trip | 
-| startDateTime | DateTime |  | {string.Join(',', flags)} | trip | 
-| endDateTime | DateTime |  | {string.Join(',', flags)} | trip | 
-| targetTravelDate | Date |  | {string.Join(',', flags)} | trip | 
-| destination_recNo | long |  | {string.Join(',', flags)} | trip | 
-| destinationName_Lookup | string | 64 | {string.Join(',', flags)} | trip | 
-| remarks | string |  | {string.Join(',', flags)} | trip | 
-| advisorRemarks | string |  | {string.Join(',', flags)} | trip | 
-| marketingSource | string | 64 | {string.Join(',', flags)} | trip | 
+| recNo | long |  | Key | trip | 
+| clientProfile_recNo | long |  | FKey | trip | 
+| clientName_Lookup | string | 256 | ReadOnly | trip | 
+| branch_recNo | long |  | FKey | trip | 
+| branch_name | string | 64 | ReadOnly | trip | 
+| name | string | 256 |  | trip | 
+| advisorProfile_recNo | long |  | FKey | trip | 
+| advisorName_Lookup | string | 256 | ReadOnly | trip | 
+| advisorId_Lookup | string | 256 | ReadOnly | trip | 
+| uniqueId | string | 64 |  | trip | 
+| cancelled | bool |  | Required | trip | 
+| startDateTime | DateTime |  |  | trip | 
+| endDateTime | DateTime |  |  | trip | 
+| targetTravelDate | Date |  |  | trip | 
+| destination_recNo | long |  | FKey | trip | 
+| destinationName_Lookup | string | 64 | ReadOnly | trip | 
+| remarks | string |  |  | trip | 
+| advisorRemarks | string |  |  | trip | 
+| marketingSource | string | 64 |  | trip | 
 | clientProfileInfo  | table |  |  |  | 
-| trip_recNo | long |  | {string.Join(',', flags)} | clientProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | clientProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | clientProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | clientProfileInfo | 
-| email | string | 256 | {string.Join(',', flags)} | clientProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | clientProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | clientProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | clientProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | clientProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | clientProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | clientProfileInfo | 
+| trip_recNo | long |  | Key,FKey | clientProfileInfo | 
+| name | string | 256 |  | clientProfileInfo | 
+| id | string | 32 |  | clientProfileInfo | 
+| phone | string | 256 |  | clientProfileInfo | 
+| email | string | 256 |  | clientProfileInfo | 
+| street1 | string | 128 |  | clientProfileInfo | 
+| street2 | string | 128 |  | clientProfileInfo | 
+| city | string | 64 |  | clientProfileInfo | 
+| stateProvince | string | 8 |  | clientProfileInfo | 
+| zipPostalCode | string | 16 |  | clientProfileInfo | 
+| country | string | 4 |  | clientProfileInfo | 
 | tripReservationLink  | table |  |  |  | 
-| trip_recNo | long |  | {string.Join(',', flags)} | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | tripReservationLink | 
+| trip_recNo | long |  | Key,FKey | tripReservationLink | 
+| reservation_recNo | long |  | Key,Auto-Assign | tripReservationLink | 
 | reservation  [shared] | table |  |  | trip | 
-| recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| providerProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| providerName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| travelCategory_recNo | short |  | {string.Join(',', flags)} | reservation | 
-| totalFare | long |  | {string.Join(',', flags)} | reservation | 
-| commissionAmount | long |  | {string.Join(',', flags)} | reservation | 
-| commissionRate | short |  | {string.Join(',', flags)} | reservation | 
-| markupDiscount | long |  | {string.Join(',', flags)} | reservation | 
-| highFare | long |  | {string.Join(',', flags)} | reservation | 
-| lowFare | long |  | {string.Join(',', flags)} | reservation | 
-| confirmationNo | string | 64 | {string.Join(',', flags)} | reservation | 
-| arcBspNo | int |  | {string.Join(',', flags)} | reservation | 
-| ticketNo | long |  | {string.Join(',', flags)} | reservation | 
-| status | short |  | {string.Join(',', flags)} | reservation | 
-| finalPayDueDate | Date |  | {string.Join(',', flags)} | reservation | 
-| bookDateTime | DateTimeOffset |  | {string.Join(',', flags)} | reservation | 
-| startDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| endDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| unitCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| unitDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| numberOfUnits | short |  | {string.Join(',', flags)} | reservation | 
-| rateCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| rateDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| recordLocator | string | 32 | {string.Join(',', flags)} | reservation | 
-| source | string | 32 | {string.Join(',', flags)} | reservation | 
-| travelerName | string | 256 | {string.Join(',', flags)} | reservation | 
-| promoId | string | 256 | {string.Join(',', flags)} | reservation | 
-| itineraryRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| supplierRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| advisorInfo | string | 256 | {string.Join(',', flags)} | reservation | 
-| trackClientPayments | bool |  | {string.Join(',', flags)} | reservation | 
-| clientBalance | long |  | {string.Join(',', flags)} | reservation | 
-| supplierBalance | long |  | {string.Join(',', flags)} | reservation | 
-| accountingEntry_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| paymentCount | int |  | {string.Join(',', flags)} | reservation | 
+| recNo | long |  | Key,FKey | reservation | 
+| supplierProfile_recNo | long |  | FKey | reservation | 
+| supplierName_Lookup | string | 256 | ReadOnly | reservation | 
+| providerProfile_recNo | long |  | FKey | reservation | 
+| providerName_Lookup | string | 256 | ReadOnly | reservation | 
+| travelCategory_recNo | short |  | Required,FKey | reservation | 
+| totalFare | long |  | Required | reservation | 
+| commissionAmount | long |  | Required | reservation | 
+| commissionRate | short |  |  | reservation | 
+| markupDiscount | long |  | Required | reservation | 
+| highFare | long |  |  | reservation | 
+| lowFare | long |  |  | reservation | 
+| confirmationNo | string | 64 |  | reservation | 
+| arcBspNo | int |  |  | reservation | 
+| ticketNo | long |  |  | reservation | 
+| status | short |  | Required | reservation | 
+| finalPayDueDate | Date |  |  | reservation | 
+| bookDateTime | DateTimeOffset |  |  | reservation | 
+| startDateTime | DateTime |  |  | reservation | 
+| endDateTime | DateTime |  |  | reservation | 
+| unitCode | string | 8 |  | reservation | 
+| unitDescription | string | 256 |  | reservation | 
+| numberOfUnits | short |  |  | reservation | 
+| rateCode | string | 8 |  | reservation | 
+| rateDescription | string | 256 |  | reservation | 
+| recordLocator | string | 32 |  | reservation | 
+| source | string | 32 |  | reservation | 
+| travelerName | string | 256 |  | reservation | 
+| promoId | string | 256 |  | reservation | 
+| itineraryRemarks | string |  |  | reservation | 
+| supplierRemarks | string |  |  | reservation | 
+| advisorInfo | string | 256 |  | reservation | 
+| trackClientPayments | bool |  | Required | reservation | 
+| clientBalance | long |  | ReadOnly | reservation | 
+| supplierBalance | long |  | ReadOnly | reservation | 
+| accountingEntry_recNo | long |  | FKey | reservation | 
+| paymentCount | int |  | ReadOnly | reservation | 
 | airReservation  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketType | short |  | {string.Join(',', flags)} | airReservation | 
-| endingTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| originalTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airReservation | 
-| domIntlIndicator | short |  | {string.Join(',', flags)} | airReservation | 
-| eTicketIndicator | short |  | {string.Join(',', flags)} | airReservation | 
+| reservation_recNo | long |  | Key,FKey | airReservation | 
+| ticketType | short |  |  | airReservation | 
+| endingTicketNo | long |  |  | airReservation | 
+| originalTicketNo | long |  |  | airReservation | 
+| ticketDesignator | string | 32 |  | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | 
+| eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | reservation | 
-| recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| airReservation_recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| departDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| departCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| departCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| arriveDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| arriveCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| arriveCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| connection | string | 1 | {string.Join(',', flags)} | airSegment | 
-| flightNo | short |  | {string.Join(',', flags)} | airSegment | 
-| provider | string | 8 | {string.Join(',', flags)} | airSegment | 
-| fare | long |  | {string.Join(',', flags)} | airSegment | 
-| classOfService | string | 2 | {string.Join(',', flags)} | airSegment | 
-| fareBasis | string | 16 | {string.Join(',', flags)} | airSegment | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airSegment | 
-| mileage | short |  | {string.Join(',', flags)} | airSegment | 
-| indexNo | short |  | {string.Join(',', flags)} | airSegment | 
+| recNo | long |  | Key | airSegment | 
+| airReservation_recNo | long |  | FKey | airSegment | 
+| departDateTime | DateTime |  |  | airSegment | 
+| departCityCode | string | 3 |  | airSegment | 
+| departCityName | string | 64 |  | airSegment | 
+| arriveDateTime | DateTime |  |  | airSegment | 
+| arriveCityCode | string | 3 |  | airSegment | 
+| arriveCityName | string | 64 |  | airSegment | 
+| connection | string | 1 |  | airSegment | 
+| flightNo | short |  |  | airSegment | 
+| provider | string | 8 |  | airSegment | 
+| fare | long |  |  | airSegment | 
+| classOfService | string | 2 |  | airSegment | 
+| fareBasis | string | 16 |  | airSegment | 
+| ticketDesignator | string | 32 |  | airSegment | 
+| mileage | short |  |  | airSegment | 
+| indexNo | short |  |  | airSegment | 
 | railReservation  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | railReservation | 
-| departStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| departStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| arriveStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| arriveStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| trainNo | short |  | {string.Join(',', flags)} | railReservation | 
-| classOfService | string | 2 | {string.Join(',', flags)} | railReservation | 
+| reservation_recNo | long |  | Key,FKey | railReservation | 
+| departStationCode | string | 3 |  | railReservation | 
+| departStationName | string | 64 |  | railReservation | 
+| arriveStationCode | string | 3 |  | railReservation | 
+| arriveStationName | string | 64 |  | railReservation | 
+| trainNo | short |  |  | railReservation | 
+| classOfService | string | 2 |  | railReservation | 
 | supplierProfileInfo  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | supplierProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | supplierProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | supplierProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | supplierProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | supplierProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | supplierProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| name | string | 256 |  | supplierProfileInfo | 
+| id | string | 32 |  | supplierProfileInfo | 
+| phone | string | 256 |  | supplierProfileInfo | 
+| fax | string | 256 |  | supplierProfileInfo | 
+| street1 | string | 128 |  | supplierProfileInfo | 
+| street2 | string | 128 |  | supplierProfileInfo | 
+| city | string | 64 |  | supplierProfileInfo | 
+| stateProvince | string | 8 |  | supplierProfileInfo | 
+| zipPostalCode | string | 16 |  | supplierProfileInfo | 
+| country | string | 4 |  | supplierProfileInfo | 
 | providerProfileInfo  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | providerProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | providerProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | providerProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | providerProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | providerProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | providerProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| name | string | 256 |  | providerProfileInfo | 
+| id | string | 32 |  | providerProfileInfo | 
+| phone | string | 256 |  | providerProfileInfo | 
+| fax | string | 256 |  | providerProfileInfo | 
+| street1 | string | 128 |  | providerProfileInfo | 
+| street2 | string | 128 |  | providerProfileInfo | 
+| city | string | 64 |  | providerProfileInfo | 
+| stateProvince | string | 8 |  | providerProfileInfo | 
+| zipPostalCode | string | 16 |  | providerProfileInfo | 
+| country | string | 4 |  | providerProfileInfo | 
 | reservationTraveler  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationTraveler | 
-| person_recNo | long |  | {string.Join(',', flags)} | reservationTraveler | 
-| nameLookup | string | 256 | {string.Join(',', flags)} | reservationTraveler | 
-| isPrimary | bool |  | {string.Join(',', flags)} | reservationTraveler | 
+| reservation_recNo | long |  | Key,FKey | reservationTraveler | 
+| person_recNo | long |  | Key,Required,FKey | reservationTraveler | 
+| nameLookup | string | 256 | ReadOnly | reservationTraveler | 
+| isPrimary | bool |  |  | reservationTraveler | 
 | reservationAdvisor  | table |  |  | tripReservationLink | 
-| recNo | long |  | {string.Join(',', flags)} | reservationAdvisor | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationAdvisor | 
-| advisorProfile_recNo | long |  | {string.Join(',', flags)} | reservationAdvisor | 
-| advisorName | string | 256 | {string.Join(',', flags)} | reservationAdvisor | 
-| id | string | 32 | {string.Join(',', flags)} | reservationAdvisor | 
-| commissionRate | short |  | {string.Join(',', flags)} | reservationAdvisor | 
-| commissionAmount | long |  | {string.Join(',', flags)} | reservationAdvisor | 
-| datePaid | Date |  | {string.Join(',', flags)} | reservationAdvisor | 
-| reconciliationRecNo | long |  | {string.Join(',', flags)} | reservationAdvisor | 
-| reconciliationDate | Date |  | {string.Join(',', flags)} | reservationAdvisor | 
+| recNo | long |  | Key | reservationAdvisor | 
+| reservation_recNo | long |  | FKey | reservationAdvisor | 
+| advisorProfile_recNo | long |  | Required,FKey | reservationAdvisor | 
+| advisorName | string | 256 | ReadOnly | reservationAdvisor | 
+| id | string | 32 | ReadOnly | reservationAdvisor | 
+| commissionRate | short |  |  | reservationAdvisor | 
+| commissionAmount | long |  |  | reservationAdvisor | 
+| datePaid | Date |  |  | reservationAdvisor | 
+| reconciliationRecNo | long |  | ReadOnly | reservationAdvisor | 
+| reconciliationDate | Date |  | ReadOnly | reservationAdvisor | 
 | reservationTax  | table |  |  | tripReservationLink | 
-| recNo | long |  | {string.Join(',', flags)} | reservationTax | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationTax | 
-| code | string | 2 | {string.Join(',', flags)} | reservationTax | 
-| amount | long |  | {string.Join(',', flags)} | reservationTax | 
+| recNo | long |  | Key | reservationTax | 
+| reservation_recNo | long |  | FKey | reservationTax | 
+| code | string | 2 |  | reservationTax | 
+| amount | long |  |  | reservationTax | 
 | reservationAttachmentLink  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationAttachmentLink | 
-| attachment_recNo | long |  | {string.Join(',', flags)} | reservationAttachmentLink | 
+| reservation_recNo | long |  | FKey | reservationAttachmentLink | 
+| attachment_recNo | long |  | Key,Auto-Assign | reservationAttachmentLink | 
 | reservationAttachment  [shared] | table |  |  | reservation | 
-| recNo | long |  | {string.Join(',', flags)} | attachment | 
-| type | short |  | {string.Join(',', flags)} | attachment | 
-| description | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileNameLinkURL | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileData | byte[] |  | {string.Join(',', flags)} | attachment | 
-| size | int |  | {string.Join(',', flags)} | attachment | 
-| compressed | bool |  | {string.Join(',', flags)} | attachment | 
+| recNo | long |  | Key,FKey | attachment | 
+| type | short |  | Required | attachment | 
+| description | string | 256 |  | attachment | 
+| fileNameLinkURL | string | 256 | Required | attachment | 
+| fileData | byte[] |  |  | attachment | 
+| size | int |  |  | attachment | 
+| compressed | bool |  |  | attachment | 
 | reservationTag  | table |  |  | tripReservationLink | 
-| recNo | long |  | {string.Join(',', flags)} | reservationTag | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationTag | 
-| tag_recNo | long |  | {string.Join(',', flags)} | reservationTag | 
-| name | string | 64 | {string.Join(',', flags)} | reservationTag | 
-| value | string | 1024 | {string.Join(',', flags)} | reservationTag | 
+| recNo | long |  | Key | reservationTag | 
+| reservation_recNo | long |  | FKey | reservationTag | 
+| tag_recNo | long |  | Required,FKey | reservationTag | 
+| name | string | 64 | ReadOnly | reservationTag | 
+| value | string | 1024 |  | reservationTag | 
 | cruiseReservation  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | cruiseReservation | 
-| type | short |  | {string.Join(',', flags)} | cruiseReservation | 
-| deck | string | 32 | {string.Join(',', flags)} | cruiseReservation | 
-| cabin | string | 16 | {string.Join(',', flags)} | cruiseReservation | 
+| reservation_recNo | long |  | Key,FKey | cruiseReservation | 
+| type | short |  | Required | cruiseReservation | 
+| deck | string | 32 |  | cruiseReservation | 
+| cabin | string | 16 |  | cruiseReservation | 
 | cruiseSegment  | table |  |  | reservation | 
-| recNo | long |  | {string.Join(',', flags)} | cruiseSegment | 
-| cruiseReservation_recNo | long |  | {string.Join(',', flags)} | cruiseSegment | 
-| departDateTime | DateTime |  | {string.Join(',', flags)} | cruiseSegment | 
-| departPortCode | string | 3 | {string.Join(',', flags)} | cruiseSegment | 
-| departPortName | string | 64 | {string.Join(',', flags)} | cruiseSegment | 
-| arriveDateTime | DateTime |  | {string.Join(',', flags)} | cruiseSegment | 
-| arrivePortCode | string | 3 | {string.Join(',', flags)} | cruiseSegment | 
-| arrivePortName | string | 64 | {string.Join(',', flags)} | cruiseSegment | 
-| remarks | string | 256 | {string.Join(',', flags)} | cruiseSegment | 
-| indexNo | short |  | {string.Join(',', flags)} | cruiseSegment | 
+| recNo | long |  | Key | cruiseSegment | 
+| cruiseReservation_recNo | long |  | FKey | cruiseSegment | 
+| departDateTime | DateTime |  |  | cruiseSegment | 
+| departPortCode | string | 3 |  | cruiseSegment | 
+| departPortName | string | 64 |  | cruiseSegment | 
+| arriveDateTime | DateTime |  |  | cruiseSegment | 
+| arrivePortCode | string | 3 |  | cruiseSegment | 
+| arrivePortName | string | 64 |  | cruiseSegment | 
+| remarks | string | 256 |  | cruiseSegment | 
+| indexNo | short |  |  | cruiseSegment | 
 | cruiseSubReservationLink  | table |  |  | reservation | 
-| parentReservation_recNo | long |  | {string.Join(',', flags)} | subReservationLink | 
-| subReservation_recNo | long |  | {string.Join(',', flags)} | subReservationLink | 
+| parentReservation_recNo | long |  | Key,FKey | subReservationLink | 
+| subReservation_recNo | long |  | Key,Auto-Assign | subReservationLink | 
 | cruiseSubReservation  [shared] | table |  |  | cruiseReservation | 
-| recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| providerProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| providerName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| travelCategory_recNo | short |  | {string.Join(',', flags)} | reservation | 
-| totalFare | long |  | {string.Join(',', flags)} | reservation | 
-| commissionAmount | long |  | {string.Join(',', flags)} | reservation | 
-| commissionRate | short |  | {string.Join(',', flags)} | reservation | 
-| markupDiscount | long |  | {string.Join(',', flags)} | reservation | 
-| highFare | long |  | {string.Join(',', flags)} | reservation | 
-| lowFare | long |  | {string.Join(',', flags)} | reservation | 
-| confirmationNo | string | 64 | {string.Join(',', flags)} | reservation | 
-| arcBspNo | int |  | {string.Join(',', flags)} | reservation | 
-| ticketNo | long |  | {string.Join(',', flags)} | reservation | 
-| status | short |  | {string.Join(',', flags)} | reservation | 
-| finalPayDueDate | Date |  | {string.Join(',', flags)} | reservation | 
-| bookDateTime | DateTimeOffset |  | {string.Join(',', flags)} | reservation | 
-| startDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| endDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| unitCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| unitDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| numberOfUnits | short |  | {string.Join(',', flags)} | reservation | 
-| rateCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| rateDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| recordLocator | string | 32 | {string.Join(',', flags)} | reservation | 
-| source | string | 32 | {string.Join(',', flags)} | reservation | 
-| travelerName | string | 256 | {string.Join(',', flags)} | reservation | 
-| promoId | string | 256 | {string.Join(',', flags)} | reservation | 
-| itineraryRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| supplierRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| advisorInfo | string | 256 | {string.Join(',', flags)} | reservation | 
-| trackClientPayments | bool |  | {string.Join(',', flags)} | reservation | 
+| recNo | long |  | Key,FKey | reservation | 
+| supplierProfile_recNo | long |  | FKey | reservation | 
+| supplierName_Lookup | string | 256 | ReadOnly | reservation | 
+| providerProfile_recNo | long |  | FKey | reservation | 
+| providerName_Lookup | string | 256 | ReadOnly | reservation | 
+| travelCategory_recNo | short |  | Required,FKey | reservation | 
+| totalFare | long |  | Required | reservation | 
+| commissionAmount | long |  | Required | reservation | 
+| commissionRate | short |  |  | reservation | 
+| markupDiscount | long |  | Required | reservation | 
+| highFare | long |  |  | reservation | 
+| lowFare | long |  |  | reservation | 
+| confirmationNo | string | 64 |  | reservation | 
+| arcBspNo | int |  |  | reservation | 
+| ticketNo | long |  |  | reservation | 
+| status | short |  | Required | reservation | 
+| finalPayDueDate | Date |  |  | reservation | 
+| bookDateTime | DateTimeOffset |  |  | reservation | 
+| startDateTime | DateTime |  |  | reservation | 
+| endDateTime | DateTime |  |  | reservation | 
+| unitCode | string | 8 |  | reservation | 
+| unitDescription | string | 256 |  | reservation | 
+| numberOfUnits | short |  |  | reservation | 
+| rateCode | string | 8 |  | reservation | 
+| rateDescription | string | 256 |  | reservation | 
+| recordLocator | string | 32 |  | reservation | 
+| source | string | 32 |  | reservation | 
+| travelerName | string | 256 |  | reservation | 
+| promoId | string | 256 |  | reservation | 
+| itineraryRemarks | string |  |  | reservation | 
+| supplierRemarks | string |  |  | reservation | 
+| advisorInfo | string | 256 |  | reservation | 
+| trackClientPayments | bool |  | Required | reservation | 
 | airReservation  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketType | short |  | {string.Join(',', flags)} | airReservation | 
-| endingTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| originalTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airReservation | 
-| domIntlIndicator | short |  | {string.Join(',', flags)} | airReservation | 
-| eTicketIndicator | short |  | {string.Join(',', flags)} | airReservation | 
+| reservation_recNo | long |  | Key,FKey | airReservation | 
+| ticketType | short |  |  | airReservation | 
+| endingTicketNo | long |  |  | airReservation | 
+| originalTicketNo | long |  |  | airReservation | 
+| ticketDesignator | string | 32 |  | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | 
+| eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | cruiseSubReservation | 
-| recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| airReservation_recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| departDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| departCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| departCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| arriveDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| arriveCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| arriveCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| connection | string | 1 | {string.Join(',', flags)} | airSegment | 
-| flightNo | short |  | {string.Join(',', flags)} | airSegment | 
-| provider | string | 8 | {string.Join(',', flags)} | airSegment | 
-| fare | long |  | {string.Join(',', flags)} | airSegment | 
-| classOfService | string | 2 | {string.Join(',', flags)} | airSegment | 
-| fareBasis | string | 16 | {string.Join(',', flags)} | airSegment | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airSegment | 
-| mileage | short |  | {string.Join(',', flags)} | airSegment | 
-| indexNo | short |  | {string.Join(',', flags)} | airSegment | 
+| recNo | long |  | Key | airSegment | 
+| airReservation_recNo | long |  | FKey | airSegment | 
+| departDateTime | DateTime |  |  | airSegment | 
+| departCityCode | string | 3 |  | airSegment | 
+| departCityName | string | 64 |  | airSegment | 
+| arriveDateTime | DateTime |  |  | airSegment | 
+| arriveCityCode | string | 3 |  | airSegment | 
+| arriveCityName | string | 64 |  | airSegment | 
+| connection | string | 1 |  | airSegment | 
+| flightNo | short |  |  | airSegment | 
+| provider | string | 8 |  | airSegment | 
+| fare | long |  |  | airSegment | 
+| classOfService | string | 2 |  | airSegment | 
+| fareBasis | string | 16 |  | airSegment | 
+| ticketDesignator | string | 32 |  | airSegment | 
+| mileage | short |  |  | airSegment | 
+| indexNo | short |  |  | airSegment | 
 | railReservation  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | railReservation | 
-| departStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| departStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| arriveStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| arriveStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| trainNo | short |  | {string.Join(',', flags)} | railReservation | 
-| classOfService | string | 2 | {string.Join(',', flags)} | railReservation | 
+| reservation_recNo | long |  | Key,FKey | railReservation | 
+| departStationCode | string | 3 |  | railReservation | 
+| departStationName | string | 64 |  | railReservation | 
+| arriveStationCode | string | 3 |  | railReservation | 
+| arriveStationName | string | 64 |  | railReservation | 
+| trainNo | short |  |  | railReservation | 
+| classOfService | string | 2 |  | railReservation | 
 | cruiseSubSupplierProfileInfo  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | supplierProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | supplierProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | supplierProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | supplierProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | supplierProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | supplierProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| name | string | 256 |  | supplierProfileInfo | 
+| id | string | 32 |  | supplierProfileInfo | 
+| phone | string | 256 |  | supplierProfileInfo | 
+| fax | string | 256 |  | supplierProfileInfo | 
+| street1 | string | 128 |  | supplierProfileInfo | 
+| street2 | string | 128 |  | supplierProfileInfo | 
+| city | string | 64 |  | supplierProfileInfo | 
+| stateProvince | string | 8 |  | supplierProfileInfo | 
+| zipPostalCode | string | 16 |  | supplierProfileInfo | 
+| country | string | 4 |  | supplierProfileInfo | 
 | cruiseSubProviderProfileInfo  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | providerProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | providerProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | providerProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | providerProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | providerProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | providerProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| name | string | 256 |  | providerProfileInfo | 
+| id | string | 32 |  | providerProfileInfo | 
+| phone | string | 256 |  | providerProfileInfo | 
+| fax | string | 256 |  | providerProfileInfo | 
+| street1 | string | 128 |  | providerProfileInfo | 
+| street2 | string | 128 |  | providerProfileInfo | 
+| city | string | 64 |  | providerProfileInfo | 
+| stateProvince | string | 8 |  | providerProfileInfo | 
+| zipPostalCode | string | 16 |  | providerProfileInfo | 
+| country | string | 4 |  | providerProfileInfo | 
 | tourReservation  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | tourReservation | 
+| reservation_recNo | long |  | Key,FKey | tourReservation | 
 | tourSubReservationLink  | table |  |  | reservation | 
-| parentReservation_recNo | long |  | {string.Join(',', flags)} | subReservationLink | 
-| subReservation_recNo | long |  | {string.Join(',', flags)} | subReservationLink | 
+| parentReservation_recNo | long |  | Key,FKey | subReservationLink | 
+| subReservation_recNo | long |  | Key,Auto-Assign | subReservationLink | 
 | tourSubReservation  [shared] | table |  |  | tourReservation | 
-| recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| supplierName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| providerProfile_recNo | long |  | {string.Join(',', flags)} | reservation | 
-| providerName_Lookup | string | 256 | {string.Join(',', flags)} | reservation | 
-| travelCategory_recNo | short |  | {string.Join(',', flags)} | reservation | 
-| totalFare | long |  | {string.Join(',', flags)} | reservation | 
-| commissionAmount | long |  | {string.Join(',', flags)} | reservation | 
-| commissionRate | short |  | {string.Join(',', flags)} | reservation | 
-| markupDiscount | long |  | {string.Join(',', flags)} | reservation | 
-| highFare | long |  | {string.Join(',', flags)} | reservation | 
-| lowFare | long |  | {string.Join(',', flags)} | reservation | 
-| confirmationNo | string | 64 | {string.Join(',', flags)} | reservation | 
-| arcBspNo | int |  | {string.Join(',', flags)} | reservation | 
-| ticketNo | long |  | {string.Join(',', flags)} | reservation | 
-| status | short |  | {string.Join(',', flags)} | reservation | 
-| finalPayDueDate | Date |  | {string.Join(',', flags)} | reservation | 
-| bookDateTime | DateTimeOffset |  | {string.Join(',', flags)} | reservation | 
-| startDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| endDateTime | DateTime |  | {string.Join(',', flags)} | reservation | 
-| unitCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| unitDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| numberOfUnits | short |  | {string.Join(',', flags)} | reservation | 
-| rateCode | string | 8 | {string.Join(',', flags)} | reservation | 
-| rateDescription | string | 256 | {string.Join(',', flags)} | reservation | 
-| recordLocator | string | 32 | {string.Join(',', flags)} | reservation | 
-| source | string | 32 | {string.Join(',', flags)} | reservation | 
-| travelerName | string | 256 | {string.Join(',', flags)} | reservation | 
-| promoId | string | 256 | {string.Join(',', flags)} | reservation | 
-| itineraryRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| supplierRemarks | string |  | {string.Join(',', flags)} | reservation | 
-| advisorInfo | string | 256 | {string.Join(',', flags)} | reservation | 
-| trackClientPayments | bool |  | {string.Join(',', flags)} | reservation | 
+| recNo | long |  | Key,FKey | reservation | 
+| supplierProfile_recNo | long |  | FKey | reservation | 
+| supplierName_Lookup | string | 256 | ReadOnly | reservation | 
+| providerProfile_recNo | long |  | FKey | reservation | 
+| providerName_Lookup | string | 256 | ReadOnly | reservation | 
+| travelCategory_recNo | short |  | Required,FKey | reservation | 
+| totalFare | long |  | Required | reservation | 
+| commissionAmount | long |  | Required | reservation | 
+| commissionRate | short |  |  | reservation | 
+| markupDiscount | long |  | Required | reservation | 
+| highFare | long |  |  | reservation | 
+| lowFare | long |  |  | reservation | 
+| confirmationNo | string | 64 |  | reservation | 
+| arcBspNo | int |  |  | reservation | 
+| ticketNo | long |  |  | reservation | 
+| status | short |  | Required | reservation | 
+| finalPayDueDate | Date |  |  | reservation | 
+| bookDateTime | DateTimeOffset |  |  | reservation | 
+| startDateTime | DateTime |  |  | reservation | 
+| endDateTime | DateTime |  |  | reservation | 
+| unitCode | string | 8 |  | reservation | 
+| unitDescription | string | 256 |  | reservation | 
+| numberOfUnits | short |  |  | reservation | 
+| rateCode | string | 8 |  | reservation | 
+| rateDescription | string | 256 |  | reservation | 
+| recordLocator | string | 32 |  | reservation | 
+| source | string | 32 |  | reservation | 
+| travelerName | string | 256 |  | reservation | 
+| promoId | string | 256 |  | reservation | 
+| itineraryRemarks | string |  |  | reservation | 
+| supplierRemarks | string |  |  | reservation | 
+| advisorInfo | string | 256 |  | reservation | 
+| trackClientPayments | bool |  | Required | reservation | 
 | airReservation  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketType | short |  | {string.Join(',', flags)} | airReservation | 
-| endingTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| originalTicketNo | long |  | {string.Join(',', flags)} | airReservation | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airReservation | 
-| domIntlIndicator | short |  | {string.Join(',', flags)} | airReservation | 
-| eTicketIndicator | short |  | {string.Join(',', flags)} | airReservation | 
+| reservation_recNo | long |  | Key,FKey | airReservation | 
+| ticketType | short |  |  | airReservation | 
+| endingTicketNo | long |  |  | airReservation | 
+| originalTicketNo | long |  |  | airReservation | 
+| ticketDesignator | string | 32 |  | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | 
+| eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | tourSubReservation | 
-| recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| airReservation_recNo | long |  | {string.Join(',', flags)} | airSegment | 
-| departDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| departCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| departCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| arriveDateTime | DateTime |  | {string.Join(',', flags)} | airSegment | 
-| arriveCityCode | string | 3 | {string.Join(',', flags)} | airSegment | 
-| arriveCityName | string | 64 | {string.Join(',', flags)} | airSegment | 
-| connection | string | 1 | {string.Join(',', flags)} | airSegment | 
-| flightNo | short |  | {string.Join(',', flags)} | airSegment | 
-| provider | string | 8 | {string.Join(',', flags)} | airSegment | 
-| fare | long |  | {string.Join(',', flags)} | airSegment | 
-| classOfService | string | 2 | {string.Join(',', flags)} | airSegment | 
-| fareBasis | string | 16 | {string.Join(',', flags)} | airSegment | 
-| ticketDesignator | string | 32 | {string.Join(',', flags)} | airSegment | 
-| mileage | short |  | {string.Join(',', flags)} | airSegment | 
-| indexNo | short |  | {string.Join(',', flags)} | airSegment | 
+| recNo | long |  | Key | airSegment | 
+| airReservation_recNo | long |  | FKey | airSegment | 
+| departDateTime | DateTime |  |  | airSegment | 
+| departCityCode | string | 3 |  | airSegment | 
+| departCityName | string | 64 |  | airSegment | 
+| arriveDateTime | DateTime |  |  | airSegment | 
+| arriveCityCode | string | 3 |  | airSegment | 
+| arriveCityName | string | 64 |  | airSegment | 
+| connection | string | 1 |  | airSegment | 
+| flightNo | short |  |  | airSegment | 
+| provider | string | 8 |  | airSegment | 
+| fare | long |  |  | airSegment | 
+| classOfService | string | 2 |  | airSegment | 
+| fareBasis | string | 16 |  | airSegment | 
+| ticketDesignator | string | 32 |  | airSegment | 
+| mileage | short |  |  | airSegment | 
+| indexNo | short |  |  | airSegment | 
 | railReservation  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | railReservation | 
-| departStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| departStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| arriveStationCode | string | 3 | {string.Join(',', flags)} | railReservation | 
-| arriveStationName | string | 64 | {string.Join(',', flags)} | railReservation | 
-| trainNo | short |  | {string.Join(',', flags)} | railReservation | 
-| classOfService | string | 2 | {string.Join(',', flags)} | railReservation | 
+| reservation_recNo | long |  | Key,FKey | railReservation | 
+| departStationCode | string | 3 |  | railReservation | 
+| departStationName | string | 64 |  | railReservation | 
+| arriveStationCode | string | 3 |  | railReservation | 
+| arriveStationName | string | 64 |  | railReservation | 
+| trainNo | short |  |  | railReservation | 
+| classOfService | string | 2 |  | railReservation | 
 | tourSubSupplierProfileInfo  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | supplierProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | supplierProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | supplierProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | supplierProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | supplierProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | supplierProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | supplierProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| name | string | 256 |  | supplierProfileInfo | 
+| id | string | 32 |  | supplierProfileInfo | 
+| phone | string | 256 |  | supplierProfileInfo | 
+| fax | string | 256 |  | supplierProfileInfo | 
+| street1 | string | 128 |  | supplierProfileInfo | 
+| street2 | string | 128 |  | supplierProfileInfo | 
+| city | string | 64 |  | supplierProfileInfo | 
+| stateProvince | string | 8 |  | supplierProfileInfo | 
+| zipPostalCode | string | 16 |  | supplierProfileInfo | 
+| country | string | 4 |  | supplierProfileInfo | 
 | tourSubProviderProfileInfo  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | providerProfileInfo | 
-| name | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| id | string | 32 | {string.Join(',', flags)} | providerProfileInfo | 
-| phone | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| fax | string | 256 | {string.Join(',', flags)} | providerProfileInfo | 
-| street1 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| street2 | string | 128 | {string.Join(',', flags)} | providerProfileInfo | 
-| city | string | 64 | {string.Join(',', flags)} | providerProfileInfo | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | providerProfileInfo | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | providerProfileInfo | 
-| country | string | 4 | {string.Join(',', flags)} | providerProfileInfo | 
+| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| name | string | 256 |  | providerProfileInfo | 
+| id | string | 32 |  | providerProfileInfo | 
+| phone | string | 256 |  | providerProfileInfo | 
+| fax | string | 256 |  | providerProfileInfo | 
+| street1 | string | 128 |  | providerProfileInfo | 
+| street2 | string | 128 |  | providerProfileInfo | 
+| city | string | 64 |  | providerProfileInfo | 
+| stateProvince | string | 8 |  | providerProfileInfo | 
+| zipPostalCode | string | 16 |  | providerProfileInfo | 
+| country | string | 4 |  | providerProfileInfo | 
 | reservationDeposit  | table |  |  | tripReservationLink | 
-| recNo | long |  | {string.Join(',', flags)} | reservationDeposit | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | reservationDeposit | 
-| dueAmount | long |  | {string.Join(',', flags)} | reservationDeposit | 
-| dueDate | Date |  | {string.Join(',', flags)} | reservationDeposit | 
-| notes | string | 256 | {string.Join(',', flags)} | reservationDeposit | 
-| completed | DateTimeOffset |  | {string.Join(',', flags)} | reservationDeposit | 
-| completedBy_appUserRecNo | long |  | {string.Join(',', flags)} | reservationDeposit | 
-| completedBy_appUserId | string | 64 | {string.Join(',', flags)} | reservationDeposit | 
+| recNo | long |  | Key | reservationDeposit | 
+| reservation_recNo | long |  | FKey | reservationDeposit | 
+| dueAmount | long |  | Required | reservationDeposit | 
+| dueDate | Date |  | Required | reservationDeposit | 
+| notes | string | 256 |  | reservationDeposit | 
+| completed | DateTimeOffset |  |  | reservationDeposit | 
+| completedBy_appUserRecNo | long |  |  | reservationDeposit | 
+| completedBy_appUserId | string | 64 | ReadOnly | reservationDeposit | 
 | clientPaymentInfo  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | {string.Join(',', flags)} | clientPaymentInfo | 
-| paymentDate | Date |  | {string.Join(',', flags)} | clientPaymentInfo | 
-| amount | long |  | {string.Join(',', flags)} | clientPaymentInfo | 
-| method | short |  | {string.Join(',', flags)} | clientPaymentInfo | 
-| agencyProcessed | bool |  | {string.Join(',', flags)} | clientPaymentInfo | 
-| cardNumber | string | 64 | {string.Join(',', flags)} | clientPaymentInfo | 
-| cardNumberToken | string | 64 | {string.Join(',', flags)} | clientPaymentInfo | 
-| expirationDate | Date |  | {string.Join(',', flags)} | clientPaymentInfo | 
+| reservation_recNo | long |  | Key,FKey | clientPaymentInfo | 
+| paymentDate | Date |  |  | clientPaymentInfo | 
+| amount | long |  |  | clientPaymentInfo | 
+| method | short |  | Required | clientPaymentInfo | 
+| agencyProcessed | bool |  | Required | clientPaymentInfo | 
+| cardNumber | string | 64 |  | clientPaymentInfo | 
+| cardNumberToken | string | 64 |  | clientPaymentInfo | 
+| expirationDate | Date |  |  | clientPaymentInfo | 
 | tripAttachmentLink  | table |  |  |  | 
-| trip_recNo | long |  | {string.Join(',', flags)} | tripAttachmentLink | 
-| attachment_recNo | long |  | {string.Join(',', flags)} | tripAttachmentLink | 
+| trip_recNo | long |  | Key,FKey | tripAttachmentLink | 
+| attachment_recNo | long |  | Key,Auto-Assign | tripAttachmentLink | 
 | tripAttachment  [shared] | table |  |  | trip | 
-| recNo | long |  | {string.Join(',', flags)} | attachment | 
-| type | short |  | {string.Join(',', flags)} | attachment | 
-| description | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileNameLinkURL | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileData | byte[] |  | {string.Join(',', flags)} | attachment | 
-| size | int |  | {string.Join(',', flags)} | attachment | 
-| compressed | bool |  | {string.Join(',', flags)} | attachment | 
+| recNo | long |  | Key,FKey | attachment | 
+| type | short |  | Required | attachment | 
+| description | string | 256 |  | attachment | 
+| fileNameLinkURL | string | 256 | Required | attachment | 
+| fileData | byte[] |  |  | attachment | 
+| size | int |  |  | attachment | 
+| compressed | bool |  |  | attachment | 
 | tripTag  | table |  |  |  | 
-| recNo | long |  | {string.Join(',', flags)} | tripTag | 
-| trip_recNo | long |  | {string.Join(',', flags)} | tripTag | 
-| tag_recNo | long |  | {string.Join(',', flags)} | tripTag | 
-| name | string | 64 | {string.Join(',', flags)} | tripTag | 
-| value | string | 1024 | {string.Join(',', flags)} | tripTag | 
+| recNo | long |  | Key | tripTag | 
+| trip_recNo | long |  | FKey | tripTag | 
+| tag_recNo | long |  | Required,FKey | tripTag | 
+| name | string | 64 | ReadOnly | tripTag | 
+| value | string | 1024 |  | tripTag | 
 | tripActionItemLink  | table |  |  |  | 
-| trip_recNo | long |  | {string.Join(',', flags)} | tripActionItemLink | 
-| actionItem_recNo | long |  | {string.Join(',', flags)} | tripActionItemLink | 
+| trip_recNo | long |  | Key,FKey | tripActionItemLink | 
+| actionItem_recNo | long |  | Key,Auto-Assign | tripActionItemLink | 
 | tripActionItem  | table |  |  | trip | 
-| recNo | long |  | {string.Join(',', flags)} | actionItem | 
-| type | short |  | {string.Join(',', flags)} | actionItem | 
-| description | string | 256 | {string.Join(',', flags)} | actionItem | 
-| triggerIndex | short |  | {string.Join(',', flags)} | actionItem | 
-| triggerDaysOffset | short |  | {string.Join(',', flags)} | actionItem | 
-| triggerFixedDate | Date |  | {string.Join(',', flags)} | actionItem | 
-| completed | DateTimeOffset |  | {string.Join(',', flags)} | actionItem | 
-| completedBy_appUserRecNo | long |  | {string.Join(',', flags)} | actionItem | 
-| completedBy_appUserId | string | 64 | {string.Join(',', flags)} | actionItem | 
-| notes | string | 256 | {string.Join(',', flags)} | actionItem | 
+| recNo | long |  | Key,FKey | actionItem | 
+| type | short |  | Required | actionItem | 
+| description | string | 256 |  | actionItem | 
+| triggerIndex | short |  | Required | actionItem | 
+| triggerDaysOffset | short |  |  | actionItem | 
+| triggerFixedDate | Date |  |  | actionItem | 
+| completed | DateTimeOffset |  |  | actionItem | 
+| completedBy_appUserRecNo | long |  |  | actionItem | 
+| completedBy_appUserId | string | 64 |  | actionItem | 
+| notes | string | 256 |  | actionItem | 
 
 

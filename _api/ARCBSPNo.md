@@ -8,7 +8,7 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | ARCBSPNo | 
-| description | string | 64 | {string.Join(',', flags)} | ARCBSPNo | 
+| recNo | long |  | Key | ARCBSPNo | 
+| description | string | 64 |  | ARCBSPNo | 
 
 

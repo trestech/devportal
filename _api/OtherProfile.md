@@ -8,73 +8,73 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| profile_recNo | long |  | {string.Join(',', flags)} | otherProfile | 
+| profile_recNo | long |  | Key,Auto-Assign | otherProfile | 
 | profile  [shared] | table |  |  |  | 
-| recNo | long |  | {string.Join(',', flags)} | profile | 
-| name | string | 256 | {string.Join(',', flags)} | profile | 
-| activeStatus | bool |  | {string.Join(',', flags)} | profile | 
-| uniqueId | string | 64 | {string.Join(',', flags)} | profile | 
-| remarks | string |  | {string.Join(',', flags)} | profile | 
-| accountingReference | string | 64 | {string.Join(',', flags)} | profile | 
-| permitMarketing | bool |  | {string.Join(',', flags)} | profile | 
+| recNo | long |  | Key,FKey | profile | 
+| name | string | 256 |  | profile | 
+| activeStatus | bool |  |  | profile | 
+| uniqueId | string | 64 |  | profile | 
+| remarks | string |  |  | profile | 
+| accountingReference | string | 64 |  | profile | 
+| permitMarketing | bool |  |  | profile | 
 | profilePersonLink  | table |  |  | otherProfile | 
-| person_recNo | long |  | {string.Join(',', flags)} | profilePersonLink | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profilePersonLink | 
-| role | string | 64 | {string.Join(',', flags)} | profilePersonLink | 
-| isPrimary | bool |  | {string.Join(',', flags)} | profilePersonLink | 
-| name | string | 256 | {string.Join(',', flags)} | profilePersonLink | 
-| primaryPhone | string | 256 | {string.Join(',', flags)} | profilePersonLink | 
-| primaryEmail | string | 256 | {string.Join(',', flags)} | profilePersonLink | 
+| person_recNo | long |  | Key,Required,FKey | profilePersonLink | 
+| profile_recNo | long |  | Key,FKey | profilePersonLink | 
+| role | string | 64 |  | profilePersonLink | 
+| isPrimary | bool |  |  | profilePersonLink | 
+| name | string | 256 | ReadOnly | profilePersonLink | 
+| primaryPhone | string | 256 | ReadOnly | profilePersonLink | 
+| primaryEmail | string | 256 | ReadOnly | profilePersonLink | 
 | profileCommunicationLink  | table |  |  | otherProfile | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profileCommunicationLink | 
-| communication_recNo | long |  | {string.Join(',', flags)} | profileCommunicationLink | 
+| profile_recNo | long |  | Key,FKey | profileCommunicationLink | 
+| communication_recNo | long |  | Key,Auto-Assign | profileCommunicationLink | 
 | communication  [shared] | table |  |  | profile | 
-| recNo | long |  | {string.Join(',', flags)} | communication | 
-| type | short |  | {string.Join(',', flags)} | communication | 
-| subType | string | 32 | {string.Join(',', flags)} | communication | 
-| value | string | 256 | {string.Join(',', flags)} | communication | 
-| countryDomain | string | 64 | {string.Join(',', flags)} | communication | 
-| cityArea | string | 4 | {string.Join(',', flags)} | communication | 
-| userSpecific | string | 64 | {string.Join(',', flags)} | communication | 
-| description | string | 64 | {string.Join(',', flags)} | communication | 
-| isPrimary | bool |  | {string.Join(',', flags)} | communication | 
-| permitMarketing | bool |  | {string.Join(',', flags)} | communication | 
+| recNo | long |  | Key,FKey | communication | 
+| type | short |  | Required | communication | 
+| subType | string | 32 |  | communication | 
+| value | string | 256 |  | communication | 
+| countryDomain | string | 64 |  | communication | 
+| cityArea | string | 4 |  | communication | 
+| userSpecific | string | 64 |  | communication | 
+| description | string | 64 |  | communication | 
+| isPrimary | bool |  |  | communication | 
+| permitMarketing | bool |  |  | communication | 
 | profileAddressLink  | table |  |  | otherProfile | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profileAddressLink | 
-| addressType | short |  | {string.Join(',', flags)} | profileAddressLink | 
-| permitMarketing | bool |  | {string.Join(',', flags)} | profileAddressLink | 
-| address_recNo | long |  | {string.Join(',', flags)} | profileAddressLink | 
+| profile_recNo | long |  | Key,FKey | profileAddressLink | 
+| addressType | short |  | Key,Required | profileAddressLink | 
+| permitMarketing | bool |  |  | profileAddressLink | 
+| address_recNo | long |  | Key,Auto-Assign | profileAddressLink | 
 | address  [shared] | table |  |  | profile | 
-| recNo | long |  | {string.Join(',', flags)} | address | 
-| street1 | string | 128 | {string.Join(',', flags)} | address | 
-| street2 | string | 128 | {string.Join(',', flags)} | address | 
-| street3 | string | 128 | {string.Join(',', flags)} | address | 
-| city | string | 64 | {string.Join(',', flags)} | address | 
-| county | string | 64 | {string.Join(',', flags)} | address | 
-| stateProvince | string | 8 | {string.Join(',', flags)} | address | 
-| zipPostalCode | string | 16 | {string.Join(',', flags)} | address | 
-| country | string | 4 | {string.Join(',', flags)} | address | 
-| permitMarketing | bool |  | {string.Join(',', flags)} | address | 
+| recNo | long |  | Key,FKey | address | 
+| street1 | string | 128 |  | address | 
+| street2 | string | 128 |  | address | 
+| street3 | string | 128 |  | address | 
+| city | string | 64 |  | address | 
+| county | string | 64 |  | address | 
+| stateProvince | string | 8 |  | address | 
+| zipPostalCode | string | 16 |  | address | 
+| country | string | 4 |  | address | 
+| permitMarketing | bool |  |  | address | 
 | profileId  | table |  |  | otherProfile | 
-| recNo | long |  | {string.Join(',', flags)} | profileId | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profileId | 
-| id | string | 32 | {string.Join(',', flags)} | profileId | 
+| recNo | long |  | Key | profileId | 
+| profile_recNo | long |  | FKey | profileId | 
+| id | string | 32 | Required | profileId | 
 | profileAttachmentLink  | table |  |  | otherProfile | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profileAttachmentLink | 
-| attachment_recNo | long |  | {string.Join(',', flags)} | profileAttachmentLink | 
+| profile_recNo | long |  | Key,FKey | profileAttachmentLink | 
+| attachment_recNo | long |  | Key,Auto-Assign | profileAttachmentLink | 
 | attachment  [shared] | table |  |  | profile | 
-| recNo | long |  | {string.Join(',', flags)} | attachment | 
-| type | short |  | {string.Join(',', flags)} | attachment | 
-| description | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileNameLinkURL | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileData | byte[] |  | {string.Join(',', flags)} | attachment | 
-| size | int |  | {string.Join(',', flags)} | attachment | 
-| compressed | bool |  | {string.Join(',', flags)} | attachment | 
+| recNo | long |  | Key,FKey | attachment | 
+| type | short |  | Required | attachment | 
+| description | string | 256 |  | attachment | 
+| fileNameLinkURL | string | 256 | Required | attachment | 
+| fileData | byte[] |  |  | attachment | 
+| size | int |  |  | attachment | 
+| compressed | bool |  |  | attachment | 
 | profileTag  | table |  |  | otherProfile | 
-| recNo | long |  | {string.Join(',', flags)} | profileTag | 
-| profile_recNo | long |  | {string.Join(',', flags)} | profileTag | 
-| tag_recNo | long |  | {string.Join(',', flags)} | profileTag | 
-| name | string | 64 | {string.Join(',', flags)} | profileTag | 
-| value | string | 1024 | {string.Join(',', flags)} | profileTag | 
+| recNo | long |  | Key | profileTag | 
+| profile_recNo | long |  | FKey | profileTag | 
+| tag_recNo | long |  | Required,FKey | profileTag | 
+| name | string | 64 | ReadOnly | profileTag | 
+| value | string | 1024 |  | profileTag | 
 
 

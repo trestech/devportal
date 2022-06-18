@@ -8,9 +8,9 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | destination | 
-| name | string | 64 | {string.Join(',', flags)} | destination | 
-| country | string | 4 | {string.Join(',', flags)} | destination | 
-| region_recNo | long |  | {string.Join(',', flags)} | destination | 
+| recNo | long |  | Key | destination | 
+| name | string | 64 | Required | destination | 
+| country | string | 4 |  | destination | 
+| region_recNo | long |  | FKey | destination | 
 
 

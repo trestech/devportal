@@ -8,52 +8,52 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | activity | 
-| appUser_recNo | long |  | {string.Join(',', flags)} | activity | 
-| appUserId | string | 64 | {string.Join(',', flags)} | activity | 
-| type | short |  | {string.Join(',', flags)} | activity | 
-| subType | short |  | {string.Join(',', flags)} | activity | 
-| priority | short |  | {string.Join(',', flags)} | activity | 
-| targetDateTime | DateTimeOffset |  | {string.Join(',', flags)} | activity | 
-| targetDate | Date |  | {string.Join(',', flags)} | activity | 
-| duration | short |  | {string.Join(',', flags)} | activity | 
-| completionDateTime | DateTimeOffset |  | {string.Join(',', flags)} | activity | 
-| alertDateTime | DateTimeOffset |  | {string.Join(',', flags)} | activity | 
-| alertOffset | int |  | {string.Join(',', flags)} | activity | 
-| subject | string | 64 | {string.Join(',', flags)} | activity | 
-| remarks | string |  | {string.Join(',', flags)} | activity | 
-| promoId | string | 256 | {string.Join(',', flags)} | activity | 
-| promoLink | string | 256 | {string.Join(',', flags)} | activity | 
-| private | bool |  | {string.Join(',', flags)} | activity | 
-| affiliation_recNo | int |  | {string.Join(',', flags)} | activity | 
-| affiliationName_lookup | string | 64 | {string.Join(',', flags)} | activity | 
+| recNo | long |  | Key | activity | 
+| appUser_recNo | long |  | FKey | activity | 
+| appUserId | string | 64 | ReadOnly | activity | 
+| type | short |  | Required | activity | 
+| subType | short |  |  | activity | 
+| priority | short |  | Required | activity | 
+| targetDateTime | DateTimeOffset |  |  | activity | 
+| targetDate | Date |  |  | activity | 
+| duration | short |  |  | activity | 
+| completionDateTime | DateTimeOffset |  |  | activity | 
+| alertDateTime | DateTimeOffset |  |  | activity | 
+| alertOffset | int |  |  | activity | 
+| subject | string | 64 |  | activity | 
+| remarks | string |  |  | activity | 
+| promoId | string | 256 |  | activity | 
+| promoLink | string | 256 |  | activity | 
+| private | bool |  |  | activity | 
+| affiliation_recNo | int |  | FKey | activity | 
+| affiliationName_lookup | string | 64 | ReadOnly | activity | 
 | activityClientProfileLink  | table |  |  |  | 
-| activity_recNo | long |  | {string.Join(',', flags)} | activityClientProfileLink | 
-| profile_recNo | long |  | {string.Join(',', flags)} | activityClientProfileLink | 
-| clientName_lookup | string | 256 | {string.Join(',', flags)} | activityClientProfileLink | 
-| clientPhone_lookup | string | 256 | {string.Join(',', flags)} | activityClientProfileLink | 
-| clientEmail_lookup | string | 256 | {string.Join(',', flags)} | activityClientProfileLink | 
+| activity_recNo | long |  | Key,FKey | activityClientProfileLink | 
+| profile_recNo | long |  | Key,Required,FKey | activityClientProfileLink | 
+| clientName_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
+| clientPhone_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
+| clientEmail_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
 | activitySupplierProfileLink  | table |  |  |  | 
-| activity_recNo | long |  | {string.Join(',', flags)} | activitySupplierProfileLink | 
-| profile_recNo | long |  | {string.Join(',', flags)} | activitySupplierProfileLink | 
-| supplierName_lookup | string | 256 | {string.Join(',', flags)} | activitySupplierProfileLink | 
-| supplierPhone_lookup | string | 256 | {string.Join(',', flags)} | activitySupplierProfileLink | 
-| supplierEmail_lookup | string | 256 | {string.Join(',', flags)} | activitySupplierProfileLink | 
+| activity_recNo | long |  | Key,FKey | activitySupplierProfileLink | 
+| profile_recNo | long |  | Key,Required,FKey | activitySupplierProfileLink | 
+| supplierName_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
+| supplierPhone_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
+| supplierEmail_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
 | activityPersonLink  | table |  |  |  | 
-| activity_recNo | long |  | {string.Join(',', flags)} | activityPersonLink | 
-| person_recNo | long |  | {string.Join(',', flags)} | activityPersonLink | 
-| personName_lookup | string | 256 | {string.Join(',', flags)} | activityPersonLink | 
-| personPhone_lookup | string | 256 | {string.Join(',', flags)} | activityPersonLink | 
-| personEmail_lookup | string | 256 | {string.Join(',', flags)} | activityPersonLink | 
+| activity_recNo | long |  | Key,FKey | activityPersonLink | 
+| person_recNo | long |  | Key,Required,FKey | activityPersonLink | 
+| personName_lookup | string | 256 | ReadOnly | activityPersonLink | 
+| personPhone_lookup | string | 256 | ReadOnly | activityPersonLink | 
+| personEmail_lookup | string | 256 | ReadOnly | activityPersonLink | 
 | activityTripLink  | table |  |  |  | 
-| activity_recNo | long |  | {string.Join(',', flags)} | activityTripLink | 
-| trip_recNo | long |  | {string.Join(',', flags)} | activityTripLink | 
-| tripName_lookup | string | 256 | {string.Join(',', flags)} | activityTripLink | 
+| activity_recNo | long |  | Key,FKey | activityTripLink | 
+| trip_recNo | long |  | Key,Required,FKey | activityTripLink | 
+| tripName_lookup | string | 256 | ReadOnly | activityTripLink | 
 | activityTag  | table |  |  |  | 
-| recNo | long |  | {string.Join(',', flags)} | activityTag | 
-| activity_recNo | long |  | {string.Join(',', flags)} | activityTag | 
-| tag_recNo | long |  | {string.Join(',', flags)} | activityTag | 
-| name | string | 64 | {string.Join(',', flags)} | activityTag | 
-| value | string | 1024 | {string.Join(',', flags)} | activityTag | 
+| recNo | long |  | Key | activityTag | 
+| activity_recNo | long |  | FKey | activityTag | 
+| tag_recNo | long |  | Required,FKey | activityTag | 
+| name | string | 64 | ReadOnly | activityTag | 
+| value | string | 1024 |  | activityTag | 
 
 

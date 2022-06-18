@@ -8,44 +8,44 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | appUser | 
-| id | string | 64 | {string.Join(',', flags)} | appUser | 
-| enabled | bool |  | {string.Join(',', flags)} | appUser | 
-| password | string | 128 | {string.Join(',', flags)} | appUser | 
-| personActions | short |  | {string.Join(',', flags)} | appUser | 
-| clientProfileActions | short |  | {string.Join(',', flags)} | appUser | 
-| supplierProfileActions | short |  | {string.Join(',', flags)} | appUser | 
-| tripActions | short |  | {string.Join(',', flags)} | appUser | 
-| activityActions | short |  | {string.Join(',', flags)} | appUser | 
-| paymentActions | short |  | {string.Join(',', flags)} | appUser | 
-| advisorProfileActions | short |  | {string.Join(',', flags)} | appUser | 
-| actionItemTemplateActions | short |  | {string.Join(',', flags)} | appUser | 
-| tripImportActions | short |  | {string.Join(',', flags)} | appUser | 
-| advisorReconciliationActions | short |  | {string.Join(',', flags)} | appUser | 
-| tagActions | short |  | {string.Join(',', flags)} | appUser | 
-| otherProfileActions | short |  | {string.Join(',', flags)} | appUser | 
-| otherPaymentActions | short |  | {string.Join(',', flags)} | appUser | 
-| bankTransactionActions | short |  | {string.Join(',', flags)} | appUser | 
-| clientPaymentActions | short |  | {string.Join(',', flags)} | appUser | 
-| supplierPaymentActions | short |  | {string.Join(',', flags)} | appUser | 
-| branch_recNo | long |  | {string.Join(',', flags)} | appUser | 
-| branchName | string | 64 | {string.Join(',', flags)} | appUser | 
-| nonExpiringPassword | bool |  | {string.Join(',', flags)} | appUser | 
-| userType | short |  | {string.Join(',', flags)} | appUser | 
-| locked | DateTimeOffset |  | {string.Join(',', flags)} | appUser | 
-| description | string | 64 | {string.Join(',', flags)} | appUser | 
-| name | string | 64 | {string.Join(',', flags)} | appUser | 
-| mobilePhone | string | 64 | {string.Join(',', flags)} | appUser | 
-| email | string | 128 | {string.Join(',', flags)} | appUser | 
-| passwordLastModified | Date |  | {string.Join(',', flags)} | appUser | 
-| emailServerType | short |  | {string.Join(',', flags)} | appUser | 
-| emailServerName | string | 64 | {string.Join(',', flags)} | appUser | 
-| emailServerUserName | string | 128 | {string.Join(',', flags)} | appUser | 
-| emailServerPassword | string | 64 | {string.Join(',', flags)} | appUser | 
+| recNo | long |  | Key | appUser | 
+| id | string | 64 |  | appUser | 
+| enabled | bool |  |  | appUser | 
+| password | string | 128 |  | appUser | 
+| personActions | short |  | Required | appUser | 
+| clientProfileActions | short |  | Required | appUser | 
+| supplierProfileActions | short |  | Required | appUser | 
+| tripActions | short |  | Required | appUser | 
+| activityActions | short |  | Required | appUser | 
+| paymentActions | short |  | Required | appUser | 
+| advisorProfileActions | short |  | Required | appUser | 
+| actionItemTemplateActions | short |  | Required | appUser | 
+| tripImportActions | short |  | Required | appUser | 
+| advisorReconciliationActions | short |  | Required | appUser | 
+| tagActions | short |  | Required | appUser | 
+| otherProfileActions | short |  | Required | appUser | 
+| otherPaymentActions | short |  | Required | appUser | 
+| bankTransactionActions | short |  | Required | appUser | 
+| clientPaymentActions | short |  | Required | appUser | 
+| supplierPaymentActions | short |  | Required | appUser | 
+| branch_recNo | long |  | FKey | appUser | 
+| branchName | string | 64 | ReadOnly | appUser | 
+| nonExpiringPassword | bool |  |  | appUser | 
+| userType | short |  | Required | appUser | 
+| locked | DateTimeOffset |  |  | appUser | 
+| description | string | 64 |  | appUser | 
+| name | string | 64 |  | appUser | 
+| mobilePhone | string | 64 |  | appUser | 
+| email | string | 128 |  | appUser | 
+| passwordLastModified | Date |  | ReadOnly | appUser | 
+| emailServerType | short |  |  | appUser | 
+| emailServerName | string | 64 |  | appUser | 
+| emailServerUserName | string | 128 |  | appUser | 
+| emailServerPassword | string | 64 |  | appUser | 
 | appUserAdvisor  | table |  |  |  | 
-| appUser_RecNo | long |  | {string.Join(',', flags)} | appUserAdvisor | 
-| advisorProfile_recNo | long |  | {string.Join(',', flags)} | appUserAdvisor | 
-| advisorName | string | 256 | {string.Join(',', flags)} | appUserAdvisor | 
-| isPrimary | bool |  | {string.Join(',', flags)} | appUserAdvisor | 
+| appUser_RecNo | long |  | Key,FKey | appUserAdvisor | 
+| advisorProfile_recNo | long |  | Key,Required,FKey | appUserAdvisor | 
+| advisorName | string | 256 | ReadOnly | appUserAdvisor | 
+| isPrimary | bool |  | Required | appUserAdvisor | 
 
 

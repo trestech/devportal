@@ -8,77 +8,77 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | {string.Join(',', flags)} | person | 
-| firstName | string | 64 | {string.Join(',', flags)} | person | 
-| middleName | string | 64 | {string.Join(',', flags)} | person | 
-| lastName | string | 64 | {string.Join(',', flags)} | person | 
-| courtesyTitle | string | 64 | {string.Join(',', flags)} | person | 
-| salutation | string | 64 | {string.Join(',', flags)} | person | 
-| birthdayDay | short |  | {string.Join(',', flags)} | person | 
-| birthdayMonth | short |  | {string.Join(',', flags)} | person | 
-| birthdayYear | short |  | {string.Join(',', flags)} | person | 
-| birthdayNote | string | 256 | {string.Join(',', flags)} | person | 
-| citizenship | string | 2 | {string.Join(',', flags)} | person | 
-| redressNumber | string | 32 | {string.Join(',', flags)} | person | 
-| knownTravelerNumber | string | 32 | {string.Join(',', flags)} | person | 
-| gender | string | 1 | {string.Join(',', flags)} | person | 
-| uniqueId | string | 64 | {string.Join(',', flags)} | person | 
-| branch_recNo | long |  | {string.Join(',', flags)} | person | 
-| branchName | string | 64 | {string.Join(',', flags)} | person | 
-| advisorProfile_recNo | long |  | {string.Join(',', flags)} | person | 
-| advisorName | string | 256 | {string.Join(',', flags)} | person | 
-| remarks | string |  | {string.Join(',', flags)} | person | 
-| emergencyContactName | string | 64 | {string.Join(',', flags)} | person | 
-| emergencyContactRelationship | string | 64 | {string.Join(',', flags)} | person | 
-| emergencyContactPhone | string | 64 | {string.Join(',', flags)} | person | 
-| emergencyContactEmail | string | 64 | {string.Join(',', flags)} | person | 
+| recNo | long |  | Key | person | 
+| firstName | string | 64 |  | person | 
+| middleName | string | 64 |  | person | 
+| lastName | string | 64 |  | person | 
+| courtesyTitle | string | 64 |  | person | 
+| salutation | string | 64 |  | person | 
+| birthdayDay | short |  |  | person | 
+| birthdayMonth | short |  |  | person | 
+| birthdayYear | short |  |  | person | 
+| birthdayNote | string | 256 |  | person | 
+| citizenship | string | 2 |  | person | 
+| redressNumber | string | 32 |  | person | 
+| knownTravelerNumber | string | 32 |  | person | 
+| gender | string | 1 |  | person | 
+| uniqueId | string | 64 |  | person | 
+| branch_recNo | long |  | FKey | person | 
+| branchName | string | 64 | ReadOnly | person | 
+| advisorProfile_recNo | long |  | FKey | person | 
+| advisorName | string | 256 | ReadOnly | person | 
+| remarks | string |  |  | person | 
+| emergencyContactName | string | 64 |  | person | 
+| emergencyContactRelationship | string | 64 |  | person | 
+| emergencyContactPhone | string | 64 |  | person | 
+| emergencyContactEmail | string | 64 |  | person | 
 | personCommunicationLink  | table |  |  |  | 
-| person_recNo | long |  | {string.Join(',', flags)} | personCommunicationLink | 
-| communication_recNo | long |  | {string.Join(',', flags)} | personCommunicationLink | 
+| person_recNo | long |  | Key,FKey | personCommunicationLink | 
+| communication_recNo | long |  | Key,Auto-Assign | personCommunicationLink | 
 | communication  [shared] | table |  |  | person | 
-| recNo | long |  | {string.Join(',', flags)} | communication | 
-| type | short |  | {string.Join(',', flags)} | communication | 
-| subType | string | 32 | {string.Join(',', flags)} | communication | 
-| value | string | 256 | {string.Join(',', flags)} | communication | 
-| countryDomain | string | 64 | {string.Join(',', flags)} | communication | 
-| cityArea | string | 4 | {string.Join(',', flags)} | communication | 
-| userSpecific | string | 64 | {string.Join(',', flags)} | communication | 
-| description | string | 64 | {string.Join(',', flags)} | communication | 
-| isPrimary | bool |  | {string.Join(',', flags)} | communication | 
-| permitMarketing | bool |  | {string.Join(',', flags)} | communication | 
+| recNo | long |  | Key,FKey | communication | 
+| type | short |  | Required | communication | 
+| subType | string | 32 |  | communication | 
+| value | string | 256 |  | communication | 
+| countryDomain | string | 64 |  | communication | 
+| cityArea | string | 4 |  | communication | 
+| userSpecific | string | 64 |  | communication | 
+| description | string | 64 |  | communication | 
+| isPrimary | bool |  |  | communication | 
+| permitMarketing | bool |  |  | communication | 
 | card  | table |  |  |  | 
-| recNo | long |  | {string.Join(',', flags)} | card | 
-| person_recNo | long |  | {string.Join(',', flags)} | card | 
-| type | short |  | {string.Join(',', flags)} | card | 
-| cardNumber | string | 64 | {string.Join(',', flags)} | card | 
-| issueDate | Date |  | {string.Join(',', flags)} | card | 
-| expirationDate | Date |  | {string.Join(',', flags)} | card | 
-| issuingCity | string | 64 | {string.Join(',', flags)} | card | 
-| issuingCountry | string | 2 | {string.Join(',', flags)} | card | 
-| description | string | 128 | {string.Join(',', flags)} | card | 
-| cardNumberToken | string | 64 | {string.Join(',', flags)} | card | 
-| code | string | 8 | {string.Join(',', flags)} | card | 
-| nameOnCard | string | 64 | {string.Join(',', flags)} | card | 
+| recNo | long |  | Key | card | 
+| person_recNo | long |  | FKey | card | 
+| type | short |  | Required | card | 
+| cardNumber | string | 64 | Required | card | 
+| issueDate | Date |  |  | card | 
+| expirationDate | Date |  |  | card | 
+| issuingCity | string | 64 |  | card | 
+| issuingCountry | string | 2 |  | card | 
+| description | string | 128 |  | card | 
+| cardNumberToken | string | 64 |  | card | 
+| code | string | 8 |  | card | 
+| nameOnCard | string | 64 |  | card | 
 | personMarketing  | table |  |  |  | 
-| person_recNo | long |  | {string.Join(',', flags)} | personMarketing | 
-| marketingElement_recNo | long |  | {string.Join(',', flags)} | personMarketing | 
-| affiliation_recNo | int |  | {string.Join(',', flags)} | personMarketing | 
+| person_recNo | long |  | Key,FKey | personMarketing | 
+| marketingElement_recNo | long |  | Key,Required,FKey | personMarketing | 
+| affiliation_recNo | int |  | Required,FKey | personMarketing | 
 | personAttachmentLink  | table |  |  |  | 
-| person_recNo | long |  | {string.Join(',', flags)} | personAttachmentLink | 
-| attachment_recNo | long |  | {string.Join(',', flags)} | personAttachmentLink | 
+| person_recNo | long |  | Key,FKey | personAttachmentLink | 
+| attachment_recNo | long |  | Key,Auto-Assign | personAttachmentLink | 
 | attachment  [shared] | table |  |  | person | 
-| recNo | long |  | {string.Join(',', flags)} | attachment | 
-| type | short |  | {string.Join(',', flags)} | attachment | 
-| description | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileNameLinkURL | string | 256 | {string.Join(',', flags)} | attachment | 
-| fileData | byte[] |  | {string.Join(',', flags)} | attachment | 
-| size | int |  | {string.Join(',', flags)} | attachment | 
-| compressed | bool |  | {string.Join(',', flags)} | attachment | 
+| recNo | long |  | Key,FKey | attachment | 
+| type | short |  | Required | attachment | 
+| description | string | 256 |  | attachment | 
+| fileNameLinkURL | string | 256 | Required | attachment | 
+| fileData | byte[] |  |  | attachment | 
+| size | int |  |  | attachment | 
+| compressed | bool |  |  | attachment | 
 | personTag  | table |  |  |  | 
-| recNo | long |  | {string.Join(',', flags)} | personTag | 
-| person_recNo | long |  | {string.Join(',', flags)} | personTag | 
-| tag_recNo | long |  | {string.Join(',', flags)} | personTag | 
-| name | string | 64 | {string.Join(',', flags)} | personTag | 
-| value | string | 1024 | {string.Join(',', flags)} | personTag | 
+| recNo | long |  | Key | personTag | 
+| person_recNo | long |  | FKey | personTag | 
+| tag_recNo | long |  | Required,FKey | personTag | 
+| name | string | 64 | ReadOnly | personTag | 
+| value | string | 1024 |  | personTag | 
 
 
