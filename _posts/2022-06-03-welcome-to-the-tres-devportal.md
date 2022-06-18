@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to the Tres Documentation channel!"
+title:  "Welcome to the Tres Developer Portal!"
 date:   2022-06-03 15:11:54 -0700
 categories: jekyll update
 ---

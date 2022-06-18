@@ -1,6 +1,6 @@
 <div class="pull-right"><img src="https://github.com/inertia186/doctres/raw/main/logo.png" /></div>
 
-# Tres Technologies API Portal
+# Tres Developer Portal
 
 The following API documents provide details on how to interact with the Tres Application database API.
 
