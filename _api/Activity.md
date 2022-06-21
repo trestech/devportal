@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Activity"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

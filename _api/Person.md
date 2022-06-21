@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Person"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

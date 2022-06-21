@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "BankTransaction"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

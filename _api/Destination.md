@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Destination"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "AppUser"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

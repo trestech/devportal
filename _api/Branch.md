@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Branch"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "OtherProfile"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

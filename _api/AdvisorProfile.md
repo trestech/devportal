@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "AdvisorProfile"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 

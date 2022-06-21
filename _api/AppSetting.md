@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "AppSetting"
-description: "| Column | Type | Size | Flags | Table | Description |"
+description: ""
 ---
 
 
