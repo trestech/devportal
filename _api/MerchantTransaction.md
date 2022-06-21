@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "MerchantTransaction"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | merchantTransaction | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | merchantTransaction | 
 | transactionType | short |  | Required | merchantTransaction | 
 | amount | long |  | Required | merchantTransaction | 
 | cardNumber | string | 64 |  | merchantTransaction | 

@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Person"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | person | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | person | 
 | firstName | string | 64 |  | person | 
 | middleName | string | 64 |  | person | 
 | lastName | string | 64 |  | person | 
@@ -32,11 +32,11 @@ description: ""
 | emergencyContactRelationship | string | 64 |  | person | 
 | emergencyContactPhone | string | 64 |  | person | 
 | emergencyContactEmail | string | 64 |  | person | 
-| personCommunicationLink  | table |  |  |  | 
-| person_recNo | long |  | Key,FKey | personCommunicationLink | 
-| communication_recNo | long |  | Key,Auto-Assign | personCommunicationLink | 
-| communication  [shared] | table |  |  | person | 
-| recNo | long |  | Key,FKey | communication | 
+| personCommunicationLink  | table |  |  | person | 
+| person_recNo | long |  | PKey,FKey | personCommunicationLink | 
+| communication_recNo | long |  | PKey,Auto-Assign | personCommunicationLink | 
+| communication  [shared] | table |  |  | personCommunicationLink | 
+| recNo | long |  | PKey,FKey | communication | 
 | type | short |  | Required | communication | 
 | subType | string | 32 |  | communication | 
 | value | string | 256 |  | communication | 
@@ -46,8 +46,8 @@ description: ""
 | description | string | 64 |  | communication | 
 | isPrimary | bool |  |  | communication | 
 | permitMarketing | bool |  |  | communication | 
-| card  | table |  |  |  | 
-| recNo | long |  | Key | card | 
+| card  | table |  |  | person | 
+| recNo | long |  | PKey | card | 
 | person_recNo | long |  | FKey | card | 
 | type | short |  | Required | card | 
 | cardNumber | string | 64 | Required | card | 
@@ -59,23 +59,23 @@ description: ""
 | cardNumberToken | string | 64 |  | card | 
 | code | string | 8 |  | card | 
 | nameOnCard | string | 64 |  | card | 
-| personMarketing  | table |  |  |  | 
-| person_recNo | long |  | Key,FKey | personMarketing | 
-| marketingElement_recNo | long |  | Key,Required,FKey | personMarketing | 
+| personMarketing  | table |  |  | person | 
+| person_recNo | long |  | PKey,FKey | personMarketing | 
+| marketingElement_recNo | long |  | PKey,Required,FKey | personMarketing | 
 | affiliation_recNo | int |  | Required,FKey | personMarketing | 
-| personAttachmentLink  | table |  |  |  | 
-| person_recNo | long |  | Key,FKey | personAttachmentLink | 
-| attachment_recNo | long |  | Key,Auto-Assign | personAttachmentLink | 
-| attachment  [shared] | table |  |  | person | 
-| recNo | long |  | Key,FKey | attachment | 
+| personAttachmentLink  | table |  |  | person | 
+| person_recNo | long |  | PKey,FKey | personAttachmentLink | 
+| attachment_recNo | long |  | PKey,Auto-Assign | personAttachmentLink | 
+| attachment  [shared] | table |  |  | personAttachmentLink | 
+| recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | 
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
 | size | int |  |  | attachment | 
 | compressed | bool |  |  | attachment | 
-| personTag  | table |  |  |  | 
-| recNo | long |  | Key | personTag | 
+| personTag  | table |  |  | person | 
+| recNo | long |  | PKey | personTag | 
 | person_recNo | long |  | FKey | personTag | 
 | tag_recNo | long |  | Required,FKey | personTag | 
 | name | string | 64 | ReadOnly | personTag | 

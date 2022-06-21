@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [profile](/profile)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | profile | 
 | tagValue | string | 1024 | profile | 
 | summaryCount | int |  | profile | 

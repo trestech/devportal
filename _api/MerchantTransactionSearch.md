@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [merchantTransaction](/merchantTransaction)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | merchantTransaction | 
 | summaryCount | int |  | merchantTransaction | 
 | transactionType | short |  | merchantTransaction | 

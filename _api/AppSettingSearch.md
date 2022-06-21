@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [appSetting](/appSetting)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | appSetting | 
 | summaryCount | int |  | appSetting | 
 | appUser_recNo | long |  | appSetting | 

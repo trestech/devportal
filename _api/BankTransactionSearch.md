@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [bankTransaction](/bankTransaction)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | bankTransaction | 
 | summaryCount | int |  | bankTransaction | 
 | transactionDate | Date |  | bankTransaction | 

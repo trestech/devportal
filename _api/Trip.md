@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Trip"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | trip | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | trip | 
 | clientProfile_recNo | long |  | FKey | trip | 
 | clientName_Lookup | string | 256 | ReadOnly | trip | 
 | branch_recNo | long |  | FKey | trip | 
@@ -27,8 +27,8 @@ description: ""
 | remarks | string |  |  | trip | 
 | advisorRemarks | string |  |  | trip | 
 | marketingSource | string | 64 |  | trip | 
-| clientProfileInfo  | table |  |  |  | 
-| trip_recNo | long |  | Key,FKey | clientProfileInfo | 
+| clientProfileInfo  | table |  |  | trip | 
+| trip_recNo | long |  | PKey,FKey | clientProfileInfo | 
 | name | string | 256 |  | clientProfileInfo | 
 | id | string | 32 |  | clientProfileInfo | 
 | phone | string | 256 |  | clientProfileInfo | 
@@ -39,11 +39,11 @@ description: ""
 | stateProvince | string | 8 |  | clientProfileInfo | 
 | zipPostalCode | string | 16 |  | clientProfileInfo | 
 | country | string | 4 |  | clientProfileInfo | 
-| tripReservationLink  | table |  |  |  | 
-| trip_recNo | long |  | Key,FKey | tripReservationLink | 
-| reservation_recNo | long |  | Key,Auto-Assign | tripReservationLink | 
-| reservation  [shared] | table |  |  | trip | 
-| recNo | long |  | Key,FKey | reservation | 
+| tripReservationLink  | table |  |  | trip | 
+| trip_recNo | long |  | PKey,FKey | tripReservationLink | 
+| reservation_recNo | long |  | PKey,Auto-Assign | tripReservationLink | 
+| reservation  [shared] | table |  |  | tripReservationLink | 
+| recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
 | providerProfile_recNo | long |  | FKey | reservation | 
@@ -80,16 +80,16 @@ description: ""
 | supplierBalance | long |  | ReadOnly | reservation | 
 | accountingEntry_recNo | long |  | FKey | reservation | 
 | paymentCount | int |  | ReadOnly | reservation | 
-| airReservation  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | airReservation | 
+| airReservation  [shared] | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | 
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
 | domIntlIndicator | short |  | Required | airReservation | 
 | eTicketIndicator | short |  |  | airReservation | 
-| airSegment  | table |  |  | reservation | 
-| recNo | long |  | Key | airSegment | 
+| airSegment  | table |  |  | airReservation | 
+| recNo | long |  | PKey | airSegment | 
 | airReservation_recNo | long |  | FKey | airSegment | 
 | departDateTime | DateTime |  |  | airSegment | 
 | departCityCode | string | 3 |  | airSegment | 
@@ -106,16 +106,16 @@ description: ""
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | railReservation | 
+| railReservation  [shared] | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
 | arriveStationCode | string | 3 |  | railReservation | 
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| supplierProfileInfo  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| supplierProfileInfo  [shared] | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
 | phone | string | 256 |  | supplierProfileInfo | 
@@ -126,8 +126,8 @@ description: ""
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| providerProfileInfo  [shared] | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| providerProfileInfo  [shared] | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
 | phone | string | 256 |  | providerProfileInfo | 
@@ -138,13 +138,13 @@ description: ""
 | stateProvince | string | 8 |  | providerProfileInfo | 
 | zipPostalCode | string | 16 |  | providerProfileInfo | 
 | country | string | 4 |  | providerProfileInfo | 
-| reservationTraveler  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | reservationTraveler | 
-| person_recNo | long |  | Key,Required,FKey | reservationTraveler | 
+| reservationTraveler  | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | reservationTraveler | 
+| person_recNo | long |  | PKey,Required,FKey | reservationTraveler | 
 | nameLookup | string | 256 | ReadOnly | reservationTraveler | 
 | isPrimary | bool |  |  | reservationTraveler | 
-| reservationAdvisor  | table |  |  | tripReservationLink | 
-| recNo | long |  | Key | reservationAdvisor | 
+| reservationAdvisor  | table |  |  | reservation | 
+| recNo | long |  | PKey | reservationAdvisor | 
 | reservation_recNo | long |  | FKey | reservationAdvisor | 
 | advisorProfile_recNo | long |  | Required,FKey | reservationAdvisor | 
 | advisorName | string | 256 | ReadOnly | reservationAdvisor | 
@@ -154,35 +154,35 @@ description: ""
 | datePaid | Date |  |  | reservationAdvisor | 
 | reconciliationRecNo | long |  | ReadOnly | reservationAdvisor | 
 | reconciliationDate | Date |  | ReadOnly | reservationAdvisor | 
-| reservationTax  | table |  |  | tripReservationLink | 
-| recNo | long |  | Key | reservationTax | 
+| reservationTax  | table |  |  | reservation | 
+| recNo | long |  | PKey | reservationTax | 
 | reservation_recNo | long |  | FKey | reservationTax | 
 | code | string | 2 |  | reservationTax | 
 | amount | long |  |  | reservationTax | 
-| reservationAttachmentLink  | table |  |  | tripReservationLink | 
+| reservationAttachmentLink  | table |  |  | reservation | 
 | reservation_recNo | long |  | FKey | reservationAttachmentLink | 
-| attachment_recNo | long |  | Key,Auto-Assign | reservationAttachmentLink | 
-| reservationAttachment  [shared] | table |  |  | reservation | 
-| recNo | long |  | Key,FKey | attachment | 
+| attachment_recNo | long |  | PKey,Auto-Assign | reservationAttachmentLink | 
+| reservationAttachment  [shared] | table |  |  | reservationAttachmentLink | 
+| recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | 
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
 | size | int |  |  | attachment | 
 | compressed | bool |  |  | attachment | 
-| reservationTag  | table |  |  | tripReservationLink | 
-| recNo | long |  | Key | reservationTag | 
+| reservationTag  | table |  |  | reservation | 
+| recNo | long |  | PKey | reservationTag | 
 | reservation_recNo | long |  | FKey | reservationTag | 
 | tag_recNo | long |  | Required,FKey | reservationTag | 
 | name | string | 64 | ReadOnly | reservationTag | 
 | value | string | 1024 |  | reservationTag | 
-| cruiseReservation  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | cruiseReservation | 
+| cruiseReservation  | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | cruiseReservation | 
 | type | short |  | Required | cruiseReservation | 
 | deck | string | 32 |  | cruiseReservation | 
 | cabin | string | 16 |  | cruiseReservation | 
-| cruiseSegment  | table |  |  | reservation | 
-| recNo | long |  | Key | cruiseSegment | 
+| cruiseSegment  | table |  |  | cruiseReservation | 
+| recNo | long |  | PKey | cruiseSegment | 
 | cruiseReservation_recNo | long |  | FKey | cruiseSegment | 
 | departDateTime | DateTime |  |  | cruiseSegment | 
 | departPortCode | string | 3 |  | cruiseSegment | 
@@ -192,11 +192,11 @@ description: ""
 | arrivePortName | string | 64 |  | cruiseSegment | 
 | remarks | string | 256 |  | cruiseSegment | 
 | indexNo | short |  |  | cruiseSegment | 
-| cruiseSubReservationLink  | table |  |  | reservation | 
-| parentReservation_recNo | long |  | Key,FKey | subReservationLink | 
-| subReservation_recNo | long |  | Key,Auto-Assign | subReservationLink | 
-| cruiseSubReservation  [shared] | table |  |  | cruiseReservation | 
-| recNo | long |  | Key,FKey | reservation | 
+| cruiseSubReservationLink  | table |  |  | cruiseReservation | 
+| parentReservation_recNo | long |  | PKey,FKey | subReservationLink | 
+| subReservation_recNo | long |  | PKey,Auto-Assign | subReservationLink | 
+| cruiseSubReservation  [shared] | table |  |  | cruiseSubReservationLink | 
+| recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
 | providerProfile_recNo | long |  | FKey | reservation | 
@@ -229,16 +229,16 @@ description: ""
 | supplierRemarks | string |  |  | reservation | 
 | advisorInfo | string | 256 |  | reservation | 
 | trackClientPayments | bool |  | Required | reservation | 
-| airReservation  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | airReservation | 
+| airReservation  [shared] | table |  |  | cruiseSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | 
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
 | domIntlIndicator | short |  | Required | airReservation | 
 | eTicketIndicator | short |  |  | airReservation | 
-| airSegment  | table |  |  | cruiseSubReservation | 
-| recNo | long |  | Key | airSegment | 
+| airSegment  | table |  |  | cruiseSubAirReservation | 
+| recNo | long |  | PKey | airSegment | 
 | airReservation_recNo | long |  | FKey | airSegment | 
 | departDateTime | DateTime |  |  | airSegment | 
 | departCityCode | string | 3 |  | airSegment | 
@@ -255,16 +255,16 @@ description: ""
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | railReservation | 
+| railReservation  [shared] | table |  |  | cruiseSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
 | arriveStationCode | string | 3 |  | railReservation | 
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| cruiseSubSupplierProfileInfo  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| cruiseSubSupplierProfileInfo  [shared] | table |  |  | cruiseSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
 | phone | string | 256 |  | supplierProfileInfo | 
@@ -275,8 +275,8 @@ description: ""
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| cruiseSubProviderProfileInfo  [shared] | table |  |  | cruiseSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| cruiseSubProviderProfileInfo  [shared] | table |  |  | cruiseSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
 | phone | string | 256 |  | providerProfileInfo | 
@@ -287,13 +287,13 @@ description: ""
 | stateProvince | string | 8 |  | providerProfileInfo | 
 | zipPostalCode | string | 16 |  | providerProfileInfo | 
 | country | string | 4 |  | providerProfileInfo | 
-| tourReservation  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | tourReservation | 
-| tourSubReservationLink  | table |  |  | reservation | 
-| parentReservation_recNo | long |  | Key,FKey | subReservationLink | 
-| subReservation_recNo | long |  | Key,Auto-Assign | subReservationLink | 
-| tourSubReservation  [shared] | table |  |  | tourReservation | 
-| recNo | long |  | Key,FKey | reservation | 
+| tourReservation  | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | tourReservation | 
+| tourSubReservationLink  | table |  |  | tourReservation | 
+| parentReservation_recNo | long |  | PKey,FKey | subReservationLink | 
+| subReservation_recNo | long |  | PKey,Auto-Assign | subReservationLink | 
+| tourSubReservation  [shared] | table |  |  | tourSubReservationLink | 
+| recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
 | providerProfile_recNo | long |  | FKey | reservation | 
@@ -326,16 +326,16 @@ description: ""
 | supplierRemarks | string |  |  | reservation | 
 | advisorInfo | string | 256 |  | reservation | 
 | trackClientPayments | bool |  | Required | reservation | 
-| airReservation  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | airReservation | 
+| airReservation  [shared] | table |  |  | tourSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | 
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
 | domIntlIndicator | short |  | Required | airReservation | 
 | eTicketIndicator | short |  |  | airReservation | 
-| airSegment  | table |  |  | tourSubReservation | 
-| recNo | long |  | Key | airSegment | 
+| airSegment  | table |  |  | tourSubAirReservation | 
+| recNo | long |  | PKey | airSegment | 
 | airReservation_recNo | long |  | FKey | airSegment | 
 | departDateTime | DateTime |  |  | airSegment | 
 | departCityCode | string | 3 |  | airSegment | 
@@ -352,16 +352,16 @@ description: ""
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | railReservation | 
+| railReservation  [shared] | table |  |  | tourSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
 | arriveStationCode | string | 3 |  | railReservation | 
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| tourSubSupplierProfileInfo  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | supplierProfileInfo | 
+| tourSubSupplierProfileInfo  [shared] | table |  |  | tourSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
 | phone | string | 256 |  | supplierProfileInfo | 
@@ -372,8 +372,8 @@ description: ""
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| tourSubProviderProfileInfo  [shared] | table |  |  | tourSubReservationLink | 
-| reservation_recNo | long |  | Key,FKey | providerProfileInfo | 
+| tourSubProviderProfileInfo  [shared] | table |  |  | tourSubReservation | 
+| reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
 | phone | string | 256 |  | providerProfileInfo | 
@@ -384,8 +384,8 @@ description: ""
 | stateProvince | string | 8 |  | providerProfileInfo | 
 | zipPostalCode | string | 16 |  | providerProfileInfo | 
 | country | string | 4 |  | providerProfileInfo | 
-| reservationDeposit  | table |  |  | tripReservationLink | 
-| recNo | long |  | Key | reservationDeposit | 
+| reservationDeposit  | table |  |  | reservation | 
+| recNo | long |  | PKey | reservationDeposit | 
 | reservation_recNo | long |  | FKey | reservationDeposit | 
 | dueAmount | long |  | Required | reservationDeposit | 
 | dueDate | Date |  | Required | reservationDeposit | 
@@ -393,8 +393,8 @@ description: ""
 | completed | DateTimeOffset |  |  | reservationDeposit | 
 | completedBy_appUserRecNo | long |  |  | reservationDeposit | 
 | completedBy_appUserId | string | 64 | ReadOnly | reservationDeposit | 
-| clientPaymentInfo  | table |  |  | tripReservationLink | 
-| reservation_recNo | long |  | Key,FKey | clientPaymentInfo | 
+| clientPaymentInfo  | table |  |  | reservation | 
+| reservation_recNo | long |  | PKey,FKey | clientPaymentInfo | 
 | paymentDate | Date |  |  | clientPaymentInfo | 
 | amount | long |  |  | clientPaymentInfo | 
 | method | short |  | Required | clientPaymentInfo | 
@@ -402,28 +402,28 @@ description: ""
 | cardNumber | string | 64 |  | clientPaymentInfo | 
 | cardNumberToken | string | 64 |  | clientPaymentInfo | 
 | expirationDate | Date |  |  | clientPaymentInfo | 
-| tripAttachmentLink  | table |  |  |  | 
-| trip_recNo | long |  | Key,FKey | tripAttachmentLink | 
-| attachment_recNo | long |  | Key,Auto-Assign | tripAttachmentLink | 
-| tripAttachment  [shared] | table |  |  | trip | 
-| recNo | long |  | Key,FKey | attachment | 
+| tripAttachmentLink  | table |  |  | trip | 
+| trip_recNo | long |  | PKey,FKey | tripAttachmentLink | 
+| attachment_recNo | long |  | PKey,Auto-Assign | tripAttachmentLink | 
+| tripAttachment  [shared] | table |  |  | tripAttachmentLink | 
+| recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | 
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
 | size | int |  |  | attachment | 
 | compressed | bool |  |  | attachment | 
-| tripTag  | table |  |  |  | 
-| recNo | long |  | Key | tripTag | 
+| tripTag  | table |  |  | trip | 
+| recNo | long |  | PKey | tripTag | 
 | trip_recNo | long |  | FKey | tripTag | 
 | tag_recNo | long |  | Required,FKey | tripTag | 
 | name | string | 64 | ReadOnly | tripTag | 
 | value | string | 1024 |  | tripTag | 
-| tripActionItemLink  | table |  |  |  | 
-| trip_recNo | long |  | Key,FKey | tripActionItemLink | 
-| actionItem_recNo | long |  | Key,Auto-Assign | tripActionItemLink | 
-| tripActionItem  | table |  |  | trip | 
-| recNo | long |  | Key,FKey | actionItem | 
+| tripActionItemLink  | table |  |  | trip | 
+| trip_recNo | long |  | PKey,FKey | tripActionItemLink | 
+| actionItem_recNo | long |  | PKey,Auto-Assign | tripActionItemLink | 
+| tripActionItem  | table |  |  | tripActionItemLink | 
+| recNo | long |  | PKey,FKey | actionItem | 
 | type | short |  | Required | actionItem | 
 | description | string | 256 |  | actionItem | 
 | triggerIndex | short |  | Required | actionItem | 

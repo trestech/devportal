@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "ARCBSPNo"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | ARCBSPNo | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | ARCBSPNo | 
 | description | string | 64 |  | ARCBSPNo | 
 
 

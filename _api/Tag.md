@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Tag"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | tag | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | tag | 
 | name | string | 64 | Required | tag | 
 | activeStatus | bool |  |  | tag | 
 | valueFreeFlow | bool |  |  | tag | 

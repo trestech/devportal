@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [activity](/activity)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | activity | 
 | tagValue | string | 1024 | activity | 
 | summaryCount | int |  | activity | 

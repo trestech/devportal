@@ -1,22 +1,22 @@
 ---
 layout: page
 title: "Affiliation"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | affiliation | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | affiliation | 
 | name | string | 64 |  | affiliation | 
-| affiliationMarketingCategory  | table |  |  |  | 
-| affiliation_recNo | long |  | Key,FKey | affiliationMarketingCategory | 
-| recNo | long |  | Key | affiliationMarketingCategory | 
+| affiliationMarketingCategory  | table |  |  | affiliation | 
+| affiliation_recNo | long |  | PKey,FKey | affiliationMarketingCategory | 
+| recNo | long |  | PKey | affiliationMarketingCategory | 
 | name | string | 64 | Required | affiliationMarketingCategory | 
 | id | string | 16 |  | affiliationMarketingCategory | 
-| affiliationMarketingElement  | table |  |  | affiliation | 
-| recNo | long |  | Key | affiliationMarketingElement | 
+| affiliationMarketingElement  | table |  |  | affiliationMarketingCategory | 
+| recNo | long |  | PKey | affiliationMarketingElement | 
 | affiliationMarketingCategory_recNo | long |  | FKey | affiliationMarketingElement | 
 | name | string | 64 | Required | affiliationMarketingElement | 
 | id | string | 16 | Required | affiliationMarketingElement | 

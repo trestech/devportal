@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "AppSetting"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | appSetting | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | appSetting | 
 | appUser_recNo | long |  |  | appSetting | 
 | area | string | 64 | Required | appSetting | 
 | name | string | 64 | Required | appSetting | 

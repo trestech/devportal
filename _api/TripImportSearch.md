@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [tripImport](/tripImport)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | tripImport | 
 | summaryCount | int |  | tripImport | 
 | type | short |  | tripImport | 

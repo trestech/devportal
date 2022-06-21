@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "TripImport"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | tripImport | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | tripImport | 
 | type | short |  |  | tripImport | 
 | subType | short |  |  | tripImport | 
 | source | string | 64 |  | tripImport | 

@@ -1,24 +1,24 @@
 ---
 layout: page
 title: "ActionItemTemplate"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | actionItemTemplate | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | actionItemTemplate | 
 | type | short |  |  | actionItemTemplate | 
 | name | string | 64 |  | actionItemTemplate | 
 | description | string | 256 |  | actionItemTemplate | 
 | enabled | bool |  |  | actionItemTemplate | 
 | travelCategory_recNo | short |  |  | actionItemTemplate | 
-| actionItemTemplateActionItemLink  | table |  |  |  | 
-| actionItemTemplate_recNo | long |  | Key,FKey | actionItemTemplateActionItemLink | 
-| actionItem_recNo | long |  | Key,Auto-Assign | actionItemTemplateActionItemLink | 
-| actionItemTemplateActionItem  | table |  |  | actionItemTemplate | 
-| recNo | long |  | Key,FKey | actionItem | 
+| actionItemTemplateActionItemLink  | table |  |  | actionItemTemplate | 
+| actionItemTemplate_recNo | long |  | PKey,FKey | actionItemTemplateActionItemLink | 
+| actionItem_recNo | long |  | PKey,Auto-Assign | actionItemTemplateActionItemLink | 
+| actionItemTemplateActionItem  | table |  |  | actionItemTemplateActionItemLink | 
+| recNo | long |  | PKey,FKey | actionItem | 
 | type | short |  | Required | actionItem | 
 | description | string | 256 |  | actionItem | 
 | triggerIndex | short |  | Required | actionItem | 

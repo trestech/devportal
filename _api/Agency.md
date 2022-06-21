@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Agency"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | int |  | Key | agency | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | int |  | PKey | agency | 
 | name | string | 256 |  | agency | 
 | alias | string | 64 |  | agency | 
 | uniqueId | string | 64 |  | agency | 
@@ -28,14 +28,14 @@ description: ""
 | merchantUserName | string | 64 |  | agency | 
 | merchantPassword | string | 256 |  | agency | 
 | merchantMaxChargeAmount | long |  |  | agency | 
-| agencyAffiliationLink  | table |  |  |  | 
-| agency_recNo | int |  | Key,FKey | agencyAffiliationLink | 
-| affiliation_recNo | int |  | Key,Required,FKey | agencyAffiliationLink | 
+| agencyAffiliationLink  | table |  |  | agency | 
+| agency_recNo | int |  | PKey,FKey | agencyAffiliationLink | 
+| affiliation_recNo | int |  | PKey,Required,FKey | agencyAffiliationLink | 
 | affiliationName | string | 64 | ReadOnly | agencyAffiliationLink | 
 | id | string | 32 |  | agencyAffiliationLink | 
-| agencyAdvisorReconciliation  | table |  |  |  | 
-| agency_recNo | int |  | Key,FKey | agencyAdvisorReconciliation | 
-| travelCategory_recNo | short |  | Key,Required,FKey | agencyAdvisorReconciliation | 
+| agencyAdvisorReconciliation  | table |  |  | agency | 
+| agency_recNo | int |  | PKey,FKey | agencyAdvisorReconciliation | 
+| travelCategory_recNo | short |  | PKey,Required,FKey | agencyAdvisorReconciliation | 
 | paymentTrigger | short |  | Required | agencyAdvisorReconciliation | 
 
 

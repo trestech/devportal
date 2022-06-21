@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [appUser](/appUser)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | appUser | 
 | summaryCount | int |  | appUser | 
 | id | string | 64 | appUser | 

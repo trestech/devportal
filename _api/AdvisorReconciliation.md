@@ -1,18 +1,18 @@
 ---
 layout: page
 title: "AdvisorReconciliation"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | advisorReconciliation | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | advisorReconciliation | 
 | reconciliationDate | Date |  |  | advisorReconciliation | 
 | description | string | 64 |  | advisorReconciliation | 
-| advisorReconciliationDetail  | table |  |  |  | 
-| reservationAdvisor_recNo | long |  | Key,FKey | advisorReconciliationDetail | 
+| advisorReconciliationDetail  | table |  |  | advisorReconciliation | 
+| reservationAdvisor_recNo | long |  | PKey,FKey | advisorReconciliationDetail | 
 | advisorReconciliation_recNo | long |  | FKey | advisorReconciliationDetail | 
 
 

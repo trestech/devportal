@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "History"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | history | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | history | 
 | timestamp | DateTimeOffset |  | Required | history | 
 | appUser_recNo | long |  |  | history | 
 | appUser_id | string | 64 |  | history | 

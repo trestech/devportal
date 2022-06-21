@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [accountingEntry](/accountingEntry)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | accountingEntry | 
 | summaryCount | int |  | accountingEntry | 
 | createDate | Date |  | accountingEntry | 

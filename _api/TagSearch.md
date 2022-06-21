@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [tag](/tag)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | tag | 
 | summaryCount | int |  | tag | 
 | name | string | 64 | tag | 

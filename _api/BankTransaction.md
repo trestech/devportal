@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "BankTransaction"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | bankTransaction | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | bankTransaction | 
 | transactionDate | Date |  | Required | bankTransaction | 
 | amount | long |  | Required | bankTransaction | 
 | bank_recNo | long |  | Required,FKey | bankTransaction | 

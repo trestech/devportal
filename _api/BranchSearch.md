@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [branch](/branch)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | branch | 
 | summaryCount | int |  | branch | 
 | name | string | 64 | branch | 

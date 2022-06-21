@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [destination](/destination)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | destination | 
 | summaryCount | int |  | destination | 
 | name | string | 64 | destination | 

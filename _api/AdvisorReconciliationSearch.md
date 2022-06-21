@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [advisorReconciliation](/advisorReconciliation)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | advisorReconciliation | 
 | summaryCount | int |  | advisorReconciliation | 
 | reconciliationDate | Date |  | advisorReconciliation | 

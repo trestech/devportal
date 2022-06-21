@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [history](/history)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | history | 
 | summaryCount | int |  | history | 
 | timestamp | DateTimeOffset |  | history | 

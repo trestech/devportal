@@ -1,15 +1,15 @@
 ---
 layout: page
 title: "ClientPayment"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
 | agencyProcessed | bool |  | Required | clientPayment | 
-| payment_recNo | long |  | Key,Auto-Assign | clientPayment | 
+| payment_recNo | long |  | PKey,Auto-Assign | clientPayment | 
 | clientProfile_recNo | long |  | Required,FKey | clientPayment | 
 | clientName_lookup | string | 256 | ReadOnly | clientPayment | 
 | person_recNo | long |  | FKey | clientPayment | 
@@ -22,8 +22,8 @@ description: ""
 | transactionId | string | 32 | ReadOnly | clientPayment | 
 | authorizationCode | string | 16 | ReadOnly | clientPayment | 
 | originalTransactionId | string | 32 |  | clientPayment | 
-| payment  [shared] | table |  |  |  | 
-| recNo | long |  | Key,FKey | payment | 
+| payment  [shared] | table |  |  | clientPayment | 
+| recNo | long |  | PKey,FKey | payment | 
 | amount | long |  | Required | payment | 
 | paymentDate | Date |  | Required | payment | 
 | method | short |  | Required | payment | 
@@ -37,23 +37,23 @@ description: ""
 | cardNumberToken | string | 64 |  | payment | 
 | voided | bool |  |  | payment | 
 | clearedDate | Date |  |  | payment | 
-| paymentDetail  | table |  |  | clientPayment | 
-| payment_recNo | long |  | Key,FKey | paymentDetail | 
-| reservation_recNo | long |  | Key,Required,FKey | paymentDetail | 
+| paymentDetail  | table |  |  | payment | 
+| payment_recNo | long |  | PKey,FKey | paymentDetail | 
+| reservation_recNo | long |  | PKey,Required,FKey | paymentDetail | 
 | amount | long |  | Required | paymentDetail | 
-| paymentAttachmentLink  | table |  |  | clientPayment | 
-| payment_recNo | long |  | Key,FKey | paymentAttachmentLink | 
-| attachment_recNo | long |  | Key,Auto-Assign | paymentAttachmentLink | 
-| attachment  [shared] | table |  |  | payment | 
-| recNo | long |  | Key,FKey | attachment | 
+| paymentAttachmentLink  | table |  |  | payment | 
+| payment_recNo | long |  | PKey,FKey | paymentAttachmentLink | 
+| attachment_recNo | long |  | PKey,Auto-Assign | paymentAttachmentLink | 
+| attachment  [shared] | table |  |  | paymentAttachmentLink | 
+| recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | 
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
 | size | int |  |  | attachment | 
 | compressed | bool |  |  | attachment | 
-| paymentTag  | table |  |  | clientPayment | 
-| recNo | long |  | Key | paymentTag | 
+| paymentTag  | table |  |  | payment | 
+| recNo | long |  | PKey | paymentTag | 
 | payment_recNo | long |  | FKey | paymentTag | 
 | tag_recNo | long |  | Required,FKey | paymentTag | 
 | name | string | 64 | ReadOnly | paymentTag | 

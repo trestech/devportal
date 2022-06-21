@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Branch"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | branch | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | branch | 
 | name | string | 64 |  | branch | 
 | description | string | 128 |  | branch | 
 | phone | string | 256 |  | branch | 

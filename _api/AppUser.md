@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "AppUser"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | appUser | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | appUser | 
 | id | string | 64 |  | appUser | 
 | enabled | bool |  |  | appUser | 
 | password | string | 128 |  | appUser | 
@@ -42,9 +42,9 @@ description: ""
 | emailServerName | string | 64 |  | appUser | 
 | emailServerUserName | string | 128 |  | appUser | 
 | emailServerPassword | string | 64 |  | appUser | 
-| appUserAdvisor  | table |  |  |  | 
-| appUser_RecNo | long |  | Key,FKey | appUserAdvisor | 
-| advisorProfile_recNo | long |  | Key,Required,FKey | appUserAdvisor | 
+| appUserAdvisor  | table |  |  | appUser | 
+| appUser_RecNo | long |  | PKey,FKey | appUserAdvisor | 
+| advisorProfile_recNo | long |  | PKey,Required,FKey | appUserAdvisor | 
 | advisorName | string | 256 | ReadOnly | appUserAdvisor | 
 | isPrimary | bool |  | Required | appUserAdvisor | 
 

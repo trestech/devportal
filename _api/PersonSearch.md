@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [person](/person)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | person | 
 | tagValue | string | 1024 | person | 
 | summaryCount | int |  | person | 

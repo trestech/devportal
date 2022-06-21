@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Bank"
-description: ""
+description: "| Column | Type | Size | Flags | Table | Description |"
 ---
 
 
 
-| Column | Type | Size | Table | Description |
-| ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | Key | bank | 
+| Column | Type | Size | Flags | Table | Description |
+| ------ | ---- | ---- | ----- | ----- | ----------- |
+| recNo | long |  | PKey | bank | 
 | name | string | 64 |  | bank | 
 | description | string | 128 |  | bank | 
 | accountingReference | string | 64 |  | bank | 

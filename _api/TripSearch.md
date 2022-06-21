@@ -10,8 +10,8 @@ User needs at least select permission for trips. Results may be filtered if trip
 
 Referenced Table: [trip](/trip)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | trip | 
 | tagValue | string | 1024 | trip | 
 | summaryCount | int |  | trip | 

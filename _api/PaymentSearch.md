@@ -8,8 +8,8 @@ description: ""
 
 Referenced Table: [payment](/payment)
 
-| Column | Type | Size | Flags | Table | Description |
-| ------ | ---- | ---- | ----- | ----- | ----------- |
+| Column | Type | Size | Table | Description |
+| ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | payment | 
 | tagValue | string | 1024 | payment | 
 | summaryCount | int |  | payment | 
