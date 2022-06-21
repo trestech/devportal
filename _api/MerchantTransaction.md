@@ -3,6 +3,8 @@ layout: page
 title: "MerchantTransaction"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -28,3 +30,5 @@ description: ""
 | payment_recNo | long |  | FKey | merchantTransaction | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

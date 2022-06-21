@@ -3,6 +3,8 @@ layout: page
 title: "Region"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -12,3 +14,5 @@ description: ""
 | name | string | 64 |  | region | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

@@ -3,7 +3,7 @@ layout: page
 title: "DirectConnectProvider"
 description: ""
 ---
-
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
 
 
 | Column | Type | Size | Table | Description |
@@ -16,3 +16,4 @@ description: ""
 | requiredFields | short |  | {string.Join(',', flags)} | directConnectProvider | 
 
 
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

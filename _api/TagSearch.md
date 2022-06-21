@@ -3,6 +3,8 @@ layout: page
 title: "TagSearch"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -15,6 +17,9 @@ Referenced Table: [tag](/tag)
 | name | string | 64 | tag | 
 | referenced | bool |  | tag | 
 | activeStatus | bool |  | tag | 
+| valueFreeFlow | bool |  | tag | 
+| valueRequired | bool |  | tag | 
+| valueList | string | 1024 | tag | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -49,3 +54,5 @@ Content-Type: application/json
 Status: 200 Ok
 ```
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

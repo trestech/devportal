@@ -3,6 +3,8 @@ layout: page
 title: "AppSetting"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -16,3 +18,5 @@ description: ""
 | data | string |  | Required | appSetting | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

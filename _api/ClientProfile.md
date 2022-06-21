@@ -3,6 +3,8 @@ layout: page
 title: "ClientProfile"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -95,3 +97,5 @@ description: ""
 | marketingElement_recNo | long |  | PKey,Required,FKey | clientProfileMarketing | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

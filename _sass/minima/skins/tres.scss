@@ -141,3 +141,8 @@ $table-border-color:    $sol-mono1 !default;
   .vi    { color: $sol-cyan } // Name.Variable.Instance
   .il    { color: $sol-cyan } // Literal.Number.Integer.Long
 }
+
+.nav-back {
+  font-size: smaller;
+  float: right!important;
+}

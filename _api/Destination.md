@@ -3,6 +3,8 @@ layout: page
 title: "Destination"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -14,3 +16,5 @@ description: ""
 | region_recNo | long |  | FKey | destination | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

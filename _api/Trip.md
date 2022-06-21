@@ -3,6 +3,8 @@ layout: page
 title: "Trip"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -435,3 +437,5 @@ description: ""
 | notes | string | 256 |  | actionItem | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

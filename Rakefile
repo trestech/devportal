@@ -33,7 +33,11 @@ task :import, :folder do |t, args|
         title: "#{title}"
         description: "#{description}"
         ---
+        <div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+        
         #{body}
+        
+        <div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
       DONE
       
       new_page_path = "_api/#{f}"

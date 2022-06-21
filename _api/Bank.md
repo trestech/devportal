@@ -3,6 +3,8 @@ layout: page
 title: "Bank"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -15,3 +17,5 @@ description: ""
 | balance | long |  | Required | bank | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

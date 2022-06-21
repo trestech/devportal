@@ -3,6 +3,8 @@ layout: page
 title: "Person"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -82,3 +84,5 @@ description: ""
 | value | string | 1024 |  | personTag | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

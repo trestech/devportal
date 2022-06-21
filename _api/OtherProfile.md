@@ -3,6 +3,8 @@ layout: page
 title: "OtherProfile"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -78,3 +80,5 @@ description: ""
 | value | string | 1024 |  | profileTag | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

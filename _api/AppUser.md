@@ -3,6 +3,8 @@ layout: page
 title: "AppUser"
 description: ""
 ---
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
+
 
 
 
@@ -49,3 +51,5 @@ description: ""
 | isPrimary | bool |  | Required | appUserAdvisor | 
 
 
+
+<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
