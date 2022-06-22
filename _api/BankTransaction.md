@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "BankTransaction"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -20,5 +18,3 @@ description: ""
 | clearedDate | Date |  |  | bankTransaction | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

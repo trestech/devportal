@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "Trip"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -145,6 +143,8 @@ description: ""
 | person_recNo | long |  | PKey,Required,FKey | reservationTraveler | 
 | nameLookup | string | 256 | ReadOnly | reservationTraveler | 
 | isPrimary | bool |  |  | reservationTraveler | 
+| primaryPhone | string | 256 | ReadOnly | reservationTraveler | 
+| primaryEmail | string | 256 | ReadOnly | reservationTraveler | 
 | reservationAdvisor  | table |  |  | reservation | 
 | recNo | long |  | PKey | reservationAdvisor | 
 | reservation_recNo | long |  | FKey | reservationAdvisor | 
@@ -437,5 +437,3 @@ description: ""
 | notes | string | 256 |  | actionItem | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

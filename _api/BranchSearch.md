@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "BranchSearch"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -49,5 +47,3 @@ Content-Type: application/json
 Status: 200 Ok
 ```
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

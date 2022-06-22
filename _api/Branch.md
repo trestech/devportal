@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "Branch"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -26,5 +24,3 @@ description: ""
 | itineraryRemarks | string |  |  | branch | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

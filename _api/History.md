@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "History"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -23,5 +21,3 @@ description: ""
 | newValue | string | 256 |  | history | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

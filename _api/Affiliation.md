@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "Affiliation"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -24,5 +22,3 @@ description: ""
 | id | string | 16 | Required | affiliationMarketingElement | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

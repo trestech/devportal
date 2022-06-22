@@ -23,10 +23,17 @@
         <div class="trigger">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
+            {%- unless my_page.exclude_in_header -%}
+              {%- if my_page.title -%}
+                <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              {%- endif -%}
+            {%- endunless -%}
           {%- endfor -%}
+          
+          <form action="{{ '/search/' | relative_url }}" method="get">
+            <input type="text" name="q" id="search-input" placeholder="Search">
+            <input type="submit" value="Search" style="display: none;">
+          </form>
         </div>
       </nav>
     {%- endif -%}

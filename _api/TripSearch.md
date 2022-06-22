@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 TripSearch returns data for trips and reservations.
 
@@ -216,5 +214,3 @@ Status: 200 Ok
 ]
 ```
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

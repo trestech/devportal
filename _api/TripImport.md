@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "TripImport"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -26,5 +24,3 @@ description: ""
 | trip_RecNo | long |  | FKey | tripImport | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

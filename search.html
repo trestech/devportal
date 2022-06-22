@@ -1,0 +1,37 @@
+---
+layout: page
+title: Search
+sitemap: false
+permalink: /search/
+exclude_in_header: true
+---
+
+<div class="search-page">
+  <h2>Search Results</h2>
+
+  <p><span id="search-process">Loading &nbsp;&nbsp;&nbsp;</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+  <ul id="search-results"></ul>
+</div>
+
+<script>
+  window.data = {
+    {%- for item in site.api -%}
+      {%- assign item_id = item.id | strip | slugify -%}
+      {%- if item.title -%}
+        {%- if added -%},{%- endif -%}
+        {%- assign added = false -%}
+        "{{ item_id }}": {
+          "id": "{{ item_id }}",
+          "title": "{{ item.title | strip }}",
+          "description": "{{ item.description | strip }}",
+          "url": "{{ item.url | strip }}",
+          "content": "{{ item.content | strip_html | strip | replace: "\n", ' ' | jsonify | replace: '"', '' | replace: '\n', ' ' | replace: '\', '' | replace: '  ', ' ' }}"
+        }
+        {%- assign added = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+    
+  };
+</script>
+<script src="{{ 'assets/js/lunr.min.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/search.js' | relative_url }}"></script>

@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "CardCodes"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -14,5 +12,3 @@ description: ""
 | code | string | 2 |  | cardCodes | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

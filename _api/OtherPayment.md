@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "OtherPayment"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -51,5 +49,3 @@ description: ""
 | value | string | 1024 |  | paymentTag | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

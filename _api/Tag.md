@@ -1,10 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "Tag"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
 
 
 
@@ -19,5 +17,3 @@ description: ""
 | description | string | 64 |  | tag | 
 
 
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
