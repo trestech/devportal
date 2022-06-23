@@ -24,6 +24,7 @@ task :import, :folder do |t, args|
       skip = false
       
       description = "" if description.start_with? 'Referenced Table:'
+      description = "" if description.start_with? 'Permission Areas:'
       description = "" if description == '| Column | Type | Size | Table | Description |'
       description = "" if description == '| Column | Type | Size | Flags | Table | Description |'
       
