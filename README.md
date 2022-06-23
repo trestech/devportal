@@ -4,6 +4,8 @@
 
 The following API documents provide details on how to interact with the Tres Application database API.
 
+This portal is developer focused.  If you are looking for help using Tres as an end user, see: https://trestechnologieshelp.zendesk.com/
+
 ## Develop
 
 The Tres Portal was built with [Jekyll](http://jekyllrb.com/) version 4.2.2, but should support newer versions as well.
