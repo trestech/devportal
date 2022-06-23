@@ -1,7 +1,7 @@
 ---
 layout: api_page
 title: "OtherPayment"
-description: "Permission Areas: OtherPayment"
+description: ""
 ---
 
 

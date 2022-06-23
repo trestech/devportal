@@ -1,7 +1,7 @@
 ---
 layout: api_page
 title: "Activity"
-description: "Permission Areas: Activity"
+description: ""
 ---
 
 

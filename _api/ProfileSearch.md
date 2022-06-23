@@ -16,9 +16,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | tagValue | string | 1024 | profile | 
 | summaryCount | int |  | profile | 
 | name | string | 256 | profile | 
-| profileType | short |  | profile | 
-| clientType | short |  | clientProfile | 
-| supplierType | short |  | supplierProfile | 
+| profileType | short |  | profile | Client = 1, Supplier = 2, Advisor = 3, Other = 4
+| clientType | short |  | clientProfile | Personal = 1, Corporate = 2
+| supplierType | short |  | supplierProfile | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
 | primaryPersonRecNo | long |  | profile | 
 | primaryPersonName | string | 256 | profile | 
 | primaryPersonFirstName | string | 64 | profile | 

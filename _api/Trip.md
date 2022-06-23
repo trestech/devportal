@@ -1,7 +1,7 @@
 ---
 layout: api_page
 title: "Trip"
-description: "Permission Areas: Trip"
+description: ""
 ---
 
 

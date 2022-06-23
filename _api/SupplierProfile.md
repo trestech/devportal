@@ -1,7 +1,7 @@
 ---
 layout: api_page
 title: "SupplierProfile"
-description: "Permission Areas: SupplierProfile"
+description: ""
 ---
 
 

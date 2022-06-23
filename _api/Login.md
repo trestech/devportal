@@ -1,38 +1,50 @@
 ---
 layout: api_page
-title:  "Login"
+title: "Login"
 description: "The login method initiates a connection to an agency context on the server"
 ---
-The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication.
- 
+
+The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. 
+
 The method returns a Json response that includes an identity token which is needed for subsequent operations for the same agency context.
- 
+
 | Input Parameter | Required/Optional | Description |
 | --------------- | ----------------- | ----------- |
 | alias | Required| Identifies the targeted context for login |
- 
+
 | Output Parameter | Description |
 | ---------------- | ----------- |
-| resultCode | Result code, 0 = success (status 200) |
+| resultCode | Result code |
 | resultDescription | Text that describes the result |
-| method | Calling method |
-| identityToken | If resultCode = 0, identityToken value is used for subsequent requests |
-| exception | Additional information in the event of an error |
- 
+
+| Result code | Description |
+| ----------- | ----------- |
+| 0 | success |
+| 100 | Invalid AppServer client version |
+| 101 | Invalid Username/Password |
+| 102 | Password is expired |
+| 103 | User locked |
+| 104 | User disabled |
+| 105 | Invalid alias |
+| 106 | Agency not initialized |
+| 107 | Agency disabled |
+| 108 | Agency cancelled |
+
 | Status code | Description |
 | ----------- | ----------- |
 | 200 | Ok |
 | 401 | Unauthorized |
- 
+
 #### Example request
 ```sh
 GET {url}/login/{alias}
+Content-Type: application/json
 Authorization: Basic Auth (Username, Password)
- 
+
 curl --location --request GET 'https://dev.trestechnologies.com/login/0001' \
 --header 'Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==' \
 ```
- 
+
 #### Example success response
 ```sh
 Status: 200 Ok
@@ -42,7 +54,7 @@ Status: 200 Ok
     "resultDescription": "Login Successful"
 }
 ```
- 
+
 #### Example error response
 ```sh
 Status: 401 Unauthorized

@@ -1,7 +1,7 @@
 ---
 layout: api_page
 title: "ClientPayment"
-description: "Permission Areas: ClientPayment"
+description: ""
 ---
 
 
