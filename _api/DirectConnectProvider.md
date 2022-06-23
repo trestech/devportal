@@ -1,11 +1,8 @@
 ---
-layout: page
+layout: api_page
 title: "DirectConnectProvider"
 description: ""
 ---
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
-
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | {string.Join(',', flags)} | directConnectProvider | 
@@ -14,6 +11,3 @@ description: ""
 | description | string | 256 | {string.Join(',', flags)} | directConnectProvider | 
 | requiresPost | bool |  | {string.Join(',', flags)} | directConnectProvider | 
 | requiredFields | short |  | {string.Join(',', flags)} | directConnectProvider | 
-
-
-<div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
