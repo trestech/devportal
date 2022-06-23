@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "TripImport"
-description: ""
+description: "Permission Areas: TripImport"
 ---
 
 
+
+Permission Areas: TripImport
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

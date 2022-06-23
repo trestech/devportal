@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [Activity]({{ '/api/Activity.html' | relative_url }})
 
+Permission Areas: Activity
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | activity | 

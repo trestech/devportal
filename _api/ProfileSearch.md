@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [Profile]({{ '/api/Profile.html' | relative_url }})
 
+Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | profile | 

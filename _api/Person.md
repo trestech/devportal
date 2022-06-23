@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "Person"
-description: ""
+description: "Permission Areas: Person"
 ---
 
 
+
+Permission Areas: Person
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

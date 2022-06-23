@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "OtherPayment"
-description: ""
+description: "Permission Areas: OtherPayment"
 ---
 
 
+
+Permission Areas: OtherPayment
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

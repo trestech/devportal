@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [Payment]({{ '/api/Payment.html' | relative_url }})
 
+Permission Areas: ClientPayment, SupplierPayment, OtherPayment
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | payment | 

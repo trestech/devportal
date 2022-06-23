@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "Tag"
-description: ""
+description: "Permission Areas: Tag"
 ---
 
 
+
+Permission Areas: Tag
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

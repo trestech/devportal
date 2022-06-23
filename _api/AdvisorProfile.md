@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "AdvisorProfile"
-description: ""
+description: "Permission Areas: AdvisorProfile"
 ---
 
 
+
+Permission Areas: AdvisorProfile
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

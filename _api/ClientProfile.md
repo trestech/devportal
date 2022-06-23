@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "ClientProfile"
-description: ""
+description: "Permission Areas: ClientProfile"
 ---
 
 
+
+Permission Areas: ClientProfile
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

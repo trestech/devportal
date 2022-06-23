@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "ClientPayment"
-description: ""
+description: "Permission Areas: ClientPayment"
 ---
 
 
+
+Permission Areas: ClientPayment
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

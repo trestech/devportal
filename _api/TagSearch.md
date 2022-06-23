@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [Tag]({{ '/api/Tag.html' | relative_url }})
 
+Permission Areas: Tag
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | tag | 

@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [TripImport]({{ '/api/TripImport.html' | relative_url }})
 
+Permission Areas: TripImport
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | tripImport | 

@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "SupplierProfile"
-description: ""
+description: "Permission Areas: SupplierProfile"
 ---
 
 
+
+Permission Areas: SupplierProfile
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

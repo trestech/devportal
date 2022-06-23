@@ -10,6 +10,8 @@ User needs at least select permission for trips. Results may be filtered if trip
 
 Referenced Table: [Trip]({{ '/api/Trip.html' | relative_url }})
 
+Permission Areas: Trip
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | trip | 

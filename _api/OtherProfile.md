@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "OtherProfile"
-description: ""
+description: "Permission Areas: OtherProfile"
 ---
 
 
+
+Permission Areas: OtherProfile
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

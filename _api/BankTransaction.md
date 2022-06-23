@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "BankTransaction"
-description: ""
+description: "Permission Areas: BankTransaction"
 ---
 
 
+
+Permission Areas: BankTransaction
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

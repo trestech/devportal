@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "SupplierPayment"
-description: ""
+description: "Permission Areas: SupplierPayment"
 ---
 
 
+
+Permission Areas: SupplierPayment
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

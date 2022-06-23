@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "Activity"
-description: ""
+description: "Permission Areas: Activity"
 ---
 
 
+
+Permission Areas: Activity
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

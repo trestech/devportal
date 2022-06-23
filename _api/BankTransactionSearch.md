@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [BankTransaction]({{ '/api/BankTransaction.html' | relative_url }})
 
+Permission Areas: BankTransaction
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | bankTransaction | 

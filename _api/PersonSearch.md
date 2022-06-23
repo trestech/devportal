@@ -8,6 +8,8 @@ description: ""
 
 Referenced Table: [Person]({{ '/api/Person.html' | relative_url }})
 
+Permission Areas: Person
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | person | 
