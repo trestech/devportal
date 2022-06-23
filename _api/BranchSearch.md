@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [branch](/branch)
+Referenced Table: [Branch]({{ '/api/Branch.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -24,7 +24,7 @@ Referenced Table: [branch](/branch)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | name | string |  | 
 

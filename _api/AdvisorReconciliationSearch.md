@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [advisorReconciliation](/advisorReconciliation)
+Referenced Table: [AdvisorReconciliation]({{ '/api/AdvisorReconciliation.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -24,7 +24,7 @@ Referenced Table: [advisorReconciliation](/advisorReconciliation)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | createDateTimeFrom | DateTimeOffset |  | 
 | createDateTimeTo | DateTimeOffset |  | 

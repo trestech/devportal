@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [appUser](/appUser)
+Referenced Table: [AppUser]({{ '/api/AppUser.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -29,12 +29,13 @@ Referenced Table: [appUser](/appUser)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | id | string |  | 
 | branchRecNo | long |  | 
-| userType | short |  | 
+| userType | short |  | User = 1, Manager = 2, Admin = 3
 | name | string |  | 
+| email | string |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

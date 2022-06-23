@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [accountingEntry](/accountingEntry)
+Referenced Table: [AccountingEntry]({{ '/api/AccountingEntry.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -25,7 +25,7 @@ Referenced Table: [accountingEntry](/accountingEntry)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | createDateTimeFrom | DateTimeOffset |  | 
 | createDateTimeTo | DateTimeOffset |  | 

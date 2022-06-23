@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [bankTransaction](/bankTransaction)
+Referenced Table: [BankTransaction]({{ '/api/BankTransaction.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -28,7 +28,7 @@ Referenced Table: [bankTransaction](/bankTransaction)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | transactionDateFrom | Date |  | 
 | transactionDateTo | Date |  | 

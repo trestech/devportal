@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [appSetting](/appSetting)
+Referenced Table: [AppSetting]({{ '/api/AppSetting.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -27,7 +27,7 @@ Referenced Table: [appSetting](/appSetting)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | area | string |  | 
 

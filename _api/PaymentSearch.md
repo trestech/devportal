@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [payment](/payment)
+Referenced Table: [Payment]({{ '/api/Payment.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -40,14 +40,14 @@ Referenced Table: [payment](/payment)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
-| profileType | short |  | 
+| profileType | short |  | Client = 1, Supplier = 2, Other = 3
 | tripRecNo | long |  | 
 | reservationRecNo | long[] |  | 
 | paymentDateFrom | Date |  | 
@@ -55,8 +55,8 @@ Referenced Table: [payment](/payment)
 | clientProfileRecNo | long |  | 
 | supplierProfileRecNo | long |  | 
 | otherProfileRecNo | long |  | 
-| payType | short |  | 
-| method | short |  | 
+| payType | short |  | Received = 1, Made = 2
+| method | short |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | bankRecNo | long[] |  | 
 | agencyProcessed | bool |  | 
 | voided | bool |  | 

@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [merchantTransaction](/merchantTransaction)
+Referenced Table: [MerchantTransaction]({{ '/api/MerchantTransaction.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -26,9 +26,9 @@ Referenced Table: [merchantTransaction](/merchantTransaction)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
-| transactionType | short |  | 
+| transactionType | short |  | Sale = 1, Void = 2, Refund = 3
 | dateProcessedFrom | DateTimeOffset |  | 
 | dateProcessedTo | DateTimeOffset |  | 
 | paymentRecNo | long |  | 

@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [profile](/profile)
+Referenced Table: [Profile]({{ '/api/Profile.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -67,35 +67,35 @@ Referenced Table: [profile](/profile)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
-| profileType | short |  | 
+| profileType | short |  | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | profileName | string |  | 
-| profileNameCond | short |  | 
-| commType | short |  | 
+| profileNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | commValue | string |  | 
-| commValueCond | short |  | 
+| commValueCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | clientAnniversaryMonth | short[] |  | 
 | clientAnniversaryMonthFrom | short |  | 
 | clientAnniversaryMonthTo | short |  | 
 | clientAnniversaryDayFrom | short |  | 
 | clientAnniversaryDayTo | short |  | 
 | clientAdvisorProfileRecNo | long |  | 
-| clientType | short |  | 
-| supplierType | short |  | 
+| clientType | short |  | Personal = 1, Corporate = 2
+| supplierType | short |  | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
 | activestatus | bool |  | 
 | clientBranchRecNo | long |  | 
 | personRecNo | long |  | 
 | personName | string |  | 
 | personFirstName | string |  | 
-| personFirstNameCond | short |  | 
+| personFirstNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | personLastName | string |  | 
-| personLastNameCond | short |  | 
+| personLastNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | preferredSupplier | bool |  | 
 | street1 | string |  | 
 | city | string |  | 

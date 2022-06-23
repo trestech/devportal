@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [tag](/tag)
+Referenced Table: [Tag]({{ '/api/Tag.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -28,7 +28,7 @@ Referenced Table: [tag](/tag)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | name | string |  | 
 | activeStatus | bool |  | 

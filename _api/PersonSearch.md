@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [person](/person)
+Referenced Table: [Person]({{ '/api/Person.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -42,23 +42,23 @@ Referenced Table: [person](/person)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | name | string |  | 
 | firstName | string |  | 
-| firstNameCond | short |  | 
+| firstNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | middleName | string |  | 
-| middleNameCond | short |  | 
+| middleNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | lastName | string |  | 
-| lastNameCond | short |  | 
-| commType | short |  | 
+| lastNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | commValue | string |  | 
-| commValueCond | short |  | 
+| commValueCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | commValueCountryDomain | string |  | 
 | commValueCityArea | string |  | 
 | commValueUserSpecific | string |  | 
@@ -75,7 +75,7 @@ Referenced Table: [person](/person)
 | createDateTimeTo | DateTimeOffset |  | 
 | modifiedDateTimeFrom | DateTimeOffset |  | 
 | modifiedDateTimeTo | DateTimeOffset |  | 
-| cardType | short[] |  | 
+| cardType | short[] |  | CreditDebit = 1, Loyalty = 2, Passport = 3
 | personActivitySearchParams | [activitySearch](/activitySearch) |  | 
 
 | Status code | Description |

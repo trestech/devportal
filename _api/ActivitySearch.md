@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [activity](/activity)
+Referenced Table: [Activity]({{ '/api/Activity.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -41,15 +41,15 @@ Referenced Table: [activity](/activity)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | appUserRecNo | long |  | 
-| type | short[] |  | 
+| type | short[] |  | Task = 1, Appointment = 2, Note = 3, Promo = 4
 | targetDateFrom | Date |  | 
 | targetDateTo | Date |  | 
 | targetDateTimeFrom | Date |  | 

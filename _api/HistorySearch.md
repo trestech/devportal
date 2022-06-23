@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [history](/history)
+Referenced Table: [History]({{ '/api/History.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -32,7 +32,7 @@ Referenced Table: [history](/history)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tableName | string |  | 
 | tableRecNo | long |  | 

@@ -6,7 +6,7 @@ description: ""
 
 
 
-Referenced Table: [tripImport](/tripImport)
+Referenced Table: [TripImport]({{ '/api/TripImport.html' | relative_url }})
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -36,10 +36,10 @@ Referenced Table: [tripImport](/tripImport)
 | topRows [inherited] | int |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | [includeColsExtended[]](/includeColsExtended) |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
-| type | short[] |  | 
-| status | short[] |  | 
+| type | short[] |  | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
+| status | short[] |  | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | tripRecNo | long |  | 
 
 | Status code | Description |
