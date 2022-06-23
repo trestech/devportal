@@ -27,6 +27,16 @@ task :import, :folder do |t, args|
       description = "" if description == '| Column | Type | Size | Table | Description |'
       description = "" if description == '| Column | Type | Size | Flags | Table | Description |'
       
+      body = body.gsub(/\[([a-zA-Z]+)\]\(\/([a-zA-Z]+)\.html\)/) do |_|
+        match = Regexp.last_match
+        v = match[1]
+        v = v[0].upcase + v[1..-1]
+        
+        "[#{v}]({{ '/api/#{v}.html' | relative_url }})"
+      end
+      
+      body = body.gsub(/\[includeColsExtended\[\]\]\(\/includeColsExtended\)/, 'includeColsExtended[]')
+      
       output = <<~DONE
         ---
         layout: api_page
