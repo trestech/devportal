@@ -9,7 +9,7 @@ description: ""
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | recNo | long |  | PKey | merchantTransaction | 
-| transactionType | short |  | Required | merchantTransaction | 
+| transactionType | short |  | Required | merchantTransaction | Sale = 1, Void = 2, Refund = 3
 | amount | long |  | Required | merchantTransaction | 
 | cardNumber | string | 64 |  | merchantTransaction | 
 | expirationDate | Date |  |  | merchantTransaction | 

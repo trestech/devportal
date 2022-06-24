@@ -15,11 +15,11 @@ Permission Areas: Activity
 | recNo | long |  | activity | 
 | tagValue | string | 1024 | activity | 
 | summaryCount | int |  | activity | 
-| type | short |  | activity | 
+| type | short |  | activity | Task = 1, Appointment = 2, Note = 3, Promo = 4
 | appUser_recNo | long |  | activity | 
 | appUserId | string | 64 | activity | 
 | subject | string | 64 | activity | 
-| priority | short |  | activity | 
+| priority | short |  | activity | Low = 1, Medium = 2, High = 3
 | targetDateTime | DateTimeOffset |  | activity | 
 | targetDate | Date |  | activity | 
 | completionDateTime | DateTime |  | activity | 

@@ -12,7 +12,7 @@ Referenced Table: [MerchantTransaction]({{ '/api/MerchantTransaction.html' | rel
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | merchantTransaction | 
 | summaryCount | int |  | merchantTransaction | 
-| transactionType | short |  | merchantTransaction | 
+| transactionType | short |  | merchantTransaction | Sale = 1, Void = 2, Refund = 3
 | transactionId | string | 32 | merchantTransaction | 
 | payment_recNo | long |  | merchantTransaction | 
 | dateProcessed | DateTimeOffset |  | merchantTransaction | 

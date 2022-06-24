@@ -36,6 +36,6 @@ description: ""
 | agencyAdvisorReconciliation  | table |  |  | agency | 
 | agency_recNo | int |  | PKey,FKey | agencyAdvisorReconciliation | 
 | travelCategory_recNo | short |  | PKey,Required,FKey | agencyAdvisorReconciliation | 
-| paymentTrigger | short |  | Required | agencyAdvisorReconciliation | 
+| paymentTrigger | short |  | Required | agencyAdvisorReconciliation | AgencyPaidAndDeparted = 1, AgencyPaid = 2
 
 

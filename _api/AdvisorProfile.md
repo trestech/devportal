@@ -11,7 +11,7 @@ Permission Areas: AdvisorProfile
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | profile_recNo | long |  | PKey,Auto-Assign | advisorProfile | 
-| type | short |  | Required | advisorProfile | 
+| type | short |  | Required | advisorProfile | Inside = 1, Outside = 2
 | profile  [shared] | table |  |  | advisorProfile | 
 | recNo | long |  | PKey,FKey | profile | 
 | name | string | 256 |  | profile | 
@@ -33,7 +33,7 @@ Permission Areas: AdvisorProfile
 | communication_recNo | long |  | PKey,Auto-Assign | profileCommunicationLink | 
 | communication  [shared] | table |  |  | profileCommunicationLink | 
 | recNo | long |  | PKey,FKey | communication | 
-| type | short |  | Required | communication | 
+| type | short |  | Required | communication | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | subType | string | 32 |  | communication | 
 | value | string | 256 |  | communication | 
 | countryDomain | string | 64 |  | communication | 
@@ -44,7 +44,7 @@ Permission Areas: AdvisorProfile
 | permitMarketing | bool |  |  | communication | 
 | profileAddressLink  | table |  |  | profile | 
 | profile_recNo | long |  | PKey,FKey | profileAddressLink | 
-| addressType | short |  | PKey,Required | profileAddressLink | 
+| addressType | short |  | PKey,Required | profileAddressLink | Physical = 1, Mailing = 2
 | permitMarketing | bool |  |  | profileAddressLink | 
 | address_recNo | long |  | PKey,Auto-Assign | profileAddressLink | 
 | address  [shared] | table |  |  | profileAddressLink | 
@@ -67,7 +67,7 @@ Permission Areas: AdvisorProfile
 | attachment_recNo | long |  | PKey,Auto-Assign | profileAttachmentLink | 
 | attachment  [shared] | table |  |  | profileAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
-| type | short |  | Required | attachment | 
+| type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 

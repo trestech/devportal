@@ -11,10 +11,10 @@ Permission Areas: SupplierProfile
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | profile_recNo | long |  | PKey,Auto-Assign | supplierProfile | 
-| type | short |  | Required | supplierProfile | 
+| type | short |  | Required | supplierProfile | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
 | preferred | bool |  | Required | supplierProfile | 
 | airlineNo | short |  |  | supplierProfile | 
-| commissionTriggerIndex | short |  |  | supplierProfile | 
+| commissionTriggerIndex | short |  |  | supplierProfile | BookingDate = 1, DepartDate = 2, ReturnDate = 3
 | commissionTriggerDaysOffset | short |  |  | supplierProfile | 
 | vendorId | string | 10 |  | supplierProfile | 
 | profile  [shared] | table |  |  | supplierProfile | 
@@ -38,7 +38,7 @@ Permission Areas: SupplierProfile
 | communication_recNo | long |  | PKey,Auto-Assign | profileCommunicationLink | 
 | communication  [shared] | table |  |  | profileCommunicationLink | 
 | recNo | long |  | PKey,FKey | communication | 
-| type | short |  | Required | communication | 
+| type | short |  | Required | communication | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | subType | string | 32 |  | communication | 
 | value | string | 256 |  | communication | 
 | countryDomain | string | 64 |  | communication | 
@@ -49,7 +49,7 @@ Permission Areas: SupplierProfile
 | permitMarketing | bool |  |  | communication | 
 | profileAddressLink  | table |  |  | profile | 
 | profile_recNo | long |  | PKey,FKey | profileAddressLink | 
-| addressType | short |  | PKey,Required | profileAddressLink | 
+| addressType | short |  | PKey,Required | profileAddressLink | Physical = 1, Mailing = 2
 | permitMarketing | bool |  |  | profileAddressLink | 
 | address_recNo | long |  | PKey,Auto-Assign | profileAddressLink | 
 | address  [shared] | table |  |  | profileAddressLink | 
@@ -72,7 +72,7 @@ Permission Areas: SupplierProfile
 | attachment_recNo | long |  | PKey,Auto-Assign | profileAttachmentLink | 
 | attachment  [shared] | table |  |  | profileAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
-| type | short |  | Required | attachment | 
+| type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 

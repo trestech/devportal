@@ -39,7 +39,7 @@ Permission Areas: Person
 | communication_recNo | long |  | PKey,Auto-Assign | personCommunicationLink | 
 | communication  [shared] | table |  |  | personCommunicationLink | 
 | recNo | long |  | PKey,FKey | communication | 
-| type | short |  | Required | communication | 
+| type | short |  | Required | communication | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | subType | string | 32 |  | communication | 
 | value | string | 256 |  | communication | 
 | countryDomain | string | 64 |  | communication | 
@@ -51,7 +51,7 @@ Permission Areas: Person
 | card  | table |  |  | person | 
 | recNo | long |  | PKey | card | 
 | person_recNo | long |  | FKey | card | 
-| type | short |  | Required | card | 
+| type | short |  | Required | card | CreditDebit = 1, Loyalty = 2, Passport = 3
 | cardNumber | string | 64 | Required | card | 
 | issueDate | Date |  |  | card | 
 | expirationDate | Date |  |  | card | 
@@ -70,7 +70,7 @@ Permission Areas: Person
 | attachment_recNo | long |  | PKey,Auto-Assign | personAttachmentLink | 
 | attachment  [shared] | table |  |  | personAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
-| type | short |  | Required | attachment | 
+| type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 

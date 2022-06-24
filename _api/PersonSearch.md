@@ -30,7 +30,7 @@ Permission Areas: Person
 | remarks | string | 256 | person | 
 | createDateTime | DateTime |  | person | 
 | lastModifiedDateTime | DateTime |  | person | 
-| cardType | short |  | person | 
+| cardType | short |  | person | CreditDebit = 1, Loyalty = 2, Passport = 3
 | cardNumber | string | 64 | card | 
 | cardExpDate | Date |  | card | 
 | cardDescription | string | 128 | card | 

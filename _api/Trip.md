@@ -60,7 +60,7 @@ Permission Areas: Trip
 | confirmationNo | string | 64 |  | reservation | 
 | arcBspNo | int |  |  | reservation | 
 | ticketNo | long |  |  | reservation | 
-| status | short |  | Required | reservation | 
+| status | short |  | Required | reservation | Pending = 1, Confirmed = 2, Cancelled = 3
 | finalPayDueDate | Date |  |  | reservation | 
 | bookDateTime | DateTimeOffset |  |  | reservation | 
 | startDateTime | DateTime |  |  | reservation | 
@@ -84,11 +84,11 @@ Permission Areas: Trip
 | paymentCount | int |  | ReadOnly | reservation | 
 | airReservation  [shared] | table |  |  | reservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
-| ticketType | short |  |  | airReservation | 
+| ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
-| domIntlIndicator | short |  | Required | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | Domestic = 1, International = 2, Transborder = 3
 | eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | airReservation | 
 | recNo | long |  | PKey | airSegment | 
@@ -168,7 +168,7 @@ Permission Areas: Trip
 | attachment_recNo | long |  | PKey,Auto-Assign | reservationAttachmentLink | 
 | reservationAttachment  [shared] | table |  |  | reservationAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
-| type | short |  | Required | attachment | 
+| type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
@@ -182,7 +182,7 @@ Permission Areas: Trip
 | value | string | 1024 |  | reservationTag | 
 | cruiseReservation  | table |  |  | reservation | 
 | reservation_recNo | long |  | PKey,FKey | cruiseReservation | 
-| type | short |  | Required | cruiseReservation | 
+| type | short |  | Required | cruiseReservation | Ocean = 1, River = 2
 | deck | string | 32 |  | cruiseReservation | 
 | cabin | string | 16 |  | cruiseReservation | 
 | cruiseSegment  | table |  |  | cruiseReservation | 
@@ -215,7 +215,7 @@ Permission Areas: Trip
 | confirmationNo | string | 64 |  | reservation | 
 | arcBspNo | int |  |  | reservation | 
 | ticketNo | long |  |  | reservation | 
-| status | short |  | Required | reservation | 
+| status | short |  | Required | reservation | Pending = 1, Confirmed = 2, Cancelled = 3
 | finalPayDueDate | Date |  |  | reservation | 
 | bookDateTime | DateTimeOffset |  |  | reservation | 
 | startDateTime | DateTime |  |  | reservation | 
@@ -235,11 +235,11 @@ Permission Areas: Trip
 | trackClientPayments | bool |  | Required | reservation | 
 | airReservation  [shared] | table |  |  | cruiseSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
-| ticketType | short |  |  | airReservation | 
+| ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
-| domIntlIndicator | short |  | Required | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | Domestic = 1, International = 2, Transborder = 3
 | eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | cruiseSubAirReservation | 
 | recNo | long |  | PKey | airSegment | 
@@ -312,7 +312,7 @@ Permission Areas: Trip
 | confirmationNo | string | 64 |  | reservation | 
 | arcBspNo | int |  |  | reservation | 
 | ticketNo | long |  |  | reservation | 
-| status | short |  | Required | reservation | 
+| status | short |  | Required | reservation | Pending = 1, Confirmed = 2, Cancelled = 3
 | finalPayDueDate | Date |  |  | reservation | 
 | bookDateTime | DateTimeOffset |  |  | reservation | 
 | startDateTime | DateTime |  |  | reservation | 
@@ -332,11 +332,11 @@ Permission Areas: Trip
 | trackClientPayments | bool |  | Required | reservation | 
 | airReservation  [shared] | table |  |  | tourSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
-| ticketType | short |  |  | airReservation | 
+| ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
 | originalTicketNo | long |  |  | airReservation | 
 | ticketDesignator | string | 32 |  | airReservation | 
-| domIntlIndicator | short |  | Required | airReservation | 
+| domIntlIndicator | short |  | Required | airReservation | Domestic = 1, International = 2, Transborder = 3
 | eTicketIndicator | short |  |  | airReservation | 
 | airSegment  | table |  |  | tourSubAirReservation | 
 | recNo | long |  | PKey | airSegment | 
@@ -401,7 +401,7 @@ Permission Areas: Trip
 | reservation_recNo | long |  | PKey,FKey | clientPaymentInfo | 
 | paymentDate | Date |  |  | clientPaymentInfo | 
 | amount | long |  |  | clientPaymentInfo | 
-| method | short |  | Required | clientPaymentInfo | 
+| method | short |  | Required | clientPaymentInfo | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | agencyProcessed | bool |  | Required | clientPaymentInfo | 
 | cardNumber | string | 64 |  | clientPaymentInfo | 
 | cardNumberToken | string | 64 |  | clientPaymentInfo | 
@@ -411,7 +411,7 @@ Permission Areas: Trip
 | attachment_recNo | long |  | PKey,Auto-Assign | tripAttachmentLink | 
 | tripAttachment  [shared] | table |  |  | tripAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
-| type | short |  | Required | attachment | 
+| type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
 | fileNameLinkURL | string | 256 | Required | attachment | 
 | fileData | byte[] |  |  | attachment | 
@@ -428,9 +428,9 @@ Permission Areas: Trip
 | actionItem_recNo | long |  | PKey,Auto-Assign | tripActionItemLink | 
 | tripActionItem  | table |  |  | tripActionItemLink | 
 | recNo | long |  | PKey,FKey | actionItem | 
-| type | short |  | Required | actionItem | 
+| type | short |  | Required | actionItem | Trip = 1, TripTemplate = 2
 | description | string | 256 |  | actionItem | 
-| triggerIndex | short |  | Required | actionItem | 
+| triggerIndex | short |  | Required | actionItem | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4
 | triggerDaysOffset | short |  |  | actionItem | 
 | triggerFixedDate | Date |  |  | actionItem | 
 | completed | DateTimeOffset |  |  | actionItem | 

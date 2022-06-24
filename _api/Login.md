@@ -37,11 +37,11 @@ The method returns a Json response that includes an identity token which is need
 
 #### Example request
 ```sh
-GET {url}/login/{alias}
+GET https://api-dev.trestechnologies.com/login/{alias}
 Content-Type: application/json
 Authorization: Basic Auth (Username, Password)
 
-curl --location --request GET 'https://dev.trestechnologies.com/login/0001' \
+curl --location --request GET 'https://api-dev.trestechnologies.com/login/0001' \
 --header 'Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==' \
 ```
 

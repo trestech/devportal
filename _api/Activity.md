@@ -13,9 +13,9 @@ Permission Areas: Activity
 | recNo | long |  | PKey | activity | 
 | appUser_recNo | long |  | FKey | activity | 
 | appUserId | string | 64 | ReadOnly | activity | 
-| type | short |  | Required | activity | 
+| type | short |  | Required | activity | Task = 1, Appointment = 2, Note = 3, Promo = 4
 | subType | short |  |  | activity | 
-| priority | short |  | Required | activity | 
+| priority | short |  | Required | activity | Low = 1, Medium = 2, High = 3
 | targetDateTime | DateTimeOffset |  |  | activity | 
 | targetDate | Date |  |  | activity | 
 | duration | short |  |  | activity | 

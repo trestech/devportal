@@ -41,13 +41,13 @@ Permission Areas: Trip
 | reservationTagValue | string | 1024 | reservation | 
 | reservationSupplierProfileRecNo | long |  | reservation | 
 | reservationSupplierProfileName | string | 256 | reservation | 
-| reservationCommisionTriggerIndex | short |  | reservation | 
+| reservationCommisionTriggerIndex | short |  | reservation | BookingDate = 1, DepartDate = 2, ReturnDate = 3
 | reservationCommisionTriggerDaysOffset | short |  | reservation | 
 | reservationClientBalance | long |  | reservation | 
 | reservationSupplierBalance | long |  | reservation | 
 | reservationTrackClientPayments | bool |  | reservation | 
-| reservationStatus | short |  | reservation | 
-| reservationTravelCategoryRecNo | short |  | reservation | 
+| reservationStatus | short |  | reservation | Pending = 1, Confirmed = 2, Cancelled = 3
+| reservationTravelCategoryRecNo | short |  | reservation | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | reservationTravelCategoryName | string | 32 | reservation | 
 | reservationTotalFare | long |  | reservation | 
 | reservationCommissionAmount | long |  | reservation | 
@@ -79,7 +79,7 @@ Permission Areas: Trip
 | reservationPrimaryTravelerRecNo | long |  | reservation | 
 | reservationPrimaryTravelerName | string | 256 | reservation | 
 | tripActionRecNo | long |  | tripActionItem | 
-| tripActionItemTriggerIndex | short |  | tripActionItem | 
+| tripActionItemTriggerIndex | short |  | tripActionItem | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4
 | tripActionItemDate | Date |  | tripActionItem | 
 | tripActionItemTriggerFixedDate | Date |  | tripActionItem | 
 | tripActionItemDescription | string | 256 | tripActionItem | 

@@ -13,7 +13,7 @@ Referenced Table: [AppUser]({{ '/api/AppUser.html' | relative_url }})
 | recNo | long |  | appUser | 
 | summaryCount | int |  | appUser | 
 | id | string | 64 | appUser | 
-| userType | short |  | appUser | 
+| userType | short |  | appUser | User = 1, Manager = 2, Admin = 3
 | branch_recNo | long |  | appUser | 
 | branchName | string | 64 | appUser | 
 | name | string | 64 | appUser | 

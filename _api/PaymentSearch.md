@@ -15,13 +15,13 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | recNo | long |  | payment | 
 | tagValue | string | 1024 | payment | 
 | summaryCount | int |  | payment | 
-| profileType | short |  | payment | 
+| profileType | short |  | payment | Client = 1, Supplier = 2, Other = 3
 | profileRecNo | long |  | payment | 
 | profileName | string | 256 | payment | 
 | amount | long |  | payment | 
 | paymentDate | Date |  | payment | 
-| payType | short |  | payment | 
-| method | short |  | payment | 
+| payType | short |  | payment | Received = 1, Made = 2
+| method | short |  | payment | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | bankRecNo | long |  | payment | 
 | bankName | string | 64 | payment | 
 | agencyProcessed | bool |  | payment | 
@@ -32,6 +32,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | reservationAmount | long |  | paymentDetail | 
 | voided | bool |  | payment | 
 | accountingEntryRecNo | long |  | payment | 
+| remarks | string | 256 | payment | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
