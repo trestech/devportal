@@ -35,6 +35,7 @@ Permission Areas: BankTransaction
 | transactionDateFrom | Date |  | 
 | transactionDateTo | Date |  | 
 | bankRecNo | long |  | 
+| voided | bool |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
