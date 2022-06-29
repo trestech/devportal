@@ -29,25 +29,25 @@ Permission Areas: Activity
 | private | bool |  |  | activity | 
 | affiliation_recNo | int |  | FKey | activity | 
 | affiliationName_lookup | string | 64 | ReadOnly | activity | 
-| activityClientProfileLink  | table |  |  | activity | 
+| activityClientProfileLink  | table |  | Singleton | activity | 
 | activity_recNo | long |  | PKey,FKey | activityClientProfileLink | 
 | profile_recNo | long |  | PKey,Required,FKey | activityClientProfileLink | 
 | clientName_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
 | clientPhone_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
 | clientEmail_lookup | string | 256 | ReadOnly | activityClientProfileLink | 
-| activitySupplierProfileLink  | table |  |  | activity | 
+| activitySupplierProfileLink  | table |  | Singleton | activity | 
 | activity_recNo | long |  | PKey,FKey | activitySupplierProfileLink | 
 | profile_recNo | long |  | PKey,Required,FKey | activitySupplierProfileLink | 
 | supplierName_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
 | supplierPhone_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
 | supplierEmail_lookup | string | 256 | ReadOnly | activitySupplierProfileLink | 
-| activityPersonLink  | table |  |  | activity | 
+| activityPersonLink  | table |  | Singleton | activity | 
 | activity_recNo | long |  | PKey,FKey | activityPersonLink | 
 | person_recNo | long |  | PKey,Required,FKey | activityPersonLink | 
 | personName_lookup | string | 256 | ReadOnly | activityPersonLink | 
 | personPhone_lookup | string | 256 | ReadOnly | activityPersonLink | 
 | personEmail_lookup | string | 256 | ReadOnly | activityPersonLink | 
-| activityTripLink  | table |  |  | activity | 
+| activityTripLink  | table |  | Singleton | activity | 
 | activity_recNo | long |  | PKey,FKey | activityTripLink | 
 | trip_recNo | long |  | PKey,Required,FKey | activityTripLink | 
 | tripName_lookup | string | 256 | ReadOnly | activityTripLink | 

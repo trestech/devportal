@@ -37,7 +37,7 @@ Permission Areas: Person
 | personCommunicationLink  | table |  |  | person | 
 | person_recNo | long |  | PKey,FKey | personCommunicationLink | 
 | communication_recNo | long |  | PKey,Auto-Assign | personCommunicationLink | 
-| communication  [shared] | table |  |  | personCommunicationLink | 
+| communication  [shared] | table |  | Singleton | personCommunicationLink | 
 | recNo | long |  | PKey,FKey | communication | 
 | type | short |  | Required | communication | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | subType | string | 32 |  | communication | 
@@ -68,7 +68,7 @@ Permission Areas: Person
 | personAttachmentLink  | table |  |  | person | 
 | person_recNo | long |  | PKey,FKey | personAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | personAttachmentLink | 
-| attachment  [shared] | table |  |  | personAttachmentLink | 
+| attachment  [shared] | table |  | Singleton | personAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 

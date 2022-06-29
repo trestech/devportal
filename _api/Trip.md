@@ -29,7 +29,7 @@ Permission Areas: Trip
 | remarks | string |  |  | trip | 
 | advisorRemarks | string |  |  | trip | 
 | marketingSource | string | 64 |  | trip | 
-| clientProfileInfo  | table |  |  | trip | 
+| clientProfileInfo  | table |  | Singleton | trip | 
 | trip_recNo | long |  | PKey,FKey | clientProfileInfo | 
 | name | string | 256 |  | clientProfileInfo | 
 | id | string | 32 |  | clientProfileInfo | 
@@ -44,7 +44,7 @@ Permission Areas: Trip
 | tripReservationLink  | table |  |  | trip | 
 | trip_recNo | long |  | PKey,FKey | tripReservationLink | 
 | reservation_recNo | long |  | PKey,Auto-Assign | tripReservationLink | 
-| reservation  [shared] | table |  |  | tripReservationLink | 
+| reservation  [shared] | table |  | Singleton | tripReservationLink | 
 | recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
@@ -82,7 +82,7 @@ Permission Areas: Trip
 | supplierBalance | long |  | ReadOnly | reservation | 
 | accountingEntry_recNo | long |  | FKey | reservation | 
 | paymentCount | int |  | ReadOnly | reservation | 
-| airReservation  [shared] | table |  |  | reservation | 
+| airReservation  [shared] | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
@@ -108,7 +108,7 @@ Permission Areas: Trip
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | reservation | 
+| railReservation  [shared] | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
@@ -116,7 +116,7 @@ Permission Areas: Trip
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| supplierProfileInfo  [shared] | table |  |  | reservation | 
+| supplierProfileInfo  [shared] | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
@@ -128,7 +128,7 @@ Permission Areas: Trip
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| providerProfileInfo  [shared] | table |  |  | reservation | 
+| providerProfileInfo  [shared] | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
@@ -166,7 +166,7 @@ Permission Areas: Trip
 | reservationAttachmentLink  | table |  |  | reservation | 
 | reservation_recNo | long |  | FKey | reservationAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | reservationAttachmentLink | 
-| reservationAttachment  [shared] | table |  |  | reservationAttachmentLink | 
+| reservationAttachment  [shared] | table |  | Singleton | reservationAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
@@ -180,7 +180,7 @@ Permission Areas: Trip
 | tag_recNo | long |  | Required,FKey | reservationTag | 
 | name | string | 64 | ReadOnly | reservationTag | 
 | value | string | 1024 |  | reservationTag | 
-| cruiseReservation  | table |  |  | reservation | 
+| cruiseReservation  | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | cruiseReservation | 
 | type | short |  | Required | cruiseReservation | Ocean = 1, River = 2
 | deck | string | 32 |  | cruiseReservation | 
@@ -199,7 +199,7 @@ Permission Areas: Trip
 | cruiseSubReservationLink  | table |  |  | cruiseReservation | 
 | parentReservation_recNo | long |  | PKey,FKey | subReservationLink | 
 | subReservation_recNo | long |  | PKey,Auto-Assign | subReservationLink | 
-| cruiseSubReservation  [shared] | table |  |  | cruiseSubReservationLink | 
+| cruiseSubReservation  [shared] | table |  | Singleton | cruiseSubReservationLink | 
 | recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
@@ -233,7 +233,7 @@ Permission Areas: Trip
 | supplierRemarks | string |  |  | reservation | 
 | advisorInfo | string | 256 |  | reservation | 
 | trackClientPayments | bool |  | Required | reservation | 
-| airReservation  [shared] | table |  |  | cruiseSubReservation | 
+| airReservation  [shared] | table |  | Singleton | cruiseSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
@@ -259,7 +259,7 @@ Permission Areas: Trip
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | cruiseSubReservation | 
+| railReservation  [shared] | table |  | Singleton | cruiseSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
@@ -267,7 +267,7 @@ Permission Areas: Trip
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| cruiseSubSupplierProfileInfo  [shared] | table |  |  | cruiseSubReservation | 
+| cruiseSubSupplierProfileInfo  [shared] | table |  | Singleton | cruiseSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
@@ -279,7 +279,7 @@ Permission Areas: Trip
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| cruiseSubProviderProfileInfo  [shared] | table |  |  | cruiseSubReservation | 
+| cruiseSubProviderProfileInfo  [shared] | table |  | Singleton | cruiseSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
@@ -291,12 +291,12 @@ Permission Areas: Trip
 | stateProvince | string | 8 |  | providerProfileInfo | 
 | zipPostalCode | string | 16 |  | providerProfileInfo | 
 | country | string | 4 |  | providerProfileInfo | 
-| tourReservation  | table |  |  | reservation | 
+| tourReservation  | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | tourReservation | 
 | tourSubReservationLink  | table |  |  | tourReservation | 
 | parentReservation_recNo | long |  | PKey,FKey | subReservationLink | 
 | subReservation_recNo | long |  | PKey,Auto-Assign | subReservationLink | 
-| tourSubReservation  [shared] | table |  |  | tourSubReservationLink | 
+| tourSubReservation  [shared] | table |  | Singleton | tourSubReservationLink | 
 | recNo | long |  | PKey,FKey | reservation | 
 | supplierProfile_recNo | long |  | FKey | reservation | 
 | supplierName_Lookup | string | 256 | ReadOnly | reservation | 
@@ -330,7 +330,7 @@ Permission Areas: Trip
 | supplierRemarks | string |  |  | reservation | 
 | advisorInfo | string | 256 |  | reservation | 
 | trackClientPayments | bool |  | Required | reservation | 
-| airReservation  [shared] | table |  |  | tourSubReservation | 
+| airReservation  [shared] | table |  | Singleton | tourSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | airReservation | 
 | ticketType | short |  |  | airReservation | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | endingTicketNo | long |  |  | airReservation | 
@@ -356,7 +356,7 @@ Permission Areas: Trip
 | ticketDesignator | string | 32 |  | airSegment | 
 | mileage | short |  |  | airSegment | 
 | indexNo | short |  |  | airSegment | 
-| railReservation  [shared] | table |  |  | tourSubReservation | 
+| railReservation  [shared] | table |  | Singleton | tourSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | railReservation | 
 | departStationCode | string | 3 |  | railReservation | 
 | departStationName | string | 64 |  | railReservation | 
@@ -364,7 +364,7 @@ Permission Areas: Trip
 | arriveStationName | string | 64 |  | railReservation | 
 | trainNo | short |  |  | railReservation | 
 | classOfService | string | 2 |  | railReservation | 
-| tourSubSupplierProfileInfo  [shared] | table |  |  | tourSubReservation | 
+| tourSubSupplierProfileInfo  [shared] | table |  | Singleton | tourSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | supplierProfileInfo | 
 | name | string | 256 |  | supplierProfileInfo | 
 | id | string | 32 |  | supplierProfileInfo | 
@@ -376,7 +376,7 @@ Permission Areas: Trip
 | stateProvince | string | 8 |  | supplierProfileInfo | 
 | zipPostalCode | string | 16 |  | supplierProfileInfo | 
 | country | string | 4 |  | supplierProfileInfo | 
-| tourSubProviderProfileInfo  [shared] | table |  |  | tourSubReservation | 
+| tourSubProviderProfileInfo  [shared] | table |  | Singleton | tourSubReservation | 
 | reservation_recNo | long |  | PKey,FKey | providerProfileInfo | 
 | name | string | 256 |  | providerProfileInfo | 
 | id | string | 32 |  | providerProfileInfo | 
@@ -397,7 +397,7 @@ Permission Areas: Trip
 | completed | DateTimeOffset |  |  | reservationDeposit | 
 | completedBy_appUserRecNo | long |  |  | reservationDeposit | 
 | completedBy_appUserId | string | 64 | ReadOnly | reservationDeposit | 
-| clientPaymentInfo  | table |  |  | reservation | 
+| clientPaymentInfo  | table |  | Singleton | reservation | 
 | reservation_recNo | long |  | PKey,FKey | clientPaymentInfo | 
 | paymentDate | Date |  |  | clientPaymentInfo | 
 | amount | long |  |  | clientPaymentInfo | 
@@ -409,7 +409,7 @@ Permission Areas: Trip
 | tripAttachmentLink  | table |  |  | trip | 
 | trip_recNo | long |  | PKey,FKey | tripAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | tripAttachmentLink | 
-| tripAttachment  [shared] | table |  |  | tripAttachmentLink | 
+| tripAttachment  [shared] | table |  | Singleton | tripAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
@@ -426,7 +426,7 @@ Permission Areas: Trip
 | tripActionItemLink  | table |  |  | trip | 
 | trip_recNo | long |  | PKey,FKey | tripActionItemLink | 
 | actionItem_recNo | long |  | PKey,Auto-Assign | tripActionItemLink | 
-| tripActionItem  | table |  |  | tripActionItemLink | 
+| tripActionItem  | table |  | Singleton | tripActionItemLink | 
 | recNo | long |  | PKey,FKey | actionItem | 
 | type | short |  | Required | actionItem | Trip = 1, TripTemplate = 2
 | description | string | 256 |  | actionItem | 

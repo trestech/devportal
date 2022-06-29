@@ -17,7 +17,7 @@ description: ""
 | actionItemTemplateActionItemLink  | table |  |  | actionItemTemplate | 
 | actionItemTemplate_recNo | long |  | PKey,FKey | actionItemTemplateActionItemLink | 
 | actionItem_recNo | long |  | PKey,Auto-Assign | actionItemTemplateActionItemLink | 
-| actionItemTemplateActionItem  | table |  |  | actionItemTemplateActionItemLink | 
+| actionItemTemplateActionItem  | table |  | Singleton | actionItemTemplateActionItemLink | 
 | recNo | long |  | PKey,FKey | actionItem | 
 | type | short |  | Required | actionItem | Trip = 1, TripTemplate = 2
 | description | string | 256 |  | actionItem | 

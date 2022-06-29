@@ -24,7 +24,7 @@ Permission Areas: ClientPayment
 | transactionId | string | 32 | ReadOnly | clientPayment | 
 | authorizationCode | string | 16 | ReadOnly | clientPayment | 
 | originalTransactionId | string | 32 |  | clientPayment | 
-| payment  [shared] | table |  |  | clientPayment | 
+| payment  [shared] | table |  | Singleton | clientPayment | 
 | recNo | long |  | PKey,FKey | payment | 
 | amount | long |  | Required | payment | 
 | paymentDate | Date |  | Required | payment | 
@@ -46,7 +46,7 @@ Permission Areas: ClientPayment
 | paymentAttachmentLink  | table |  |  | payment | 
 | payment_recNo | long |  | PKey,FKey | paymentAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | paymentAttachmentLink | 
-| attachment  [shared] | table |  |  | paymentAttachmentLink | 
+| attachment  [shared] | table |  | Singleton | paymentAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 

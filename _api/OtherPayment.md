@@ -13,7 +13,7 @@ Permission Areas: OtherPayment
 | payment_recNo | long |  | PKey,Auto-Assign | otherPayment | 
 | otherProfile_recNo | long |  | Required,FKey | otherPayment | 
 | otherName_Lookup | string | 256 | ReadOnly | otherPayment | 
-| payment  [shared] | table |  |  | otherPayment | 
+| payment  [shared] | table |  | Singleton | otherPayment | 
 | recNo | long |  | PKey,FKey | payment | 
 | amount | long |  | Required | payment | 
 | paymentDate | Date |  | Required | payment | 
@@ -35,7 +35,7 @@ Permission Areas: OtherPayment
 | paymentAttachmentLink  | table |  |  | payment | 
 | payment_recNo | long |  | PKey,FKey | paymentAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | paymentAttachmentLink | 
-| attachment  [shared] | table |  |  | paymentAttachmentLink | 
+| attachment  [shared] | table |  | Singleton | paymentAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 

@@ -18,7 +18,7 @@ Permission Areas: SupplierPayment
 | voucherRemarks | string |  |  | supplierPayment | 
 | voucherAmount | long |  |  | supplierPayment | 
 | noReservationRefresh | bool |  |  | supplierPayment | 
-| payment  [shared] | table |  |  | supplierPayment | 
+| payment  [shared] | table |  | Singleton | supplierPayment | 
 | recNo | long |  | PKey,FKey | payment | 
 | amount | long |  | Required | payment | 
 | paymentDate | Date |  | Required | payment | 
@@ -40,7 +40,7 @@ Permission Areas: SupplierPayment
 | paymentAttachmentLink  | table |  |  | payment | 
 | payment_recNo | long |  | PKey,FKey | paymentAttachmentLink | 
 | attachment_recNo | long |  | PKey,Auto-Assign | paymentAttachmentLink | 
-| attachment  [shared] | table |  |  | paymentAttachmentLink | 
+| attachment  [shared] | table |  | Singleton | paymentAttachmentLink | 
 | recNo | long |  | PKey,FKey | attachment | 
 | type | short |  | Required | attachment | Link = 1, File = 2
 | description | string | 256 |  | attachment | 
