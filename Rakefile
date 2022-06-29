@@ -77,6 +77,18 @@ task :list do
   end
 end
 
+desc 'Run site locally.'
+task :run do
+  baseurl = ENV.fetch('BASEURL', '/')
+  cmd = 'JEKYLL_ENV=development bundle exec jekyll server --incremental --host 0.0.0.0 --destination _site'
+  
+  if !!baseurl && baseurl != '/'
+    cmd += " --baseurl #{baseurl}"
+  end
+  
+  sh cmd
+end
+
 desc 'Build site for release.'
 task :build do
   baseurl = ENV.fetch('BASEURL', '/')
