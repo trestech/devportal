@@ -8,6 +8,18 @@ This portal is developer focused.  If you are looking for help using Tres as an 
 
 ## Develop
 
+#### [Visual Studio Code](https://code.visualstudio.com/Download)
+
+Install the following extensions:
+
+* (Jekyll Run)[https://marketplace.visualstudio.com/items?itemName=Dedsec727.jekyll-run]
+* (Jekyll Syntax Support)[https://marketplace.visualstudio.com/items?itemName=ginfuru.ginfuru-vscode-jekyll-syntax]
+* (Ruby)[https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby]
+* (VSCode Ruby)[https://marketplace.visualstudio.com/items?itemName=rebornix.Rubywingrunr21.vscode-ruby]
+
+
+#### Command-line
+
 The Tres Portal was built with [Jekyll](http://jekyllrb.com/) version 4.2.2, but should support newer versions as well.
 
 Install the dependencies with [Bundler](http://bundler.io/):
