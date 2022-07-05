@@ -13,5 +13,6 @@ description: ""
 | description | string | 128 |  | bank | 
 | accountingReference | string | 64 |  | bank | 
 | balance | long |  | Required,ReadOnly | bank | 
+| generalLedgerAccount_recNo | long |  | FKey | bank | 
 
 

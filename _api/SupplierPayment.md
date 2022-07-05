@@ -32,7 +32,7 @@ Permission Areas: SupplierPayment
 | accountingEntry_recNo | long |  | FKey | payment | 
 | cardNumberToken | string | 64 |  | payment | 
 | voided | bool |  |  | payment | 
-| clearedDate | Date |  |  | payment | 
+| dateCleared | Date |  |  | payment | 
 | paymentDetail  | table |  |  | payment | 
 | payment_recNo | long |  | PKey,FKey | paymentDetail | 
 | reservation_recNo | long |  | PKey,Required,FKey | paymentDetail | 

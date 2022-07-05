@@ -10,9 +10,10 @@ description: ""
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | recNo | long |  | PKey | appSetting | 
 | appUser_recNo | long |  |  | appSetting | 
-| area | string | 64 | Required | appSetting | 
+| area | string | 64 |  | appSetting | 
 | name | string | 64 | Required | appSetting | 
 | description | string | 64 |  | appSetting | 
 | data | string |  | Required | appSetting | 
+| userType | short |  |  | appSetting | User = 1, Manager = 2, Admin = 3
 
 

@@ -20,6 +20,7 @@ Permission Areas: BankTransaction
 | bankName | string | 64 | bankTransaction | 
 | voided | bool |  | bankTransaction | 
 | remarks | string |  | bankTransaction | 
+| dateCleared | Date |  | bankTransaction | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -36,6 +37,7 @@ Permission Areas: BankTransaction
 | transactionDateTo | Date |  | 
 | bankRecNo | long |  | 
 | voided | bool |  | 
+| cleared | bool |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -92,6 +92,8 @@ Permission Areas: Trip
 | reservationAdvisorCommissionRate | long |  | reservationAdvisor | 
 | reservationAdvisorReconciliationRecNo | long |  | reservationAdvisor | 
 | reservationAdvisorReconciliationDate | Date |  | reservationAdvisor | 
+| reservationAdvisorDefaultCommissionRate | long |  | reservationAdvisor | 
+| reservationAdvisorDefaultCommissionAmount | long |  | reservationAdvisor | 
 | reservationAccountingEntryRecNo | long |  | reservation | 
 | reservationAccountingEntryCreateDate | Date |  | reservation | 
 

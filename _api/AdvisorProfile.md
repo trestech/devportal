@@ -79,5 +79,9 @@ Permission Areas: AdvisorProfile
 | tag_recNo | long |  | Required,FKey | profileTag | 
 | name | string | 64 | ReadOnly | profileTag | 
 | value | string | 1024 |  | profileTag | 
+| advisorCommissionRate  | table |  |  | advisorProfile | 
+| advisorProfile_recNo | long |  | PKey,FKey | advisorCommissionRate | 
+| travelCategory_recNo | short |  | PKey | advisorCommissionRate | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| commissionRate | short |  | Required | advisorCommissionRate | 
 
 

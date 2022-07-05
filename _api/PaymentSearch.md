@@ -33,6 +33,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | voided | bool |  | payment | 
 | accountingEntryRecNo | long |  | payment | 
 | remarks | string | 256 | payment | 
+| dateCleared | bool |  | payment | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |
@@ -63,6 +64,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | bankRecNo | long[] |  | 
 | agencyProcessed | bool |  | 
 | voided | bool |  | 
+| cleared | bool |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

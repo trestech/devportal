@@ -17,7 +17,6 @@ description: ""
 | supplierProfileActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | tripActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | activityActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
-| paymentActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | advisorProfileActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | actionItemTemplateActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | tripImportActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
@@ -28,6 +27,8 @@ description: ""
 | bankTransactionActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | clientPaymentActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | supplierPaymentActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
+| generalLedgerAccountActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
+| journalEntryActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | branch_recNo | long |  | FKey | appUser | 
 | branchName | string | 64 | ReadOnly | appUser | 
 | nonExpiringPassword | bool |  |  | appUser | 

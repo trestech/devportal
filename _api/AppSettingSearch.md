@@ -17,6 +17,7 @@ Referenced Table: [AppSetting]({{ '/api/AppSetting.html' | relative_url }})
 | name | string | 64 | appSetting | 
 | description | string | 64 | appSetting | 
 | data | string |  | appSetting | 
+| userType | short |  | appSetting | User = 1, Manager = 2, Admin = 3
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |

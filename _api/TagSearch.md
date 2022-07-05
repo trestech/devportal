@@ -20,6 +20,7 @@ Permission Areas: Tag
 | valueFreeFlow | bool |  | tag | 
 | valueRequired | bool |  | tag | 
 | valueList | string | 1024 | tag | 
+| description | string | 64 | tag | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |

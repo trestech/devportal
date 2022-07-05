@@ -34,6 +34,7 @@ Permission Areas: Person
 | cardNumber | string | 64 | card | 
 | cardExpDate | Date |  | card | 
 | cardDescription | string | 128 | card | 
+| cardRecNo | long |  | card | 
 
 | Parameter | Type | Linked Parameter | Description |
 | --------- | ---- | ---------------- | ----------- |

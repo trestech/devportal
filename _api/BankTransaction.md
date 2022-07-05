@@ -17,6 +17,6 @@ Permission Areas: BankTransaction
 | bankName_lookup | string | 64 | ReadOnly | bankTransaction | 
 | voided | bool |  | Required | bankTransaction | 
 | remarks | string |  |  | bankTransaction | 
-| clearedDate | Date |  |  | bankTransaction | 
+| dateCleared | Date |  |  | bankTransaction | 
 
 
