@@ -10,6 +10,12 @@ This portal is developer focused.  If you are looking for help using Tres as an 
 
 #### [Visual Studio Code](https://code.visualstudio.com/Download)
 
+1. Open a new Visual Studio Code window.
+2. Click on the Source Control side-tab.
+3. Clone Repository: `git@ssh.dev.azure.com:v3/tresTechnologies/CBO/doctres`
+4. Click on menu item: Terminal -> Run Task... `rake: run`
+5. Open: http://localhost:4000/ 
+
 Install the following extensions:
 
 * [Jekyll Run](https://marketplace.visualstudio.com/items?itemName=Dedsec727.jekyll-run)
@@ -35,10 +41,10 @@ In case of installation problems, make sure you have a ruby development environm
 sudo apt-get install ruby-dev
 ```
 
-Run `jekyll` commands through Bundler to ensure you're using the right versions:
+Run `rake` commands through Bundler to ensure you're using the right versions:
 
 ~~~bash
-$ bundle exec jekyll serve
+$ bundle exec rake run 
 ~~~
 
 You can now test locally at
