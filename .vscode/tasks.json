@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "rake",
+			"task": "list",
+			"problemMatcher": [],
+			"label": "rake: list"
+		},
+		{
+			"type": "rake",
+			"task": "run",
+			"problemMatcher": [],
+			"label": "rake: run"
+		},
+		{
+			"type": "rake",
+			"task": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "rake: build"
+		},
+		{
+			"type": "rake",
+			"task": "commit",
+			"problemMatcher": [],
+			"label": "rake: commit"
+		},
+		{
+			"type": "rake",
+			"task": "import[folder]",
+			"problemMatcher": [],
+			"label": "rake: import[path/to/markdown/]"
+		}
+	]
+}
