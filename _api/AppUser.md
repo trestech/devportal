@@ -49,4 +49,11 @@ description: ""
 | advisorName | string | 256 | ReadOnly | appUserAdvisor | 
 | isPrimary | bool |  | Required | appUserAdvisor | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

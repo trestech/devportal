@@ -15,4 +15,11 @@ description: ""
 | balance | long |  | Required,ReadOnly | bank | 
 | generalLedgerAccount_recNo | long |  | FKey | bank | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

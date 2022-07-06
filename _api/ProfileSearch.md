@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "ProfileSearch"
-description: ""
+description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
 ---
 
+ProfileSearch returns data for client, supplier, advisor and other profiles.
 
+User needs at least select permission for whichever type of profile being searched for. Results may be filtered if client or advisor permission includes OnlySelf (based on user's linked advisors) or if client permission or advisor permission includes OnlyBranch (based on user's branch).
 
 Referenced Table: [Profile]({{ '/api/Profile.html' | relative_url }})
 
@@ -124,16 +126,44 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request
+#### Example request: a profile search that returns the profile recNo and name for active client profiles whose name starts with "Able"
 ```sh
 POST https://api-dev.trestechnologies.com/profileSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
+{
+  "profileType": 1,
+  "activestatus": true,
+  "profileNameCond": 5,
+  "profileName": "Able",
+  "includeCols": [
+    "recNo",
+    "name"
+  ]
+}
 ```
 
 #### Example response
 ```sh
 Content-Type: application/json
 Status: 200 Ok
+[
+  {
+    "recNo": 1519190,
+    "name": "Able Family"
+  },
+  {
+    "recNo": 1518989,
+    "name": "Able/Ken"
+  },
+  {
+    "recNo": 2089967,
+    "name": "Abler/Hale Nicole"
+  },
+  {
+    "recNo": 1517502,
+    "name": "Abler/Ken"
+  }
+]
 ```
 

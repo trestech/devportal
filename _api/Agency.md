@@ -38,4 +38,11 @@ description: ""
 | travelCategory_recNo | short |  | PKey,Required,FKey | agencyAdvisorReconciliation | 
 | paymentTrigger | short |  | Required | agencyAdvisorReconciliation | AgencyPaidAndDeparted = 1, AgencyPaid = 2
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

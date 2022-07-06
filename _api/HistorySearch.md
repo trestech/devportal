@@ -48,16 +48,4 @@ Referenced Table: [History]({{ '/api/History.html' | relative_url }})
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request
-```sh
-POST https://api-dev.trestechnologies.com/historySearch
-Content-Type: application/json
-Authorization: Bearer <session-token>
-```
-
-#### Example response
-```sh
-Content-Type: application/json
-Status: 200 Ok
-```
 

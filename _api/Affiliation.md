@@ -21,4 +21,11 @@ description: ""
 | name | string | 64 | Required | affiliationMarketingElement | 
 | id | string | 16 | Required | affiliationMarketingElement | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

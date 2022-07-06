@@ -438,4 +438,11 @@ Permission Areas: Trip
 | completedBy_appUserId | string | 64 |  | actionItem | 
 | notes | string | 256 |  | actionItem | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

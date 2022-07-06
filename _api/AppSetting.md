@@ -16,4 +16,11 @@ description: ""
 | data | string |  | Required | appSetting | 
 | userType | short |  |  | appSetting | User = 1, Manager = 2, Admin = 3
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

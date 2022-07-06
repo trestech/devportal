@@ -34,16 +34,4 @@ Referenced Table: [Branch]({{ '/api/Branch.html' | relative_url }})
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request
-```sh
-POST https://api-dev.trestechnologies.com/branchSearch
-Content-Type: application/json
-Authorization: Bearer <session-token>
-```
-
-#### Example response
-```sh
-Content-Type: application/json
-Status: 200 Ok
-```
 

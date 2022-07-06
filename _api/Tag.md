@@ -18,4 +18,11 @@ Permission Areas: Tag
 | valueList | string | 1024 |  | tag | 
 | description | string | 64 |  | tag | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

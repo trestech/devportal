@@ -19,4 +19,11 @@ Permission Areas: BankTransaction
 | remarks | string |  |  | bankTransaction | 
 | dateCleared | Date |  |  | bankTransaction | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

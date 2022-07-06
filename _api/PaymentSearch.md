@@ -60,7 +60,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | supplierProfileRecNo | long |  | 
 | otherProfileRecNo | long |  | 
 | payType | short |  | Received = 1, Made = 2
-| method | short |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
+| method | short[] |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | bankRecNo | long[] |  | 
 | agencyProcessed | bool |  | 
 | voided | bool |  | 
@@ -72,16 +72,4 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request
-```sh
-POST https://api-dev.trestechnologies.com/paymentSearch
-Content-Type: application/json
-Authorization: Bearer <session-token>
-```
-
-#### Example response
-```sh
-Content-Type: application/json
-Status: 200 Ok
-```
 

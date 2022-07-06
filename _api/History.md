@@ -20,4 +20,11 @@ description: ""
 | oldValue | string | 256 |  | history | 
 | newValue | string | 256 |  | history | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

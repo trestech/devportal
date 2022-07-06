@@ -58,4 +58,11 @@ Permission Areas: Activity
 | name | string | 64 | ReadOnly | activityTag | 
 | value | string | 1024 |  | activityTag | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 

@@ -187,7 +187,7 @@ Permission Areas: Trip
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request
+#### Example request: a trip search that returns the trip recNo and trip name for trips with a target travel date between 31-DEC-2022 and 15-JAN-2023
 ```sh
 POST https://api-dev.trestechnologies.com/tripSearch
 Content-Type: application/json

@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "ClientProfile"
-description: ""
+description: "ClientProfile provides methods to load and save client profile data"
 ---
 
+ClientProfile provides methods to load and save client profile data.
 
+User needs at least read permission to load client profiles.
 
 Permission Areas: ClientProfile
 
@@ -96,4 +98,188 @@ Permission Areas: ClientProfile
 | affiliation_recNo | int |  | Required,FKey | clientProfileMarketing | 
 | marketingElement_recNo | long |  | PKey,Required,FKey | clientProfileMarketing | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
+#### Example request: loading client profile 11518989 (Able/Ken)
+```sh
+GET https://api-dev.trestechnologies.com/clientProfile/11518989
+Content-Type: application/json
+Authorization: Bearer <session-token>
+```
+
+#### Example response
+```sh
+Content-Type: application/json
+Status: 200 Ok
+[
+  {
+    "profile_recNo": 1518989,
+    "type": 1,
+    "branch_recNo": 1225,
+    "branchName": "Jet Set Travel",
+    "referredBy": "Website",
+    "advisorProfile_recNo": 1517848,
+    "advisorName": "Beth Vollmar",
+    "anniversaryDay": 1,
+    "anniversaryMonth": 9,
+    "anniversaryYear": 2001,
+    "anniversaryNote": "Married on the beach",
+    "formalSalutation": "Kenneth",
+    "informalSalutation": "Kenny",
+    "profile": {
+      "recNo": 1518989,
+      "name": "Able/Ken",
+      "activeStatus": true,
+      "uniqueId": "c77b620b-fc11-4562-9c7d-f664e0b26b61",
+      "remarks": "4198230971",
+      "permitMarketing": false,
+      "profilePersonLink": [
+        {
+          "person_recNo": 1971214,
+          "profile_recNo": 1518989,
+          "role": "Wife to Ken",
+          "isPrimary": false,
+          "name": "Able/Mary Kay"
+        },
+        {
+          "person_recNo": 1971215,
+          "profile_recNo": 1518989,
+          "role": "",
+          "isPrimary": true,
+          "name": "Able/Kenneth Michael"
+        }
+      ],
+      "profileAddressLink": [
+        {
+          "profile_recNo": 1518989,
+          "addressType": 1,
+          "permitMarketing": false,
+          "address_recNo": 1416456,
+          "address": {
+            "recNo": 1416456,
+            "street1": "125 Main Street",
+            "street2": "",
+            "street3": "",
+            "city": "Waterville",
+            "stateProvince": "OH",
+            "zipPostalCode": "45256",
+            "country": "",
+            "permitMarketing": false
+          }
+        },
+        {
+          "profile_recNo": 1518989,
+          "addressType": 2,
+          "permitMarketing": false,
+          "address_recNo": 1416735,
+          "address": {
+            "recNo": 1416735,
+            "street1": "29 High Street",
+            "street2": "",
+            "street3": "",
+            "city": "Hampton",
+            "stateProvince": "NH",
+            "zipPostalCode": "03842",
+            "country": "",
+            "permitMarketing": false
+          }
+        }
+      ],
+      "profileCommunicationLink": [
+        {
+          "profile_recNo": 1518989,
+          "communication_recNo": 1406556,
+          "communication": {
+            "recNo": 1406556,
+            "type": 2,
+            "subType": "",
+            "value": "email@email.com",
+            "countryDomain": "",
+            "cityArea": "",
+            "userSpecific": "",
+            "description": "Work email",
+            "isPrimary": true,
+            "permitMarketing": true
+          }
+        },
+        {
+          "profile_recNo": 1518989,
+          "communication_recNo": 1406637,
+          "communication": {
+            "recNo": 1406637,
+            "type": 1,
+            "subType": "",
+            "value": "4198230971",
+            "countryDomain": "",
+            "cityArea": "",
+            "userSpecific": "",
+            "description": "",
+            "isPrimary": false,
+            "permitMarketing": false
+          }
+        },
+        {
+          "profile_recNo": 1518989,
+          "communication_recNo": 2965284,
+          "communication": {
+            "recNo": 2965284,
+            "type": 1,
+            "subType": "4198230971",
+            "value": "4198230971",
+            "countryDomain": "",
+            "cityArea": "",
+            "userSpecific": "",
+            "description": "4198230971",
+            "isPrimary": true,
+            "permitMarketing": false
+          }
+        }
+      ],
+      "profileId": [
+        {
+          "recNo": 528637,
+          "profile_recNo": 1518989,
+          "id": "4198230971"
+        }
+      ],
+      "profileAttachmentLink": [
+        {
+          "profile_recNo": 1518989,
+          "attachment_recNo": 152644,
+          "attachment": {
+            "recNo": 152644,
+            "type": 2,
+            "description": "Ken Able Passport",
+            "fileNameLinkURL": "passport.png",
+            "size": 94162,
+            "compressed": false
+          }
+        }
+      ]
+    },
+    "clientProfileMarketing": [
+      {
+        "clientProfile_recNo": 1518989,
+        "affiliation_recNo": 14,
+        "marketingElement_recNo": 117
+      },
+      {
+        "clientProfile_recNo": 1518989,
+        "affiliation_recNo": 14,
+        "marketingElement_recNo": 120
+      },
+      {
+        "clientProfile_recNo": 1518989,
+        "affiliation_recNo": 14,
+        "marketingElement_recNo": 129
+      }
+    ]
+  }
+]
+```
 

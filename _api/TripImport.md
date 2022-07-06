@@ -25,4 +25,11 @@ Permission Areas: TripImport
 | tripReference | string | 64 |  | tripImport | 
 | trip_RecNo | long |  | FKey | tripImport | 
 
+| Status code | Description |
+| ----------- | ----------- |
+| 200 | Ok |
+| 204 | No Content |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+
 
