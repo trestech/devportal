@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "PersonSearch"
-description: ""
+description: "PersonSearch returns data for persons (travelers)"
 ---
 
+PersonSearch returns data for persons (travelers).
 
+User needs at least select permission for person records. Results may be filtered if person permission includes OnlySelf (based on user's linked advisors) or if permission includes OnlyBranch (based on user's branch).
 
 Referenced Table: [Person]({{ '/api/Person.html' | relative_url }})
 
@@ -87,4 +89,37 @@ Permission Areas: Person
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
+#### Example request: a person search that returns the recNo and name for persons whose name starts with "Able"
+```sh
+POST https://api-dev.trestechnologies.com/personSearch
+Content-Type: application/json
+Authorization: Bearer <session-token>
+{
+  "name": "Able",
+  "includeCols": [
+    "recNo",
+    "name"
+  ]
+}
+```
+
+#### Example response
+```sh
+Content-Type: application/json
+Status: 200 Ok
+[
+  {
+    "recNo": 1969998,
+    "name": "Abler/Sue"
+  },
+  {
+    "recNo": 1969999,
+    "name": "Abler/Ken"
+  },
+  {
+    "recNo": 1970000,
+    "name": "Abler/Hale Nicole"
+  }
+]
+```
 

@@ -1,10 +1,12 @@
 ---
 layout: api_page
 title: "Person"
-description: ""
+description: "Person provides methods to load and save person (traveler) data"
 ---
 
+Person provides methods to load and save person (traveler) data.
 
+User needs at least read permission to load person records.
 
 Permission Areas: Person
 
@@ -90,4 +92,175 @@ Permission Areas: Person
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
+#### Example request: loading peron 1969999 (Abler/Ken)
+```sh
+GET https://api-dev.trestechnologies.com/person/1969999
+Content-Type: application/json
+Authorization: Bearer <session-token>
+```
+
+#### Example response
+```sh
+Content-Type: application/json
+Status: 200 Ok
+[
+  {
+    "recNo": 1969999,
+    "firstName": "Ken",
+    "middleName": "",
+    "lastName": "Abler",
+    "courtesyTitle": "",
+    "salutation": "",
+    "birthdayDay": 23,
+    "birthdayMonth": 4,
+    "birthdayYear": 1931,
+    "birthdayNote": "",
+    "citizenship": "  ",
+    "redressNumber": "13431265431654",
+    "knownTravelerNumber": "",
+    "gender": "M",
+    "uniqueId": "8a869d59-9fd6-4c26-ab31-104f4358e7ee",
+    "remarks": "",
+    "emergencyContactName": "",
+    "emergencyContactRelationship": "",
+    "emergencyContactPhone": "",
+    "emergencyContactEmail": "",
+    "personCommunicationLink": [
+      {
+        "person_recNo": 1969999,
+        "communication_recNo": 1404099,
+        "communication": {
+          "recNo": 1404099,
+          "type": 1,
+          "subType": "",
+          "value": "+1 (650) 988-1222",
+          "countryDomain": "",
+          "cityArea": "",
+          "userSpecific": "",
+          "description": "Business",
+          "isPrimary": true,
+          "permitMarketing": true
+        }
+      },
+      {
+        "person_recNo": 1969999,
+        "communication_recNo": 1404100,
+        "communication": {
+          "recNo": 1404100,
+          "type": 2,
+          "subType": "",
+          "value": "1@tramsQA.com",
+          "countryDomain": "",
+          "cityArea": "",
+          "userSpecific": "",
+          "description": "E-Mail",
+          "isPrimary": false,
+          "permitMarketing": true
+        }
+      },
+      {
+        "person_recNo": 1969999,
+        "communication_recNo": 1404765,
+        "communication": {
+          "recNo": 1404765,
+          "type": 2,
+          "subType": "",
+          "value": "ken @hotmail.com",
+          "countryDomain": "",
+          "cityArea": "",
+          "userSpecific": "",
+          "description": "",
+          "isPrimary": true,
+          "permitMarketing": false
+        }
+      }
+    ],
+    "personMarketing": [
+      {
+        "person_recNo": 1969999,
+        "marketingElement_recNo": 1,
+        "affiliation_recNo": 1
+      },
+      {
+        "person_recNo": 1969999,
+        "marketingElement_recNo": 5,
+        "affiliation_recNo": 1
+      }
+    ],
+    "card": [
+      {
+        "recNo": 156971,
+        "person_recNo": 1969999,
+        "type": 1,
+        "cardNumber": "VI 41-XXXX-1111",
+        "expirationDate": "2025-12-31T00:00:00",
+        "issuingCity": "",
+        "issuingCountry": "  ",
+        "description": "Visa",
+        "code": ""
+      },
+      {
+        "recNo": 156972,
+        "person_recNo": 1969999,
+        "type": 2,
+        "cardNumber": "4567888",
+        "issuingCity": "",
+        "issuingCountry": "  ",
+        "description": "Advantage",
+        "code": ""
+      },
+      {
+        "recNo": 156973,
+        "person_recNo": 1969999,
+        "type": 1,
+        "cardNumber": "VI 41-XXXX-1111",
+        "expirationDate": "2025-12-31T00:00:00",
+        "issuingCity": "",
+        "issuingCountry": "  ",
+        "description": "Visa",
+        "code": ""
+      },
+      {
+        "recNo": 156974,
+        "person_recNo": 1969999,
+        "type": 2,
+        "cardNumber": "5656343",
+        "issuingCity": "",
+        "issuingCountry": "  ",
+        "description": "Hilton Hotels",
+        "code": ""
+      },
+      {
+        "recNo": 156975,
+        "person_recNo": 1969999,
+        "type": 1,
+        "cardNumber": "VI 41-XXXX-1111",
+        "expirationDate": "2025-12-31T00:00:00",
+        "issuingCity": "",
+        "issuingCountry": "  ",
+        "description": "Visa",
+        "code": ""
+      },
+      {
+        "recNo": 300178,
+        "person_recNo": 1969999,
+        "type": 3,
+        "cardNumber": "123",
+        "issueDate": "2022-07-21T00:00:00",
+        "expirationDate": "2022-07-19T00:00:00",
+        "code": ""
+      }
+    ],
+    "personTag": [
+      {
+        "recNo": 1341988,
+        "person_recNo": 1969999,
+        "tag_recNo": 2460,
+        "name": "CBTravelerNo",
+        "value": "231"
+      }
+    ]
+  }
+]
+```
 
