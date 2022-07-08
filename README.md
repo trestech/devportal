@@ -67,3 +67,5 @@ This application uses `rake` (Ruby's make command) to execute maintenance tasks.
 ```bash
 $ bundle exec rake -vT
 ```
+
+See: [Tutorial: Publish a Jekyll site to Azure Static Web Apps](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-jekyll)
