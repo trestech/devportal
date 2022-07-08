@@ -50,20 +50,20 @@ Permission Areas: Person
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | name | string |  | 
 | firstName | string |  | 
-| firstNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| firstNameCond | short | firstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | middleName | string |  | 
-| middleNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| middleNameCond | short | middleName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | lastName | string |  | 
-| lastNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| lastNameCond | short | lastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | commValue | string |  | 
-| commValueCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commValueCond | short | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | commValueCountryDomain | string |  | 
 | commValueCityArea | string |  | 
 | commValueUserSpecific | string |  | 

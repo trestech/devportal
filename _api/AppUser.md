@@ -8,10 +8,24 @@ description: ""
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| recNo | long |  | PKey | appUser | 
 | id | string | 64 |  | appUser | 
 | enabled | bool |  |  | appUser | 
 | password | string | 128 |  | appUser | 
+| nonExpiringPassword | bool |  |  | appUser | 
+| locked | DateTimeOffset |  |  | appUser | 
+| name | string | 64 |  | appUser | 
+| email | string | 128 |  | appUser | 
+| passwordLastModified | Date |  | ReadOnly | appUser | 
+| recNo | long |  | PKey | appUser | 
+| branch_recNo | long |  | FKey | appUser | 
+| branchName | string | 64 | ReadOnly | appUser | 
+| userType | short |  | Required | appUser | User = 1, Manager = 2, Admin = 3
+| description | string | 64 |  | appUser | 
+| mobilePhone | string | 64 |  | appUser | 
+| emailServerType | short |  |  | appUser | Office365 = 1, Gmail = 2, GenericSMTP = 3
+| emailServerName | string | 64 |  | appUser | 
+| emailServerUserName | string | 128 |  | appUser | 
+| emailServerPassword | string | 64 |  | appUser | 
 | personActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | clientProfileActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | supplierProfileActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
@@ -29,20 +43,6 @@ description: ""
 | supplierPaymentActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | generalLedgerAccountActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
 | journalEntryActions | short |  | Required | appUser | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, OnlySelf = 32, OnlyBranch = 64, Decrypt = 128
-| branch_recNo | long |  | FKey | appUser | 
-| branchName | string | 64 | ReadOnly | appUser | 
-| nonExpiringPassword | bool |  |  | appUser | 
-| userType | short |  | Required | appUser | User = 1, Manager = 2, Admin = 3
-| locked | DateTimeOffset |  |  | appUser | 
-| description | string | 64 |  | appUser | 
-| name | string | 64 |  | appUser | 
-| mobilePhone | string | 64 |  | appUser | 
-| email | string | 128 |  | appUser | 
-| passwordLastModified | Date |  | ReadOnly | appUser | 
-| emailServerType | short |  |  | appUser | Office365 = 1, Gmail = 2, GenericSMTP = 3
-| emailServerName | string | 64 |  | appUser | 
-| emailServerUserName | string | 128 |  | appUser | 
-| emailServerPassword | string | 64 |  | appUser | 
 | appUserAdvisor  | table |  |  | appUser | 
 | appUser_RecNo | long |  | PKey,FKey | appUserAdvisor | 
 | advisorProfile_recNo | long |  | PKey,Required,FKey | appUserAdvisor | 

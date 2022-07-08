@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: ActionItemTemplate
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | recNo | long |  | PKey | actionItemTemplate | 

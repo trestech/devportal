@@ -46,8 +46,8 @@ Permission Areas: Activity
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | appUserRecNo | long |  | 

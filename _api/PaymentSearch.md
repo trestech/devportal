@@ -47,8 +47,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | profileType | short |  | Client = 1, Supplier = 2, Other = 3

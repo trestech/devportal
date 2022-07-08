@@ -74,16 +74,16 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | profileType | short |  | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | profileName | string |  | 
-| profileNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| profileNameCond | short | profileName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | commValue | string |  | 
-| commValueCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commValueCond | short | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | clientAnniversaryMonth | short[] |  | 
 | clientAnniversaryMonthFrom | short |  | 
 | clientAnniversaryMonthTo | short |  | 
@@ -97,9 +97,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | personRecNo | long |  | 
 | personName | string |  | 
 | personFirstName | string |  | 
-| personFirstNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| personFirstNameCond | short | personFirstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | personLastName | string |  | 
-| personLastNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| personLastNameCond | short | personLastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | preferredSupplier | bool |  | 
 | street1 | string |  | 
 | city | string |  | 

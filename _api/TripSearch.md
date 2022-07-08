@@ -109,8 +109,8 @@ Permission Areas: Trip
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
 | tagRecNo [inherited] | long[] |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
 | clientProfileRecNo | long |  | 
@@ -124,7 +124,7 @@ Permission Areas: Trip
 | tripEndDateTimeTo | Date |  | 
 | cancelled | bool |  | 
 | tripName | string |  | 
-| tripNameCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| tripNameCond | short | tripName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | destinationRecNo | long[] |  | 
 | branchRecNo | long[] |  | 
 | tripCreateDateTimeFrom | DateTimeOffset |  | 
@@ -154,11 +154,11 @@ Permission Areas: Trip
 | reservationSupplierBalanceMin | long |  | 
 | reservationSupplierBalanceMax | long |  | 
 | reservationTagRecNo | long[] |  | 
-| reservationTagValueCond | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| reservationTagValueCond | short | reservationTagRecNo | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | reservationTagValue | string |  | 
 | reservationDisplayTagRecNo | long |  | 
 | reservationARCBSPNumber | int |  | 
-| reservationARCBSPNumberCond | short |  | See [NumCompare]({{ '/api/NumCompare.html' | relative_url }})
+| reservationARCBSPNumberCond | short | reservationARCBSPNumber | See [NumCompare]({{ '/api/NumCompare.html' | relative_url }})
 | reservationAdvisorProfileRecNo | long |  | 
 | reservationProviderProfileRecNo | long |  | 
 | reservationTravelerRecNo | long |  | 

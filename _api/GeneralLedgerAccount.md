@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: GeneralLedgerAccount
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | recNo | long |  | PKey | GeneralLedgerAccount | 
