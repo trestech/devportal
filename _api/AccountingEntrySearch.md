@@ -16,20 +16,20 @@ Referenced Table: [AccountingEntry]({{ '/api/AccountingEntry.html' | relative_ur
 | postDate | Date |  | accountingEntry | 
 | description | string | 512 | accountingEntry | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| createDateTimeFrom | DateTimeOffset |  | 
-| createDateTimeTo | DateTimeOffset |  | 
-| posted | bool |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| createDateTimeFrom | DateTimeOffset |  |  | 
+| createDateTimeTo | DateTimeOffset |  |  | 
+| posted | bool |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

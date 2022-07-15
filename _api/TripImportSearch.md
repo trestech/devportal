@@ -29,20 +29,20 @@ Permission Areas: TripImport
 | lastModifiedDateTime | DateTimeOffset |  | tripImport | 
 | trip_RecNo | long |  | tripImport | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| type | short[] |  | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
-| status | short[] |  | Pending = 1, Imported = 2, Error = 3, Warning = 4
-| tripRecNo | long |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| type | short[] |  |  | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
+| status | short[] |  |  | Pending = 1, Imported = 2, Error = 3, Warning = 4
+| tripRecNo | long |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

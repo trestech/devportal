@@ -19,6 +19,7 @@ description: ""
 | newValue | string | 256 |  | history | 
 | appUser_recNo | long |  |  | history | 
 | appUser_id | string | 64 |  | history | 
+| tableRecNo2 | long |  |  | history | 
 
 | Status code | Description |
 | ----------- | ----------- |

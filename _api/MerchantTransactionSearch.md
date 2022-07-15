@@ -17,21 +17,21 @@ Referenced Table: [MerchantTransaction]({{ '/api/MerchantTransaction.html' | rel
 | payment_recNo | long |  | merchantTransaction | 
 | dateProcessed | DateTimeOffset |  | merchantTransaction | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| transactionType | short |  | Sale = 1, Void = 2, Refund = 3
-| dateProcessedFrom | DateTimeOffset |  | 
-| dateProcessedTo | DateTimeOffset |  | 
-| paymentRecNo | long |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| transactionType | short |  |  | Sale = 1, Void = 2, Refund = 3
+| dateProcessedFrom | DateTimeOffset |  |  | 
+| dateProcessedTo | DateTimeOffset |  |  | 
+| paymentRecNo | long |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

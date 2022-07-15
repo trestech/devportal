@@ -22,22 +22,24 @@ Permission Areas: BankTransaction
 | remarks | string |  | bankTransaction | 
 | dateCleared | Date |  | bankTransaction | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| transactionDateFrom | Date |  | 
-| transactionDateTo | Date |  | 
-| bankRecNo | long |  | 
-| voided | bool |  | 
-| cleared | bool |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| transactionDateFrom | Date |  |  | 
+| transactionDateTo | Date |  |  | 
+| bankRecNo | long |  |  | 
+| voided | bool |  |  | 
+| cleared | bool |  |  | 
+| dateClearedFrom | Date |  |  | 
+| dateClearedTo | Date |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

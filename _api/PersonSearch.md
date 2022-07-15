@@ -38,50 +38,50 @@ Permission Areas: Person
 | cardDescription | string | 128 | card | 
 | cardRecNo | long |  | card | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| tagRecNo [inherited] | long[] |  | 
-| tagValue [inherited] | string |  | 
-| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
-| name | string |  | 
-| firstName | string |  | 
-| firstNameCond | short | firstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| middleName | string |  | 
-| middleNameCond | short | middleName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| lastName | string |  | 
-| lastNameCond | short | lastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
-| commValue | string |  | 
-| commValueCond | short | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| commValueCountryDomain | string |  | 
-| commValueCityArea | string |  | 
-| commValueUserSpecific | string |  | 
-| profileRecNo | long |  | 
-| birthdayMonth | short[] |  | 
-| birthdayMonthFrom | short |  | 
-| birthdayMonthTo | short |  | 
-| birthdayDayFrom | short |  | 
-| birthdayDayTo | short |  | 
-| marketing | [marketing[]](/marketing) |  | 
-| emailPermitMarketing | bool |  | 
-| phonePermitMarketing | bool |  | 
-| createDateTimeFrom | DateTimeOffset |  | 
-| createDateTimeTo | DateTimeOffset |  | 
-| modifiedDateTimeFrom | DateTimeOffset |  | 
-| modifiedDateTimeTo | DateTimeOffset |  | 
-| cardType | short[] |  | CreditDebit = 1, Loyalty = 2, Passport = 3
-| personActivitySearchParams | [activitySearch](/activitySearch) |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| tagRecNo [inherited] | long[] |  |  | 
+| tagValue [inherited] | string |  |  | 
+| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  |  | 
+| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
+| name | string |  |  | 
+| firstName | string |  |  | 
+| firstNameCond | short |  | firstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| middleName | string |  |  | 
+| middleNameCond | short |  | middleName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| lastName | string |  |  | 
+| lastNameCond | short |  | lastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commType | short |  |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| commValue | string |  |  | 
+| commValueCond | short |  | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commValueCountryDomain | string |  |  | 
+| commValueCityArea | string |  |  | 
+| commValueUserSpecific | string |  |  | 
+| profileRecNo | long |  |  | 
+| birthdayMonth | short[] |  |  | 
+| birthdayMonthFrom | short |  |  | 
+| birthdayMonthTo | short |  |  | 
+| birthdayDayFrom | short |  |  | 
+| birthdayDayTo | short |  |  | 
+| marketing | [marketing[]](/marketing) |  |  | 
+| emailPermitMarketing | bool |  |  | 
+| phonePermitMarketing | bool |  |  | 
+| createDateTimeFrom | DateTimeOffset |  |  | 
+| createDateTimeTo | DateTimeOffset |  |  | 
+| modifiedDateTimeFrom | DateTimeOffset |  |  | 
+| modifiedDateTimeTo | DateTimeOffset |  |  | 
+| cardType | short[] |  |  | CreditDebit = 1, Loyalty = 2, Passport = 3
+| personActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

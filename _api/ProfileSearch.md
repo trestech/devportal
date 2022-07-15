@@ -62,63 +62,63 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | clientInformalSalutation | string | 128 | clientProfile | 
 | clientFormalSalutation | string | 128 | clientProfile | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| tagRecNo [inherited] | long[] |  | 
-| tagValue [inherited] | string |  | 
-| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
-| profileType | short |  | Client = 1, Supplier = 2, Advisor = 3, Other = 4
-| profileName | string |  | 
-| profileNameCond | short | profileName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| commType | short |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
-| commValue | string |  | 
-| commValueCond | short | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| clientAnniversaryMonth | short[] |  | 
-| clientAnniversaryMonthFrom | short |  | 
-| clientAnniversaryMonthTo | short |  | 
-| clientAnniversaryDayFrom | short |  | 
-| clientAnniversaryDayTo | short |  | 
-| clientAdvisorProfileRecNo | long |  | 
-| clientType | short |  | Personal = 1, Corporate = 2
-| supplierType | short |  | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
-| activestatus | bool |  | 
-| clientBranchRecNo | long |  | 
-| personRecNo | long |  | 
-| personName | string |  | 
-| personFirstName | string |  | 
-| personFirstNameCond | short | personFirstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| personLastName | string |  | 
-| personLastNameCond | short | personLastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| preferredSupplier | bool |  | 
-| street1 | string |  | 
-| city | string |  | 
-| stateProvince | string |  | 
-| zipPostalCode | string |  | 
-| country | string |  | 
-| marketing | [marketing[]](/marketing) |  | 
-| id | string |  | 
-| emailPermitMarketing | bool |  | 
-| phonePermitMarketing | bool |  | 
-| addressPermitMarketing | bool |  | 
-| clientCreateDateTimeFrom | DateTimeOffset |  | 
-| clientCreateDateTimeTo | DateTimeOffset |  | 
-| clientModifiedDateTimeFrom | DateTimeOffset |  | 
-| clientModifiedDateTimeTo | DateTimeOffset |  | 
-| supplierVendorId | string |  | 
-| clientTripSearchParams | [tripSearch](/tripSearch) |  | 
-| supplierTripSearchParams | [tripSearch](/tripSearch) |  | 
-| clientActivitySearchParams | [activitySearch](/activitySearch) |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| tagRecNo [inherited] | long[] |  |  | 
+| tagValue [inherited] | string |  |  | 
+| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  |  | 
+| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
+| profileType | short |  |  | Client = 1, Supplier = 2, Advisor = 3, Other = 4
+| profileName | string |  |  | 
+| profileNameCond | short |  | profileName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| commType | short |  |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| commValue | string |  |  | 
+| commValueCond | short |  | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| clientAnniversaryMonth | short[] |  |  | 
+| clientAnniversaryMonthFrom | short |  |  | 
+| clientAnniversaryMonthTo | short |  |  | 
+| clientAnniversaryDayFrom | short |  |  | 
+| clientAnniversaryDayTo | short |  |  | 
+| clientAdvisorProfileRecNo | long |  |  | 
+| clientType | short |  |  | Personal = 1, Corporate = 2
+| supplierType | short |  |  | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
+| activestatus | bool |  |  | 
+| clientBranchRecNo | long |  |  | 
+| personRecNo | long |  |  | 
+| personName | string |  |  | 
+| personFirstName | string |  |  | 
+| personFirstNameCond | short |  | personFirstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| personLastName | string |  |  | 
+| personLastNameCond | short |  | personLastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| preferredSupplier | bool |  |  | 
+| street1 | string |  |  | 
+| city | string |  |  | 
+| stateProvince | string |  |  | 
+| zipPostalCode | string |  |  | 
+| country | string |  |  | 
+| marketing | [marketing[]](/marketing) |  |  | 
+| id | string |  |  | 
+| emailPermitMarketing | bool |  |  | 
+| phonePermitMarketing | bool |  |  | 
+| addressPermitMarketing | bool |  |  | 
+| clientCreateDateTimeFrom | DateTimeOffset |  |  | 
+| clientCreateDateTimeTo | DateTimeOffset |  |  | 
+| clientModifiedDateTimeFrom | DateTimeOffset |  |  | 
+| clientModifiedDateTimeTo | DateTimeOffset |  |  | 
+| supplierVendorId | string |  |  | 
+| clientTripSearchParams | [tripSearch](/tripSearch) |  |  | 
+| supplierTripSearchParams | [tripSearch](/tripSearch) |  |  | 
+| clientActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

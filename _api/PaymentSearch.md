@@ -33,38 +33,40 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | voided | bool |  | payment | 
 | accountingEntryRecNo | long |  | payment | 
 | remarks | string | 256 | payment | 
-| dateCleared | bool |  | payment | 
+| dateCleared | Date |  | payment | 
 
-| Parameter | Type | Linked Parameter | Description |
-| --------- | ---- | ---------------- | ----------- |
-| recNo [inherited] | long |  | 
-| recNoList [inherited] | long[] |  | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| tagRecNo [inherited] | long[] |  | 
-| tagValue [inherited] | string |  | 
-| tagValueCond [inherited] | short | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  | 
-| profileType | short |  | Client = 1, Supplier = 2, Other = 3
-| tripRecNo | long |  | 
-| reservationRecNo | long[] |  | 
-| paymentDateFrom | Date |  | 
-| paymentDateTo | Date |  | 
-| clientProfileRecNo | long |  | 
-| supplierProfileRecNo | long |  | 
-| otherProfileRecNo | long |  | 
-| payType | short |  | Received = 1, Made = 2
-| method | short[] |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
-| bankRecNo | long[] |  | 
-| agencyProcessed | bool |  | 
-| voided | bool |  | 
-| cleared | bool |  | 
+| Parameter | Type | Linked Column | Linked Parameter | Description |
+| --------- | ---- | ------------- | ---------------- | ----------- |
+| recNo [inherited] | long |  |  | 
+| recNoList [inherited] | long[] |  |  | 
+| startingRow [inherited] | int |  |  | 
+| rowCount [inherited] | int |  |  | 
+| topRows [inherited] | int |  |  | 
+| distinct [inherited] | bool |  |  | 
+| includeCols [inherited] | string[] |  |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
+| baseUrl [inherited] | string |  |  | 
+| tagRecNo [inherited] | long[] |  |  | 
+| tagValue [inherited] | string |  |  | 
+| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  |  | 
+| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
+| profileType | short |  |  | Client = 1, Supplier = 2, Other = 3
+| tripRecNo | long |  |  | 
+| reservationRecNo | long[] |  |  | 
+| paymentDateFrom | Date |  |  | 
+| paymentDateTo | Date |  |  | 
+| clientProfileRecNo | long |  |  | 
+| supplierProfileRecNo | long |  |  | 
+| otherProfileRecNo | long |  |  | 
+| payType | short |  |  | Received = 1, Made = 2
+| method | short[] |  |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
+| bankRecNo | long[] |  |  | 
+| agencyProcessed | bool |  |  | 
+| voided | bool |  |  | 
+| cleared | bool |  |  | 
+| dateClearedFrom | Date |  |  | 
+| dateClearedTo | Date |  |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

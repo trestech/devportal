@@ -17,6 +17,8 @@ Permission Areas: SupplierProfile
 | commissionTriggerIndex | short |  |  | supplierProfile | BookingDate = 1, DepartDate = 2, ReturnDate = 3
 | commissionTriggerDaysOffset | short |  |  | supplierProfile | 
 | vendorId | string | 10 |  | supplierProfile | 
+| tripStatementRemarks | string |  |  | supplierProfile | 
+| termsAndConditionsUrl | string | 256 |  | supplierProfile | 
 | profile  [shared] | table |  | Singleton | supplierProfile | 
 | recNo | long |  | PKey,FKey | profile | 
 | name | string | 256 |  | profile | 

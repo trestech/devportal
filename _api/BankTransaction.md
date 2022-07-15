@@ -18,6 +18,9 @@ Permission Areas: BankTransaction
 | voided | bool |  | Required | bankTransaction | 
 | remarks | string |  |  | bankTransaction | 
 | dateCleared | Date |  |  | bankTransaction | 
+| bankTransactionDetail  | table |  |  | bankTransaction | 
+| bankTransaction_recNo | long |  | PKey,FKey | bankTransactionDetail | 
+| payment_recNo | long |  | PKey,Required,FKey | bankTransactionDetail | 
 
 | Status code | Description |
 | ----------- | ----------- |
