@@ -146,3 +146,18 @@ $table-border-color:    $sol-mono1 !default;
   font-size: smaller;
   float: right!important;
 }
+
+.tres-wrapper {
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  @extend %clearfix;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 90%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
