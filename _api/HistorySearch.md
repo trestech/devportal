@@ -35,10 +35,10 @@ Referenced Table: [History]({{ '/api/History.html' | relative_url }})
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| tableName | string |  |  | 
-| tableRecNo | long |  |  | 
-| tableRecNo2 | long |  |  | 
-| action | string[] |  |  | 
+| tableName | string | tableName |  | 
+| tableRecNo | long | tableRecNo |  | 
+| tableRecNo2 | long | tableRecNo2 |  | 
+| action | string | action |  | 
 | timeStampFrom | DateTimeOffset |  |  | 
 | timeStampTo | DateTimeOffset |  |  | 
 | appUser_recNo | string |  |  | 

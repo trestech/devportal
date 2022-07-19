@@ -28,9 +28,9 @@ Referenced Table: [Destination]({{ '/api/Destination.html' | relative_url }})
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| name | string |  |  | 
-| country | string[] |  |  | 
-| regionRecNo | short[] |  |  | UnitedStates = 1, Canada = 2, MexicoCentralAmerica = 3, BermudaCaribbean = 4, SouthAmericaAntarctica = 5, Europe = 6, EgyptMiddleEast = 7, Africa = 8, AustraliaNewZealand = 9, Asia = 10, SouthPacific = 11
+| name | string | name |  | 
+| country | string | country |  | 
+| regionRecNo | long | regionRecNo |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

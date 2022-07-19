@@ -30,9 +30,8 @@ Permission Areas: GeneralLedgerAccount
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| category | short[] |  |  | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
-| name | string |  |  | 
-| nameCond | short |  | name | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| category | long | category |  | 
+| name | string | name |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

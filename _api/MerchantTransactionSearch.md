@@ -28,10 +28,10 @@ Referenced Table: [MerchantTransaction]({{ '/api/MerchantTransaction.html' | rel
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| transactionType | short |  |  | Sale = 1, Void = 2, Refund = 3
-| dateProcessedFrom | DateTimeOffset |  |  | 
-| dateProcessedTo | DateTimeOffset |  |  | 
-| paymentRecNo | long |  |  | 
+| transactionType | long | transactionType |  | 
+| dateProcessedFrom | DateTimeOffset | dateProcessed |  | 
+| dateProcessedTo | DateTimeOffset | dateProcessed |  | 
+| paymentRecNo | long | payment_recNo |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

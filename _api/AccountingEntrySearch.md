@@ -27,9 +27,9 @@ Referenced Table: [AccountingEntry]({{ '/api/AccountingEntry.html' | relative_ur
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| createDateTimeFrom | DateTimeOffset |  |  | 
-| createDateTimeTo | DateTimeOffset |  |  | 
-| posted | bool |  |  | 
+| createDateTimeFrom | DateTimeOffset | createDate |  | 
+| createDateTimeTo | DateTimeOffset | createDate |  | 
+| posted | bool | postDate |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

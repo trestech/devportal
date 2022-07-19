@@ -50,17 +50,17 @@ Permission Areas: Activity
 | tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| appUserRecNo | long |  |  | 
-| type | short[] |  |  | Task = 1, Appointment = 2, Note = 3, Promo = 4
-| targetDateFrom | Date |  |  | 
-| targetDateTo | Date |  |  | 
-| targetDateTimeFrom | Date |  |  | 
-| targetDateTimeTo | Date |  |  | 
-| completed | bool |  |  | 
-| clientProfileRecNo | long |  |  | 
-| supplierProfileRecNo | long |  |  | 
-| personRecNo | long |  |  | 
-| tripRecNo | long |  |  | 
+| appUserRecNo | long | appUser_recNo |  | 
+| type | long | type |  | 
+| targetDateFrom | Date | targetDate |  | 
+| targetDateTo | Date | targetDate |  | 
+| targetDateTimeFrom | DateTimeOffset | targetDateTime |  | 
+| targetDateTimeTo | DateTimeOffset | targetDateTime |  | 
+| completed | bool | completionDateTime |  | 
+| clientProfileRecNo | long | clientProfileRecNo |  | 
+| supplierProfileRecNo | long | supplierProfileRecNo |  | 
+| personRecNo | long | personRecNo |  | 
+| tripRecNo | long | tripRecNo |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
