@@ -40,9 +40,9 @@ Permission Areas: TripImport
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| type | short[] |  |  | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
-| status | short[] |  |  | Pending = 1, Imported = 2, Error = 3, Warning = 4
-| tripRecNo | long |  |  | 
+| type | long | type |  | 
+| status | long | status |  | 
+| tripRecNo | long | trip_RecNo |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

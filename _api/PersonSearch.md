@@ -37,6 +37,9 @@ Permission Areas: Person
 | cardExpDate | Date |  | card | 
 | cardDescription | string | 128 | card | 
 | cardRecNo | long |  | card | 
+| branchRecNo | long |  | person | 
+| branchRecName | string | 64 | person | 
+| advisorProfileRecNo | long |  | person | 
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |

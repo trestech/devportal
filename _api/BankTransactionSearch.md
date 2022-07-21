@@ -33,13 +33,13 @@ Permission Areas: BankTransaction
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| transactionDateFrom | Date |  |  | 
-| transactionDateTo | Date |  |  | 
-| bankRecNo | long |  |  | 
-| voided | bool |  |  | 
-| cleared | bool |  |  | 
-| dateClearedFrom | Date |  |  | 
-| dateClearedTo | Date |  |  | 
+| transactionDateFrom | Date | transactionDate |  | 
+| transactionDateTo | Date | transactionDate |  | 
+| bankRecNo | long | bankRecNo |  | 
+| voided | bool | voided |  | 
+| cleared | bool | dateCleared |  | 
+| dateClearedFrom | Date | dateCleared |  | 
+| dateClearedTo | Date | dateCleared |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

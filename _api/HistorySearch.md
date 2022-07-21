@@ -41,8 +41,8 @@ Referenced Table: [History]({{ '/api/History.html' | relative_url }})
 | action | string | action |  | 
 | timeStampFrom | DateTimeOffset |  |  | 
 | timeStampTo | DateTimeOffset |  |  | 
-| appUser_recNo | string |  |  | 
-| appUser_id | string |  |  | 
+| appUser_recNo | long | appUser_recNo |  | 
+| appUser_id | string | appUser_id |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
