@@ -12,12 +12,12 @@ Permission Areas: GeneralLedgerAccount
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | GeneralLedgerAccount | 
-| summaryCount | int |  | GeneralLedgerAccount | 
-| category | short |  | GeneralLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
-| name | string | 64 | GeneralLedgerAccount | 
-| description | string | 128 | GeneralLedgerAccount | 
-| activeStatus | bool |  | GeneralLedgerAccount | 
+| recNo | long |  | generalLedgerAccount | 
+| summaryCount | int |  | generalLedgerAccount | 
+| category | short |  | generalLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| name | string | 64 | generalLedgerAccount | 
+| description | string | 128 | generalLedgerAccount | 
+| activeStatus | bool |  | generalLedgerAccount | 
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |

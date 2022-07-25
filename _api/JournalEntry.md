@@ -6,7 +6,7 @@ description: ""
 
 
 
-Permission Areas: JournalEntryAccount
+Permission Areas: JournalEntry
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

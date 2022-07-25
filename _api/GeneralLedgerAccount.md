@@ -10,12 +10,12 @@ Permission Areas: GeneralLedgerAccount
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| recNo | long |  | PKey | GeneralLedgerAccount | 
-| name | string | 64 |  | GeneralLedgerAccount | 
-| category | short |  | Required | GeneralLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
-| description | string | 128 |  | GeneralLedgerAccount | 
-| activeStatus | bool |  |  | GeneralLedgerAccount | 
-| balance | long |  | Required,ReadOnly | GeneralLedgerAccount | 
+| recNo | long |  | PKey | generalLedgerAccount | 
+| name | string | 64 |  | generalLedgerAccount | 
+| category | short |  | Required | generalLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| description | string | 128 |  | generalLedgerAccount | 
+| activeStatus | bool |  |  | generalLedgerAccount | 
+| balance | long |  | Required,ReadOnly | generalLedgerAccount | 
 
 | Status code | Description |
 | ----------- | ----------- |

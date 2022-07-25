@@ -30,7 +30,7 @@ Referenced Table: [AppSetting]({{ '/api/AppSetting.html' | relative_url }})
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| area | string |  |  | 
+| area | string | area |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

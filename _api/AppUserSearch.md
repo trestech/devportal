@@ -31,11 +31,11 @@ Referenced Table: [AppUser]({{ '/api/AppUser.html' | relative_url }})
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| id | string |  |  | 
-| branchRecNo | long |  |  | 
-| userType | short |  |  | User = 1, Manager = 2, Admin = 3
-| name | string |  |  | 
-| email | string |  |  | 
+| id | string | id |  | 
+| branchRecNo | long | branch_recNo |  | 
+| userType | long | userType |  | 
+| name | string | name |  | 
+| email | string | email |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

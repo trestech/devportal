@@ -51,22 +51,22 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| profileType | short |  |  | Client = 1, Supplier = 2, Other = 3
+| profileType | long | profileType |  | 
 | tripRecNo | long |  |  | 
-| reservationRecNo | long[] |  |  | 
-| paymentDateFrom | Date |  |  | 
-| paymentDateTo | Date |  |  | 
-| clientProfileRecNo | long |  |  | 
-| supplierProfileRecNo | long |  |  | 
-| otherProfileRecNo | long |  |  | 
-| payType | short |  |  | Received = 1, Made = 2
-| method | short[] |  |  | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
-| bankRecNo | long[] |  |  | 
-| agencyProcessed | bool |  |  | 
-| voided | bool |  |  | 
-| cleared | bool |  |  | 
-| dateClearedFrom | Date |  |  | 
-| dateClearedTo | Date |  |  | 
+| reservationRecNo | long | reservationRecNo |  | 
+| paymentDateFrom | Date | paymentDate |  | 
+| paymentDateTo | Date | paymentDate |  | 
+| clientProfileRecNo | long | profileRecNo |  | 
+| supplierProfileRecNo | long | profileRecNo |  | 
+| otherProfileRecNo | long | profileRecNo |  | 
+| payType | long |  |  | 
+| method | long | method |  | 
+| bankRecNo | long | bankRecNo |  | 
+| agencyProcessed | bool | agencyProcessed |  | 
+| voided | bool | voided |  | 
+| cleared | bool | dateCleared |  | 
+| dateClearedFrom | Date | dateCleared |  | 
+| dateClearedTo | Date | dateCleared |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

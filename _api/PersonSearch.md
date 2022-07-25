@@ -58,24 +58,20 @@ Permission Areas: Person
 | displayTagRecNo [inherited] | long |  |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
 | name | string |  |  | 
-| firstName | string |  |  | 
-| firstNameCond | short |  | firstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| middleName | string |  |  | 
-| middleNameCond | short |  | middleName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| lastName | string |  |  | 
-| lastNameCond | short |  | lastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| commType | short |  |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| firstName | string | firstName |  | 
+| middleName | string | middleName |  | 
+| lastName | string | lastName |  | 
+| commType | long |  |  | 
 | commValue | string |  |  | 
-| commValueCond | short |  | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | commValueCountryDomain | string |  |  | 
 | commValueCityArea | string |  |  | 
 | commValueUserSpecific | string |  |  | 
-| profileRecNo | long |  |  | 
-| birthdayMonth | short[] |  |  | 
-| birthdayMonthFrom | short |  |  | 
-| birthdayMonthTo | short |  |  | 
-| birthdayDayFrom | short |  |  | 
-| birthdayDayTo | short |  |  | 
+| profileRecNo | long | profile_recNo |  | 
+| birthdayMonth | long | birthdayMonth |  | 
+| birthdayMonthFrom | long |  |  | 
+| birthdayMonthTo | long |  |  | 
+| birthdayDayFrom | long |  |  | 
+| birthdayDayTo | long |  |  | 
 | marketing | [marketing[]](/marketing) |  |  | 
 | emailPermitMarketing | bool |  |  | 
 | phonePermitMarketing | bool |  |  | 
@@ -83,7 +79,7 @@ Permission Areas: Person
 | createDateTimeTo | DateTimeOffset |  |  | 
 | modifiedDateTimeFrom | DateTimeOffset |  |  | 
 | modifiedDateTimeTo | DateTimeOffset |  |  | 
-| cardType | short[] |  |  | CreditDebit = 1, Loyalty = 2, Passport = 3
+| cardType | long | cardType |  | 
 | personActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
 
 | Status code | Description |

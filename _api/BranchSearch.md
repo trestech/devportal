@@ -26,7 +26,7 @@ Referenced Table: [Branch]({{ '/api/Branch.html' | relative_url }})
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| name | string |  |  | 
+| name | string | name |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

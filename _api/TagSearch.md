@@ -33,8 +33,8 @@ Permission Areas: Tag
 | includeCols [inherited] | string[] |  |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  |  | 
 | baseUrl [inherited] | string |  |  | 
-| name | string |  |  | 
-| activeStatus | bool |  |  | 
+| name | string | name |  | 
+| activeStatus | bool | activeStatus |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
