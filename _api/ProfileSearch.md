@@ -78,44 +78,39 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| profileType | short |  |  | Client = 1, Supplier = 2, Advisor = 3, Other = 4
-| profileName | string |  |  | 
-| profileNameCond | short |  | profileName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| commType | short |  |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| profileType | long | profileType |  | 
+| profileName | string | name |  | 
+| commType | long |  |  | 
 | commValue | string |  |  | 
-| commValueCond | short |  | commValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| clientAnniversaryMonth | short[] |  |  | 
-| clientAnniversaryMonthFrom | short |  |  | 
-| clientAnniversaryMonthTo | short |  |  | 
-| clientAnniversaryDayFrom | short |  |  | 
-| clientAnniversaryDayTo | short |  |  | 
-| clientAdvisorProfileRecNo | long |  |  | 
-| clientType | short |  |  | Personal = 1, Corporate = 2
-| supplierType | short |  |  | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
-| activestatus | bool |  |  | 
-| clientBranchRecNo | long |  |  | 
+| clientAnniversaryMonth | long | clientAnniversaryMonth |  | 
+| clientAnniversaryMonthFrom | long |  |  | 
+| clientAnniversaryMonthTo | long |  |  | 
+| clientAnniversaryDayFrom | long |  |  | 
+| clientAnniversaryDayTo | long |  |  | 
+| clientAdvisorProfileRecNo | long | clientAdvisorProfileRecNo |  | 
+| clientType | long | clientType |  | 
+| supplierType | long | supplierType |  | 
+| activestatus | bool | activeStatus |  | 
+| clientBranchRecNo | long | clientBranchRecNo |  | 
 | personRecNo | long |  |  | 
-| personName | string |  |  | 
 | personFirstName | string |  |  | 
-| personFirstNameCond | short |  | personFirstName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | personLastName | string |  |  | 
-| personLastNameCond | short |  | personLastName | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| preferredSupplier | bool |  |  | 
-| street1 | string |  |  | 
-| city | string |  |  | 
-| stateProvince | string |  |  | 
-| zipPostalCode | string |  |  | 
-| country | string |  |  | 
+| preferredSupplier | bool | preferredSupplier |  | 
+| street1 | string | street1 |  | 
+| city | string | city |  | 
+| stateProvince | string | stateProvince |  | 
+| zipPostalCode | string | zipPostalCode |  | 
+| country | string | country |  | 
 | marketing | [marketing[]](/marketing) |  |  | 
 | id | string |  |  | 
 | emailPermitMarketing | bool |  |  | 
 | phonePermitMarketing | bool |  |  | 
-| addressPermitMarketing | bool |  |  | 
+| addressPermitMarketing | bool | addressPermitMarketing |  | 
 | clientCreateDateTimeFrom | DateTimeOffset |  |  | 
 | clientCreateDateTimeTo | DateTimeOffset |  |  | 
 | clientModifiedDateTimeFrom | DateTimeOffset |  |  | 
 | clientModifiedDateTimeTo | DateTimeOffset |  |  | 
-| supplierVendorId | string |  |  | 
+| supplierVendorId | string | supplierVendorId |  | 
 | clientTripSearchParams | [tripSearch](/tripSearch) |  |  | 
 | supplierTripSearchParams | [tripSearch](/tripSearch) |  |  | 
 | clientActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
@@ -132,10 +127,14 @@ POST https://api-dev.trestechnologies.com/profileSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
 {
-  "profileType": 1,
+  "profileType": {
+    "value": 1
+  },
   "activestatus": true,
-  "profileNameCond": 5,
-  "profileName": "Able",
+  "profileName": {
+    "value": "Able",
+    "compareCondition": 5
+  },
   "includeCols": [
     "recNo",
     "name"

@@ -57,7 +57,6 @@ Permission Areas: Person
 | tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  |  | 
 | tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| name | string |  |  | 
 | firstName | string | firstName |  | 
 | middleName | string | middleName |  | 
 | lastName | string | lastName |  | 
@@ -88,13 +87,16 @@ Permission Areas: Person
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request: a person search that returns the recNo and name for persons whose name starts with "Able"
+#### Example request: a person search that returns the recNo and name for persons whose last name starts with "Able"
 ```sh
 POST https://api-dev.trestechnologies.com/personSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
 {
-  "name": "Able",
+  "lastName": {
+    "value": "Able",
+    "compareCondition": 5
+  },
   "includeCols": [
     "recNo",
     "name"
