@@ -184,7 +184,7 @@ Permission Areas: Trip
 | reservation_recNo | long |  | PKey,FKey | cruiseReservation | 
 | type | short |  | Required | cruiseReservation | Ocean = 1, River = 2
 | deck | string | 32 |  | cruiseReservation | 
-| cabin | string | 16 |  | cruiseReservation | 
+| cabin | string | 32 |  | cruiseReservation | 
 | cruiseSegment  | table |  |  | cruiseReservation | 
 | recNo | long |  | PKey | cruiseSegment | 
 | cruiseReservation_recNo | long |  | FKey | cruiseSegment | 

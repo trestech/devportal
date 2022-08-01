@@ -59,7 +59,7 @@ Permission Areas: Person
 | expirationDate | Date |  |  | card | 
 | issuingCity | string | 64 |  | card | 
 | issuingCountry | string | 2 |  | card | 
-| description | string | 128 |  | card | 
+| description | string | 256 |  | card | 
 | cardNumberToken | string | 64 |  | card | 
 | code | string | 8 |  | card | 
 | nameOnCard | string | 64 |  | card | 

@@ -35,7 +35,7 @@ Permission Areas: Person
 | cardType | short |  | person | CreditDebit = 1, Loyalty = 2, Passport = 3
 | cardNumber | string | 64 | card | 
 | cardExpDate | Date |  | card | 
-| cardDescription | string | 128 | card | 
+| cardDescription | string | 256 | card | 
 | cardRecNo | long |  | card | 
 | branchRecNo | long |  | person | 
 | branchRecName | string | 64 | person | 

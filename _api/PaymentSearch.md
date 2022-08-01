@@ -34,6 +34,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | accountingEntryRecNo | long |  | payment | 
 | remarks | string | 256 | payment | 
 | dateCleared | Date |  | payment | 
+| bankTransactionRecNo | long |  | payment | 
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |
@@ -67,6 +68,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | cleared | bool | dateCleared |  | 
 | dateClearedFrom | Date | dateCleared |  | 
 | dateClearedTo | Date | dateCleared |  | 
+| bankTransactionRecNo | long | bankTransactionRecNo |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
