@@ -13,6 +13,22 @@ exclude_in_header: true
 
 <script>
   window.data = {
+    {%- for item in site.posts -%}
+      {%- assign item_id = item.id | strip | slugify -%}
+      {%- if item.title -%}
+        {%- if added -%},{%- endif -%}
+        {%- assign added = false -%}
+        "{{ item_id }}": {
+          "id": "{{ item_id }}",
+          "title": "{{ item.title | strip }}",
+          "description": "{{ item.description | strip }}",
+          "url": "{{ item.url | strip }}",
+          "content": "{{ item.content | strip_html | strip | replace: "\n", ' ' | jsonify | replace: '"', '' | replace: '\n', ' ' | replace: '\', '' | replace: '  ', ' ' }}"
+        }
+        {%- assign added = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+    
     {%- for item in site.api -%}
       {%- assign item_id = item.id | strip | slugify -%}
       {%- if item.title -%}
