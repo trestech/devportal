@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [JournalEntry]({{ '/api/JournalEntry.html' | relative_url }})
-
 Permission Areas: JournalEntry
 
 | Column | Type | Size | Table | Description |

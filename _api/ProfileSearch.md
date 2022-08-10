@@ -8,8 +8,6 @@ ProfileSearch returns data for client, supplier, advisor and other profiles.
 
 User needs at least select permission for whichever type of profile being searched for. Results may be filtered if client or advisor permission includes OnlySelf (based on user's linked advisors) or if client permission or advisor permission includes OnlyBranch (based on user's branch).
 
-Referenced Table: [Profile]({{ '/api/Profile.html' | relative_url }})
-
 Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 
 | Column | Type | Size | Table | Description |
@@ -76,7 +74,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
 | profileType | long | profileType | 
 | profileName | [StringSearchParam](StringSearchParam) | name | 
 | commType | long |  | 
@@ -100,7 +98,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | stateProvince | [StringSearchParam](StringSearchParam) | stateProvince | 
 | zipPostalCode | [StringSearchParam](StringSearchParam) | zipPostalCode | 
 | country | [StringSearchParam](StringSearchParam) | country | 
-| marketing | [Marketing[]](Marketing) |  | 
+| marketing | [MarketingSearchParam[]](/MarketingSearchParam) |  | 
 | id | [StringSearchParam](StringSearchParam) |  | 
 | emailPermitMarketing | bool |  | 
 | phonePermitMarketing | bool |  | 
@@ -110,9 +108,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | clientModifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
 | clientModifiedDateTimeTo | DateTimeUTCSearchParam |  | 
 | supplierVendorId | [StringSearchParam](StringSearchParam) | supplierVendorId | 
-| clientTripSearchParams | [TripSearch](TripSearch) |  | 
-| supplierTripSearchParams | [TripSearch](TripSearch) |  | 
-| clientActivitySearchParams | [ActivitySearch](ActivitySearch) |  | 
+| clientTripSearchParams | [TripSearchParams](/TripSearchParams) |  | 
+| supplierTripSearchParams | [TripSearchParams](/TripSearchParams) |  | 
+| clientActivitySearchParams | [ActivitySearchParams](/ActivitySearchParams) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

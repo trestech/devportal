@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [GeneralLedgerAccount]({{ '/api/GeneralLedgerAccount.html' | relative_url }})
-
 Permission Areas: GeneralLedgerAccount
 
 | Column | Type | Size | Table | Description |

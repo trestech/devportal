@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [Branch]({{ '/api/Branch.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | branch | 

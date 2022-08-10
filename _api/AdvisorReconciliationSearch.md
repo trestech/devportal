@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [AdvisorReconciliation]({{ '/api/AdvisorReconciliation.html' | relative_url }})
-
 Permission Areas: AdvisorReconciliation
 
 | Column | Type | Size | Table | Description |

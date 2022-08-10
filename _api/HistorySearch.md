@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [History]({{ '/api/History.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | history | 

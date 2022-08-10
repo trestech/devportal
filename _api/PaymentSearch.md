@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [Payment]({{ '/api/Payment.html' | relative_url }})
-
 Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 
 | Column | Type | Size | Table | Description |
@@ -52,7 +50,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
 | profileType | long | profileType | 
 | tripRecNo | [NumSearchParam](NumSearchParam) |  | 
 | reservationRecNo | [NumSearchParam](NumSearchParam) | reservationRecNo | 

@@ -8,8 +8,6 @@ PersonSearch returns data for persons (travelers).
 
 User needs at least select permission for person records. Results may be filtered if person permission includes OnlySelf (based on user's linked advisors) or if permission includes OnlyBranch (based on user's branch).
 
-Referenced Table: [Person]({{ '/api/Person.html' | relative_url }})
-
 Permission Areas: Person
 
 | Column | Type | Size | Table | Description |
@@ -55,7 +53,7 @@ Permission Areas: Person
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
 | firstName | [StringSearchParam](StringSearchParam) | firstName | 
 | middleName | [StringSearchParam](StringSearchParam) | middleName | 
 | lastName | [StringSearchParam](StringSearchParam) | lastName | 
@@ -70,7 +68,7 @@ Permission Areas: Person
 | birthdayMonthTo | long |  | 
 | birthdayDayFrom | long |  | 
 | birthdayDayTo | long |  | 
-| marketing | [Marketing[]](Marketing) |  | 
+| marketing | [MarketingSearchParam[]](/MarketingSearchParam) |  | 
 | emailPermitMarketing | bool |  | 
 | phonePermitMarketing | bool |  | 
 | createDateTimeFrom | DateTimeUTCSearchParam |  | 
@@ -78,7 +76,7 @@ Permission Areas: Person
 | modifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
 | modifiedDateTimeTo | DateTimeUTCSearchParam |  | 
 | cardType | long | cardType | 
-| personActivitySearchParams | [ActivitySearch](ActivitySearch) |  | 
+| personActivitySearchParams | [ActivitySearchParams](/ActivitySearchParams) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

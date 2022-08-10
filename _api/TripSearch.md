@@ -8,8 +8,6 @@ TripSearch returns data for trips and reservations.
 
 User needs at least select permission for trips. Results may be filtered if trip permission includes OnlySelf (based on user's linked advisors) or if trip permission includes OnlyBranch (based on user's branch).
 
-Referenced Table: [Trip]({{ '/api/Trip.html' | relative_url }})
-
 Permission Areas: Trip
 
 | Column | Type | Size | Table | Description |
@@ -112,7 +110,7 @@ Permission Areas: Trip
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
 | clientProfileRecNo | [NumSearchParam](NumSearchParam) | clientProfileRecNo | 
 | advisorProfileRecNo | [NumSearchParam](NumSearchParam) | advisorProfileRecNo | 
 | targetTravelDateFrom | DateSearchParam | targetTravelDate | 
@@ -169,9 +167,9 @@ Permission Areas: Trip
 | reservationCommissionDatePayableTo | DateSearchParam | reservationCommissionDatePayable | Filter results based on calculated date payable column
 | reservationAccountingEntryCreateDateFrom | DateSearchParam | reservationAccountingEntryCreateDate | 
 | reservationAccountingEntryCreateDateTo | DateSearchParam | reservationAccountingEntryCreateDate | 
-| reservationTags | [TagsSearch[]](TagSearch) |  | 
-| clientProfileSearchParams | [ProfileSearch](ProfileSearch) |  | 
-| destinationSearchParams | [DestinationSearch](DestinationSearch) |  | 
+| reservationTags | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| clientProfileSearchParams | [ProfileSearchParams](/ProfileSearchParams) |  | 
+| destinationSearchParams | [DestinationSearchParams](/DestinationSearchParams) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

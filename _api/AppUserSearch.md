@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [AppUser]({{ '/api/AppUser.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | appUser | 
