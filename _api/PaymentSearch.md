@@ -35,6 +35,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | remarks | string | 256 | payment | 
 | dateCleared | Date |  | payment | 
 | bankTransactionRecNo | long |  | payment | 
+| paidBy | short |  | payment | Client = 1, Supplier = 2, Other = 3
+| paidTo | short |  | payment | Client = 1, Supplier = 2, Other = 3
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |

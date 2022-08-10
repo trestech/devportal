@@ -15,6 +15,7 @@ task :import, :folder do |t, args|
   
   dir.each do |f|
     next unless f.end_with? '.md'
+    next if f =~ /0.9.5 changes.md/
     
     File.open(folder + "/" + f) do |file|
       data = file.read

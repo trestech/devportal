@@ -46,6 +46,10 @@ description: ""
 | type | short |  | PKey,Required | accountingReferenceTravelCategory | None = 0, ClientBalances = 1, SupplierBalances = 2, UndepositedFunds = 3, Undisbursedfunds = 4, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, Other = 99
 | travelCategory_recNo | short |  | PKey,Required,FKey | accountingReferenceTravelCategory | 
 | generalLedgerAccount_recNo | long |  | FKey | accountingReferenceTravelCategory | 
+| appFeature  | table |  |  | agency | 
+| agency_recNo | int |  | PKey,FKey | appFeature | 
+| feature | short |  | PKey,Required | appFeature | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3
+| enabled | bool |  | Required | appFeature | 
 
 | Status code | Description |
 | ----------- | ----------- |
