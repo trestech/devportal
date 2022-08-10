@@ -73,5 +73,3 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | 200 | Ok |
 | 401 | Unauthorized |
 | 403 | Forbidden |
-
-
