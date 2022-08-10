@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [Destination]({{ '/api/Destination.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | destination | 

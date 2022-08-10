@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [AppSetting]({{ '/api/AppSetting.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | appSetting | 

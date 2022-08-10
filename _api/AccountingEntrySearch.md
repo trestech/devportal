@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [AccountingEntry]({{ '/api/AccountingEntry.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | accountingEntry | 

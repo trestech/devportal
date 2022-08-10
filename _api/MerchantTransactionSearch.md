@@ -6,8 +6,6 @@ description: ""
 
 
 
-Referenced Table: [MerchantTransaction]({{ '/api/MerchantTransaction.html' | relative_url }})
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | merchantTransaction | 
