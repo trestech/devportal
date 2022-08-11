@@ -20,8 +20,14 @@ task :import, :folder do |t, args|
     File.open(folder + "/" + f) do |file|
       data = file.read
       title = data.split("# ")[1].split("\n").first
-      description = data.split("# #{title}")[1].lstrip.split("\n").first.split(".").first
+      description = data.split("# #{title}")[1].lstrip.split("\n").first.split(".").first rescue ""
       body = data.split("# #{title}")[1]
+
+      if body.nil?
+        puts "Skipping #{f} (empty body)"
+        next
+      end
+
       skip = false
       
       description = "" if description.start_with? 'Referenced Table:'
@@ -37,7 +43,28 @@ task :import, :folder do |t, args|
         "[#{v}]({{ '/api/#{v}.html' | relative_url }})"
       end
       
+      # Remapping relative links
+      body = body.gsub(/\[StringSearchParam\]\(\/StringSearchParam\)/, '[StringSearchParam](StringSearchParam)')
+      body = body.gsub(/\[NumSearchParam\]\(\/NumSearchParam\)/, '[NumSearchParam](NumSearchParam)')
+      body = body.gsub(/\[TagsSearch\[\]\]\(\/TagsSearch\)/, '[TagsSearch[]](TagSearch)')
+      body = body.gsub(/\[tripSearch\]\(\/tripSearch\)/, '[TripSearch](TripSearch)')
+      body = body.gsub(/\[profileSearch\]\(\/profileSearch\)/, '[ProfileSearch](ProfileSearch)')
+      body = body.gsub(/\[destinationSearch\]\(\/destinationSearch\)/, '[DestinationSearch](DestinationSearch)')
+      body = body.gsub(/\[activitySearch\]\(\/activitySearch\)/, '[ActivitySearch](ActivitySearch)')
+      body = body.gsub(/\[marketing\[\]\]\(\/marketing\)/, '[Marketing[]](Marketing)')
+
+      # Not yet provided
       body = body.gsub(/\[includeColsExtended\[\]\]\(\/includeColsExtended\)/, 'includeColsExtended[]')
+      body = body.gsub(/\[DateSearchParam\]\(\/DateSearchParam\)/, 'DateSearchParam')
+      body = body.gsub(/\[DateTimeSearchParam\]\(\/DateTimeSearchParam\)/, 'DateTimeSearchParam')
+      body = body.gsub(/\[DateTimeUTCSearchParam\]\(\/DateTimeUTCSearchParam\)/, 'DateTimeUTCSearchParam')
+      body = body.gsub(/\[TagsSearch\]\(\/TagsSearch\)/, 'TagsSearch')
+      body = body.gsub(/\[EnumSearchParam<([a-zA-Z]+)>\]\(\/EnumSearchParam\)/) do |_|
+        match = Regexp.last_match
+        v = match[1]
+        
+        "`EnumSearchParam<#{v}>`"
+      end
       
       output = <<~DONE
         ---
