@@ -11,6 +11,7 @@ Permission Areas: OtherProfile
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | generalLedgerAccount_recNo | long |  | FKey | otherProfile | 
+| generalLedgerAccount_name | string | 64 | ReadOnly | otherProfile | 
 | profile_recNo | long |  | PKey,Auto-Assign | otherProfile | 
 | profile  [shared] | table |  | Singleton | otherProfile | 
 | recNo | long |  | PKey,FKey | profile | 

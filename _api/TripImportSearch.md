@@ -29,20 +29,19 @@ Permission Areas: TripImport
 | lastModifiedDateTime | DateTimeOffset |  | tripImport | 
 | trip_RecNo | long |  | tripImport | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| type | long | type |  | 
-| status | long | status |  | 
-| tripRecNo | long | trip_RecNo |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| type | `EnumSearchParam<ImportType>` | type | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
+| status | `EnumSearchParam<Status>` | status | Pending = 1, Imported = 2, Error = 3, Warning = 4
+| tripRecNo | [NumSearchParam](NumSearchParam) | trip_RecNo | 
 
 | Status code | Description |
 | ----------- | ----------- |

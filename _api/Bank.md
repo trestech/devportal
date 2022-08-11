@@ -14,6 +14,7 @@ description: ""
 | accountingReference | string | 64 |  | bank | 
 | balance | long |  | Required,ReadOnly | bank | 
 | generalLedgerAccount_recNo | long |  | FKey | bank | 
+| generalLedgerAccount_name | string | 64 | ReadOnly | bank | 
 
 | Status code | Description |
 | ----------- | ----------- |

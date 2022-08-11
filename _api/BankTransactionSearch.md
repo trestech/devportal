@@ -22,24 +22,23 @@ Permission Areas: BankTransaction
 | remarks | string |  | bankTransaction | 
 | dateCleared | Date |  | bankTransaction | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| transactionDateFrom | Date | transactionDate |  | 
-| transactionDateTo | Date | transactionDate |  | 
-| bankRecNo | long | bankRecNo |  | 
-| voided | bool | voided |  | 
-| cleared | bool | dateCleared |  | 
-| dateClearedFrom | Date | dateCleared |  | 
-| dateClearedTo | Date | dateCleared |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| transactionDateFrom | DateSearchParam | transactionDate | 
+| transactionDateTo | DateSearchParam | transactionDate | 
+| bankRecNo | [NumSearchParam](NumSearchParam) | bankRecNo | 
+| voided | bool | voided | 
+| cleared | bool | dateCleared | 
+| dateClearedFrom | DateSearchParam | dateCleared | 
+| dateClearedTo | DateSearchParam | dateCleared | 
 
 | Status code | Description |
 | ----------- | ----------- |

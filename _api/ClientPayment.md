@@ -28,7 +28,7 @@ Permission Areas: ClientPayment
 | recNo | long |  | PKey,FKey | payment | 
 | amount | long |  | Required | payment | 
 | paymentDate | Date |  | Required | payment | 
-| method | short |  | Required | payment | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
+| method | short |  | Required | payment | Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | cardNumber | string | 64 |  | payment | 
 | expirationDate | Date |  |  | payment | 
 | nameOnCard | string | 64 |  | payment | 

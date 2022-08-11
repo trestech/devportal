@@ -34,33 +34,32 @@ Permission Areas: Activity
 | createDateTime | DateTimeOffset |  | activity | 
 | remarks | string |  | activity | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| tagRecNo [inherited] | long[] |  |  | 
-| tagValue [inherited] | string |  |  | 
-| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| appUserRecNo | long | appUser_recNo |  | 
-| type | long | type |  | 
-| targetDateFrom | Date | targetDate |  | 
-| targetDateTo | Date | targetDate |  | 
-| targetDateTimeFrom | DateTimeOffset | targetDateTime |  | 
-| targetDateTimeTo | DateTimeOffset | targetDateTime |  | 
-| completed | bool | completionDateTime |  | 
-| clientProfileRecNo | long | clientProfileRecNo |  | 
-| supplierProfileRecNo | long | supplierProfileRecNo |  | 
-| personRecNo | long | personRecNo |  | 
-| tripRecNo | long | tripRecNo |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| tagRecNo [inherited] | long[] |  | 
+| tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  | 
+| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| appUserRecNo | [NumSearchParam](NumSearchParam) | appUser_recNo | 
+| type | `EnumSearchParam<Type>` | type | Task = 1, Appointment = 2, Note = 3, Promo = 4
+| targetDateFrom | DateSearchParam | targetDate | 
+| targetDateTo | DateSearchParam | targetDate | 
+| targetDateTimeFrom | DateTimeUTCSearchParam | targetDateTime | 
+| targetDateTimeTo | DateTimeUTCSearchParam | targetDateTime | 
+| completed | bool | completionDateTime | 
+| clientProfileRecNo | [NumSearchParam](NumSearchParam) | clientProfileRecNo | 
+| supplierProfileRecNo | [NumSearchParam](NumSearchParam) | supplierProfileRecNo | 
+| personRecNo | [NumSearchParam](NumSearchParam) | personRecNo | 
+| tripRecNo | [NumSearchParam](NumSearchParam) | tripRecNo | 
 
 | Status code | Description |
 | ----------- | ----------- |

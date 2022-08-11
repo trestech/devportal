@@ -24,25 +24,24 @@ Referenced Table: [History]({{ '/api/History.html' | relative_url }})
 | oldValue | string | 256 | history | 
 | newValue | string | 256 | history | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| tableName | string | tableName |  | 
-| tableRecNo | long | tableRecNo |  | 
-| tableRecNo2 | long | tableRecNo2 |  | 
-| action | string | action |  | 
-| timeStampFrom | DateTimeOffset |  |  | 
-| timeStampTo | DateTimeOffset |  |  | 
-| appUser_recNo | long | appUser_recNo |  | 
-| appUser_id | string | appUser_id |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| tableName | [StringSearchParam](StringSearchParam) | tableName | 
+| tableRecNo | [NumSearchParam](NumSearchParam) | tableRecNo | 
+| tableRecNo2 | [NumSearchParam](NumSearchParam) | tableRecNo2 | 
+| action | [StringSearchParam](StringSearchParam) | action | 
+| timeStampFrom | DateTimeOffset |  | 
+| timeStampTo | DateTimeOffset |  | 
+| appUser_recNo | [NumSearchParam](NumSearchParam) | appUser_recNo | 
+| appUser_id | [StringSearchParam](StringSearchParam) | appUser_id | 
 
 | Status code | Description |
 | ----------- | ----------- |
