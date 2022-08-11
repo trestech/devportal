@@ -41,45 +41,44 @@ Permission Areas: Person
 | branchRecName | string | 64 | person | 
 | advisorProfileRecNo | long |  | person | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| tagRecNo [inherited] | long[] |  |  | 
-| tagValue [inherited] | string |  |  | 
-| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| firstName | string | firstName |  | 
-| middleName | string | middleName |  | 
-| lastName | string | lastName |  | 
-| commType | long |  |  | 
-| commValue | string |  |  | 
-| commValueCountryDomain | string |  |  | 
-| commValueCityArea | string |  |  | 
-| commValueUserSpecific | string |  |  | 
-| profileRecNo | long | profile_recNo |  | 
-| birthdayMonth | long | birthdayMonth |  | 
-| birthdayMonthFrom | long |  |  | 
-| birthdayMonthTo | long |  |  | 
-| birthdayDayFrom | long |  |  | 
-| birthdayDayTo | long |  |  | 
-| marketing | [marketing[]](/marketing) |  |  | 
-| emailPermitMarketing | bool |  |  | 
-| phonePermitMarketing | bool |  |  | 
-| createDateTimeFrom | DateTimeOffset |  |  | 
-| createDateTimeTo | DateTimeOffset |  |  | 
-| modifiedDateTimeFrom | DateTimeOffset |  |  | 
-| modifiedDateTimeTo | DateTimeOffset |  |  | 
-| cardType | long | cardType |  | 
-| personActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| tagRecNo [inherited] | long[] |  | 
+| tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  | 
+| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| firstName | [StringSearchParam](StringSearchParam) | firstName | 
+| middleName | [StringSearchParam](StringSearchParam) | middleName | 
+| lastName | [StringSearchParam](StringSearchParam) | lastName | 
+| commType | long |  | 
+| commValue | [StringSearchParam](StringSearchParam) |  | 
+| commValueCountryDomain | [StringSearchParam](StringSearchParam) |  | 
+| commValueCityArea | [StringSearchParam](StringSearchParam) |  | 
+| commValueUserSpecific | [StringSearchParam](StringSearchParam) |  | 
+| profileRecNo | [NumSearchParam](NumSearchParam) | profile_recNo | 
+| birthdayMonth | [NumSearchParam](NumSearchParam) | birthdayMonth | 
+| birthdayMonthFrom | long |  | 
+| birthdayMonthTo | long |  | 
+| birthdayDayFrom | long |  | 
+| birthdayDayTo | long |  | 
+| marketing | [Marketing[]](Marketing) |  | 
+| emailPermitMarketing | bool |  | 
+| phonePermitMarketing | bool |  | 
+| createDateTimeFrom | DateTimeUTCSearchParam |  | 
+| createDateTimeTo | DateTimeUTCSearchParam |  | 
+| modifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
+| modifiedDateTimeTo | DateTimeUTCSearchParam |  | 
+| cardType | long | cardType | 
+| personActivitySearchParams | [ActivitySearch](ActivitySearch) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -94,7 +93,9 @@ Content-Type: application/json
 Authorization: Bearer <session-token>
 {
   "lastName": {
-    "value": "Able",
+    "value": [
+      "Able"
+    ],
     "compareCondition": 5
   },
   "includeCols": [

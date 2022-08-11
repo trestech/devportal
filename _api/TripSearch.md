@@ -98,81 +98,80 @@ Permission Areas: Trip
 | reservationAccountingEntryCreateDate | Date |  | reservation | 
 | reservationTravelerRecNo | long |  | reservationTraveler | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| tagRecNo [inherited] | long[] |  |  | 
-| tagValue [inherited] | string |  |  | 
-| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| clientProfileRecNo | long | clientProfileRecNo |  | 
-| advisorProfileRecNo | long | advisorProfileRecNo |  | 
-| targetTravelDateFrom | Date | targetTravelDate |  | 
-| targetTravelDateTo | Date | targetTravelDate |  | 
-| tripStartDateTimeFrom | Date | startDateTime |  | 
-| tripStartDateTimeTo | Date | startDateTime |  | 
-| tripEndDateTimeFrom | Date | endDateTime |  | 
-| tripEndDateTimeTo | Date | endDateTime |  | 
-| cancelled | bool | cancelled |  | 
-| tripName | string | name |  | 
-| destinationRecNo | long | destinationRecNo |  | 
-| branchRecNo | long | branchRecNo |  | 
-| tripCreateDateTimeFrom | DateTimeOffset |  |  | 
-| tripCreateDateTimeTo | DateTimeOffset |  |  | 
-| tripModifiedDateTimeFrom | DateTimeOffset |  |  | 
-| tripModifiedDateTimeTo | DateTimeOffset |  |  | 
-| reservationRecNo | long | reservationRecNo |  | 
-| reservationBookDateTimeFrom | Date | reservationBookDateTime |  | 
-| reservationBookDateTimeTo | Date | reservationBookDateTime |  | 
-| reservationStartDateTimeFrom | Date | reservationStartDateTime |  | 
-| reservationStartDateTimeTo | Date | reservationStartDateTime |  | 
-| reservationEndDateTimeFrom | Date | reservationEndDateTime |  | 
-| reservationEndDateTimeTo | Date | reservationEndDateTime |  | 
-| reservationDepositDueDateFrom | Date | reservationDepositDueDate |  | 
-| reservationDepositDueDateTo | Date | reservationDepositDueDate |  | 
-| reservationDepositCompleted | bool | reservationDepositCompleted |  | 
-| reservationFinalPayDueDateFrom | Date | reservationFinalPayDueDate |  | 
-| reservationFinalPayDueDateTo | Date | reservationFinalPayDueDate |  | 
-| reservationTravelCategory | long | reservationTravelCategoryRecNo |  | 
-| reservationSupplierProfileRecNo | long | reservationSupplierProfileRecNo |  | 
-| reservationTrackClientPayments | bool | reservationTrackClientPayments |  | 
-| reservationStatus | long | reservationStatus |  | 
-| reservationClientBalanceMin | long | reservationClientBalance |  | 
-| reservationClientBalanceMax | long | reservationClientBalance |  | 
-| reservationSupplierBalanceMin | long | reservationSupplierBalance |  | 
-| reservationSupplierBalanceMax | long | reservationSupplierBalance |  | 
-| reservationDisplayTagRecNo | long |  |  | 
-| reservationARCBSPNumber | long | reservationARCBSPNumber |  | 
-| reservationAdvisorProfileRecNo | long | reservationAdvisorProfileRecNo |  | 
-| reservationProviderProfileRecNo | long | reservationProviderProfileRecNo |  | 
-| reservationTravelerRecNo | long | reservationTravelerRecNo |  | 
-| reservationTicketNumber | long | reservationTicketNumber |  | 
-| reservationConfirmationNumber | string | reservationConfirmationNumber |  | 
-| reservationConfirmedDateTimeFrom | Date | reservationConfirmedDateTime |  | 
-| reservationConfirmedDateTimeTo | Date | reservationConfirmedDateTime |  | 
-| reservationRecordLocator | string | reservationRecordLocator |  | 
-| reservationPromoId | string | reservationPromoId |  | 
-| tripActionItemCompleted | bool | tripActionItemCompleted |  | 
-| tripActionItemDateFrom | Date |  |  | 
-| tripActionItemDateTo | Date |  |  | 
-| reservationAdvisorReconciliationRecNo | long | reservationAdvisorReconciliationRecNo |  | 
-| reservationAdvisorReconciled | bool | reservationAdvisorReconciliationRecNo |  | 
-| reservationCommissionDatePayableFrom | Date | reservationCommissionDatePayable |  | Filter results based on calculated date payable column
-| reservationCommissionDatePayableTo | Date | reservationCommissionDatePayable |  | Filter results based on calculated date payable column
-| reservationAccountingEntryCreateDateFrom | Date | reservationAccountingEntryCreateDate |  | 
-| reservationAccountingEntryCreateDateTo | Date | reservationAccountingEntryCreateDate |  | 
-| reservationTags | [TagsSearch[]](/TagsSearch) |  |  | 
-| clientProfileSearchParams | [profileSearch](/profileSearch) |  |  | 
-| destinationSearchParams | [destinationSearch](/destinationSearch) |  |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| tagRecNo [inherited] | long[] |  | 
+| tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  | 
+| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| clientProfileRecNo | [NumSearchParam](NumSearchParam) | clientProfileRecNo | 
+| advisorProfileRecNo | [NumSearchParam](NumSearchParam) | advisorProfileRecNo | 
+| targetTravelDateFrom | DateSearchParam | targetTravelDate | 
+| targetTravelDateTo | DateSearchParam | targetTravelDate | 
+| tripStartDateTimeFrom | DateSearchParam | startDateTime | 
+| tripStartDateTimeTo | DateSearchParam | startDateTime | 
+| tripEndDateTimeFrom | DateSearchParam | endDateTime | 
+| tripEndDateTimeTo | DateSearchParam | endDateTime | 
+| cancelled | bool | cancelled | 
+| tripName | [StringSearchParam](StringSearchParam) | name | 
+| destinationRecNo | [NumSearchParam](NumSearchParam) | destinationRecNo | 
+| branchRecNo | [NumSearchParam](NumSearchParam) | branchRecNo | 
+| tripCreateDateTimeFrom | DateTimeUTCSearchParam |  | 
+| tripCreateDateTimeTo | DateTimeUTCSearchParam |  | 
+| tripModifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
+| tripModifiedDateTimeTo | DateTimeUTCSearchParam |  | 
+| reservationRecNo | [NumSearchParam](NumSearchParam) | reservationRecNo | 
+| reservationBookDateTimeFrom | DateSearchParam | reservationBookDateTime | 
+| reservationBookDateTimeTo | DateSearchParam | reservationBookDateTime | 
+| reservationStartDateTimeFrom | DateSearchParam | reservationStartDateTime | 
+| reservationStartDateTimeTo | DateSearchParam | reservationStartDateTime | 
+| reservationEndDateTimeFrom | DateSearchParam | reservationEndDateTime | 
+| reservationEndDateTimeTo | DateSearchParam | reservationEndDateTime | 
+| reservationDepositDueDateFrom | DateSearchParam | reservationDepositDueDate | 
+| reservationDepositDueDateTo | DateSearchParam | reservationDepositDueDate | 
+| reservationDepositCompleted | bool | reservationDepositCompleted | 
+| reservationFinalPayDueDateFrom | DateSearchParam | reservationFinalPayDueDate | 
+| reservationFinalPayDueDateTo | DateSearchParam | reservationFinalPayDueDate | 
+| reservationTravelCategory | `EnumSearchParam<TravelCategory>` | reservationTravelCategoryRecNo | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| reservationSupplierProfileRecNo | [NumSearchParam](NumSearchParam) | reservationSupplierProfileRecNo | 
+| reservationTrackClientPayments | bool | reservationTrackClientPayments | 
+| reservationStatus | `EnumSearchParam<Status>` | reservationStatus | Pending = 1, Confirmed = 2, Cancelled = 3
+| reservationClientBalanceMin | [NumSearchParam](NumSearchParam) | reservationClientBalance | 
+| reservationClientBalanceMax | [NumSearchParam](NumSearchParam) | reservationClientBalance | 
+| reservationSupplierBalanceMin | [NumSearchParam](NumSearchParam) | reservationSupplierBalance | 
+| reservationSupplierBalanceMax | [NumSearchParam](NumSearchParam) | reservationSupplierBalance | 
+| reservationDisplayTagRecNo | [NumSearchParam](NumSearchParam) |  | 
+| reservationARCBSPNumber | [NumSearchParam](NumSearchParam) | reservationARCBSPNumber | 
+| reservationAdvisorProfileRecNo | [NumSearchParam](NumSearchParam) | reservationAdvisorProfileRecNo | 
+| reservationProviderProfileRecNo | [NumSearchParam](NumSearchParam) | reservationProviderProfileRecNo | 
+| reservationTravelerRecNo | [NumSearchParam](NumSearchParam) | reservationTravelerRecNo | 
+| reservationTicketNumber | [NumSearchParam](NumSearchParam) | reservationTicketNumber | 
+| reservationConfirmationNumber | [StringSearchParam](StringSearchParam) | reservationConfirmationNumber | 
+| reservationConfirmedDateTimeFrom | DateSearchParam | reservationConfirmedDateTime | 
+| reservationConfirmedDateTimeTo | DateSearchParam | reservationConfirmedDateTime | 
+| reservationRecordLocator | [StringSearchParam](StringSearchParam) | reservationRecordLocator | 
+| reservationPromoId | [StringSearchParam](StringSearchParam) | reservationPromoId | 
+| tripActionItemCompleted | bool | tripActionItemCompleted | 
+| tripActionItemDateFrom | DateSearchParam |  | 
+| tripActionItemDateTo | DateSearchParam |  | 
+| reservationAdvisorReconciliationRecNo | [NumSearchParam](NumSearchParam) | reservationAdvisorReconciliationRecNo | 
+| reservationAdvisorReconciled | bool | reservationAdvisorReconciliationRecNo | 
+| reservationCommissionDatePayableFrom | DateSearchParam | reservationCommissionDatePayable | Filter results based on calculated date payable column
+| reservationCommissionDatePayableTo | DateSearchParam | reservationCommissionDatePayable | Filter results based on calculated date payable column
+| reservationAccountingEntryCreateDateFrom | DateSearchParam | reservationAccountingEntryCreateDate | 
+| reservationAccountingEntryCreateDateTo | DateSearchParam | reservationAccountingEntryCreateDate | 
+| reservationTags | [TagsSearch[]](TagSearch) |  | 
+| clientProfileSearchParams | [ProfileSearch](ProfileSearch) |  | 
+| destinationSearchParams | [DestinationSearch](DestinationSearch) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -186,8 +185,12 @@ POST https://api-dev.trestechnologies.com/tripSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
 {
-  "targetTravelDateFrom": "2022-12-31T00:00:00",
-  "targetTravelDateTo": "2023-01-15T00:00:00",
+  "targetTravelDateFrom": {
+    "Date": "2022-12-31T00:00:00"
+  },
+  "targetTravelDateTo": {
+    "Date": "2023-01-15T00:00:00"
+  },
   "includeCols": [
     "recNo",
     "name"

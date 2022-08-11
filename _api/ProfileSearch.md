@@ -62,58 +62,57 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | clientInformalSalutation | string | 128 | clientProfile | 
 | clientFormalSalutation | string | 128 | clientProfile | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| tagRecNo [inherited] | long[] |  |  | 
-| tagValue [inherited] | string |  |  | 
-| tagValueCond [inherited] | short |  | tagValue | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
-| displayTagRecNo [inherited] | long |  |  | 
-| tags [inherited] | [TagsSearch[]](/TagsSearch) |  |  | 
-| profileType | long | profileType |  | 
-| profileName | string | name |  | 
-| commType | long |  |  | 
-| commValue | string |  |  | 
-| clientAnniversaryMonth | long | clientAnniversaryMonth |  | 
-| clientAnniversaryMonthFrom | long |  |  | 
-| clientAnniversaryMonthTo | long |  |  | 
-| clientAnniversaryDayFrom | long |  |  | 
-| clientAnniversaryDayTo | long |  |  | 
-| clientAdvisorProfileRecNo | long | clientAdvisorProfileRecNo |  | 
-| clientType | long | clientType |  | 
-| supplierType | long | supplierType |  | 
-| activestatus | bool | activeStatus |  | 
-| clientBranchRecNo | long | clientBranchRecNo |  | 
-| personRecNo | long |  |  | 
-| personFirstName | string |  |  | 
-| personLastName | string |  |  | 
-| preferredSupplier | bool | preferredSupplier |  | 
-| street1 | string | street1 |  | 
-| city | string | city |  | 
-| stateProvince | string | stateProvince |  | 
-| zipPostalCode | string | zipPostalCode |  | 
-| country | string | country |  | 
-| marketing | [marketing[]](/marketing) |  |  | 
-| id | string |  |  | 
-| emailPermitMarketing | bool |  |  | 
-| phonePermitMarketing | bool |  |  | 
-| addressPermitMarketing | bool | addressPermitMarketing |  | 
-| clientCreateDateTimeFrom | DateTimeOffset |  |  | 
-| clientCreateDateTimeTo | DateTimeOffset |  |  | 
-| clientModifiedDateTimeFrom | DateTimeOffset |  |  | 
-| clientModifiedDateTimeTo | DateTimeOffset |  |  | 
-| supplierVendorId | string | supplierVendorId |  | 
-| clientTripSearchParams | [tripSearch](/tripSearch) |  |  | 
-| supplierTripSearchParams | [tripSearch](/tripSearch) |  |  | 
-| clientActivitySearchParams | [activitySearch](/activitySearch) |  |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| tagRecNo [inherited] | long[] |  | 
+| tagValue [inherited] | string |  | 
+| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
+| displayTagRecNo [inherited] | long |  | 
+| tags [inherited] | [TagsSearch[]](TagSearch) |  | 
+| profileType | long | profileType | 
+| profileName | [StringSearchParam](StringSearchParam) | name | 
+| commType | long |  | 
+| commValue | string |  | 
+| clientAnniversaryMonth | [NumSearchParam](NumSearchParam) | clientAnniversaryMonth | 
+| clientAnniversaryMonthFrom | long |  | 
+| clientAnniversaryMonthTo | long |  | 
+| clientAnniversaryDayFrom | long |  | 
+| clientAnniversaryDayTo | long |  | 
+| clientAdvisorProfileRecNo | [NumSearchParam](NumSearchParam) | clientAdvisorProfileRecNo | 
+| clientType | long | clientType | 
+| supplierType | long | supplierType | 
+| activestatus | bool | activeStatus | 
+| clientBranchRecNo | [NumSearchParam](NumSearchParam) | clientBranchRecNo | 
+| personRecNo | [NumSearchParam](NumSearchParam) |  | 
+| personFirstName | [StringSearchParam](StringSearchParam) |  | 
+| personLastName | [StringSearchParam](StringSearchParam) |  | 
+| preferredSupplier | bool | preferredSupplier | 
+| street1 | [StringSearchParam](StringSearchParam) | street1 | 
+| city | [StringSearchParam](StringSearchParam) | city | 
+| stateProvince | [StringSearchParam](StringSearchParam) | stateProvince | 
+| zipPostalCode | [StringSearchParam](StringSearchParam) | zipPostalCode | 
+| country | [StringSearchParam](StringSearchParam) | country | 
+| marketing | [Marketing[]](Marketing) |  | 
+| id | [StringSearchParam](StringSearchParam) |  | 
+| emailPermitMarketing | bool |  | 
+| phonePermitMarketing | bool |  | 
+| addressPermitMarketing | bool | addressPermitMarketing | 
+| clientCreateDateTimeFrom | DateTimeUTCSearchParam |  | 
+| clientCreateDateTimeTo | DateTimeUTCSearchParam |  | 
+| clientModifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
+| clientModifiedDateTimeTo | DateTimeUTCSearchParam |  | 
+| supplierVendorId | [StringSearchParam](StringSearchParam) | supplierVendorId | 
+| clientTripSearchParams | [TripSearch](TripSearch) |  | 
+| supplierTripSearchParams | [TripSearch](TripSearch) |  | 
+| clientActivitySearchParams | [ActivitySearch](ActivitySearch) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -132,7 +131,9 @@ Authorization: Bearer <session-token>
   },
   "activestatus": true,
   "profileName": {
-    "value": "Able",
+    "value": [
+      "Able"
+    ],
     "compareCondition": 5
   },
   "includeCols": [

@@ -20,22 +20,21 @@ Referenced Table: [AppUser]({{ '/api/AppUser.html' | relative_url }})
 | mobilePhone | string | 64 | appUser | 
 | email | string | 128 | appUser | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| id | string | id |  | 
-| branchRecNo | long | branch_recNo |  | 
-| userType | long | userType |  | 
-| name | string | name |  | 
-| email | string | email |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| startingRow [inherited] | int |  | 
+| rowCount [inherited] | int |  | 
+| topRows [inherited] | int |  | 
+| distinct [inherited] | bool |  | 
+| includeCols [inherited] | string[] |  | 
+| includeColsExtended [inherited] | includeColsExtended[] |  | 
+| baseUrl [inherited] | string |  | 
+| id | [StringSearchParam](StringSearchParam) | id | 
+| branchRecNo | [NumSearchParam](NumSearchParam) | branch_recNo | 
+| userType | `EnumSearchParam<UserType>` | userType | User = 1, Manager = 2, Admin = 3
+| name | [StringSearchParam](StringSearchParam) | name | 
+| email | [StringSearchParam](StringSearchParam) | email | 
 
 | Status code | Description |
 | ----------- | ----------- |

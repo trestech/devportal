@@ -401,7 +401,7 @@ Permission Areas: Trip
 | reservation_recNo | long |  | PKey,FKey | clientPaymentInfo | 
 | paymentDate | Date |  |  | clientPaymentInfo | 
 | amount | long |  |  | clientPaymentInfo | 
-| method | short |  | Required | clientPaymentInfo | None = 0, Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
+| method | short |  | Required | clientPaymentInfo | Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | agencyProcessed | bool |  | Required | clientPaymentInfo | 
 | cardNumber | string | 64 |  | clientPaymentInfo | 
 | cardNumberToken | string | 64 |  | clientPaymentInfo | 
