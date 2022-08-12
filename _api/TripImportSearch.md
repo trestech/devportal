@@ -29,7 +29,7 @@ Permission Areas: TripImport
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
 | startingRow [inherited] | int |  | 
 | rowCount [inherited] | int |  | 
 | topRows [inherited] | int |  | 
