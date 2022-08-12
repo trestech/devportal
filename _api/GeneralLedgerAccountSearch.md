@@ -19,7 +19,7 @@ Permission Areas: GeneralLedgerAccount
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) |  | 
+| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
 | startingRow [inherited] | int |  | 
 | rowCount [inherited] | int |  | 
 | topRows [inherited] | int |  | 
@@ -29,6 +29,7 @@ Permission Areas: GeneralLedgerAccount
 | baseUrl [inherited] | string |  | 
 | category | `EnumSearchParam<Category>` | category | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | name | [StringSearchParam](StringSearchParam) | name | 
+| activeStatus | bool | activeStatus | 
 
 | Status code | Description |
 | ----------- | ----------- |
