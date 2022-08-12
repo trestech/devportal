@@ -11,9 +11,15 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+
+  <p>
+    <a href="{{ 'search?q=' | append: page.title | relative_url }}">References to {{ page.title }}</a>
+  </p>
   
-  <!-- Note: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/deep-linking.md -->
-  See: <a href="https://api.trestechnologies.com/swagger/index.html#/{{ page.title }}">Swagger</a>
+  <p>
+    <!-- Note: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/deep-linking.md -->
+    See: <a href="https://api.trestechnologies.com/swagger/index.html#/{{ page.title }}">Swagger</a>
+  </p>
 
   <div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>
 </article>
