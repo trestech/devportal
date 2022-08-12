@@ -20,7 +20,6 @@ task :import, :folder do |t, args|
     File.open(folder + "/" + f) do |file|
       data = file.read
       title = data.split("# ")[1].split("\n").first
-      description = data.split("# #{title}")[1].lstrip.split("\n").first.split(".").first rescue ""
       body = data.split("# #{title}")[1]
 
       if body.nil?
@@ -30,6 +29,7 @@ task :import, :folder do |t, args|
 
       skip = false
       
+      description = body.lstrip.split("\n").first.split(".").first rescue ""
       description = "" if description.start_with? 'Referenced Table:'
       description = "" if description.start_with? 'Permission Areas:'
       description = "" if description == '| Column | Type | Size | Table | Description |'
