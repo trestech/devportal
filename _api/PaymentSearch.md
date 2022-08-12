@@ -50,7 +50,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| tags [inherited] | TagsSearchParams[] |  | 
 | profileType | long | profileType | 
 | tripRecNo | [NumSearchParam](NumSearchParam) |  | 
 | reservationRecNo | [NumSearchParam](NumSearchParam) | reservationRecNo | 

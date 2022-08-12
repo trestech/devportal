@@ -110,7 +110,7 @@ Permission Areas: Trip
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| tags [inherited] | TagsSearchParams[] |  | 
 | clientProfileRecNo | [NumSearchParam](NumSearchParam) | clientProfileRecNo | 
 | advisorProfileRecNo | [NumSearchParam](NumSearchParam) | advisorProfileRecNo | 
 | targetTravelDateFrom | DateSearchParam | targetTravelDate | 
@@ -167,9 +167,9 @@ Permission Areas: Trip
 | reservationCommissionDatePayableTo | DateSearchParam | reservationCommissionDatePayable | Filter results based on calculated date payable column
 | reservationAccountingEntryCreateDateFrom | DateSearchParam | reservationAccountingEntryCreateDate | 
 | reservationAccountingEntryCreateDateTo | DateSearchParam | reservationAccountingEntryCreateDate | 
-| reservationTags | [TagsSearchParams[]](/TagsSearchParams) |  | 
-| clientProfileSearchParams | [ProfileSearchParams](/ProfileSearchParams) |  | 
-| destinationSearchParams | [DestinationSearchParams](/DestinationSearchParams) |  | 
+| reservationTags | TagsSearchParams[] |  | 
+| clientProfileSearchParams | ProfileSearchParams |  | 
+| destinationSearchParams | DestinationSearchParams |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

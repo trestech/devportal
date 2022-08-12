@@ -53,7 +53,7 @@ Permission Areas: Person
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| tags [inherited] | TagsSearchParams[] |  | 
 | firstName | [StringSearchParam](StringSearchParam) | firstName | 
 | middleName | [StringSearchParam](StringSearchParam) | middleName | 
 | lastName | [StringSearchParam](StringSearchParam) | lastName | 
@@ -68,7 +68,7 @@ Permission Areas: Person
 | birthdayMonthTo | long |  | 
 | birthdayDayFrom | long |  | 
 | birthdayDayTo | long |  | 
-| marketing | [MarketingSearchParam[]](/MarketingSearchParam) |  | 
+| marketing | [MarketingSearchParam[]](MarketingSearchParam) |  | 
 | emailPermitMarketing | bool |  | 
 | phonePermitMarketing | bool |  | 
 | createDateTimeFrom | DateTimeUTCSearchParam |  | 
@@ -76,7 +76,7 @@ Permission Areas: Person
 | modifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
 | modifiedDateTimeTo | DateTimeUTCSearchParam |  | 
 | cardType | long | cardType | 
-| personActivitySearchParams | [ActivitySearchParams](/ActivitySearchParams) |  | 
+| personActivitySearchParams | ActivitySearchParams |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
