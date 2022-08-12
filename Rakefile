@@ -46,12 +46,7 @@ task :import, :folder do |t, args|
       # Remapping relative links
       body = body.gsub(/\[StringSearchParam\]\(\/StringSearchParam\)/, '[StringSearchParam](StringSearchParam)')
       body = body.gsub(/\[NumSearchParam\]\(\/NumSearchParam\)/, '[NumSearchParam](NumSearchParam)')
-      body = body.gsub(/\[TagsSearch\[\]\]\(\/TagsSearch\)/, '[TagsSearch[]](TagSearch)')
-      body = body.gsub(/\[tripSearch\]\(\/tripSearch\)/, '[TripSearch](TripSearch)')
-      body = body.gsub(/\[profileSearch\]\(\/profileSearch\)/, '[ProfileSearch](ProfileSearch)')
-      body = body.gsub(/\[destinationSearch\]\(\/destinationSearch\)/, '[DestinationSearch](DestinationSearch)')
-      body = body.gsub(/\[activitySearch\]\(\/activitySearch\)/, '[ActivitySearch](ActivitySearch)')
-      body = body.gsub(/\[marketing\[\]\]\(\/marketing\)/, '[Marketing[]](Marketing)')
+      body = body.gsub(/\[MarketingSearchParam\[\]\]\(\/MarketingSearchParam\)/, '[MarketingSearchParam[]](MarketingSearchParam)')
 
       # Not yet provided
       body = body.gsub(/\[includeColsExtended\[\]\]\(\/includeColsExtended\)/, 'includeColsExtended[]')
@@ -59,6 +54,11 @@ task :import, :folder do |t, args|
       body = body.gsub(/\[DateTimeSearchParam\]\(\/DateTimeSearchParam\)/, 'DateTimeSearchParam')
       body = body.gsub(/\[DateTimeUTCSearchParam\]\(\/DateTimeUTCSearchParam\)/, 'DateTimeUTCSearchParam')
       body = body.gsub(/\[TagsSearch\]\(\/TagsSearch\)/, 'TagsSearch')
+      body = body.gsub(/\[TagsSearchParams\[\]\]\(\/TagsSearchParams\)/, 'TagsSearchParams[]')
+      body = body.gsub(/\[ActivitySearchParams\]\(\/ActivitySearchParams\)/, 'ActivitySearchParams')
+      body = body.gsub(/\[TripSearchParams\]\(\/TripSearchParams\)/, 'TripSearchParams')
+      body = body.gsub(/\[ProfileSearchParams\]\(\/ProfileSearchParams\)/, 'ProfileSearchParams')
+      body = body.gsub(/\[DestinationSearchParams\]\(\/DestinationSearchParams\)/, 'DestinationSearchParams')
       body = body.gsub(/\[EnumSearchParam<([a-zA-Z]+)>\]\(\/EnumSearchParam\)/) do |_|
         match = Regexp.last_match
         v = match[1]

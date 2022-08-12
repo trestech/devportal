@@ -46,7 +46,7 @@ Permission Areas: Activity
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| tags [inherited] | TagsSearchParams[] |  | 
 | appUserRecNo | [NumSearchParam](NumSearchParam) | appUser_recNo | 
 | type | `EnumSearchParam<Type>` | type | Task = 1, Appointment = 2, Note = 3, Promo = 4
 | targetDateFrom | DateSearchParam | targetDate | 

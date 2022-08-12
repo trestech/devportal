@@ -74,7 +74,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | tagValue [inherited] | string |  | 
 | tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
-| tags [inherited] | [TagsSearchParams[]](/TagsSearchParams) |  | 
+| tags [inherited] | TagsSearchParams[] |  | 
 | profileType | long | profileType | 
 | profileName | [StringSearchParam](StringSearchParam) | name | 
 | commType | long |  | 
@@ -98,7 +98,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | stateProvince | [StringSearchParam](StringSearchParam) | stateProvince | 
 | zipPostalCode | [StringSearchParam](StringSearchParam) | zipPostalCode | 
 | country | [StringSearchParam](StringSearchParam) | country | 
-| marketing | [MarketingSearchParam[]](/MarketingSearchParam) |  | 
+| marketing | [MarketingSearchParam[]](MarketingSearchParam) |  | 
 | id | [StringSearchParam](StringSearchParam) |  | 
 | emailPermitMarketing | bool |  | 
 | phonePermitMarketing | bool |  | 
@@ -108,9 +108,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | clientModifiedDateTimeFrom | DateTimeUTCSearchParam |  | 
 | clientModifiedDateTimeTo | DateTimeUTCSearchParam |  | 
 | supplierVendorId | [StringSearchParam](StringSearchParam) | supplierVendorId | 
-| clientTripSearchParams | [TripSearchParams](/TripSearchParams) |  | 
-| supplierTripSearchParams | [TripSearchParams](/TripSearchParams) |  | 
-| clientActivitySearchParams | [ActivitySearchParams](/ActivitySearchParams) |  | 
+| clientTripSearchParams | TripSearchParams |  | 
+| supplierTripSearchParams | TripSearchParams |  | 
+| clientActivitySearchParams | ActivitySearchParams |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
