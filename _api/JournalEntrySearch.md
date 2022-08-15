@@ -38,3 +38,5 @@ Permission Areas: JournalEntry
 | 200 | Ok |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+
