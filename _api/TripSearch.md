@@ -99,16 +99,13 @@ Permission Areas: Trip
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
+| startingRow [inherited] | long |  | 
+| rowCount [inherited] | long |  | 
+| topRows [inherited] | long |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
-| tagRecNo [inherited] | long[] |  | 
-| tagValue [inherited] | string |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | TagsSearchParams[] |  | 
 | clientProfileRecNo | [NumSearchParam](NumSearchParam) | clientProfileRecNo | 
@@ -143,11 +140,13 @@ Permission Areas: Trip
 | reservationSupplierProfileRecNo | [NumSearchParam](NumSearchParam) | reservationSupplierProfileRecNo | 
 | reservationTrackClientPayments | bool | reservationTrackClientPayments | 
 | reservationStatus | `EnumSearchParam<Status>` | reservationStatus | Pending = 1, Confirmed = 2, Cancelled = 3
+| reservationClientBalance | [NumSearchParam](NumSearchParam) | reservationClientBalance | 
 | reservationClientBalanceMin | [NumSearchParam](NumSearchParam) | reservationClientBalance | 
 | reservationClientBalanceMax | [NumSearchParam](NumSearchParam) | reservationClientBalance | 
+| reservationSupplierBalance | [NumSearchParam](NumSearchParam) | reservationSupplierBalance | 
 | reservationSupplierBalanceMin | [NumSearchParam](NumSearchParam) | reservationSupplierBalance | 
 | reservationSupplierBalanceMax | [NumSearchParam](NumSearchParam) | reservationSupplierBalance | 
-| reservationDisplayTagRecNo | [NumSearchParam](NumSearchParam) |  | 
+| reservationDisplayTagRecNo | long |  | 
 | reservationARCBSPNumber | [NumSearchParam](NumSearchParam) | reservationARCBSPNumber | 
 | reservationAdvisorProfileRecNo | [NumSearchParam](NumSearchParam) | reservationAdvisorProfileRecNo | 
 | reservationProviderProfileRecNo | [NumSearchParam](NumSearchParam) | reservationProviderProfileRecNo | 

@@ -39,16 +39,13 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
+| startingRow [inherited] | long |  | 
+| rowCount [inherited] | long |  | 
+| topRows [inherited] | long |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
-| tagRecNo [inherited] | long[] |  | 
-| tagValue [inherited] | string |  | 
-| tagValueCond [inherited] | short |  | See [StringCompare]({{ '/api/StringCompare.html' | relative_url }})
 | displayTagRecNo [inherited] | long |  | 
 | tags [inherited] | TagsSearchParams[] |  | 
 | profileType | long | profileType | 
