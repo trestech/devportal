@@ -21,9 +21,9 @@ Permission Areas: JournalEntry
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | int |  | 
-| rowCount [inherited] | int |  | 
-| topRows [inherited] | int |  | 
+| startingRow [inherited] | long |  | 
+| rowCount [inherited] | long |  | 
+| topRows [inherited] | long |  | 
 | distinct [inherited] | bool |  | 
 | includeCols [inherited] | string[] |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
