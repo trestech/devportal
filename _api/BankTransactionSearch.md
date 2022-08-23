@@ -19,6 +19,7 @@ Permission Areas: BankTransaction
 | voided | bool |  | bankTransaction | 
 | remarks | string |  | bankTransaction | 
 | dateCleared | Date |  | bankTransaction | 
+| payment_recNo | long |  | bankTransaction | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -37,6 +38,7 @@ Permission Areas: BankTransaction
 | cleared | bool | dateCleared | 
 | dateClearedFrom | DateSearchParam | dateCleared | 
 | dateClearedTo | DateSearchParam | dateCleared | 
+| paymentRecNo | [NumSearchParam](NumSearchParam) | payment_recNo | 
 
 | Status code | Description |
 | ----------- | ----------- |

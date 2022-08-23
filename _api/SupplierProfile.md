@@ -19,6 +19,7 @@ Permission Areas: SupplierProfile
 | vendorId | string | 10 |  | supplierProfile | 
 | tripStatementRemarks | string |  |  | supplierProfile | 
 | termsAndConditionsUrl | string | 256 |  | supplierProfile | 
+| commissionRate | short |  |  | supplierProfile | 
 | profile  [shared] | table |  | Singleton | supplierProfile | 
 | recNo | long |  | PKey,FKey | profile | 
 | name | string | 256 |  | profile | 
