@@ -75,7 +75,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | profileType | long | profileType | 
 | profileName | [StringSearchParam](StringSearchParam) | name | 
 | commType | long |  | 
-| commValue | string |  | 
+| commValue | [StringSearchParam](StringSearchParam) |  | 
 | clientAnniversaryMonth | [NumSearchParam](NumSearchParam) | clientAnniversaryMonth | 
 | clientAnniversaryMonthFrom | long |  | 
 | clientAnniversaryMonthTo | long |  | 
