@@ -12,7 +12,7 @@ Permission Areas: GeneralLedgerAccount
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | recNo | long |  | PKey | generalLedgerAccount | 
 | name | string | 64 |  | generalLedgerAccount | 
-| category | short |  | Required | generalLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| category | short |  | Required | generalLedgerAccount | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | description | string | 128 |  | generalLedgerAccount | 
 | activeStatus | bool |  |  | generalLedgerAccount | 
 | balance | long |  | Required,ReadOnly | generalLedgerAccount | 

@@ -12,7 +12,7 @@ Permission Areas: GeneralLedgerAccount
 | ------ | ---- | ---- | ----- | ----------- |
 | recNo | long |  | generalLedgerAccount | 
 | summaryCount | int |  | generalLedgerAccount | 
-| category | short |  | generalLedgerAccount | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| category | short |  | generalLedgerAccount | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | name | string | 64 | generalLedgerAccount | 
 | description | string | 128 | generalLedgerAccount | 
 | activeStatus | bool |  | generalLedgerAccount | 
@@ -27,7 +27,7 @@ Permission Areas: GeneralLedgerAccount
 | includeCols [inherited] | string[] |  | 
 | includeColsExtended [inherited] | includeColsExtended[] |  | 
 | baseUrl [inherited] | string |  | 
-| category | `EnumSearchParam<Category>` | category | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| category | `EnumSearchParam<Category>` | category | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | name | [StringSearchParam](StringSearchParam) | name | 
 | activeStatus | bool | activeStatus | 
 
