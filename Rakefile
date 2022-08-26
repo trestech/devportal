@@ -32,8 +32,8 @@ task :import, :folder do |t, args|
       description = body.lstrip.split("\n").first.split(".").first rescue ""
       description = "" if description.start_with? 'Referenced Table:'
       description = "" if description.start_with? 'Permission Areas:'
-      description = "" if description == '| Column | Type | Size | Table | Description |'
-      description = "" if description == '| Column | Type | Size | Flags | Table | Description |'
+      description = "" if description == '| Column | Type | Size | Table | Description |' # <- Search table
+      description = "" if description == '| Column | Type | Size | Flags | Table | Description |' # <- Everything else
       
       body = body.gsub(/\[([a-zA-Z]+)\]\(\/([a-zA-Z]+)\.html\)/) do |_|
         match = Regexp.last_match
