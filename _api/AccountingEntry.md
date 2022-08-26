@@ -34,7 +34,7 @@ description: ""
 | creditAmount | long |  |  | journalEntryDetail | 
 | remarks | string | 256 |  | journalEntryDetail | 
 | generalLedgerAccountName_lookup | string | 64 | ReadOnly | journalEntryDetail | 
-| generalLedgerAccountCategory_lookup | short |  | ReadOnly | journalEntryDetail | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| generalLedgerAccountCategory_lookup | short |  | ReadOnly | journalEntryDetail | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 
 | Status code | Description |
 | ----------- | ----------- |

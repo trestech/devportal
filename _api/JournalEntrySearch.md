@@ -15,8 +15,10 @@ Permission Areas: JournalEntry
 | journalEntryDate | Date |  | journalEntry | 
 | journalEntryRemarks | string | 512 | journalEntry | 
 | generalLedgerAccountRecNo | long |  | journalEntry | 
-| generalLedgerAccountCategory | short |  | journalEntry | Assets = 1, Liabilities = 2, RetainedEarnings = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| generalLedgerAccountCategory | short |  | journalEntry | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | generalLedgerAccountName | string | 64 | journalEntry | 
+| journalEntryDetailDebitAmount | long |  | journalEntry | 
+| journalEntryDetailCreditAmount | long |  | journalEntry | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -32,6 +34,7 @@ Permission Areas: JournalEntry
 | journalEntryDateTo | DateSearchParam | journalEntryDate | 
 | journalEntryRemarks | [StringSearchParam](StringSearchParam) | journalEntryRemarks | 
 | generalLedgerAccountRecNo | [NumSearchParam](NumSearchParam) | generalLedgerAccountRecNo | 
+| generalLedgerAccountCategory | `EnumSearchParam<Category>` | generalLedgerAccountCategory | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 
 | Status code | Description |
 | ----------- | ----------- |
