@@ -10,31 +10,31 @@ Permission Areas: JournalEntry
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | journalEntry | 
-| summaryCount | int |  | journalEntry | 
-| journalEntryDate | Date |  | journalEntry | 
-| journalEntryRemarks | string | 512 | journalEntry | 
-| generalLedgerAccountRecNo | long |  | journalEntry | 
-| generalLedgerAccountCategory | short |  | journalEntry | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
-| generalLedgerAccountName | string | 64 | journalEntry | 
-| journalEntryDetailDebitAmount | long |  | journalEntry | 
-| journalEntryDetailCreditAmount | long |  | journalEntry | 
+| `recNo` | `long` |  | `journalEntry` | 
+| `summaryCount` | `int` |  | `journalEntry` | 
+| `journalEntryDate` | `Date` |  | `journalEntry` | 
+| `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
+| `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
+| `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
+| `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
+| `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | long |  | 
-| rowCount [inherited] | long |  | 
-| topRows [inherited] | long |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| journalEntryDateFrom | DateSearchParam | journalEntryDate | 
-| journalEntryDateTo | DateSearchParam | journalEntryDate | 
-| journalEntryRemarks | [StringSearchParam](StringSearchParam) | journalEntryRemarks | 
-| generalLedgerAccountRecNo | [NumSearchParam](NumSearchParam) | generalLedgerAccountRecNo | 
-| generalLedgerAccountCategory | `EnumSearchParam<Category>` | generalLedgerAccountCategory | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `startingRow [inherited]` | `long` |  | 
+| `rowCount [inherited]` | `long` |  | 
+| `topRows [inherited]` | `long` |  | 
+| `distinct [inherited]` | `bool` |  | 
+| `includeCols [inherited]` | `string[]` |  | 
+| `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
+| `baseUrl [inherited]` | `string` |  | 
+| `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
+| `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
+| `journalEntryRemarks` | [`StringSearchParam`](StringSearchParam) | `journalEntryRemarks` | 
+| `generalLedgerAccountRecNo` | [`NumSearchParam`](NumSearchParam) | `generalLedgerAccountRecNo` | 
+| `generalLedgerAccountCategory` | `EnumSearchParam<Category>` | `generalLedgerAccountCategory` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -8,22 +8,22 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | branch | 
-| summaryCount | int |  | branch | 
-| name | string | 64 | branch | 
-| description | string | 128 | branch | 
+| `recNo` | `long` |  | `branch` | 
+| `summaryCount` | `int` |  | `branch` | 
+| `name` | `string` | 64 | `branch` | 
+| `description` | `string` | 128 | `branch` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | long |  | 
-| rowCount [inherited] | long |  | 
-| topRows [inherited] | long |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| name | [StringSearchParam](StringSearchParam) | name | 
+| `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `startingRow [inherited]` | `long` |  | 
+| `rowCount [inherited]` | `long` |  | 
+| `topRows [inherited]` | `long` |  | 
+| `distinct [inherited]` | `bool` |  | 
+| `includeCols [inherited]` | `string[]` |  | 
+| `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
+| `baseUrl [inherited]` | `string` |  | 
+| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 
 | Status code | Description |
 | ----------- | ----------- |
