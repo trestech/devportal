@@ -10,15 +10,15 @@ Permission Areas: JournalEntry
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | journalEntry | 
-| summaryCount | int |  | journalEntry | 
-| journalEntryDate | Date |  | journalEntry | 
-| journalEntryRemarks | string | 512 | journalEntry | 
-| generalLedgerAccountRecNo | long |  | journalEntry | 
-| generalLedgerAccountCategory | short |  | journalEntry | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
-| generalLedgerAccountName | string | 64 | journalEntry | 
-| journalEntryDetailDebitAmount | long |  | journalEntry | 
-| journalEntryDetailCreditAmount | long |  | journalEntry | 
+| `recNo` | `long` |  | `journalEntry` | 
+| `summaryCount` | `int` |  | `journalEntry` | 
+| `journalEntryDate` | `Date` |  | `journalEntry` | 
+| `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
+| `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
+| `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
+| `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
+| `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |

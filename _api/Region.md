@@ -8,8 +8,8 @@ description: ""
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| recNo | long |  | PKey | region | 
-| name | string | 64 |  | region | 
+| `recNo` | `long` |  | PKey | `region` | 
+| `name` | `string` | 64 |  | `region` | 
 
 | Status code | Description |
 | ----------- | ----------- |

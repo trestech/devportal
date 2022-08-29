@@ -8,25 +8,25 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | accountingEntry | 
-| summaryCount | int |  | accountingEntry | 
-| createDate | Date |  | accountingEntry | 
-| postDate | Date |  | accountingEntry | 
-| description | string | 512 | accountingEntry | 
+| `recNo` | `long` |  | `accountingEntry` | 
+| `summaryCount` | `int` |  | `accountingEntry` | 
+| `createDate` | `Date` |  | `accountingEntry` | 
+| `postDate` | `Date` |  | `accountingEntry` | 
+| `description` | `string` | 512 | `accountingEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | long |  | 
-| rowCount [inherited] | long |  | 
-| topRows [inherited] | long |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| createDateTimeFrom | DateTimeUTCSearchParam | createDate | 
-| createDateTimeTo | DateTimeUTCSearchParam | createDate | 
-| posted | bool | postDate | 
+| `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `startingRow [inherited]` | `long` |  | 
+| `rowCount [inherited]` | `long` |  | 
+| `topRows [inherited]` | `long` |  | 
+| `distinct [inherited]` | `bool` |  | 
+| `includeCols [inherited]` | `string[]` |  | 
+| `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
+| `baseUrl [inherited]` | `string` |  | 
+| `createDateTimeFrom` | `DateTimeUTCSearchParam` | `createDate` | 
+| `createDateTimeTo` | `DateTimeUTCSearchParam` | `createDate` | 
+| `posted` | `bool` | `postDate` | 
 
 | Status code | Description |
 | ----------- | ----------- |

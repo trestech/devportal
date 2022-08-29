@@ -8,8 +8,8 @@ description: ""
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| recNo | long |  | PKey | ARCBSPNo | 
-| description | string | 64 |  | ARCBSPNo | 
+| `recNo` | `long` |  | PKey | `ARCBSPNo` | 
+| `description` | `string` | 64 |  | `ARCBSPNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

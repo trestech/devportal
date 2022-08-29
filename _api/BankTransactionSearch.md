@@ -10,35 +10,35 @@ Permission Areas: BankTransaction
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| recNo | long |  | bankTransaction | 
-| summaryCount | int |  | bankTransaction | 
-| transactionDate | Date |  | bankTransaction | 
-| amount | long |  | bankTransaction | 
-| bankRecNo | long |  | bankTransaction | 
-| bankName | string | 64 | bankTransaction | 
-| voided | bool |  | bankTransaction | 
-| remarks | string |  | bankTransaction | 
-| dateCleared | Date |  | bankTransaction | 
-| payment_recNo | long |  | bankTransaction | 
+| `recNo` | `long` |  | `bankTransaction` | 
+| `summaryCount` | `int` |  | `bankTransaction` | 
+| `transactionDate` | `Date` |  | `bankTransaction` | 
+| `amount` | `long` |  | `bankTransaction` | 
+| `bankRecNo` | `long` |  | `bankTransaction` | 
+| `bankName` | `string` | 64 | `bankTransaction` | 
+| `voided` | `bool` |  | `bankTransaction` | 
+| `remarks` | `string` |  | `bankTransaction` | 
+| `dateCleared` | `Date` |  | `bankTransaction` | 
+| `payment_recNo` | `long` |  | `bankTransaction` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
-| recNo [inherited] | [NumSearchParam](NumSearchParam) | recNo | 
-| startingRow [inherited] | long |  | 
-| rowCount [inherited] | long |  | 
-| topRows [inherited] | long |  | 
-| distinct [inherited] | bool |  | 
-| includeCols [inherited] | string[] |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  | 
-| baseUrl [inherited] | string |  | 
-| transactionDateFrom | DateSearchParam | transactionDate | 
-| transactionDateTo | DateSearchParam | transactionDate | 
-| bankRecNo | [NumSearchParam](NumSearchParam) | bankRecNo | 
-| voided | bool | voided | 
-| cleared | bool | dateCleared | 
-| dateClearedFrom | DateSearchParam | dateCleared | 
-| dateClearedTo | DateSearchParam | dateCleared | 
-| paymentRecNo | [NumSearchParam](NumSearchParam) | payment_recNo | 
+| `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `startingRow [inherited]` | `long` |  | 
+| `rowCount [inherited]` | `long` |  | 
+| `topRows [inherited]` | `long` |  | 
+| `distinct [inherited]` | `bool` |  | 
+| `includeCols [inherited]` | `string[]` |  | 
+| `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
+| `baseUrl [inherited]` | `string` |  | 
+| `transactionDateFrom` | `DateSearchParam` | `transactionDate` | 
+| `transactionDateTo` | `DateSearchParam` | `transactionDate` | 
+| `bankRecNo` | [`NumSearchParam`](NumSearchParam) | `bankRecNo` | 
+| `voided` | `bool` | `voided` | 
+| `cleared` | `bool` | `dateCleared` | 
+| `dateClearedFrom` | `DateSearchParam` | `dateCleared` | 
+| `dateClearedTo` | `DateSearchParam` | `dateCleared` | 
+| `paymentRecNo` | [`NumSearchParam`](NumSearchParam) | `payment_recNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |
