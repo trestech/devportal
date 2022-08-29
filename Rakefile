@@ -43,23 +43,18 @@ task :import, :folder do |t, args|
         "[#{v}]({{ '/api/#{v}.html' | relative_url }})"
       end
       
-      # Remapping relative links
-      body = body.gsub(/\[StringSearchParam\]\(\/StringSearchParam\)/, '[StringSearchParam](StringSearchParam)')
-      body = body.gsub(/\[NumSearchParam\]\(\/NumSearchParam\)/, '[NumSearchParam](NumSearchParam)')
-      body = body.gsub(/\[MarketingSearchParam\[\]\]\(\/MarketingSearchParam\)/, '[MarketingSearchParam[]](MarketingSearchParam)')
-
       # Not yet provided
-      body = body.gsub(/\[includeColsExtended\[\]\]\(\/includeColsExtended\)/, 'includeColsExtended[]')
-      body = body.gsub(/\[DateSearchParam\]\(\/DateSearchParam\)/, 'DateSearchParam')
-      body = body.gsub(/\[DateTimeSearchParam\]\(\/DateTimeSearchParam\)/, 'DateTimeSearchParam')
-      body = body.gsub(/\[DateTimeUTCSearchParam\]\(\/DateTimeUTCSearchParam\)/, 'DateTimeUTCSearchParam')
-      body = body.gsub(/\[TagsSearch\]\(\/TagsSearch\)/, 'TagsSearch')
-      body = body.gsub(/\[TagsSearchParams\[\]\]\(\/TagsSearchParams\)/, 'TagsSearchParams[]')
-      body = body.gsub(/\[ActivitySearchParams\]\(\/ActivitySearchParams\)/, 'ActivitySearchParams')
-      body = body.gsub(/\[TripSearchParams\]\(\/TripSearchParams\)/, 'TripSearchParams')
-      body = body.gsub(/\[ProfileSearchParams\]\(\/ProfileSearchParams\)/, 'ProfileSearchParams')
-      body = body.gsub(/\[DestinationSearchParams\]\(\/DestinationSearchParams\)/, 'DestinationSearchParams')
-      body = body.gsub(/\[EnumSearchParam<([a-zA-Z]+)>\]\(\/EnumSearchParam\)/) do |_|
+      body = body.gsub(/\[`includeColsExtended\[\]`\]\(includeColsExtended\)/, '`includeColsExtended[]`')
+      body = body.gsub(/\[`DateSearchParam`\]\(DateSearchParam\)/, '`DateSearchParam`')
+      body = body.gsub(/\[`DateTimeSearchParam`\]\(DateTimeSearchParam\)/, '`DateTimeSearchParam`')
+      body = body.gsub(/\[`DateTimeUTCSearchParam`\]\(DateTimeUTCSearchParam\)/, '`DateTimeUTCSearchParam`')
+      body = body.gsub(/\[`TagsSearch`\]\(TagsSearch\)/, '`TagsSearch`')
+      body = body.gsub(/\[`TagsSearchParams\[\]`\]\(TagsSearchParams\)/, '`TagsSearchParams[]`')
+      body = body.gsub(/\[`ActivitySearchParams`\]\(ActivitySearchParams\)/, '`ActivitySearchParams`')
+      body = body.gsub(/\[`TripSearchParams`\]\(TripSearchParams\)/, '`TripSearchParams`')
+      body = body.gsub(/\[`ProfileSearchParams`\]\(ProfileSearchParams\)/, '`ProfileSearchParams`')
+      body = body.gsub(/\[`DestinationSearchParams`\]\(DestinationSearchParams\)/, '`DestinationSearchParams`')
+      body = body.gsub(/\[`EnumSearchParam<([a-zA-Z]+)>`\]\(EnumSearchParam\)/) do |_|
         match = Regexp.last_match
         v = match[1]
         
