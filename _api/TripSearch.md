@@ -77,7 +77,7 @@ Permission Areas: Trip
 | `reservationPrimaryTravelerRecNo` | `long` |  | `reservation` | 
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
-| `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4
+| `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemTriggerFixedDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemDescription` | `string` | 256 | `tripActionItem` | 

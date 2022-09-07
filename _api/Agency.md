@@ -39,11 +39,11 @@ description: ""
 | `paymentTrigger` | `short` |  | Required | `agencyAdvisorReconciliation` | AgencyPaidAndDeparted = 1, AgencyPaid = 2
 | `accountingReference ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, FKey | `accountingReference` | 
-| `type` | `short` |  | PKey, Required | `accountingReference` | None = 0, ClientBalances = 1, SupplierBalances = 2, UndepositedFunds = 3, Undisbursedfunds = 4, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, Other = 99
+| `type` | `short` |  | PKey, Required | `accountingReference` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReference` | 
 | `accountingReferenceTravelCategory ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, FKey | `accountingReferenceTravelCategory` | 
-| `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, ClientBalances = 1, SupplierBalances = 2, UndepositedFunds = 3, Undisbursedfunds = 4, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, Other = 99
+| `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
 | `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `accountingReferenceTravelCategory` | 
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
