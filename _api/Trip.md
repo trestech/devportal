@@ -430,7 +430,7 @@ Permission Areas: Trip
 | `recNo` | `long` |  | PKey, FKey | `actionItem` | 
 | `type` | `short` |  | Required | `actionItem` | Trip = 1, TripTemplate = 2
 | `description` | `string` | 256 |  | `actionItem` | 
-| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 

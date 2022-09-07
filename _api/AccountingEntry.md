@@ -18,7 +18,7 @@ description: ""
 | `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
 | `accountingEntry_recNo` | `long` |  | FKey | `accountingEntryDetail` | 
 | `description` | `string` | 512 |  | `accountingEntryDetail` | 
-| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, ClientBalances = 1, SupplierBalances = 2, UndepositedFunds = 3, Undisbursedfunds = 4, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, Other = 99
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
 | `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
 | `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
