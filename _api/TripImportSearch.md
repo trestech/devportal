@@ -40,6 +40,8 @@ Permission Areas: TripImport
 | `type` | `EnumSearchParam<ImportType>` | `type` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
 | `status` | `EnumSearchParam<Status>` | `status` | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) | `trip_RecNo` | 
+| `createDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

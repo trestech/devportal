@@ -29,6 +29,8 @@ Permission Areas: Trip
 | `remarks` | `string` |  |  | `trip` | 
 | `advisorRemarks` | `string` |  |  | `trip` | 
 | `marketingSource` | `string` | 64 |  | `trip` | 
+| `recordLocator` | `string` | 32 |  | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `trip` | 
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, FKey | `clientProfileInfo` | 
 | `name` | `string` | 256 |  | `clientProfileInfo` | 
@@ -52,7 +54,7 @@ Permission Areas: Trip
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
-| `commissionAmount` | `long` |  | Required | `reservation` | 
+| `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 
@@ -207,7 +209,7 @@ Permission Areas: Trip
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
-| `commissionAmount` | `long` |  | Required | `reservation` | 
+| `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 
@@ -304,7 +306,7 @@ Permission Areas: Trip
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
-| `commissionAmount` | `long` |  | Required | `reservation` | 
+| `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 

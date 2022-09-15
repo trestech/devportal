@@ -18,9 +18,38 @@ Permission Areas: BankTransaction
 | `voided` | `bool` |  | Required | `bankTransaction` | 
 | `remarks` | `string` |  |  | `bankTransaction` | 
 | `dateCleared` | `Date` |  |  | `bankTransaction` | 
+| `accountingEntry_recNo` | `long` |  | Auto-Assign | `bankTransaction` | 
 | `bankTransactionDetail ` | table |  |  | `bankTransaction` | 
 | `bankTransaction_recNo` | `long` |  | PKey, FKey | `bankTransactionDetail` | 
 | `payment_recNo` | `long` |  | PKey, Required, FKey | `bankTransactionDetail` | 
+| `accountingEntry  [shared]` | table |  | Singleton | `bankTransaction` | 
+| `recNo` | `long` |  | PKey, FKey | `accountingEntry` | 
+| `createDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `description` | `string` | 512 |  | `accountingEntry` | 
+| `accountingReference` | `string` | 64 |  | `accountingEntry` | 
+| `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
+| `accountingEntryDetail ` | table |  |  | `accountingEntry` | 
+| `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
+| `accountingEntry_recNo` | `long` |  | FKey | `accountingEntryDetail` | 
+| `description` | `string` | 512 |  | `accountingEntryDetail` | 
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
+| `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `journalEntry  [shared]` | table |  | Singleton | `accountingEntry` | 
+| `recNo` | `long` |  | PKey, FKey | `journalEntry` | 
+| `remarks` | `string` | 512 |  | `journalEntry` | 
+| `date` | `Date` |  | Required | `journalEntry` | 
+| `journalEntryDetail ` | table |  |  | `journalEntry` | 
+| `recNo` | `long` |  | PKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `debitAmount` | `long` |  |  | `journalEntryDetail` | 
+| `creditAmount` | `long` |  |  | `journalEntryDetail` | 
+| `remarks` | `string` | 256 |  | `journalEntryDetail` | 
+| `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
+| `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 
 | Status code | Description |
 | ----------- | ----------- |
