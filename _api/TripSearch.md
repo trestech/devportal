@@ -33,6 +33,7 @@ Permission Areas: Trip
 | `destinationRegionName` | `string` | 64 | `trip` | 
 | `branchRecNo` | `long` |  | `trip` | 
 | `branchName` | `string` | 64 | `trip` | 
+| `tripRecordLocator` | `string` | 32 | `trip` | 
 | `createDateTime` | `DateTime` |  | `trip` | 
 | `lastModifiedDateTime` | `DateTime` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
@@ -120,6 +121,7 @@ Permission Areas: Trip
 | `tripName` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `destinationRecNo` | [`NumSearchParam`](NumSearchParam) | `destinationRecNo` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branchRecNo` | 
+| `tripRecordLocator` | [`StringSearchParam`](StringSearchParam) | `tripRecordLocator` | 
 | `tripCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `tripCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `tripModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
