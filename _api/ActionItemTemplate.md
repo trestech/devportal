@@ -17,10 +17,10 @@ Permission Areas: ActionItemTemplate
 | `enabled` | `bool` |  |  | `actionItemTemplate` | 
 | `travelCategory_recNo` | `short` |  |  | `actionItemTemplate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `actionItemTemplateActionItemLink ` | table |  |  | `actionItemTemplate` | 
-| `actionItemTemplate_recNo` | `long` |  | PKey, FKey | `actionItemTemplateActionItemLink` | 
+| `actionItemTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItemTemplateActionItemLink` | 
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `actionItemTemplateActionItemLink` | 
 | `actionItemTemplateActionItem ` | table |  | Singleton | `actionItemTemplateActionItemLink` | 
-| `recNo` | `long` |  | PKey, FKey | `actionItem` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
 | `type` | `short` |  | Required | `actionItem` | Trip = 1, TripTemplate = 2
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8

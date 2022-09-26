@@ -27,6 +27,8 @@ Permission Areas: GeneralLedgerAccount
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `category` | `EnumSearchParam<Category>` | `category` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 

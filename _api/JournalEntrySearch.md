@@ -19,6 +19,7 @@ Permission Areas: JournalEntry
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
 | `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
+| `journalEntryDetailAmount` | `long` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Linked Parameter | Description |
 | --------- | ---- | ------------- | ---------------- | ----------- |

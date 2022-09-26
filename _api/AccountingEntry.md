@@ -9,27 +9,27 @@ description: ""
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
 | `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
 | `accountingEntryDetail ` | table |  |  | `accountingEntry` | 
 | `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
-| `accountingEntry_recNo` | `long` |  | FKey | `accountingEntryDetail` | 
+| `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
 | `description` | `string` | 512 |  | `accountingEntryDetail` | 
 | `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
 | `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
 | `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `journalEntry  [shared]` | table |  | Singleton | `accountingEntry` | 
-| `recNo` | `long` |  | PKey, FKey | `journalEntry` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `journalEntry` | 
 | `remarks` | `string` | 512 |  | `journalEntry` | 
 | `date` | `Date` |  | Required | `journalEntry` | 
 | `journalEntryDetail ` | table |  |  | `journalEntry` | 
 | `recNo` | `long` |  | PKey | `journalEntryDetail` | 
-| `journalEntry_recNo` | `long` |  | FKey | `journalEntryDetail` | 
-| `generalLedgerAccount_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | Required, FKey | `journalEntryDetail` | 
 | `debitAmount` | `long` |  |  | `journalEntryDetail` | 
 | `creditAmount` | `long` |  |  | `journalEntryDetail` | 
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 

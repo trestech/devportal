@@ -28,6 +28,8 @@ description: ""
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `id` | [`StringSearchParam`](StringSearchParam) | `id` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branch_recNo` | 
 | `userType` | `EnumSearchParam<UserType>` | `userType` | User = 1, Manager = 2, Admin = 3

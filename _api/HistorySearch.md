@@ -32,6 +32,8 @@ description: ""
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `tableName` | [`StringSearchParam`](StringSearchParam) | `tableName` | 
 | `tableRecNo` | [`NumSearchParam`](NumSearchParam) | `tableRecNo` | 
 | `tableRecNo2` | [`NumSearchParam`](NumSearchParam) | `tableRecNo2` | 

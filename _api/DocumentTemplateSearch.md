@@ -1,24 +1,18 @@
 ---
 layout: api_page
-title: "TagSearch"
+title: "DocumentTemplateSearch"
 description: ""
 ---
 
 
 
-Permission Areas: Tag
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `tag` | 
-| `summaryCount` | `int` |  | `tag` | 
-| `name` | `string` | 64 | `tag` | 
-| `referenced` | `bool` |  | `tag` | 
-| `activeStatus` | `bool` |  | `tag` | 
-| `valueFreeFlow` | `bool` |  | `tag` | 
-| `valueRequired` | `bool` |  | `tag` | 
-| `valueList` | `string` | 1024 | `tag` | 
-| `description` | `string` | 64 | `tag` | 
+| `recNo` | `long` |  | `DocumentTemplate` | 
+| `summaryCount` | `int` |  | `DocumentTemplate` | 
+| `name` | `string` | 128 | `DocumentTemplate` | 
+| `description` | `string` | 512 | `DocumentTemplate` | 
+| `appUser_RecNo` | `long` |  | `DocumentTemplate` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -33,7 +27,6 @@ Permission Areas: Tag
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `bool` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |
