@@ -37,10 +37,10 @@ Permission Areas: Person
 | `emergencyContactPhone` | `string` | 64 |  | `person` | 
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
 | `personCommunicationLink ` | table |  |  | `person` | 
-| `person_recNo` | `long` |  | PKey, FKey | `personCommunicationLink` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
 | `communication  [shared]` | table |  | Singleton | `personCommunicationLink` | 
-| `recNo` | `long` |  | PKey, FKey | `communication` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `communication` | 
 | `type` | `short` |  | Required | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `subType` | `string` | 32 |  | `communication` | 
 | `value` | `string` | 256 |  | `communication` | 
@@ -52,26 +52,26 @@ Permission Areas: Person
 | `permitMarketing` | `bool` |  |  | `communication` | 
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
-| `person_recNo` | `long` |  | FKey | `card` | 
+| `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
 | `type` | `short` |  | Required | `card` | CreditDebit = 1, Loyalty = 2, Passport = 3
 | `cardNumber` | `string` | 64 | Required | `card` | 
 | `issueDate` | `Date` |  |  | `card` | 
 | `expirationDate` | `Date` |  |  | `card` | 
 | `issuingCity` | `string` | 64 |  | `card` | 
 | `issuingCountry` | `string` | 2 |  | `card` | 
-| `description` | `string` | 256 |  | `card` | 
+| `description` | `string` | 512 |  | `card` | 
 | `cardNumberToken` | `string` | 64 |  | `card` | 
 | `code` | `string` | 8 |  | `card` | 
 | `nameOnCard` | `string` | 64 |  | `card` | 
 | `personMarketing ` | table |  |  | `person` | 
-| `person_recNo` | `long` |  | PKey, FKey | `personMarketing` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personMarketing` | 
 | `marketingElement_recNo` | `long` |  | PKey, Required, FKey | `personMarketing` | 
 | `affiliation_recNo` | `int` |  | Required, FKey | `personMarketing` | 
 | `personAttachmentLink ` | table |  |  | `person` | 
-| `person_recNo` | `long` |  | PKey, FKey | `personAttachmentLink` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `personAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `personAttachmentLink` | 
-| `recNo` | `long` |  | PKey, FKey | `attachment` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
 | `description` | `string` | 256 |  | `attachment` | 
 | `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
@@ -80,7 +80,7 @@ Permission Areas: Person
 | `compressed` | `bool` |  |  | `attachment` | 
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
-| `person_recNo` | `long` |  | FKey | `personTag` | 
+| `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 
 | `tag_recNo` | `long` |  | Required, FKey | `personTag` | 
 | `name` | `string` | 64 | ReadOnly | `personTag` | 
 | `value` | `string` | 1024 |  | `personTag` | 

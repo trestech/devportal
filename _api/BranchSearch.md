@@ -23,6 +23,8 @@ description: ""
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 
 | Status code | Description |

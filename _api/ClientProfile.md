@@ -27,26 +27,26 @@ Permission Areas: ClientProfile
 | `informalSalutation` | `string` | 128 |  | `clientProfile` | 
 | `travelPolicy` | `string` | 1024 |  | `clientProfile` | 
 | `profile  [shared]` | table |  | Singleton | `clientProfile` | 
-| `recNo` | `long` |  | PKey, FKey | `profile` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
 | `activeStatus` | `bool` |  |  | `profile` | 
-| `uniqueId` | `string` | 64 |  | `profile` | 
+| `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
 | `permitMarketing` | `bool` |  |  | `profile` | 
 | `profilePersonLink ` | table |  |  | `profile` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `profilePersonLink` | 
-| `profile_recNo` | `long` |  | PKey, FKey | `profilePersonLink` | 
+| `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profilePersonLink` | 
 | `role` | `string` | 64 |  | `profilePersonLink` | 
 | `isPrimary` | `bool` |  |  | `profilePersonLink` | 
 | `name` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
-| `profile_recNo` | `long` |  | PKey, FKey | `profileCommunicationLink` | 
+| `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
 | `communication  [shared]` | table |  | Singleton | `profileCommunicationLink` | 
-| `recNo` | `long` |  | PKey, FKey | `communication` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `communication` | 
 | `type` | `short` |  | Required | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `subType` | `string` | 32 |  | `communication` | 
 | `value` | `string` | 256 |  | `communication` | 
@@ -57,12 +57,12 @@ Permission Areas: ClientProfile
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
 | `profileAddressLink ` | table |  |  | `profile` | 
-| `profile_recNo` | `long` |  | PKey, FKey | `profileAddressLink` | 
+| `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
 | `permitMarketing` | `bool` |  |  | `profileAddressLink` | 
 | `address_recNo` | `long` |  | PKey, Auto-Assign | `profileAddressLink` | 
 | `address  [shared]` | table |  | Singleton | `profileAddressLink` | 
-| `recNo` | `long` |  | PKey, FKey | `address` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `address` | 
 | `street1` | `string` | 128 |  | `address` | 
 | `street2` | `string` | 128 |  | `address` | 
 | `street3` | `string` | 128 |  | `address` | 
@@ -74,13 +74,13 @@ Permission Areas: ClientProfile
 | `permitMarketing` | `bool` |  |  | `address` | 
 | `profileId ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileId` | 
-| `profile_recNo` | `long` |  | FKey | `profileId` | 
+| `profile_recNo` | `long` |  | InsertOnly, FKey | `profileId` | 
 | `id` | `string` | 32 | Required | `profileId` | 
 | `profileAttachmentLink ` | table |  |  | `profile` | 
-| `profile_recNo` | `long` |  | PKey, FKey | `profileAttachmentLink` | 
+| `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `profileAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `profileAttachmentLink` | 
-| `recNo` | `long` |  | PKey, FKey | `attachment` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
 | `description` | `string` | 256 |  | `attachment` | 
 | `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
@@ -89,12 +89,12 @@ Permission Areas: ClientProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
-| `profile_recNo` | `long` |  | FKey | `profileTag` | 
+| `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
 | `tag_recNo` | `long` |  | Required, FKey | `profileTag` | 
 | `name` | `string` | 64 | ReadOnly | `profileTag` | 
 | `value` | `string` | 1024 |  | `profileTag` | 
 | `clientProfileMarketing ` | table |  |  | `clientProfile` | 
-| `clientProfile_recNo` | `long` |  | PKey, FKey | `clientProfileMarketing` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileMarketing` | 
 | `affiliation_recNo` | `int` |  | Required, FKey | `clientProfileMarketing` | 
 | `marketingElement_recNo` | `long` |  | PKey, Required, FKey | `clientProfileMarketing` | 
 

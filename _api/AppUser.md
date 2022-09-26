@@ -44,7 +44,7 @@ description: ""
 | `generalLedgerAccountActions` | `short` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128
 | `journalEntryActions` | `short` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128
 | `appUserAdvisor ` | table |  |  | `appUser` | 
-| `appUser_RecNo` | `long` |  | PKey, FKey | `appUserAdvisor` | 
+| `appUser_RecNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 
 | `advisorName` | `string` | 256 | ReadOnly | `appUserAdvisor` | 
 | `isPrimary` | `bool` |  | Required | `appUserAdvisor` | 

@@ -30,30 +30,30 @@ Permission Areas: Activity
 | `affiliation_recNo` | `int` |  | FKey | `activity` | 
 | `affiliationName_lookup` | `string` | 64 | ReadOnly | `activity` | 
 | `activityClientProfileLink ` | table |  | Singleton | `activity` | 
-| `activity_recNo` | `long` |  | PKey, FKey | `activityClientProfileLink` | 
+| `activity_recNo` | `long` |  | PKey, InsertOnly, FKey | `activityClientProfileLink` | 
 | `profile_recNo` | `long` |  | PKey, Required, FKey | `activityClientProfileLink` | 
 | `clientName_lookup` | `string` | 256 | ReadOnly | `activityClientProfileLink` | 
 | `clientPhone_lookup` | `string` | 256 | ReadOnly | `activityClientProfileLink` | 
 | `clientEmail_lookup` | `string` | 256 | ReadOnly | `activityClientProfileLink` | 
 | `activitySupplierProfileLink ` | table |  | Singleton | `activity` | 
-| `activity_recNo` | `long` |  | PKey, FKey | `activitySupplierProfileLink` | 
+| `activity_recNo` | `long` |  | PKey, InsertOnly, FKey | `activitySupplierProfileLink` | 
 | `profile_recNo` | `long` |  | PKey, Required, FKey | `activitySupplierProfileLink` | 
 | `supplierName_lookup` | `string` | 256 | ReadOnly | `activitySupplierProfileLink` | 
 | `supplierPhone_lookup` | `string` | 256 | ReadOnly | `activitySupplierProfileLink` | 
 | `supplierEmail_lookup` | `string` | 256 | ReadOnly | `activitySupplierProfileLink` | 
 | `activityPersonLink ` | table |  | Singleton | `activity` | 
-| `activity_recNo` | `long` |  | PKey, FKey | `activityPersonLink` | 
+| `activity_recNo` | `long` |  | PKey, InsertOnly, FKey | `activityPersonLink` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `activityPersonLink` | 
 | `personName_lookup` | `string` | 256 | ReadOnly | `activityPersonLink` | 
 | `personPhone_lookup` | `string` | 256 | ReadOnly | `activityPersonLink` | 
 | `personEmail_lookup` | `string` | 256 | ReadOnly | `activityPersonLink` | 
 | `activityTripLink ` | table |  | Singleton | `activity` | 
-| `activity_recNo` | `long` |  | PKey, FKey | `activityTripLink` | 
+| `activity_recNo` | `long` |  | PKey, InsertOnly, FKey | `activityTripLink` | 
 | `trip_recNo` | `long` |  | PKey, Required, FKey | `activityTripLink` | 
 | `tripName_lookup` | `string` | 256 | ReadOnly | `activityTripLink` | 
 | `activityTag ` | table |  |  | `activity` | 
 | `recNo` | `long` |  | PKey | `activityTag` | 
-| `activity_recNo` | `long` |  | FKey | `activityTag` | 
+| `activity_recNo` | `long` |  | InsertOnly, FKey | `activityTag` | 
 | `tag_recNo` | `long` |  | Required, FKey | `activityTag` | 
 | `name` | `string` | 64 | ReadOnly | `activityTag` | 
 | `value` | `string` | 1024 |  | `activityTag` | 

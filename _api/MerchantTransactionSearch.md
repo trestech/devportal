@@ -25,6 +25,8 @@ description: ""
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `transactionType` | `EnumSearchParam<TransactionType>` | `transactionType` | Sale = 1, Void = 2, Refund = 3
 | `dateProcessedFrom` | `DateTimeUTCSearchParam` | `dateProcessed` | 
 | `dateProcessedTo` | `DateTimeUTCSearchParam` | `dateProcessed` | 

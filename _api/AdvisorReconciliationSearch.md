@@ -25,6 +25,8 @@ Permission Areas: AdvisorReconciliation
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `createDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `createDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 

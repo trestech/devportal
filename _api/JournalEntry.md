@@ -15,8 +15,8 @@ Permission Areas: JournalEntry
 | `date` | `Date` |  | Required | `journalEntry` | 
 | `journalEntryDetail ` | table |  |  | `journalEntry` | 
 | `recNo` | `long` |  | PKey | `journalEntryDetail` | 
-| `journalEntry_recNo` | `long` |  | FKey | `journalEntryDetail` | 
-| `generalLedgerAccount_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | Required, FKey | `journalEntryDetail` | 
 | `debitAmount` | `long` |  |  | `journalEntryDetail` | 
 | `creditAmount` | `long` |  |  | `journalEntryDetail` | 
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 

@@ -24,6 +24,8 @@ description: ""
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `createDateTimeFrom` | `DateTimeUTCSearchParam` | `createDate` | 
 | `createDateTimeTo` | `DateTimeUTCSearchParam` | `createDate` | 
 | `posted` | `bool` | `postDate` | 

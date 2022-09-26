@@ -19,6 +19,7 @@ Permission Areas: JournalEntry
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
 | `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
+| `journalEntryDetailAmount` | `long` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -30,6 +31,8 @@ Permission Areas: JournalEntry
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
 | `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryRemarks` | [`StringSearchParam`](StringSearchParam) | `journalEntryRemarks` | 

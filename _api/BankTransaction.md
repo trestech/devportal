@@ -11,40 +11,40 @@ Permission Areas: BankTransaction
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `bankTransaction` | 
-| `transactionDate` | `Date` |  | Required | `bankTransaction` | 
-| `amount` | `long` |  | Required | `bankTransaction` | 
-| `bank_recNo` | `long` |  | Required, FKey | `bankTransaction` | 
+| `transactionDate` | `Date` |  | Required, InsertOnly | `bankTransaction` | 
+| `amount` | `long` |  | Required, InsertOnly | `bankTransaction` | 
+| `bank_recNo` | `long` |  | Required, InsertOnly, FKey | `bankTransaction` | 
 | `bankName_lookup` | `string` | 64 | ReadOnly | `bankTransaction` | 
 | `voided` | `bool` |  | Required | `bankTransaction` | 
 | `remarks` | `string` |  |  | `bankTransaction` | 
 | `dateCleared` | `Date` |  |  | `bankTransaction` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `bankTransaction` | 
 | `bankTransactionDetail ` | table |  |  | `bankTransaction` | 
-| `bankTransaction_recNo` | `long` |  | PKey, FKey | `bankTransactionDetail` | 
+| `bankTransaction_recNo` | `long` |  | PKey, InsertOnly, FKey | `bankTransactionDetail` | 
 | `payment_recNo` | `long` |  | PKey, Required, FKey | `bankTransactionDetail` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `bankTransaction` | 
-| `recNo` | `long` |  | PKey, FKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
+| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
 | `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
 | `accountingEntryDetail ` | table |  |  | `accountingEntry` | 
 | `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
-| `accountingEntry_recNo` | `long` |  | FKey | `accountingEntryDetail` | 
+| `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
 | `description` | `string` | 512 |  | `accountingEntryDetail` | 
 | `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
 | `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
 | `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `journalEntry  [shared]` | table |  | Singleton | `accountingEntry` | 
-| `recNo` | `long` |  | PKey, FKey | `journalEntry` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `journalEntry` | 
 | `remarks` | `string` | 512 |  | `journalEntry` | 
 | `date` | `Date` |  | Required | `journalEntry` | 
 | `journalEntryDetail ` | table |  |  | `journalEntry` | 
 | `recNo` | `long` |  | PKey | `journalEntryDetail` | 
-| `journalEntry_recNo` | `long` |  | FKey | `journalEntryDetail` | 
-| `generalLedgerAccount_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | Required, FKey | `journalEntryDetail` | 
 | `debitAmount` | `long` |  |  | `journalEntryDetail` | 
 | `creditAmount` | `long` |  |  | `journalEntryDetail` | 
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 
