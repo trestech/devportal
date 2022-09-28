@@ -11,6 +11,8 @@ description: ""
 | `recNo` | `long` |  | PKey | `DocumentTemplate` | 
 | `name` | `string` | 128 |  | `DocumentTemplate` | 
 | `description` | `string` | 512 |  | `DocumentTemplate` | 
+| `emailSubject` | `string` | 128 |  | `DocumentTemplate` | 
+| `emailBody` | `string` |  |  | `DocumentTemplate` | 
 | `branch_recNo` | `long` |  | FKey | `DocumentTemplate` | 
 | `branchName_lookup` | `string` | 64 | ReadOnly | `DocumentTemplate` | 
 | `appUser_RecNo` | `long` |  | FKey | `DocumentTemplate` | 
