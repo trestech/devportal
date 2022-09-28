@@ -165,7 +165,7 @@ Permission Areas: Trip
 | `recNo` | `long` |  | PKey | `reservationTax` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTax` | 
 | `code` | `string` | 2 |  | `reservationTax` | 
-| `amount` | `long` |  |  | `reservationTax` | 
+| `amount` | `long` |  | Required | `reservationTax` | 
 | `reservationAttachmentLink ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
@@ -442,6 +442,12 @@ Permission Areas: Trip
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
 | `completedBy_appUserId` | `string` | 64 |  | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
+| `tripDocument ` | table |  |  | `trip` | 
+| `recNo` | `long` |  | PKey | `tripDocument` | 
+| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDocument` | 
+| `documentTemplate_recNo` | `long` |  | PKey, Required, FKey | `tripDocument` | 
+| `emailAddresses` | `string` | 512 |  | `tripDocument` | 
+| `name_lookup` | `string` | 128 | ReadOnly | `tripDocument` | 
 
 | Status code | Description |
 | ----------- | ----------- |
