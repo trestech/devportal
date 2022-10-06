@@ -14,7 +14,7 @@ Permission Areas: SupplierProfile
 | `type` | `short` |  | Required | `supplierProfile` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
 | `preferred` | `bool` |  | Required | `supplierProfile` | 
 | `airlineNo` | `short` |  |  | `supplierProfile` | 
-| `commissionTriggerIndex` | `short` |  |  | `supplierProfile` | BookingDate = 1, DepartDate = 2, ReturnDate = 3
+| `commissionTriggerIndex` | `short` |  |  | `supplierProfile` | BookingDate = 1, DepartDate = 2, ReturnDate = 3, FinalPayDate = 4
 | `commissionTriggerDaysOffset` | `short` |  |  | `supplierProfile` | 
 | `vendorId` | `string` | 10 |  | `supplierProfile` | 
 | `tripStatementRemarks` | `string` |  |  | `supplierProfile` | 

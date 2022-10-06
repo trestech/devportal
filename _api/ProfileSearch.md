@@ -57,6 +57,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientCreateDateTime` | `DateTime` |  | `clientProfile` | 
 | `clientLastModifiedDateTime` | `DateTime` |  | `clientProfile` | 
 | `supplierVendorId` | `string` | 10 | `supplierProfile` | 
+| `supplierCommissionRate` | `short` |  | `supplierProfile` | 
 | `clientInformalSalutation` | `string` | 128 | `clientProfile` | 
 | `clientFormalSalutation` | `string` | 128 | `clientProfile` | 
 

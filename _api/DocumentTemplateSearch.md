@@ -13,6 +13,7 @@ description: ""
 | `name` | `string` | 128 | `DocumentTemplate` | 
 | `description` | `string` | 512 | `DocumentTemplate` | 
 | `appUser_RecNo` | `long` |  | `DocumentTemplate` | 
+| `activeStatus` | `bool` |  | `DocumentTemplate` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -27,6 +28,7 @@ description: ""
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
+| `activeStatus` | `bool` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -40,7 +40,7 @@ Permission Areas: Trip
 | `reservationTagValue` | `string` | 1024 | `reservation` | 
 | `reservationSupplierProfileRecNo` | `long` |  | `reservation` | 
 | `reservationSupplierProfileName` | `string` | 256 | `reservation` | 
-| `reservationCommisionTriggerIndex` | `short` |  | `reservation` | BookingDate = 1, DepartDate = 2, ReturnDate = 3
+| `reservationCommisionTriggerIndex` | `short` |  | `reservation` | BookingDate = 1, DepartDate = 2, ReturnDate = 3, FinalPayDate = 4
 | `reservationCommisionTriggerDaysOffset` | `short` |  | `reservation` | 
 | `reservationClientBalance` | `long` |  | `reservation` | 
 | `reservationSupplierBalance` | `long` |  | `reservation` | 
@@ -58,8 +58,6 @@ Permission Areas: Trip
 | `reservationBookDateTime` | `DateTime` |  | `reservation` | 
 | `reservationStartDateTime` | `DateTime` |  | `reservation` | 
 | `reservationEndDateTime` | `DateTime` |  | `reservation` | 
-| `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
-| `reservationTicketNo` | `long` |  | `reservation` | 
 | `reservationConfirmationNo` | `string` | 64 | `reservation` | 
 | `reservationRecordLocator` | `string` | 32 | `reservation` | 
 | `reservationDepositRecNo` | `long` |  | `reservationDeposit` | 
@@ -70,13 +68,15 @@ Permission Areas: Trip
 | `reservationARCBSPNumber` | `int` |  | `reservation` | 
 | `reservationProviderProfileRecNo` | `long` |  | `reservation` | 
 | `reservationProviderProfileName` | `string` | 256 | `reservation` | 
-| `reservationTicketNumber` | `long` |  | `reservation` | 
+| `reservationTicketNo` | `long` |  | `reservation` | 
 | `reservationConfirmationNumber` | `string` | 64 | `reservation` | 
 | `reservationConfirmedDateTime` | `DateTime` |  | `reservation` | 
 | `reservationPromoId` | `string` | 256 | `reservation` | 
 | `reservationSource` | `string` | 32 | `reservation` | 
 | `reservationPrimaryTravelerRecNo` | `long` |  | `reservation` | 
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
+| `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
+| `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
@@ -155,7 +155,7 @@ Permission Areas: Trip
 | `reservationAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorProfileRecNo` | 
 | `reservationProviderProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationProviderProfileRecNo` | 
 | `reservationTravelerRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelerRecNo` | 
-| `reservationTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationTicketNumber` | 
+| `reservationTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationTicketNo` | 
 | `reservationConfirmationNumber` | [`StringSearchParam`](StringSearchParam) | `reservationConfirmationNumber` | 
 | `reservationConfirmedDateTimeFrom` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationConfirmedDateTimeTo` | `DateSearchParam` | `reservationConfirmedDateTime` | 
