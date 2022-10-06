@@ -16,6 +16,7 @@ description: ""
 | `branch_recNo` | `long` |  | FKey | `DocumentTemplate` | 
 | `branchName_lookup` | `string` | 64 | ReadOnly | `DocumentTemplate` | 
 | `appUser_RecNo` | `long` |  | FKey | `DocumentTemplate` | 
+| `activeStatus` | `bool` |  |  | `DocumentTemplate` | 
 | `documentTemplateAttachmentLink ` | table |  |  | `DocumentTemplate` | 
 | `documentTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `documentTemplateAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `documentTemplateAttachmentLink` | 

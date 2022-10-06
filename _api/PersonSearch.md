@@ -75,6 +75,7 @@ Permission Areas: Person
 | `modifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `modifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `cardType` | `long` | `cardType` | 
+| `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
 | `personActivitySearchParams` | `ActivitySearchParams` |  | 
 
 | Status code | Description |
