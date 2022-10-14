@@ -43,6 +43,7 @@ Permission Areas: OtherPayment
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 

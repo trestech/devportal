@@ -177,6 +177,7 @@ Permission Areas: Trip
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -422,6 +423,7 @@ Permission Areas: Trip
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 
@@ -448,6 +450,7 @@ Permission Areas: Trip
 | `documentTemplate_recNo` | `long` |  | PKey, Required, FKey | `tripDocument` | 
 | `emailAddresses` | `string` | 512 |  | `tripDocument` | 
 | `name_lookup` | `string` | 128 | ReadOnly | `tripDocument` | 
+| `sent` | `DateTimeOffset` |  | ReadOnly | `tripDocument` | 
 
 | Status code | Description |
 | ----------- | ----------- |

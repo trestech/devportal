@@ -78,6 +78,7 @@ Permission Areas: Person
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 

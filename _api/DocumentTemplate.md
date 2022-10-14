@@ -28,6 +28,7 @@ description: ""
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |
