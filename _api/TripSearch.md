@@ -96,6 +96,7 @@ Permission Areas: Trip
 | `reservationAccountingEntryRecNo` | `long` |  | `reservation` | 
 | `reservationAccountingEntryCreateDate` | `Date` |  | `reservation` | 
 | `reservationTravelerRecNo` | `long` |  | `reservationTraveler` | 
+| `reservationAdvisorsDatePayable` | `Date` |  | `reservation` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -170,9 +171,12 @@ Permission Areas: Trip
 | `reservationCommissionDatePayableTo` | `DateSearchParam` | `reservationCommissionDatePayable` | Filter results based on calculated date payable column
 | `reservationAccountingEntryCreateDateFrom` | `DateSearchParam` | `reservationAccountingEntryCreateDate` | 
 | `reservationAccountingEntryCreateDateTo` | `DateSearchParam` | `reservationAccountingEntryCreateDate` | 
+| `reservationAdvisorsDatePayableFrom` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
+| `reservationAdvisorsDatePayableTo` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `clientProfileSearchParams` | `ProfileSearchParams` |  | 
 | `destinationSearchParams` | `DestinationSearchParams` |  | 
+| `reservationAdvisorProfileSearchParams` | `ProfileSearchParams` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
