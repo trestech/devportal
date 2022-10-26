@@ -80,6 +80,7 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
+| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | FKey | `reservation` | 
@@ -237,6 +238,7 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
+| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
 | `airReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -335,6 +337,7 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
+| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
 | `airReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
