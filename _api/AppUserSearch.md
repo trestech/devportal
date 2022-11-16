@@ -17,6 +17,8 @@ description: ""
 | `name` | `string` | 64 | `appUser` | 
 | `mobilePhone` | `string` | 64 | `appUser` | 
 | `email` | `string` | 128 | `appUser` | 
+| `enabled` | `bool` |  | `appUser` | 
+| `locked` | `DateTimeOffset` |  | `appUser` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -35,6 +37,8 @@ description: ""
 | `userType` | `EnumSearchParam<UserType>` | `userType` | User = 1, Manager = 2, Admin = 3
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `email` | [`StringSearchParam`](StringSearchParam) | `email` | 
+| `enabled` | `bool` | `enabled` | 
+| `locked` | `bool` | `locked` | 
 
 | Status code | Description |
 | ----------- | ----------- |

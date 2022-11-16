@@ -1,7 +1,7 @@
 ---
 layout: api_page
-title: "Afffiliation marketing parameters"
-description: "| Parameter | Type |"
+title: "Affiliation marketing parameters"
+description: ""
 ---
 
 
@@ -11,3 +11,4 @@ description: "| Parameter | Type |"
 | marketingElementRecNo | long |
 | marketingElementId | string |
 | checked | bool |
+

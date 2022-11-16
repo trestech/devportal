@@ -40,6 +40,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `primaryPhone` | `string` | 256 | `profile` | 
 | `primaryPhonePermitMarketing` | `bool` |  | `profile` | 
 | `preferredSupplier` | `bool` |  | `supplierProfile` | 
+| `supplierTravelCategoryFlags` | `bool` |  | `supplierProfile` | 
 | `street1` | `string` | 128 | `address` | 
 | `street2` | `string` | 128 | `address` | 
 | `city` | `string` | 64 | `address` | 
@@ -108,6 +109,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `clientModifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
+| `supplierTravelCategoryFlags` | `long` | `supplierTravelCategoryFlags` | 
 | `clientTripSearchParams` | `TripSearchParams` |  | 
 | `supplierTripSearchParams` | `TripSearchParams` |  | 
 | `clientActivitySearchParams` | `ActivitySearchParams` |  | 

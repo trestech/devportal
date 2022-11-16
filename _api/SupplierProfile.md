@@ -20,6 +20,7 @@ Permission Areas: SupplierProfile
 | `tripStatementRemarks` | `string` |  |  | `supplierProfile` | 
 | `termsAndConditionsUrl` | `string` | 256 |  | `supplierProfile` | 
 | `commissionRate` | `short` |  |  | `supplierProfile` | 
+| `travelCategoryFlags` | `int` |  |  | `supplierProfile` | 
 | `profile  [shared]` | table |  | Singleton | `supplierProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
@@ -36,6 +37,7 @@ Permission Areas: SupplierProfile
 | `name` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
+| `department` | `string` | 64 |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -65,6 +67,7 @@ Permission Areas: SupplierProfile
 | `stateProvince` | `string` | 8 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
+| `countryName` | `string` | 64 |  | `address` | 
 | `permitMarketing` | `bool` |  |  | `address` | 
 | `profileId ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileId` | 

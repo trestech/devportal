@@ -59,6 +59,7 @@ Permission Areas: Person
 | `expirationDate` | `Date` |  |  | `card` | 
 | `issuingCity` | `string` | 64 |  | `card` | 
 | `issuingCountry` | `string` | 2 |  | `card` | 
+| `issuingCountryName` | `string` | 64 |  | `card` | 
 | `description` | `string` | 512 |  | `card` | 
 | `cardNumberToken` | `string` | 64 |  | `card` | 
 | `code` | `string` | 8 |  | `card` | 
