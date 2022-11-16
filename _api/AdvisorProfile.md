@@ -30,6 +30,7 @@ Permission Areas: AdvisorProfile
 | `name` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
+| `department` | `string` | 64 |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -59,6 +60,7 @@ Permission Areas: AdvisorProfile
 | `stateProvince` | `string` | 8 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
+| `countryName` | `string` | 64 |  | `address` | 
 | `permitMarketing` | `bool` |  |  | `address` | 
 | `profileId ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileId` | 

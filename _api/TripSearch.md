@@ -163,8 +163,8 @@ Permission Areas: Trip
 | `reservationRecordLocator` | [`StringSearchParam`](StringSearchParam) | `reservationRecordLocator` | 
 | `reservationPromoId` | [`StringSearchParam`](StringSearchParam) | `reservationPromoId` | 
 | `tripActionItemCompleted` | `bool` | `tripActionItemCompleted` | 
-| `tripActionItemDateFrom` | `DateSearchParam` |  | 
-| `tripActionItemDateTo` | `DateSearchParam` |  | 
+| `tripActionItemDateFrom` | `DateSearchParam` | `tripActionItemDate` | 
+| `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 
 | `reservationAdvisorReconciliationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorReconciliationRecNo` | 
 | `reservationAdvisorReconciled` | `bool` | `reservationAdvisorReconciliationRecNo` | 
 | `reservationCommissionDatePayableFrom` | `DateSearchParam` | `reservationCommissionDatePayable` | Filter results based on calculated date payable column

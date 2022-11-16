@@ -15,8 +15,9 @@ Permission Areas: Tag
 | `activeStatus` | `bool` |  |  | `tag` | 
 | `valueFreeFlow` | `bool` |  |  | `tag` | 
 | `valueRequired` | `bool` |  |  | `tag` | 
-| `valueList` | `string` | 1024 |  | `tag` | 
+| `valueList` | `string` | 2048 |  | `tag` | 
 | `description` | `string` | 64 |  | `tag` | 
+| `areaFlags` | `int` |  |  | `tag` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -81,6 +81,9 @@ Permission Areas: Trip
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `travelerDepartment` | `string` | 64 |  | `reservation` | 
+| `startInfo` | `string` | 256 |  | `reservation` | 
+| `endInfo` | `string` | 256 |  | `reservation` | 
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | FKey | `reservation` | 
@@ -94,6 +97,7 @@ Permission Areas: Trip
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
 | `recordLocator` | `string` | 32 |  | `airReservation` | 
+| `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `airReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
 | `airReservation_recNo` | `long` |  | InsertOnly, FKey | `airSegment` | 
@@ -112,6 +116,8 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airSegment` | 
 | `mileage` | `short` |  |  | `airSegment` | 
 | `indexNo` | `short` |  |  | `airSegment` | 
+| `seatNo` | `string` | 4 |  | `airSegment` | 
+| `seatType` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -120,6 +126,15 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railReservation` | 
 | `trainNo` | `short` |  |  | `railReservation` | 
 | `classOfService` | `string` | 2 |  | `railReservation` | 
+| `railSegment ` | table |  |  | `railReservation` | 
+| `recNo` | `long` |  | PKey | `railSegment` | 
+| `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departStationCode` | `string` | 3 |  | `railSegment` | 
+| `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveStationCode` | `string` | 3 |  | `railSegment` | 
+| `arriveStationName` | `string` | 64 |  | `railSegment` | 
+| `trainNo` | `short` |  |  | `railSegment` | 
+| `classOfService` | `string` | 2 |  | `railSegment` | 
 | `supplierProfileInfo  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
@@ -190,6 +205,8 @@ Permission Areas: Trip
 | `type` | `short` |  | Required | `cruiseReservation` | Ocean = 1, River = 2
 | `deck` | `string` | 32 |  | `cruiseReservation` | 
 | `cabin` | `string` | 32 |  | `cruiseReservation` | 
+| `dining` | `string` | 32 |  | `cruiseReservation` | 
+| `bedding` | `string` | 128 |  | `cruiseReservation` | 
 | `cruiseSegment ` | table |  |  | `cruiseReservation` | 
 | `recNo` | `long` |  | PKey | `cruiseSegment` | 
 | `cruiseReservation_recNo` | `long` |  | InsertOnly, FKey | `cruiseSegment` | 
@@ -239,6 +256,9 @@ Permission Areas: Trip
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `travelerDepartment` | `string` | 64 |  | `reservation` | 
+| `startInfo` | `string` | 256 |  | `reservation` | 
+| `endInfo` | `string` | 256 |  | `reservation` | 
 | `airReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -248,6 +268,7 @@ Permission Areas: Trip
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
 | `recordLocator` | `string` | 32 |  | `airReservation` | 
+| `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `cruiseSubAirReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
 | `airReservation_recNo` | `long` |  | InsertOnly, FKey | `airSegment` | 
@@ -266,6 +287,8 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airSegment` | 
 | `mileage` | `short` |  |  | `airSegment` | 
 | `indexNo` | `short` |  |  | `airSegment` | 
+| `seatNo` | `string` | 4 |  | `airSegment` | 
+| `seatType` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -274,6 +297,15 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railReservation` | 
 | `trainNo` | `short` |  |  | `railReservation` | 
 | `classOfService` | `string` | 2 |  | `railReservation` | 
+| `railSegment ` | table |  |  | `cruiseSubRailReservation` | 
+| `recNo` | `long` |  | PKey | `railSegment` | 
+| `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departStationCode` | `string` | 3 |  | `railSegment` | 
+| `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveStationCode` | `string` | 3 |  | `railSegment` | 
+| `arriveStationName` | `string` | 64 |  | `railSegment` | 
+| `trainNo` | `short` |  |  | `railSegment` | 
+| `classOfService` | `string` | 2 |  | `railSegment` | 
 | `cruiseSubSupplierProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
@@ -338,6 +370,9 @@ Permission Areas: Trip
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `travelerDepartment` | `string` | 64 |  | `reservation` | 
+| `startInfo` | `string` | 256 |  | `reservation` | 
+| `endInfo` | `string` | 256 |  | `reservation` | 
 | `airReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -347,6 +382,7 @@ Permission Areas: Trip
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
 | `recordLocator` | `string` | 32 |  | `airReservation` | 
+| `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `tourSubAirReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
 | `airReservation_recNo` | `long` |  | InsertOnly, FKey | `airSegment` | 
@@ -365,6 +401,8 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airSegment` | 
 | `mileage` | `short` |  |  | `airSegment` | 
 | `indexNo` | `short` |  |  | `airSegment` | 
+| `seatNo` | `string` | 4 |  | `airSegment` | 
+| `seatType` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -373,6 +411,15 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railReservation` | 
 | `trainNo` | `short` |  |  | `railReservation` | 
 | `classOfService` | `string` | 2 |  | `railReservation` | 
+| `railSegment ` | table |  |  | `tourSubRailReservation` | 
+| `recNo` | `long` |  | PKey | `railSegment` | 
+| `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departStationCode` | `string` | 3 |  | `railSegment` | 
+| `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveStationCode` | `string` | 3 |  | `railSegment` | 
+| `arriveStationName` | `string` | 64 |  | `railSegment` | 
+| `trainNo` | `short` |  |  | `railSegment` | 
+| `classOfService` | `string` | 2 |  | `railSegment` | 
 | `tourSubSupplierProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
