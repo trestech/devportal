@@ -33,6 +33,7 @@ task :import, :folder do |t, args|
       description = "" if description.start_with? 'Referenced Table:'
       description = "" if description.start_with? 'Permission Areas:'
       description = "" if description == '| Column | Type | Size | Table | Description |' # <- Search table
+      description = "" if description == '| Parameter | Type |' # <- Afffiliation marketing parameters
       description = "" if description == '| Column | Type | Size | Flags | Table | Description |' # <- Everything else
       
       body = body.gsub(/\[([a-zA-Z]+)\]\(\/([a-zA-Z]+)\.html\)/) do |_|
