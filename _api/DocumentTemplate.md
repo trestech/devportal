@@ -17,6 +17,8 @@ description: ""
 | `branchName_lookup` | `string` | 64 | ReadOnly | `DocumentTemplate` | 
 | `appUser_RecNo` | `long` |  | FKey | `DocumentTemplate` | 
 | `activeStatus` | `bool` |  |  | `DocumentTemplate` | 
+| `documentType` | `short` |  | Required | `DocumentTemplate` | Email = 1, ESign = 2
+| `waiverTemplateId` | `string` | 32 |  | `DocumentTemplate` | 
 | `documentTemplateAttachmentLink ` | table |  |  | `DocumentTemplate` | 
 | `documentTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `documentTemplateAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `documentTemplateAttachmentLink` | 

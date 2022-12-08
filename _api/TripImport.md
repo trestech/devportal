@@ -11,7 +11,7 @@ Permission Areas: TripImport
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `tripImport` | 
-| `type` | `short` |  |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, ReservationJson = 3
+| `type` | `short` |  |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4
 | `subType` | `short` |  |  | `tripImport` | 
 | `source` | `string` | 64 |  | `tripImport` | 
 | `recordLocator` | `string` | 6 |  | `tripImport` | 

@@ -96,7 +96,6 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airReservation` | 
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
-| `recordLocator` | `string` | 32 |  | `airReservation` | 
 | `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `airReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
@@ -118,6 +117,7 @@ Permission Areas: Trip
 | `indexNo` | `short` |  |  | `airSegment` | 
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
+| `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -129,8 +129,10 @@ Permission Areas: Trip
 | `railSegment ` | table |  |  | `railReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departDateTime` | `DateTime` |  |  | `railSegment` | 
 | `departStationCode` | `string` | 3 |  | `railSegment` | 
 | `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveDateTime` | `DateTime` |  |  | `railSegment` | 
 | `arriveStationCode` | `string` | 3 |  | `railSegment` | 
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
@@ -207,6 +209,7 @@ Permission Areas: Trip
 | `cabin` | `string` | 32 |  | `cruiseReservation` | 
 | `dining` | `string` | 32 |  | `cruiseReservation` | 
 | `bedding` | `string` | 128 |  | `cruiseReservation` | 
+| `groupBookingNo` | `string` | 16 |  | `cruiseReservation` | 
 | `cruiseSegment ` | table |  |  | `cruiseReservation` | 
 | `recNo` | `long` |  | PKey | `cruiseSegment` | 
 | `cruiseReservation_recNo` | `long` |  | InsertOnly, FKey | `cruiseSegment` | 
@@ -267,7 +270,6 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airReservation` | 
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
-| `recordLocator` | `string` | 32 |  | `airReservation` | 
 | `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `cruiseSubAirReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
@@ -289,6 +291,7 @@ Permission Areas: Trip
 | `indexNo` | `short` |  |  | `airSegment` | 
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
+| `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -300,8 +303,10 @@ Permission Areas: Trip
 | `railSegment ` | table |  |  | `cruiseSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departDateTime` | `DateTime` |  |  | `railSegment` | 
 | `departStationCode` | `string` | 3 |  | `railSegment` | 
 | `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveDateTime` | `DateTime` |  |  | `railSegment` | 
 | `arriveStationCode` | `string` | 3 |  | `railSegment` | 
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
@@ -381,7 +386,6 @@ Permission Areas: Trip
 | `ticketDesignator` | `string` | 32 |  | `airReservation` | 
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
-| `recordLocator` | `string` | 32 |  | `airReservation` | 
 | `tourCode` | `string` | 32 |  | `airReservation` | 
 | `airSegment ` | table |  |  | `tourSubAirReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
@@ -403,6 +407,7 @@ Permission Areas: Trip
 | `indexNo` | `short` |  |  | `airSegment` | 
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
+| `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `departStationCode` | `string` | 3 |  | `railReservation` | 
@@ -414,8 +419,10 @@ Permission Areas: Trip
 | `railSegment ` | table |  |  | `tourSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
+| `departDateTime` | `DateTime` |  |  | `railSegment` | 
 | `departStationCode` | `string` | 3 |  | `railSegment` | 
 | `departStationName` | `string` | 64 |  | `railSegment` | 
+| `arriveDateTime` | `DateTime` |  |  | `railSegment` | 
 | `arriveStationCode` | `string` | 3 |  | `railSegment` | 
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
@@ -501,6 +508,20 @@ Permission Areas: Trip
 | `emailAddresses` | `string` | 512 |  | `tripDocument` | 
 | `name_lookup` | `string` | 128 | ReadOnly | `tripDocument` | 
 | `sent` | `DateTimeOffset` |  | ReadOnly | `tripDocument` | 
+| `waiverId` | `string` | 32 |  | `tripDocument` | 
+| `waiverUrl` | `string` | 128 |  | `tripDocument` | 
+| `status` | `short` |  | Required | `tripDocument` | Pending = 1, Signed = 2, Expired = 3
+| `statusDateTime` | `DateTimeOffset` |  |  | `tripDocument` | 
+| `attachment_RecNo` | `long` |  | PKey, Auto-Assign | `tripDocument` | 
+| `tripDocumentAttachment  [shared]` | table |  | Singleton | `tripDocument` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |
