@@ -28,6 +28,8 @@ description: ""
 | `merchantUserName` | `string` | 64 |  | `agency` | 
 | `merchantPassword` | `string` | 256 |  | `agency` | 
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
+| `smartwaiverUserName` | `string` | 64 |  | `agency` | 
+| `smartwaiverPassword` | `string` | 256 |  | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
 | `affiliation_recNo` | `int` |  | PKey, Required, FKey | `agencyAffiliationLink` | 

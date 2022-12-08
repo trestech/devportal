@@ -38,6 +38,7 @@ Permission Areas: Person
 | `branchRecNo` | `long` |  | `person` | 
 | `branchRecName` | `string` | 64 | `person` | 
 | `advisorProfileRecNo` | `long` |  | `person` | 
+| `advisorProfileName` | `string` | 256 | `person` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -75,6 +76,8 @@ Permission Areas: Person
 | `modifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `modifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `cardType` | `long` | `cardType` | 
+| `cardExpirationDateFrom` | `DateSearchParam` |  | 
+| `cardExpirationDateTo` | `DateSearchParam` |  | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
 | `personActivitySearchParams` | `ActivitySearchParams` |  | 
 
