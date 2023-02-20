@@ -13,6 +13,8 @@ Permission Areas: Trip
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `trip` | 
+| `tagRecNo` | `long` |  | `trip` | 
+| `tagName` | `string` | 64 | `trip` | 
 | `tagValue` | `string` | 1024 | `trip` | 
 | `summaryCount` | `int` |  | `trip` | 
 | `name` | `string` | 256 | `trip` | 
@@ -34,9 +36,11 @@ Permission Areas: Trip
 | `branchRecNo` | `long` |  | `trip` | 
 | `branchName` | `string` | 64 | `trip` | 
 | `tripRecordLocator` | `string` | 32 | `trip` | 
-| `createDateTime` | `DateTime` |  | `trip` | 
-| `lastModifiedDateTime` | `DateTime` |  | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
+| `reservationTagRecNo` | `long` |  | `reservation` | 
+| `reservationTagName` | `string` | 64 | `reservation` | 
 | `reservationTagValue` | `string` | 1024 | `reservation` | 
 | `reservationSupplierProfileRecNo` | `long` |  | `reservation` | 
 | `reservationSupplierProfileName` | `string` | 256 | `reservation` | 
@@ -83,6 +87,8 @@ Permission Areas: Trip
 | `tripActionItemTriggerFixedDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemDescription` | `string` | 256 | `tripActionItem` | 
 | `tripActionItemCompleted` | `DateTime` |  | `tripActionItem` | 
+| `tripActionItemAssignedToAppUserRecNo` | `long` |  | `tripActionItem` | 
+| `tripActionItemAssignedToAppUserId` | `string` | 64 | `tripActionItem` | 
 | `reservationAdvisorRecNo` | `long` |  | `reservationAdvisor` | 
 | `reservationAdvisorProfileRecNo` | `long` |  | `reservationAdvisor` | 
 | `reservationAdvisorProfileName` | `string` | 256 | `reservationAdvisor` | 
@@ -110,7 +116,6 @@ Permission Areas: Trip
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientProfileRecNo` | 
 | `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
@@ -151,7 +156,6 @@ Permission Areas: Trip
 | `reservationSupplierBalance` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierBalance` | 
 | `reservationSupplierBalanceMin` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierBalance` | 
 | `reservationSupplierBalanceMax` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierBalance` | 
-| `reservationDisplayTagRecNo` | `long` |  | 
 | `reservationARCBSPNumber` | [`NumSearchParam`](NumSearchParam) | `reservationARCBSPNumber` | 
 | `reservationAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorProfileRecNo` | 
 | `reservationProviderProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationProviderProfileRecNo` | 
@@ -162,11 +166,16 @@ Permission Areas: Trip
 | `reservationConfirmedDateTimeTo` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationRecordLocator` | [`StringSearchParam`](StringSearchParam) | `reservationRecordLocator` | 
 | `reservationPromoId` | [`StringSearchParam`](StringSearchParam) | `reservationPromoId` | 
+| `reservationTotalFare` | [`NumSearchParam`](NumSearchParam) | `reservationTotalFare` | 
+| `reservationCommissionAmount` | [`NumSearchParam`](NumSearchParam) | `reservationCommissionAmount` | 
 | `tripActionItemCompleted` | `bool` | `tripActionItemCompleted` | 
 | `tripActionItemDateFrom` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 
+| `tripActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `tripActionItemAssignedToAppUserRecNo` | 
 | `reservationAdvisorReconciliationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorReconciliationRecNo` | 
 | `reservationAdvisorReconciled` | `bool` | `reservationAdvisorReconciliationRecNo` | 
+| `reservationAdvisorReconciliationDateFrom` | `DateSearchParam` | `reservationAdvisorReconciliationDate` | 
+| `reservationAdvisorReconciliationDateTo` | `DateSearchParam` | `reservationAdvisorReconciliationDate` | 
 | `reservationCommissionDatePayableFrom` | `DateSearchParam` | `reservationCommissionDatePayable` | Filter results based on calculated date payable column
 | `reservationCommissionDatePayableTo` | `DateSearchParam` | `reservationCommissionDatePayable` | Filter results based on calculated date payable column
 | `reservationAccountingEntryCreateDateFrom` | `DateSearchParam` | `reservationAccountingEntryCreateDate` | 

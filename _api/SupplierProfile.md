@@ -20,11 +20,11 @@ Permission Areas: SupplierProfile
 | `tripStatementRemarks` | `string` |  |  | `supplierProfile` | 
 | `termsAndConditionsUrl` | `string` | 256 |  | `supplierProfile` | 
 | `commissionRate` | `short` |  |  | `supplierProfile` | 
-| `travelCategoryFlags` | `int` |  |  | `supplierProfile` | 
+| `travelCategoryFlags` | `int` |  |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
 | `profile  [shared]` | table |  | Singleton | `supplierProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  |  | `profile` | 
+| `activeStatus` | `bool` |  | Required | `profile` | 
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -52,6 +52,7 @@ Permission Areas: SupplierProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
@@ -85,6 +86,7 @@ Permission Areas: SupplierProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 

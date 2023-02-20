@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: Destination
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `destination` | 

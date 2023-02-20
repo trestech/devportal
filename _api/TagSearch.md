@@ -17,9 +17,9 @@ Permission Areas: Tag
 | `activeStatus` | `bool` |  | `tag` | 
 | `valueFreeFlow` | `bool` |  | `tag` | 
 | `valueRequired` | `bool` |  | `tag` | 
-| `valueList` | `string` | 2048 | `tag` | 
+| `valueList` | `string` |  | `tag` | 
 | `description` | `string` | 64 | `tag` | 
-| `areaFlags` | `int` |  | `tag` | 
+| `areaFlags` | `int` |  | `tag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

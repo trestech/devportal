@@ -50,6 +50,7 @@ Permission Areas: Person
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
@@ -80,6 +81,7 @@ Permission Areas: Person
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 

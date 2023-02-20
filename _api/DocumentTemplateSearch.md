@@ -8,12 +8,12 @@ description: ""
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `DocumentTemplate` | 
-| `summaryCount` | `int` |  | `DocumentTemplate` | 
-| `name` | `string` | 128 | `DocumentTemplate` | 
-| `description` | `string` | 512 | `DocumentTemplate` | 
-| `appUser_RecNo` | `long` |  | `DocumentTemplate` | 
-| `activeStatus` | `bool` |  | `DocumentTemplate` | 
+| `recNo` | `long` |  | `documentTemplate` | 
+| `summaryCount` | `int` |  | `documentTemplate` | 
+| `name` | `string` | 128 | `documentTemplate` | 
+| `description` | `string` | 512 | `documentTemplate` | 
+| `appUser_RecNo` | `long` |  | `documentTemplate` | 
+| `activeStatus` | `bool` |  | `documentTemplate` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

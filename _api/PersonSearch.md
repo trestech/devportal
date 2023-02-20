@@ -13,6 +13,8 @@ Permission Areas: Person
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `person` | 
+| `tagRecNo` | `long` |  | `person` | 
+| `tagName` | `string` | 64 | `person` | 
 | `tagValue` | `string` | 1024 | `person` | 
 | `summaryCount` | `int` |  | `person` | 
 | `name` | `string` | 256 | `person` | 
@@ -28,8 +30,8 @@ Permission Areas: Person
 | `birthdayYear` | `short` |  | `person` | 
 | `birthdayNote` | `string` | 256 | `person` | 
 | `remarks` | `string` | 256 | `person` | 
-| `createDateTime` | `DateTime` |  | `person` | 
-| `lastModifiedDateTime` | `DateTime` |  | `person` | 
+| `createDateTime` | `DateTimeOffset` |  | `person` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `person` | 
 | `cardType` | `short` |  | `person` | CreditDebit = 1, Loyalty = 2, Passport = 3
 | `cardNumber` | `string` | 64 | `card` | 
 | `cardExpDate` | `Date` |  | `card` | 
@@ -52,7 +54,6 @@ Permission Areas: Person
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `firstName` | [`StringSearchParam`](StringSearchParam) | `firstName` | 
 | `middleName` | [`StringSearchParam`](StringSearchParam) | `middleName` | 

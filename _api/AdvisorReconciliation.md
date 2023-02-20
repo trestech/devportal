@@ -12,7 +12,7 @@ Permission Areas: AdvisorReconciliation
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `advisorReconciliation` | 
 | `reconciliationDate` | `Date` |  |  | `advisorReconciliation` | 
-| `description` | `string` | 64 |  | `advisorReconciliation` | 
+| `description` | `string` | 128 |  | `advisorReconciliation` | 
 | `advisorReconciliationDetail ` | table |  |  | `advisorReconciliation` | 
 | `reservationAdvisor_recNo` | `long` |  | PKey, FKey | `advisorReconciliationDetail` | 
 | `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationDetail` | 

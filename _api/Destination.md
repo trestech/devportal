@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: Destination
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `destination` | 

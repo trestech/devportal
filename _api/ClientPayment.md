@@ -55,6 +55,7 @@ Permission Areas: ClientPayment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 
@@ -63,8 +64,8 @@ Permission Areas: ClientPayment
 | `value` | `string` | 1024 |  | `paymentTag` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `payment` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
@@ -96,3 +97,5 @@ Permission Areas: ClientPayment
 | 204 | No Content |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+

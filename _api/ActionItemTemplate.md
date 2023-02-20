@@ -26,9 +26,11 @@ Permission Areas: ActionItemTemplate
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |

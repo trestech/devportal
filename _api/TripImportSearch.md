@@ -13,7 +13,7 @@ Permission Areas: TripImport
 | `recNo` | `long` |  | `tripImport` | 
 | `summaryCount` | `int` |  | `tripImport` | 
 | `type` | `short` |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4
-| `subType` | `short` |  | `tripImport` | 
+| `subType` | `string` | 8 | `tripImport` | 
 | `source` | `string` | 64 | `tripImport` | 
 | `recordLocator` | `string` | 6 | `tripImport` | 
 | `status` | `short` |  | `tripImport` | Pending = 1, Imported = 2, Error = 3, Warning = 4

@@ -13,6 +13,7 @@ description: ""
 | `createDate` | `Date` |  | `accountingEntry` | 
 | `postDate` | `Date` |  | `accountingEntry` | 
 | `description` | `string` | 512 | `accountingEntry` | 
+| `journalEntry_recNo` | `long` |  | `accountingEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

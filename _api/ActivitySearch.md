@@ -11,6 +11,8 @@ Permission Areas: Activity
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `activity` | 
+| `tagRecNo` | `long` |  | `activity` | 
+| `tagName` | `string` | 64 | `activity` | 
 | `tagValue` | `string` | 1024 | `activity` | 
 | `summaryCount` | `int` |  | `activity` | 
 | `type` | `short` |  | `activity` | Task = 1, Appointment = 2, Note = 3, Promo = 4
@@ -44,7 +46,6 @@ Permission Areas: Activity
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `appUserRecNo` | [`NumSearchParam`](NumSearchParam) | `appUser_recNo` | 
 | `type` | `EnumSearchParam<Type>` | `type` | Task = 1, Appointment = 2, Note = 3, Promo = 4

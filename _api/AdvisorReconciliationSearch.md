@@ -13,7 +13,7 @@ Permission Areas: AdvisorReconciliation
 | `recNo` | `long` |  | `advisorReconciliation` | 
 | `summaryCount` | `int` |  | `advisorReconciliation` | 
 | `reconciliationDate` | `Date` |  | `advisorReconciliation` | 
-| `description` | `string` | 64 | `advisorReconciliation` | 
+| `description` | `string` | 128 | `advisorReconciliation` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

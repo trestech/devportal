@@ -14,6 +14,12 @@ Permission Areas: JournalEntry
 | `summaryCount` | `int` |  | `journalEntry` | 
 | `journalEntryDate` | `Date` |  | `journalEntry` | 
 | `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
+| `clientPaymentRecNo` | `long` |  | `journalEntry` | 
+| `supplierPaymentRecNo` | `long` |  | `journalEntry` | 
+| `otherPaymentRecNo` | `long` |  | `journalEntry` | 
+| `bankTransactionRecNo` | `long` |  | `journalEntry` | 
+| `reervationRecNo` | `long` |  | `journalEntry` | 
+| `tripRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
@@ -44,3 +50,5 @@ Permission Areas: JournalEntry
 | 200 | Ok |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+

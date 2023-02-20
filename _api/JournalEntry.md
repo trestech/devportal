@@ -29,3 +29,5 @@ Permission Areas: JournalEntry
 | 204 | No Content |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+

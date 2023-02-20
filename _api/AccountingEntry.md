@@ -9,8 +9,8 @@ description: ""
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
@@ -42,3 +42,5 @@ description: ""
 | 204 | No Content |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+

@@ -16,7 +16,7 @@ Permission Areas: ClientProfile
 | `type` | `short` |  | Required | `clientProfile` | Personal = 1, Corporate = 2
 | `branch_recNo` | `long` |  | FKey | `clientProfile` | 
 | `branchName` | `string` | 64 | ReadOnly | `clientProfile` | 
-| `referredBy` | `string` | 64 |  | `clientProfile` | 
+| `referredBy` | `string` | 64 | Deprecated | `clientProfile` | ReferredBy is being deprecated; use the default ClientReferredBy tag or other tag instead
 | `advisorProfile_recNo` | `long` |  | FKey | `clientProfile` | 
 | `advisorName` | `string` | 256 | ReadOnly | `clientProfile` | 
 | `anniversaryDay` | `short` |  |  | `clientProfile` | 
@@ -29,7 +29,7 @@ Permission Areas: ClientProfile
 | `profile  [shared]` | table |  | Singleton | `clientProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  |  | `profile` | 
+| `activeStatus` | `bool` |  | Required | `profile` | 
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -57,6 +57,7 @@ Permission Areas: ClientProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
@@ -90,6 +91,7 @@ Permission Areas: ClientProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 

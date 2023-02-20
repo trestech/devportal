@@ -11,6 +11,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `payment` | 
+| `tagRecNo` | `long` |  | `payment` | 
+| `tagName` | `string` | 64 | `payment` | 
 | `tagValue` | `string` | 1024 | `payment` | 
 | `summaryCount` | `int` |  | `payment` | 
 | `profileType` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
@@ -48,7 +50,6 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | `long` | `profileType` | 
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) |  | 

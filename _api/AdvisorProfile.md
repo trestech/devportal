@@ -17,7 +17,7 @@ Permission Areas: AdvisorProfile
 | `profile  [shared]` | table |  | Singleton | `advisorProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  |  | `profile` | 
+| `activeStatus` | `bool` |  | Required | `profile` | 
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -45,6 +45,7 @@ Permission Areas: AdvisorProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
@@ -78,6 +79,7 @@ Permission Areas: AdvisorProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 

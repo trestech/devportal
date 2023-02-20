@@ -28,7 +28,7 @@ Permission Areas: Trip
 | `destinationName_Lookup` | `string` | 64 | ReadOnly | `trip` | 
 | `remarks` | `string` |  |  | `trip` | 
 | `advisorRemarks` | `string` |  |  | `trip` | 
-| `marketingSource` | `string` | 64 |  | `trip` | 
+| `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `trip` | 
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
@@ -74,7 +74,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -196,6 +196,7 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -252,7 +253,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -368,7 +369,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -481,6 +482,7 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 
@@ -497,9 +499,11 @@ Permission Areas: Trip
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 | `tripDocument ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripDocument` | 
@@ -512,16 +516,6 @@ Permission Areas: Trip
 | `waiverUrl` | `string` | 128 |  | `tripDocument` | 
 | `status` | `short` |  | Required | `tripDocument` | Pending = 1, Signed = 2, Expired = 3
 | `statusDateTime` | `DateTimeOffset` |  |  | `tripDocument` | 
-| `attachment_RecNo` | `long` |  | PKey, Auto-Assign | `tripDocument` | 
-| `tripDocumentAttachment  [shared]` | table |  | Singleton | `tripDocument` | 
-| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
-| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
-| `description` | `string` | 256 |  | `attachment` | 
-| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
-| `fileData` | `byte[]` |  |  | `attachment` | 
-| `size` | `int` |  |  | `attachment` | 
-| `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

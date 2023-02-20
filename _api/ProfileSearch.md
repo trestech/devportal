@@ -13,6 +13,8 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `profile` | 
+| `tagRecNo` | `long` |  | `profile` | 
+| `tagName` | `string` | 64 | `profile` | 
 | `tagValue` | `string` | 1024 | `profile` | 
 | `summaryCount` | `int` |  | `profile` | 
 | `name` | `string` | 256 | `profile` | 
@@ -40,7 +42,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `primaryPhone` | `string` | 256 | `profile` | 
 | `primaryPhonePermitMarketing` | `bool` |  | `profile` | 
 | `preferredSupplier` | `bool` |  | `supplierProfile` | 
-| `supplierTravelCategoryFlags` | `bool` |  | `supplierProfile` | 
+| `supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
 | `street1` | `string` | 128 | `address` | 
 | `street2` | `string` | 128 | `address` | 
 | `city` | `string` | 64 | `address` | 
@@ -61,6 +63,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `supplierCommissionRate` | `short` |  | `supplierProfile` | 
 | `clientInformalSalutation` | `string` | 128 | `clientProfile` | 
 | `clientFormalSalutation` | `string` | 128 | `clientProfile` | 
+| `firstId` | `string` | 32 | `profile` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -74,12 +77,14 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | `long` | `profileType` | 
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `commType` | `long` |  | 
 | `commValue` | [`StringSearchParam`](StringSearchParam) |  | 
+| `commValueCountryDomain` | `string` |  | 
+| `commValueCityArea` | `string` |  | 
+| `commValueUserSpecific` | [`StringSearchParam`](StringSearchParam) |  | 
 | `clientAnniversaryMonth` | [`NumSearchParam`](NumSearchParam) | `clientAnniversaryMonth` | 
 | `clientAnniversaryMonthFrom` | `long` |  | 
 | `clientAnniversaryMonthTo` | `long` |  | 
