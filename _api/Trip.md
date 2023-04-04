@@ -64,7 +64,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -120,12 +120,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `railReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -197,6 +191,8 @@ Permission Areas: Trip
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -243,7 +239,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -295,12 +291,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `cruiseSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -359,7 +349,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -411,12 +401,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `tourSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -483,6 +467,8 @@ Permission Areas: Trip
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 

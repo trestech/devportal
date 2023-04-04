@@ -16,7 +16,6 @@ Permission Areas: ClientProfile
 | `type` | `short` |  | Required | `clientProfile` | Personal = 1, Corporate = 2
 | `branch_recNo` | `long` |  | FKey | `clientProfile` | 
 | `branchName` | `string` | 64 | ReadOnly | `clientProfile` | 
-| `referredBy` | `string` | 64 | Deprecated | `clientProfile` | ReferredBy is being deprecated; use the default ClientReferredBy tag or other tag instead
 | `advisorProfile_recNo` | `long` |  | FKey | `clientProfile` | 
 | `advisorName` | `string` | 256 | ReadOnly | `clientProfile` | 
 | `anniversaryDay` | `short` |  |  | `clientProfile` | 
@@ -26,10 +25,11 @@ Permission Areas: ClientProfile
 | `formalSalutation` | `string` | 128 |  | `clientProfile` | 
 | `informalSalutation` | `string` | 128 |  | `clientProfile` | 
 | `travelPolicy` | `string` | 1024 |  | `clientProfile` | 
+| `itinAppToken` | `string` | 1024 |  | `clientProfile` | 
 | `profile  [shared]` | table |  | Singleton | `clientProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  | Required | `profile` | 
+| `activeStatus` | `short` |  | Required | `profile` | Inactive = 0, Active = 1, Pending = 2
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -43,6 +43,9 @@ Permission Areas: ClientProfile
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `department` | `string` | 64 |  | `profilePersonLink` | 
+| `birthdayDay` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayMonth` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayYear` | `short` |  | ReadOnly | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -92,6 +95,8 @@ Permission Areas: ClientProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 

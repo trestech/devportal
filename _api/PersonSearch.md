@@ -37,10 +37,12 @@ Permission Areas: Person
 | `cardExpDate` | `Date` |  | `card` | 
 | `cardDescription` | `string` | 512 | `card` | 
 | `cardRecNo` | `long` |  | `card` | 
+| `nameOnCard` | `string` | 64 | `card` | 
 | `branchRecNo` | `long` |  | `person` | 
 | `branchRecName` | `string` | 64 | `person` | 
 | `advisorProfileRecNo` | `long` |  | `person` | 
 | `advisorProfileName` | `string` | 256 | `person` | 
+| `activeStatus` | `short` |  | `person` | Inactive = 0, Active = 1, Pending = 2
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -80,6 +82,7 @@ Permission Areas: Person
 | `cardExpirationDateFrom` | `DateSearchParam` |  | 
 | `cardExpirationDateTo` | `DateSearchParam` |  | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
+| `activeStatus` | `long` | `activeStatus` | 
 | `personActivitySearchParams` | `ActivitySearchParams` |  | 
 
 | Status code | Description |

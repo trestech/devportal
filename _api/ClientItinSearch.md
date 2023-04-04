@@ -1,26 +1,19 @@
 ---
 layout: api_page
-title: "TagSearch"
+title: "ClientItinSearch"
 description: ""
 ---
 
 
 
-Permission Areas: Tag
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `tag` | 
-| `summaryCount` | `int` |  | `tag` | 
-| `name` | `string` | 64 | `tag` | 
-| `referenced` | `bool` |  | `tag` | 
-| `activeStatus` | `bool` |  | `tag` | 
-| `valueFreeFlow` | `bool` |  | `tag` | 
-| `valueRequired` | `bool` |  | `tag` | 
-| `valueList` | `string` |  | `tag` | 
-| `description` | `string` | 64 | `tag` | 
-| `areaFlags` | `int` |  | `tag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128
-| `requirement` | `short` |  | `tag` | Optional = 1, Recommended = 2, Mandatory = 3
+| `recNo` | `long` |  | `trip` | 
+| `summaryCount` | `int` |  | `trip` | 
+| `name` | `string` | 256 | `trip` | 
+| `startDateTime` | `DateTime` |  | `trip` | 
+| `endDateTime` | `DateTime` |  | `trip` | 
+| `imageUrl` | `string` | 256 | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -34,9 +27,6 @@ Permission Areas: Tag
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `bool` | `activeStatus` | 
-| `areaFlags` | `long` | `areaFlags` | 
 
 | Status code | Description |
 | ----------- | ----------- |

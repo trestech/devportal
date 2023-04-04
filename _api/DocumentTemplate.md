@@ -32,6 +32,8 @@ description: ""
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

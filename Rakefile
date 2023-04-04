@@ -4,7 +4,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rake/testtask'
 require 'json'
 require 'yaml'
-require 'hive'
 require 'open-uri'
 #require 'html-proofer'
 

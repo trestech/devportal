@@ -17,7 +17,7 @@ Permission Areas: AdvisorProfile
 | `profile  [shared]` | table |  | Singleton | `advisorProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  | Required | `profile` | 
+| `activeStatus` | `short` |  | Required | `profile` | Inactive = 0, Active = 1, Pending = 2
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -31,6 +31,9 @@ Permission Areas: AdvisorProfile
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `department` | `string` | 64 |  | `profilePersonLink` | 
+| `birthdayDay` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayMonth` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayYear` | `short` |  | ReadOnly | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -80,6 +83,8 @@ Permission Areas: AdvisorProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
@@ -89,7 +94,7 @@ Permission Areas: AdvisorProfile
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 
 | `advisorProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorCommissionRate` | 
 | `travelCategory_recNo` | `short` |  | PKey | `advisorCommissionRate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
-| `commissionRate` | `short` |  | Required | `advisorCommissionRate` | 
+| `commissionRate` | `short` |  |  | `advisorCommissionRate` | 
 
 | Status code | Description |
 | ----------- | ----------- |

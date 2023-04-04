@@ -36,6 +36,7 @@ Permission Areas: Person
 | `emergencyContactRelationship` | `string` | 64 |  | `person` | 
 | `emergencyContactPhone` | `string` | 64 |  | `person` | 
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
+| `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
@@ -82,6 +83,8 @@ Permission Areas: Person
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 

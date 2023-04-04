@@ -45,6 +45,8 @@ Permission Areas: OtherPayment
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 

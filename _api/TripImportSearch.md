@@ -26,6 +26,7 @@ Permission Areas: TripImport
 | `createDateTime` | `DateTimeOffset` |  | `tripImport` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `tripImport` | 
 | `trip_RecNo` | `long` |  | `tripImport` | 
+| `gdsInvoiceType` | `short` |  | `tripImport` | Unknown = 0, Sale = 1, Refund = 2, ItinOnly = 3, ItinUpdate = 4, BoardingPass = 5, Void = 6
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
