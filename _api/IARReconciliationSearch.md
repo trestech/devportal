@@ -1,26 +1,23 @@
 ---
 layout: api_page
-title: "AdvisorAdjustmentSearch"
+title: "IarReconciliationSearch"
 description: ""
 ---
 
 
 
-Permission Areas: AdvisorAdjustment
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `advisorAdjustment` | 
-| `summaryCount` | `int` |  | `advisorAdjustment` | 
-| `createDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
-| `advisorProfile_recNo` | `long` |  | `advisorAdjustment` | 
-| `advisorProfile_nameLookup` | `string` | 256 | `advisorAdjustment` | 
-| `adjustmentDate` | `Date` |  | `advisorAdjustment` | 
-| `amount` | `long` |  | `advisorAdjustment` | 
-| `description` | `string` | 128 | `advisorAdjustment` | 
-| `reconciliationRecNo` | `long` |  | `advisorAdjustment` | 
-| `reconciliationDate` | `Date` |  | `advisorAdjustment` | 
+| `recNo` | `long` |  | `iarReconciliation` | 
+| `summaryCount` | `int` |  | `iarReconciliation` | 
+| `createDateTime` | `DateTimeOffset` |  | `iarReconciliation` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `iarReconciliation` | 
+| `reservationRecNo` | `long` |  | `iarReconciliation` | 
+| `tripRecNo` | `long` |  | `iarReconciliation` | 
+| `reservationTicketDate` | `Date` |  | `iarReconciliation` | 
+| `reservationTicketNo` | `long` |  | `iarReconciliation` | 
+| `reservationRecordLocator` | `string` | 32 | `iarReconciliation` | 
+| `exception` | `string` | 256 | `iarReconciliation` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -38,11 +35,9 @@ Permission Areas: AdvisorAdjustment
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `tags [inherited]` | `TagsSearchParams[]` |  | 
-| `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfile_recNo` | 
-| `adjustmentDateFrom` | `DateSearchParam` | `adjustmentDate` | 
-| `adjustmentDateTo` | `DateSearchParam` | `adjustmentDate` | 
-| `amount` | [`NumSearchParam`](NumSearchParam) | `amount` | 
+| `iarFileData` | `string` |  | 
+| `ignoreDupeVoids` | `bool` |  | 
+| `ignoreSpoiledVoids` | `bool` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

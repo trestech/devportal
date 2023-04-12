@@ -17,6 +17,8 @@ Permission Areas: AdvisorAdjustment
 | `amount` | `long` |  | Required | `advisorAdjustment` | 
 | `description` | `string` | 128 |  | `advisorAdjustment` | 
 | `remarks` | `string` | 512 |  | `advisorAdjustment` | 
+| `reconciliationRecNo` | `long` |  | ReadOnly | `advisorAdjustment` | 
+| `reconciliationDate` | `Date` |  | ReadOnly | `advisorAdjustment` | 
 | `advisorAdjustmentTag ` | table |  |  | `advisorAdjustment` | 
 | `recNo` | `long` |  | PKey | `advisorAdjustmentTag` | 
 | `advisorAdjustment_recNo` | `long` |  | InsertOnly, FKey | `advisorAdjustmentTag` | 
