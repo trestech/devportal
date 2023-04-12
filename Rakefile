@@ -7,6 +7,21 @@ require 'yaml'
 require 'open-uri'
 #require 'html-proofer'
 
+desc 'Display all known versions of the Tres API'
+task :versions do
+  versions = {
+    api_dev: 'https://api-dev.trestechnologies.com/version',
+    api_dev_staging: 'https://api-dev-staging.trestechnologies.com/version',
+    api: 'https://api.trestechnologies.com/version'
+  }
+  
+  versions.each do |k, v|
+    version = JSON[URI.open(v).read]['version']
+    
+    puts "#{k}: #{version}"
+  end
+end
+
 desc 'Import api markdown.'
 task :import, :folder do |t, args|
   folder = args[:folder] || abort('Folder required.')
