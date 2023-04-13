@@ -29,6 +29,7 @@ description: ""
 | `merchantPassword` | `string` | 256 |  | `agency` | 
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
 | `clientFormToken` | `string` | 1024 |  | `agency` | 
+| `brandingColor` | `int` |  |  | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
 | `affiliation_recNo` | `int` |  | PKey, Required, FKey | `agencyAffiliationLink` | 

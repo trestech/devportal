@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: Bank
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `bank` | 

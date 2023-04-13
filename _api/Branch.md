@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: Branch
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `branch` | 
@@ -22,6 +24,7 @@ description: ""
 | `headerInfo` | `string` | 512 |  | `branch` | 
 | `logoData` | `byte[]` |  |  | `branch` | 
 | `itineraryRemarks` | `string` |  |  | `branch` | 
+| `brandingColor` | `int` |  |  | `branch` | 
 
 | Status code | Description |
 | ----------- | ----------- |

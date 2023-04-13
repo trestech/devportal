@@ -19,7 +19,7 @@ Permission Areas: Tag
 | `valueRequired` | `bool` |  | `tag` | 
 | `valueList` | `string` |  | `tag` | 
 | `description` | `string` | 64 | `tag` | 
-| `areaFlags` | `int` |  | `tag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128
+| `areaFlags` | `int` |  | `tag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128, AdvisorAdjustment = 256
 | `requirement` | `short` |  | `tag` | Optional = 1, Recommended = 2, Mandatory = 3
 
 | Parameter | Type | Linked Column | Description |

@@ -6,6 +6,8 @@ description: ""
 
 
 
+Permission Areas: ARCBSPNo
+
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `ARCBSPNo` | 

@@ -19,6 +19,7 @@ description: ""
 | `country` | `string` | 4 |  | `clientItinAgency` | 
 | `headerInfo` | `string` | 512 |  | `clientItinAgency` | 
 | `logoData` | `byte[]` |  |  | `clientItinAgency` | 
+| `brandingColor` | `int` |  |  | `clientItinAgency` | 
 
 | Status code | Description |
 | ----------- | ----------- |

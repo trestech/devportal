@@ -14,6 +14,8 @@ Permission Areas: AdvisorProfile
 | `type` | `short` |  | Required | `advisorProfile` | Inside = 1, Outside = 2
 | `logoData` | `byte[]` |  |  | `advisorProfile` | 
 | `addressPrintOption` | `short` |  | Required | `advisorProfile` | UseAdvisorAddress = 1, UseBranchAddress = 2, UseAgencyAddress = 3, NoAddress = 4
+| `photoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
+| `brandingColor` | `int` |  |  | `advisorProfile` | 
 | `profile  [shared]` | table |  | Singleton | `advisorProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
@@ -91,6 +93,18 @@ Permission Areas: AdvisorProfile
 | `tag_recNo` | `long` |  | Required, FKey | `profileTag` | 
 | `name` | `string` | 64 | ReadOnly | `profileTag` | 
 | `value` | `string` | 1024 |  | `profileTag` | 
+| `photoAttachment  [shared]` | table |  | Singleton | `advisorProfile` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 
 | `advisorProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorCommissionRate` | 
 | `travelCategory_recNo` | `short` |  | PKey | `advisorCommissionRate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99

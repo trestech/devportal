@@ -46,6 +46,13 @@ description: ""
 | `arrivePortCode` | `string` | 3 |  | `eventCruiseSegment` | 
 | `arrivePortName` | `string` | 64 |  | `eventCruiseSegment` | 
 | `remarks` | `string` | 256 |  | `eventCruiseSegment` | 
+| `attachment ` | table |  |  | `clientItinTrip` | 
+| `recNo` | `long` |  |  | `attachment` | 
+| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  |  | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 |  | `attachment` | 
+| `directUrl` | `string` | 256 |  | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

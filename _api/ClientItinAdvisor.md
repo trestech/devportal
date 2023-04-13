@@ -13,6 +13,9 @@ description: ""
 | `phone` | `string` | 256 |  | `clientItinAdvisor` | 
 | `email` | `string` | 256 |  | `clientItinAdvisor` | 
 | `logoData` | `byte[]` |  |  | `clientItinAdvisor` | 
+| `brandingColor` | `int` |  |  | `clientItinAdvisor` | 
+| `photoDirectUrl` | `string` | 256 |  | `clientItinAdvisor` | 
+| `photoData` | `byte[]` |  |  | `clientItinAdvisor` | 
 | `address  [shared]` | table |  | Singleton | `clientItinAdvisor` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `address` | 
 | `street1` | `string` | 128 |  | `address` | 
