@@ -12,6 +12,9 @@ description: ""
 | `summaryCount` | `int` |  | `iarReconciliation` | 
 | `createDateTime` | `DateTimeOffset` |  | `iarReconciliation` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `iarReconciliation` | 
+| `arcNumber` | `long` |  | `iarReconciliation` | 
+| `fromDate` | `Date` |  | `iarReconciliation` | 
+| `toDate` | `Date` |  | `iarReconciliation` | 
 | `reservationRecNo` | `long` |  | `iarReconciliation` | 
 | `tripRecNo` | `long` |  | `iarReconciliation` | 
 | `reservationTicketDate` | `Date` |  | `iarReconciliation` | 
