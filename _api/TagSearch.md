@@ -12,6 +12,8 @@ Permission Areas: Tag
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `tag` | 
 | `summaryCount` | `int` |  | `tag` | 
+| `createDateTime` | `DateTimeOffset` |  | `tag` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `tag` | 
 | `name` | `string` | 64 | `tag` | 
 | `referenced` | `bool` |  | `tag` | 
 | `activeStatus` | `bool` |  | `tag` | 
@@ -29,6 +31,10 @@ Permission Areas: Tag
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

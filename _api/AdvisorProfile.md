@@ -87,6 +87,7 @@ Permission Areas: AdvisorProfile
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
@@ -105,6 +106,7 @@ Permission Areas: AdvisorProfile
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 
 | `advisorProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorCommissionRate` | 
 | `travelCategory_recNo` | `short` |  | PKey | `advisorCommissionRate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99

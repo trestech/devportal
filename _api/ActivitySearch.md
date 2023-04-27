@@ -15,6 +15,8 @@ Permission Areas: Activity
 | `tagName` | `string` | 64 | `activity` | 
 | `tagValue` | `string` | 1024 | `activity` | 
 | `summaryCount` | `int` |  | `activity` | 
+| `createDateTime` | `DateTimeOffset` |  | `activity` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `activity` | 
 | `type` | `short` |  | `activity` | Task = 1, Appointment = 2, Note = 3, Promo = 4
 | `appUser_recNo` | `long` |  | `activity` | 
 | `appUserId` | `string` | 64 | `activity` | 
@@ -31,7 +33,6 @@ Permission Areas: Activity
 | `personName` | `string` | 256 | `activity` | 
 | `tripRecNo` | `long` |  | `activity` | 
 | `tripName` | `string` | 256 | `activity` | 
-| `createDateTime` | `DateTimeOffset` |  | `activity` | 
 | `remarks` | `string` |  | `activity` | 
 
 | Parameter | Type | Linked Column | Description |
@@ -41,6 +42,10 @@ Permission Areas: Activity
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

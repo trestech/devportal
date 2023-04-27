@@ -47,6 +47,7 @@ Permission Areas: OtherPayment
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 

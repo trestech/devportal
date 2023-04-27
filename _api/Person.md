@@ -85,6 +85,7 @@ Permission Areas: Person
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 

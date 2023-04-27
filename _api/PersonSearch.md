@@ -17,6 +17,8 @@ Permission Areas: Person
 | `tagName` | `string` | 64 | `person` | 
 | `tagValue` | `string` | 1024 | `person` | 
 | `summaryCount` | `int` |  | `person` | 
+| `createDateTime` | `DateTimeOffset` |  | `person` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `person` | 
 | `name` | `string` | 256 | `person` | 
 | `firstName` | `string` | 64 | `person` | 
 | `middleName` | `string` | 64 | `person` | 
@@ -30,8 +32,6 @@ Permission Areas: Person
 | `birthdayYear` | `short` |  | `person` | 
 | `birthdayNote` | `string` | 256 | `person` | 
 | `remarks` | `string` | 256 | `person` | 
-| `createDateTime` | `DateTimeOffset` |  | `person` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `person` | 
 | `cardType` | `short` |  | `person` | CreditDebit = 1, Loyalty = 2, Passport = 3
 | `cardNumber` | `string` | 64 | `card` | 
 | `cardExpDate` | `Date` |  | `card` | 
@@ -51,6 +51,10 @@ Permission Areas: Person
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
@@ -74,10 +78,6 @@ Permission Areas: Person
 | `marketing` | [`MarketingSearchParam[]`](MarketingSearchParam) |  | 
 | `emailPermitMarketing` | `bool` |  | 
 | `phonePermitMarketing` | `bool` |  | 
-| `createDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `createDateTimeTo` | `DateTimeUTCSearchParam` |  | 
-| `modifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `modifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `cardType` | `long` | `cardType` | 
 | `cardExpirationDateFrom` | `DateSearchParam` |  | 
 | `cardExpirationDateTo` | `DateSearchParam` |  | 

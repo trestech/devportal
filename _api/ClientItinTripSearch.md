@@ -10,6 +10,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `trip` | 
 | `summaryCount` | `int` |  | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `name` | `string` | 256 | `trip` | 
 | `startDateTime` | `DateTime` |  | `trip` | 
 | `endDateTime` | `DateTime` |  | `trip` | 
@@ -22,6 +24,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

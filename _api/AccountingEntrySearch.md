@@ -10,6 +10,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `accountingEntry` | 
 | `summaryCount` | `int` |  | `accountingEntry` | 
+| `createDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
 | `createDate` | `Date` |  | `accountingEntry` | 
 | `postDate` | `Date` |  | `accountingEntry` | 
 | `description` | `string` | 512 | `accountingEntry` | 
@@ -22,13 +24,15 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `createDateTimeFrom` | `DateTimeUTCSearchParam` | `createDate` | 
-| `createDateTimeTo` | `DateTimeUTCSearchParam` | `createDate` | 
 | `posted` | `bool` | `postDate` | 
 
 | Status code | Description |

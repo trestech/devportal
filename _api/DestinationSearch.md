@@ -12,6 +12,8 @@ Permission Areas: Destination
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `destination` | 
 | `summaryCount` | `int` |  | `destination` | 
+| `createDateTime` | `DateTimeOffset` |  | `destination` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `destination` | 
 | `name` | `string` | 64 | `destination` | 
 | `country` | `string` | 4 | `destination` | 
 | `regionRecNo` | `long` |  | `destination` | 
@@ -24,6 +26,10 @@ Permission Areas: Destination
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

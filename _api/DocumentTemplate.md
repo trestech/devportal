@@ -34,6 +34,7 @@ description: ""
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 
 | Status code | Description |
 | ----------- | ----------- |

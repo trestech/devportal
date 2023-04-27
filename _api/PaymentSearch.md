@@ -15,6 +15,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `tagName` | `string` | 64 | `payment` | 
 | `tagValue` | `string` | 1024 | `payment` | 
 | `summaryCount` | `int` |  | `payment` | 
+| `createDateTime` | `DateTimeOffset` |  | `payment` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `payment` | 
 | `profileType` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
 | `profileRecNo` | `long` |  | `payment` | 
 | `profileName` | `string` | 256 | `payment` | 
@@ -45,6 +47,10 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

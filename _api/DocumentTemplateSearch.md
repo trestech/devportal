@@ -10,6 +10,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `documentTemplate` | 
 | `summaryCount` | `int` |  | `documentTemplate` | 
+| `createDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
 | `name` | `string` | 128 | `documentTemplate` | 
 | `description` | `string` | 512 | `documentTemplate` | 
 | `appUser_RecNo` | `long` |  | `documentTemplate` | 
@@ -22,6 +24,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

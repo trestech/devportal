@@ -17,6 +17,8 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `tagName` | `string` | 64 | `profile` | 
 | `tagValue` | `string` | 1024 | `profile` | 
 | `summaryCount` | `int` |  | `profile` | 
+| `createDateTime` | `DateTimeOffset` |  | `profile` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `profile` | 
 | `name` | `string` | 256 | `profile` | 
 | `profileType` | `short` |  | `profile` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `clientType` | `short` |  | `clientProfile` | Personal = 1, Corporate = 2
@@ -56,8 +58,6 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `mailingZipPostalCode` | `string` | 16 | `address` | 
 | `mailingCountry` | `string` | 4 | `address` | 
 | `addressPermitMarketing` | `bool` |  | `address` | 
-| `clientCreateDateTime` | `DateTime` |  | `clientProfile` | 
-| `clientLastModifiedDateTime` | `DateTime` |  | `clientProfile` | 
 | `supplierVendorId` | `string` | 10 | `supplierProfile` | 
 | `supplierCommissionRate` | `short` |  | `supplierProfile` | 
 | `clientInformalSalutation` | `string` | 128 | `clientProfile` | 
@@ -74,6 +74,10 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
@@ -111,10 +115,6 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `emailPermitMarketing` | `bool` |  | 
 | `phonePermitMarketing` | `bool` |  | 
 | `addressPermitMarketing` | `bool` | `addressPermitMarketing` | 
-| `clientCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `clientCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
-| `clientModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `clientModifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
 | `supplierTravelCategoryFlags` | `long` | `supplierTravelCategoryFlags` | 
 | `profileCommunicationBillingContact` | `bool` | `profileCommIsBillingContact` | 

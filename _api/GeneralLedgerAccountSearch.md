@@ -12,6 +12,8 @@ Permission Areas: GeneralLedgerAccount
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `generalLedgerAccount` | 
 | `summaryCount` | `int` |  | `generalLedgerAccount` | 
+| `createDateTime` | `DateTimeOffset` |  | `generalLedgerAccount` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `generalLedgerAccount` | 
 | `category` | `short` |  | `generalLedgerAccount` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `name` | `string` | 64 | `generalLedgerAccount` | 
 | `description` | `string` | 128 | `generalLedgerAccount` | 
@@ -24,6 +26,10 @@ Permission Areas: GeneralLedgerAccount
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

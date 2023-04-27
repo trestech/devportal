@@ -86,7 +86,7 @@ Permission Areas: Trip
 | `endInfo` | `string` | 256 |  | `reservation` | 
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
-| `accountingEntry_recNo` | `long` |  | FKey | `reservation` | 
+| `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
 | `paymentCount` | `int` |  | ReadOnly | `reservation` | 
 | `airReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
@@ -155,6 +155,34 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
+| `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
+| `description` | `string` | 512 |  | `accountingEntry` | 
+| `accountingReference` | `string` | 64 |  | `accountingEntry` | 
+| `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
+| `accountingEntryDetail ` | table |  |  | `accountingEntry` | 
+| `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
+| `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
+| `description` | `string` | 512 |  | `accountingEntryDetail` | 
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
+| `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `journalEntry  [shared]` | table |  | Singleton | `accountingEntry` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `journalEntry` | 
+| `remarks` | `string` | 512 |  | `journalEntry` | 
+| `date` | `Date` |  | Required | `journalEntry` | 
+| `journalEntryDetail ` | table |  |  | `journalEntry` | 
+| `recNo` | `long` |  | PKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | Required, FKey | `journalEntryDetail` | 
+| `debitAmount` | `long` |  |  | `journalEntryDetail` | 
+| `creditAmount` | `long` |  |  | `journalEntryDetail` | 
+| `remarks` | `string` | 256 |  | `journalEntryDetail` | 
+| `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
+| `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `reservationTraveler ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationTraveler` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `reservationTraveler` | 
@@ -193,6 +221,7 @@ Permission Areas: Trip
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -457,6 +486,7 @@ Permission Areas: Trip
 | `tripAttachmentLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `tripAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `tripAttachmentLink` | 
 | `tripAttachment  [shared]` | table |  | Singleton | `tripAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -469,6 +499,7 @@ Permission Areas: Trip
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 

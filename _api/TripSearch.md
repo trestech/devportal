@@ -17,6 +17,8 @@ Permission Areas: Trip
 | `tagName` | `string` | 64 | `trip` | 
 | `tagValue` | `string` | 1024 | `trip` | 
 | `summaryCount` | `int` |  | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `name` | `string` | 256 | `trip` | 
 | `startDateTime` | `DateTime` |  | `trip` | 
 | `endDateTime` | `DateTime` |  | `trip` | 
@@ -36,8 +38,6 @@ Permission Areas: Trip
 | `branchRecNo` | `long` |  | `trip` | 
 | `branchName` | `string` | 64 | `trip` | 
 | `tripRecordLocator` | `string` | 32 | `trip` | 
-| `createDateTime` | `DateTimeOffset` |  | `trip` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
 | `reservationTagRecNo` | `long` |  | `reservation` | 
 | `reservationTagName` | `string` | 64 | `reservation` | 
@@ -81,6 +81,8 @@ Permission Areas: Trip
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
 | `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
+| `reservationCreateDateTime` | `DateTimeOffset` |  | `trip` | 
+| `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
@@ -111,6 +113,10 @@ Permission Areas: Trip
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
@@ -130,10 +136,10 @@ Permission Areas: Trip
 | `destinationRecNo` | [`NumSearchParam`](NumSearchParam) | `destinationRecNo` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branchRecNo` | 
 | `tripRecordLocator` | [`StringSearchParam`](StringSearchParam) | `tripRecordLocator` | 
-| `tripCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `tripCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
-| `tripModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `tripModifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
+| `reservationCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
+| `reservationCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
+| `reservationModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
+| `reservationModifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `reservationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationRecNo` | 
 | `reservationBookDateTimeFrom` | `DateSearchParam` | `reservationBookDateTime` | 
 | `reservationBookDateTimeTo` | `DateSearchParam` | `reservationBookDateTime` | 

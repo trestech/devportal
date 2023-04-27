@@ -12,6 +12,8 @@ Permission Areas: JournalEntry
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `journalEntry` | 
 | `summaryCount` | `int` |  | `journalEntry` | 
+| `createDateTime` | `DateTimeOffset` |  | `journalEntry` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `journalEntry` | 
 | `journalEntryDate` | `Date` |  | `journalEntry` | 
 | `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
 | `clientPaymentRecNo` | `long` |  | `journalEntry` | 
@@ -34,6 +36,10 @@ Permission Areas: JournalEntry
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

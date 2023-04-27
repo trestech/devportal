@@ -12,6 +12,8 @@ Permission Areas: AdvisorAdjustment
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `advisorAdjustment` | 
 | `summaryCount` | `int` |  | `advisorAdjustment` | 
+| `createDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
 | `advisorProfile_recNo` | `long` |  | `advisorAdjustment` | 
 | `advisorProfile_nameLookup` | `string` | 256 | `advisorAdjustment` | 
 | `adjustmentDate` | `Date` |  | `advisorAdjustment` | 
@@ -27,14 +29,16 @@ Permission Areas: AdvisorAdjustment
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
-| `createDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `createDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfile_recNo` | 
 | `adjustmentDateFrom` | `DateSearchParam` | `adjustmentDate` | 
 | `adjustmentDateTo` | `DateSearchParam` | `adjustmentDate` | 

@@ -38,7 +38,7 @@ description: ""
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `iarFileData` | `string` |  | 
+| `iarFileData` | `byte[]` |  | 
 | `ignoreDupeVoids` | `bool` |  | 
 | `ignoreSpoiledVoids` | `bool` |  | 
 

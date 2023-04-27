@@ -12,6 +12,8 @@ Permission Areas: AdvisorReconciliation
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `advisorReconciliation` | 
 | `summaryCount` | `int` |  | `advisorReconciliation` | 
+| `createDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
 | `reconciliationDate` | `Date` |  | `advisorReconciliation` | 
 | `description` | `string` | 128 | `advisorReconciliation` | 
 
@@ -22,13 +24,15 @@ Permission Areas: AdvisorReconciliation
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `createDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `createDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

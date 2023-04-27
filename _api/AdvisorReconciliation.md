@@ -16,6 +16,9 @@ Permission Areas: AdvisorReconciliation
 | `advisorReconciliationDetail ` | table |  |  | `advisorReconciliation` | 
 | `reservationAdvisor_recNo` | `long` |  | PKey, FKey | `advisorReconciliationDetail` | 
 | `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationDetail` | 
+| `advisorReconciliationAdjustment ` | table |  |  | `advisorReconciliation` | 
+| `advisorAdjustment_recNo` | `long` |  | PKey, FKey | `advisorReconciliationAdjustment` | 
+| `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationAdjustment` | 
 
 | Status code | Description |
 | ----------- | ----------- |
