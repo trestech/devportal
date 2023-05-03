@@ -27,6 +27,14 @@ task :import, :folder do |t, args|
   folder = args[:folder] || abort('Folder required.')
   dir = Dir.entries(folder)
   
+  csproj = if folder.end_with?("Generated/")
+    File.new("#{folder}../../../TresTechnologies.App.Server.Http.csproj", 'r').read
+  else
+    File.new("#{folder}../../TresTechnologies.App.Server.Http.csproj", 'r').read
+  end
+  
+  assembly_version = csproj.scan(/<AssemblyVersion>(.*)<\/AssemblyVersion>/).flatten[0]
+  
   dir.each do |f|
     next unless f.end_with? '.md'
     next if f =~ /0.9.5 changes.md/
@@ -81,6 +89,7 @@ task :import, :folder do |t, args|
         layout: api_page
         title: "#{title}"
         description: "#{description}"
+        assembly_version: "#{assembly_version}"
         ---
         #{body}
       DONE

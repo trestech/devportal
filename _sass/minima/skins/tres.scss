@@ -142,6 +142,11 @@ $table-border-color:    $sol-mono1 !default;
   .il    { color: $sol-cyan } // Literal.Number.Integer.Long
 }
 
+.assembly-version {
+  font-size: smaller;
+  float: right!important;
+}
+
 .nav-back {
   font-size: smaller;
   float: right!important;

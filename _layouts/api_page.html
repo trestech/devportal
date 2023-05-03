@@ -12,6 +12,8 @@ layout: default
     {{ content }}
   </div>
 
+  <div class="assembly-version">AssemblyVersion: {{ page.assembly_version }}</div>
+  
   <p>
     <a href="{{ 'search?q=' | append: page.title | relative_url }}">References to {{ page.title }}</a>
   </p>
