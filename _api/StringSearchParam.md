@@ -2,6 +2,7 @@
 layout: api_page
 title: "StringSearchParam"
 description: "Parameter represents the value of the corresponding string parameter; value represents the underlying string value in the database"
+assembly_version: "1.0.13.6"
 ---
 
 

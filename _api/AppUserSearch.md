@@ -2,6 +2,7 @@
 layout: api_page
 title: "AppUserSearch"
 description: ""
+assembly_version: "1.0.13.6"
 ---
 
 

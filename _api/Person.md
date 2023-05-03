@@ -2,6 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
+assembly_version: "1.0.13.6"
 ---
 
 Person provides methods to load and save person (traveler) data.

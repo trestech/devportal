@@ -2,6 +2,7 @@
 layout: api_page
 title: "SupplierProfile"
 description: ""
+assembly_version: "1.0.13.6"
 ---
 
 
