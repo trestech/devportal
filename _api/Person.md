@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.13.6"
+assembly_version: "1.0.14.11"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -93,6 +93,22 @@ Permission Areas: Person
 | `tag_recNo` | `long` |  | Required, FKey | `personTag` | 
 | `name` | `string` | 64 | ReadOnly | `personTag` | 
 | `value` | `string` | 1024 |  | `personTag` | 
+| `personActionItemLink ` | table |  |  | `person` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personActionItemLink` | 
+| `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `personActionItemLink` | 
+| `personActionItem ` | table |  | Singleton | `personActionItemLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `description` | `string` | 256 |  | `actionItem` | 
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerDaysOffset` | `short` |  |  | `actionItem` | 
+| `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completed` | `DateTimeOffset` |  |  | `actionItem` | 
+| `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |

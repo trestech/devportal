@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustmentSearch"
 description: ""
-assembly_version: "1.0.13.6"
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -44,6 +44,9 @@ Permission Areas: AdvisorAdjustment
 | `adjustmentDateFrom` | `DateSearchParam` | `adjustmentDate` | 
 | `adjustmentDateTo` | `DateSearchParam` | `adjustmentDate` | 
 | `amount` | [`NumSearchParam`](NumSearchParam) | `amount` | 
+| `reconciliationDateFrom` | `DateSearchParam` | `reconciliationDate` | 
+| `reconciliationDateTo` | `DateSearchParam` | `reconciliationDate` | 
+| `ReconciliationRecNo` | [`NumSearchParam`](NumSearchParam) | `reconciliationRecNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.13.6"
+assembly_version: "1.0.14.11"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -82,8 +82,8 @@ Permission Areas: Trip
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
 | `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
-| `reservationCreateDateTime` | `DateTimeOffset` |  | `trip` | 
-| `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
+| `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 

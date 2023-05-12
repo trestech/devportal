@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.13.6"
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -53,7 +53,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -191,6 +191,9 @@ Permission Areas: Trip
 | `isPrimary` | `bool` |  |  | `reservationTraveler` | 
 | `primaryPhone` | `string` | 256 | ReadOnly | `reservationTraveler` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `reservationTraveler` | 
+| `birthdayDay` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `birthdayMonth` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `birthdayYear` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `reservationAdvisor ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationAdvisor` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAdvisor` | 
@@ -257,7 +260,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -367,7 +370,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -512,7 +515,7 @@ Permission Areas: Trip
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `tripActionItemLink` | 
 | `tripActionItem ` | table |  | Singleton | `tripActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required | `actionItem` | Trip = 1, TripTemplate = 2
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 

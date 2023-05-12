@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.13.6"
+assembly_version: "1.0.14.11"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -109,6 +109,22 @@ Permission Areas: ClientProfile
 | `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileMarketing` | 
 | `affiliation_recNo` | `int` |  | Required, FKey | `clientProfileMarketing` | 
 | `marketingElement_recNo` | `long` |  | PKey, Required, FKey | `clientProfileMarketing` | 
+| `clientProfileActionItemLink ` | table |  |  | `clientProfile` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileActionItemLink` | 
+| `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `clientProfileActionItemLink` | 
+| `clientProfileActionItem ` | table |  | Singleton | `clientProfileActionItemLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `description` | `string` | 256 |  | `actionItem` | 
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerDaysOffset` | `short` |  |  | `actionItem` | 
+| `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completed` | `DateTimeOffset` |  |  | `actionItem` | 
+| `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |
