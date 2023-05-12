@@ -2,6 +2,7 @@
 layout: api_page
 title: "AppUserSearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -10,6 +11,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `appUser` | 
 | `summaryCount` | `int` |  | `appUser` | 
+| `createDateTime` | `DateTimeOffset` |  | `appUser` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `appUser` | 
 | `id` | `string` | 64 | `appUser` | 
 | `userType` | `short` |  | `appUser` | User = 1, Manager = 2, Admin = 3
 | `branch_recNo` | `long` |  | `appUser` | 
@@ -27,6 +30,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

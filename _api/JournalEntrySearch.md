@@ -2,6 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -12,8 +13,16 @@ Permission Areas: JournalEntry
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `journalEntry` | 
 | `summaryCount` | `int` |  | `journalEntry` | 
+| `createDateTime` | `DateTimeOffset` |  | `journalEntry` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `journalEntry` | 
 | `journalEntryDate` | `Date` |  | `journalEntry` | 
 | `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
+| `clientPaymentRecNo` | `long` |  | `journalEntry` | 
+| `supplierPaymentRecNo` | `long` |  | `journalEntry` | 
+| `otherPaymentRecNo` | `long` |  | `journalEntry` | 
+| `bankTransactionRecNo` | `long` |  | `journalEntry` | 
+| `reervationRecNo` | `long` |  | `journalEntry` | 
+| `tripRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
@@ -21,24 +30,32 @@ Permission Areas: JournalEntry
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailAmount` | `long` |  | `journalEntry` | 
 
-| Parameter | Type | Linked Column | Linked Parameter | Description |
-| --------- | ---- | ------------- | ---------------- | ----------- |
-| recNo [inherited] | long |  |  | 
-| recNoList [inherited] | long[] |  |  | 
-| startingRow [inherited] | int |  |  | 
-| rowCount [inherited] | int |  |  | 
-| topRows [inherited] | int |  |  | 
-| distinct [inherited] | bool |  |  | 
-| includeCols [inherited] | string[] |  |  | 
-| includeColsExtended [inherited] | includeColsExtended[] |  |  | 
-| baseUrl [inherited] | string |  |  | 
-| dateFrom | Date | journalEntryDate |  | 
-| dateTo | Date | journalEntryDate |  | 
-| remarks | string | journalEntryRemarks |  | 
-| generalLedgerAccountRecNo | long | generalLedgerAccountRecNo |  | 
+| Parameter | Type | Linked Column | Description |
+| --------- | ---- | ------------- | ----------- |
+| `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `startingRow [inherited]` | `long` |  | 
+| `rowCount [inherited]` | `long` |  | 
+| `topRows [inherited]` | `long` |  | 
+| `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `includeCols [inherited]` | `string[]` |  | 
+| `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
+| `baseUrl [inherited]` | `string` |  | 
+| `reportFormat [inherited]` | `bool` |  | 
+| `reportName [inherited]` | `string` |  | 
+| `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
+| `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
+| `journalEntryRemarks` | [`StringSearchParam`](StringSearchParam) | `journalEntryRemarks` | 
+| `generalLedgerAccountRecNo` | [`NumSearchParam`](NumSearchParam) | `generalLedgerAccountRecNo` | 
+| `generalLedgerAccountCategory` | `EnumSearchParam<Category>` | `generalLedgerAccountCategory` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 
 | Status code | Description |
 | ----------- | ----------- |
 | 200 | Ok |
 | 401 | Unauthorized |
 | 403 | Forbidden |
+
+

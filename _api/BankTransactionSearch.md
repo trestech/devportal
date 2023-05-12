@@ -2,6 +2,7 @@
 layout: api_page
 title: "BankTransactionSearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -12,6 +13,8 @@ Permission Areas: BankTransaction
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `bankTransaction` | 
 | `summaryCount` | `int` |  | `bankTransaction` | 
+| `createDateTime` | `DateTimeOffset` |  | `bankTransaction` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `bankTransaction` | 
 | `transactionDate` | `Date` |  | `bankTransaction` | 
 | `amount` | `long` |  | `bankTransaction` | 
 | `bankRecNo` | `long` |  | `bankTransaction` | 
@@ -28,6 +31,10 @@ Permission Areas: BankTransaction
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

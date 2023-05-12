@@ -1,13 +1,11 @@
 ---
 layout: api_page
-title: "Branch"
+title: "ClientItinBranch"
 description: ""
 assembly_version: "1.0.14.11"
 ---
 
 
-
-Permission Areas: Branch
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

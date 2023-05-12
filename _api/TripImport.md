@@ -2,6 +2,7 @@
 layout: api_page
 title: "TripImport"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -24,6 +25,7 @@ Permission Areas: TripImport
 | `branch_name` | `string` | 64 | ReadOnly | `tripImport` | 
 | `tripReference` | `string` | 64 |  | `tripImport` | 
 | `trip_RecNo` | `long` |  | FKey | `tripImport` | 
+| `gdsInvoiceType` | `short` |  |  | `tripImport` | Unknown = 0, Sale = 1, Refund = 2, ItinOnly = 3, ItinUpdate = 4, BoardingPass = 5, Void = 6
 
 | Status code | Description |
 | ----------- | ----------- |

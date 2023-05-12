@@ -4,14 +4,36 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rake/testtask'
 require 'json'
 require 'yaml'
-require 'hive'
 require 'open-uri'
 #require 'html-proofer'
+
+desc 'Display all known versions of the Tres API'
+task :versions do
+  versions = {
+    api_dev: 'https://api-dev.trestechnologies.com/version',
+    api_dev_staging: 'https://api-dev-staging.trestechnologies.com/version',
+    api: 'https://api.trestechnologies.com/version'
+  }
+  
+  versions.each do |k, v|
+    version = JSON[URI.open(v).read]['version']
+    
+    puts "#{k}: #{version}"
+  end
+end
 
 desc 'Import api markdown.'
 task :import, :folder do |t, args|
   folder = args[:folder] || abort('Folder required.')
   dir = Dir.entries(folder)
+  
+  csproj = if folder.end_with?("Generated/")
+    File.new("#{folder}../../../TresTechnologies.App.Server.Http.csproj", 'r').read
+  else
+    File.new("#{folder}../../TresTechnologies.App.Server.Http.csproj", 'r').read
+  end
+  
+  assembly_version = csproj.scan(/<AssemblyVersion>(.*)<\/AssemblyVersion>/).flatten[0]
   
   dir.each do |f|
     next unless f.end_with? '.md'
@@ -67,6 +89,7 @@ task :import, :folder do |t, args|
         layout: api_page
         title: "#{title}"
         description: "#{description}"
+        assembly_version: "#{assembly_version}"
         ---
         #{body}
       DONE

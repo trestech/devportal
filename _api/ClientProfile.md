@@ -2,6 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
+assembly_version: "1.0.14.11"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -16,7 +17,6 @@ Permission Areas: ClientProfile
 | `type` | `short` |  | Required | `clientProfile` | Personal = 1, Corporate = 2
 | `branch_recNo` | `long` |  | FKey | `clientProfile` | 
 | `branchName` | `string` | 64 | ReadOnly | `clientProfile` | 
-| `referredBy` | `string` | 64 |  | `clientProfile` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `clientProfile` | 
 | `advisorName` | `string` | 256 | ReadOnly | `clientProfile` | 
 | `anniversaryDay` | `short` |  |  | `clientProfile` | 
@@ -26,10 +26,11 @@ Permission Areas: ClientProfile
 | `formalSalutation` | `string` | 128 |  | `clientProfile` | 
 | `informalSalutation` | `string` | 128 |  | `clientProfile` | 
 | `travelPolicy` | `string` | 1024 |  | `clientProfile` | 
+| `itinAppToken` | `string` | 1024 |  | `clientProfile` | 
 | `profile  [shared]` | table |  | Singleton | `clientProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
-| `activeStatus` | `bool` |  |  | `profile` | 
+| `activeStatus` | `short` |  | Required | `profile` | Inactive = 0, Active = 1, Pending = 2
 | `uniqueId` | `string` | 64 | InsertOnly | `profile` | 
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
@@ -43,6 +44,9 @@ Permission Areas: ClientProfile
 | `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
 | `department` | `string` | 64 |  | `profilePersonLink` | 
+| `birthdayDay` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayMonth` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayYear` | `short` |  | ReadOnly | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -57,6 +61,7 @@ Permission Areas: ClientProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
@@ -90,6 +95,10 @@ Permission Areas: ClientProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
@@ -100,6 +109,22 @@ Permission Areas: ClientProfile
 | `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileMarketing` | 
 | `affiliation_recNo` | `int` |  | Required, FKey | `clientProfileMarketing` | 
 | `marketingElement_recNo` | `long` |  | PKey, Required, FKey | `clientProfileMarketing` | 
+| `clientProfileActionItemLink ` | table |  |  | `clientProfile` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileActionItemLink` | 
+| `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `clientProfileActionItemLink` | 
+| `clientProfileActionItem ` | table |  | Singleton | `clientProfileActionItemLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `description` | `string` | 256 |  | `actionItem` | 
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerDaysOffset` | `short` |  |  | `actionItem` | 
+| `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completed` | `DateTimeOffset` |  |  | `actionItem` | 
+| `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,9 +2,12 @@
 layout: api_page
 title: "Bank"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
+
+Permission Areas: Bank
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

@@ -2,14 +2,19 @@
 layout: api_page
 title: "DestinationSearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
+
+Permission Areas: Destination
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `destination` | 
 | `summaryCount` | `int` |  | `destination` | 
+| `createDateTime` | `DateTimeOffset` |  | `destination` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `destination` | 
 | `name` | `string` | 64 | `destination` | 
 | `country` | `string` | 4 | `destination` | 
 | `regionRecNo` | `long` |  | `destination` | 
@@ -22,6 +27,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

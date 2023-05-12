@@ -2,6 +2,7 @@
 layout: api_page
 title: "BankTransaction"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -24,8 +25,8 @@ Permission Areas: BankTransaction
 | `payment_recNo` | `long` |  | PKey, Required, FKey | `bankTransactionDetail` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `bankTransaction` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 

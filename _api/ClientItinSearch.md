@@ -1,22 +1,20 @@
 ---
 layout: api_page
-title: "AdvisorReconciliationSearch"
+title: "ClientItinSearch"
 description: ""
 assembly_version: "1.0.14.11"
 ---
 
 
 
-Permission Areas: AdvisorReconciliation
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `advisorReconciliation` | 
-| `summaryCount` | `int` |  | `advisorReconciliation` | 
-| `createDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `reconciliationDate` | `Date` |  | `advisorReconciliation` | 
-| `description` | `string` | 128 | `advisorReconciliation` | 
+| `recNo` | `long` |  | `trip` | 
+| `summaryCount` | `int` |  | `trip` | 
+| `name` | `string` | 256 | `trip` | 
+| `startDateTime` | `DateTime` |  | `trip` | 
+| `endDateTime` | `DateTime` |  | `trip` | 
+| `imageUrl` | `string` | 256 | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -25,10 +23,6 @@ Permission Areas: AdvisorReconciliation
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
-| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
-| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
-| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
-| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

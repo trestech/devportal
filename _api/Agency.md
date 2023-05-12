@@ -2,6 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -28,8 +29,8 @@ description: ""
 | `merchantUserName` | `string` | 64 |  | `agency` | 
 | `merchantPassword` | `string` | 256 |  | `agency` | 
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
-| `smartwaiverUserName` | `string` | 64 |  | `agency` | 
-| `smartwaiverPassword` | `string` | 256 |  | `agency` | 
+| `clientFormToken` | `string` | 1024 |  | `agency` | 
+| `brandingColor` | `int` |  |  | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
 | `affiliation_recNo` | `int` |  | PKey, Required, FKey | `agencyAffiliationLink` | 
@@ -37,7 +38,7 @@ description: ""
 | `id` | `string` | 32 |  | `agencyAffiliationLink` | 
 | `agencyAdvisorReconciliation ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAdvisorReconciliation` | 
-| `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `agencyAdvisorReconciliation` | 
+| `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `agencyAdvisorReconciliation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `paymentTrigger` | `short` |  | Required | `agencyAdvisorReconciliation` | AgencyPaidAndDeparted = 1, AgencyPaid = 2
 | `accountingReference ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `accountingReference` | 
@@ -46,12 +47,13 @@ description: ""
 | `accountingReferenceTravelCategory ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `accountingReferenceTravelCategory` | 
 | `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
-| `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `accountingReferenceTravelCategory` | 
+| `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `accountingReferenceTravelCategory` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 
-| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3
+| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6
 | `enabled` | `bool` |  | Required | `appFeature` | 
+| `flags` | `short` |  | Required | `appFeature` | 
 
 | Status code | Description |
 | ----------- | ----------- |

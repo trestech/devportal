@@ -2,6 +2,7 @@
 layout: api_page
 title: "AppSettingSearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -10,6 +11,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `appSetting` | 
 | `summaryCount` | `int` |  | `appSetting` | 
+| `createDateTime` | `DateTimeOffset` |  | `appSetting` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `appSetting` | 
 | `appUser_recNo` | `long` |  | `appSetting` | 
 | `area` | `string` | 64 | `appSetting` | 
 | `name` | `string` | 64 | `appSetting` | 
@@ -24,6 +27,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

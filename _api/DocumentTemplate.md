@@ -2,24 +2,25 @@
 layout: api_page
 title: "DocumentTemplate"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| `recNo` | `long` |  | PKey | `DocumentTemplate` | 
-| `name` | `string` | 128 |  | `DocumentTemplate` | 
-| `description` | `string` | 512 |  | `DocumentTemplate` | 
-| `emailSubject` | `string` | 128 |  | `DocumentTemplate` | 
-| `emailBody` | `string` |  |  | `DocumentTemplate` | 
-| `branch_recNo` | `long` |  | FKey | `DocumentTemplate` | 
-| `branchName_lookup` | `string` | 64 | ReadOnly | `DocumentTemplate` | 
-| `appUser_RecNo` | `long` |  | FKey | `DocumentTemplate` | 
-| `activeStatus` | `bool` |  |  | `DocumentTemplate` | 
-| `documentType` | `short` |  | Required | `DocumentTemplate` | Email = 1, ESign = 2
-| `waiverTemplateId` | `string` | 32 |  | `DocumentTemplate` | 
-| `documentTemplateAttachmentLink ` | table |  |  | `DocumentTemplate` | 
+| `recNo` | `long` |  | PKey | `documentTemplate` | 
+| `name` | `string` | 128 |  | `documentTemplate` | 
+| `description` | `string` | 512 |  | `documentTemplate` | 
+| `emailSubject` | `string` | 128 |  | `documentTemplate` | 
+| `emailBody` | `string` |  |  | `documentTemplate` | 
+| `branch_recNo` | `long` |  | FKey | `documentTemplate` | 
+| `branchName_lookup` | `string` | 64 | ReadOnly | `documentTemplate` | 
+| `appUser_RecNo` | `long` |  | FKey | `documentTemplate` | 
+| `activeStatus` | `bool` |  |  | `documentTemplate` | 
+| `documentType` | `short` |  | Required | `documentTemplate` | Email = 1, ESign = 2
+| `waiverTemplateId` | `string` | 32 |  | `documentTemplate` | 
+| `documentTemplateAttachmentLink ` | table |  |  | `documentTemplate` | 
 | `documentTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `documentTemplateAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `documentTemplateAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `documentTemplateAttachmentLink` | 
@@ -31,6 +32,10 @@ description: ""
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 
 | Status code | Description |
 | ----------- | ----------- |

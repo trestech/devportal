@@ -2,6 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -10,6 +11,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `history` | 
 | `summaryCount` | `int` |  | `history` | 
+| `createDateTime` | `DateTimeOffset` |  | `history` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `history` | 
 | `timestamp` | `DateTimeOffset` |  | `history` | 
 | `appUser_recNo` | `long` |  | `history` | 
 | `appUser_id` | `string` | 64 | `history` | 
@@ -29,6 +32,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

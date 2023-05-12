@@ -2,6 +2,7 @@
 layout: api_page
 title: "AccountingEntrySearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -10,9 +11,12 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `accountingEntry` | 
 | `summaryCount` | `int` |  | `accountingEntry` | 
+| `createDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
 | `createDate` | `Date` |  | `accountingEntry` | 
 | `postDate` | `Date` |  | `accountingEntry` | 
 | `description` | `string` | 512 | `accountingEntry` | 
+| `journalEntry_recNo` | `long` |  | `accountingEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -21,13 +25,15 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `createDateTimeFrom` | `DateTimeUTCSearchParam` | `createDate` | 
-| `createDateTimeTo` | `DateTimeUTCSearchParam` | `createDate` | 
 | `posted` | `bool` | `postDate` | 
 
 | Status code | Description |

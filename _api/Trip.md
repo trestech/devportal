@@ -2,6 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -28,7 +29,7 @@ Permission Areas: Trip
 | `destinationName_Lookup` | `string` | 64 | ReadOnly | `trip` | 
 | `remarks` | `string` |  |  | `trip` | 
 | `advisorRemarks` | `string` |  |  | `trip` | 
-| `marketingSource` | `string` | 64 |  | `trip` | 
+| `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `trip` | 
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
@@ -52,7 +53,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -64,7 +65,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -74,7 +75,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -86,7 +87,7 @@ Permission Areas: Trip
 | `endInfo` | `string` | 256 |  | `reservation` | 
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
-| `accountingEntry_recNo` | `long` |  | FKey | `reservation` | 
+| `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
 | `paymentCount` | `int` |  | ReadOnly | `reservation` | 
 | `airReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
@@ -120,12 +121,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `railReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -161,6 +156,34 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
+| `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
+| `description` | `string` | 512 |  | `accountingEntry` | 
+| `accountingReference` | `string` | 64 |  | `accountingEntry` | 
+| `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
+| `accountingEntryDetail ` | table |  |  | `accountingEntry` | 
+| `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
+| `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
+| `description` | `string` | 512 |  | `accountingEntryDetail` | 
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
+| `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
+| `journalEntry  [shared]` | table |  | Singleton | `accountingEntry` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `journalEntry` | 
+| `remarks` | `string` | 512 |  | `journalEntry` | 
+| `date` | `Date` |  | Required | `journalEntry` | 
+| `journalEntryDetail ` | table |  |  | `journalEntry` | 
+| `recNo` | `long` |  | PKey | `journalEntryDetail` | 
+| `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
+| `generalLedgerAccount_recNo` | `long` |  | Required, FKey | `journalEntryDetail` | 
+| `debitAmount` | `long` |  |  | `journalEntryDetail` | 
+| `creditAmount` | `long` |  |  | `journalEntryDetail` | 
+| `remarks` | `string` | 256 |  | `journalEntryDetail` | 
+| `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
+| `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `reservationTraveler ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationTraveler` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `reservationTraveler` | 
@@ -168,6 +191,9 @@ Permission Areas: Trip
 | `isPrimary` | `bool` |  |  | `reservationTraveler` | 
 | `primaryPhone` | `string` | 256 | ReadOnly | `reservationTraveler` | 
 | `primaryEmail` | `string` | 256 | ReadOnly | `reservationTraveler` | 
+| `birthdayDay` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `birthdayMonth` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `birthdayYear` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `reservationAdvisor ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationAdvisor` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAdvisor` | 
@@ -196,6 +222,10 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -230,7 +260,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -242,7 +272,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -252,7 +282,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -294,12 +324,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `cruiseSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -346,7 +370,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | 
+| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -358,7 +382,7 @@ Permission Areas: Trip
 | `ticketNo` | `long` |  |  | `reservation` | 
 | `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
-| `bookDateTime` | `DateTimeOffset` |  |  | `reservation` | 
+| `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
@@ -368,7 +392,7 @@ Permission Areas: Trip
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
-| `travelerName` | `string` | 256 |  | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
 | `itineraryRemarks` | `string` |  |  | `reservation` | 
 | `supplierRemarks` | `string` |  |  | `reservation` | 
@@ -410,12 +434,6 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `departStationCode` | `string` | 3 |  | `railReservation` | 
-| `departStationName` | `string` | 64 |  | `railReservation` | 
-| `arriveStationCode` | `string` | 3 |  | `railReservation` | 
-| `arriveStationName` | `string` | 64 |  | `railReservation` | 
-| `trainNo` | `short` |  |  | `railReservation` | 
-| `classOfService` | `string` | 2 |  | `railReservation` | 
 | `railSegment ` | table |  |  | `tourSubRailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
@@ -472,6 +490,7 @@ Permission Areas: Trip
 | `tripAttachmentLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `tripAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `tripAttachmentLink` | 
 | `tripAttachment  [shared]` | table |  | Singleton | `tripAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -481,6 +500,10 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 
@@ -492,14 +515,16 @@ Permission Areas: Trip
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `tripActionItemLink` | 
 | `tripActionItem ` | table |  | Singleton | `tripActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required | `actionItem` | Trip = 1, TripTemplate = 2
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 | `tripDocument ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripDocument` | 
@@ -512,16 +537,6 @@ Permission Areas: Trip
 | `waiverUrl` | `string` | 128 |  | `tripDocument` | 
 | `status` | `short` |  | Required | `tripDocument` | Pending = 1, Signed = 2, Expired = 3
 | `statusDateTime` | `DateTimeOffset` |  |  | `tripDocument` | 
-| `attachment_RecNo` | `long` |  | PKey, Auto-Assign | `tripDocument` | 
-| `tripDocumentAttachment  [shared]` | table |  | Singleton | `tripDocument` | 
-| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
-| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
-| `description` | `string` | 256 |  | `attachment` | 
-| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
-| `fileData` | `byte[]` |  |  | `attachment` | 
-| `size` | `int` |  |  | `attachment` | 
-| `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

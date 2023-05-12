@@ -2,6 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
+assembly_version: "1.0.14.11"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -36,6 +37,7 @@ Permission Areas: Person
 | `emergencyContactRelationship` | `string` | 64 |  | `person` | 
 | `emergencyContactPhone` | `string` | 64 |  | `person` | 
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
+| `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
@@ -50,6 +52,7 @@ Permission Areas: Person
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  |  | `communication` | 
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
@@ -80,12 +83,32 @@ Permission Areas: Person
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 
 | `tag_recNo` | `long` |  | Required, FKey | `personTag` | 
 | `name` | `string` | 64 | ReadOnly | `personTag` | 
 | `value` | `string` | 1024 |  | `personTag` | 
+| `personActionItemLink ` | table |  |  | `person` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personActionItemLink` | 
+| `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `personActionItemLink` | 
+| `personActionItem ` | table |  | Singleton | `personActionItemLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
+| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `description` | `string` | 256 |  | `actionItem` | 
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerDaysOffset` | `short` |  |  | `actionItem` | 
+| `triggerFixedDate` | `Date` |  |  | `actionItem` | 
+| `appUser_recNo` | `long` |  |  | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completed` | `DateTimeOffset` |  |  | `actionItem` | 
+| `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |

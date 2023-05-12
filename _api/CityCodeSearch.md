@@ -1,29 +1,20 @@
 ---
 layout: api_page
-title: "TagSearch"
+title: "CityCodeSearch"
 description: ""
 assembly_version: "1.0.14.11"
 ---
 
 
 
-Permission Areas: Tag
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `tag` | 
-| `summaryCount` | `int` |  | `tag` | 
-| `createDateTime` | `DateTimeOffset` |  | `tag` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `tag` | 
-| `name` | `string` | 64 | `tag` | 
-| `referenced` | `bool` |  | `tag` | 
-| `activeStatus` | `bool` |  | `tag` | 
-| `valueFreeFlow` | `bool` |  | `tag` | 
-| `valueRequired` | `bool` |  | `tag` | 
-| `valueList` | `string` |  | `tag` | 
-| `description` | `string` | 64 | `tag` | 
-| `areaFlags` | `int` |  | `tag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128, AdvisorAdjustment = 256
-| `requirement` | `short` |  | `tag` | Optional = 1, Recommended = 2, Mandatory = 3
+| `recNo` | `long` |  | `cityCode` | 
+| `summaryCount` | `int` |  | `cityCode` | 
+| `createDateTime` | `DateTimeOffset` |  | `cityCode` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `cityCode` | 
+| `code` | `string` | 4 | `cityCode` | 
+| `codeType` | `short` |  | `cityCode` | Airport = 1, TrainStation = 2
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -41,9 +32,8 @@ Permission Areas: Tag
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `bool` | `activeStatus` | 
-| `areaFlags` | `long` | `areaFlags` | 
+| `codeType` | `EnumSearchParam<Type>` | `codeType` | Airport = 1, TrainStation = 2
+| `code` | [`StringSearchParam`](StringSearchParam) | `code` | 
 
 | Status code | Description |
 | ----------- | ----------- |

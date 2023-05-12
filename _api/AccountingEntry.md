@@ -2,6 +2,7 @@
 layout: api_page
 title: "AccountingEntry"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -9,8 +10,8 @@ description: ""
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 

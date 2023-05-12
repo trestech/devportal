@@ -2,6 +2,7 @@
 layout: api_page
 title: "MerchantTransactionSearch"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -10,6 +11,8 @@ description: ""
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `merchantTransaction` | 
 | `summaryCount` | `int` |  | `merchantTransaction` | 
+| `createDateTime` | `DateTimeOffset` |  | `merchantTransaction` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `merchantTransaction` | 
 | `transactionType` | `short` |  | `merchantTransaction` | Sale = 1, Void = 2, Refund = 3
 | `transactionId` | `string` | 32 | `merchantTransaction` | 
 | `payment_recNo` | `long` |  | `merchantTransaction` | 
@@ -22,6 +25,10 @@ description: ""
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 

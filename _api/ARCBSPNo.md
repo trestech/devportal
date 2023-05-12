@@ -2,9 +2,12 @@
 layout: api_page
 title: "ARCBSPNo"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
+
+Permission Areas: ARCBSPNo
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |

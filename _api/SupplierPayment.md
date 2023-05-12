@@ -2,6 +2,7 @@
 layout: api_page
 title: "SupplierPayment"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
@@ -49,6 +50,10 @@ Permission Areas: SupplierPayment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 
@@ -57,8 +62,8 @@ Permission Areas: SupplierPayment
 | `value` | `string` | 1024 |  | `paymentTag` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `payment` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
-| `createDate` | `DateTimeOffset` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTimeOffset` |  |  | `accountingEntry` | 
+| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `DateTime` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 

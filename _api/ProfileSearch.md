@@ -2,6 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
+assembly_version: "1.0.14.11"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -13,8 +14,12 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `profile` | 
+| `tagRecNo` | `long` |  | `profile` | 
+| `tagName` | `string` | 64 | `profile` | 
 | `tagValue` | `string` | 1024 | `profile` | 
 | `summaryCount` | `int` |  | `profile` | 
+| `createDateTime` | `DateTimeOffset` |  | `profile` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `profile` | 
 | `name` | `string` | 256 | `profile` | 
 | `profileType` | `short` |  | `profile` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `clientType` | `short` |  | `clientProfile` | Personal = 1, Corporate = 2
@@ -34,13 +39,13 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientBranchRecNo` | `long` |  | `clientProfile` | 
 | `clientBranchName` | `string` | 64 | `clientProfile` | 
 | `remarks` | `string` | 256 | `profile` | 
-| `activeStatus` | `bool` |  | `profile` | 
+| `activeStatus` | `short` |  | `profile` | Inactive = 0, Active = 1, Pending = 2
 | `primaryEmail` | `string` | 256 | `profile` | 
 | `primaryEmailPermitMarketing` | `bool` |  | `profile` | 
 | `primaryPhone` | `string` | 256 | `profile` | 
 | `primaryPhonePermitMarketing` | `bool` |  | `profile` | 
 | `preferredSupplier` | `bool` |  | `supplierProfile` | 
-| `supplierTravelCategoryFlags` | `bool` |  | `supplierProfile` | 
+| `supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
 | `street1` | `string` | 128 | `address` | 
 | `street2` | `string` | 128 | `address` | 
 | `city` | `string` | 64 | `address` | 
@@ -54,13 +59,14 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `mailingZipPostalCode` | `string` | 16 | `address` | 
 | `mailingCountry` | `string` | 4 | `address` | 
 | `addressPermitMarketing` | `bool` |  | `address` | 
-| `clientReferredBy` | `string` | 64 | `clientProfile` | 
-| `clientCreateDateTime` | `DateTime` |  | `clientProfile` | 
-| `clientLastModifiedDateTime` | `DateTime` |  | `clientProfile` | 
 | `supplierVendorId` | `string` | 10 | `supplierProfile` | 
 | `supplierCommissionRate` | `short` |  | `supplierProfile` | 
 | `clientInformalSalutation` | `string` | 128 | `clientProfile` | 
 | `clientFormalSalutation` | `string` | 128 | `clientProfile` | 
+| `firstId` | `string` | 32 | `profile` | 
+| `profileCommType` | `short` |  | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| `profileCommValue` | `string` | 256 | `communication` | 
+| `profileCommIsBillingContact` | `bool` |  | `communication` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -69,17 +75,23 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
 | `distinct [inherited]` | `bool` |  | 
+| `createDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `createDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeFrom [inherited]` | `DateTimeUTCSearchParam` |  | 
+| `modifiedDateTimeTo [inherited]` | `DateTimeUTCSearchParam` |  | 
 | `includeCols [inherited]` | `string[]` |  | 
 | `includeColsExtended [inherited]` | `includeColsExtended[]` |  | 
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `displayTagRecNo [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | `long` | `profileType` | 
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `commType` | `long` |  | 
-| `commValue` | [`StringSearchParam`](StringSearchParam) |  | 
+| `commType` | `long` | `profileCommType` | 
+| `commValue` | [`StringSearchParam`](StringSearchParam) | `profileCommValue` | 
+| `commValueCountryDomain` | `string` |  | 
+| `commValueCityArea` | `string` |  | 
+| `commValueUserSpecific` | [`StringSearchParam`](StringSearchParam) |  | 
 | `clientAnniversaryMonth` | [`NumSearchParam`](NumSearchParam) | `clientAnniversaryMonth` | 
 | `clientAnniversaryMonthFrom` | `long` |  | 
 | `clientAnniversaryMonthTo` | `long` |  | 
@@ -88,7 +100,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientAdvisorProfileRecNo` | 
 | `clientType` | `long` | `clientType` | 
 | `supplierType` | `long` | `supplierType` | 
-| `activestatus` | `bool` | `activeStatus` | 
+| `activeStatus` | `long` | `activeStatus` | 
 | `clientBranchRecNo` | [`NumSearchParam`](NumSearchParam) | `clientBranchRecNo` | 
 | `personRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
 | `personFirstName` | [`StringSearchParam`](StringSearchParam) |  | 
@@ -104,12 +116,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `emailPermitMarketing` | `bool` |  | 
 | `phonePermitMarketing` | `bool` |  | 
 | `addressPermitMarketing` | `bool` | `addressPermitMarketing` | 
-| `clientCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `clientCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
-| `clientModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
-| `clientModifiedDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
 | `supplierTravelCategoryFlags` | `long` | `supplierTravelCategoryFlags` | 
+| `profileCommunicationBillingContact` | `bool` | `profileCommIsBillingContact` | 
 | `clientTripSearchParams` | `TripSearchParams` |  | 
 | `supplierTripSearchParams` | `TripSearchParams` |  | 
 | `clientActivitySearchParams` | `ActivitySearchParams` |  | 
@@ -129,7 +138,7 @@ Authorization: Bearer <session-token>
   "profileType": {
     "value": 1
   },
-  "activestatus": true,
+  "activeStatus": true,
   "profileName": {
     "value": [
       "Able"

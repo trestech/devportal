@@ -2,6 +2,7 @@
 layout: api_page
 title: "JournalEntry"
 description: ""
+assembly_version: "1.0.14.11"
 ---
 
 
