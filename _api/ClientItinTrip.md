@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.14.11"
+assembly_version: "1.0.15.7"
 ---
 
 
@@ -29,13 +29,11 @@ assembly_version: "1.0.14.11"
 | `eventReservationLink ` | table |  |  | `event` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventReservationLink` | 
 | `reservationRecNo` | `long` |  | PKey | `eventReservationLink` | 
-| `eventAirSegment ` | table |  |  | `event` | 
+| `eventAirSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventAirSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirSegment` | 
-| `departDateTime` | `DateTime` |  |  | `eventAirSegment` | 
 | `departCityCode` | `string` | 3 |  | `eventAirSegment` | 
 | `departCityName` | `string` | 64 |  | `eventAirSegment` | 
-| `arriveDateTime` | `DateTime` |  |  | `eventAirSegment` | 
 | `arriveCityCode` | `string` | 3 |  | `eventAirSegment` | 
 | `arriveCityName` | `string` | 64 |  | `eventAirSegment` | 
 | `connection` | `string` | 1 |  | `eventAirSegment` | 

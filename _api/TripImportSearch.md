@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: ""
-assembly_version: "1.0.14.11"
+assembly_version: "1.0.15.7"
 ---
 
 
