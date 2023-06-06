@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.15.7"
+assembly_version: "1.0.16.10"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -180,7 +180,7 @@ Permission Areas: Trip
 | `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `tripActionItemAssignedToAppUserRecNo` | 
 | `reservationAdvisorReconciliationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorReconciliationRecNo` | 
-| `reservationAdvisorReconciled` | `bool` | `reservationAdvisorReconciliationRecNo` | 
+| `reservationAdvisorReconciled` | `bool` | `reservationAdvisorReconciliationRecNo` | Parameter reservationAdvisorReconciled is deprecated, use reservationAdvisorReconciliationRecNo IS BLANK instead.
 | `reservationAdvisorReconciliationDateFrom` | `DateSearchParam` | `reservationAdvisorReconciliationDate` | 
 | `reservationAdvisorReconciliationDateTo` | `DateSearchParam` | `reservationAdvisorReconciliationDate` | 
 | `reservationCommissionDatePayableFrom` | `DateSearchParam` | `reservationCommissionDatePayable` | Filter results based on calculated date payable column
@@ -189,6 +189,7 @@ Permission Areas: Trip
 | `reservationAccountingEntryCreateDateTo` | `DateSearchParam` | `reservationAccountingEntryCreateDate` | 
 | `reservationAdvisorsDatePayableFrom` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorsDatePayableTo` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
+| `reservationAdvisorRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorRecNo` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `clientProfileSearchParams` | `ProfileSearchParams` |  | 
 | `destinationSearchParams` | `DestinationSearchParams` |  | 

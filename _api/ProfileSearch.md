@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.15.7"
+assembly_version: "1.0.16.10"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -135,9 +135,7 @@ POST https://api-dev.trestechnologies.com/profileSearch
 Content-Type: application/json
 Authorization: Bearer <session-token>
 {
-  "profileType": {
-    "value": 1
-  },
+  "profileType": 1,
   "activeStatus": true,
   "profileName": {
     "value": [
