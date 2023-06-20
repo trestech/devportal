@@ -1,20 +1,23 @@
 ---
 layout: api_page
-title: "CityCodeSearch"
+title: "BankSearch"
 description: ""
 assembly_version: "1.0.17.8"
 ---
 
 
 
+Permission Areas: Bank
+
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `cityCode` | 
-| `summaryCount` | `int` |  | `cityCode` | 
-| `createDateTime` | `DateTimeOffset` |  | `cityCode` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `cityCode` | 
-| `code` | `string` | 4 | `cityCode` | 
-| `codeType` | `short` |  | `cityCode` | Airport = 1, TrainStation = 2
+| `recNo` | `long` |  | `bank` | 
+| `summaryCount` | `int` |  | `bank` | 
+| `createDateTime` | `DateTimeOffset` |  | `bank` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `bank` | 
+| `name` | `string` | 64 | `bank` | 
+| `description` | `string` | 128 | `bank` | 
+| `generalLedgerAccount_recNo` | `long` |  | `bank` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -32,8 +35,7 @@ assembly_version: "1.0.17.8"
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `codeType` | `EnumSearchParam<Type>` | `codeType` | Airport = 1, TrainStation = 2
-| `code` | [`StringSearchParam`](StringSearchParam) | `code` | 
+| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 
 | Status code | Description |
 | ----------- | ----------- |

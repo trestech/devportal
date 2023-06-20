@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -17,6 +17,7 @@ Permission Areas: AdvisorProfile
 | `addressPrintOption` | `short` |  | Required | `advisorProfile` | UseAdvisorAddress = 1, UseBranchAddress = 2, UseAgencyAddress = 3, NoAddress = 4
 | `photoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
 | `brandingColor` | `int` |  |  | `advisorProfile` | 
+| `brandingName` | `string` | 64 |  | `advisorProfile` | 
 | `profile  [shared]` | table |  | Singleton | `advisorProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 

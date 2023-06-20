@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -44,6 +44,14 @@ Permission Areas: Person
 | `advisorProfileRecNo` | `long` |  | `person` | 
 | `advisorProfileName` | `string` | 256 | `person` | 
 | `activeStatus` | `short` |  | `person` | Inactive = 0, Active = 1, Pending = 2
+| `actionRecNo` | `long` |  | `personActionItem` | 
+| `actionItemTriggerIndex` | `short` |  | `personActionItem` | FixedDate = 1, CreateDate = 2, Birthday = 3
+| `actionItemDate` | `Date` |  | `personActionItem` | 
+| `actionItemTriggerFixedDate` | `Date` |  | `personActionItem` | 
+| `actionItemDescription` | `string` | 256 | `personActionItem` | 
+| `actionItemCompleted` | `DateTime` |  | `personActionItem` | 
+| `actionItemAssignedToAppUserRecNo` | `long` |  | `personActionItem` | 
+| `actionItemAssignedToAppUserId` | `string` | 64 | `personActionItem` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -84,6 +92,10 @@ Permission Areas: Person
 | `cardExpirationDateTo` | `DateSearchParam` |  | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
 | `activeStatus` | `long` | `activeStatus` | 
+| `actionItemCompleted` | `bool` | `actionItemCompleted` | 
+| `actionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 
+| `actionItemDateTo` | `DateSearchParam` | `actionItemDate` | 
+| `actionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `actionItemAssignedToAppUserRecNo` | 
 | `personActivitySearchParams` | `ActivitySearchParams` |  | 
 
 | Status code | Description |

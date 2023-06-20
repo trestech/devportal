@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTripSearch"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -17,6 +17,8 @@ assembly_version: "1.0.16.10"
 | `startDateTime` | `DateTime` |  | `trip` | 
 | `endDateTime` | `DateTime` |  | `trip` | 
 | `imageUrl` | `string` | 256 | `trip` | 
+| `imageAttachmentRecNo` | `long` |  | `trip` | 
+| `imageData` | `byte[]` |  | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -34,6 +36,7 @@ assembly_version: "1.0.16.10"
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

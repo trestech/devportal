@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -56,6 +56,11 @@ assembly_version: "1.0.16.10"
 | `flightNo` | `short` |  |  | `eventAirSegment` | 
 | `provider` | `string` | 8 |  | `eventAirSegment` | 
 | `nextConnectionDepartDateTime` | `DateTime` |  |  | `eventAirSegment` | 
+| `eventAirTraveler ` | table |  |  | `eventAirSegment` | 
+| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirTraveler` | 
+| `name` | `string` | 256 |  | `eventAirTraveler` | 
+| `ticketNo` | `long` |  |  | `eventAirTraveler` | 
+| `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
 | `eventCruiseSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventCruiseSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventCruiseSegment` | 
@@ -66,14 +71,22 @@ assembly_version: "1.0.16.10"
 | `arrivePortCode` | `string` | 3 |  | `eventCruiseSegment` | 
 | `arrivePortName` | `string` | 64 |  | `eventCruiseSegment` | 
 | `remarks` | `string` | 256 |  | `eventCruiseSegment` | 
-| `attachment ` | table |  |  | `clientItinTrip` | 
-| `recNo` | `long` |  |  | `attachment` | 
-| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
-| `type` | `short` |  |  | `attachment` | Link = 1, File = 2
-| `subType` | `short` |  |  | `attachment` | Document = 1, Image = 2, Other = 3
-| `description` | `string` | 256 |  | `attachment` | 
-| `fileNameLinkURL` | `string` | 256 |  | `attachment` | 
-| `directUrl` | `string` | 256 |  | `attachment` | 
+| `eventAttachment ` | table |  |  | `event` | 
+| `recNo` | `long` |  |  | `eventAttachment` | 
+| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAttachment` | 
+| `type` | `short` |  |  | `eventAttachment` | Link = 1, File = 2
+| `subType` | `short` |  |  | `eventAttachment` | Document = 1, Image = 2, Other = 3
+| `description` | `string` | 256 |  | `eventAttachment` | 
+| `fileNameLinkURL` | `string` | 256 |  | `eventAttachment` | 
+| `directUrl` | `string` | 256 |  | `eventAttachment` | 
+| `tripAttachment ` | table |  |  | `clientItinTrip` | 
+| `recNo` | `long` |  |  | `tripAttachment` | 
+| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachment` | 
+| `type` | `short` |  |  | `tripAttachment` | Link = 1, File = 2
+| `subType` | `short` |  |  | `tripAttachment` | Document = 1, Image = 2, Other = 3
+| `description` | `string` | 256 |  | `tripAttachment` | 
+| `fileNameLinkURL` | `string` | 256 |  | `tripAttachment` | 
+| `directUrl` | `string` | 256 |  | `tripAttachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

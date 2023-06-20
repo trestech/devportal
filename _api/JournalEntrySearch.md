@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -23,6 +23,9 @@ Permission Areas: JournalEntry
 | `bankTransactionRecNo` | `long` |  | `journalEntry` | 
 | `reervationRecNo` | `long` |  | `journalEntry` | 
 | `tripRecNo` | `long` |  | `journalEntry` | 
+| `profileRecNo` | `long` |  | `journalEntry` | 
+| `profileName` | `string` | 256 | `journalEntry` | 
+| `source` | `short` |  | `journalEntry` | ClientPayment = 1, SupplierPayment = 2, OtherPayment = 3, DepositWithdrawal = 4, Reservation = 5
 | `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
@@ -49,6 +52,7 @@ Permission Areas: JournalEntry
 | `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryRemarks` | [`StringSearchParam`](StringSearchParam) | `journalEntryRemarks` | 
+| `source` | `EnumSearchParam<Source>` | `source` | ClientPayment = 1, SupplierPayment = 2, OtherPayment = 3, DepositWithdrawal = 4, Reservation = 5
 | `generalLedgerAccountRecNo` | [`NumSearchParam`](NumSearchParam) | `generalLedgerAccountRecNo` | 
 | `generalLedgerAccountCategory` | `EnumSearchParam<Category>` | `generalLedgerAccountCategory` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 

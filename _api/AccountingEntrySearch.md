@@ -2,7 +2,7 @@
 layout: api_page
 title: "AccountingEntrySearch"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -35,6 +35,7 @@ assembly_version: "1.0.16.10"
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `posted` | `bool` | `postDate` | 
+| `journalEntryRecNo` | [`NumSearchParam`](NumSearchParam) | `journalEntry_recNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

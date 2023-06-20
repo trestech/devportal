@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankTransactionSearch"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 

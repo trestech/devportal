@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplate"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
@@ -10,7 +10,7 @@ assembly_version: "1.0.16.10"
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `documentTemplate` | 
-| `name` | `string` | 128 |  | `documentTemplate` | 
+| `name` | `string` | 128 | Required | `documentTemplate` | 
 | `description` | `string` | 512 |  | `documentTemplate` | 
 | `emailSubject` | `string` | 128 |  | `documentTemplate` | 
 | `emailBody` | `string` |  |  | `documentTemplate` | 

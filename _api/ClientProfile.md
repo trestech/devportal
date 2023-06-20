@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -116,7 +116,7 @@ Permission Areas: ClientProfile
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
 | `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
-| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 

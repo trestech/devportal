@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -67,6 +67,14 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `profileCommType` | `short` |  | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `profileCommValue` | `string` | 256 | `communication` | 
 | `profileCommIsBillingContact` | `bool` |  | `communication` | 
+| `actionRecNo` | `long` |  | `clientProfileActionItem` | 
+| `actionItemTriggerIndex` | `short` |  | `clientProfileActionItem` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
+| `actionItemDate` | `Date` |  | `clientProfileActionItem` | 
+| `actionItemTriggerFixedDate` | `Date` |  | `clientProfileActionItem` | 
+| `actionItemDescription` | `string` | 256 | `clientProfileActionItem` | 
+| `actionItemCompleted` | `DateTime` |  | `clientProfileActionItem` | 
+| `actionItemAssignedToAppUserRecNo` | `long` |  | `clientProfileActionItem` | 
+| `actionItemAssignedToAppUserId` | `string` | 64 | `clientProfileActionItem` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -119,6 +127,10 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
 | `supplierTravelCategoryFlags` | `long` | `supplierTravelCategoryFlags` | 
 | `profileCommunicationBillingContact` | `bool` | `profileCommIsBillingContact` | 
+| `clientActionItemCompleted` | `bool` | `actionItemCompleted` | 
+| `clientActionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 
+| `clientActionItemDateTo` | `DateSearchParam` | `actionItemDate` | 
+| `clientActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `actionItemAssignedToAppUserRecNo` | 
 | `clientTripSearchParams` | `TripSearchParams` |  | 
 | `supplierTripSearchParams` | `TripSearchParams` |  | 
 | `clientActivitySearchParams` | `ActivitySearchParams` |  | 

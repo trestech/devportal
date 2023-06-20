@@ -2,10 +2,12 @@
 layout: api_page
 title: "BranchSearch"
 description: ""
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 
+
+Permission Areas: Branch
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

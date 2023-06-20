@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.16.10"
+assembly_version: "1.0.17.8"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -38,6 +38,7 @@ Permission Areas: Person
 | `emergencyContactPhone` | `string` | 64 |  | `person` | 
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
 | `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
+| `age` | `short` |  | ReadOnly | `person` | 
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
@@ -100,7 +101,7 @@ Permission Areas: Person
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
 | `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
-| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1
+| `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, CreateDate = 2, Birthday = 3
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 
