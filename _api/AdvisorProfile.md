@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.0.17.8"
+assembly_version: "1.0.18.13"
 ---
 
 
@@ -26,6 +26,7 @@ Permission Areas: AdvisorProfile
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
 | `permitMarketing` | `bool` |  |  | `profile` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `profile` | 
 | `profilePersonLink ` | table |  |  | `profile` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `profilePersonLink` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profilePersonLink` | 

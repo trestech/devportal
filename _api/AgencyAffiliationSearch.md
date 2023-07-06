@@ -1,6 +1,6 @@
 ---
 layout: api_page
-title: "DocumentTemplateSearch"
+title: "AgencyAffiliationSearch"
 description: ""
 assembly_version: "1.0.18.13"
 ---
@@ -9,14 +9,15 @@ assembly_version: "1.0.18.13"
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `documentTemplate` | 
-| `summaryCount` | `int` |  | `documentTemplate` | 
-| `createDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
-| `name` | `string` | 128 | `documentTemplate` | 
-| `description` | `string` | 512 | `documentTemplate` | 
-| `appUser_RecNo` | `long` |  | `documentTemplate` | 
-| `activeStatus` | `bool` |  | `documentTemplate` | 
+| `recNo` | `long` |  | `agency` | 
+| `summaryCount` | `int` |  | `agency` | 
+| `createDateTime` | `DateTimeOffset` |  | `agency` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `agency` | 
+| `name` | `string` | 256 | `agency` | 
+| `alias` | `string` | 64 | `agency` | 
+| `id` | `string` | 32 | `agency` | 
+| `affiliation_recNo` | `int` |  | `agency` | 
+| `status` | `int` |  | `agency` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -34,8 +35,7 @@ assembly_version: "1.0.18.13"
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `bool` | `activeStatus` | 
+| `status` | [`StringSearchParam`](StringSearchParam) | `status` | 
 
 | Status code | Description |
 | ----------- | ----------- |

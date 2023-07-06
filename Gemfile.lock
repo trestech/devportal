@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/jekyll/minima.git
-  revision: da43ba27a5d643f3ead1e1aad6764a28ef5a92c1
+  revision: 2863624b903b17f838d6ce8d2f77900fa9d3c864
   specs:
-    minima (2.5.1)
+    minima (3.0.0.dev)
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
@@ -10,20 +10,20 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
-    google-protobuf (3.22.0)
-    google-protobuf (3.22.0-arm64-darwin)
+    google-protobuf (3.23.0-aarch64-linux)
+    google-protobuf (3.23.0-arm64-darwin)
     http_parser.rb (0.8.0)
-    i18n (1.12.0)
+    i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     jekyll (4.3.2)
       addressable (~> 2.4)
@@ -68,7 +68,7 @@ GEM
     rexml (3.2.5)
     rouge (4.1.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.58.3)
+    sass-embedded (1.62.1)
       google-protobuf (~> 3.21)
       rake (>= 10.0.0)
     terminal-table (3.0.2)

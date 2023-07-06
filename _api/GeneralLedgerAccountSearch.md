@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccountSearch"
 description: ""
-assembly_version: "1.0.17.8"
+assembly_version: "1.0.18.13"
 ---
 
 
@@ -19,6 +19,7 @@ Permission Areas: GeneralLedgerAccount
 | `name` | `string` | 64 | `generalLedgerAccount` | 
 | `description` | `string` | 128 | `generalLedgerAccount` | 
 | `activeStatus` | `bool` |  | `generalLedgerAccount` | 
+| `indexNo` | `short` |  | `generalLedgerAccount` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

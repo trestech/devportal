@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccount"
 description: ""
-assembly_version: "1.0.17.8"
+assembly_version: "1.0.18.13"
 ---
 
 
@@ -17,6 +17,7 @@ Permission Areas: GeneralLedgerAccount
 | `description` | `string` | 128 |  | `generalLedgerAccount` | 
 | `activeStatus` | `bool` |  |  | `generalLedgerAccount` | 
 | `balance` | `long` |  | Required, ReadOnly | `generalLedgerAccount` | 
+| `indexNo` | `short` |  |  | `generalLedgerAccount` | 
 
 | Status code | Description |
 | ----------- | ----------- |

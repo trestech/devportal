@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.17.8"
+assembly_version: "1.0.18.13"
 ---
 
 
@@ -59,8 +59,9 @@ assembly_version: "1.0.17.8"
 | `eventAirTraveler ` | table |  |  | `eventAirSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirTraveler` | 
 | `name` | `string` | 256 |  | `eventAirTraveler` | 
-| `ticketNo` | `long` |  |  | `eventAirTraveler` | 
+| `ticketNo` | `string` | 64 |  | `eventAirTraveler` | 
 | `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
+| `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
 | `eventCruiseSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventCruiseSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventCruiseSegment` | 
@@ -71,6 +72,20 @@ assembly_version: "1.0.17.8"
 | `arrivePortCode` | `string` | 3 |  | `eventCruiseSegment` | 
 | `arrivePortName` | `string` | 64 |  | `eventCruiseSegment` | 
 | `remarks` | `string` | 256 |  | `eventCruiseSegment` | 
+| `deck` | `string` | 32 |  | `eventCruiseSegment` | 
+| `cabin` | `string` | 32 |  | `eventCruiseSegment` | 
+| `dining` | `string` | 32 |  | `eventCruiseSegment` | 
+| `bedding` | `string` | 128 |  | `eventCruiseSegment` | 
+| `eventRailSegment ` | table |  | Singleton | `event` | 
+| `indexNo` | `long` |  | PKey | `eventRailSegment` | 
+| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventRailSegment` | 
+| `departDateTime` | `DateTime` |  |  | `eventRailSegment` | 
+| `departStationCode` | `string` | 3 |  | `eventRailSegment` | 
+| `departStationName` | `string` | 64 |  | `eventRailSegment` | 
+| `arriveDateTime` | `DateTime` |  |  | `eventRailSegment` | 
+| `arriveStationCode` | `string` | 3 |  | `eventRailSegment` | 
+| `arriveStationName` | `string` | 64 |  | `eventRailSegment` | 
+| `trainNo` | `short` |  |  | `eventRailSegment` | 
 | `eventAttachment ` | table |  |  | `event` | 
 | `recNo` | `long` |  |  | `eventAttachment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAttachment` | 

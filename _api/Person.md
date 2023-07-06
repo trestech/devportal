@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.17.8"
+assembly_version: "1.0.18.13"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -39,6 +39,7 @@ Permission Areas: Person
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
 | `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
 | `age` | `short` |  | ReadOnly | `person` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `person` | 
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
