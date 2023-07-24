@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherPayment"
 description: ""
-assembly_version: "1.0.18.13"
+assembly_version: "1.0.19.9"
 ---
 
 

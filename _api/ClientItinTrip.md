@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.18.13"
+assembly_version: "1.0.19.9"
 ---
 
 
@@ -24,14 +24,24 @@ assembly_version: "1.0.18.13"
 | `action` | `short` |  |  | `event` | Depart = 1, Arrive = 2, Connection = 3, CheckIn = 4, CheckOut = 5, PickUp = 6, DropOff = 7, Embark = 8, Disembark = 9, AtSea = 10
 | `actionText` | `string` | 32 |  | `event` | 
 | `travelers` | `string` | 512 |  | `event` | 
-| `supplierName` | `string` | 256 |  | `event` | 
 | `numberOfUnits` | `short` |  |  | `event` | 
 | `unitDescription` | `string` | 256 |  | `event` | 
 | `itineraryRemarks` | `string` |  |  | `event` | 
 | `startInfo` | `string` | 256 |  | `event` | 
 | `endInfo` | `string` | 256 |  | `event` | 
 | `confirmationNo` | `string` | 64 |  | `event` | 
-| `providerInfo ` | table |  | Singleton | `event` | 
+| `supplierInfo  [shared]` | table |  | Singleton | `event` | 
+| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `supplierInfo` | 
+| `name` | `string` | 256 |  | `supplierInfo` | 
+| `phone` | `string` | 256 |  | `supplierInfo` | 
+| `email` | `string` | 256 |  | `supplierInfo` | 
+| `street1` | `string` | 128 |  | `supplierInfo` | 
+| `street2` | `string` | 128 |  | `supplierInfo` | 
+| `city` | `string` | 64 |  | `supplierInfo` | 
+| `stateProvince` | `string` | 8 |  | `supplierInfo` | 
+| `zipPostalCode` | `string` | 16 |  | `supplierInfo` | 
+| `country` | `string` | 4 |  | `supplierInfo` | 
+| `providerInfo  [shared]` | table |  | Singleton | `event` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `providerInfo` | 
 | `name` | `string` | 256 |  | `providerInfo` | 
 | `phone` | `string` | 256 |  | `providerInfo` | 
@@ -62,6 +72,7 @@ assembly_version: "1.0.18.13"
 | `ticketNo` | `string` | 64 |  | `eventAirTraveler` | 
 | `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
 | `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
+| `seatNo` | `string` | 4 |  | `eventAirTraveler` | 
 | `eventCruiseSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventCruiseSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventCruiseSegment` | 

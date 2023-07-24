@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: ""
-assembly_version: "1.0.18.13"
+assembly_version: "1.0.19.9"
 ---
 
 
@@ -75,6 +75,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `dateClearedFrom` | `DateSearchParam` | `dateCleared` | 
 | `dateClearedTo` | `DateSearchParam` | `dateCleared` | 
 | `bankTransactionRecNo` | [`NumSearchParam`](NumSearchParam) | `bankTransactionRecNo` | 
+| `paidBy` | `long` |  | 
+| `paidTo` | `long` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

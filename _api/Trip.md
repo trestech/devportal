@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.18.13"
+assembly_version: "1.0.19.9"
 ---
 
 
@@ -32,6 +32,7 @@ Permission Areas: Trip
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `trip` | 
+| `visibility` | `short` |  |  | `trip` | 0 = trip hidden from client itin, 1 = trip included on client itin
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileInfo` | 
 | `name` | `string` | 256 |  | `clientProfileInfo` | 
@@ -213,6 +214,7 @@ Permission Areas: Trip
 | `reservationAttachmentLink ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
+| `visibility` | `short` |  |  | `reservationAttachmentLink` | 0 = reservation attachment hidden from client itin, 1 = reservation attachment included on client itin
 | `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -491,6 +493,7 @@ Permission Areas: Trip
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `tripAttachmentLink` | 
 | `sortIndex` | `short` |  |  | `tripAttachmentLink` | 
+| `visibility` | `short` |  |  | `tripAttachmentLink` | 0 = trip attachment hidden from client itin, 1 = trip attachment included on client itin
 | `tripAttachment  [shared]` | table |  | Singleton | `tripAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2

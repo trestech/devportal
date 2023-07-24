@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.18.13"
+assembly_version: "1.0.19.9"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -39,6 +39,7 @@ Permission Areas: Trip
 | `branchRecNo` | `long` |  | `trip` | 
 | `branchName` | `string` | 64 | `trip` | 
 | `tripRecordLocator` | `string` | 32 | `trip` | 
+| `visibility` | `short` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
 | `reservationTagRecNo` | `long` |  | `reservation` | 
 | `reservationTagName` | `string` | 64 | `reservation` | 
@@ -137,6 +138,7 @@ Permission Areas: Trip
 | `destinationRecNo` | [`NumSearchParam`](NumSearchParam) | `destinationRecNo` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branchRecNo` | 
 | `tripRecordLocator` | [`StringSearchParam`](StringSearchParam) | `tripRecordLocator` | 
+| `tripVisibility` | `long` | `visibility` | 
 | `reservationCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `reservationCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `reservationModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
