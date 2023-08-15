@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustmentSearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -12,6 +12,9 @@ Permission Areas: AdvisorAdjustment
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `advisorAdjustment` | 
+| `tagRecNo` | `long` |  | `advisorAdjustment` | 
+| `tagName` | `string` | 64 | `advisorAdjustment` | 
+| `tagValue` | `string` | 1024 | `advisorAdjustment` | 
 | `summaryCount` | `int` |  | `advisorAdjustment` | 
 | `createDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 

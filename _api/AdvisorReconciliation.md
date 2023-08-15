@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorReconciliation"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -17,9 +17,11 @@ Permission Areas: AdvisorReconciliation
 | `advisorReconciliationDetail ` | table |  |  | `advisorReconciliation` | 
 | `reservationAdvisor_recNo` | `long` |  | PKey, FKey | `advisorReconciliationDetail` | 
 | `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationDetail` | 
+| `amount` | `long` |  |  | `advisorReconciliationDetail` | 
 | `advisorReconciliationAdjustment ` | table |  |  | `advisorReconciliation` | 
 | `advisorAdjustment_recNo` | `long` |  | PKey, FKey | `advisorReconciliationAdjustment` | 
 | `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationAdjustment` | 
+| `amount` | `long` |  |  | `advisorReconciliationAdjustment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

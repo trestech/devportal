@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -33,7 +33,7 @@ assembly_version: "1.0.19.9"
 | `brandingColor` | `int` |  |  | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
-| `affiliation_recNo` | `int` |  | PKey, Required, FKey | `agencyAffiliationLink` | 
+| `affiliation_recNo` | `short` |  | PKey, Required | `agencyAffiliationLink` | Tres = 1, Signature = 2, AmEx = 6, EnsembleCanada = 7, EnsembleUS = 8, MART = 9, MAST = 10, TravelLeaders = 12, Virtuoso = 13, WESTA = 14, TravelSaversUS = 15, TravelSaversCanada = 16, Axus = 23
 | `affiliationName` | `string` | 64 | ReadOnly | `agencyAffiliationLink` | 
 | `id` | `string` | 32 |  | `agencyAffiliationLink` | 
 | `agencyAdvisorReconciliation ` | table |  |  | `agency` | 
@@ -47,7 +47,7 @@ assembly_version: "1.0.19.9"
 | `accountingReferenceTravelCategory ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `accountingReferenceTravelCategory` | 
 | `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
-| `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `accountingReferenceTravelCategory` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelCategory_recNo` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplate"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -23,7 +23,7 @@ Permission Areas: ActionItemTemplate
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `actionItemTemplateActionItemLink` | 
 | `actionItemTemplateActionItem ` | table |  | Singleton | `actionItemTemplateActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `type` | `short` |  | Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | 
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 

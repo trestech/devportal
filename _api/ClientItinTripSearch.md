@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTripSearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -17,7 +17,6 @@ assembly_version: "1.0.19.9"
 | `startDateTime` | `DateTime` |  | `trip` | 
 | `endDateTime` | `DateTime` |  | `trip` | 
 | `imageUrl` | `string` | 256 | `trip` | 
-| `imageAttachmentRecNo` | `long` |  | `trip` | 
 | `imageData` | `byte[]` |  | `trip` | 
 
 | Parameter | Type | Linked Column | Description |

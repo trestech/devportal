@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccountSearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 

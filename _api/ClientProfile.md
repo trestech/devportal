@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -62,7 +62,8 @@ Permission Areas: ClientProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
-| `isBillingContact` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  | Deprecated | `communication` | IsBillingContact is deprecated. Use contactOptions instead.
+| `contactOption` | `short` |  |  | `communication` | Billing = 1, CustomerService = 2
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2
@@ -115,7 +116,7 @@ Permission Areas: ClientProfile
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `clientProfileActionItemLink` | 
 | `clientProfileActionItem ` | table |  | Singleton | `clientProfileActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `type` | `short` |  | Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 

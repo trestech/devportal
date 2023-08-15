@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -14,6 +14,13 @@ assembly_version: "1.0.19.9"
 | `advisorProfile_recNo` | `long` |  | FKey | `clientItinTrip` | 
 | `tripStartDateTime` | `DateTime` |  |  | `clientItinTrip` | 
 | `tripEndDateTime` | `DateTime` |  |  | `clientItinTrip` | 
+| `traveler ` | table |  |  | `clientItinTrip` | 
+| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `traveler` | 
+| `travelerName` | `string` | 512 |  | `traveler` | 
+| `personRecNo` | `long` |  |  | `traveler` | 
+| `firstName` | `string` | 64 |  | `traveler` | 
+| `middleName` | `string` | 64 |  | `traveler` | 
+| `lastName` | `string` | 64 |  | `traveler` | 
 | `event ` | table |  |  | `clientItinTrip` | 
 | `indexNo` | `long` |  | PKey | `event` | 
 | `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `event` | 
@@ -35,6 +42,7 @@ assembly_version: "1.0.19.9"
 | `name` | `string` | 256 |  | `supplierInfo` | 
 | `phone` | `string` | 256 |  | `supplierInfo` | 
 | `email` | `string` | 256 |  | `supplierInfo` | 
+| `web` | `string` | 256 |  | `supplierInfo` | 
 | `street1` | `string` | 128 |  | `supplierInfo` | 
 | `street2` | `string` | 128 |  | `supplierInfo` | 
 | `city` | `string` | 64 |  | `supplierInfo` | 
@@ -46,6 +54,7 @@ assembly_version: "1.0.19.9"
 | `name` | `string` | 256 |  | `providerInfo` | 
 | `phone` | `string` | 256 |  | `providerInfo` | 
 | `email` | `string` | 256 |  | `providerInfo` | 
+| `web` | `string` | 256 |  | `providerInfo` | 
 | `street1` | `string` | 128 |  | `providerInfo` | 
 | `street2` | `string` | 128 |  | `providerInfo` | 
 | `city` | `string` | 64 |  | `providerInfo` | 
@@ -66,6 +75,7 @@ assembly_version: "1.0.19.9"
 | `flightNo` | `short` |  |  | `eventAirSegment` | 
 | `provider` | `string` | 8 |  | `eventAirSegment` | 
 | `nextConnectionDepartDateTime` | `DateTime` |  |  | `eventAirSegment` | 
+| `flightStatusUrl` | `string` | 512 |  | `eventAirSegment` | 
 | `eventAirTraveler ` | table |  |  | `eventAirSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirTraveler` | 
 | `name` | `string` | 256 |  | `eventAirTraveler` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -29,6 +29,7 @@ Permission Areas: JournalEntry
 | `generalLedgerAccountRecNo` | `long` |  | `journalEntry` | 
 | `generalLedgerAccountCategory` | `short` |  | `journalEntry` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `generalLedgerAccountName` | `string` | 64 | `journalEntry` | 
+| `generalLedgerAccountIndexNo` | `short` |  | `journalEntry` | 
 | `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailAmount` | `long` |  | `journalEntry` | 

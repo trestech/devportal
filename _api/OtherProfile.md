@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherProfile"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -49,7 +49,8 @@ Permission Areas: OtherProfile
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
-| `isBillingContact` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  | Deprecated | `communication` | IsBillingContact is deprecated. Use contactOptions instead.
+| `contactOption` | `short` |  |  | `communication` | Billing = 1, CustomerService = 2
 | `profileAddressLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAddressLink` | 
 | `addressType` | `short` |  | PKey, Required | `profileAddressLink` | Physical = 1, Mailing = 2

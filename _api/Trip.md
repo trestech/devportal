@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -54,7 +54,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -82,10 +82,11 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
-| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
@@ -157,6 +158,13 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
+| `reservationItemization  [shared]` | table |  |  | `reservation` | 
+| `recNo` | `long` |  | PKey | `reservationItemization` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationItemization` | 
+| `amount` | `long` |  |  | `reservationItemization` | 
+| `traveler` | `string` | 128 |  | `reservationItemization` | 
+| `description` | `string` | 128 |  | `reservationItemization` | 
+| `remarks` | `string` | 128 |  | `reservationItemization` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
 | `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
@@ -262,7 +270,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -290,10 +298,11 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
-| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
 | `airReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -361,6 +370,13 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
+| `reservationItemization  [shared]` | table |  |  | `cruiseSubReservation` | 
+| `recNo` | `long` |  | PKey | `reservationItemization` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationItemization` | 
+| `amount` | `long` |  |  | `reservationItemization` | 
+| `traveler` | `string` | 128 |  | `reservationItemization` | 
+| `description` | `string` | 128 |  | `reservationItemization` | 
+| `remarks` | `string` | 128 |  | `reservationItemization` | 
 | `tourReservation ` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `tourReservation` | 
 | `tourSubReservationLink ` | table |  |  | `tourReservation` | 
@@ -372,7 +388,7 @@ Permission Areas: Trip
 | `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
-| `travelCategory_recNo` | `short` |  | Required, FKey | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
 | `commissionRate` | `short` |  |  | `reservation` | 
@@ -400,10 +416,11 @@ Permission Areas: Trip
 | `supplierRemarks` | `string` |  |  | `reservation` | 
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
-| `tripStatementPrintOption` | `short` |  | Required | `reservation` | All = 0, HideReservation = 1, HideTotalFare = 2
+| `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
 | `airReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -471,6 +488,13 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
+| `reservationItemization  [shared]` | table |  |  | `tourSubReservation` | 
+| `recNo` | `long` |  | PKey | `reservationItemization` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationItemization` | 
+| `amount` | `long` |  |  | `reservationItemization` | 
+| `traveler` | `string` | 128 |  | `reservationItemization` | 
+| `description` | `string` | 128 |  | `reservationItemization` | 
+| `remarks` | `string` | 128 |  | `reservationItemization` | 
 | `reservationDeposit ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationDeposit` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationDeposit` | 
@@ -518,7 +542,7 @@ Permission Areas: Trip
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `tripActionItemLink` | 
 | `tripActionItem ` | table |  | Singleton | `tripActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `type` | `short` |  | Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -26,6 +26,12 @@ Permission Areas: Branch
 | `logoData` | `byte[]` |  |  | `branch` | 
 | `itineraryRemarks` | `string` |  |  | `branch` | 
 | `brandingColor` | `int` |  |  | `branch` | 
+| `branchTag ` | table |  |  | `branch` | 
+| `recNo` | `long` |  | PKey | `branchTag` | 
+| `branch_recNo` | `long` |  | InsertOnly, FKey | `branchTag` | 
+| `tag_recNo` | `long` |  | Required, FKey | `branchTag` | 
+| `name` | `string` | 64 | ReadOnly | `branchTag` | 
+| `value` | `string` | 1024 |  | `branchTag` | 
 
 | Status code | Description |
 | ----------- | ----------- |

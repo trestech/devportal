@@ -2,7 +2,7 @@
 layout: api_page
 title: "DestinationSearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -12,6 +12,9 @@ Permission Areas: Destination
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `destination` | 
+| `tagRecNo` | `long` |  | `destination` | 
+| `tagName` | `string` | 64 | `destination` | 
+| `tagValue` | `string` | 1024 | `destination` | 
 | `summaryCount` | `int` |  | `destination` | 
 | `createDateTime` | `DateTimeOffset` |  | `destination` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `destination` | 
@@ -36,6 +39,7 @@ Permission Areas: Destination
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `country` | [`StringSearchParam`](StringSearchParam) | `country` | 
 | `regionRecNo` | `EnumSearchParam<Region>` | `regionRecNo` | UnitedStates = 1, Canada = 2, MexicoCentralAmerica = 3, BermudaCaribbean = 4, SouthAmericaAntarctica = 5, Europe = 6, EgyptMiddleEast = 7, Africa = 8, AustraliaNewZealand = 9, Asia = 10, SouthPacific = 11

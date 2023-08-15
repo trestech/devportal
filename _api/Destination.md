@@ -2,7 +2,7 @@
 layout: api_page
 title: "Destination"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -32,6 +32,12 @@ Permission Areas: Destination
 | `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `destinationTag ` | table |  |  | `destination` | 
+| `recNo` | `long` |  | PKey | `destinationTag` | 
+| `destination_recNo` | `long` |  | InsertOnly, FKey | `destinationTag` | 
+| `tag_recNo` | `long` |  | Required, FKey | `destinationTag` | 
+| `name` | `string` | 64 | ReadOnly | `destinationTag` | 
+| `value` | `string` | 1024 |  | `destinationTag` | 
 
 | Status code | Description |
 | ----------- | ----------- |

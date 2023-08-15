@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: ""
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 
@@ -12,6 +12,9 @@ Permission Areas: Branch
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
 | `recNo` | `long` |  | `branch` | 
+| `tagRecNo` | `long` |  | `branch` | 
+| `tagName` | `string` | 64 | `branch` | 
+| `tagValue` | `string` | 1024 | `branch` | 
 | `summaryCount` | `int` |  | `branch` | 
 | `createDateTime` | `DateTimeOffset` |  | `branch` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `branch` | 
@@ -34,6 +37,7 @@ Permission Areas: Branch
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 
 | Status code | Description |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.19.9"
+assembly_version: "1.0.21.8"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -54,7 +54,8 @@ Permission Areas: Person
 | `description` | `string` | 64 |  | `communication` | 
 | `isPrimary` | `bool` |  |  | `communication` | 
 | `permitMarketing` | `bool` |  |  | `communication` | 
-| `isBillingContact` | `bool` |  |  | `communication` | 
+| `isBillingContact` | `bool` |  | Deprecated | `communication` | IsBillingContact is deprecated. Use contactOptions instead.
+| `contactOption` | `short` |  |  | `communication` | Billing = 1, CustomerService = 2
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
@@ -101,7 +102,7 @@ Permission Areas: Person
 | `actionItem_recNo` | `long` |  | PKey, Auto-Assign | `personActionItemLink` | 
 | `personActionItem ` | table |  | Singleton | `personActionItemLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItem` | 
-| `type` | `short` |  | Required, Deprecated | `actionItem` | Not needed
+| `type` | `short` |  | Deprecated | `actionItem` | Not needed
 | `description` | `string` | 256 |  | `actionItem` | 
 | `triggerIndex` | `short` |  | Required | `actionItem` | FixedDate = 1, CreateDate = 2, Birthday = 3
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
