@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplate"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -20,6 +20,7 @@ assembly_version: "1.0.21.8"
 | `activeStatus` | `bool` |  |  | `documentTemplate` | 
 | `documentType` | `short` |  | Required | `documentTemplate` | Email = 1, ESign = 2
 | `waiverTemplateId` | `string` | 32 |  | `documentTemplate` | 
+| `area` | `short` |  |  | `documentTemplate` | Trip = 1, ClientProfile = 2, Person = 3
 | `documentTemplateAttachmentLink ` | table |  |  | `documentTemplate` | 
 | `documentTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `documentTemplateAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `documentTemplateAttachmentLink` | 
@@ -33,7 +34,7 @@ assembly_version: "1.0.21.8"
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 

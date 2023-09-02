@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -203,6 +203,7 @@ Permission Areas: Trip
 | `birthdayDay` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `birthdayMonth` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `birthdayYear` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `age` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `reservationAdvisor ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationAdvisor` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAdvisor` | 
@@ -222,7 +223,8 @@ Permission Areas: Trip
 | `reservationAttachmentLink ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
-| `visibility` | `short` |  |  | `reservationAttachmentLink` | 0 = reservation attachment hidden from client itin, 1 = reservation attachment included on client itin
+| `visibility` | `short` |  | Deprecated | `reservationAttachmentLink` | reservationAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
+| `sortIndex` | `short` |  |  | `reservationAttachmentLink` | 
 | `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -233,7 +235,7 @@ Permission Areas: Trip
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `reservationTag ` | table |  |  | `reservation` | 
@@ -517,7 +519,7 @@ Permission Areas: Trip
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `tripAttachmentLink` | 
 | `sortIndex` | `short` |  |  | `tripAttachmentLink` | 
-| `visibility` | `short` |  |  | `tripAttachmentLink` | 0 = trip attachment hidden from client itin, 1 = trip attachment included on client itin
+| `visibility` | `short` |  | Deprecated | `tripAttachmentLink` | tripAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
 | `tripAttachment  [shared]` | table |  | Singleton | `tripAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -528,7 +530,7 @@ Permission Areas: Trip
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `tripTag ` | table |  |  | `trip` | 

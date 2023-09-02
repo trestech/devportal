@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -14,13 +14,14 @@ assembly_version: "1.0.21.8"
 | `advisorProfile_recNo` | `long` |  | FKey | `clientItinTrip` | 
 | `tripStartDateTime` | `DateTime` |  |  | `clientItinTrip` | 
 | `tripEndDateTime` | `DateTime` |  |  | `clientItinTrip` | 
-| `traveler ` | table |  |  | `clientItinTrip` | 
-| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `traveler` | 
-| `travelerName` | `string` | 512 |  | `traveler` | 
-| `personRecNo` | `long` |  |  | `traveler` | 
-| `firstName` | `string` | 64 |  | `traveler` | 
-| `middleName` | `string` | 64 |  | `traveler` | 
-| `lastName` | `string` | 64 |  | `traveler` | 
+| `tripClientName` | `string` | 256 |  | `clientItinTrip` | 
+| `tripTraveler ` | table |  |  | `clientItinTrip` | 
+| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripTraveler` | 
+| `travelerName` | `string` | 512 |  | `tripTraveler` | 
+| `personRecNo` | `long` |  |  | `tripTraveler` | 
+| `firstName` | `string` | 64 |  | `tripTraveler` | 
+| `middleName` | `string` | 64 |  | `tripTraveler` | 
+| `lastName` | `string` | 64 |  | `tripTraveler` | 
 | `event ` | table |  |  | `clientItinTrip` | 
 | `indexNo` | `long` |  | PKey | `event` | 
 | `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `event` | 
@@ -61,6 +62,13 @@ assembly_version: "1.0.21.8"
 | `stateProvince` | `string` | 8 |  | `providerInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerInfo` | 
 | `country` | `string` | 4 |  | `providerInfo` | 
+| `eventTraveler ` | table |  |  | `event` | 
+| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventTraveler` | 
+| `travelerName` | `string` | 512 |  | `eventTraveler` | 
+| `personRecNo` | `long` |  |  | `eventTraveler` | 
+| `firstName` | `string` | 64 |  | `eventTraveler` | 
+| `middleName` | `string` | 64 |  | `eventTraveler` | 
+| `lastName` | `string` | 64 |  | `eventTraveler` | 
 | `eventReservationLink ` | table |  |  | `event` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventReservationLink` | 
 | `reservationRecNo` | `long` |  | PKey | `eventReservationLink` | 
@@ -79,7 +87,11 @@ assembly_version: "1.0.21.8"
 | `eventAirTraveler ` | table |  |  | `eventAirSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirTraveler` | 
 | `name` | `string` | 256 |  | `eventAirTraveler` | 
-| `ticketNo` | `string` | 64 |  | `eventAirTraveler` | 
+| `firstName` | `string` | 64 |  | `eventAirTraveler` | 
+| `middleName` | `string` | 64 |  | `eventAirTraveler` | 
+| `lastName` | `string` | 64 |  | `eventAirTraveler` | 
+| `ticketNo` | `long` |  |  | `eventAirTraveler` | 
+| `confirmationNo` | `string` | 64 |  | `eventAirTraveler` | 
 | `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
 | `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
 | `seatNo` | `string` | 4 |  | `eventAirTraveler` | 
@@ -115,6 +127,7 @@ assembly_version: "1.0.21.8"
 | `description` | `string` | 256 |  | `eventAttachment` | 
 | `fileNameLinkURL` | `string` | 256 |  | `eventAttachment` | 
 | `directUrl` | `string` | 256 |  | `eventAttachment` | 
+| `fileData` | `byte[]` |  |  | `eventAttachment` | 
 | `tripAttachment ` | table |  |  | `clientItinTrip` | 
 | `recNo` | `long` |  |  | `tripAttachment` | 
 | `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachment` | 
@@ -123,6 +136,7 @@ assembly_version: "1.0.21.8"
 | `description` | `string` | 256 |  | `tripAttachment` | 
 | `fileNameLinkURL` | `string` | 256 |  | `tripAttachment` | 
 | `directUrl` | `string` | 256 |  | `tripAttachment` | 
+| `fileData` | `byte[]` |  |  | `tripAttachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

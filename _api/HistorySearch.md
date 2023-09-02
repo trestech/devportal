@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -98,7 +98,7 @@ Permission Areas: ClientProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `profileTag ` | table |  |  | `profile` | 

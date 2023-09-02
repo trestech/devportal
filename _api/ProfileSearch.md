@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -66,7 +66,8 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `firstId` | `string` | 32 | `profile` | 
 | `profileCommType` | `short` |  | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `profileCommValue` | `string` | 256 | `communication` | 
-| `profileCommIsBillingContact` | `bool` |  | `communication` | 
+| `profileCommIsBillingContact` | `bool` |  | `communication` | ProfileSearch.profileCommIsBillingContact is deprecated, use profileCommContactOption instead.
+| `profileCommContactOption` | `short` |  | `communication` | Billing = 1, CustomerService = 2
 | `actionRecNo` | `long` |  | `clientProfileActionItem` | 
 | `actionItemTriggerIndex` | `short` |  | `clientProfileActionItem` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
 | `actionItemDate` | `Date` |  | `clientProfileActionItem` | 

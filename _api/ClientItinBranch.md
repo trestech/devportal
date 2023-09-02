@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinBranch"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -24,6 +24,20 @@ assembly_version: "1.0.21.8"
 | `logoData` | `byte[]` |  |  | `branch` | 
 | `itineraryRemarks` | `string` |  |  | `branch` | 
 | `brandingColor` | `int` |  |  | `branch` | 
+| `logoAttachment_recNo` | `long` |  | Auto-Assign | `branch` | 
+| `logoAttachment  [shared]` | table |  | Singleton | `branch` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `branchTag ` | table |  |  | `branch` | 
 | `recNo` | `long` |  | PKey | `branchTag` | 
 | `branch_recNo` | `long` |  | InsertOnly, FKey | `branchTag` | 

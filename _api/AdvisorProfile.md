@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -16,6 +16,7 @@ Permission Areas: AdvisorProfile
 | `logoData` | `byte[]` |  |  | `advisorProfile` | 
 | `addressPrintOption` | `short` |  | Required | `advisorProfile` | UseAdvisorAddress = 1, UseBranchAddress = 2, UseAgencyAddress = 3, NoAddress = 4
 | `photoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
+| `logoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
 | `brandingColor` | `int` |  |  | `advisorProfile` | 
 | `brandingName` | `string` | 64 |  | `advisorProfile` | 
 | `profile  [shared]` | table |  | Singleton | `advisorProfile` | 
@@ -89,7 +90,7 @@ Permission Areas: AdvisorProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `profileTag ` | table |  |  | `profile` | 
@@ -108,7 +109,20 @@ Permission Areas: AdvisorProfile
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Private = 1, Public = 2
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `logoAttachment  [shared]` | table |  | Singleton | `advisorProfile` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 

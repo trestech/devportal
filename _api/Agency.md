@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.0.21.8"
+assembly_version: "1.0.23.2"
 ---
 
 
@@ -31,9 +31,10 @@ assembly_version: "1.0.21.8"
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
 | `clientFormToken` | `string` | 1024 |  | `agency` | 
 | `brandingColor` | `int` |  |  | `agency` | 
+| `logoAttachment_recNo` | `long` |  | Auto-Assign | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
-| `affiliation_recNo` | `short` |  | PKey, Required | `agencyAffiliationLink` | Tres = 1, Signature = 2, AmEx = 6, EnsembleCanada = 7, EnsembleUS = 8, MART = 9, MAST = 10, TravelLeaders = 12, Virtuoso = 13, WESTA = 14, TravelSaversUS = 15, TravelSaversCanada = 16, Axus = 23
+| `affiliation_recNo` | `short` |  | PKey, Required | `agencyAffiliationLink` | Tres = 1, Signature = 2, AmEx = 6, EnsembleCanada = 7, EnsembleUS = 8, MART = 9, MAST = 10, TravelLeaders = 12, Virtuoso = 13, WESTA = 14, TravelSaversUS = 15, TravelSaversCanada = 16, Axus = 23, Grasp = 24
 | `affiliationName` | `string` | 64 | ReadOnly | `agencyAffiliationLink` | 
 | `id` | `string` | 32 |  | `agencyAffiliationLink` | 
 | `agencyAdvisorReconciliation ` | table |  |  | `agency` | 
@@ -54,6 +55,19 @@ assembly_version: "1.0.21.8"
 | `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
+| `logoAttachment  [shared]` | table |  | Singleton | `agency` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `bool` |  |  | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 
 | Status code | Description |
 | ----------- | ----------- |
