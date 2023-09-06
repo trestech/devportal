@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.23.2"
+assembly_version: "1.0.23.3"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -71,6 +71,7 @@ Permission Areas: Person
 | `code` | `string` | 8 |  | `card` | 
 | `nameOnCard` | `string` | 64 |  | `card` | 
 | `cvvCode` | `string` | 8 |  | `card` | 
+| `subType` | `short` |  |  | `card` | 
 | `personMarketing ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personMarketing` | 
 | `marketingElement_recNo` | `long` |  | PKey, Required, FKey | `personMarketing` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: ""
-assembly_version: "1.0.23.2"
+assembly_version: "1.0.23.3"
 ---
 
 
@@ -20,6 +20,7 @@ Permission Areas: Branch
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `branch` | 
 | `name` | `string` | 64 | `branch` | 
 | `description` | `string` | 128 | `branch` | 
+| `activeStatus` | `short` |  | `branch` | Inactive = 0, Active = 1, Pending = 2
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -39,6 +40,7 @@ Permission Areas: Branch
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
+| `activeStatus` | `long` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |

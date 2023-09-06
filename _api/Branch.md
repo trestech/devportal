@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: ""
-assembly_version: "1.0.23.2"
+assembly_version: "1.0.23.3"
 ---
 
 
@@ -26,6 +26,7 @@ Permission Areas: Branch
 | `logoData` | `byte[]` |  |  | `branch` | 
 | `itineraryRemarks` | `string` |  |  | `branch` | 
 | `brandingColor` | `int` |  |  | `branch` | 
+| `activeStatus` | `short` |  | Required | `branch` | Inactive = 0, Active = 1, Pending = 2
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `branch` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `branch` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
