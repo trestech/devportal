@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppSetting"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 

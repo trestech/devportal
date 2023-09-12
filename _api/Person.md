@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -31,7 +31,7 @@ Permission Areas: Person
 | `branch_recNo` | `long` |  | FKey | `person` | 
 | `branchName` | `string` | 64 | ReadOnly | `person` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `person` | 
-| `advisorName` | `string` | 256 | ReadOnly | `person` | 
+| `advisorName` | `string` | 256 | ReadOnly, Lookup | `person` | 
 | `remarks` | `string` |  |  | `person` | 
 | `emergencyContactName` | `string` | 64 |  | `person` | 
 | `emergencyContactRelationship` | `string` | 64 |  | `person` | 
@@ -39,7 +39,7 @@ Permission Areas: Person
 | `emergencyContactEmail` | `string` | 64 |  | `person` | 
 | `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
 | `age` | `short` |  | ReadOnly | `person` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `person` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `person` | 
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
@@ -59,7 +59,7 @@ Permission Areas: Person
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
-| `type` | `short` |  | Required | `card` | CreditDebit = 1, Loyalty = 2, Passport = 3
+| `type` | `short` |  | Required | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardNumber` | `string` | 64 | Required | `card` | 
 | `issueDate` | `Date` |  |  | `card` | 
 | `expirationDate` | `Date` |  |  | `card` | 
@@ -70,7 +70,7 @@ Permission Areas: Person
 | `cardNumberToken` | `string` | 64 |  | `card` | 
 | `code` | `string` | 8 |  | `card` | 
 | `nameOnCard` | `string` | 64 |  | `card` | 
-| `cvvCode` | `string` | 8 |  | `card` | 
+| `cvvCode` | `string` | 4 |  | `card` | 
 | `subType` | `short` |  |  | `card` | 
 | `personMarketing ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personMarketing` | 
@@ -88,7 +88,7 @@ Permission Areas: Person
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
@@ -109,10 +109,10 @@ Permission Areas: Person
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 
-| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |

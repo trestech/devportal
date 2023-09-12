@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "AdvisorAdjustmentSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search advisor adjustments based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search advisor adjustments based on filters.
 
+See: [Advisor Adjustment](AdvisorAdjustment.html)
 
 Permission Areas: AdvisorAdjustment
 

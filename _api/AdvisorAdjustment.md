@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustment"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -18,8 +18,8 @@ Permission Areas: AdvisorAdjustment
 | `amount` | `long` |  | Required | `advisorAdjustment` | 
 | `description` | `string` | 128 |  | `advisorAdjustment` | 
 | `remarks` | `string` | 512 |  | `advisorAdjustment` | 
-| `reconciliationRecNo` | `long` |  | ReadOnly | `advisorAdjustment` | 
-| `reconciliationDate` | `Date` |  | ReadOnly | `advisorAdjustment` | 
+| `reconciliationRecNo` | `long` |  | ReadOnly, Lookup | `advisorAdjustment` | 
+| `reconciliationDate` | `Date` |  | ReadOnly, Lookup | `advisorAdjustment` | 
 | `advisorAdjustmentTag ` | table |  |  | `advisorAdjustment` | 
 | `recNo` | `long` |  | PKey | `advisorAdjustmentTag` | 
 | `advisorAdjustment_recNo` | `long` |  | InsertOnly, FKey | `advisorAdjustmentTag` | 
@@ -38,7 +38,7 @@ Permission Areas: AdvisorAdjustment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3

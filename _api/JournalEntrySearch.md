@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "JournalEntrySearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search journal entries based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search journal entries based on filters.
 
+See: [JournalEntry](JournalEntry.html)
 
 Permission Areas: JournalEntry
 

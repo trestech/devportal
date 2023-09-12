@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "HistorySearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search history based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search history based on filters.
 
+See: [History](History.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

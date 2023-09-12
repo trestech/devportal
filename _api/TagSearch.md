@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "TagSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search tags based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search tags based on filters.
 
+See: [Tag](Tag.html)
 
 Permission Areas: Tag
 

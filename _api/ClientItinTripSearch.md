@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "ClientItinTripSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search client trip itineraries based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search client trip itineraries based on filters.
 
+See: [ClientItinTrip](ClientItinTrip.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

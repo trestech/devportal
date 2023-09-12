@@ -2,12 +2,14 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 PersonSearch returns data for persons (travelers).
 
 User needs at least select permission for person records. Results may be filtered if person permission includes OnlySelf (based on user's linked advisors) or if permission includes OnlyBranch (based on user's branch).
+
+See: [Person](Person.html)
 
 Permission Areas: Person
 
@@ -33,7 +35,7 @@ Permission Areas: Person
 | `birthdayYear` | `short` |  | `person` | 
 | `birthdayNote` | `string` | 256 | `person` | 
 | `remarks` | `string` | 256 | `person` | 
-| `cardType` | `short` |  | `person` | CreditDebit = 1, Loyalty = 2, Passport = 3
+| `cardType` | `short` |  | `person` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardNumber` | `string` | 64 | `card` | 
 | `cardExpDate` | `Date` |  | `card` | 
 | `cardDescription` | `string` | 512 | `card` | 

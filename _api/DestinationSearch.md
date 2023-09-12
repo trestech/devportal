@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "DestinationSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search destinations based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search destinations based on filters.
 
+See: [Destination](Destination.html)
 
 Permission Areas: Destination
 

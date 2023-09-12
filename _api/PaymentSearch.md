@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "PaymentSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search payments based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search payments based on filters.
 
+See: [ClientPayment](ClientPayment.html), [SupplierPayment](SupplierPayment.html), [OtherPayment](OtherPayment.html)
 
 Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 

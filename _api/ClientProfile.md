@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -18,7 +18,7 @@ Permission Areas: ClientProfile
 | `branch_recNo` | `long` |  | FKey | `clientProfile` | 
 | `branchName` | `string` | 64 | ReadOnly | `clientProfile` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `clientProfile` | 
-| `advisorName` | `string` | 256 | ReadOnly | `clientProfile` | 
+| `advisorName` | `string` | 256 | ReadOnly, Lookup | `clientProfile` | 
 | `anniversaryDay` | `short` |  |  | `clientProfile` | 
 | `anniversaryMonth` | `short` |  |  | `clientProfile` | 
 | `anniversaryYear` | `short` |  |  | `clientProfile` | 
@@ -35,19 +35,19 @@ Permission Areas: ClientProfile
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
 | `permitMarketing` | `bool` |  |  | `profile` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `profile` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `profile` | 
 | `profilePersonLink ` | table |  |  | `profile` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `profilePersonLink` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profilePersonLink` | 
 | `role` | `string` | 64 |  | `profilePersonLink` | 
 | `isPrimary` | `bool` |  |  | `profilePersonLink` | 
-| `name` | `string` | 256 | ReadOnly | `profilePersonLink` | 
-| `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
-| `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
+| `name` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
+| `primaryPhone` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
+| `primaryEmail` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
 | `department` | `string` | 64 |  | `profilePersonLink` | 
-| `birthdayDay` | `short` |  | ReadOnly | `profilePersonLink` | 
-| `birthdayMonth` | `short` |  | ReadOnly | `profilePersonLink` | 
-| `birthdayYear` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -97,7 +97,7 @@ Permission Areas: ClientProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
@@ -122,10 +122,10 @@ Permission Areas: ClientProfile
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 
-| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |

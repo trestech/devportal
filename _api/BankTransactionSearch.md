@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "BankTransactionSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search bank transactions based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search bank transactions based on filters.
 
+See: [Bank Transaction](BankTransaction.html)
 
 Permission Areas: BankTransaction
 

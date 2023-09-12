@@ -2,12 +2,14 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 TripSearch returns data for trips and reservations.
 
 User needs at least select permission for trips. Results may be filtered if trip permission includes OnlySelf (based on user's linked advisors) or if trip permission includes OnlyBranch (based on user's branch).
+
+See: [Trip](Trip.html)
 
 Permission Areas: Trip
 

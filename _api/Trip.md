@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -13,25 +13,25 @@ Permission Areas: Trip
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `trip` | 
 | `clientProfile_recNo` | `long` |  | FKey | `trip` | 
-| `clientName_Lookup` | `string` | 256 | ReadOnly | `trip` | 
+| `clientName_Lookup` | `string` | 256 | ReadOnly, Lookup | `trip` | 
 | `branch_recNo` | `long` |  | FKey | `trip` | 
 | `branch_name` | `string` | 64 | ReadOnly | `trip` | 
 | `name` | `string` | 256 |  | `trip` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `trip` | 
-| `advisorName_Lookup` | `string` | 256 | ReadOnly | `trip` | 
-| `advisorId_Lookup` | `string` | 256 | ReadOnly | `trip` | 
+| `advisorName_Lookup` | `string` | 256 | ReadOnly, Lookup | `trip` | 
+| `advisorId_Lookup` | `string` | 256 | ReadOnly, Lookup | `trip` | 
 | `uniqueId` | `string` | 64 |  | `trip` | 
 | `cancelled` | `bool` |  | Required | `trip` | 
 | `startDateTime` | `DateTime` |  |  | `trip` | 
 | `endDateTime` | `DateTime` |  |  | `trip` | 
 | `targetTravelDate` | `Date` |  |  | `trip` | 
 | `destination_recNo` | `long` |  | FKey | `trip` | 
-| `destinationName_Lookup` | `string` | 64 | ReadOnly | `trip` | 
+| `destinationName_Lookup` | `string` | 64 | ReadOnly, Lookup | `trip` | 
 | `remarks` | `string` |  |  | `trip` | 
 | `advisorRemarks` | `string` |  |  | `trip` | 
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `trip` | 
 | `visibility` | `short` |  |  | `trip` | 0 = trip hidden from client itin, 1 = trip included on client itin
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileInfo` | 
@@ -51,9 +51,9 @@ Permission Areas: Trip
 | `reservation  [shared]` | table |  | Singleton | `tripReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
 | `supplierProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `supplierName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
@@ -90,7 +90,7 @@ Permission Areas: Trip
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
-| `paymentCount` | `int` |  | ReadOnly | `reservation` | 
+| `paymentCount` | `int` |  | ReadOnly, Lookup | `reservation` | 
 | `airReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -196,25 +196,25 @@ Permission Areas: Trip
 | `reservationTraveler ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationTraveler` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `reservationTraveler` | 
-| `nameLookup` | `string` | 256 | ReadOnly | `reservationTraveler` | 
+| `nameLookup` | `string` | 256 | ReadOnly, Lookup | `reservationTraveler` | 
 | `isPrimary` | `bool` |  |  | `reservationTraveler` | 
-| `primaryPhone` | `string` | 256 | ReadOnly | `reservationTraveler` | 
-| `primaryEmail` | `string` | 256 | ReadOnly | `reservationTraveler` | 
-| `birthdayDay` | `short` |  | ReadOnly | `reservationTraveler` | 
-| `birthdayMonth` | `short` |  | ReadOnly | `reservationTraveler` | 
-| `birthdayYear` | `short` |  | ReadOnly | `reservationTraveler` | 
+| `primaryPhone` | `string` | 256 | ReadOnly, Lookup | `reservationTraveler` | 
+| `primaryEmail` | `string` | 256 | ReadOnly, Lookup | `reservationTraveler` | 
+| `birthdayDay` | `short` |  | ReadOnly, Lookup | `reservationTraveler` | 
+| `birthdayMonth` | `short` |  | ReadOnly, Lookup | `reservationTraveler` | 
+| `birthdayYear` | `short` |  | ReadOnly, Lookup | `reservationTraveler` | 
 | `age` | `short` |  | ReadOnly | `reservationTraveler` | 
 | `reservationAdvisor ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationAdvisor` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | Required, FKey | `reservationAdvisor` | 
-| `advisorName` | `string` | 256 | ReadOnly | `reservationAdvisor` | 
-| `id` | `string` | 32 | ReadOnly | `reservationAdvisor` | 
+| `advisorName` | `string` | 256 | ReadOnly, Lookup | `reservationAdvisor` | 
+| `id` | `string` | 32 | ReadOnly, Lookup | `reservationAdvisor` | 
 | `commissionRate` | `short` |  |  | `reservationAdvisor` | 
 | `commissionAmount` | `long` |  |  | `reservationAdvisor` | 
 | `datePaid` | `Date` |  |  | `reservationAdvisor` | 
-| `reconciliationRecNo` | `long` |  | ReadOnly | `reservationAdvisor` | 
-| `reconciliationDate` | `Date` |  | ReadOnly | `reservationAdvisor` | 
+| `reconciliationRecNo` | `long` |  | ReadOnly, Lookup | `reservationAdvisor` | 
+| `reconciliationDate` | `Date` |  | ReadOnly, Lookup | `reservationAdvisor` | 
 | `reservationTax ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTax` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTax` | 
@@ -234,7 +234,7 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
@@ -269,9 +269,9 @@ Permission Areas: Trip
 | `cruiseSubReservation  [shared]` | table |  | Singleton | `cruiseSubReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
 | `supplierProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `supplierName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
@@ -387,9 +387,9 @@ Permission Areas: Trip
 | `tourSubReservation  [shared]` | table |  | Singleton | `tourSubReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
 | `supplierProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `supplierName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `supplierName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
-| `providerName_Lookup` | `string` | 256 | ReadOnly | `reservation` | 
+| `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
@@ -505,7 +505,7 @@ Permission Areas: Trip
 | `notes` | `string` | 256 |  | `reservationDeposit` | 
 | `completed` | `DateTimeOffset` |  |  | `reservationDeposit` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `reservationDeposit` | 
-| `completedBy_appUserId` | `string` | 64 | ReadOnly | `reservationDeposit` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `reservationDeposit` | 
 | `clientPaymentInfo ` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientPaymentInfo` | 
 | `paymentDate` | `Date` |  |  | `clientPaymentInfo` | 
@@ -529,7 +529,7 @@ Permission Areas: Trip
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
@@ -550,18 +550,18 @@ Permission Areas: Trip
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 
-| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 | `tripDocument ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripDocument` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDocument` | 
 | `documentTemplate_recNo` | `long` |  | PKey, Required, FKey | `tripDocument` | 
 | `emailAddresses` | `string` | 512 |  | `tripDocument` | 
-| `name_lookup` | `string` | 128 | ReadOnly | `tripDocument` | 
-| `sent` | `DateTimeOffset` |  | ReadOnly | `tripDocument` | 
+| `name_lookup` | `string` | 128 | ReadOnly, Lookup | `tripDocument` | 
+| `sent` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripDocument` | 
 | `waiverId` | `string` | 32 |  | `tripDocument` | 
 | `waiverUrl` | `string` | 128 |  | `tripDocument` | 
 | `status` | `short` |  | Required | `tripDocument` | Pending = 1, Signed = 2, Expired = 3

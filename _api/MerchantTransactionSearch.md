@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "MerchantTransactionSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search merchant transactions based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search merchant transactions based on filters.
 
+See: [MerchantTransaction](MerchantTransaction.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

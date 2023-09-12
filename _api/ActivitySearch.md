@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "ActivitySearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search activities based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search activities based on filters.
 
+See: [Activity](Activity.html)
 
 Permission Areas: Activity
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Login"
 description: "The login method initiates a connection to an agency context on the server"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. 

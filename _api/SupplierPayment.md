@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierPayment"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -13,7 +13,7 @@ Permission Areas: SupplierPayment
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `payment_recNo` | `long` |  | PKey, Auto-Assign | `supplierPayment` | 
 | `supplierProfile_recNo` | `long` |  | Required, FKey | `supplierPayment` | 
-| `supplierName_Lookup` | `string` | 256 | ReadOnly | `supplierPayment` | 
+| `supplierName_Lookup` | `string` | 256 | ReadOnly, Lookup | `supplierPayment` | 
 | `createVoucher` | `bool` |  |  | `supplierPayment` | 
 | `voucherTripName` | `string` | 256 |  | `supplierPayment` | 
 | `voucherRemarks` | `string` |  |  | `supplierPayment` | 
@@ -50,7 +50,7 @@ Permission Areas: SupplierPayment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3

@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "AdvisorReconciliationSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search advisor reconciliation based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search advisor reconciliation based on filters.
 
+See: [Advisor Reconciliation](AdvisorReconciliation.html)
 
 Permission Areas: AdvisorReconciliation
 

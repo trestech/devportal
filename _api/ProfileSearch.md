@@ -2,12 +2,14 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
 
 User needs at least select permission for whichever type of profile being searched for. Results may be filtered if client or advisor permission includes OnlySelf (based on user's linked advisors) or if client permission or advisor permission includes OnlyBranch (based on user's branch).
+
+See: [AdvisorProfile](AdvisorProfile.html), [ClientProfile](ClientProfile.html), [OtherProfile](OtherProfile.html), [SupplierProfile](SupplierProfile.html)
 
 Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 

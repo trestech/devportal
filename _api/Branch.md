@@ -1,11 +1,11 @@
 ---
 layout: api_page
 title: "Branch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "A branch is often a separate location or office of a travel agency that uses the same data source as the main agency"
+assembly_version: "1.0.24.1"
 ---
 
-
+A branch is often a separate location or office of a travel agency that uses the same data source as the main agency.  A branch can have its own trust account, accounting data, and reporting functions and can also share information and workflows with other branches and the main agency.
 
 Permission Areas: Branch
 
@@ -37,7 +37,7 @@ Permission Areas: Branch
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
@@ -55,4 +55,24 @@ Permission Areas: Branch
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
+#### Example request: Load the branch information for the record specified.
+```sh
+GET https://api-dev.trestechnologies.com/branch/7715
+Content-Type: application/json
+Authorization: Bearer <session-token>
+```
+
+#### Example response
+```sh
+Content-Type: application/json
+Status: 200 Ok
+[
+  {
+    "recNo": 7715,
+    "name": "Peeps About",
+    "email": "dario.gianikas@example.com",
+    "logoData": ""
+  }
+]
+```
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherPayment"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -13,7 +13,7 @@ Permission Areas: OtherPayment
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `payment_recNo` | `long` |  | PKey, Auto-Assign | `otherPayment` | 
 | `otherProfile_recNo` | `long` |  | Required, FKey | `otherPayment` | 
-| `otherName_Lookup` | `string` | 256 | ReadOnly | `otherPayment` | 
+| `otherName_Lookup` | `string` | 256 | ReadOnly, Lookup | `otherPayment` | 
 | `payment  [shared]` | table |  | Singleton | `otherPayment` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `payment` | 
 | `amount` | `long` |  | Required, InsertOnly | `payment` | 
@@ -45,7 +45,7 @@ Permission Areas: OtherPayment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3

@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "TripImportSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search trip imports based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search trip imports based on filters.
 
+See: [TripImport](TripImport.html)
 
 Permission Areas: TripImport
 

@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "BankSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search banks based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search banks based on filters.
 
+See: [Bank](Bank.html)
 
 Permission Areas: Bank
 

@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "CityCodeSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search city codes based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search city codes based on filters.
 
+See: [CityCode](CityCode.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "DocumentTemplateSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search document templates based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search document templates based on filters.
 
+See: [DocumentTemplate](DocumentTemplate.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
@@ -17,6 +19,7 @@ assembly_version: "1.0.23.3"
 | `description` | `string` | 512 | `documentTemplate` | 
 | `appUser_RecNo` | `long` |  | `documentTemplate` | 
 | `activeStatus` | `bool` |  | `documentTemplate` | 
+| `area` | `short` |  | `documentTemplate` | Trip = 1, ClientProfile = 2, Person = 3
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -36,6 +39,7 @@ assembly_version: "1.0.23.3"
 | `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 
+| `area` | `bool` | `area` | 
 
 | Status code | Description |
 | ----------- | ----------- |

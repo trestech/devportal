@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "AppUserSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search application users based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search application users based on filters.
 
+See: [AppUser](AppUser.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

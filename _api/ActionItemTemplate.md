@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplate"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -29,10 +29,10 @@ Permission Areas: ActionItemTemplate
 | `triggerDaysOffset` | `short` |  |  | `actionItem` | 
 | `triggerFixedDate` | `Date` |  |  | `actionItem` | 
 | `appUser_recNo` | `long` |  |  | `actionItem` | 
-| `appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
-| `completedBy_appUserId` | `string` | 64 | ReadOnly | `actionItem` | 
+| `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `notes` | `string` | 256 |  | `actionItem` | 
 
 | Status code | Description |

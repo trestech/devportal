@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "GeneralLedgerAccountSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search general ledger accounts based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search general ledger accounts based on filters.
 
+See: [GeneralLedgerAccount](GeneralLedgerAccount.html)
 
 Permission Areas: GeneralLedgerAccount
 

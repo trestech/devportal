@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "AccountingEntrySearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search accounting entries based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search accounting entries based on filters.
 
+See: [Accounting Entry](AccountingEntry.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |

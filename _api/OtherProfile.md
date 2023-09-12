@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherProfile"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -22,19 +22,19 @@ Permission Areas: OtherProfile
 | `remarks` | `string` |  |  | `profile` | 
 | `accountingReference` | `string` | 64 |  | `profile` | 
 | `permitMarketing` | `bool` |  |  | `profile` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `profile` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `profile` | 
 | `profilePersonLink ` | table |  |  | `profile` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `profilePersonLink` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profilePersonLink` | 
 | `role` | `string` | 64 |  | `profilePersonLink` | 
 | `isPrimary` | `bool` |  |  | `profilePersonLink` | 
-| `name` | `string` | 256 | ReadOnly | `profilePersonLink` | 
-| `primaryPhone` | `string` | 256 | ReadOnly | `profilePersonLink` | 
-| `primaryEmail` | `string` | 256 | ReadOnly | `profilePersonLink` | 
+| `name` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
+| `primaryPhone` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
+| `primaryEmail` | `string` | 256 | ReadOnly, Lookup | `profilePersonLink` | 
 | `department` | `string` | 64 |  | `profilePersonLink` | 
-| `birthdayDay` | `short` |  | ReadOnly | `profilePersonLink` | 
-| `birthdayMonth` | `short` |  | ReadOnly | `profilePersonLink` | 
-| `birthdayYear` | `short` |  | ReadOnly | `profilePersonLink` | 
+| `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -84,7 +84,7 @@ Permission Areas: OtherProfile
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3

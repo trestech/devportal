@@ -1,11 +1,13 @@
 ---
 layout: api_page
 title: "BranchSearch"
-description: ""
-assembly_version: "1.0.23.3"
+description: "Search branches based on filters"
+assembly_version: "1.0.24.1"
 ---
 
+Search branches based on filters.
 
+See: [Branch](Branch.html)
 
 Permission Areas: Branch
 
@@ -48,4 +50,32 @@ Permission Areas: Branch
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
+#### Example request: Branches with names that start with `P`.
+```sh
+POST https://api-dev.trestechnologies.com/branchSearch
+Content-Type: application/json
+Authorization: Bearer <session-token>
+{
+  "name": {
+    "compareCondition": 5,
+    "value": [
+      "P"
+    ]
+  }
+}
+```
+
+#### Example response
+```sh
+Content-Type: application/json
+Status: 200 Ok
+[
+  {
+    "recNo": 7715,
+    "createDateTime": "2023-08-09T12:02:09-07:00",
+    "lastModifiedDateTime": "2023-08-09T12:04:07-07:00",
+    "name": "Peeps About"
+  }
+]
+```
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPayment"
 description: ""
-assembly_version: "1.0.23.3"
+assembly_version: "1.0.24.1"
 ---
 
 
@@ -14,16 +14,16 @@ Permission Areas: ClientPayment
 | `agencyProcessed` | `bool` |  | Required, InsertOnly | `clientPayment` | 
 | `payment_recNo` | `long` |  | PKey, Auto-Assign | `clientPayment` | 
 | `clientProfile_recNo` | `long` |  | Required, InsertOnly, FKey | `clientPayment` | 
-| `clientName_lookup` | `string` | 256 | ReadOnly | `clientPayment` | 
+| `clientName_lookup` | `string` | 256 | ReadOnly, Lookup | `clientPayment` | 
 | `person_recNo` | `long` |  | FKey | `clientPayment` | 
-| `personName_lookup` | `string` | 256 | ReadOnly | `clientPayment` | 
+| `personName_lookup` | `string` | 256 | ReadOnly, Lookup | `clientPayment` | 
 | `createVoucher` | `bool` |  |  | `clientPayment` | 
 | `voucherTripName` | `string` | 256 |  | `clientPayment` | 
 | `voucherRemarks` | `string` |  |  | `clientPayment` | 
 | `voucherAmount` | `long` |  |  | `clientPayment` | 
 | `noReservationRefresh` | `bool` |  |  | `clientPayment` | 
-| `transactionId` | `string` | 32 | ReadOnly | `clientPayment` | 
-| `authorizationCode` | `string` | 16 | ReadOnly | `clientPayment` | 
+| `transactionId` | `string` | 32 | ReadOnly, Lookup | `clientPayment` | 
+| `authorizationCode` | `string` | 16 | ReadOnly, Lookup | `clientPayment` | 
 | `originalTransactionId` | `string` | 32 |  | `clientPayment` | 
 | `payment  [shared]` | table |  | Singleton | `clientPayment` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `payment` | 
@@ -56,7 +56,7 @@ Permission Areas: ClientPayment
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
 | `storeExternal` | `bool` |  |  | `attachment` | 
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly | `attachment` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
