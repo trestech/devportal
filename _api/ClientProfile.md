@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -16,7 +16,7 @@ Permission Areas: ClientProfile
 | `profile_recNo` | `long` |  | PKey, Auto-Assign | `clientProfile` | 
 | `type` | `short` |  | Required | `clientProfile` | Personal = 1, Corporate = 2
 | `branch_recNo` | `long` |  | FKey | `clientProfile` | 
-| `branchName` | `string` | 64 | ReadOnly | `clientProfile` | 
+| `branchName` | `string` | 64 | ReadOnly, Lookup | `clientProfile` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `clientProfile` | 
 | `advisorName` | `string` | 256 | ReadOnly, Lookup | `clientProfile` | 
 | `anniversaryDay` | `short` |  |  | `clientProfile` | 

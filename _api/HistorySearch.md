@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: "Search history based on filters"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 Search history based on filters.
@@ -47,8 +47,8 @@ See: [History](History.html)
 | `tableRecNo` | [`NumSearchParam`](NumSearchParam) | `tableRecNo` | 
 | `tableRecNo2` | [`NumSearchParam`](NumSearchParam) | `tableRecNo2` | 
 | `action` | [`StringSearchParam`](StringSearchParam) | `action` | 
-| `timeStampFrom` | `DateTimeOffset` |  | 
-| `timeStampTo` | `DateTimeOffset` |  | 
+| `timeStampFrom` | `DateTimeUTCSearchParam` |  | 
+| `timeStampTo` | `DateTimeUTCSearchParam` |  | 
 | `appUser_recNo` | [`NumSearchParam`](NumSearchParam) | `appUser_recNo` | 
 | `appUser_id` | [`StringSearchParam`](StringSearchParam) | `appUser_id` | 
 

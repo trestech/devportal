@@ -2,7 +2,7 @@
 layout: api_page
 title: "Region"
 description: ""
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -36,6 +36,7 @@ Permission Areas: Person
 | `birthdayNote` | `string` | 256 | `person` | 
 | `remarks` | `string` | 256 | `person` | 
 | `cardType` | `short` |  | `person` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `cardSubType` | `short` |  | `person` | 
 | `cardNumber` | `string` | 64 | `card` | 
 | `cardExpDate` | `Date` |  | `card` | 
 | `cardDescription` | `string` | 512 | `card` | 
@@ -90,6 +91,7 @@ Permission Areas: Person
 | `emailPermitMarketing` | `bool` |  | 
 | `phonePermitMarketing` | `bool` |  | 
 | `cardType` | `long` | `cardType` | 
+| `cardSubType` | [`NumSearchParam`](NumSearchParam) | `cardSubType` | 
 | `cardExpirationDateFrom` | `DateSearchParam` |  | 
 | `cardExpirationDateTo` | `DateSearchParam` |  | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 

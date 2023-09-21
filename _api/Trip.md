@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 
@@ -15,7 +15,7 @@ Permission Areas: Trip
 | `clientProfile_recNo` | `long` |  | FKey | `trip` | 
 | `clientName_Lookup` | `string` | 256 | ReadOnly, Lookup | `trip` | 
 | `branch_recNo` | `long` |  | FKey | `trip` | 
-| `branch_name` | `string` | 64 | ReadOnly | `trip` | 
+| `branch_name` | `string` | 64 | ReadOnly, Lookup | `trip` | 
 | `name` | `string` | 256 |  | `trip` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `trip` | 
 | `advisorName_Lookup` | `string` | 256 | ReadOnly, Lookup | `trip` | 
@@ -566,6 +566,9 @@ Permission Areas: Trip
 | `waiverUrl` | `string` | 128 |  | `tripDocument` | 
 | `status` | `short` |  | Required | `tripDocument` | Pending = 1, Signed = 2, Expired = 3
 | `statusDateTime` | `DateTimeOffset` |  |  | `tripDocument` | 
+| `tripDestinationLink ` | table |  |  | `trip` | 
+| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDestinationLink` | 
+| `destination_recNo` | `long` |  | PKey, Required, FKey | `tripDestinationLink` | 
 
 | Status code | Description |
 | ----------- | ----------- |

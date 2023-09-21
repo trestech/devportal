@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImport"
 description: ""
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 
@@ -22,7 +22,7 @@ Permission Areas: TripImport
 | `advisorProfile_recNo` | `long` |  | FKey | `tripImport` | 
 | `advisorProfile_Name` | `string` | 256 | ReadOnly, Lookup | `tripImport` | 
 | `branch_recNo` | `long` |  | FKey | `tripImport` | 
-| `branch_name` | `string` | 64 | ReadOnly | `tripImport` | 
+| `branch_name` | `string` | 64 | ReadOnly, Lookup | `tripImport` | 
 | `tripReference` | `string` | 64 |  | `tripImport` | 
 | `trip_RecNo` | `long` |  | FKey | `tripImport` | 
 | `gdsInvoiceType` | `short` |  |  | `tripImport` | Unknown = 0, Sale = 1, Refund = 2, ItinOnly = 3, ItinUpdate = 4, BoardingPass = 5, Void = 6

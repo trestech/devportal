@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: "Search branches based on filters"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 Search branches based on filters.

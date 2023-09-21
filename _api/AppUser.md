@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 
@@ -20,7 +20,7 @@ assembly_version: "1.0.24.1"
 | `microsoftId` | `string` | 64 |  | `appUser` | 
 | `recNo` | `long` |  | PKey | `appUser` | 
 | `branch_recNo` | `long` |  | FKey | `appUser` | 
-| `branchName` | `string` | 64 | ReadOnly | `appUser` | 
+| `branchName` | `string` | 64 | ReadOnly, Lookup | `appUser` | 
 | `userType` | `short` |  | Required | `appUser` | User = 1, Manager = 2, Admin = 3
 | `description` | `string` | 64 |  | `appUser` | 
 | `mobilePhone` | `string` | 64 |  | `appUser` | 

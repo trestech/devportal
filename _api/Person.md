@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -29,7 +29,7 @@ Permission Areas: Person
 | `gender` | `string` | 1 |  | `person` | 
 | `uniqueId` | `string` | 64 |  | `person` | 
 | `branch_recNo` | `long` |  | FKey | `person` | 
-| `branchName` | `string` | 64 | ReadOnly | `person` | 
+| `branchName` | `string` | 64 | ReadOnly, Lookup | `person` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `person` | 
 | `advisorName` | `string` | 256 | ReadOnly, Lookup | `person` | 
 | `remarks` | `string` |  |  | `person` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankSearch"
 description: "Search banks based on filters"
-assembly_version: "1.0.24.1"
+assembly_version: "1.0.24.6"
 ---
 
 Search banks based on filters.
