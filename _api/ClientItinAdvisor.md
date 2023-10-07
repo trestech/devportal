@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinAdvisor"
 description: ""
-assembly_version: "1.0.24.6"
+assembly_version: "1.0.25.7"
 ---
 
 
@@ -14,6 +14,7 @@ assembly_version: "1.0.24.6"
 | `phone` | `string` | 256 |  | `clientItinAdvisor` | 
 | `email` | `string` | 256 |  | `clientItinAdvisor` | 
 | `logoData` | `byte[]` |  |  | `clientItinAdvisor` | 
+| `logoDirectUrl` | `string` | 256 |  | `clientItinAdvisor` | 
 | `brandingColor` | `int` |  |  | `clientItinAdvisor` | 
 | `brandingName` | `string` | 64 |  | `clientItinAdvisor` | 
 | `photoDirectUrl` | `string` | 256 |  | `clientItinAdvisor` | 

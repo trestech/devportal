@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustment"
 description: ""
-assembly_version: "1.0.24.6"
+assembly_version: "1.0.25.7"
 ---
 
 

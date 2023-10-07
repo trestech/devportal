@@ -2,14 +2,14 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.0.24.6"
+assembly_version: "1.0.25.7"
 ---
 
 
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| `id` | `string` | 64 |  | `appUser` | 
+| `id` | `string` | 64 | Required | `appUser` | 
 | `enabled` | `bool` |  |  | `appUser` | 
 | `password` | `string` | 128 |  | `appUser` | 
 | `nonExpiringPassword` | `bool` |  |  | `appUser` | 
@@ -28,6 +28,7 @@ assembly_version: "1.0.24.6"
 | `emailServerName` | `string` | 64 |  | `appUser` | 
 | `emailServerUserName` | `string` | 128 |  | `appUser` | 
 | `emailServerPassword` | `string` | 64 |  | `appUser` | 
+| `slaVersionAcknowledged` | `int` |  |  | `appUser` | 
 | `personActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `clientProfileActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `supplierProfileActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512

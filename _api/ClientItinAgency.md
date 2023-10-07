@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinAgency"
 description: ""
-assembly_version: "1.0.24.6"
+assembly_version: "1.0.25.7"
 ---
 
 
@@ -20,6 +20,7 @@ assembly_version: "1.0.24.6"
 | `country` | `string` | 4 |  | `clientItinAgency` | 
 | `headerInfo` | `string` | 512 |  | `clientItinAgency` | 
 | `logoData` | `byte[]` |  |  | `clientItinAgency` | 
+| `logoDirectUrl` | `string` | 256 |  | `clientItinAgency` | 
 | `brandingColor` | `int` |  |  | `clientItinAgency` | 
 
 | Status code | Description |

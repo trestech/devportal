@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.24.6"
+assembly_version: "1.0.25.7"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -122,7 +122,7 @@ Permission Areas: Person
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
-#### Example request: loading peron 1969999 (Abler/Ken)
+#### Example request: loading person 1969999 (Abler/Ken)
 ```sh
 GET https://api-dev.trestechnologies.com/person/1969999
 Content-Type: application/json
@@ -145,16 +145,23 @@ Status: 200 Ok
     "birthdayMonth": 4,
     "birthdayYear": 1931,
     "birthdayNote": "",
-    "citizenship": "  ",
+    "citizenship": "",
     "redressNumber": "13431265431654",
     "knownTravelerNumber": "",
     "gender": "M",
     "uniqueId": "8a869d59-9fd6-4c26-ab31-104f4358e7ee",
+    "branch_recNo": null,
+    "branchName": null,
+    "advisorProfile_recNo": null,
+    "advisorName": null,
     "remarks": "",
     "emergencyContactName": "",
     "emergencyContactRelationship": "",
     "emergencyContactPhone": "",
     "emergencyContactEmail": "",
+    "activeStatus": 1,
+    "age": null,
+    "createDateTime": null,
     "personCommunicationLink": [
       {
         "person_recNo": 1969999,
@@ -169,7 +176,9 @@ Status: 200 Ok
           "userSpecific": "",
           "description": "Business",
           "isPrimary": true,
-          "permitMarketing": true
+          "permitMarketing": true,
+          "isBillingContact": null,
+          "contactOption": null
         }
       },
       {
@@ -185,7 +194,9 @@ Status: 200 Ok
           "userSpecific": "",
           "description": "E-Mail",
           "isPrimary": false,
-          "permitMarketing": true
+          "permitMarketing": true,
+          "isBillingContact": null,
+          "contactOption": null
         }
       },
       {
@@ -201,8 +212,80 @@ Status: 200 Ok
           "userSpecific": "",
           "description": "",
           "isPrimary": true,
-          "permitMarketing": false
+          "permitMarketing": false,
+          "isBillingContact": null,
+          "contactOption": null
         }
+      }
+    ],
+    "card": [
+      {
+        "recNo": 156971,
+        "person_recNo": 1969999,
+        "type": 1,
+        "cardNumber": "VI 41-XXXX-1111",
+        "issueDate": null,
+        "expirationDate": "2025-12-31T00:00:00",
+        "issuingCity": "",
+        "issuingCountry": "",
+        "issuingCountryName": null,
+        "description": "Visa",
+        "cardNumberToken": null,
+        "code": "",
+        "nameOnCard": null,
+        "cvvCode": null,
+        "subType": null
+      },
+      {
+        "recNo": 156972,
+        "person_recNo": 1969999,
+        "type": 2,
+        "cardNumber": "4567888",
+        "issueDate": null,
+        "expirationDate": null,
+        "issuingCity": "",
+        "issuingCountry": "",
+        "issuingCountryName": null,
+        "description": "Advantage",
+        "cardNumberToken": null,
+        "code": "",
+        "nameOnCard": null,
+        "cvvCode": null,
+        "subType": null
+      },
+      {
+        "recNo": 156973,
+        "person_recNo": 1969999,
+        "type": 1,
+        "cardNumber": "VI 41-XXXX-1111",
+        "issueDate": null,
+        "expirationDate": "2025-12-31T00:00:00",
+        "issuingCity": "",
+        "issuingCountry": "",
+        "issuingCountryName": null,
+        "description": "Visa",
+        "cardNumberToken": null,
+        "code": "",
+        "nameOnCard": null,
+        "cvvCode": null,
+        "subType": null
+      },
+      {
+        "recNo": 156974,
+        "person_recNo": 1969999,
+        "type": 2,
+        "cardNumber": "5656343",
+        "issueDate": null,
+        "expirationDate": null,
+        "issuingCity": "",
+        "issuingCountry": "",
+        "issuingCountryName": null,
+        "description": "Hilton Hotels",
+        "cardNumberToken": null,
+        "code": "",
+        "nameOnCard": null,
+        "cvvCode": null,
+        "subType": null
       }
     ],
     "personMarketing": [
@@ -217,70 +300,7 @@ Status: 200 Ok
         "affiliation_recNo": 1
       }
     ],
-    "card": [
-      {
-        "recNo": 156971,
-        "person_recNo": 1969999,
-        "type": 1,
-        "cardNumber": "VI 41-XXXX-1111",
-        "expirationDate": "2025-12-31T00:00:00",
-        "issuingCity": "",
-        "issuingCountry": "  ",
-        "description": "Visa",
-        "code": ""
-      },
-      {
-        "recNo": 156972,
-        "person_recNo": 1969999,
-        "type": 2,
-        "cardNumber": "4567888",
-        "issuingCity": "",
-        "issuingCountry": "  ",
-        "description": "Advantage",
-        "code": ""
-      },
-      {
-        "recNo": 156973,
-        "person_recNo": 1969999,
-        "type": 1,
-        "cardNumber": "VI 41-XXXX-1111",
-        "expirationDate": "2025-12-31T00:00:00",
-        "issuingCity": "",
-        "issuingCountry": "  ",
-        "description": "Visa",
-        "code": ""
-      },
-      {
-        "recNo": 156974,
-        "person_recNo": 1969999,
-        "type": 2,
-        "cardNumber": "5656343",
-        "issuingCity": "",
-        "issuingCountry": "  ",
-        "description": "Hilton Hotels",
-        "code": ""
-      },
-      {
-        "recNo": 156975,
-        "person_recNo": 1969999,
-        "type": 1,
-        "cardNumber": "VI 41-XXXX-1111",
-        "expirationDate": "2025-12-31T00:00:00",
-        "issuingCity": "",
-        "issuingCountry": "  ",
-        "description": "Visa",
-        "code": ""
-      },
-      {
-        "recNo": 300178,
-        "person_recNo": 1969999,
-        "type": 3,
-        "cardNumber": "123",
-        "issueDate": "2022-07-21T00:00:00",
-        "expirationDate": "2022-07-19T00:00:00",
-        "code": ""
-      }
-    ],
+    "personAttachmentLink": [],
     "personTag": [
       {
         "recNo": 1341988,
@@ -288,6 +308,26 @@ Status: 200 Ok
         "tag_recNo": 2460,
         "name": "CBTravelerNo",
         "value": "231"
+      }
+    ],
+    "personActionItemLink": [
+      {
+        "person_recNo": 1969999,
+        "actionItem_recNo": 99,
+        "personActionItem": {
+          "recNo": 99,
+          "type": null,
+          "description": "Call Ken For Follow Up",
+          "triggerIndex": null,
+          "triggerDaysOffset": 0,
+          "triggerFixedDate": null,
+          "appUser_recNo": null,
+          "appUserId": null,
+          "completed": null,
+          "completedBy_appUserRecNo": null,
+          "completedBy_appUserId": null,
+          "notes": null
+        }
       }
     ]
   }
