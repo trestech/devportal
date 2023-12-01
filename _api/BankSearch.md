@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankSearch"
 description: "Search banks based on filters"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 Search banks based on filters.
@@ -20,6 +20,7 @@ Permission Areas: Bank
 | `name` | `string` | 64 | `bank` | 
 | `description` | `string` | 128 | `bank` | 
 | `generalLedgerAccount_recNo` | `long` |  | `bank` | 
+| `activeStatus` | `short` |  | `bank` | Inactive = 0, Active = 1, Pending = 2
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -38,6 +39,7 @@ Permission Areas: Bank
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
+| `activeStatus` | `long` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |

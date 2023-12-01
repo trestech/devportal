@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierProfile"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -91,7 +91,7 @@ Permission Areas: SupplierProfile
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 

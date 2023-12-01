@@ -2,7 +2,7 @@
 layout: api_page
 title: "Login"
 description: "The login method initiates a connection to an agency context on the server"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. 
@@ -11,7 +11,7 @@ The method returns a Json response that includes an identity token which is need
 
 | Input Parameter | Required/Optional | Description |
 | --------------- | ----------------- | ----------- |
-| alias | Required| Identifies the targeted context for login |
+| alias | Required| Identifies the targeted context for login. Referred to as "domain" in the application login screen. |
 
 | Output Parameter | Description |
 | ---------------- | ----------- |

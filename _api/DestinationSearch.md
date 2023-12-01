@@ -2,7 +2,7 @@
 layout: api_page
 title: "DestinationSearch"
 description: "Search destinations based on filters"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 Search destinations based on filters.
@@ -24,6 +24,7 @@ Permission Areas: Destination
 | `country` | `string` | 4 | `destination` | 
 | `regionRecNo` | `long` |  | `destination` | 
 | `regionName` | `string` | 64 | `destination` | 
+| `imageCount` | `short` |  | `destination` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

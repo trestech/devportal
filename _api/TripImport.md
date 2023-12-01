@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImport"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -16,7 +16,7 @@ Permission Areas: TripImport
 | `subType` | `short` |  |  | `tripImport` | 
 | `source` | `string` | 64 |  | `tripImport` | 
 | `recordLocator` | `string` | 6 |  | `tripImport` | 
-| `data` | `string` |  |  | `tripImport` | 
+| `data` | `string` |  | InsertOnly | `tripImport` | 
 | `status` | `short` |  |  | `tripImport` | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | `statusMessage` | `string` | 256 |  | `tripImport` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `tripImport` | 

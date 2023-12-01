@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -87,7 +87,7 @@ Permission Areas: Person
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
@@ -139,13 +139,13 @@ Status: 200 Ok
     "firstName": "Ken",
     "middleName": "",
     "lastName": "Abler",
-    "courtesyTitle": "",
-    "salutation": "",
+    "courtesyTitle": null,
+    "salutation": null,
     "birthdayDay": 23,
     "birthdayMonth": 4,
     "birthdayYear": 1931,
-    "birthdayNote": "",
-    "citizenship": "",
+    "birthdayNote": null,
+    "citizenship": null,
     "redressNumber": "13431265431654",
     "knownTravelerNumber": "",
     "gender": "M",

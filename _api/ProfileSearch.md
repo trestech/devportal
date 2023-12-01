@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -110,7 +110,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientAnniversaryDayTo` | `long` |  | 
 | `clientAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientAdvisorProfileRecNo` | 
 | `clientType` | `long` | `clientType` | 
-| `supplierType` | `long` | `supplierType` | 
+| `supplierType` | `EnumSearchParam<SupplierType>` | `supplierType` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
 | `activeStatus` | `long` | `activeStatus` | 
 | `clientBranchRecNo` | [`NumSearchParam`](NumSearchParam) | `clientBranchRecNo` | 
 | `personRecNo` | [`NumSearchParam`](NumSearchParam) |  | 

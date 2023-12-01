@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPayment"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -55,7 +55,7 @@ Permission Areas: ClientPayment
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
@@ -68,8 +68,8 @@ Permission Areas: ClientPayment
 | `value` | `string` | 1024 |  | `paymentTag` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `payment` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
-| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTime` |  |  | `accountingEntry` | 
+| `createDate` | `Date` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `Date` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 

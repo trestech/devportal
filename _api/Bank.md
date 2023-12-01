@@ -2,7 +2,7 @@
 layout: api_page
 title: "Bank"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -18,6 +18,7 @@ Permission Areas: Bank
 | `balance` | `long` |  | Required, ReadOnly | `bank` | 
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `bank` | 
 | `generalLedgerAccount_name` | `string` | 64 | ReadOnly | `bank` | 
+| `activeStatus` | `short` |  | Required | `bank` | Inactive = 0, Active = 1, Pending = 2
 
 | Status code | Description |
 | ----------- | ----------- |

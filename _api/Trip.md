@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -167,8 +167,8 @@ Permission Areas: Trip
 | `remarks` | `string` | 128 |  | `reservationItemization` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
-| `createDate` | `DateTime` |  | InsertOnly | `accountingEntry` | 
-| `postDate` | `DateTime` |  |  | `accountingEntry` | 
+| `createDate` | `Date` |  | InsertOnly | `accountingEntry` | 
+| `postDate` | `Date` |  |  | `accountingEntry` | 
 | `description` | `string` | 512 |  | `accountingEntry` | 
 | `accountingReference` | `string` | 64 |  | `accountingEntry` | 
 | `journalEntry_recNo` | `long` |  | Auto-Assign | `accountingEntry` | 
@@ -233,7 +233,7 @@ Permission Areas: Trip
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
@@ -528,7 +528,7 @@ Permission Areas: Trip
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
@@ -557,8 +557,8 @@ Permission Areas: Trip
 | `notes` | `string` | 256 |  | `actionItem` | 
 | `tripDocument ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripDocument` | 
-| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDocument` | 
-| `documentTemplate_recNo` | `long` |  | PKey, Required, FKey | `tripDocument` | 
+| `trip_recNo` | `long` |  | InsertOnly, FKey | `tripDocument` | 
+| `documentTemplate_recNo` | `long` |  | Required, FKey | `tripDocument` | 
 | `emailAddresses` | `string` | 512 |  | `tripDocument` | 
 | `name_lookup` | `string` | 128 | ReadOnly, Lookup | `tripDocument` | 
 | `sent` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripDocument` | 
@@ -569,6 +569,24 @@ Permission Areas: Trip
 | `tripDestinationLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDestinationLink` | 
 | `destination_recNo` | `long` |  | PKey, Required, FKey | `tripDestinationLink` | 
+| `tripPaymentAuthorization ` | table |  |  | `trip` | 
+| `recNo` | `long` |  | PKey | `tripPaymentAuthorization` | 
+| `trip_recNo` | `long` |  | InsertOnly, FKey | `tripPaymentAuthorization` | 
+| `status` | `short` |  | Required | `tripPaymentAuthorization` | Pending = 1, Authorized = 2, Expired = 3
+| `authorizedAmount` | `long` |  | Required | `tripPaymentAuthorization` | 
+| `description` | `string` | 128 |  | `tripPaymentAuthorization` | 
+| `authorizationFormToken` | `string` | 1024 |  | `tripPaymentAuthorization` | 
+| `cardNumber` | `string` | 64 |  | `tripPaymentAuthorization` | 
+| `cardNumberToken` | `string` | 64 |  | `tripPaymentAuthorization` | 
+| `expirationDate` | `Date` |  |  | `tripPaymentAuthorization` | 
+| `cvvCodeToken` | `string` | 16 |  | `tripPaymentAuthorization` | 
+| `nameOnCard` | `string` | 64 |  | `tripPaymentAuthorization` | 
+| `billingAddress` | `string` | 128 |  | `tripPaymentAuthorization` | 
+| `billingZipPostalCode` | `string` | 16 |  | `tripPaymentAuthorization` | 
+| `clientRemarks` | `string` | 128 |  | `tripPaymentAuthorization` | 
+| `clientAuthorizationDateTime` | `DateTimeOffset` |  |  | `tripPaymentAuthorization` | 
+| `clientAuthorizationIP` | `string` | 16 |  | `tripPaymentAuthorization` | 
+| `authorizationExpirationDateTime` | `DateTimeOffset` |  |  | `tripPaymentAuthorization` | 
 
 | Status code | Description |
 | ----------- | ----------- |

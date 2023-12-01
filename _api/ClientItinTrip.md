@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -84,7 +84,9 @@ assembly_version: "1.0.25.7"
 | `provider` | `string` | 8 |  | `eventAirSegment` | 
 | `nextConnectionDepartDateTime` | `DateTime` |  |  | `eventAirSegment` | 
 | `flightStatusUrl` | `string` | 512 |  | `eventAirSegment` | 
+| `classOfService` | `string` | 2 | Deprecated | `eventAirSegment` | Obsolete. Use eventAirTraveler.classOfService instead.
 | `eventAirTraveler ` | table |  |  | `eventAirSegment` | 
+| `indexNo` | `long` |  | PKey | `eventAirTraveler` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAirTraveler` | 
 | `name` | `string` | 256 |  | `eventAirTraveler` | 
 | `firstName` | `string` | 64 |  | `eventAirTraveler` | 
@@ -95,6 +97,16 @@ assembly_version: "1.0.25.7"
 | `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
 | `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
 | `seatNo` | `string` | 4 |  | `eventAirTraveler` | 
+| `classOfService` | `string` | 2 |  | `eventAirTraveler` | 
+| `eventAirTravelerAttachment ` | table |  |  | `eventAirTraveler` | 
+| `recNo` | `long` |  | PKey | `eventAirTravelerAttachment` | 
+| `airTravelerIndexNo` | `long` |  | InsertOnly, FKey | `eventAirTravelerAttachment` | 
+| `type` | `short` |  |  | `eventAirTravelerAttachment` | Link = 1, File = 2
+| `subType` | `short` |  |  | `eventAirTravelerAttachment` | Document = 1, Image = 2, Other = 3
+| `description` | `string` | 256 |  | `eventAirTravelerAttachment` | 
+| `fileNameLinkURL` | `string` | 256 |  | `eventAirTravelerAttachment` | 
+| `directUrl` | `string` | 256 |  | `eventAirTravelerAttachment` | 
+| `fileData` | `byte[]` |  |  | `eventAirTravelerAttachment` | 
 | `eventCruiseSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventCruiseSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventCruiseSegment` | 
@@ -120,8 +132,8 @@ assembly_version: "1.0.25.7"
 | `arriveStationName` | `string` | 64 |  | `eventRailSegment` | 
 | `trainNo` | `short` |  |  | `eventRailSegment` | 
 | `eventAttachment ` | table |  |  | `event` | 
-| `recNo` | `long` |  |  | `eventAttachment` | 
-| `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventAttachment` | 
+| `recNo` | `long` |  | PKey | `eventAttachment` | 
+| `eventIndexNo` | `long` |  | InsertOnly, FKey | `eventAttachment` | 
 | `type` | `short` |  |  | `eventAttachment` | Link = 1, File = 2
 | `subType` | `short` |  |  | `eventAttachment` | Document = 1, Image = 2, Other = 3
 | `description` | `string` | 256 |  | `eventAttachment` | 
@@ -129,8 +141,8 @@ assembly_version: "1.0.25.7"
 | `directUrl` | `string` | 256 |  | `eventAttachment` | 
 | `fileData` | `byte[]` |  |  | `eventAttachment` | 
 | `tripAttachment ` | table |  |  | `clientItinTrip` | 
-| `recNo` | `long` |  |  | `tripAttachment` | 
-| `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachment` | 
+| `recNo` | `long` |  | PKey | `tripAttachment` | 
+| `tripRecNo` | `long` |  | InsertOnly, FKey | `tripAttachment` | 
 | `type` | `short` |  |  | `tripAttachment` | Link = 1, File = 2
 | `subType` | `short` |  |  | `tripAttachment` | Document = 1, Image = 2, Other = 3
 | `description` | `string` | 256 |  | `tripAttachment` | 

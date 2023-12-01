@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccountSearch"
 description: "Search general ledger accounts based on filters"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 Search general ledger accounts based on filters.

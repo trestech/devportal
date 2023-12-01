@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 
@@ -29,7 +29,7 @@ assembly_version: "1.0.25.7"
 | `merchantUserName` | `string` | 64 |  | `agency` | 
 | `merchantPassword` | `string` | 256 |  | `agency` | 
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
-| `clientFormToken` | `string` | 1024 |  | `agency` | 
+| `clientFormToken` | `string` | 1024 | Deprecated | `agency` | Obsolete. Use AppFeature.Token instead.
 | `brandingColor` | `int` |  |  | `agency` | 
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
@@ -52,9 +52,10 @@ assembly_version: "1.0.25.7"
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 
-| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7
+| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
+| `token` | `string` | 1024 |  | `appFeature` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `agency` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -63,7 +64,7 @@ assembly_version: "1.0.25.7"
 | `fileData` | `byte[]` |  |  | `attachment` | 
 | `size` | `int` |  |  | `attachment` | 
 | `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 

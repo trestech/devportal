@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.25.7"
+assembly_version: "1.0.29.5"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -110,6 +110,7 @@ Permission Areas: Trip
 | `reservationAccountingEntryCreateDate` | `Date` |  | `reservation` | 
 | `reservationTravelerRecNo` | `long` |  | `reservationTraveler` | 
 | `reservationAdvisorsDatePayable` | `Date` |  | `reservation` | 
+| `paymentAuthorizationRecNo` | `long` |  | `tripPaymentAuthorization` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -195,10 +196,14 @@ Permission Areas: Trip
 | `reservationAdvisorsDatePayableFrom` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorsDatePayableTo` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorRecNo` | 
+| `paymentAuthorizationRecNo` | [`NumSearchParam`](NumSearchParam) | `paymentAuthorizationRecNo` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `clientProfileSearchParams` | `ProfileSearchParams` |  | 
+| `reservationTravelerSearchParams` | [`PersonSearchParams`](PersonSearchParams) |  | 
 | `destinationSearchParams` | `DestinationSearchParams` |  | 
 | `reservationAdvisorProfileSearchParams` | `ProfileSearchParams` |  | 
+| `reservationSupplierProfileSearchParams` | `ProfileSearchParams` |  | 
+| `reservationProviderProfileSearchParams` | `ProfileSearchParams` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |
