@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: "Search branches based on filters"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 Search branches based on filters.
@@ -42,7 +42,7 @@ Permission Areas: Branch
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `long` | `activeStatus` | 
+| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 
 | Status code | Description |
 | ----------- | ----------- |

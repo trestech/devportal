@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -96,9 +96,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
-| `profileType` | `long` | `profileType` | 
+| `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `commType` | `long` | `profileCommType` | 
+| `commType` | [`short<short>`] | `profileCommType` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `commValue` | [`StringSearchParam`](StringSearchParam) | `profileCommValue` | 
 | `commValueCountryDomain` | `string` |  | 
 | `commValueCityArea` | `string` |  | 
@@ -109,9 +109,9 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientAnniversaryDayFrom` | `long` |  | 
 | `clientAnniversaryDayTo` | `long` |  | 
 | `clientAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientAdvisorProfileRecNo` | 
-| `clientType` | `long` | `clientType` | 
+| `clientType` | [`short<short>`] | `clientType` | Personal = 1, Corporate = 2
 | `supplierType` | `EnumSearchParam<SupplierType>` | `supplierType` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
-| `activeStatus` | `long` | `activeStatus` | 
+| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 | `clientBranchRecNo` | [`NumSearchParam`](NumSearchParam) | `clientBranchRecNo` | 
 | `personRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
 | `personFirstName` | [`StringSearchParam`](StringSearchParam) |  | 
@@ -128,7 +128,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `phonePermitMarketing` | `bool` |  | 
 | `addressPermitMarketing` | `bool` | `addressPermitMarketing` | 
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
-| `supplierTravelCategoryFlags` | `long` | `supplierTravelCategoryFlags` | 
+| `supplierTravelCategoryFlags` | [`int<int>`] | `supplierTravelCategoryFlags` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
 | `profileCommunicationBillingContact` | `bool` | `profileCommIsBillingContact` | 
 | `clientActionItemCompleted` | `bool` | `actionItemCompleted` | 
 | `clientActionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: "Search payments based on filters"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 Search payments based on filters.
@@ -60,7 +60,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
-| `profileType` | `long` | `profileType` | 
+| `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Other = 3
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
 | `reservationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationRecNo` | 
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 
@@ -68,7 +68,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `profileRecNo` | 
 | `supplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `profileRecNo` | 
 | `otherProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `profileRecNo` | 
-| `payType` | `long` |  | 
+| `payType` | [`short<short>`] |  | Received = 1, Made = 2
 | `method` | `EnumSearchParam<Method>` | `method` | Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
 | `bankRecNo` | [`NumSearchParam`](NumSearchParam) | `bankRecNo` | 
 | `agencyProcessed` | `bool` | `agencyProcessed` | 
@@ -77,8 +77,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `dateClearedFrom` | `DateSearchParam` | `dateCleared` | 
 | `dateClearedTo` | `DateSearchParam` | `dateCleared` | 
 | `bankTransactionRecNo` | [`NumSearchParam`](NumSearchParam) | `bankTransactionRecNo` | 
-| `paidBy` | `long` |  | 
-| `paidTo` | `long` |  | 
+| `paidBy` | [`short<short>`] |  | Client = 1, Supplier = 2, Other = 3, Agency = 4
+| `paidTo` | [`short<short>`] |  | Client = 1, Supplier = 2, Other = 3, Agency = 4
 
 | Status code | Description |
 | ----------- | ----------- |

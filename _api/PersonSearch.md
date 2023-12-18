@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -76,7 +76,7 @@ Permission Areas: Person
 | `firstName` | [`StringSearchParam`](StringSearchParam) | `firstName` | 
 | `middleName` | [`StringSearchParam`](StringSearchParam) | `middleName` | 
 | `lastName` | [`StringSearchParam`](StringSearchParam) | `lastName` | 
-| `commType` | `long` |  | 
+| `commType` | [`short<short>`] |  | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `commValue` | [`StringSearchParam`](StringSearchParam) |  | 
 | `commValueCountryDomain` | [`StringSearchParam`](StringSearchParam) |  | 
 | `commValueCityArea` | [`StringSearchParam`](StringSearchParam) |  | 
@@ -90,12 +90,12 @@ Permission Areas: Person
 | `marketing` | [`MarketingSearchParam[]`](MarketingSearchParam) |  | 
 | `emailPermitMarketing` | `bool` |  | 
 | `phonePermitMarketing` | `bool` |  | 
-| `cardType` | `long` | `cardType` | 
+| `cardType` | [`short<short>`] | `cardType` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardSubType` | [`NumSearchParam`](NumSearchParam) | `cardSubType` | 
 | `cardExpirationDateFrom` | `DateSearchParam` |  | 
 | `cardExpirationDateTo` | `DateSearchParam` |  | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
-| `activeStatus` | `long` | `activeStatus` | 
+| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 | `actionItemCompleted` | `bool` | `actionItemCompleted` | 
 | `actionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 
 | `actionItemDateTo` | `DateSearchParam` | `actionItemDate` | 

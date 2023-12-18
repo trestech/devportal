@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -42,6 +42,8 @@ Permission Areas: Trip
 | `branchName` | `string` | 64 | `trip` | 
 | `tripRecordLocator` | `string` | 32 | `trip` | 
 | `visibility` | `short` |  | `trip` | 
+| `tripTotalFare` | `long` |  | `trip` | 
+| `tripClientBalance` | `long` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
 | `reservationTagRecNo` | `long` |  | `reservation` | 
 | `reservationTagName` | `string` | 64 | `reservation` | 
@@ -83,6 +85,7 @@ Permission Areas: Trip
 | `reservationSource` | `string` | 32 | `reservation` | 
 | `reservationPrimaryTravelerRecNo` | `long` |  | `reservation` | 
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
+| `reservationTravelerName` | `string` | 512 | `reservation` | 
 | `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
 | `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
@@ -173,6 +176,7 @@ Permission Areas: Trip
 | `reservationAdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorProfileRecNo` | 
 | `reservationProviderProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationProviderProfileRecNo` | 
 | `reservationTravelerRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelerRecNo` | 
+| `reservationTravelerName` | [`StringSearchParam`](StringSearchParam) | `reservationTravelerName` | 
 | `reservationTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationTicketNo` | 
 | `reservationConfirmationNumber` | [`StringSearchParam`](StringSearchParam) | `reservationConfirmationNumber` | 
 | `reservationConfirmedDateTimeFrom` | `DateSearchParam` | `reservationConfirmedDateTime` | 

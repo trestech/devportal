@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: "A branch is often a separate location or office of a travel agency that uses the same data source as the main agency"
-assembly_version: "1.0.29.5"
+assembly_version: "1.0.30.6"
 ---
 
 A branch is often a separate location or office of a travel agency that uses the same data source as the main agency.  A branch can have its own trust account, accounting data, and reporting functions and can also share information and workflows with other branches and the main agency.
