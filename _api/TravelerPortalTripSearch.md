@@ -1,23 +1,25 @@
 ---
 layout: api_page
-title: "AgencyAffiliationSearch"
-description: ""
-assembly_version: "1.0.20.8"
+title: "TravelerPortalTripSearch"
+description: "Search client trip itineraries based on filters"
+assembly_version: "1.0.32.1"
 ---
 
+Search client trip itineraries based on filters.
 
+See: [ClientItinTrip](ClientItinTrip.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `agency` | 
-| `summaryCount` | `int` |  | `agency` | 
-| `createDateTime` | `DateTimeOffset` |  | `agency` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `agency` | 
-| `name` | `string` | 256 | `agency` | 
-| `alias` | `string` | 64 | `agency` | 
-| `id` | `string` | 32 | `agency` | 
-| `affiliation_recNo` | `int` |  | `agency` | 
-| `status` | `int` |  | `agency` | 
+| `recNo` | `long` |  | `trip` | 
+| `summaryCount` | `int` |  | `trip` | 
+| `createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `name` | `string` | 256 | `trip` | 
+| `startDateTime` | `DateTime` |  | `trip` | 
+| `endDateTime` | `DateTime` |  | `trip` | 
+| `imageUrl` | `string` | 256 | `trip` | 
+| `imageData` | `byte[]` |  | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -35,7 +37,8 @@ assembly_version: "1.0.20.8"
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `status` | [`StringSearchParam`](StringSearchParam) | `status` | 
+| `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
+| `tripVisibility` | [`short<short>`] |  | ClientItin = 1, ClientTripProposal = 2
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Version"
 description: "The version method takes no parameters and returns the current server API version number"
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 The version method takes no parameters and returns the current server API version number. An identity token is not required.

@@ -1,6 +1,6 @@
 ---
 layout: api_page
-title: "ClientItinAdvisor"
+title: "TravelerPortalAdvisor"
 description: ""
 assembly_version: "1.0.32.1"
 ---
@@ -9,17 +9,17 @@ assembly_version: "1.0.32.1"
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| `recNo` | `long` |  |  | `clientItinAdvisor` | 
-| `name` | `string` | 256 |  | `clientItinAdvisor` | 
-| `phone` | `string` | 256 |  | `clientItinAdvisor` | 
-| `email` | `string` | 256 |  | `clientItinAdvisor` | 
-| `logoData` | `byte[]` |  |  | `clientItinAdvisor` | 
-| `logoDirectUrl` | `string` | 256 |  | `clientItinAdvisor` | 
-| `brandingColor` | `int` |  |  | `clientItinAdvisor` | 
-| `brandingName` | `string` | 64 |  | `clientItinAdvisor` | 
-| `photoDirectUrl` | `string` | 256 |  | `clientItinAdvisor` | 
-| `photoData` | `byte[]` |  |  | `clientItinAdvisor` | 
-| `address  [shared]` | table |  | Singleton | `clientItinAdvisor` | 
+| `recNo` | `long` |  |  | `travelerPortalAdvisor` | 
+| `name` | `string` | 256 |  | `travelerPortalAdvisor` | 
+| `phone` | `string` | 256 |  | `travelerPortalAdvisor` | 
+| `email` | `string` | 256 |  | `travelerPortalAdvisor` | 
+| `logoData` | `byte[]` |  |  | `travelerPortalAdvisor` | 
+| `logoDirectUrl` | `string` | 256 |  | `travelerPortalAdvisor` | 
+| `brandingColor` | `int` |  |  | `travelerPortalAdvisor` | 
+| `brandingName` | `string` | 64 |  | `travelerPortalAdvisor` | 
+| `photoDirectUrl` | `string` | 256 |  | `travelerPortalAdvisor` | 
+| `photoData` | `byte[]` |  |  | `travelerPortalAdvisor` | 
+| `address  [shared]` | table |  | Singleton | `travelerPortalAdvisor` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `address` | 
 | `street1` | `string` | 128 |  | `address` | 
 | `street2` | `string` | 128 |  | `address` | 

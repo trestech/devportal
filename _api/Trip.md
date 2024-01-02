@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 
@@ -32,7 +32,7 @@ Permission Areas: Trip
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `trip` | 
-| `visibility` | `short` |  |  | `trip` | 0 = trip hidden from client itin, 1 = trip included on client itin
+| `visibility` | `short` |  | Required | `trip` | ClientItin = 1, ClientTripProposal = 2
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileInfo` | 
 | `name` | `string` | 256 |  | `clientProfileInfo` | 

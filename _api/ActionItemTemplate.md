@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplate"
 description: ""
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 
@@ -17,6 +17,8 @@ Permission Areas: ActionItemTemplate
 | `description` | `string` | 256 |  | `actionItemTemplate` | 
 | `enabled` | `bool` |  |  | `actionItemTemplate` | 
 | `travelCategory_recNo` | `short` |  |  | `actionItemTemplate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `appUser_recNo` | `long` |  | FKey | `actionItemTemplate` | 
+| `appUser_id` | `string` | 64 | ReadOnly, Lookup | `actionItemTemplate` | 
 | `actionItemTemplateActionItemLink ` | table |  |  | `actionItemTemplate` | 
 | `actionItemTemplate_recNo` | `long` |  | PKey, InsertOnly, FKey | `actionItemTemplateActionItemLink` | 
 | `dateExpression` | `string` | 32 |  | `actionItemTemplateActionItemLink` | 

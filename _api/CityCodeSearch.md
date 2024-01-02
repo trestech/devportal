@@ -2,7 +2,7 @@
 layout: api_page
 title: "CityCodeSearch"
 description: "Search city codes based on filters"
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 Search city codes based on filters.

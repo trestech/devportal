@@ -1,6 +1,6 @@
 ---
 layout: api_page
-title: "ClientItinBranch"
+title: "TravelerPortalBranch"
 description: ""
 assembly_version: "1.0.32.1"
 ---

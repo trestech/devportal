@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppSettingSearch"
 description: "Search application settings based on filters"
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 Search application settings based on filters.

@@ -1,25 +1,25 @@
 ---
 layout: api_page
-title: "DocumentTemplateSearch"
-description: "Search document templates based on filters"
+title: "ActionItemTemplateSearch"
+description: "Search action item templates based on filters"
 assembly_version: "1.0.32.1"
 ---
 
-Search document templates based on filters.
+Search action item templates based on filters.
 
-See: [DocumentTemplate](DocumentTemplate.html)
+See: [ActionItemTemplate](ActionItemTemplate.html)
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `documentTemplate` | 
-| `summaryCount` | `int` |  | `documentTemplate` | 
-| `createDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `documentTemplate` | 
-| `name` | `string` | 128 | `documentTemplate` | 
-| `description` | `string` | 512 | `documentTemplate` | 
-| `appUser_recNo` | `long` |  | `documentTemplate` | 
-| `activeStatus` | `bool` |  | `documentTemplate` | 
-| `area` | `short` |  | `documentTemplate` | Trip = 1, ClientProfile = 2, Person = 3
+| `recNo` | `long` |  | `actionItemTemplate` | 
+| `summaryCount` | `int` |  | `actionItemTemplate` | 
+| `createDateTime` | `DateTimeOffset` |  | `actionItemTemplate` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `actionItemTemplate` | 
+| `type` | `short` |  | `actionItemTemplate` | Trip = 1, ClientProfile = 2, Person = 3
+| `name` | `string` | 128 | `actionItemTemplate` | 
+| `description` | `string` | 256 | `actionItemTemplate` | 
+| `appUser_recNo` | `long` |  | `actionItemTemplate` | 
+| `appUser_id` | `string` | 64 | `actionItemTemplate` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -37,9 +37,6 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | `bool` | `activeStatus` | 
-| `area` | `bool` | `area` | 
 
 | Status code | Description |
 | ----------- | ----------- |

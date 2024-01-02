@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.0.30.6"
+assembly_version: "1.0.32.1"
 ---
 
 
@@ -53,7 +53,7 @@ assembly_version: "1.0.30.6"
 | `documentTemplateActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `advisorAdjustmentActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `appUserAdvisor ` | table |  |  | `appUser` | 
-| `appUser_RecNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
+| `appUser_recNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 
 | `advisorName` | `string` | 256 | ReadOnly | `appUserAdvisor` | 
 | `isPrimary` | `bool` |  | Required | `appUserAdvisor` | 
