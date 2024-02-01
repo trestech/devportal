@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplateSearch"
 description: "Search document templates based on filters"
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 Search document templates based on filters.

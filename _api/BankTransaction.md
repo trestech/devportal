@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankTransaction"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -19,6 +19,7 @@ Permission Areas: BankTransaction
 | `voided` | `bool` |  | Required | `bankTransaction` | 
 | `remarks` | `string` |  |  | `bankTransaction` | 
 | `dateCleared` | `Date` |  |  | `bankTransaction` | 
+| `noBankBalanceRefresh` | `bool` |  |  | `bankTransaction` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `bankTransaction` | 
 | `bankTransactionDetail ` | table |  |  | `bankTransaction` | 
 | `bankTransaction_recNo` | `long` |  | PKey, InsertOnly, FKey | `bankTransactionDetail` | 

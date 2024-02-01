@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAgency"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -23,6 +23,8 @@ assembly_version: "1.0.32.1"
 | `logoDirectUrl` | `string` | 256 |  | `travelerPortalAgency` | 
 | `brandingColor` | `int` |  |  | `travelerPortalAgency` | 
 | `clientProfileName` | `string` | 256 |  | `travelerPortalAgency` | 
+| `advisorProfile_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
+| `branch_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
 
 | Status code | Description |
 | ----------- | ----------- |

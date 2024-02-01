@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUserSearch"
 description: "Search application users based on filters"
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 Search application users based on filters.

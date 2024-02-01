@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -56,6 +56,7 @@ assembly_version: "1.0.32.1"
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
 | `token` | `string` | 1024 |  | `appFeature` | 
+| `tokenExpireDateTime` | `DateTimeOffset` |  |  | `appFeature` | 
 | `data` | `string` |  |  | `appFeature` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `agency` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

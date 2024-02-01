@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -27,7 +27,7 @@ assembly_version: "1.0.32.1"
 | `emailServerType` | `short` |  |  | `appUser` | Office365 = 1, Gmail = 2, GenericSMTP = 3
 | `emailServerName` | `string` | 64 |  | `appUser` | 
 | `emailServerUserName` | `string` | 128 |  | `appUser` | 
-| `emailServerPassword` | `string` | 64 |  | `appUser` | 
+| `emailServerPassword` | `string` | 128 |  | `appUser` | 
 | `slaVersionAcknowledged` | `int` |  |  | `appUser` | 
 | `personActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `clientProfileActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512

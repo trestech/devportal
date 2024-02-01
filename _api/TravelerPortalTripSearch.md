@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalTripSearch"
 description: "Search client trip itineraries based on filters"
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 Search client trip itineraries based on filters.
@@ -38,7 +38,7 @@ See: [ClientItinTrip](ClientItinTrip.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
-| `tripVisibility` | [`short<short>`] |  | ClientItin = 1, ClientTripProposal = 2
+| `tripVisibility` | [`short<short>`] |  | None = 0, ClientItin = 1, ClientTripProposal = 2
 
 | Status code | Description |
 | ----------- | ----------- |

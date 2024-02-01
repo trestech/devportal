@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentRecon"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -15,6 +15,7 @@ Permission Areas: SupplierPayment
 | `fileData` | `byte[]` |  |  | `paymentRecon` | 
 | `provider` | `short` |  | Required | `paymentRecon` | Onyx = 1
 | `supplierProfile_recNo` | `long` |  |  | `paymentRecon` | 
+| `supplierProfile_Name` | `string` | 256 | ReadOnly, Lookup | `paymentRecon` | 
 | `bank_recNo` | `long` |  |  | `paymentRecon` | 
 | `achCheckNo` | `string` | 48 |  | `paymentRecon` | 
 | `paymentDate` | `Date` |  |  | `paymentRecon` | 
@@ -23,8 +24,8 @@ Permission Areas: SupplierPayment
 | `description` | `string` | 128 |  | `paymentRecon` | 
 | `supplierPayment_recNo` | `long` |  |  | `paymentRecon` | 
 | `lastAttemptErrorCount` | `int` |  |  | `paymentRecon` | 
-| `gross` | `long` |  | ReadOnly | `paymentRecon` | 
-| `runFinalization` | `bool` |  | ReadOnly | `paymentRecon` | 
+| `periodEndDate` | `Date` |  |  | `paymentRecon` | 
+| `serverTrigger` | `short` |  |  | `paymentRecon` | AutoRecon = 1, Finalize = 2
 | `paymentReconDetail ` | table |  |  | `paymentRecon` | 
 | `recNo` | `long` |  | PKey | `paymentReconDetail` | 
 | `paymentRecon_RecNo` | `long` |  | InsertOnly, FKey | `paymentReconDetail` | 
@@ -47,16 +48,17 @@ Permission Areas: SupplierPayment
 | `status` | `short` |  | Required | `paymentReconDetail` | Unreconciled = 0, Reconciled = 1, MultiMatches = 2, Duplicate = 3
 | `reservation_recNo` | `long` |  |  | `paymentReconDetail` | 
 | `errorMessage` | `string` | 256 |  | `paymentReconDetail` | 
-| `errorTimeStamp` | `DateTime` |  |  | `paymentReconDetail` | 
-| `commissionVariance` | `long` |  | ReadOnly | `paymentReconDetail` | 
-| `advisor` | `string` | 256 | ReadOnly | `paymentReconDetail` | 
-| `reservationProviderName` | `string` | 256 | ReadOnly | `paymentReconDetail` | 
-| `reservationTravelerName` | `string` | 512 | ReadOnly | `paymentReconDetail` | 
-| `reservationConfirmationNo` | `string` | 64 | ReadOnly | `paymentReconDetail` | 
-| `reservationTotalFare` | `long` |  | ReadOnly | `paymentReconDetail` | 
-| `reservationCommission` | `long` |  | ReadOnly | `paymentReconDetail` | 
-| `reservationStartDate` | `Date` |  | ReadOnly | `paymentReconDetail` | 
-| `reservationNotes` | `string` | 256 | ReadOnly | `paymentReconDetail` | 
+| `errorTimeStamp` | `DateTimeOffset` |  |  | `paymentReconDetail` | 
+| `reservation ` | table |  | Singleton | `paymentReconDetail` | 
+| `recNo` | `long` |  | InsertOnly, FKey | `reservation` | 
+| `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
+| `travelerName` | `string` | 512 |  | `reservation` | 
+| `primaryTravelerName` | `string` | 512 | ReadOnly | `reservation` | 
+| `confirmationNo` | `string` | 64 |  | `reservation` | 
+| `totalFare` | `long` |  |  | `reservation` | 
+| `commissionAmount` | `long` |  |  | `reservation` | 
+| `startDateTime` | `DateTime` |  |  | `reservation` | 
+| `supplierRemarks` | `string` |  |  | `reservation` | 
 
 | Status code | Description |
 | ----------- | ----------- |

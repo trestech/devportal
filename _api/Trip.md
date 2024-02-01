@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -32,7 +32,7 @@ Permission Areas: Trip
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `trip` | 
-| `visibility` | `short` |  | Required | `trip` | ClientItin = 1, ClientTripProposal = 2
+| `visibility` | `short` |  | Required | `trip` | None = 0, ClientItin = 1, ClientTripProposal = 2
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileInfo` | 
 | `name` | `string` | 256 |  | `clientProfileInfo` | 
@@ -86,7 +86,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
@@ -304,7 +304,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
 | `airReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -422,7 +422,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
 | `airReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6

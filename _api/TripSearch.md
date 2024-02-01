@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -28,6 +28,7 @@ Permission Areas: Trip
 | `targetTravelDate` | `Date` |  | `trip` | 
 | `clientProfileRecNo` | `long` |  | `trip` | 
 | `clientProfileName` | `string` | 256 | `trip` | 
+| `clientProfileInfoName` | `string` | 256 | `trip` | 
 | `advisorProfileRecNo` | `long` |  | `trip` | 
 | `advisorProfileName` | `string` | 256 | `trip` | 
 | `advisorProfileId` | `string` | 32 | `trip` | 
@@ -50,6 +51,7 @@ Permission Areas: Trip
 | `reservationTagValue` | `string` | 1024 | `reservation` | 
 | `reservationSupplierProfileRecNo` | `long` |  | `reservation` | 
 | `reservationSupplierProfileName` | `string` | 256 | `reservation` | 
+| `reservationSupplierProfileInfoName` | `string` | 256 | `reservation` | 
 | `reservationCommisionTriggerIndex` | `short` |  | `reservation` | BookingDate = 1, DepartDate = 2, ReturnDate = 3, FinalPayDate = 4
 | `reservationCommisionTriggerDaysOffset` | `short` |  | `reservation` | 
 | `reservationClientBalance` | `long` |  | `reservation` | 
@@ -78,8 +80,9 @@ Permission Areas: Trip
 | `reservationARCBSPNumber` | `int` |  | `reservation` | 
 | `reservationProviderProfileRecNo` | `long` |  | `reservation` | 
 | `reservationProviderProfileName` | `string` | 256 | `reservation` | 
+| `reservationProviderProfileInfoName` | `string` | 256 | `reservation` | 
 | `reservationTicketNo` | `long` |  | `reservation` | 
-| `reservationConfirmationNumber` | `string` | 64 | `reservation` | 
+| `reservationConfirmationNumber` | `string` | 64 | `reservation` | TripSearch.ReservationConfirmationNumber column deprecated; use TripSearch.ReservationConfirmationNo instead
 | `reservationConfirmedDateTime` | `DateTime` |  | `reservation` | 
 | `reservationPromoId` | `string` | 256 | `reservation` | 
 | `reservationSource` | `string` | 32 | `reservation` | 
@@ -114,6 +117,7 @@ Permission Areas: Trip
 | `reservationTravelerRecNo` | `long` |  | `reservationTraveler` | 
 | `reservationAdvisorsDatePayable` | `Date` |  | `reservation` | 
 | `paymentAuthorizationRecNo` | `long` |  | `tripPaymentAuthorization` | 
+| `reservationSupplierPaymentTotal` | `long` |  | `reservation` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -145,7 +149,7 @@ Permission Areas: Trip
 | `destinationRecNo` | [`NumSearchParam`](NumSearchParam) | `destinationRecNo` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branchRecNo` | 
 | `tripRecordLocator` | [`StringSearchParam`](StringSearchParam) | `tripRecordLocator` | 
-| `tripVisibility` | [`short<short>`] | `visibility` | ClientItin = 1, ClientTripProposal = 2
+| `tripVisibility` | [`short<short>`] | `visibility` | None = 0, ClientItin = 1, ClientTripProposal = 2
 | `reservationCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `reservationCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `reservationModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
@@ -201,6 +205,7 @@ Permission Areas: Trip
 | `reservationAdvisorsDatePayableTo` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorRecNo` | 
 | `paymentAuthorizationRecNo` | [`NumSearchParam`](NumSearchParam) | `paymentAuthorizationRecNo` | 
+| `reservationSupplierPaymentTotal` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierPaymentTotal` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `clientProfileSearchParams` | `ProfileSearchParams` |  | 
 | `reservationTravelerSearchParams` | [`PersonSearchParams`](PersonSearchParams) |  | 

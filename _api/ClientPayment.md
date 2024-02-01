@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPayment"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -39,6 +39,7 @@ Permission Areas: ClientPayment
 | `cardNumberToken` | `string` | 64 |  | `payment` | 
 | `voided` | `bool` |  |  | `payment` | 
 | `dateCleared` | `Date` |  |  | `payment` | 
+| `noBankBalanceRefresh` | `bool` |  |  | `payment` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `payment` | 
 | `paymentDetail ` | table |  |  | `payment` | 
 | `payment_recNo` | `long` |  | PKey, InsertOnly, FKey | `paymentDetail` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.32.1"
+assembly_version: "1.0.34.1"
 ---
 
 
@@ -16,6 +16,7 @@ assembly_version: "1.0.32.1"
 | `tripEndDateTime` | `DateTime` |  |  | `clientItinTrip` | 
 | `tripClientName` | `string` | 256 |  | `clientItinTrip` | 
 | `remarks` | `string` |  |  | `clientItinTrip` | 
+| `branch_recNo` | `long` |  | FKey | `clientItinTrip` | 
 | `tripTraveler ` | table |  |  | `clientItinTrip` | 
 | `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripTraveler` | 
 | `travelerName` | `string` | 512 |  | `tripTraveler` | 
