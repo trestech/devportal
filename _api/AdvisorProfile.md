@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -40,6 +40,7 @@ Permission Areas: AdvisorProfile
 | `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `indexNo` | `short` |  |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -69,6 +70,7 @@ Permission Areas: AdvisorProfile
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
 | `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 
@@ -79,6 +81,7 @@ Permission Areas: AdvisorProfile
 | `id` | `string` | 32 | Required | `profileId` | 
 | `profileAttachmentLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `profileAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `profileAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `profileAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
@@ -128,7 +131,7 @@ Permission Areas: AdvisorProfile
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 
 | `advisorProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorCommissionRate` | 
 | `travelCategory_recNo` | `short` |  | PKey | `advisorCommissionRate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
-| `commissionRate` | `short` |  |  | `advisorCommissionRate` | 
+| `commissionRate` | `short` |  |  | `advisorCommissionRate` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: "Search payments based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search payments based on filters.
@@ -17,6 +17,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `tagRecNo` | `long` |  | `payment` | 
 | `tagName` | `string` | 64 | `payment` | 
 | `tagValue` | `string` | 1024 | `payment` | 
+| `tags` | `string` |  | `payment` | 
 | `summaryCount` | `int` |  | `payment` | 
 | `createDateTime` | `DateTimeOffset` |  | `payment` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `payment` | 
@@ -39,6 +40,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `accountingEntryRecNo` | `long` |  | `payment` | 
 | `remarks` | `string` | 256 | `payment` | 
 | `dateCleared` | `Date` |  | `payment` | 
+| `agencyCardRecNo` | `long` |  | `payment` | 
+| `agencyCardName` | `string` | 512 | `payment` | 
 | `bankTransactionRecNo` | `long` |  | `payment` | 
 | `paidBy` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
 | `paidTo` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
@@ -79,6 +82,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `bankTransactionRecNo` | [`NumSearchParam`](NumSearchParam) | `bankTransactionRecNo` | 
 | `paidBy` | [`short<short>`] |  | Client = 1, Supplier = 2, Other = 3, Agency = 4
 | `paidTo` | [`short<short>`] |  | Client = 1, Supplier = 2, Other = 3, Agency = 4
+| `amount` | [`NumSearchParam`](NumSearchParam) | `amount` | 
+| `agencyCardRecNo` | [`NumSearchParam`](NumSearchParam) | `agencyCardRecNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

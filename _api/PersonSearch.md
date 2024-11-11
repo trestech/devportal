@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -19,10 +19,12 @@ Permission Areas: Person
 | `tagRecNo` | `long` |  | `person` | 
 | `tagName` | `string` | 64 | `person` | 
 | `tagValue` | `string` | 1024 | `person` | 
+| `tags` | `string` |  | `person` | 
 | `summaryCount` | `int` |  | `person` | 
 | `createDateTime` | `DateTimeOffset` |  | `person` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `person` | 
 | `name` | `string` | 256 | `person` | 
+| `uniqueId` | `string` | 64 | `person` | 
 | `firstName` | `string` | 64 | `person` | 
 | `middleName` | `string` | 64 | `person` | 
 | `lastName` | `string` | 64 | `person` | 
@@ -51,7 +53,7 @@ Permission Areas: Person
 | `actionItemTriggerIndex` | `short` |  | `personActionItem` | FixedDate = 1, CreateDate = 2, Birthday = 3
 | `actionItemDate` | `Date` |  | `personActionItem` | 
 | `actionItemTriggerFixedDate` | `Date` |  | `personActionItem` | 
-| `actionItemDescription` | `string` | 256 | `personActionItem` | 
+| `actionItemDescription` | `string` |  | `personActionItem` | 
 | `actionItemCompleted` | `DateTime` |  | `personActionItem` | 
 | `actionItemAssignedToAppUserRecNo` | `long` |  | `personActionItem` | 
 | `actionItemAssignedToAppUserId` | `string` | 64 | `personActionItem` | 
@@ -73,6 +75,7 @@ Permission Areas: Person
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
+| `UniqueId` | `string` | `uniqueId` | 
 | `firstName` | [`StringSearchParam`](StringSearchParam) | `firstName` | 
 | `middleName` | [`StringSearchParam`](StringSearchParam) | `middleName` | 
 | `lastName` | [`StringSearchParam`](StringSearchParam) | `lastName` | 

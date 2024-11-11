@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentReconSearch"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -15,11 +15,12 @@ Permission Areas: SupplierPayment
 | `summaryCount` | `int` |  | `paymentRecon` | 
 | `createDateTime` | `DateTimeOffset` |  | `paymentRecon` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `paymentRecon` | 
-| `provider` | `short` |  | `paymentRecon` | Onyx = 1
+| `provider` | `short` |  | `paymentRecon` | Onyx = 1, Paymode = 2
 | `paymentDate` | `Date` |  | `paymentRecon` | 
 | `supplierProfile_recNo` | `long` |  | `paymentRecon` | 
 | `supplierProfile_Name` | `string` | 256 | `paymentRecon` | 
 | `supplierPayment_recNo` | `long` |  | `paymentRecon` | 
+| `amount` | `long` |  | `paymentRecon` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -37,7 +38,7 @@ Permission Areas: SupplierPayment
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `provider` | `EnumSearchParam<PaymentReconProvider>` | `provider` | Onyx = 1
+| `provider` | `EnumSearchParam<PaymentReconProvider>` | `provider` | Onyx = 1, Paymode = 2
 | `supplierPaymentRecNo` | [`NumSearchParam`](NumSearchParam) | `supplierPayment_recNo` | 
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 
 | `paymentDateTo` | `DateSearchParam` | `paymentDate` | 

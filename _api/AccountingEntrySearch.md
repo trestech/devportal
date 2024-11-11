@@ -2,7 +2,7 @@
 layout: api_page
 title: "AccountingEntrySearch"
 description: "Search accounting entries based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search accounting entries based on filters.

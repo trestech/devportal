@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAdvisor"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -27,6 +27,7 @@ assembly_version: "1.0.34.1"
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
 | `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 

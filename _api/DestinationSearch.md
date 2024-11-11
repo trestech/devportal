@@ -2,7 +2,7 @@
 layout: api_page
 title: "DestinationSearch"
 description: "Search destinations based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search destinations based on filters.
@@ -17,6 +17,7 @@ Permission Areas: Destination
 | `tagRecNo` | `long` |  | `destination` | 
 | `tagName` | `string` | 64 | `destination` | 
 | `tagValue` | `string` | 1024 | `destination` | 
+| `tags` | `string` |  | `destination` | 
 | `summaryCount` | `int` |  | `destination` | 
 | `createDateTime` | `DateTimeOffset` |  | `destination` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `destination` | 

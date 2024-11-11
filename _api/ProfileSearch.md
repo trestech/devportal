@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -19,10 +19,12 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `tagRecNo` | `long` |  | `profile` | 
 | `tagName` | `string` | 64 | `profile` | 
 | `tagValue` | `string` | 1024 | `profile` | 
+| `tags` | `string` |  | `profile` | 
 | `summaryCount` | `int` |  | `profile` | 
 | `createDateTime` | `DateTimeOffset` |  | `profile` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `profile` | 
 | `name` | `string` | 256 | `profile` | 
+| `uniqueId` | `string` | 64 | `profile` | 
 | `profileType` | `short` |  | `profile` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `clientType` | `short` |  | `clientProfile` | Personal = 1, Corporate = 2
 | `supplierType` | `short` |  | `supplierProfile` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
@@ -62,7 +64,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `mailingCountry` | `string` | 4 | `address` | 
 | `addressPermitMarketing` | `bool` |  | `address` | 
 | `supplierVendorId` | `string` | 10 | `supplierProfile` | 
-| `supplierCommissionRate` | `short` |  | `supplierProfile` | 
+| `supplierCommissionRate` | `short` |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `clientInformalSalutation` | `string` | 128 | `clientProfile` | 
 | `clientFormalSalutation` | `string` | 128 | `clientProfile` | 
 | `firstId` | `string` | 32 | `profile` | 
@@ -74,10 +76,11 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `actionItemTriggerIndex` | `short` |  | `clientProfileActionItem` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
 | `actionItemDate` | `Date` |  | `clientProfileActionItem` | 
 | `actionItemTriggerFixedDate` | `Date` |  | `clientProfileActionItem` | 
-| `actionItemDescription` | `string` | 256 | `clientProfileActionItem` | 
+| `actionItemDescription` | `string` |  | `clientProfileActionItem` | 
 | `actionItemCompleted` | `DateTime` |  | `clientProfileActionItem` | 
 | `actionItemAssignedToAppUserRecNo` | `long` |  | `clientProfileActionItem` | 
 | `actionItemAssignedToAppUserId` | `string` | 64 | `clientProfileActionItem` | 
+| `imageCount` | `short` |  | `profile` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -98,6 +101,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
+| `profileUniqueId` | `string` | `uniqueId` | 
 | `commType` | [`short<short>`] | `profileCommType` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
 | `commValue` | [`StringSearchParam`](StringSearchParam) | `profileCommValue` | 
 | `commValueCountryDomain` | `string` |  | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActivitySearch"
 description: "Search activities based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search activities based on filters.
@@ -17,6 +17,7 @@ Permission Areas: Activity
 | `tagRecNo` | `long` |  | `activity` | 
 | `tagName` | `string` | 64 | `activity` | 
 | `tagValue` | `string` | 1024 | `activity` | 
+| `tags` | `string` |  | `activity` | 
 | `summaryCount` | `int` |  | `activity` | 
 | `createDateTime` | `DateTimeOffset` |  | `activity` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `activity` | 
@@ -37,6 +38,7 @@ Permission Areas: Activity
 | `tripRecNo` | `long` |  | `activity` | 
 | `tripName` | `string` | 256 | `activity` | 
 | `remarks` | `string` |  | `activity` | 
+| `promoId` | `string` | 256 | `activity` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -66,6 +68,8 @@ Permission Areas: Activity
 | `supplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `supplierProfileRecNo` | 
 | `personRecNo` | [`NumSearchParam`](NumSearchParam) | `personRecNo` | 
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) | `tripRecNo` | 
+| `subject` | [`StringSearchParam`](StringSearchParam) | `subject` | 
+| `promoId` | [`StringSearchParam`](StringSearchParam) | `promoId` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherProfile"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -35,6 +35,7 @@ Permission Areas: OtherProfile
 | `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `indexNo` | `short` |  |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -64,6 +65,7 @@ Permission Areas: OtherProfile
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
 | `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 
@@ -74,6 +76,7 @@ Permission Areas: OtherProfile
 | `id` | `string` | 32 | Required | `profileId` | 
 | `profileAttachmentLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `profileAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `profileAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `profileAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

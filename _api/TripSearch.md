@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -19,6 +19,7 @@ Permission Areas: Trip
 | `tagRecNo` | `long` |  | `trip` | 
 | `tagName` | `string` | 64 | `trip` | 
 | `tagValue` | `string` | 1024 | `trip` | 
+| `tags` | `string` |  | `trip` | 
 | `summaryCount` | `int` |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | `trip` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
@@ -49,6 +50,7 @@ Permission Areas: Trip
 | `reservationTagRecNo` | `long` |  | `reservation` | 
 | `reservationTagName` | `string` | 64 | `reservation` | 
 | `reservationTagValue` | `string` | 1024 | `reservation` | 
+| `reservationTags` | `string` |  | `reservation` | 
 | `reservationSupplierProfileRecNo` | `long` |  | `reservation` | 
 | `reservationSupplierProfileName` | `string` | 256 | `reservation` | 
 | `reservationSupplierProfileInfoName` | `string` | 256 | `reservation` | 
@@ -60,9 +62,11 @@ Permission Areas: Trip
 | `reservationStatus` | `short` |  | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
 | `reservationTravelCategoryRecNo` | `short` |  | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `reservationTravelCategoryName` | `string` | 32 | `reservation` | 
+| `reservationTravelSubCategoryRecNo` | `long` |  | `reservation` | 
+| `reservationTravelSubCategoryName` | `string` | 64 | `reservation` | 
 | `reservationTotalFare` | `long` |  | `reservation` | 
 | `reservationCommissionAmount` | `long` |  | `reservation` | 
-| `reservationCommissionRate` | `long` |  | `reservation` | 
+| `reservationCommissionRate` | `short` |  | `reservation` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `reservationBaseFare` | `long` |  | `reservation` | 
 | `reservationTaxAmount` | `long` |  | `reservation` | 
 | `reservationHighFare` | `long` |  | `reservation` | 
@@ -83,22 +87,30 @@ Permission Areas: Trip
 | `reservationProviderProfileInfoName` | `string` | 256 | `reservation` | 
 | `reservationTicketNo` | `long` |  | `reservation` | 
 | `reservationConfirmationNumber` | `string` | 64 | `reservation` | TripSearch.ReservationConfirmationNumber column deprecated; use TripSearch.ReservationConfirmationNo instead
+| `reservationConfirmationTicketNo` | `string` | 64 | `reservation` | 
 | `reservationConfirmedDateTime` | `DateTime` |  | `reservation` | 
 | `reservationPromoId` | `string` | 256 | `reservation` | 
 | `reservationSource` | `string` | 32 | `reservation` | 
 | `reservationPrimaryTravelerRecNo` | `long` |  | `reservation` | 
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
-| `reservationTravelerName` | `string` | 512 | `reservation` | 
+| `reservationTravelerName` | `string` |  | `reservation` | 
 | `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
 | `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationMarkupDiscount` | `long` |  | `reservation` | 
+| `reservationForeignCurrencyCode` | `string` | 3 | `reservation` | 
+| `reservationForeignTotalFare` | `long` |  | `reservation` | 
+| `reservationForeignCommissionAmount` | `long` |  | `reservation` | 
+| `reservationForeignConversionRate` | `int` |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `reservationGstVatOnCommissionAmount` | `long` |  | `reservation` | 
+| `reservationGstVatOnCommissionOverride` | `bool` |  | `reservation` | 
+| `reservationGstVatOnCommissionRate` | `int` |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemTriggerFixedDate` | `Date` |  | `tripActionItem` | 
-| `tripActionItemDescription` | `string` | 256 | `tripActionItem` | 
+| `tripActionItemDescription` | `string` |  | `tripActionItem` | 
 | `tripActionItemCompleted` | `DateTime` |  | `tripActionItem` | 
 | `tripActionItemAssignedToAppUserRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemAssignedToAppUserId` | `string` | 64 | `tripActionItem` | 
@@ -107,17 +119,21 @@ Permission Areas: Trip
 | `reservationAdvisorProfileName` | `string` | 256 | `reservationAdvisor` | 
 | `reservationAdvisorProfileId` | `string` | 32 | `reservationAdvisor` | 
 | `reservationAdvisorCommissionAmount` | `long` |  | `reservationAdvisor` | 
-| `reservationAdvisorCommissionRate` | `long` |  | `reservationAdvisor` | 
+| `reservationAdvisorCommissionRate` | `short` |  | `reservationAdvisor` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `reservationAdvisorReconciliationRecNo` | `long` |  | `reservationAdvisor` | 
 | `reservationAdvisorReconciliationDate` | `Date` |  | `reservationAdvisor` | 
-| `reservationAdvisorDefaultCommissionRate` | `long` |  | `reservationAdvisor` | 
+| `reservationAdvisorDefaultCommissionRate` | `short` |  | `reservationAdvisor` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `reservationAdvisorDefaultCommissionAmount` | `long` |  | `reservationAdvisor` | 
 | `reservationAccountingEntryRecNo` | `long` |  | `reservation` | 
 | `reservationAccountingEntryCreateDate` | `Date` |  | `reservation` | 
 | `reservationTravelerRecNo` | `long` |  | `reservationTraveler` | 
 | `reservationAdvisorsDatePayable` | `Date` |  | `reservation` | 
-| `paymentAuthorizationRecNo` | `long` |  | `tripPaymentAuthorization` | 
+| `tripPaymentAuthorizationRecNo` | `long` |  | `tripPaymentAuthorization` | 
+| `tripPaymentAuthorizationStatus` | `short` |  | `tripPaymentAuthorization` | Pending = 1, Authorized = 2, Expired = 3
+| `tripPaymentAuthorizationCreateDateTime` | `DateTimeOffset` |  | `tripPaymentAuthorization` | 
+| `tripPaymentAuthorizationExpirationDateTime` | `DateTimeOffset` |  | `tripPaymentAuthorization` | 
 | `reservationSupplierPaymentTotal` | `long` |  | `reservation` | 
+| `reservationClientPaymentTotal` | `long` |  | `reservation` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -149,7 +165,7 @@ Permission Areas: Trip
 | `destinationRecNo` | [`NumSearchParam`](NumSearchParam) | `destinationRecNo` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branchRecNo` | 
 | `tripRecordLocator` | [`StringSearchParam`](StringSearchParam) | `tripRecordLocator` | 
-| `tripVisibility` | [`short<short>`] | `visibility` | None = 0, ClientItin = 1, ClientTripProposal = 2
+| `tripVisibility` | [`short<short>`] | `visibility` | None = 0, ClientItin = 1, ClientTripProposal = 2, DestinationImages = 64
 | `reservationCreateDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
 | `reservationCreateDateTimeTo` | `DateTimeUTCSearchParam` |  | 
 | `reservationModifiedDateTimeFrom` | `DateTimeUTCSearchParam` |  | 
@@ -167,6 +183,7 @@ Permission Areas: Trip
 | `reservationFinalPayDueDateFrom` | `DateSearchParam` | `reservationFinalPayDueDate` | 
 | `reservationFinalPayDueDateTo` | `DateSearchParam` | `reservationFinalPayDueDate` | 
 | `reservationTravelCategory` | `EnumSearchParam<TravelCategory>` | `reservationTravelCategoryRecNo` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `reservationTravelSubCategoryRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelSubCategoryRecNo` | 
 | `reservationSupplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierProfileRecNo` | 
 | `reservationTrackClientPayments` | `bool` | `reservationTrackClientPayments` | 
 | `reservationStatus` | `EnumSearchParam<Status>` | `reservationStatus` | Pending = 1, Confirmed = 2, Cancelled = 3
@@ -182,13 +199,15 @@ Permission Areas: Trip
 | `reservationTravelerRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelerRecNo` | 
 | `reservationTravelerName` | [`StringSearchParam`](StringSearchParam) | `reservationTravelerName` | 
 | `reservationTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationTicketNo` | 
-| `reservationConfirmationNumber` | [`StringSearchParam`](StringSearchParam) | `reservationConfirmationNumber` | 
+| `reservationConfirmationNumber` | [`StringSearchParam`](StringSearchParam) | `reservationConfirmationNo` | 
 | `reservationConfirmedDateTimeFrom` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationConfirmedDateTimeTo` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationRecordLocator` | [`StringSearchParam`](StringSearchParam) | `reservationRecordLocator` | 
 | `reservationPromoId` | [`StringSearchParam`](StringSearchParam) | `reservationPromoId` | 
 | `reservationTotalFare` | [`NumSearchParam`](NumSearchParam) | `reservationTotalFare` | 
 | `reservationCommissionAmount` | [`NumSearchParam`](NumSearchParam) | `reservationCommissionAmount` | 
+| `reservationSupplierProfileInfoName` | [`StringSearchParam`](StringSearchParam) | `reservationSupplierProfileInfoName` | 
+| `reservationProviderProfileInfoName` | [`StringSearchParam`](StringSearchParam) | `reservationProviderProfileInfoName` | 
 | `tripActionItemCompleted` | `bool` | `tripActionItemCompleted` | 
 | `tripActionItemDateFrom` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 
@@ -204,15 +223,23 @@ Permission Areas: Trip
 | `reservationAdvisorsDatePayableFrom` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorsDatePayableTo` | `DateSearchParam` | `reservationAdvisorsDatePayable` | 
 | `reservationAdvisorRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorRecNo` | 
-| `paymentAuthorizationRecNo` | [`NumSearchParam`](NumSearchParam) | `paymentAuthorizationRecNo` | 
+| `tripPaymentAuthorizationRecNo` | [`NumSearchParam`](NumSearchParam) | `tripPaymentAuthorizationRecNo` | 
+| `tripPaymentAuthorizationStatus` | `EnumSearchParam<PaymentAuthorizationStatus>` | `tripPaymentAuthorizationStatus` | Pending = 1, Authorized = 2, Expired = 3
+| `tripPaymentAuthorizationCreateDateTimeFrom` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationCreateDateTime` | 
+| `tripPaymentAuthorizationCreateDateTimeTo` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationCreateDateTime` | 
+| `tripPaymentAuthorizationExpirationDateTimeFrom` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationExpirationDateTime` | 
+| `tripPaymentAuthorizationExpirationDateTimeTo` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationExpirationDateTime` | 
 | `reservationSupplierPaymentTotal` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierPaymentTotal` | 
+| `reservationSource` | [`StringSearchParam`](StringSearchParam) | `reservationSource` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
-| `clientProfileSearchParams` | `ProfileSearchParams` |  | 
-| `reservationTravelerSearchParams` | [`PersonSearchParams`](PersonSearchParams) |  | 
-| `destinationSearchParams` | `DestinationSearchParams` |  | 
-| `reservationAdvisorProfileSearchParams` | `ProfileSearchParams` |  | 
-| `reservationSupplierProfileSearchParams` | `ProfileSearchParams` |  | 
-| `reservationProviderProfileSearchParams` | `ProfileSearchParams` |  | 
+| `clientProfileSearchParams` | `ProfileSearchParams` | `clientProfileRecNo` | 
+| `destinationSearchParams` | `DestinationSearchParams` | `destinationRecNo` | 
+| `reservationTravelerSearchParams` | [`PersonSearchParams`](PersonSearchParams) | `reservationTravelerRecNo` | 
+| `reservationAdvisorProfileSearchParams` | `ProfileSearchParams` | `reservationAdvisorProfileRecNo` | 
+| `reservationSupplierProfileSearchParams` | `ProfileSearchParams` | `reservationSupplierProfileRecNo` | 
+| `reservationProviderProfileSearchParams` | `ProfileSearchParams` | `reservationProviderProfileRecNo` | 
+| `reservationPaymentSearchParams` | [`PaymentSearchParams`](PaymentSearchParams) | `reservationRecNo` | 
+| `excludeTripSearchParams` | `TripSearchParams` | `recNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

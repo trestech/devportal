@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -25,12 +25,17 @@ assembly_version: "1.0.34.1"
 | `logoData` | `byte[]` |  |  | `agency` | 
 | `itineraryRemarks` | `string` |  |  | `agency` | 
 | `supplierStatementRemarks` | `string` |  |  | `agency` | 
-| `merchantId` | `string` | 64 |  | `agency` | 
-| `merchantUserName` | `string` | 64 |  | `agency` | 
-| `merchantPassword` | `string` | 256 |  | `agency` | 
+| `merchantId` | `string` | 64 | Deprecated | `agency` | Obsolete.
+| `merchantUserName` | `string` | 64 | Deprecated | `agency` | Obsolete. Use AppFeature(3).Data instead.
+| `merchantPassword` | `string` | 256 | Deprecated | `agency` | Obsolete. Use AppFeature(3).Token instead.
 | `merchantMaxChargeAmount` | `long` |  |  | `agency` | 
-| `clientFormToken` | `string` | 1024 | Deprecated | `agency` | Obsolete. Use AppFeature.Token instead.
+| `clientFormToken` | `string` | 1024 | Deprecated | `agency` | Obsolete. Use AppFeature(4).Token instead.
+| `accountingLockDate` | `Date` |  |  | `agency` | 
+| `accountingLockReason` | `string` | 128 |  | `agency` | 
 | `brandingColor` | `int` |  |  | `agency` | 
+| `allowTresEmployeeLoginDateTime` | `DateTimeOffset` |  |  | `agency` | 
+| `countryCodeNo` | `short` |  | InsertOnly | `agency` | US = 1, CA = 2
+| `localCurrency` | `string` | 3 | ReadOnly | `agency` | 
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
@@ -52,7 +57,7 @@ assembly_version: "1.0.34.1"
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 
-| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11
+| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11, ConfirmationDocumentInterface = 12
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
 | `token` | `string` | 1024 |  | `appFeature` | 
@@ -71,6 +76,10 @@ assembly_version: "1.0.34.1"
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `fieldRequirements ` | table |  |  | `agency` | 
+| `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `fieldRequirements` | 
+| `area` | `short` |  | PKey | `fieldRequirements` | ClientProfile = 7, Person = 12, Trip = 16
+| `fieldNo` | `short` |  | PKey | `fieldRequirements` | 
 
 | Status code | Description |
 | ----------- | ----------- |

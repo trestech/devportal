@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -18,10 +18,12 @@ assembly_version: "1.0.34.1"
 | `email` | `string` | 128 |  | `appUser` | 
 | `passwordLastModified` | `Date` |  | ReadOnly | `appUser` | 
 | `microsoftId` | `string` | 64 |  | `appUser` | 
+| `microsoftUserPrincipalName` | `string` | 64 | ReadOnly | `appUser` | 
+| `uniqueId` | `string` | 64 | InsertOnly | `appUser` | 
+| `userType` | `short` |  | Required | `appUser` | User = 1, Manager = 2, Admin = 3
 | `recNo` | `long` |  | PKey | `appUser` | 
 | `branch_recNo` | `long` |  | FKey | `appUser` | 
 | `branchName` | `string` | 64 | ReadOnly, Lookup | `appUser` | 
-| `userType` | `short` |  | Required | `appUser` | User = 1, Manager = 2, Admin = 3
 | `description` | `string` | 64 |  | `appUser` | 
 | `mobilePhone` | `string` | 64 |  | `appUser` | 
 | `emailServerType` | `short` |  |  | `appUser` | Office365 = 1, Gmail = 2, GenericSMTP = 3
@@ -52,11 +54,26 @@ assembly_version: "1.0.34.1"
 | `branchActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `documentTemplateActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `advisorAdjustmentActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
+| `agencyCardActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
+| `signatureAttachment_recNo` | `long` |  | Auto-Assign | `appUser` | 
 | `appUserAdvisor ` | table |  |  | `appUser` | 
 | `appUser_recNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 
 | `advisorName` | `string` | 256 | ReadOnly | `appUserAdvisor` | 
 | `isPrimary` | `bool` |  | Required | `appUserAdvisor` | 
+| `signatureAttachment  [shared]` | table |  | Singleton | `appUser` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 
 | Status code | Description |
 | ----------- | ----------- |

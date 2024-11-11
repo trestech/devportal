@@ -1,24 +1,27 @@
 ---
 layout: api_page
-title: "AdvisorReconciliationSearch"
-description: "Search advisor reconciliation based on filters"
+title: "AgencyCardSearch"
+description: ""
 assembly_version: "1.4.4.3"
 ---
 
-Search advisor reconciliation based on filters.
 
-See: [Advisor Reconciliation](AdvisorReconciliation.html)
 
-Permission Areas: AdvisorReconciliation
+Permission Areas: AgencyCard
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `advisorReconciliation` | 
-| `summaryCount` | `int` |  | `advisorReconciliation` | 
-| `createDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `reconciliationDate` | `Date` |  | `advisorReconciliation` | 
-| `description` | `string` | 128 | `advisorReconciliation` | 
+| `recNo` | `long` |  | `agencyCard` | 
+| `summaryCount` | `int` |  | `agencyCard` | 
+| `createDateTime` | `DateTimeOffset` |  | `agencyCard` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `agencyCard` | 
+| `name` | `string` | 512 | `agencyCard` | 
+| `nameOnCard` | `string` | 64 | `agencyCard` | 
+| `cardNumber` | `string` | 64 | `agencyCard` | 
+| `expirationDate` | `Date` |  | `agencyCard` | 
+| `generalLedgerAccount_recNo` | `long` |  | `agencyCard` | 
+| `generalLedgerAccount_name` | `string` | 64 | `agencyCard` | 
+| `activeStatus` | `short` |  | `agencyCard` | Inactive = 0, Active = 1, Pending = 2
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -36,10 +39,7 @@ Permission Areas: AdvisorReconciliation
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `reconciliationDateFrom` | `DateSearchParam` | `reconciliationDate` | 
-| `reconciliationDateTo` | `DateSearchParam` | `reconciliationDate` | 
-| `description` | [`StringSearchParam`](StringSearchParam) | `description` | 
-| `advisorProfileRecNo` | `long` |  | 
+| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 
 | Status code | Description |
 | ----------- | ----------- |

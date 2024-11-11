@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierProfile"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -20,7 +20,7 @@ Permission Areas: SupplierProfile
 | `vendorId` | `string` | 10 |  | `supplierProfile` | 
 | `tripStatementRemarks` | `string` |  |  | `supplierProfile` | 
 | `termsAndConditionsUrl` | `string` | 256 |  | `supplierProfile` | 
-| `commissionRate` | `short` |  |  | `supplierProfile` | 
+| `commissionRate` | `short` |  |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `travelCategoryFlags` | `int` |  |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
 | `profile  [shared]` | table |  | Singleton | `supplierProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
@@ -43,6 +43,7 @@ Permission Areas: SupplierProfile
 | `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `indexNo` | `short` |  |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -72,6 +73,7 @@ Permission Areas: SupplierProfile
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
 | `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 
@@ -82,6 +84,7 @@ Permission Areas: SupplierProfile
 | `id` | `string` | 32 | Required | `profileId` | 
 | `profileAttachmentLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `profileAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `profileAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `profileAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

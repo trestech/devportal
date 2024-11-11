@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -25,14 +25,14 @@ Permission Areas: Trip
 | `startDateTime` | `DateTime` |  |  | `trip` | 
 | `endDateTime` | `DateTime` |  |  | `trip` | 
 | `targetTravelDate` | `Date` |  |  | `trip` | 
-| `destination_recNo` | `long` |  | FKey | `trip` | 
-| `destinationName_Lookup` | `string` | 64 | ReadOnly, Lookup | `trip` | 
+| `destination_recNo` | `long` |  | FKey, Deprecated | `trip` | Destination_RecNo is being deprecated; use TripDestinationLink.Destination_RecNo instead
+| `destinationName_Lookup` | `string` | 64 | ReadOnly, Deprecated, Lookup | `trip` | DestinationName_Lookup is being deprecated; use TripDestinationLink.DestinationName_Lookup instead
 | `remarks` | `string` |  |  | `trip` | 
 | `advisorRemarks` | `string` |  |  | `trip` | 
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `trip` | 
-| `visibility` | `short` |  | Required | `trip` | None = 0, ClientItin = 1, ClientTripProposal = 2
+| `visibility` | `int` |  | Required | `trip` | None = 0, ClientItin = 1, ClientTripProposal = 2, DestinationImages = 64
 | `clientProfileInfo ` | table |  | Singleton | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileInfo` | 
 | `name` | `string` | 256 |  | `clientProfileInfo` | 
@@ -55,9 +55,11 @@ Permission Areas: Trip
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelSubCategory_recNo` | `long` |  | FKey | `reservation` | 
+| `travelSubCategory_Lookup` | `string` | 64 | ReadOnly, Lookup | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
-| `commissionRate` | `short` |  |  | `reservation` | 
+| `commissionRate` | `short` |  |  | `reservation` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 
 | `lowFare` | `long` |  |  | `reservation` | 
@@ -70,9 +72,9 @@ Permission Areas: Trip
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
-| `unitDescription` | `string` | 256 |  | `reservation` | 
+| `unitDescription` | `string` |  |  | `reservation` | 
 | `numberOfUnits` | `short` |  |  | `reservation` | 
-| `rateCode` | `string` | 8 |  | `reservation` | 
+| `rateCode` | `string` | 16 |  | `reservation` | 
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
@@ -86,7 +88,14 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
+| `foreignTotalFare` | `long` |  |  | `reservation` | 
+| `foreignCommissionAmount` | `long` |  |  | `reservation` | 
+| `foreignConversionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `gstVatOnCommissionAmount` | `long` |  |  | `reservation` | 
+| `gstVatOnCommissionOverride` | `bool` |  | Required | `reservation` | 
+| `gstVatOnCommissionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `clientBalance` | `long` |  | ReadOnly | `reservation` | 
 | `supplierBalance` | `long` |  | ReadOnly | `reservation` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `reservation` | 
@@ -165,6 +174,22 @@ Permission Areas: Trip
 | `traveler` | `string` | 128 |  | `reservationItemization` | 
 | `description` | `string` | 128 |  | `reservationItemization` | 
 | `remarks` | `string` | 128 |  | `reservationItemization` | 
+| `reservationHistory ` | table |  |  | `reservation` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
 | `createDate` | `Date` |  | InsertOnly | `accountingEntry` | 
@@ -210,7 +235,7 @@ Permission Areas: Trip
 | `advisorProfile_recNo` | `long` |  | Required, FKey | `reservationAdvisor` | 
 | `advisorName` | `string` | 256 | ReadOnly, Lookup | `reservationAdvisor` | 
 | `id` | `string` | 32 | ReadOnly, Lookup | `reservationAdvisor` | 
-| `commissionRate` | `short` |  |  | `reservationAdvisor` | 
+| `commissionRate` | `short` |  |  | `reservationAdvisor` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `commissionAmount` | `long` |  |  | `reservationAdvisor` | 
 | `datePaid` | `Date` |  |  | `reservationAdvisor` | 
 | `reconciliationRecNo` | `long` |  | ReadOnly, Lookup | `reservationAdvisor` | 
@@ -273,9 +298,11 @@ Permission Areas: Trip
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelSubCategory_recNo` | `long` |  | FKey | `reservation` | 
+| `travelSubCategory_Lookup` | `string` | 64 | ReadOnly, Lookup | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
-| `commissionRate` | `short` |  |  | `reservation` | 
+| `commissionRate` | `short` |  |  | `reservation` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 
 | `lowFare` | `long` |  |  | `reservation` | 
@@ -288,9 +315,9 @@ Permission Areas: Trip
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
-| `unitDescription` | `string` | 256 |  | `reservation` | 
+| `unitDescription` | `string` |  |  | `reservation` | 
 | `numberOfUnits` | `short` |  |  | `reservation` | 
-| `rateCode` | `string` | 8 |  | `reservation` | 
+| `rateCode` | `string` | 16 |  | `reservation` | 
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
@@ -304,7 +331,14 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
+| `foreignTotalFare` | `long` |  |  | `reservation` | 
+| `foreignCommissionAmount` | `long` |  |  | `reservation` | 
+| `foreignConversionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `gstVatOnCommissionAmount` | `long` |  |  | `reservation` | 
+| `gstVatOnCommissionOverride` | `bool` |  | Required | `reservation` | 
+| `gstVatOnCommissionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `airReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -379,6 +413,22 @@ Permission Areas: Trip
 | `traveler` | `string` | 128 |  | `reservationItemization` | 
 | `description` | `string` | 128 |  | `reservationItemization` | 
 | `remarks` | `string` | 128 |  | `reservationItemization` | 
+| `cruiseSubReservationHistory ` | table |  |  | `cruiseSubReservation` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 | `tourReservation ` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `tourReservation` | 
 | `tourSubReservationLink ` | table |  |  | `tourReservation` | 
@@ -391,9 +441,11 @@ Permission Areas: Trip
 | `providerProfile_recNo` | `long` |  | FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelCategory_recNo` | `short` |  | Required | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `travelSubCategory_recNo` | `long` |  | FKey | `reservation` | 
+| `travelSubCategory_Lookup` | `string` | 64 | ReadOnly, Lookup | `reservation` | 
 | `totalFare` | `long` |  | Required | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 
-| `commissionRate` | `short` |  |  | `reservation` | 
+| `commissionRate` | `short` |  |  | `reservation` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `markupDiscount` | `long` |  | Required | `reservation` | 
 | `highFare` | `long` |  |  | `reservation` | 
 | `lowFare` | `long` |  |  | `reservation` | 
@@ -406,9 +458,9 @@ Permission Areas: Trip
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
 | `endDateTime` | `DateTime` |  |  | `reservation` | 
 | `unitCode` | `string` | 8 |  | `reservation` | 
-| `unitDescription` | `string` | 256 |  | `reservation` | 
+| `unitDescription` | `string` |  |  | `reservation` | 
 | `numberOfUnits` | `short` |  |  | `reservation` | 
-| `rateCode` | `string` | 8 |  | `reservation` | 
+| `rateCode` | `string` | 16 |  | `reservation` | 
 | `rateDescription` | `string` | 256 |  | `reservation` | 
 | `recordLocator` | `string` | 32 |  | `reservation` | 
 | `source` | `string` | 32 |  | `reservation` | 
@@ -422,7 +474,14 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
+| `foreignTotalFare` | `long` |  |  | `reservation` | 
+| `foreignCommissionAmount` | `long` |  |  | `reservation` | 
+| `foreignConversionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `gstVatOnCommissionAmount` | `long` |  |  | `reservation` | 
+| `gstVatOnCommissionOverride` | `bool` |  | Required | `reservation` | 
+| `gstVatOnCommissionRate` | `int` |  |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `airReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `airReservation` | 
 | `ticketType` | `short` |  |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
@@ -497,6 +556,22 @@ Permission Areas: Trip
 | `traveler` | `string` | 128 |  | `reservationItemization` | 
 | `description` | `string` | 128 |  | `reservationItemization` | 
 | `remarks` | `string` | 128 |  | `reservationItemization` | 
+| `tourSubReservationHistory ` | table |  |  | `tourSubReservation` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 | `reservationDeposit ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationDeposit` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationDeposit` | 
@@ -554,7 +629,8 @@ Permission Areas: Trip
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
 | `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
-| `notes` | `string` | 256 |  | `actionItem` | 
+| `notes` | `string` |  |  | `actionItem` | 
+| `documentTemplate_recNo` | `long` |  | FKey | `actionItem` | 
 | `tripDocument ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripDocument` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripDocument` | 
@@ -569,6 +645,7 @@ Permission Areas: Trip
 | `tripDestinationLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDestinationLink` | 
 | `destination_recNo` | `long` |  | PKey, Required, FKey | `tripDestinationLink` | 
+| `destinationName_Lookup` | `string` | 64 | ReadOnly, Lookup | `tripDestinationLink` | 
 | `tripPaymentAuthorization ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripPaymentAuthorization` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripPaymentAuthorization` | 
@@ -587,6 +664,23 @@ Permission Areas: Trip
 | `clientAuthorizationDateTime` | `DateTimeOffset` |  |  | `tripPaymentAuthorization` | 
 | `clientAuthorizationIP` | `string` | 16 |  | `tripPaymentAuthorization` | 
 | `authorizationExpirationDateTime` | `DateTimeOffset` |  |  | `tripPaymentAuthorization` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripPaymentAuthorization` | 
+| `tripHistory ` | table |  |  | `trip` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 
 | Status code | Description |
 | ----------- | ----------- |

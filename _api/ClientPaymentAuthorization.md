@@ -2,13 +2,14 @@
 layout: api_page
 title: "ClientPaymentAuthorization"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
+| `recNo` | `long` |  |  | `clientPaymentAuthorization` | 
 | `status` | `short` |  | ReadOnly | `clientPaymentAuthorization` | Pending = 1, Authorized = 2, Expired = 3
 | `authorizedAmount` | `long` |  | ReadOnly | `clientPaymentAuthorization` | 
 | `description` | `string` | 128 | ReadOnly | `clientPaymentAuthorization` | 
@@ -19,6 +20,10 @@ assembly_version: "1.0.34.1"
 | `billingAddress` | `string` | 128 |  | `clientPaymentAuthorization` | 
 | `billingZipPostalCode` | `string` | 16 |  | `clientPaymentAuthorization` | 
 | `clientRemarks` | `string` | 128 |  | `clientPaymentAuthorization` | 
+| `clientName` | `string` | 256 | ReadOnly | `clientPaymentAuthorization` | 
+| `advisorProfile_recNo` | `long` |  | ReadOnly, FKey | `clientPaymentAuthorization` | 
+| `branch_recNo` | `long` |  | ReadOnly, FKey | `clientPaymentAuthorization` | 
+| `tripName` | `string` | 256 | ReadOnly | `clientPaymentAuthorization` | 
 
 | Status code | Description |
 | ----------- | ----------- |

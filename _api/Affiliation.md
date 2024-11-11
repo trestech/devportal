@@ -2,7 +2,7 @@
 layout: api_page
 title: "Affiliation"
 description: "Affiliation known to Tres"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Affiliation known to Tres.  Pass the record number to get the marketing categories for the specified affiliation.
@@ -39,6 +39,7 @@ Affiliation known to Tres.  Pass the record number to get the marketing categori
 | `affiliationMarketingCategory_recNo` | `long` |  | InsertOnly, FKey | `affiliationMarketingElement` | 
 | `name` | `string` | 64 | Required | `affiliationMarketingElement` | 
 | `id` | `string` | 16 | Required | `affiliationMarketingElement` | 
+| `sortNo` | `short` |  |  | `affiliationMarketingElement` | 
 
 | Status code | Description |
 | ----------- | ----------- |

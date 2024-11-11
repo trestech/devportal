@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -35,7 +35,7 @@ assembly_version: "1.0.34.1"
 | `actionText` | `string` | 32 |  | `event` | 
 | `travelers` | `string` | 512 |  | `event` | 
 | `numberOfUnits` | `short` |  |  | `event` | 
-| `unitDescription` | `string` | 256 |  | `event` | 
+| `unitDescription` | `string` |  |  | `event` | 
 | `itineraryRemarks` | `string` |  |  | `event` | 
 | `startInfo` | `string` | 256 |  | `event` | 
 | `endInfo` | `string` | 256 |  | `event` | 

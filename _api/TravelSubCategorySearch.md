@@ -1,26 +1,25 @@
 ---
 layout: api_page
-title: "BankSearch"
-description: "Search banks based on filters"
+title: "TravelSubCategorySearch"
+description: ""
 assembly_version: "1.4.4.3"
 ---
 
-Search banks based on filters.
 
-See: [Bank](Bank.html)
 
-Permission Areas: Bank
+Permission Areas: Trip
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `bank` | 
-| `summaryCount` | `int` |  | `bank` | 
-| `createDateTime` | `DateTimeOffset` |  | `bank` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `bank` | 
-| `name` | `string` | 64 | `bank` | 
-| `description` | `string` | 128 | `bank` | 
-| `generalLedgerAccount_recNo` | `long` |  | `bank` | 
-| `activeStatus` | `short` |  | `bank` | Inactive = 0, Active = 1, Pending = 2
+| `recNo` | `long` |  | `travelSubCategory` | 
+| `summaryCount` | `int` |  | `travelSubCategory` | 
+| `createDateTime` | `DateTimeOffset` |  | `travelSubCategory` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `travelSubCategory` | 
+| `travelCategory_recNo` | `short` |  | `travelSubCategory` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `name` | `string` | 64 | `travelSubCategory` | 
+| `description` | `string` | 128 | `travelSubCategory` | 
+| `activeStatus` | `bool` |  | `travelSubCategory` | 
+| `indexNo` | `short` |  | `travelSubCategory` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -38,8 +37,9 @@ Permission Areas: Bank
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `travelCategoryRecNo` | `EnumSearchParam<TravelCategory>` | `travelCategory_recNo` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
-| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
+| `activeStatus` | `bool` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |

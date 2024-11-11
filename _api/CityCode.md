@@ -2,7 +2,7 @@
 layout: api_page
 title: "CityCode"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.0.41.7"
 ---
 
 

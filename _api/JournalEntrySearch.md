@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search journal entries based on filters.
@@ -35,6 +35,8 @@ Permission Areas: JournalEntry
 | `journalEntryDetailDebitAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailAmount` | `long` |  | `journalEntry` | 
+| `journalEntryDetailRemarks` | `string` | 256 | `journalEntry` | 
+| `sourceRemarks` | `string` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

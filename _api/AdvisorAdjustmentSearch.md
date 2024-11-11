@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustmentSearch"
 description: "Search advisor adjustments based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search advisor adjustments based on filters.
@@ -17,6 +17,7 @@ Permission Areas: AdvisorAdjustment
 | `tagRecNo` | `long` |  | `advisorAdjustment` | 
 | `tagName` | `string` | 64 | `advisorAdjustment` | 
 | `tagValue` | `string` | 1024 | `advisorAdjustment` | 
+| `tags` | `string` |  | `advisorAdjustment` | 
 | `summaryCount` | `int` |  | `advisorAdjustment` | 
 | `createDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorAdjustment` | 

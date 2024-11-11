@@ -2,7 +2,7 @@
 layout: api_page
 title: "MerchantTransaction"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -20,13 +20,14 @@ assembly_version: "1.0.34.1"
 | `street1` | `string` | 128 |  | `merchantTransaction` | 
 | `zipPostalCode` | `string` | 16 |  | `merchantTransaction` | 
 | `dateProcessed` | `DateTimeOffset` |  |  | `merchantTransaction` | 
-| `transactionId` | `string` | 32 | Required | `merchantTransaction` | 
+| `transactionId` | `string` | 32 |  | `merchantTransaction` | 
 | `originalTransactionId` | `string` | 32 |  | `merchantTransaction` | 
 | `authorizationCode` | `string` | 16 |  | `merchantTransaction` | 
 | `authorizationStatus` | `string` | 1 |  | `merchantTransaction` | 
 | `authorizationMessage` | `string` | 256 |  | `merchantTransaction` | 
 | `orderId` | `string` | 16 |  | `merchantTransaction` | 
 | `payment_recNo` | `long` |  | FKey | `merchantTransaction` | 
+| `processor` | `short` |  | Required | `merchantTransaction` | WorldNet = 1, Payrix = 2
 
 | Status code | Description |
 | ----------- | ----------- |

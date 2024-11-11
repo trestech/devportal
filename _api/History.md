@@ -2,7 +2,7 @@
 layout: api_page
 title: "History"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -10,7 +10,7 @@ assembly_version: "1.0.34.1"
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `history` | 
-| `timestamp` | `DateTimeOffset` |  | Required | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
 | `action` | `string` | 64 |  | `history` | 
 | `tableName` | `string` | 64 |  | `history` | 
 | `tableRecNo` | `long` |  |  | `history` | 
@@ -19,6 +19,9 @@ assembly_version: "1.0.34.1"
 | `description` | `string` | 256 |  | `history` | 
 | `oldValue` | `string` | 256 |  | `history` | 
 | `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
 

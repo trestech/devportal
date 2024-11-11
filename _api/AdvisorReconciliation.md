@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorReconciliation"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -15,12 +15,12 @@ Permission Areas: AdvisorReconciliation
 | `reconciliationDate` | `Date` |  |  | `advisorReconciliation` | 
 | `description` | `string` | 128 |  | `advisorReconciliation` | 
 | `advisorReconciliationDetail ` | table |  |  | `advisorReconciliation` | 
-| `reservationAdvisor_recNo` | `long` |  | PKey, FKey | `advisorReconciliationDetail` | 
-| `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationDetail` | 
+| `reservationAdvisor_recNo` | `long` |  | PKey, Required, FKey | `advisorReconciliationDetail` | 
+| `advisorReconciliation_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorReconciliationDetail` | 
 | `amount` | `long` |  |  | `advisorReconciliationDetail` | 
 | `advisorReconciliationAdjustment ` | table |  |  | `advisorReconciliation` | 
-| `advisorAdjustment_recNo` | `long` |  | PKey, FKey | `advisorReconciliationAdjustment` | 
-| `advisorReconciliation_recNo` | `long` |  | InsertOnly, FKey | `advisorReconciliationAdjustment` | 
+| `advisorAdjustment_recNo` | `long` |  | PKey, Required, FKey | `advisorReconciliationAdjustment` | 
+| `advisorReconciliation_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorReconciliationAdjustment` | 
 | `amount` | `long` |  |  | `advisorReconciliationAdjustment` | 
 
 | Status code | Description |

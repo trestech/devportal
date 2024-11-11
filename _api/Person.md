@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -113,7 +113,8 @@ Permission Areas: Person
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
 | `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
-| `notes` | `string` | 256 |  | `actionItem` | 
+| `notes` | `string` |  |  | `actionItem` | 
+| `documentTemplate_recNo` | `long` |  | FKey | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -326,7 +327,8 @@ Status: 200 Ok
           "completed": null,
           "completedBy_appUserRecNo": null,
           "completedBy_appUserId": null,
-          "notes": null
+          "notes": null,
+          "documentTemplate_recNo": null
         }
       }
     ]

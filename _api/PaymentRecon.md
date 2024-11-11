@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentRecon"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -13,7 +13,7 @@ Permission Areas: SupplierPayment
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `paymentRecon` | 
 | `fileData` | `byte[]` |  |  | `paymentRecon` | 
-| `provider` | `short` |  | Required | `paymentRecon` | Onyx = 1
+| `provider` | `short` |  | Required | `paymentRecon` | Onyx = 1, Paymode = 2
 | `supplierProfile_recNo` | `long` |  |  | `paymentRecon` | 
 | `supplierProfile_Name` | `string` | 256 | ReadOnly, Lookup | `paymentRecon` | 
 | `bank_recNo` | `long` |  |  | `paymentRecon` | 
@@ -30,20 +30,27 @@ Permission Areas: SupplierPayment
 | `recNo` | `long` |  | PKey | `paymentReconDetail` | 
 | `paymentRecon_RecNo` | `long` |  | InsertOnly, FKey | `paymentReconDetail` | 
 | `commissionAmount` | `long` |  | Required | `paymentReconDetail` | 
-| `commissionRate` | `short` |  |  | `paymentReconDetail` | 
+| `commissionRate` | `short` |  |  | `paymentReconDetail` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `chainCode` | `string` | 2 |  | `paymentReconDetail` | 
 | `arcNo` | `long` |  |  | `paymentReconDetail` | 
 | `cityCode` | `string` | 4 |  | `paymentReconDetail` | 
 | `voidReservation` | `bool` |  | Required | `paymentReconDetail` | 
 | `issueDate` | `Date` |  |  | `paymentReconDetail` | 
-| `providerName` | `string` | 256 |  | `paymentReconDetail` | 
 | `traveler` | `string` | 256 |  | `paymentReconDetail` | 
 | `confirmation` | `string` | 64 |  | `paymentReconDetail` | 
 | `totalFare` | `long` |  | Required | `paymentReconDetail` | 
 | `startDate` | `Date` |  |  | `paymentReconDetail` | 
+| `endDate` | `Date` |  |  | `paymentReconDetail` | 
 | `notes` | `string` | 128 |  | `paymentReconDetail` | 
 | `recordLocator` | `string` | 32 |  | `paymentReconDetail` | 
+| `providerName` | `string` | 256 |  | `paymentReconDetail` | 
+| `street1` | `string` | 128 |  | `paymentReconDetail` | 
+| `street2` | `string` | 128 |  | `paymentReconDetail` | 
 | `city` | `string` | 64 |  | `paymentReconDetail` | 
+| `stateProvince` | `string` | 8 |  | `paymentReconDetail` | 
+| `zipPostalCode` | `string` | 16 |  | `paymentReconDetail` | 
+| `country` | `string` | 4 |  | `paymentReconDetail` | 
+| `phone` | `string` | 256 |  | `paymentReconDetail` | 
 | `travelCategory_recNo` | `short` |  | Required | `paymentReconDetail` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `status` | `short` |  | Required | `paymentReconDetail` | Unreconciled = 0, Reconciled = 1, MultiMatches = 2, Duplicate = 3
 | `reservation_recNo` | `long` |  |  | `paymentReconDetail` | 
@@ -52,8 +59,11 @@ Permission Areas: SupplierPayment
 | `reservation ` | table |  | Singleton | `paymentReconDetail` | 
 | `recNo` | `long` |  | InsertOnly, FKey | `reservation` | 
 | `providerName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
+| `providerInfoName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
+| `supplierName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
+| `supplierInfoName_Lookup` | `string` | 256 | ReadOnly, Lookup | `reservation` | 
 | `travelerName` | `string` | 512 |  | `reservation` | 
-| `primaryTravelerName` | `string` | 512 | ReadOnly | `reservation` | 
+| `primaryTravelerName_Lookup` | `string` | 512 | ReadOnly | `reservation` | 
 | `confirmationNo` | `string` | 64 |  | `reservation` | 
 | `totalFare` | `long` |  |  | `reservation` | 
 | `commissionAmount` | `long` |  |  | `reservation` | 

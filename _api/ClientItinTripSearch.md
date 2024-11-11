@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTripSearch"
 description: "Search client trip itineraries based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.0.41.7"
 ---
 
 Search client trip itineraries based on filters.

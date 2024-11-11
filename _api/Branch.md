@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: "A branch is often a separate location or office of a travel agency that uses the same data source as the main agency"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 A branch is often a separate location or office of a travel agency that uses the same data source as the main agency.  A branch can have its own trust account, accounting data, and reporting functions and can also share information and workflows with other branches and the main agency.
@@ -27,6 +27,7 @@ Permission Areas: Branch
 | `itineraryRemarks` | `string` |  |  | `branch` | 
 | `brandingColor` | `int` |  |  | `branch` | 
 | `activeStatus` | `short` |  | Required | `branch` | Inactive = 0, Active = 1, Pending = 2
+| `arcBspNo` | `int` |  |  | `branch` | 
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `branch` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `branch` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

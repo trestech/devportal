@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplate"
 description: ""
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 
@@ -35,7 +35,8 @@ Permission Areas: ActionItemTemplate
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
 | `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
-| `notes` | `string` | 256 |  | `actionItem` | 
+| `notes` | `string` |  |  | `actionItem` | 
+| `documentTemplate_recNo` | `long` |  | FKey | `actionItem` | 
 
 | Status code | Description |
 | ----------- | ----------- |

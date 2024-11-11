@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -49,6 +49,7 @@ Permission Areas: ClientProfile
 | `birthdayDay` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayMonth` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
 | `birthdayYear` | `short` |  | ReadOnly, Lookup | `profilePersonLink` | 
+| `indexNo` | `short` |  |  | `profilePersonLink` | 
 | `profileCommunicationLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `profileCommunicationLink` | 
@@ -78,6 +79,7 @@ Permission Areas: ClientProfile
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
 | `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 
@@ -88,6 +90,7 @@ Permission Areas: ClientProfile
 | `id` | `string` | 32 | Required | `profileId` | 
 | `profileAttachmentLink ` | table |  |  | `profile` | 
 | `profile_recNo` | `long` |  | PKey, InsertOnly, FKey | `profileAttachmentLink` | 
+| `sortIndex` | `short` |  |  | `profileAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `profileAttachmentLink` | 
 | `attachment  [shared]` | table |  | Singleton | `profileAttachmentLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
@@ -127,7 +130,24 @@ Permission Areas: ClientProfile
 | `completed` | `DateTimeOffset` |  |  | `actionItem` | 
 | `completedBy_appUserRecNo` | `long` |  |  | `actionItem` | 
 | `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
-| `notes` | `string` | 256 |  | `actionItem` | 
+| `notes` | `string` |  |  | `actionItem` | 
+| `documentTemplate_recNo` | `long` |  | FKey | `actionItem` | 
+| `clientProfileHistory ` | table |  |  | `clientProfile` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppSettingSearch"
 description: "Search application settings based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search application settings based on filters.
@@ -38,6 +38,7 @@ See: [AppSetting](AppSetting.html)
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `appUserRecNo` | `long` | `appUser_recNo` | 
 | `area` | `string` | `area` | 
 
 | Status code | Description |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: "Search trip imports based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search trip imports based on filters.
@@ -17,7 +17,7 @@ Permission Areas: TripImport
 | `summaryCount` | `int` |  | `tripImport` | 
 | `createDateTime` | `DateTimeOffset` |  | `tripImport` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `tripImport` | 
-| `type` | `short` |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4
+| `type` | `short` |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4, ConfirmationDocument = 5
 | `subType` | `string` | 8 | `tripImport` | 
 | `source` | `string` | 64 | `tripImport` | 
 | `recordLocator` | `string` | 6 | `tripImport` | 
@@ -47,7 +47,7 @@ Permission Areas: TripImport
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `type` | `EnumSearchParam<ImportType>` | `type` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4
+| `type` | `EnumSearchParam<ImportType>` | `type` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4, ConfirmationDocument = 5
 | `status` | `EnumSearchParam<Status>` | `status` | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) | `trip_RecNo` | 
 

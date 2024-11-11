@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplateSearch"
 description: "Search document templates based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search document templates based on filters.
@@ -39,7 +39,7 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | `reportName [inherited]` | `string` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 
-| `area` | `bool` | `area` | 
+| `area` | [`short<short>`] | `area` | Trip = 1, ClientProfile = 2, Person = 3
 
 | Status code | Description |
 | ----------- | ----------- |

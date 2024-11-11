@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: "Search history based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search history based on filters.
@@ -26,6 +26,8 @@ See: [History](History.html)
 | `description` | `string` | 256 | `history` | 
 | `oldValue` | `string` | 256 | `history` | 
 | `newValue` | `string` | 256 | `history` | 
+| `clientIPAddress` | `string` | 16 | `history` | 
+| `errorCode` | `int` |  | `history` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -47,10 +49,13 @@ See: [History](History.html)
 | `tableRecNo` | [`NumSearchParam`](NumSearchParam) | `tableRecNo` | 
 | `tableRecNo2` | [`NumSearchParam`](NumSearchParam) | `tableRecNo2` | 
 | `action` | [`StringSearchParam`](StringSearchParam) | `action` | 
-| `timeStampFrom` | `DateTimeUTCSearchParam` |  | 
-| `timeStampTo` | `DateTimeUTCSearchParam` |  | 
+| `timeStampFrom` | `DateTimeUTCSearchParam` | `timestamp` | 
+| `timeStampTo` | `DateTimeUTCSearchParam` | `timestamp` | 
 | `appUser_recNo` | [`NumSearchParam`](NumSearchParam) | `appUser_recNo` | 
 | `appUser_id` | [`StringSearchParam`](StringSearchParam) | `appUser_id` | 
+| `columnName` | [`StringSearchParam`](StringSearchParam) | `columnName` | 
+| `clientIPAddress` | [`StringSearchParam`](StringSearchParam) | `clientIPAddress` | 
+| `errorCode` | [`NumSearchParam`](NumSearchParam) | `errorCode` | 
 
 | Status code | Description |
 | ----------- | ----------- |

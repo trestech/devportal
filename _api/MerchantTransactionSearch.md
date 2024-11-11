@@ -2,7 +2,7 @@
 layout: api_page
 title: "MerchantTransactionSearch"
 description: "Search merchant transactions based on filters"
-assembly_version: "1.0.34.1"
+assembly_version: "1.4.4.3"
 ---
 
 Search merchant transactions based on filters.
@@ -19,6 +19,8 @@ See: [MerchantTransaction](MerchantTransaction.html)
 | `transactionId` | `string` | 32 | `merchantTransaction` | 
 | `payment_recNo` | `long` |  | `merchantTransaction` | 
 | `dateProcessed` | `DateTimeOffset` |  | `merchantTransaction` | 
+| `processor` | `short` |  | `merchantTransaction` | WorldNet = 1, Payrix = 2
+| `originalTransactionId` | `string` | 32 | `merchantTransaction` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -40,6 +42,9 @@ See: [MerchantTransaction](MerchantTransaction.html)
 | `dateProcessedFrom` | `DateTimeUTCSearchParam` | `dateProcessed` | 
 | `dateProcessedTo` | `DateTimeUTCSearchParam` | `dateProcessed` | 
 | `paymentRecNo` | [`NumSearchParam`](NumSearchParam) | `payment_recNo` | 
+| `processor` | `EnumSearchParam<Processor>` | `processor` | WorldNet = 1, Payrix = 2
+| `transactionId` | [`StringSearchParam`](StringSearchParam) | `transactionId` | 
+| `originalTransactionId` | [`StringSearchParam`](StringSearchParam) | `originalTransactionId` | 
 
 | Status code | Description |
 | ----------- | ----------- |
