@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUserSearch"
 description: "Search application users based on filters"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 Search application users based on filters.
@@ -48,6 +48,7 @@ See: [AppUser](AppUser.html)
 | `email` | [`StringSearchParam`](StringSearchParam) | `email` | 
 | `enabled` | `bool` | `enabled` | 
 | `locked` | `bool` | `locked` | 
+| `advisorProfileRecNo` | `long` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

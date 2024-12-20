@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntry"
 description: ""
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 
@@ -14,6 +14,7 @@ Permission Areas: JournalEntry
 | `recNo` | `long` |  | PKey | `journalEntry` | 
 | `remarks` | `string` | 512 |  | `journalEntry` | 
 | `date` | `Date` |  | Required | `journalEntry` | 
+| `type` | `short` |  | Required, InsertOnly | `journalEntry` | Standard = 1, YearEnd = 2
 | `journalEntryDetail ` | table |  |  | `journalEntry` | 
 | `recNo` | `long` |  | PKey | `journalEntryDetail` | 
 | `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 

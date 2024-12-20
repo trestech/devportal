@@ -2,7 +2,7 @@
 layout: api_page
 title: "Affiliation"
 description: "Affiliation known to Tres"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 Affiliation known to Tres.  Pass the record number to get the marketing categories for the specified affiliation.

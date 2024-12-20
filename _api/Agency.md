@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 
@@ -36,6 +36,7 @@ assembly_version: "1.4.4.3"
 | `allowTresEmployeeLoginDateTime` | `DateTimeOffset` |  |  | `agency` | 
 | `countryCodeNo` | `short` |  | InsertOnly | `agency` | US = 1, CA = 2
 | `localCurrency` | `string` | 3 | ReadOnly | `agency` | 
+| `tripStatementOptions` | `int` |  |  | `agency` | ShowTravelCategoryIcons = 1
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 

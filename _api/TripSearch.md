@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 TripSearch returns data for trips and reservations.

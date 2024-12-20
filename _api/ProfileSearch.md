@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.

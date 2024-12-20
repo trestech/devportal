@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 Search journal entries based on filters.
@@ -18,6 +18,7 @@ Permission Areas: JournalEntry
 | `createDateTime` | `DateTimeOffset` |  | `journalEntry` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `journalEntry` | 
 | `journalEntryDate` | `Date` |  | `journalEntry` | 
+| `journalEntryType` | `short` |  | `journalEntry` | Standard = 1, YearEnd = 2
 | `journalEntryRemarks` | `string` | 512 | `journalEntry` | 
 | `clientPaymentRecNo` | `long` |  | `journalEntry` | 
 | `supplierPaymentRecNo` | `long` |  | `journalEntry` | 
@@ -56,6 +57,7 @@ Permission Areas: JournalEntry
 | `reportName [inherited]` | `string` |  | 
 | `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
+| `journalEntryType` | `EnumSearchParam<Type>` | `journalEntryType` | Standard = 1, YearEnd = 2
 | `journalEntryRemarks` | [`StringSearchParam`](StringSearchParam) | `journalEntryRemarks` | 
 | `source` | `EnumSearchParam<Source>` | `source` | ClientPayment = 1, SupplierPayment = 2, OtherPayment = 3, DepositWithdrawal = 4, Reservation = 5
 | `generalLedgerAccountRecNo` | [`NumSearchParam`](NumSearchParam) | `generalLedgerAccountRecNo` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "IarReconciliationSearch"
 description: "Search IAR reconciliation on filters"
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 Search IAR reconciliation on filters.
@@ -19,6 +19,7 @@ Search IAR reconciliation on filters.
 | `reservationRecNo` | `long` |  | `iarReconciliation` | 
 | `tripRecNo` | `long` |  | `iarReconciliation` | 
 | `reservationTicketDate` | `Date` |  | `iarReconciliation` | 
+| `reservationTicketType` | `short` |  | `iarReconciliation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
 | `reservationTicketNo` | `long` |  | `iarReconciliation` | 
 | `reservationRecordLocator` | `string` | 32 | `iarReconciliation` | 
 | `exception` | `string` | 256 | `iarReconciliation` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPayment"
 description: ""
-assembly_version: "1.4.4.3"
+assembly_version: "1.4.7.2"
 ---
 
 
@@ -91,6 +91,7 @@ Permission Areas: ClientPayment
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `journalEntry` | 
 | `remarks` | `string` | 512 |  | `journalEntry` | 
 | `date` | `Date` |  | Required | `journalEntry` | 
+| `type` | `short` |  | Required, InsertOnly | `journalEntry` | Standard = 1, YearEnd = 2
 | `journalEntryDetail ` | table |  |  | `journalEntry` | 
 | `recNo` | `long` |  | PKey | `journalEntryDetail` | 
 | `journalEntry_recNo` | `long` |  | InsertOnly, FKey | `journalEntryDetail` | 
