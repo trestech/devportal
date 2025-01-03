@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.4.7.2"
+assembly_version: "1.4.8.2"
 ---
 
 

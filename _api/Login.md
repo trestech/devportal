@@ -2,7 +2,7 @@
 layout: api_page
 title: "Login"
 description: "The login method initiates a connection to an agency context on the server"
-assembly_version: "1.4.7.2"
+assembly_version: "1.4.8.2"
 ---
 
 The login method initiates a connection to an agency context on the server. An alias identifies the agency context and username/password is specified in an authorization header using basic authentication. 
@@ -38,12 +38,16 @@ The method returns a Json response that includes an identity token which is need
 
 #### Example request
 ```sh
-GET https://api-dev.trestechnologies.com/login/{alias}
+POST https://api-dev.trestechnologies.com/login
 Content-Type: application/json
-Authorization: Basic Auth (Username, Password)
 
-curl --location --request GET 'https://api-dev.trestechnologies.com/login/0001' \
---header 'Authorization: Basic e3t1c2VybmFtZX19Ont7cGFzc3dvcmR9fQ==' \
+curl 'https://api-dev.trestechnologies.com/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "alias": "{{alias}}",
+    "userName": "{{username}}",
+    "password": "{{password}}"
+}'
 ```
 
 #### Example success response

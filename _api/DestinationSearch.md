@@ -2,7 +2,7 @@
 layout: api_page
 title: "DestinationSearch"
 description: "Search destinations based on filters"
-assembly_version: "1.4.7.2"
+assembly_version: "1.4.8.2"
 ---
 
 Search destinations based on filters.

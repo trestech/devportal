@@ -2,7 +2,7 @@
 layout: api_page
 title: "IarReconciliationSearch"
 description: "Search IAR reconciliation on filters"
-assembly_version: "1.4.7.2"
+assembly_version: "1.4.8.2"
 ---
 
 Search IAR reconciliation on filters.
