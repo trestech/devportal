@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.4.8.2"
+assembly_version: "1.4.10.5"
 ---
 
 
@@ -349,7 +349,7 @@ Permission Areas: Trip
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
 | `tourCode` | `string` | 32 |  | `airReservation` | 
-| `airSegment ` | table |  |  | `cruiseSubAirReservation` | 
+| `airSegment ` | table |  |  | `airReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
 | `airReservation_recNo` | `long` |  | InsertOnly, FKey | `airSegment` | 
 | `departDateTime` | `DateTime` |  |  | `airSegment` | 
@@ -372,7 +372,7 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `railSegment ` | table |  |  | `cruiseSubRailReservation` | 
+| `railSegment ` | table |  |  | `cruiseSubrailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
 | `departDateTime` | `DateTime` |  |  | `railSegment` | 
@@ -383,7 +383,7 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
 | `classOfService` | `string` | 2 |  | `railSegment` | 
-| `cruiseSubSupplierProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
+| `supplierProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
 | `id` | `string` | 32 |  | `supplierProfileInfo` | 
@@ -395,7 +395,7 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `supplierProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierProfileInfo` | 
 | `country` | `string` | 4 |  | `supplierProfileInfo` | 
-| `cruiseSubProviderProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
+| `providerProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `providerProfileInfo` | 
 | `name` | `string` | 256 |  | `providerProfileInfo` | 
 | `id` | `string` | 32 |  | `providerProfileInfo` | 
@@ -492,7 +492,7 @@ Permission Areas: Trip
 | `domIntlIndicator` | `short` |  | Required | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `eTicketIndicator` | `short` |  |  | `airReservation` | 
 | `tourCode` | `string` | 32 |  | `airReservation` | 
-| `airSegment ` | table |  |  | `tourSubAirReservation` | 
+| `airSegment ` | table |  |  | `airReservation` | 
 | `recNo` | `long` |  | PKey | `airSegment` | 
 | `airReservation_recNo` | `long` |  | InsertOnly, FKey | `airSegment` | 
 | `departDateTime` | `DateTime` |  |  | `airSegment` | 
@@ -515,7 +515,7 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `railSegment ` | table |  |  | `tourSubRailReservation` | 
+| `railSegment ` | table |  |  | `tourSubrailReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
 | `departDateTime` | `DateTime` |  |  | `railSegment` | 
@@ -526,7 +526,7 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
 | `classOfService` | `string` | 2 |  | `railSegment` | 
-| `tourSubSupplierProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
+| `supplierProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
 | `id` | `string` | 32 |  | `supplierProfileInfo` | 
@@ -538,7 +538,7 @@ Permission Areas: Trip
 | `stateProvince` | `string` | 8 |  | `supplierProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierProfileInfo` | 
 | `country` | `string` | 4 |  | `supplierProfileInfo` | 
-| `tourSubProviderProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
+| `providerProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `providerProfileInfo` | 
 | `name` | `string` | 256 |  | `providerProfileInfo` | 
 | `id` | `string` | 32 |  | `providerProfileInfo` | 

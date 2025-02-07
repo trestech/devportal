@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.4.8.2"
+assembly_version: "1.4.10.5"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -45,6 +45,7 @@ Permission Areas: Trip
 | `tripRecordLocator` | `string` | 32 | `trip` | 
 | `visibility` | `short` |  | `trip` | 
 | `tripTotalFare` | `long` |  | `trip` | 
+| `tripCommissionAmount` | `long` |  | `trip` | 
 | `tripClientBalance` | `long` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
 | `reservationTagRecNo` | `long` |  | `reservation` | 
@@ -99,6 +100,7 @@ Permission Areas: Trip
 | `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationMarkupDiscount` | `long` |  | `reservation` | 
+| `reservationItineraryRemarks` | `string` |  | `reservation` | 
 | `reservationForeignCurrencyCode` | `string` | 3 | `reservation` | 
 | `reservationForeignTotalFare` | `long` |  | `reservation` | 
 | `reservationForeignCommissionAmount` | `long` |  | `reservation` | 
@@ -106,6 +108,7 @@ Permission Areas: Trip
 | `reservationGstVatOnCommissionAmount` | `long` |  | `reservation` | 
 | `reservationGstVatOnCommissionOverride` | `bool` |  | `reservation` | 
 | `reservationGstVatOnCommissionRate` | `int` |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `reservationTotalGstVatTaxAmount` | `long` |  | `reservation` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
@@ -231,7 +234,10 @@ Permission Areas: Trip
 | `tripPaymentAuthorizationExpirationDateTimeTo` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationExpirationDateTime` | 
 | `reservationSupplierPaymentTotal` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierPaymentTotal` | 
 | `reservationSource` | [`StringSearchParam`](StringSearchParam) | `reservationSource` | 
+| `reservationItineraryRemarks` | [`StringSearchParam`](StringSearchParam) | `reservationItineraryRemarks` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
+| `includeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 
+| `excludeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 
 | `clientProfileSearchParams` | `ProfileSearchParams` | `clientProfileRecNo` | 
 | `destinationSearchParams` | `DestinationSearchParams` | `destinationRecNo` | 
 | `reservationTravelerSearchParams` | [`PersonSearchParams`](PersonSearchParams) | `reservationTravelerRecNo` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Logout"
 description: "The logout method takes an identityToken via an authorization header using Bearer Token and terminates the connection to the agency context"
-assembly_version: "1.4.8.2"
+assembly_version: "1.4.10.5"
 ---
 
 The logout method takes an identityToken via an authorization header using Bearer Token and terminates the connection to the agency context.  After calling logout, the identityToken is no longer valid.  Identity tokens expire automatically, but it’s recommended to call logout when done.

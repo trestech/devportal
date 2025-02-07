@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: "Search history based on filters"
-assembly_version: "1.4.8.2"
+assembly_version: "1.4.10.5"
 ---
 
 Search history based on filters.
