@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.4.10.5"
+assembly_version: "1.4.12.8"
 ---
 
 
@@ -88,7 +88,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -332,7 +332,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -372,7 +372,7 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `railSegment ` | table |  |  | `cruiseSubrailReservation` | 
+| `railSegment ` | table |  |  | `railReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
 | `departDateTime` | `DateTime` |  |  | `railSegment` | 
@@ -475,7 +475,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -515,7 +515,7 @@ Permission Areas: Trip
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
-| `railSegment ` | table |  |  | `tourSubrailReservation` | 
+| `railSegment ` | table |  |  | `railReservation` | 
 | `recNo` | `long` |  | PKey | `railSegment` | 
 | `railReservation_recNo` | `long` |  | InsertOnly, FKey | `railSegment` | 
 | `departDateTime` | `DateTime` |  |  | `railSegment` | 

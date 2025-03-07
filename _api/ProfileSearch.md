@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.4.10.5"
+assembly_version: "1.4.12.8"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -81,6 +81,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `actionItemAssignedToAppUserRecNo` | `long` |  | `clientProfileActionItem` | 
 | `actionItemAssignedToAppUserId` | `string` | 64 | `clientProfileActionItem` | 
 | `imageCount` | `short` |  | `profile` | 
+| `supplierAirlineNo` | `short` |  | `supplierProfile` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -138,6 +139,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientActionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 
 | `clientActionItemDateTo` | `DateSearchParam` | `actionItemDate` | 
 | `clientActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `actionItemAssignedToAppUserRecNo` | 
+| `supplierAirlineNo` | [`NumSearchParam`](NumSearchParam) | `supplierAirlineNo` | 
 | `clientTripSearchParams` | `TripSearchParams` |  | 
 | `supplierTripSearchParams` | `TripSearchParams` |  | 
 | `clientActivitySearchParams` | `ActivitySearchParams` |  | 
