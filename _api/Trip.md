@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.4.12.8"
+assembly_version: "1.4.14.9"
 ---
 
 
@@ -66,7 +66,7 @@ Permission Areas: Trip
 | `confirmationNo` | `string` | 64 |  | `reservation` | 
 | `arcBspNo` | `int` |  |  | `reservation` | 
 | `ticketNo` | `long` |  |  | `reservation` | 
-| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
+| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
 | `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
@@ -310,7 +310,7 @@ Permission Areas: Trip
 | `confirmationNo` | `string` | 64 |  | `reservation` | 
 | `arcBspNo` | `int` |  |  | `reservation` | 
 | `ticketNo` | `long` |  |  | `reservation` | 
-| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
+| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
 | `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
@@ -453,7 +453,7 @@ Permission Areas: Trip
 | `confirmationNo` | `string` | 64 |  | `reservation` | 
 | `arcBspNo` | `int` |  |  | `reservation` | 
 | `ticketNo` | `long` |  |  | `reservation` | 
-| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
+| `status` | `short` |  | Required | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `finalPayDueDate` | `Date` |  |  | `reservation` | 
 | `bookDateTime` | `DateTime` |  |  | `reservation` | 
 | `startDateTime` | `DateTime` |  |  | `reservation` | 
@@ -682,6 +682,18 @@ Permission Areas: Trip
 | `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
+| `tripDocumentAcknowledgement ` | table |  |  | `trip` | 
+| `recNo` | `long` |  | PKey | `tripDocumentAcknowledgement` | 
+| `trip_recNo` | `long` |  | InsertOnly, FKey | `tripDocumentAcknowledgement` | 
+| `acknowlegementFormToken` | `string` | 1024 |  | `tripDocumentAcknowledgement` | 
+| `description` | `string` | 128 |  | `tripDocumentAcknowledgement` | 
+| `status` | `short` |  | Required | `tripDocumentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
+| `documentTemplate_recNo` | `long` |  | FKey | `tripDocumentAcknowledgement` | 
+| `documentTemplateName_Lookup` | `string` | 128 | ReadOnly, Lookup | `tripDocumentAcknowledgement` | 
+| `acknowledgeByDateTime` | `DateTimeOffset` |  |  | `tripDocumentAcknowledgement` | 
+| `clientAcknowledgementDateTime` | `DateTimeOffset` |  |  | `tripDocumentAcknowledgement` | 
+| `clientAcknowledgemenIP` | `string` | 16 |  | `tripDocumentAcknowledgement` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripDocumentAcknowledgement` | 
 
 | Status code | Description |
 | ----------- | ----------- |

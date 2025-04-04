@@ -1,26 +1,32 @@
 ---
 layout: api_page
-title: "PaymentReconSearch"
+title: "ClientSupplierBalancesReconciliationSearch"
 description: ""
 assembly_version: "1.4.14.9"
 ---
 
 
 
-Permission Areas: SupplierPayment
-
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `paymentRecon` | 
-| `summaryCount` | `int` |  | `paymentRecon` | 
-| `createDateTime` | `DateTimeOffset` |  | `paymentRecon` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `paymentRecon` | 
-| `provider` | `short` |  | `paymentRecon` | Onyx = 1, Paymode = 2
-| `paymentDate` | `Date` |  | `paymentRecon` | 
-| `supplierProfile_recNo` | `long` |  | `paymentRecon` | 
-| `supplierProfile_Name` | `string` | 256 | `paymentRecon` | 
-| `supplierPayment_recNo` | `long` |  | `paymentRecon` | 
-| `amount` | `long` |  | `paymentRecon` | 
+| `recNo` | `long` |  | `reservation` | 
+| `summaryCount` | `int` |  | `reservation` | 
+| `createDateTime` | `DateTimeOffset` |  | `reservation` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
+| `paymentDate` | `Date` |  | `payment` | 
+| `paymentRecNo` | `long` |  | `payment` | 
+| `paymentProfileType` | `short` |  | `profile` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
+| `paymentProfileName` | `string` | 256 | `profile` | 
+| `tripRecNo` | `long` |  | `trip` | 
+| `tripName` | `string` | 256 | `trip` | 
+| `reservationRecNo` | `long` |  | `reservation` | 
+| `reservationTicketNo` | `long` |  | `reservation` | 
+| `reservationConfirmationNo` | `string` | 64 | `reservation` | 
+| `reservationConfirmationTicketNo` | `string` | 64 | `reservation` | 
+| `appliedAmount` | `long` |  | `payment` | 
+| `accountingEntryRecNo` | `long` |  | `reservation` | 
+| `accountingEntryCreateDate` | `Date` |  | `accountingEntry` | 
+| `accountingEntryJournalEntryRecNo` | `long` |  | `accountingEntry` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -38,10 +44,9 @@ Permission Areas: SupplierPayment
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
-| `provider` | `EnumSearchParam<PaymentReconProvider>` | `provider` | Onyx = 1, Paymode = 2
-| `supplierPaymentRecNo` | [`NumSearchParam`](NumSearchParam) | `supplierPayment_recNo` | 
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 
 | `paymentDateTo` | `DateSearchParam` | `paymentDate` | 
+| `glOnly` | `bool` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

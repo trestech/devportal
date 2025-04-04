@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAgency"
 description: ""
-assembly_version: "1.4.12.8"
+assembly_version: "1.4.14.9"
 ---
 
 
@@ -25,6 +25,20 @@ assembly_version: "1.4.12.8"
 | `clientProfileName` | `string` | 256 |  | `travelerPortalAgency` | 
 | `advisorProfile_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
 | `branch_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
+| `acknowledgementVerbiage` | `string` | 1024 |  | `travelerPortalAgency` | 
+| `agency_recNo` | `long` |  |  | `travelerPortalAgency` | 
+| `agencyPersonTag ` | table |  |  | `travelerPortalAgency` | 
+| `agency_recNo` | `long` |  | InsertOnly, FKey | `agencyPersonTag` | 
+| `recNo` | `long` |  | PKey | `agencyPersonTag` | 
+| `name` | `string` | 64 | Required | `agencyPersonTag` | 
+| `activeStatus` | `bool` |  |  | `agencyPersonTag` | 
+| `valueFreeFlow` | `bool` |  |  | `agencyPersonTag` | 
+| `valueRequired` | `bool` |  |  | `agencyPersonTag` | 
+| `valueList` | `string` |  |  | `agencyPersonTag` | 
+| `description` | `string` | 64 |  | `agencyPersonTag` | 
+| `areaFlags` | `int` |  |  | `agencyPersonTag` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128, AdvisorAdjustment = 256, Destination = 512, Branch = 1024, OtherProfile = 2048
+| `requirement` | `short` |  | Required | `agencyPersonTag` | Optional = 1, Recommended = 2, Mandatory = 3
+| `defaultValue` | `string` | 128 |  | `agencyPersonTag` | 
 
 | Status code | Description |
 | ----------- | ----------- |

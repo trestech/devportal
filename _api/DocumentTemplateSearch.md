@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplateSearch"
 description: "Search document templates based on filters"
-assembly_version: "1.4.12.8"
+assembly_version: "1.4.14.9"
 ---
 
 Search document templates based on filters.
@@ -20,6 +20,7 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | `appUser_recNo` | `long` |  | `documentTemplate` | 
 | `activeStatus` | `bool` |  | `documentTemplate` | 
 | `area` | `short` |  | `documentTemplate` | Trip = 1, ClientProfile = 2, Person = 3
+| `documentType` | `short` |  | `documentTemplate` | Email = 1, ESign = 2, DocumentAcknowledgement = 3
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -40,6 +41,7 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 
 | `area` | [`short<short>`] | `area` | Trip = 1, ClientProfile = 2, Person = 3
+| `documentType` | [`short<short>`] | `documentType` | Email = 1, ESign = 2, DocumentAcknowledgement = 3
 
 | Status code | Description |
 | ----------- | ----------- |

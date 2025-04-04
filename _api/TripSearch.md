@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.4.12.8"
+assembly_version: "1.4.14.9"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -60,7 +60,7 @@ Permission Areas: Trip
 | `reservationClientBalance` | `long` |  | `reservation` | 
 | `reservationSupplierBalance` | `long` |  | `reservation` | 
 | `reservationTrackClientPayments` | `bool` |  | `reservation` | 
-| `reservationStatus` | `short` |  | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3
+| `reservationStatus` | `short` |  | `reservation` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `reservationTravelCategoryRecNo` | `short` |  | `reservation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `reservationTravelCategoryName` | `string` | 32 | `reservation` | 
 | `reservationTravelSubCategoryRecNo` | `long` |  | `reservation` | 
@@ -137,6 +137,11 @@ Permission Areas: Trip
 | `tripPaymentAuthorizationExpirationDateTime` | `DateTimeOffset` |  | `tripPaymentAuthorization` | 
 | `reservationSupplierPaymentTotal` | `long` |  | `reservation` | 
 | `reservationClientPaymentTotal` | `long` |  | `reservation` | 
+| `tripDocumentAcknowledgementRecNo` | `long` |  | `tripDocumentAcknowledgement` | 
+| `tripDocumentAcknowledgementStatus` | `short` |  | `tripDocumentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
+| `tripDocumentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `tripDocumentAcknowledgement` | 
+| `tripDocumentAcknowledgementAcknowledgeByDateTime` | `DateTimeOffset` |  | `tripDocumentAcknowledgement` | 
+| `tripDocumentAcknowledgementDocumentTemplateRecNo` | `long` |  | `tripDocumentAcknowledgement` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -189,7 +194,7 @@ Permission Areas: Trip
 | `reservationTravelSubCategoryRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelSubCategoryRecNo` | 
 | `reservationSupplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierProfileRecNo` | 
 | `reservationTrackClientPayments` | `bool` | `reservationTrackClientPayments` | 
-| `reservationStatus` | `EnumSearchParam<Status>` | `reservationStatus` | Pending = 1, Confirmed = 2, Cancelled = 3
+| `reservationStatus` | `EnumSearchParam<Status>` | `reservationStatus` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `reservationClientBalance` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
 | `reservationClientBalanceMin` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
 | `reservationClientBalanceMax` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
@@ -235,6 +240,13 @@ Permission Areas: Trip
 | `reservationSupplierPaymentTotal` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierPaymentTotal` | 
 | `reservationSource` | [`StringSearchParam`](StringSearchParam) | `reservationSource` | 
 | `reservationItineraryRemarks` | [`StringSearchParam`](StringSearchParam) | `reservationItineraryRemarks` | 
+| `tripDocumentAcknowledgementRecNo` | [`NumSearchParam`](NumSearchParam) | `tripDocumentAcknowledgementRecNo` | 
+| `tripDocumentAcknowledgementStatus` | `EnumSearchParam<DocumentAcknowledgementStatus>` | `tripDocumentAcknowledgementStatus` | Pending = 1, Acknowledged = 2, Expired = 3
+| `tripDocumentAcknowledgementCreateDateTimeFrom` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementCreateDateTime` | 
+| `tripDocumentAcknowledgementCreateDateTimeTo` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementCreateDateTime` | 
+| `tripDocumentAcknowledgementAcknowledgeByDateTimeFrom` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementAcknowledgeByDateTime` | 
+| `tripDocumentAcknowledgementAcknowledgeByDateTimeTo` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementAcknowledgeByDateTime` | 
+| `tripDocumentAcknowledgementDocumentTemplateRecNo` | [`NumSearchParam`](NumSearchParam) | `tripDocumentAcknowledgementDocumentTemplateRecNo` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `includeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 
 | `excludeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 

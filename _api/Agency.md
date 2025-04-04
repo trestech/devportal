@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.4.12.8"
+assembly_version: "1.4.14.9"
 ---
 
 
@@ -59,7 +59,7 @@ assembly_version: "1.4.12.8"
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 
-| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11, ConfirmationDocumentInterface = 12
+| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11, ConfirmationDocumentInterface = 12, DocumentAcknowledgement = 13
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
 | `token` | `string` | 1024 |  | `appFeature` | 
