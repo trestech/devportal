@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.4.14.9"
+assembly_version: "1.4.15.6"
 ---
 
 ClientProfile provides methods to load and save client profile data.

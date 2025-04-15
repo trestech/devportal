@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientTripProposal"
 description: ""
-assembly_version: "1.4.14.9"
+assembly_version: "1.4.15.6"
 ---
 
 
@@ -686,11 +686,12 @@ assembly_version: "1.4.14.9"
 | `acknowlegementFormToken` | `string` | 1024 |  | `tripDocumentAcknowledgement` | 
 | `description` | `string` | 128 |  | `tripDocumentAcknowledgement` | 
 | `status` | `short` |  | Required | `tripDocumentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
-| `documentTemplate_recNo` | `long` |  | FKey | `tripDocumentAcknowledgement` | 
+| `documentTemplate_recNo` | `long` |  | Required, InsertOnly, FKey | `tripDocumentAcknowledgement` | 
 | `documentTemplateName_Lookup` | `string` | 128 | ReadOnly, Lookup | `tripDocumentAcknowledgement` | 
 | `acknowledgeByDateTime` | `DateTimeOffset` |  |  | `tripDocumentAcknowledgement` | 
 | `clientAcknowledgementDateTime` | `DateTimeOffset` |  |  | `tripDocumentAcknowledgement` | 
-| `clientAcknowledgemenIP` | `string` | 16 |  | `tripDocumentAcknowledgement` | 
+| `clientAcknowledgemenIP` | `string` | 16 | Deprecated | `tripDocumentAcknowledgement` | clientAcknowledgemenIP is deprecated. Use clientAcknowledgementIP instead.
+| `clientAcknowledgementIP` | `string` | 16 |  | `tripDocumentAcknowledgement` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripDocumentAcknowledgement` | 
 
 | Status code | Description |

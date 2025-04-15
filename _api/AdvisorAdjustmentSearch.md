@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustmentSearch"
 description: "Search advisor adjustments based on filters"
-assembly_version: "1.4.14.9"
+assembly_version: "1.4.15.6"
 ---
 
 Search advisor adjustments based on filters.

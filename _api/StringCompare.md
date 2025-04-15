@@ -2,7 +2,7 @@
 layout: api_page
 title: "StringCompare"
 description: "The StringCompare condition used when searching based on a string value and allow the user to specify how to do the string comparison"
-assembly_version: "1.4.14.9"
+assembly_version: "1.4.15.6"
 ---
 
 The StringCompare condition used when searching based on a string value and allow the user to specify how to do the string comparison.
