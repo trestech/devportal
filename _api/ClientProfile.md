@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -78,7 +78,7 @@ Permission Areas: ClientProfile
 | `street3` | `string` | 128 |  | `address` | 
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
-| `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvince` | `string` | 32 |  | `address` | 
 | `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 

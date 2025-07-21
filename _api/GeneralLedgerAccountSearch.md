@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccountSearch"
 description: "Search general ledger accounts based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search general ledger accounts based on filters.
@@ -39,6 +39,7 @@ Permission Areas: GeneralLedgerAccount
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `category` | `EnumSearchParam<Category>` | `category` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 

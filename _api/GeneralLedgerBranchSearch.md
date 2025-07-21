@@ -1,24 +1,23 @@
 ---
 layout: api_page
-title: "AccountingEntrySearch"
-description: "Search accounting entries based on filters"
+title: "GeneralLedgerBranchSearch"
+description: ""
 assembly_version: "1.5.5.3"
 ---
 
-Search accounting entries based on filters.
 
-See: [Accounting Entry](AccountingEntry.html)
+
+Permission Areas: GeneralLedgerAccount
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `accountingEntry` | 
-| `summaryCount` | `int` |  | `accountingEntry` | 
-| `createDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `accountingEntry` | 
-| `createDate` | `Date` |  | `accountingEntry` | 
-| `postDate` | `Date` |  | `accountingEntry` | 
-| `description` | `string` | 512 | `accountingEntry` | 
-| `journalEntry_recNo` | `long` |  | `accountingEntry` | 
+| `recNo` | `long` |  | `generalLedgerBranch` | 
+| `summaryCount` | `int` |  | `generalLedgerBranch` | 
+| `createDateTime` | `DateTimeOffset` |  | `generalLedgerBranch` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `generalLedgerBranch` | 
+| `name` | `string` | 64 | `generalLedgerBranch` | 
+| `activeStatus` | `bool` |  | `generalLedgerBranch` | 
+| `description` | `string` | 128 | `generalLedgerBranch` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -37,8 +36,7 @@ See: [Accounting Entry](AccountingEntry.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
-| `posted` | `bool` | `postDate` | 
-| `journalEntryRecNo` | [`NumSearchParam`](NumSearchParam) | `journalEntry_recNo` | 
+| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 
 | Status code | Description |
 | ----------- | ----------- |

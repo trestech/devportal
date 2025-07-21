@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankSearch"
 description: "Search banks based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search banks based on filters.
@@ -38,6 +38,7 @@ Permission Areas: Bank
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 

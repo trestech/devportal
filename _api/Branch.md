@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: "A branch is often a separate location or office of a travel agency that uses the same data source as the main agency"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 A branch is often a separate location or office of a travel agency that uses the same data source as the main agency.  A branch can have its own trust account, accounting data, and reporting functions and can also share information and workflows with other branches and the main agency.
@@ -19,7 +19,7 @@ Permission Areas: Branch
 | `street1` | `string` | 128 |  | `branch` | 
 | `street2` | `string` | 128 |  | `branch` | 
 | `city` | `string` | 64 |  | `branch` | 
-| `stateProvince` | `string` | 8 |  | `branch` | 
+| `stateProvince` | `string` | 32 |  | `branch` | 
 | `zipPostalCode` | `string` | 16 |  | `branch` | 
 | `country` | `string` | 4 |  | `branch` | 
 | `headerInfo` | `string` | 512 |  | `branch` | 
@@ -28,6 +28,8 @@ Permission Areas: Branch
 | `brandingColor` | `int` |  |  | `branch` | 
 | `activeStatus` | `short` |  | Required | `branch` | Inactive = 0, Active = 1, Pending = 2
 | `arcBspNo` | `int` |  |  | `branch` | 
+| `generalLedgerBranch_recNo` | `long` |  | FKey | `branch` | 
+| `generalLedgerBranchName_lookup` | `string` | 64 | ReadOnly, Lookup | `branch` | 
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `branch` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `branch` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

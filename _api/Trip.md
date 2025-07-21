@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -42,12 +42,13 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `clientProfileInfo` | 
 | `street2` | `string` | 128 |  | `clientProfileInfo` | 
 | `city` | `string` | 64 |  | `clientProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `clientProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `clientProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `clientProfileInfo` | 
 | `country` | `string` | 4 |  | `clientProfileInfo` | 
 | `tripReservationLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripReservationLink` | 
 | `reservation_recNo` | `long` |  | PKey, Auto-Assign | `tripReservationLink` | 
+| `indexNo` | `short` |  |  | `tripReservationLink` | 
 | `reservation  [shared]` | table |  | Singleton | `tripReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
 | `supplierProfile_recNo` | `long` |  | FKey | `reservation` | 
@@ -130,6 +131,7 @@ Permission Areas: Trip
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
+| `remarks` | `string` | 256 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `railSegment ` | table |  |  | `railReservation` | 
@@ -152,7 +154,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `supplierProfileInfo` | 
 | `street2` | `string` | 128 |  | `supplierProfileInfo` | 
 | `city` | `string` | 64 |  | `supplierProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `supplierProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `supplierProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierProfileInfo` | 
 | `country` | `string` | 4 |  | `supplierProfileInfo` | 
 | `providerProfileInfo  [shared]` | table |  | Singleton | `reservation` | 
@@ -164,7 +166,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `providerProfileInfo` | 
 | `street2` | `string` | 128 |  | `providerProfileInfo` | 
 | `city` | `string` | 64 |  | `providerProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
 | `reservationItemization  [shared]` | table |  |  | `reservation` | 
@@ -201,7 +203,7 @@ Permission Areas: Trip
 | `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
 | `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
 | `description` | `string` | 512 |  | `accountingEntryDetail` | 
-| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, GstVatPayable = 11, Other = 99
 | `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
 | `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
@@ -219,6 +221,8 @@ Permission Areas: Trip
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 
 | `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
 | `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerBranch_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `generalLedgerBranchName_lookup` | `string` | 64 | ReadOnly, Lookup | `journalEntryDetail` | 
 | `reservationTraveler ` | table |  |  | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationTraveler` | 
 | `person_recNo` | `long` |  | PKey, Required, FKey | `reservationTraveler` | 
@@ -287,7 +291,7 @@ Permission Areas: Trip
 | `arriveDateTime` | `DateTime` |  |  | `cruiseSegment` | 
 | `arrivePortCode` | `string` | 3 |  | `cruiseSegment` | 
 | `arrivePortName` | `string` | 64 |  | `cruiseSegment` | 
-| `remarks` | `string` | 256 |  | `cruiseSegment` | 
+| `remarks` | `string` |  |  | `cruiseSegment` | 
 | `indexNo` | `short` |  |  | `cruiseSegment` | 
 | `cruiseSubReservationLink ` | table |  |  | `cruiseReservation` | 
 | `parentReservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `subReservationLink` | 
@@ -370,6 +374,7 @@ Permission Areas: Trip
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
+| `remarks` | `string` | 256 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `railSegment ` | table |  |  | `railReservation` | 
@@ -392,7 +397,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `supplierProfileInfo` | 
 | `street2` | `string` | 128 |  | `supplierProfileInfo` | 
 | `city` | `string` | 64 |  | `supplierProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `supplierProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `supplierProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierProfileInfo` | 
 | `country` | `string` | 4 |  | `supplierProfileInfo` | 
 | `providerProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
@@ -404,7 +409,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `providerProfileInfo` | 
 | `street2` | `string` | 128 |  | `providerProfileInfo` | 
 | `city` | `string` | 64 |  | `providerProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
 | `reservationItemization  [shared]` | table |  |  | `cruiseSubReservation` | 
@@ -513,6 +518,7 @@ Permission Areas: Trip
 | `seatNo` | `string` | 4 |  | `airSegment` | 
 | `seatType` | `string` | 32 |  | `airSegment` | 
 | `recordLocator` | `string` | 32 |  | `airSegment` | 
+| `remarks` | `string` | 256 |  | `airSegment` | 
 | `railReservation  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `railReservation` | 
 | `railSegment ` | table |  |  | `railReservation` | 
@@ -535,7 +541,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `supplierProfileInfo` | 
 | `street2` | `string` | 128 |  | `supplierProfileInfo` | 
 | `city` | `string` | 64 |  | `supplierProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `supplierProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `supplierProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierProfileInfo` | 
 | `country` | `string` | 4 |  | `supplierProfileInfo` | 
 | `providerProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
@@ -547,7 +553,7 @@ Permission Areas: Trip
 | `street1` | `string` | 128 |  | `providerProfileInfo` | 
 | `street2` | `string` | 128 |  | `providerProfileInfo` | 
 | `city` | `string` | 64 |  | `providerProfileInfo` | 
-| `stateProvince` | `string` | 8 |  | `providerProfileInfo` | 
+| `stateProvince` | `string` | 32 |  | `providerProfileInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerProfileInfo` | 
 | `country` | `string` | 4 |  | `providerProfileInfo` | 
 | `reservationItemization  [shared]` | table |  |  | `tourSubReservation` | 
@@ -591,6 +597,9 @@ Permission Areas: Trip
 | `cardNumber` | `string` | 64 |  | `clientPaymentInfo` | 
 | `cardNumberToken` | `string` | 64 |  | `clientPaymentInfo` | 
 | `expirationDate` | `Date` |  |  | `clientPaymentInfo` | 
+| `reservationDismissedHistory ` | table |  |  | `reservation` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationDismissedHistory` | 
+| `history_recNo` | `long` |  | PKey, Required, FKey | `reservationDismissedHistory` | 
 | `tripAttachmentLink ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripAttachmentLink` | 
 | `attachment_recNo` | `long` |  | PKey, Auto-Assign | `tripAttachmentLink` | 
@@ -695,6 +704,9 @@ Permission Areas: Trip
 | `clientAcknowledgemenIP` | `string` | 16 | Deprecated | `tripDocumentAcknowledgement` | clientAcknowledgemenIP is deprecated. Use clientAcknowledgementIP instead.
 | `clientAcknowledgementIP` | `string` | 16 |  | `tripDocumentAcknowledgement` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripDocumentAcknowledgement` | 
+| `tripDismissedHistory ` | table |  |  | `trip` | 
+| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDismissedHistory` | 
+| `history_recNo` | `long` |  | PKey, Required, FKey | `tripDismissedHistory` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -1,18 +1,18 @@
 ---
 layout: api_page
-title: "ARCBSPNo"
+title: "GeneralLedgerBranch"
 description: ""
 assembly_version: "1.5.5.3"
 ---
 
 
 
-Permission Areas: ARCBSPNo
-
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| `recNo` | `long` |  | PKey | `ARCBSPNo` | 
-| `description` | `string` | 64 |  | `ARCBSPNo` | 
+| `recNo` | `long` |  | PKey | `generalLedgerBranch` | 
+| `name` | `string` | 64 | Required | `generalLedgerBranch` | 
+| `activeStatus` | `bool` |  | Required | `generalLedgerBranch` | 
+| `description` | `string` | 128 |  | `generalLedgerBranch` | 
 
 | Status code | Description |
 | ----------- | ----------- |

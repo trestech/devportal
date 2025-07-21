@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentRecon"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -13,7 +13,7 @@ Permission Areas: SupplierPayment
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `recNo` | `long` |  | PKey | `paymentRecon` | 
 | `fileData` | `byte[]` |  |  | `paymentRecon` | 
-| `provider` | `short` |  | Required | `paymentRecon` | Onyx = 1, Paymode = 2
+| `provider` | `short` |  | Required | `paymentRecon` | Onyx = 1, Paymode = 2, Custom = 3
 | `supplierProfile_recNo` | `long` |  |  | `paymentRecon` | 
 | `supplierProfile_Name` | `string` | 256 | ReadOnly, Lookup | `paymentRecon` | 
 | `bank_recNo` | `long` |  |  | `paymentRecon` | 
@@ -25,6 +25,7 @@ Permission Areas: SupplierPayment
 | `supplierPayment_recNo` | `long` |  |  | `paymentRecon` | 
 | `lastAttemptErrorCount` | `int` |  |  | `paymentRecon` | 
 | `periodEndDate` | `Date` |  |  | `paymentRecon` | 
+| `customMappingData` | `string` |  |  | `paymentRecon` | 
 | `serverTrigger` | `short` |  |  | `paymentRecon` | AutoRecon = 1, Finalize = 2
 | `paymentReconDetail ` | table |  |  | `paymentRecon` | 
 | `recNo` | `long` |  | PKey | `paymentReconDetail` | 
@@ -47,7 +48,7 @@ Permission Areas: SupplierPayment
 | `street1` | `string` | 128 |  | `paymentReconDetail` | 
 | `street2` | `string` | 128 |  | `paymentReconDetail` | 
 | `city` | `string` | 64 |  | `paymentReconDetail` | 
-| `stateProvince` | `string` | 8 |  | `paymentReconDetail` | 
+| `stateProvince` | `string` | 32 |  | `paymentReconDetail` | 
 | `zipPostalCode` | `string` | 16 |  | `paymentReconDetail` | 
 | `country` | `string` | 4 |  | `paymentReconDetail` | 
 | `phone` | `string` | 256 |  | `paymentReconDetail` | 

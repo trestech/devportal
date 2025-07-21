@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientSupplierBalancesReconciliationSearch"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -44,6 +44,7 @@ assembly_version: "1.4.15.6"
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 
 | `paymentDateTo` | `DateSearchParam` | `paymentDate` | 
 | `glOnly` | `bool` |  | 

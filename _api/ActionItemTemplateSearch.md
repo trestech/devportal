@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplateSearch"
 description: "Search action item templates based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search action item templates based on filters.
@@ -37,6 +37,7 @@ See: [ActionItemTemplate](ActionItemTemplate.html)
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 
 | Status code | Description |
 | ----------- | ----------- |

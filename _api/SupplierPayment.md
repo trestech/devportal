@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierPayment"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -39,6 +39,8 @@ Permission Areas: SupplierPayment
 | `billingAddress` | `string` | 128 |  | `payment` | 
 | `billingZipPostalCode` | `string` | 16 |  | `payment` | 
 | `cvvCode` | `string` | 4 |  | `payment` | 
+| `conversionRate` | `int` |  | InsertOnly | `payment` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
+| `equivalentAmount` | `long` |  | InsertOnly | `payment` | 
 | `accountingEntry_recNo` | `long` |  | Auto-Assign | `payment` | 
 | `paymentDetail ` | table |  |  | `payment` | 
 | `payment_recNo` | `long` |  | PKey, InsertOnly, FKey | `paymentDetail` | 
@@ -77,7 +79,7 @@ Permission Areas: SupplierPayment
 | `recNo` | `long` |  | PKey | `accountingEntryDetail` | 
 | `accountingEntry_recNo` | `long` |  | InsertOnly, FKey | `accountingEntryDetail` | 
 | `description` | `string` | 512 |  | `accountingEntryDetail` | 
-| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `accountCategory` | `short` |  | Required | `accountingEntryDetail` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, GstVatPayable = 11, Other = 99
 | `accountNumber` | `long` |  |  | `accountingEntryDetail` | 
 | `debitAmount` | `long` |  |  | `accountingEntryDetail` | 
 | `creditAmount` | `long` |  |  | `accountingEntryDetail` | 
@@ -95,6 +97,8 @@ Permission Areas: SupplierPayment
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 
 | `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
 | `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerBranch_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `generalLedgerBranchName_lookup` | `string` | 64 | ReadOnly, Lookup | `journalEntryDetail` | 
 
 | Status code | Description |
 | ----------- | ----------- |

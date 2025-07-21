@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorReconciliationSearch"
 description: "Search advisor reconciliation based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search advisor reconciliation based on filters.
@@ -36,6 +36,7 @@ Permission Areas: AdvisorReconciliation
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `reconciliationDateFrom` | `DateSearchParam` | `reconciliationDate` | 
 | `reconciliationDateTo` | `DateSearchParam` | `reconciliationDate` | 
 | `description` | [`StringSearchParam`](StringSearchParam) | `description` | 

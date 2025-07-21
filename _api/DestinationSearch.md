@@ -2,7 +2,7 @@
 layout: api_page
 title: "DestinationSearch"
 description: "Search destinations based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search destinations based on filters.
@@ -43,6 +43,7 @@ Permission Areas: Destination
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `country` | [`StringSearchParam`](StringSearchParam) | `country` | 

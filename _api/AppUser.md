@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -55,11 +55,15 @@ assembly_version: "1.4.15.6"
 | `documentTemplateActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `advisorAdjustmentActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `agencyCardActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
+| `otherPermissions` | `int` |  | Required | `appUser` | None = 0, AllowModifyTripAdvisor = 1
 | `signatureAttachment_recNo` | `long` |  | Auto-Assign | `appUser` | 
+| `lastLoginDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `appUser` | 
+| `googleId` | `string` | 64 |  | `appUser` | 
+| `googleUserPrincipalName` | `string` | 64 | ReadOnly | `appUser` | 
 | `appUserAdvisor ` | table |  |  | `appUser` | 
 | `appUser_recNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 
-| `advisorName` | `string` | 256 | ReadOnly | `appUserAdvisor` | 
+| `advisorName` | `string` | 256 | ReadOnly, Lookup | `appUserAdvisor` | 
 | `isPrimary` | `bool` |  | Required | `appUserAdvisor` | 
 | `signatureAttachment  [shared]` | table |  | Singleton | `appUser` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 

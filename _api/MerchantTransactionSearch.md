@@ -2,7 +2,7 @@
 layout: api_page
 title: "MerchantTransactionSearch"
 description: "Search merchant transactions based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search merchant transactions based on filters.
@@ -38,6 +38,7 @@ See: [MerchantTransaction](MerchantTransaction.html)
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `transactionType` | `EnumSearchParam<TransactionType>` | `transactionType` | Sale = 1, Void = 2, Refund = 3
 | `dateProcessedFrom` | `DateTimeUTCSearchParam` | `dateProcessed` | 
 | `dateProcessedTo` | `DateTimeUTCSearchParam` | `dateProcessed` | 

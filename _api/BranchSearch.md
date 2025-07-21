@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: "Search branches based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search branches based on filters.
@@ -24,6 +24,7 @@ Permission Areas: Branch
 | `description` | `string` | 128 | `branch` | 
 | `activeStatus` | `short` |  | `branch` | Inactive = 0, Active = 1, Pending = 2
 | `arcBspNo` | `int` |  | `branch` | 
+| `generalLedgerBranch_recNo` | `long` |  | `branch` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -41,6 +42,7 @@ Permission Areas: Branch
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2

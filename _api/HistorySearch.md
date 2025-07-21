@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: "Search history based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search history based on filters.
@@ -45,6 +45,7 @@ See: [History](History.html)
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tableName` | [`StringSearchParam`](StringSearchParam) | `tableName` | 
 | `tableRecNo` | [`NumSearchParam`](NumSearchParam) | `tableRecNo` | 
 | `tableRecNo2` | [`NumSearchParam`](NumSearchParam) | `tableRecNo2` | 

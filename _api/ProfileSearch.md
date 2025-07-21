@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -49,17 +49,17 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `primaryPhone` | `string` | 256 | `profile` | 
 | `primaryPhonePermitMarketing` | `bool` |  | `profile` | 
 | `preferredSupplier` | `bool` |  | `supplierProfile` | 
-| `supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
+| `supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
 | `street1` | `string` | 128 | `address` | 
 | `street2` | `string` | 128 | `address` | 
 | `city` | `string` | 64 | `address` | 
-| `stateProvince` | `string` | 8 | `address` | 
+| `stateProvince` | `string` | 32 | `address` | 
 | `zipPostalCode` | `string` | 16 | `address` | 
 | `country` | `string` | 4 | `address` | 
 | `mailingStreet1` | `string` | 128 | `address` | 
 | `mailingStreet2` | `string` | 128 | `address` | 
 | `mailingCity` | `string` | 64 | `address` | 
-| `mailingStateProvince` | `string` | 8 | `address` | 
+| `mailingStateProvince` | `string` | 32 | `address` | 
 | `mailingZipPostalCode` | `string` | 16 | `address` | 
 | `mailingCountry` | `string` | 4 | `address` | 
 | `addressPermitMarketing` | `bool` |  | `address` | 
@@ -99,6 +99,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
@@ -133,7 +134,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `phonePermitMarketing` | `bool` |  | 
 | `addressPermitMarketing` | `bool` | `addressPermitMarketing` | 
 | `supplierVendorId` | [`StringSearchParam`](StringSearchParam) | `supplierVendorId` | 
-| `supplierTravelCategoryFlags` | [`int<int>`] | `supplierTravelCategoryFlags` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
+| `supplierTravelCategoryFlags` | [`int<int>`] | `supplierTravelCategoryFlags` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
 | `profileCommunicationBillingContact` | `bool` | `profileCommIsBillingContact` | 
 | `clientActionItemCompleted` | `bool` | `actionItemCompleted` | 
 | `clientActionItemDateFrom` | `DateSearchParam` | `actionItemDate` | 

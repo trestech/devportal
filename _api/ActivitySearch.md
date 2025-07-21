@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActivitySearch"
 description: "Search activities based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search activities based on filters.
@@ -56,6 +56,7 @@ Permission Areas: Activity
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `appUserRecNo` | [`NumSearchParam`](NumSearchParam) | `appUser_recNo` | 
 | `type` | `EnumSearchParam<Type>` | `type` | Task = 1, Appointment = 2, Note = 3, Promo = 4

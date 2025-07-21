@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAgency"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -15,7 +15,7 @@ assembly_version: "1.4.15.6"
 | `street1` | `string` | 128 |  | `travelerPortalAgency` | 
 | `street2` | `string` | 128 |  | `travelerPortalAgency` | 
 | `city` | `string` | 64 |  | `travelerPortalAgency` | 
-| `stateProvince` | `string` | 8 |  | `travelerPortalAgency` | 
+| `stateProvince` | `string` | 32 |  | `travelerPortalAgency` | 
 | `zipPostalCode` | `string` | 16 |  | `travelerPortalAgency` | 
 | `country` | `string` | 4 |  | `travelerPortalAgency` | 
 | `headerInfo` | `string` | 512 |  | `travelerPortalAgency` | 

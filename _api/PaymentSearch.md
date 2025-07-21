@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: "Search payments based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search payments based on filters.
@@ -62,6 +62,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Other = 3
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
@@ -84,6 +85,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `paidTo` | [`short<short>`] |  | Client = 1, Supplier = 2, Other = 3, Agency = 4
 | `amount` | [`NumSearchParam`](NumSearchParam) | `amount` | 
 | `agencyCardRecNo` | [`NumSearchParam`](NumSearchParam) | `agencyCardRecNo` | 
+| `cardNumber` | [`StringSearchParam`](StringSearchParam) | `cardNumber` | 
 
 | Status code | Description |
 | ----------- | ----------- |

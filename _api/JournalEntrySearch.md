@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search journal entries based on filters.
@@ -55,6 +55,7 @@ Permission Areas: JournalEntry
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryType` | `EnumSearchParam<Type>` | `journalEntryType` | Standard = 1, YearEnd = 2

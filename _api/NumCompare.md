@@ -2,7 +2,7 @@
 layout: api_page
 title: "NumCompare"
 description: "The NumCompare condition is used when searching based on a numeric value and allow the user to specify how to do the numeric comparison"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 The NumCompare condition is used when searching based on a numeric value and allow the user to specify how to do the numeric comparison.

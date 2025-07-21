@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -18,7 +18,7 @@ assembly_version: "1.4.15.6"
 | `street1` | `string` | 128 |  | `agency` | 
 | `street2` | `string` | 128 |  | `agency` | 
 | `city` | `string` | 64 |  | `agency` | 
-| `stateProvince` | `string` | 8 |  | `agency` | 
+| `stateProvince` | `string` | 32 |  | `agency` | 
 | `zipPostalCode` | `string` | 16 |  | `agency` | 
 | `country` | `string` | 4 |  | `agency` | 
 | `headerInfo` | `string` | 512 |  | `agency` | 
@@ -50,16 +50,16 @@ assembly_version: "1.4.15.6"
 | `paymentTrigger` | `short` |  | Required | `agencyAdvisorReconciliation` | AgencyPaidAndDeparted = 1, AgencyPaid = 2
 | `accountingReference ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `accountingReference` | 
-| `type` | `short` |  | PKey, Required | `accountingReference` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `type` | `short` |  | PKey, Required | `accountingReference` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, GstVatPayable = 11, Other = 99
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReference` | 
 | `accountingReferenceTravelCategory ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `accountingReferenceTravelCategory` | 
-| `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, Other = 99
+| `type` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | None = 0, SupplierBalances = 2, UndepositedFunds = 3, CCProcessingBalances = 5, AgencyCCBalances = 6, BankAccount = 7, Sales = 8, CostOfSales = 9, RetainedEarnings = 10, GstVatPayable = 11, Other = 99
 | `travelCategory_recNo` | `short` |  | PKey, Required | `accountingReferenceTravelCategory` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `generalLedgerAccount_recNo` | `long` |  | FKey | `accountingReferenceTravelCategory` | 
 | `appFeature ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `appFeature` | 
-| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11, ConfirmationDocumentInterface = 12, DocumentAcknowledgement = 13
+| `feature` | `short` |  | PKey, Required | `appFeature` | BankManagement = 1, GeneralLedger = 2, MerchantProcessing = 3, ClientForm = 4, GdsInterface = 5, ClientItin = 6, ESign = 7, PaymentAuthorization = 8, TravelerPortal = 9, TripProposal = 10, TripQuickAdd = 11, ConfirmationDocumentInterface = 12, DocumentAcknowledgement = 13, ItineraryImport = 14
 | `enabled` | `bool` |  | Required | `appFeature` | 
 | `flags` | `short` |  | Required | `appFeature` | 
 | `token` | `string` | 1024 |  | `appFeature` | 
@@ -80,7 +80,7 @@ assembly_version: "1.4.15.6"
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `fieldRequirements ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `fieldRequirements` | 
-| `area` | `short` |  | PKey | `fieldRequirements` | ClientProfile = 7, Person = 12, Trip = 16
+| `area` | `short` |  | PKey | `fieldRequirements` | ClientProfile = 7, Person = 12, Trip = 16, Reservation = 17
 | `fieldNo` | `short` |  | PKey | `fieldRequirements` | 
 
 | Status code | Description |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -49,7 +49,7 @@ assembly_version: "1.4.15.6"
 | `street1` | `string` | 128 |  | `supplierInfo` | 
 | `street2` | `string` | 128 |  | `supplierInfo` | 
 | `city` | `string` | 64 |  | `supplierInfo` | 
-| `stateProvince` | `string` | 8 |  | `supplierInfo` | 
+| `stateProvince` | `string` | 32 |  | `supplierInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `supplierInfo` | 
 | `country` | `string` | 4 |  | `supplierInfo` | 
 | `providerInfo  [shared]` | table |  | Singleton | `event` | 
@@ -61,7 +61,7 @@ assembly_version: "1.4.15.6"
 | `street1` | `string` | 128 |  | `providerInfo` | 
 | `street2` | `string` | 128 |  | `providerInfo` | 
 | `city` | `string` | 64 |  | `providerInfo` | 
-| `stateProvince` | `string` | 8 |  | `providerInfo` | 
+| `stateProvince` | `string` | 32 |  | `providerInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerInfo` | 
 | `country` | `string` | 4 |  | `providerInfo` | 
 | `eventTraveler ` | table |  |  | `event` | 
@@ -100,6 +100,7 @@ assembly_version: "1.4.15.6"
 | `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
 | `seatNo` | `string` | 4 |  | `eventAirTraveler` | 
 | `classOfService` | `string` | 2 |  | `eventAirTraveler` | 
+| `remarks` | `string` | 256 |  | `eventAirTraveler` | 
 | `eventAirTravelerAttachment ` | table |  |  | `eventAirTraveler` | 
 | `recNo` | `long` |  | PKey | `eventAirTravelerAttachment` | 
 | `airTravelerIndexNo` | `long` |  | InsertOnly, FKey | `eventAirTravelerAttachment` | 
@@ -118,7 +119,7 @@ assembly_version: "1.4.15.6"
 | `arriveDateTime` | `DateTime` |  |  | `eventCruiseSegment` | 
 | `arrivePortCode` | `string` | 3 |  | `eventCruiseSegment` | 
 | `arrivePortName` | `string` | 64 |  | `eventCruiseSegment` | 
-| `remarks` | `string` | 256 |  | `eventCruiseSegment` | 
+| `remarks` | `string` |  |  | `eventCruiseSegment` | 
 | `deck` | `string` | 32 |  | `eventCruiseSegment` | 
 | `cabin` | `string` | 32 |  | `eventCruiseSegment` | 
 | `dining` | `string` | 32 |  | `eventCruiseSegment` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "IarReconciliationSearch"
 description: "Search IAR reconciliation on filters"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 Search IAR reconciliation on filters.
@@ -40,6 +40,7 @@ Search IAR reconciliation on filters.
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `iarFileData` | `byte[]` |  | 
 | `ignoreDupeVoids` | `bool` |  | 
 | `ignoreSpoiledVoids` | `bool` |  | 

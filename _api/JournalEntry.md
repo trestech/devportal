@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntry"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -24,6 +24,8 @@ Permission Areas: JournalEntry
 | `remarks` | `string` | 256 |  | `journalEntryDetail` | 
 | `generalLedgerAccountName_lookup` | `string` | 64 | ReadOnly | `journalEntryDetail` | 
 | `generalLedgerAccountCategory_lookup` | `short` |  | ReadOnly | `journalEntryDetail` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerBranch_recNo` | `long` |  | FKey | `journalEntryDetail` | 
+| `generalLedgerBranchName_lookup` | `string` | 64 | ReadOnly, Lookup | `journalEntryDetail` | 
 
 | Status code | Description |
 | ----------- | ----------- |

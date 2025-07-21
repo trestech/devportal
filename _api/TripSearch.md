@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -36,6 +36,7 @@ Permission Areas: Trip
 | `remarks` | `string` | 256 | `trip` | 
 | `advisorRemarks` | `string` | 256 | `trip` | 
 | `cancelled` | `bool` |  | `trip` | 
+| `destinations` | `string` |  | `trip` | 
 | `destinationRecNo` | `long` |  | `trip` | 
 | `destinationName` | `string` | 64 | `trip` | 
 | `destinationRegionRecNo` | `long` |  | `trip` | 
@@ -96,6 +97,7 @@ Permission Areas: Trip
 | `reservationPrimaryTravelerName` | `string` | 256 | `reservation` | 
 | `reservationTravelerName` | `string` |  | `reservation` | 
 | `reservationTicketType` | `short` |  | `airReservation` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
+| `reservationOriginalTicketNo` | `long` |  | `airReservation` | 
 | `reservationCommissionDatePayable` | `Date` |  | `reservation` | 
 | `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
@@ -159,6 +161,7 @@ Permission Areas: Trip
 | `baseUrl [inherited]` | `string` |  | 
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
+| `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientProfileRecNo` | 
 | `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
@@ -216,6 +219,7 @@ Permission Areas: Trip
 | `reservationCommissionAmount` | [`NumSearchParam`](NumSearchParam) | `reservationCommissionAmount` | 
 | `reservationSupplierProfileInfoName` | [`StringSearchParam`](StringSearchParam) | `reservationSupplierProfileInfoName` | 
 | `reservationProviderProfileInfoName` | [`StringSearchParam`](StringSearchParam) | `reservationProviderProfileInfoName` | 
+| `reservationOriginalTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationOriginalTicketNo` | 
 | `tripActionItemCompleted` | `bool` | `tripActionItemCompleted` | 
 | `tripActionItemDateFrom` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 

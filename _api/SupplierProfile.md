@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierProfile"
 description: ""
-assembly_version: "1.4.15.6"
+assembly_version: "1.5.5.3"
 ---
 
 
@@ -21,7 +21,7 @@ Permission Areas: SupplierProfile
 | `tripStatementRemarks` | `string` |  |  | `supplierProfile` | 
 | `termsAndConditionsUrl` | `string` | 256 |  | `supplierProfile` | 
 | `commissionRate` | `short` |  |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
-| `travelCategoryFlags` | `int` |  |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512
+| `travelCategoryFlags` | `int` |  |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
 | `profile  [shared]` | table |  | Singleton | `supplierProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 
@@ -72,7 +72,7 @@ Permission Areas: SupplierProfile
 | `street3` | `string` | 128 |  | `address` | 
 | `city` | `string` | 64 |  | `address` | 
 | `county` | `string` | 64 |  | `address` | 
-| `stateProvince` | `string` | 8 |  | `address` | 
+| `stateProvince` | `string` | 32 |  | `address` | 
 | `stateProvinceName` | `string` | 64 |  | `address` | 
 | `zipPostalCode` | `string` | 16 |  | `address` | 
 | `country` | `string` | 4 |  | `address` | 
