@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 Search journal entries based on filters.
@@ -37,6 +37,8 @@ Permission Areas: JournalEntry
 | `journalEntryDetailCreditAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailAmount` | `long` |  | `journalEntry` | 
 | `journalEntryDetailRemarks` | `string` | 256 | `journalEntry` | 
+| `journalEntryDetailGeneralLedgerBranchRecNo` | `long` |  | `journalEntry` | 
+| `journalEntryDetailGeneralLedgerBranchName_lookup` | `string` | 64 | `journalEntry` | 
 | `sourceRemarks` | `string` |  | `journalEntry` | 
 
 | Parameter | Type | Linked Column | Description |
@@ -63,6 +65,7 @@ Permission Areas: JournalEntry
 | `source` | `EnumSearchParam<Source>` | `source` | ClientPayment = 1, SupplierPayment = 2, OtherPayment = 3, DepositWithdrawal = 4, Reservation = 5
 | `generalLedgerAccountRecNo` | [`NumSearchParam`](NumSearchParam) | `generalLedgerAccountRecNo` | 
 | `generalLedgerAccountCategory` | `EnumSearchParam<Category>` | `generalLedgerAccountCategory` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
+| `generalLedgerBranchRecNo` | [`NumSearchParam`](NumSearchParam) | `journalEntryDetailGeneralLedgerBranchRecNo` | 
 
 | Status code | Description |
 | ----------- | ----------- |

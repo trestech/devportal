@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActivitySearch"
 description: "Search activities based on filters"
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 Search activities based on filters.

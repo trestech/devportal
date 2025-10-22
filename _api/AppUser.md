@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 
@@ -18,7 +18,7 @@ assembly_version: "1.5.5.3"
 | `email` | `string` | 128 |  | `appUser` | 
 | `passwordLastModified` | `Date` |  | ReadOnly | `appUser` | 
 | `microsoftId` | `string` | 64 |  | `appUser` | 
-| `microsoftUserPrincipalName` | `string` | 64 | ReadOnly | `appUser` | 
+| `microsoftUserPrincipalName` | `string` | 64 |  | `appUser` | 
 | `uniqueId` | `string` | 64 | InsertOnly | `appUser` | 
 | `userType` | `short` |  | Required | `appUser` | User = 1, Manager = 2, Admin = 3
 | `recNo` | `long` |  | PKey | `appUser` | 
@@ -59,7 +59,7 @@ assembly_version: "1.5.5.3"
 | `signatureAttachment_recNo` | `long` |  | Auto-Assign | `appUser` | 
 | `lastLoginDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `appUser` | 
 | `googleId` | `string` | 64 |  | `appUser` | 
-| `googleUserPrincipalName` | `string` | 64 | ReadOnly | `appUser` | 
+| `googleUserPrincipalName` | `string` | 64 |  | `appUser` | 
 | `appUserAdvisor ` | table |  |  | `appUser` | 
 | `appUser_recNo` | `long` |  | PKey, InsertOnly, FKey | `appUserAdvisor` | 
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 

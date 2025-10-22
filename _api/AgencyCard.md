@@ -2,7 +2,7 @@
 layout: api_page
 title: "AgencyCard"
 description: ""
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 

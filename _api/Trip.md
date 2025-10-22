@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 
@@ -145,6 +145,7 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
 | `classOfService` | `string` | 2 |  | `railSegment` | 
+| `indexNo` | `short` |  |  | `railSegment` | 
 | `supplierProfileInfo  [shared]` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
@@ -295,6 +296,7 @@ Permission Areas: Trip
 | `indexNo` | `short` |  |  | `cruiseSegment` | 
 | `cruiseSubReservationLink ` | table |  |  | `cruiseReservation` | 
 | `parentReservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `subReservationLink` | 
+| `indexNo` | `short` |  |  | `subReservationLink` | 
 | `subReservation_recNo` | `long` |  | PKey, Auto-Assign | `subReservationLink` | 
 | `cruiseSubReservation  [shared]` | table |  | Singleton | `cruiseSubReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
@@ -388,6 +390,7 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
 | `classOfService` | `string` | 2 |  | `railSegment` | 
+| `indexNo` | `short` |  |  | `railSegment` | 
 | `supplierProfileInfo  [shared]` | table |  | Singleton | `cruiseSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 
@@ -439,6 +442,7 @@ Permission Areas: Trip
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `tourReservation` | 
 | `tourSubReservationLink ` | table |  |  | `tourReservation` | 
 | `parentReservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `subReservationLink` | 
+| `indexNo` | `short` |  |  | `subReservationLink` | 
 | `subReservation_recNo` | `long` |  | PKey, Auto-Assign | `subReservationLink` | 
 | `tourSubReservation  [shared]` | table |  | Singleton | `tourSubReservationLink` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `reservation` | 
@@ -532,6 +536,7 @@ Permission Areas: Trip
 | `arriveStationName` | `string` | 64 |  | `railSegment` | 
 | `trainNo` | `short` |  |  | `railSegment` | 
 | `classOfService` | `string` | 2 |  | `railSegment` | 
+| `indexNo` | `short` |  |  | `railSegment` | 
 | `supplierProfileInfo  [shared]` | table |  | Singleton | `tourSubReservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `supplierProfileInfo` | 
 | `name` | `string` | 256 |  | `supplierProfileInfo` | 

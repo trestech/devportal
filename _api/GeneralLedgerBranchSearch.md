@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerBranchSearch"
 description: ""
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 
@@ -36,7 +36,7 @@ Permission Areas: GeneralLedgerAccount
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
-| `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
+| `activeStatus` | `bool` | `activeStatus` | 
 
 | Status code | Description |
 | ----------- | ----------- |

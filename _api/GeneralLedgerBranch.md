@@ -2,10 +2,12 @@
 layout: api_page
 title: "GeneralLedgerBranch"
 description: ""
-assembly_version: "1.5.5.3"
+assembly_version: "1.5.6.5"
 ---
 
 
+
+Permission Areas: GeneralLedgerAccount
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
