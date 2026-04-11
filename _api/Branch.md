@@ -2,7 +2,7 @@
 layout: api_page
 title: "Branch"
 description: "A branch is often a separate location or office of a travel agency that uses the same data source as the main agency"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 A branch is often a separate location or office of a travel agency that uses the same data source as the main agency.  A branch can have its own trust account, accounting data, and reporting functions and can also share information and workflows with other branches and the main agency.
@@ -23,7 +23,7 @@ Permission Areas: Branch
 | `zipPostalCode` | `string` | 16 |  | `branch` | 
 | `country` | `string` | 4 |  | `branch` | 
 | `headerInfo` | `string` | 512 |  | `branch` | 
-| `logoData` | `byte[]` |  |  | `branch` | 
+| `logoData` | `byte[]` |  | ReadOnly, Deprecated | `branch` | Obsolete. Use LogoAttachment instead.
 | `itineraryRemarks` | `string` |  |  | `branch` | 
 | `brandingColor` | `int` |  |  | `branch` | 
 | `activeStatus` | `short` |  | Required | `branch` | Inactive = 0, Active = 1, Pending = 2
@@ -44,6 +44,7 @@ Permission Areas: Branch
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `branchTag ` | table |  |  | `branch` | 
 | `recNo` | `long` |  | PKey | `branchTag` | 
 | `branch_recNo` | `long` |  | InsertOnly, FKey | `branchTag` | 

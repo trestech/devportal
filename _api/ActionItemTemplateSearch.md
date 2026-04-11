@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActionItemTemplateSearch"
 description: "Search action item templates based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search action item templates based on filters.
@@ -24,6 +24,8 @@ See: [ActionItemTemplate](ActionItemTemplate.html)
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -38,6 +40,7 @@ See: [ActionItemTemplate](ActionItemTemplate.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

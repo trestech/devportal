@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -110,6 +110,7 @@ assembly_version: "1.5.6.5"
 | `fileNameLinkURL` | `string` | 256 |  | `eventAirTravelerAttachment` | 
 | `directUrl` | `string` | 256 |  | `eventAirTravelerAttachment` | 
 | `fileData` | `byte[]` |  |  | `eventAirTravelerAttachment` | 
+| `imageCredit` | `string` | 256 |  | `eventAirTravelerAttachment` | 
 | `eventCruiseSegment ` | table |  | Singleton | `event` | 
 | `indexNo` | `long` |  | PKey | `eventCruiseSegment` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventCruiseSegment` | 
@@ -143,6 +144,7 @@ assembly_version: "1.5.6.5"
 | `fileNameLinkURL` | `string` | 256 |  | `eventAttachment` | 
 | `directUrl` | `string` | 256 |  | `eventAttachment` | 
 | `fileData` | `byte[]` |  |  | `eventAttachment` | 
+| `imageCredit` | `string` | 256 |  | `eventAttachment` | 
 | `tripAttachment ` | table |  |  | `clientItinTrip` | 
 | `recNo` | `long` |  | PKey | `tripAttachment` | 
 | `tripRecNo` | `long` |  | InsertOnly, FKey | `tripAttachment` | 
@@ -152,6 +154,7 @@ assembly_version: "1.5.6.5"
 | `fileNameLinkURL` | `string` | 256 |  | `tripAttachment` | 
 | `directUrl` | `string` | 256 |  | `tripAttachment` | 
 | `fileData` | `byte[]` |  |  | `tripAttachment` | 
+| `imageCredit` | `string` | 256 |  | `tripAttachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

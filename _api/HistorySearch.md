@@ -2,7 +2,7 @@
 layout: api_page
 title: "HistorySearch"
 description: "Search history based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search history based on filters.
@@ -32,6 +32,8 @@ See: [History](History.html)
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -46,6 +48,7 @@ See: [History](History.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tableName` | [`StringSearchParam`](StringSearchParam) | `tableName` | 
 | `tableRecNo` | [`NumSearchParam`](NumSearchParam) | `tableRecNo` | 
 | `tableRecNo2` | [`NumSearchParam`](NumSearchParam) | `tableRecNo2` | 

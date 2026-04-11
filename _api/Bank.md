@@ -2,7 +2,7 @@
 layout: api_page
 title: "Bank"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -23,6 +23,8 @@ Permission Areas: Bank
 | `conversionRate` | `int` |  |  | `bank` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `currencyConversionGeneralLedgerAccount_recNo` | `long` |  | FKey | `bank` | 
 | `currencyConversionGeneralLedgerAccount_name` | `string` | 64 | ReadOnly | `bank` | 
+| `undepositedFundsGeneralLedgerAccount_recNo` | `long` |  | FKey | `bank` | 
+| `undepositedFundsGeneralLedgerAccount_name` | `string` | 64 | ReadOnly | `bank` | 
 
 | Status code | Description |
 | ----------- | ----------- |

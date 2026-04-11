@@ -2,7 +2,7 @@
 layout: api_page
 title: "Affiliation"
 description: "Affiliation known to Tres"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Affiliation known to Tres.  Pass the record number to get the marketing categories for the specified affiliation.
@@ -23,6 +23,8 @@ Affiliation known to Tres.  Pass the record number to get the marketing categori
 | 16 | TravelSaversCanada |
 | 23 | Axus |
 | 24 | Grasp |
+| 25 | CTS |
+| 26 | Toggle |
 
 
 | Column | Type | Size | Flags | Table | Description |
@@ -40,6 +42,7 @@ Affiliation known to Tres.  Pass the record number to get the marketing categori
 | `name` | `string` | 64 | Required | `affiliationMarketingElement` | 
 | `id` | `string` | 16 | Required | `affiliationMarketingElement` | 
 | `sortNo` | `short` |  |  | `affiliationMarketingElement` | 
+| `expirationDate` | `Date` |  |  | `affiliationMarketingElement` | 
 
 | Status code | Description |
 | ----------- | ----------- |

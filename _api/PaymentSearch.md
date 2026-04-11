@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: "Search payments based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search payments based on filters.
@@ -51,6 +51,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -65,6 +67,7 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Other = 3
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
@@ -88,6 +91,9 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `amount` | [`NumSearchParam`](NumSearchParam) | `amount` | 
 | `agencyCardRecNo` | [`NumSearchParam`](NumSearchParam) | `agencyCardRecNo` | 
 | `cardNumber` | [`StringSearchParam`](StringSearchParam) | `cardNumber` | 
+| `checkNumberFrom` | [`NumSearchParam`](NumSearchParam) | `checkNumber` | 
+| `checkNumberTo` | [`NumSearchParam`](NumSearchParam) | `checkNumber` | 
+| `tripSearchParams` | `TripSearchParams` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

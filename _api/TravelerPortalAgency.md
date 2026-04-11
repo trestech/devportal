@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAgency"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -26,6 +26,7 @@ assembly_version: "1.5.6.5"
 | `advisorProfile_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
 | `branch_recNo` | `long` |  | FKey | `travelerPortalAgency` | 
 | `acknowledgementVerbiage` | `string` | 1024 |  | `travelerPortalAgency` | 
+| `CountryCodeNo` | `short` |  |  | `travelerPortalAgency` | US = 1, CA = 2
 | `agency_recNo` | `long` |  |  | `travelerPortalAgency` | 
 | `agencyPersonTag ` | table |  |  | `travelerPortalAgency` | 
 | `agency_recNo` | `long` |  | InsertOnly, FKey | `agencyPersonTag` | 

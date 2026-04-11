@@ -2,7 +2,7 @@
 layout: api_page
 title: "IarReconciliationSearch"
 description: "Search IAR reconciliation on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search IAR reconciliation on filters.
@@ -27,6 +27,8 @@ Search IAR reconciliation on filters.
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -41,6 +43,7 @@ Search IAR reconciliation on filters.
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `iarFileData` | `byte[]` |  | 
 | `ignoreDupeVoids` | `bool` |  | 
 | `ignoreSpoiledVoids` | `bool` |  | 

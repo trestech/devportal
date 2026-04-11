@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -82,10 +82,15 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `actionItemAssignedToAppUserId` | `string` | 64 | `clientProfileActionItem` | 
 | `imageCount` | `short` |  | `profile` | 
 | `supplierAirlineNo` | `short` |  | `supplierProfile` | 
+| `documentAcknowledgementRecNo` | `long` |  | `documentAcknowledgement` | 
+| `documentAcknowledgementStatus` | `short` |  | `documentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
+| `documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `documentAcknowledgement` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -100,6 +105,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `profileType` | [`short<short>`] | `profileType` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
 | `profileName` | [`StringSearchParam`](StringSearchParam) | `name` | 
@@ -141,6 +147,10 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `clientActionItemDateTo` | `DateSearchParam` | `actionItemDate` | 
 | `clientActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `actionItemAssignedToAppUserRecNo` | 
 | `supplierAirlineNo` | [`NumSearchParam`](NumSearchParam) | `supplierAirlineNo` | 
+| `clientDocumentAcknowledgementRecNo` | [`NumSearchParam`](NumSearchParam) | `documentAcknowledgementRecNo` | 
+| `clientDocumentAcknowledgementStatus` | `EnumSearchParam<Status>` | `documentAcknowledgementStatus` | Pending = 1, Acknowledged = 2, Expired = 3
+| `clientDocumentAcknowledgementCreateDateTimeFrom` | `DateTimeUTCSearchParam` | `documentAcknowledgementCreateDateTime` | 
+| `clientDocumentAcknowledgementCreateDateTimeTo` | `DateTimeUTCSearchParam` | `documentAcknowledgementCreateDateTime` | 
 | `clientTripSearchParams` | `TripSearchParams` |  | 
 | `supplierTripSearchParams` | `TripSearchParams` |  | 
 | `clientActivitySearchParams` | `ActivitySearchParams` |  | 

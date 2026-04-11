@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankSearch"
 description: "Search banks based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search banks based on filters.
@@ -25,6 +25,8 @@ Permission Areas: Bank
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -39,6 +41,7 @@ Permission Areas: Bank
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search journal entries based on filters.
@@ -44,6 +44,8 @@ Permission Areas: JournalEntry
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -58,6 +60,7 @@ Permission Areas: JournalEntry
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `journalEntryDateFrom` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryDateTo` | `DateSearchParam` | `journalEntryDate` | 
 | `journalEntryType` | `EnumSearchParam<Type>` | `journalEntryType` | Standard = 1, YearEnd = 2

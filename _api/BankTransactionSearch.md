@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankTransactionSearch"
 description: "Search bank transactions based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search bank transactions based on filters.
@@ -29,6 +29,8 @@ Permission Areas: BankTransaction
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -43,6 +45,7 @@ Permission Areas: BankTransaction
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `transactionDateFrom` | `DateSearchParam` | `transactionDate` | 
 | `transactionDateTo` | `DateSearchParam` | `transactionDate` | 
 | `bankRecNo` | [`NumSearchParam`](NumSearchParam) | `bankRecNo` | 

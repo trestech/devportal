@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -92,6 +92,7 @@ Permission Areas: Person
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `personTag ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `personTag` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `personTag` | 
@@ -115,6 +116,24 @@ Permission Areas: Person
 | `completedBy_appUserId` | `string` | 64 | ReadOnly, Lookup | `actionItem` | 
 | `notes` | `string` |  |  | `actionItem` | 
 | `documentTemplate_recNo` | `long` |  | FKey | `actionItem` | 
+| `personAddressLink ` | table |  |  | `person` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personAddressLink` | 
+| `addressType` | `short` |  | PKey, Required | `personAddressLink` | Physical = 1, Mailing = 2
+| `permitMarketing` | `bool` |  |  | `personAddressLink` | 
+| `address_recNo` | `long` |  | PKey, Auto-Assign | `personAddressLink` | 
+| `address  [shared]` | table |  | Singleton | `personAddressLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `address` | 
+| `street1` | `string` | 128 |  | `address` | 
+| `street2` | `string` | 128 |  | `address` | 
+| `street3` | `string` | 128 |  | `address` | 
+| `city` | `string` | 64 |  | `address` | 
+| `county` | `string` | 64 |  | `address` | 
+| `stateProvince` | `string` | 32 |  | `address` | 
+| `stateProvinceName` | `string` | 64 |  | `address` | 
+| `zipPostalCode` | `string` | 16 |  | `address` | 
+| `country` | `string` | 4 |  | `address` | 
+| `countryName` | `string` | 64 |  | `address` | 
+| `permitMarketing` | `bool` |  |  | `address` | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -329,6 +348,28 @@ Status: 200 Ok
           "completedBy_appUserId": null,
           "notes": null,
           "documentTemplate_recNo": null
+        }
+      }
+    ],
+    "personAddressLink": [
+      {
+        "person_recNo": 1969999,
+        "addressType": 1,
+        "permitMarketing": false,
+        "address_recNo": 99,
+        "address": {
+          "recNo": 99,
+          "street1": "500 Small World Ave",
+          "street2": null,
+          "street3": null,
+          "city": "Westchester",
+          "county": null,
+          "stateProvince": "CA",
+          "stateProvinceName": null,
+          "zipPostalCode": "90045",
+          "country": "US",
+          "countryName": null,
+          "permitMarketing": false
         }
       }
     ]

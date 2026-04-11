@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -62,6 +62,8 @@ Permission Areas: Person
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -76,6 +78,7 @@ Permission Areas: Person
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `UniqueId` | `string` | `uniqueId` | 
 | `firstName` | [`StringSearchParam`](StringSearchParam) | `firstName` | 

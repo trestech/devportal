@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorAdjustmentSearch"
 description: "Search advisor adjustments based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search advisor adjustments based on filters.
@@ -32,6 +32,8 @@ Permission Areas: AdvisorAdjustment
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -46,6 +48,7 @@ Permission Areas: AdvisorAdjustment
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfile_recNo` | 
 | `adjustmentDateFrom` | `DateSearchParam` | `adjustmentDate` | 

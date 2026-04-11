@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -22,7 +22,7 @@ assembly_version: "1.5.6.5"
 | `zipPostalCode` | `string` | 16 |  | `agency` | 
 | `country` | `string` | 4 |  | `agency` | 
 | `headerInfo` | `string` | 512 |  | `agency` | 
-| `logoData` | `byte[]` |  |  | `agency` | 
+| `logoData` | `byte[]` |  | ReadOnly, Deprecated | `agency` | Obsolete. Use LogoAttachment instead.
 | `itineraryRemarks` | `string` |  |  | `agency` | 
 | `supplierStatementRemarks` | `string` |  |  | `agency` | 
 | `merchantId` | `string` | 64 | Deprecated | `agency` | Obsolete.
@@ -41,9 +41,10 @@ assembly_version: "1.5.6.5"
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `agency` | 
 | `agencyAffiliationLink ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAffiliationLink` | 
-| `affiliation_recNo` | `short` |  | PKey, Required | `agencyAffiliationLink` | Tres = 1, Signature = 2, AmEx = 6, EnsembleCanada = 7, EnsembleUS = 8, MART = 9, MAST = 10, TravelLeaders = 12, Virtuoso = 13, WESTA = 14, TravelSaversUS = 15, TravelSaversCanada = 16, Axus = 23, Grasp = 24
+| `affiliation_recNo` | `short` |  | PKey, Required | `agencyAffiliationLink` | Tres = 1, Signature = 2, AmEx = 6, EnsembleCanada = 7, EnsembleUS = 8, MART = 9, MAST = 10, TravelLeaders = 12, Virtuoso = 13, WESTA = 14, TravelSaversUS = 15, TravelSaversCanada = 16, Axus = 23, Grasp = 24, CTS = 25, Toggle = 26
 | `affiliationName` | `string` | 64 | ReadOnly | `agencyAffiliationLink` | 
 | `id` | `string` | 32 |  | `agencyAffiliationLink` | 
+| `indexNo` | `short` |  |  | `agencyAffiliationLink` | 
 | `agencyAdvisorReconciliation ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyAdvisorReconciliation` | 
 | `travelCategory_recNo` | `short` |  | PKey, Required, FKey | `agencyAdvisorReconciliation` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
@@ -78,6 +79,7 @@ assembly_version: "1.5.6.5"
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `fieldRequirements ` | table |  |  | `agency` | 
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `fieldRequirements` | 
 | `area` | `short` |  | PKey | `fieldRequirements` | ClientProfile = 7, Person = 12, Trip = 16, Reservation = 17

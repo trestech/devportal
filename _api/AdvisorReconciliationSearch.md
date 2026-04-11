@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorReconciliationSearch"
 description: "Search advisor reconciliation based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search advisor reconciliation based on filters.
@@ -23,6 +23,8 @@ Permission Areas: AdvisorReconciliation
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -37,6 +39,7 @@ Permission Areas: AdvisorReconciliation
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `reconciliationDateFrom` | `DateSearchParam` | `reconciliationDate` | 
 | `reconciliationDateTo` | `DateSearchParam` | `reconciliationDate` | 
 | `description` | [`StringSearchParam`](StringSearchParam) | `description` | 

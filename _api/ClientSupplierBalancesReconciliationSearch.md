@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientSupplierBalancesReconciliationSearch"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -31,6 +31,8 @@ assembly_version: "1.5.6.5"
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -45,6 +47,7 @@ assembly_version: "1.5.6.5"
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 
 | `paymentDateTo` | `DateSearchParam` | `paymentDate` | 
 | `glOnly` | `bool` |  | 

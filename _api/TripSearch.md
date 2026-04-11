@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -25,6 +25,7 @@ Permission Areas: Trip
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
 | `name` | `string` | 256 | `trip` | 
 | `startDateTime` | `DateTime` |  | `trip` | 
+| `startDateTargetTravelDate` | `DateTime` |  | `trip` | 
 | `endDateTime` | `DateTime` |  | `trip` | 
 | `targetTravelDate` | `Date` |  | `trip` | 
 | `clientProfileRecNo` | `long` |  | `trip` | 
@@ -111,6 +112,8 @@ Permission Areas: Trip
 | `reservationGstVatOnCommissionOverride` | `bool` |  | `reservation` | 
 | `reservationGstVatOnCommissionRate` | `int` |  | `reservation` | Percentage values have an implied 4 digits after the decimal point. A value of 0.2512 == 25.12% is represented as 251200
 | `reservationTotalGstVatTaxAmount` | `long` |  | `reservation` | 
+| `reservationUnitDescription` | `string` |  | `reservation` | 
+| `reservationNumberOfUnits` | `short` |  | `reservation` | 
 | `tripActionRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemTriggerIndex` | `short` |  | `tripActionItem` | FixedDate = 1, StartDate = 2, EndDate = 3, TargetTravelDate = 4, CreateDate = 5, EarliestBookingDate = 6, EarliestDepositDate = 7, EarliestFinalPayDate = 8
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
@@ -148,6 +151,8 @@ Permission Areas: Trip
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -162,6 +167,7 @@ Permission Areas: Trip
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `clientProfileRecNo` | 
 | `advisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 

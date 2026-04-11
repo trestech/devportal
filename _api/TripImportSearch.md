@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: "Search trip imports based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search trip imports based on filters.
@@ -30,10 +30,13 @@ Permission Areas: TripImport
 | `tripReference` | `string` | 64 | `tripImport` | 
 | `trip_RecNo` | `long` |  | `tripImport` | 
 | `gdsInvoiceType` | `short` |  | `tripImport` | Unknown = 0, Sale = 1, Refund = 2, ItinOnly = 3, ItinUpdate = 4, BoardingPass = 5, Void = 6
+| `dataPurged` | `bool` |  | `tripImport` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -48,6 +51,7 @@ Permission Areas: TripImport
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `type` | `EnumSearchParam<ImportType>` | `type` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4, ConfirmationDocument = 5
 | `status` | `EnumSearchParam<Status>` | `status` | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) | `trip_RecNo` | 

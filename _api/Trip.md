@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -193,6 +193,25 @@ Permission Areas: Trip
 | `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
+| `reservationAttachmentLink ` | table |  |  | `reservation` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
+| `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
+| `visibility` | `short` |  | Deprecated | `reservationAttachmentLink` | reservationAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
+| `sortIndex` | `short` |  |  | `reservationAttachmentLink` | 
+| `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
 | `createDate` | `Date` |  | InsertOnly | `accountingEntry` | 
@@ -251,24 +270,6 @@ Permission Areas: Trip
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTax` | 
 | `code` | `string` | 2 |  | `reservationTax` | 
 | `amount` | `long` |  | Required | `reservationTax` | 
-| `reservationAttachmentLink ` | table |  |  | `reservation` | 
-| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
-| `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
-| `visibility` | `short` |  | Deprecated | `reservationAttachmentLink` | reservationAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
-| `sortIndex` | `short` |  |  | `reservationAttachmentLink` | 
-| `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
-| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
-| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
-| `description` | `string` | 256 |  | `attachment` | 
-| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
-| `fileData` | `byte[]` |  |  | `attachment` | 
-| `size` | `int` |  |  | `attachment` | 
-| `compressed` | `bool` |  |  | `attachment` | 
-| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
-| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
-| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
-| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
-| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `reservationTag ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationTag` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationTag` | 
@@ -438,6 +439,25 @@ Permission Areas: Trip
 | `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
+| `reservationAttachmentLink ` | table |  |  | `cruiseSubReservation` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
+| `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
+| `visibility` | `short` |  | Deprecated | `reservationAttachmentLink` | reservationAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
+| `sortIndex` | `short` |  |  | `reservationAttachmentLink` | 
+| `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `tourReservation ` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `tourReservation` | 
 | `tourSubReservationLink ` | table |  |  | `tourReservation` | 
@@ -584,6 +604,25 @@ Permission Areas: Trip
 | `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
+| `reservationAttachmentLink ` | table |  |  | `tourSubReservation` | 
+| `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationAttachmentLink` | 
+| `attachment_recNo` | `long` |  | PKey, Auto-Assign | `reservationAttachmentLink` | 
+| `visibility` | `short` |  | Deprecated | `reservationAttachmentLink` | reservationAttachmentLink.visibility is deprecated. Use attachment.visibility instead.
+| `sortIndex` | `short` |  |  | `reservationAttachmentLink` | 
+| `reservationAttachment  [shared]` | table |  | Singleton | `reservationAttachmentLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
+| `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
+| `description` | `string` | 256 |  | `attachment` | 
+| `fileNameLinkURL` | `string` | 256 | Required | `attachment` | 
+| `fileData` | `byte[]` |  |  | `attachment` | 
+| `size` | `int` |  |  | `attachment` | 
+| `compressed` | `bool` |  |  | `attachment` | 
+| `storeExternal` | `short` |  |  | `attachment` | Database = 0, PrivateStorage = 1, PublicStorage = 2
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `attachment` | 
+| `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
+| `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
+| `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `reservationDeposit ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationDeposit` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationDeposit` | 
@@ -623,6 +662,7 @@ Permission Areas: Trip
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `tripTag ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey | `tripTag` | 
 | `trip_recNo` | `long` |  | InsertOnly, FKey | `tripTag` | 

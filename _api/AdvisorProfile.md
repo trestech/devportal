@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorProfile"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -13,7 +13,7 @@ Permission Areas: AdvisorProfile
 | ------ | ---- | ---- | ----- | ----- | ----------- |
 | `profile_recNo` | `long` |  | PKey, Auto-Assign | `advisorProfile` | 
 | `type` | `short` |  | Required | `advisorProfile` | Inside = 1, Outside = 2
-| `logoData` | `byte[]` |  |  | `advisorProfile` | 
+| `logoData` | `byte[]` |  | ReadOnly, Deprecated | `advisorProfile` | Obsolete. Use LogoAttachment instead.
 | `addressPrintOption` | `short` |  | Required | `advisorProfile` | UseAdvisorAddress = 1, UseBranchAddress = 2, UseAgencyAddress = 3, NoAddress = 4
 | `photoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
 | `logoAttachment_recNo` | `long` |  | Auto-Assign | `advisorProfile` | 
@@ -96,6 +96,7 @@ Permission Areas: AdvisorProfile
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
@@ -115,6 +116,7 @@ Permission Areas: AdvisorProfile
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `logoAttachment  [shared]` | table |  | Singleton | `advisorProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -128,6 +130,7 @@ Permission Areas: AdvisorProfile
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `advisorCommissionRate ` | table |  |  | `advisorProfile` | 
 | `advisorProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `advisorCommissionRate` | 
 | `travelCategory_recNo` | `short` |  | PKey | `advisorCommissionRate` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99

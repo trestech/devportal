@@ -2,7 +2,7 @@
 layout: api_page
 title: "TagSearch"
 description: "Search tags based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search tags based on filters.
@@ -31,6 +31,8 @@ Permission Areas: Tag
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -45,6 +47,7 @@ Permission Areas: Tag
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 
 | `areaFlags` | [`int<int>`] | `areaFlags` | All = 0, Client = 1, Traveler = 2, Supplier = 4, Advisor = 8, Trip = 16, Reservation = 32, Payment = 64, Activity = 128, AdvisorAdjustment = 256, Destination = 512, Branch = 1024, OtherProfile = 2048

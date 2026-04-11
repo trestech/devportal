@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplateSearch"
 description: "Search document templates based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search document templates based on filters.
@@ -25,6 +25,8 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -39,6 +41,7 @@ See: [DocumentTemplate](DocumentTemplate.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | `bool` | `activeStatus` | 
 | `area` | [`short<short>`] | `area` | Trip = 1, ClientProfile = 2, Person = 3

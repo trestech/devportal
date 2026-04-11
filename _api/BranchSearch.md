@@ -2,7 +2,7 @@
 layout: api_page
 title: "BranchSearch"
 description: "Search branches based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search branches based on filters.
@@ -25,10 +25,13 @@ Permission Areas: Branch
 | `activeStatus` | `short` |  | `branch` | Inactive = 0, Active = 1, Pending = 2
 | `arcBspNo` | `int` |  | `branch` | 
 | `generalLedgerBranch_recNo` | `long` |  | `branch` | 
+| `generalLedgerBranch_name` | `string` | 64 | `branch` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -43,6 +46,7 @@ Permission Areas: Branch
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `name` | [`StringSearchParam`](StringSearchParam) | `name` | 
 | `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2

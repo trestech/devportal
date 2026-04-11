@@ -2,7 +2,7 @@
 layout: api_page
 title: "ActivitySearch"
 description: "Search activities based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search activities based on filters.
@@ -28,7 +28,7 @@ Permission Areas: Activity
 | `priority` | `short` |  | `activity` | Low = 1, Medium = 2, High = 3
 | `targetDateTime` | `DateTimeOffset` |  | `activity` | 
 | `targetDate` | `Date` |  | `activity` | 
-| `completionDateTime` | `DateTime` |  | `activity` | 
+| `completionDateTime` | `DateTimeOffset` |  | `activity` | 
 | `clientProfileRecNo` | `long` |  | `activity` | 
 | `clientProfileName` | `string` | 256 | `activity` | 
 | `supplierProfileRecNo` | `long` |  | `activity` | 
@@ -43,6 +43,8 @@ Permission Areas: Activity
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -57,6 +59,7 @@ Permission Areas: Activity
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `tags [inherited]` | `TagsSearchParams[]` |  | 
 | `appUserRecNo` | [`NumSearchParam`](NumSearchParam) | `appUser_recNo` | 
 | `type` | `EnumSearchParam<Type>` | `type` | Task = 1, Appointment = 2, Note = 3, Promo = 4

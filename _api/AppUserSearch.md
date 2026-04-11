@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUserSearch"
 description: "Search application users based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search application users based on filters.
@@ -29,6 +29,8 @@ See: [AppUser](AppUser.html)
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -43,6 +45,7 @@ See: [AppUser](AppUser.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `id` | [`StringSearchParam`](StringSearchParam) | `id` | 
 | `branchRecNo` | [`NumSearchParam`](NumSearchParam) | `branch_recNo` | 
 | `userType` | `EnumSearchParam<UserType>` | `userType` | User = 1, Manager = 2, Admin = 3

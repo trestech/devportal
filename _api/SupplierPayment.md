@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierPayment"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -62,6 +62,7 @@ Permission Areas: SupplierPayment
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `paymentTag ` | table |  |  | `payment` | 
 | `recNo` | `long` |  | PKey | `paymentTag` | 
 | `payment_recNo` | `long` |  | InsertOnly, FKey | `paymentTag` | 

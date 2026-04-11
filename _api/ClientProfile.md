@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -105,6 +105,7 @@ Permission Areas: ClientProfile
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
 | `profileTag ` | table |  |  | `profile` | 
 | `recNo` | `long` |  | PKey | `profileTag` | 
 | `profile_recNo` | `long` |  | InsertOnly, FKey | `profileTag` | 
@@ -148,6 +149,26 @@ Permission Areas: ClientProfile
 | `errorCode` | `int` |  |  | `history` | 
 | `appUser_recNo` | `long` |  |  | `history` | 
 | `appUser_id` | `string` | 64 |  | `history` | 
+| `clientProfileDocument ` | table |  |  | `clientProfile` | 
+| `recNo` | `long` |  | PKey | `clientProfileDocument` | 
+| `clientProfile_recNo` | `long` |  | InsertOnly, FKey | `clientProfileDocument` | 
+| `documentTemplate_recNo` | `long` |  | Required, FKey | `clientProfileDocument` | 
+| `emailAddresses` | `string` | 512 |  | `clientProfileDocument` | 
+| `name_lookup` | `string` | 128 | ReadOnly, Lookup | `clientProfileDocument` | 
+| `clientProfileDocumentAcknowledgementLink ` | table |  |  | `clientProfile` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileDocumentAcknowledgementLink` | 
+| `documentAcknowledgement_recNo` | `long` |  | PKey, Auto-Assign | `clientProfileDocumentAcknowledgementLink` | 
+| `documentAcknowledgement  [shared]` | table |  | Singleton | `clientProfileDocumentAcknowledgementLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `documentAcknowledgement` | 
+| `acknowlegementFormToken` | `string` | 1024 |  | `documentAcknowledgement` | 
+| `description` | `string` | 128 |  | `documentAcknowledgement` | 
+| `status` | `short` |  | Required | `documentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
+| `documentTemplate_recNo` | `long` |  | Required, InsertOnly, FKey | `documentAcknowledgement` | 
+| `documentTemplateName_Lookup` | `string` | 128 | ReadOnly, Lookup | `documentAcknowledgement` | 
+| `acknowledgeByDateTime` | `DateTimeOffset` |  |  | `documentAcknowledgement` | 
+| `clientAcknowledgementDateTime` | `DateTimeOffset` |  |  | `documentAcknowledgement` | 
+| `clientAcknowledgementIP` | `string` | 16 |  | `documentAcknowledgement` | 
+| `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `documentAcknowledgement` | 
 
 | Status code | Description |
 | ----------- | ----------- |

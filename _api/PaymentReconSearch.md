@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentReconSearch"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -25,6 +25,8 @@ Permission Areas: SupplierPayment
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -39,6 +41,7 @@ Permission Areas: SupplierPayment
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `provider` | `EnumSearchParam<PaymentReconProvider>` | `provider` | Onyx = 1, Paymode = 2, Custom = 3
 | `supplierPaymentRecNo` | [`NumSearchParam`](NumSearchParam) | `supplierPayment_recNo` | 
 | `paymentDateFrom` | `DateSearchParam` | `paymentDate` | 

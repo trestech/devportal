@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentRecon"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -29,30 +29,31 @@ Permission Areas: SupplierPayment
 | `serverTrigger` | `short` |  |  | `paymentRecon` | AutoRecon = 1, Finalize = 2
 | `paymentReconDetail ` | table |  |  | `paymentRecon` | 
 | `recNo` | `long` |  | PKey | `paymentReconDetail` | 
-| `paymentRecon_RecNo` | `long` |  | InsertOnly, FKey | `paymentReconDetail` | 
-| `commissionAmount` | `long` |  | Required | `paymentReconDetail` | 
-| `commissionRate` | `short` |  |  | `paymentReconDetail` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
-| `chainCode` | `string` | 2 |  | `paymentReconDetail` | 
-| `arcNo` | `long` |  |  | `paymentReconDetail` | 
-| `cityCode` | `string` | 4 |  | `paymentReconDetail` | 
-| `voidReservation` | `bool` |  | Required | `paymentReconDetail` | 
-| `issueDate` | `Date` |  |  | `paymentReconDetail` | 
-| `traveler` | `string` | 256 |  | `paymentReconDetail` | 
-| `confirmation` | `string` | 64 |  | `paymentReconDetail` | 
-| `totalFare` | `long` |  | Required | `paymentReconDetail` | 
-| `startDate` | `Date` |  |  | `paymentReconDetail` | 
-| `endDate` | `Date` |  |  | `paymentReconDetail` | 
-| `notes` | `string` | 128 |  | `paymentReconDetail` | 
-| `recordLocator` | `string` | 32 |  | `paymentReconDetail` | 
-| `providerName` | `string` | 256 |  | `paymentReconDetail` | 
-| `street1` | `string` | 128 |  | `paymentReconDetail` | 
-| `street2` | `string` | 128 |  | `paymentReconDetail` | 
-| `city` | `string` | 64 |  | `paymentReconDetail` | 
-| `stateProvince` | `string` | 32 |  | `paymentReconDetail` | 
-| `zipPostalCode` | `string` | 16 |  | `paymentReconDetail` | 
-| `country` | `string` | 4 |  | `paymentReconDetail` | 
-| `phone` | `string` | 256 |  | `paymentReconDetail` | 
-| `travelCategory_recNo` | `short` |  | Required | `paymentReconDetail` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `paymentRecon_recNo` | `long` |  | InsertOnly, FKey | `paymentReconDetail` | 
+| `commissionAmount` | `long` |  | Required, InsertOnly | `paymentReconDetail` | 
+| `commissionRate` | `short` |  | InsertOnly | `paymentReconDetail` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
+| `chainCode` | `string` | 2 | InsertOnly | `paymentReconDetail` | 
+| `arcNo` | `long` |  | InsertOnly | `paymentReconDetail` | 
+| `cityCode` | `string` | 4 | InsertOnly | `paymentReconDetail` | 
+| `voidReservation` | `bool` |  | Required, InsertOnly | `paymentReconDetail` | 
+| `issueDate` | `Date` |  | InsertOnly | `paymentReconDetail` | 
+| `traveler` | `string` | 256 | InsertOnly | `paymentReconDetail` | 
+| `confirmation` | `string` | 64 | InsertOnly | `paymentReconDetail` | 
+| `totalFare` | `long` |  | InsertOnly | `paymentReconDetail` | 
+| `startDate` | `Date` |  | InsertOnly | `paymentReconDetail` | 
+| `endDate` | `Date` |  | InsertOnly | `paymentReconDetail` | 
+| `notes` | `string` | 128 | InsertOnly | `paymentReconDetail` | 
+| `recordLocator` | `string` | 32 | InsertOnly | `paymentReconDetail` | 
+| `providerName` | `string` | 256 | InsertOnly | `paymentReconDetail` | 
+| `street1` | `string` | 128 | InsertOnly | `paymentReconDetail` | 
+| `street2` | `string` | 128 | InsertOnly | `paymentReconDetail` | 
+| `city` | `string` | 64 | InsertOnly | `paymentReconDetail` | 
+| `stateProvince` | `string` | 32 | InsertOnly | `paymentReconDetail` | 
+| `zipPostalCode` | `string` | 16 | InsertOnly | `paymentReconDetail` | 
+| `country` | `string` | 4 | InsertOnly | `paymentReconDetail` | 
+| `phone` | `string` | 256 | InsertOnly | `paymentReconDetail` | 
+| `travelCategory_recNo` | `short` |  | Required, InsertOnly | `paymentReconDetail` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `processingFee` | `long` |  | InsertOnly | `paymentReconDetail` | 
 | `status` | `short` |  | Required | `paymentReconDetail` | Unreconciled = 0, Reconciled = 1, MultiMatches = 2, Duplicate = 3
 | `reservation_recNo` | `long` |  |  | `paymentReconDetail` | 
 | `errorMessage` | `string` | 256 |  | `paymentReconDetail` | 

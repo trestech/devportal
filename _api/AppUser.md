@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 
@@ -22,8 +22,8 @@ assembly_version: "1.5.6.5"
 | `uniqueId` | `string` | 64 | InsertOnly | `appUser` | 
 | `userType` | `short` |  | Required | `appUser` | User = 1, Manager = 2, Admin = 3
 | `recNo` | `long` |  | PKey | `appUser` | 
-| `branch_recNo` | `long` |  | FKey | `appUser` | 
-| `branchName` | `string` | 64 | ReadOnly, Lookup | `appUser` | 
+| `branch_recNo` | `long` |  | ReadOnly, FKey, Deprecated | `appUser` | Obsolete. Use AppUser.Branch.RecNo of primary branch instead
+| `branchName` | `string` | 64 | ReadOnly, Deprecated, Lookup | `appUser` | Obsolete. Use AppUser.Branch.Name of primary branch instead
 | `description` | `string` | 64 |  | `appUser` | 
 | `mobilePhone` | `string` | 64 |  | `appUser` | 
 | `emailServerType` | `short` |  |  | `appUser` | Office365 = 1, Gmail = 2, GenericSMTP = 3
@@ -55,7 +55,7 @@ assembly_version: "1.5.6.5"
 | `documentTemplateActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `advisorAdjustmentActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
 | `agencyCardActions` | `int` |  | Required | `appUser` | None = 0, Select = 1, Read = 2, Insert = 4, Update = 8, Delete = 16, AllUsers = 32, AllBranches = 64, Decrypt = 128, Export = 256, Import = 512
-| `otherPermissions` | `int` |  | Required | `appUser` | None = 0, AllowModifyTripAdvisor = 1
+| `otherPermissions` | `int` |  | Required | `appUser` | None = 0, AllowModifyTripAdvisor = 1, AllowViewOtherAdvisors = 2
 | `signatureAttachment_recNo` | `long` |  | Auto-Assign | `appUser` | 
 | `lastLoginDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `appUser` | 
 | `googleId` | `string` | 64 |  | `appUser` | 
@@ -65,6 +65,11 @@ assembly_version: "1.5.6.5"
 | `advisorProfile_recNo` | `long` |  | PKey, Required, FKey | `appUserAdvisor` | 
 | `advisorName` | `string` | 256 | ReadOnly, Lookup | `appUserAdvisor` | 
 | `isPrimary` | `bool` |  | Required | `appUserAdvisor` | 
+| `appUserBranch ` | table |  |  | `appUser` | 
+| `appUser_recNo` | `long` |  | PKey, InsertOnly, FKey | `appUserBranch` | 
+| `branch_recNo` | `long` |  | PKey, Required, FKey | `appUserBranch` | 
+| `branchName` | `string` | 64 | ReadOnly, Lookup | `appUserBranch` | 
+| `isPrimary` | `bool` |  | Required | `appUserBranch` | 
 | `signatureAttachment  [shared]` | table |  | Singleton | `appUser` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `attachment` | 
 | `type` | `short` |  | Required | `attachment` | Link = 1, File = 2
@@ -78,6 +83,23 @@ assembly_version: "1.5.6.5"
 | `visibility` | `short` |  | Required | `attachment` | Public = 1, Private = 2, Internal = 3
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
+| `imageCredit` | `string` | 256 |  | `attachment` | 
+| `appUserHistory ` | table |  |  | `appUser` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
+| `timestamp` | `DateTimeOffset` |  |  | `history` | 
+| `action` | `string` | 64 |  | `history` | 
+| `tableName` | `string` | 64 |  | `history` | 
+| `tableRecNo` | `long` |  |  | `history` | 
+| `tableRecNo2` | `long` |  |  | `history` | 
+| `columnName` | `string` | 64 |  | `history` | 
+| `description` | `string` | 256 |  | `history` | 
+| `oldValue` | `string` | 256 |  | `history` | 
+| `newValue` | `string` | 256 |  | `history` | 
+| `token_recNo` | `long` |  |  | `history` | 
+| `clientIPAddress` | `string` | 16 |  | `history` | 
+| `errorCode` | `int` |  |  | `history` | 
+| `appUser_recNo` | `long` |  |  | `history` | 
+| `appUser_id` | `string` | 64 |  | `history` | 
 
 | Status code | Description |
 | ----------- | ----------- |

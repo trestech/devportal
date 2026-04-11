@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalTripSearch"
 description: "Search client trip itineraries based on filters"
-assembly_version: "1.5.6.5"
+assembly_version: "1.6.13.5"
 ---
 
 Search client trip itineraries based on filters.
@@ -20,10 +20,13 @@ See: [ClientItinTrip](ClientItinTrip.html)
 | `endDateTime` | `DateTime` |  | `trip` | 
 | `imageUrl` | `string` | 256 | `trip` | 
 | `imageData` | `byte[]` |  | `trip` | 
+| `imageCredit` | `string` | 256 | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
 | `recNo [inherited]` | [`NumSearchParam`](NumSearchParam) | `recNo` | 
+| `skipLookup [inherited]` | `bool` |  | 
+| `readOnlyIntent [inherited]` | `bool` |  | 
 | `startingRow [inherited]` | `long` |  | 
 | `rowCount [inherited]` | `long` |  | 
 | `topRows [inherited]` | `long` |  | 
@@ -38,6 +41,7 @@ See: [ClientItinTrip](ClientItinTrip.html)
 | `reportFormat [inherited]` | `bool` |  | 
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
+| `priority [inherited]` | `long` |  | 
 | `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
 | `tripVisibility` | [`short<short>`] |  | None = 0, ClientItin = 1, ClientTripProposal = 2, DestinationImages = 64
 
