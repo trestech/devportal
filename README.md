@@ -32,6 +32,7 @@ Install the dependencies with [Bundler](http://bundler.io/):
 ~~~bash
 $ git clone https://github.com/inertia186/doctres.git
 $ cd doctres
+$ rbenv shell 3.1.6
 $ bundle install
 ~~~
 
