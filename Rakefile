@@ -7,6 +7,15 @@ require 'yaml'
 require 'open-uri'
 #require 'html-proofer'
 
+if File.exist?('.env')
+  File.readlines('.env', chomp: true).each do |line|
+    next if line.strip.empty? || line.lstrip.start_with?('#') || !line.include?('=')
+
+    key, value = line.split('=', 2)
+    ENV[key] ||= value
+  end
+end
+
 desc 'Display all known versions of the Tres API'
 task :versions do
   versions = {
@@ -24,7 +33,7 @@ end
 
 desc 'Import api markdown.'
 task :import, :folder do |t, args|
-  folder = args[:folder] || abort('Folder required.')
+  folder = args[:folder] || ENV['MARKDOWN_PATH'] || abort('Folder required. Provide rake import[/path] or set MARKDOWN_PATH in .env.')
   dir = Dir.entries(folder)
   
   csproj = if folder.end_with?("Generated/")
@@ -110,6 +119,24 @@ task :import, :folder do |t, args|
       
       puts "Wrote to: #{new_page_path} - title: #{title}; description: #{description}"
     end
+  end
+end
+
+namespace :import do
+  desc 'Import generated api markdown from MARKDOWN_PATH/Generated.'
+  task :generated do
+    base = ENV['MARKDOWN_PATH'] || abort('MARKDOWN_PATH required in .env or environment for import:generated.')
+    generated = File.join(base, 'Generated/')
+    Rake::Task[:import].reenable
+    Rake::Task[:import].invoke(generated)
+  end
+
+  desc 'Import generated markdown, then manual markdown from MARKDOWN_PATH.'
+  task :all do
+    Rake::Task['import:generated'].reenable
+    Rake::Task['import:generated'].invoke
+    Rake::Task[:import].reenable
+    Rake::Task[:import].invoke(ENV['MARKDOWN_PATH'])
   end
 end
 

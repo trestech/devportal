@@ -53,6 +53,35 @@ You can now test locally at
 http://localhost:4000
 ~~~
 
+#### Refreshing imported API markdown
+
+The API markdown in `_api/` is imported from the AppServer documentation folders.
+
+Create a `.env` file with the base manual-markdown path:
+
+~~~bash
+MARKDOWN_PATH=/Users/anthony/Projects/tres/tres-app-server/AppServer/HttpServer/Documentation/Markdown/
+~~~
+
+Then use one of these happy-path commands:
+
+~~~bash
+# import manual markdown from MARKDOWN_PATH
+$ bundle exec rake import
+
+# import generated markdown from MARKDOWN_PATH/Generated/
+$ bundle exec rake import:generated
+
+# import generated markdown first, then manual markdown
+$ bundle exec rake import:all
+~~~
+
+You can still override the path explicitly when needed:
+
+~~~bash
+$ bundle exec rake import[/full/path/to/Documentation/Markdown/]
+~~~
+
 Optionally, when running `jekyll` commands through Bundler, append `--host x.x.x.x` with the external IP address of the server to be able to connect remotely:
 ~~~bash
 $ bundle exec jekyll serve --host x.x.x.x
