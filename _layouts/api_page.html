@@ -19,8 +19,8 @@ layout: default
   </p>
   
   <p>
-    <!-- Note: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/deep-linking.md -->
-    See: <a href="https://api.trestechnologies.com/swagger/index.html#/{{ page.title }}">Swagger</a>
+    <!-- Swagger UI tag deep-link format is #/<tag> when deepLinking is enabled. -->
+    See: <a href="https://api.trestechnologies.com/swagger/index.html#/{{ page.title | uri_escape }}">Swagger</a>
   </p>
 
   <div class="nav-back"><a href="{{ 'api' | relative_url }}">Back</a></div>

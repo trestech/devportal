@@ -32,8 +32,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
-minima:
-  skin: tres
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
 
 collections:
   api:
@@ -43,6 +45,7 @@ collections:
     output: true
 
 exclude:
+  - .malp/
   - .jekyll-cache/
   - Rakefile
   - Gemfile
