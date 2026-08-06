@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -34,8 +34,8 @@ Permission Areas: Trip
 | `advisorProfileRecNo` | `long` |  | `trip` | 
 | `advisorProfileName` | `string` | 256 | `trip` | 
 | `advisorProfileId` | `string` | 32 | `trip` | 
-| `remarks` | `string` | 256 | `trip` | 
-| `advisorRemarks` | `string` | 256 | `trip` | 
+| `remarks` | `string` | 256 | `trip` | TripSearch.Remarks column deprecated
+| `advisorRemarks` | `string` | 256 | `trip` | TripSearch.AdvisorRemarks column deprecated
 | `cancelled` | `bool` |  | `trip` | 
 | `destinations` | `string` |  | `trip` | 
 | `destinationRecNo` | `long` |  | `trip` | 
@@ -78,17 +78,19 @@ Permission Areas: Trip
 | `reservationStartDateTime` | `DateTime` |  | `reservation` | 
 | `reservationEndDateTime` | `DateTime` |  | `reservation` | 
 | `reservationConfirmationNo` | `string` | 64 | `reservation` | 
+| `reservationGroupBookingNumber` | `string` | 16 | `CruiseR` | 
 | `reservationRecordLocator` | `string` | 32 | `reservation` | 
 | `reservationDepositRecNo` | `long` |  | `reservationDeposit` | 
 | `reservationDepositDueDate` | `Date` |  | `reservationDeposit` | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
 | `reservationDepositDueAmount` | `long` |  | `reservationDeposit` | Since reservations can now have multiple deposits, column will reflect earliest deposit that meets specified criteria
-| `reservationDepositCompleted` | `DateTime` |  | `reservationDeposit` | 
+| `reservationDepositCompleted` | `DateTimeOffset` |  | `reservationDeposit` | 
 | `reservationFinalPayDueDate` | `Date` |  | `reservation` | 
 | `reservationARCBSPNumber` | `int` |  | `reservation` | 
 | `reservationProviderProfileRecNo` | `long` |  | `reservation` | 
 | `reservationProviderProfileName` | `string` | 256 | `reservation` | 
 | `reservationProviderProfileInfoName` | `string` | 256 | `reservation` | 
 | `reservationTicketNo` | `long` |  | `reservation` | 
+| `reservationEndingTicketNo` | `long` |  | `airReservation` | 
 | `reservationConfirmationNumber` | `string` | 64 | `reservation` | TripSearch.ReservationConfirmationNumber column deprecated; use TripSearch.ReservationConfirmationNo instead
 | `reservationConfirmationTicketNo` | `string` | 64 | `reservation` | 
 | `reservationConfirmedDateTime` | `DateTime` |  | `reservation` | 
@@ -119,7 +121,7 @@ Permission Areas: Trip
 | `tripActionItemDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemTriggerFixedDate` | `Date` |  | `tripActionItem` | 
 | `tripActionItemDescription` | `string` |  | `tripActionItem` | 
-| `tripActionItemCompleted` | `DateTime` |  | `tripActionItem` | 
+| `tripActionItemCompleted` | `DateTimeOffset` |  | `tripActionItem` | 
 | `tripActionItemAssignedToAppUserRecNo` | `long` |  | `tripActionItem` | 
 | `tripActionItemAssignedToAppUserId` | `string` | 64 | `tripActionItem` | 
 | `reservationAdvisorRecNo` | `long` |  | `reservationAdvisor` | 
@@ -147,6 +149,80 @@ Permission Areas: Trip
 | `tripDocumentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `tripDocumentAcknowledgement` | 
 | `tripDocumentAcknowledgementAcknowledgeByDateTime` | `DateTimeOffset` |  | `tripDocumentAcknowledgement` | 
 | `tripDocumentAcknowledgementDocumentTemplateRecNo` | `long` |  | `tripDocumentAcknowledgement` | 
+| `tripWarningMessages` | `string` |  | `trip` | 
+| `reservationWarningMessages` | `string` |  | `reservation` | 
+| `reservationFareSavings` | `long` |  | `reservation` | 
+| `reservationFareLoss` | `long` |  | `reservation` | 
+| `reservationAirItinerary` | `string` | 128 | `airReservation` | 
+| `ClientProfile_recNo` | `long` |  | `trip` | 
+| `ClientProfile_tagRecNo` | `long` |  | `trip` | 
+| `ClientProfile_tagName` | `string` | 64 | `trip` | 
+| `ClientProfile_tagValue` | `string` | 1024 | `trip` | 
+| `ClientProfile_tags` | `string` |  | `trip` | 
+| `ClientProfile_createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientProfile_lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientProfile_name` | `string` | 256 | `trip` | 
+| `ClientProfile_uniqueId` | `string` | 64 | `trip` | 
+| `ClientProfile_profileType` | `short` |  | `trip` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
+| `ClientProfile_clientType` | `short` |  | `clientProfile` | Personal = 1, Corporate = 2
+| `ClientProfile_supplierType` | `short` |  | `supplierProfile` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
+| `ClientProfile_primaryPersonRecNo` | `long` |  | `trip` | 
+| `ClientProfile_primaryPersonName` | `string` | 256 | `trip` | 
+| `ClientProfile_primaryPersonFirstName` | `string` | 64 | `trip` | 
+| `ClientProfile_primaryPersonLastName` | `string` | 64 | `trip` | 
+| `ClientProfile_primaryPersonEmail` | `string` | 256 | `trip` | 
+| `ClientProfile_primaryPersonPhone` | `string` | 256 | `trip` | 
+| `ClientProfile_clientAnniversaryDay` | `short` |  | `clientProfile` | 
+| `ClientProfile_clientAnniversaryMonth` | `short` |  | `clientProfile` | 
+| `ClientProfile_clientAnniversaryYear` | `short` |  | `clientProfile` | 
+| `ClientProfile_clientAnniversaryNote` | `string` | 256 | `clientProfile` | 
+| `ClientProfile_clientAdvisorProfileRecNo` | `long` |  | `clientProfile` | 
+| `ClientProfile_clientAdvisorName` | `string` | 256 | `clientProfile` | 
+| `ClientProfile_clientBranchRecNo` | `long` |  | `clientProfile` | 
+| `ClientProfile_clientBranchName` | `string` | 64 | `clientProfile` | 
+| `ClientProfile_remarks` | `string` | 256 | `trip` | 
+| `ClientProfile_activeStatus` | `short` |  | `trip` | Inactive = 0, Active = 1, Pending = 2
+| `ClientProfile_primaryEmail` | `string` | 256 | `trip` | 
+| `ClientProfile_primaryEmailPermitMarketing` | `bool` |  | `trip` | 
+| `ClientProfile_primaryPhone` | `string` | 256 | `trip` | 
+| `ClientProfile_primaryPhonePermitMarketing` | `bool` |  | `trip` | 
+| `ClientProfile_preferredSupplier` | `bool` |  | `supplierProfile` | 
+| `ClientProfile_supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
+| `ClientProfile_street1` | `string` | 128 | `address` | 
+| `ClientProfile_street2` | `string` | 128 | `address` | 
+| `ClientProfile_city` | `string` | 64 | `address` | 
+| `ClientProfile_stateProvince` | `string` | 32 | `address` | 
+| `ClientProfile_zipPostalCode` | `string` | 16 | `address` | 
+| `ClientProfile_country` | `string` | 4 | `address` | 
+| `ClientProfile_mailingStreet1` | `string` | 128 | `address` | 
+| `ClientProfile_mailingStreet2` | `string` | 128 | `address` | 
+| `ClientProfile_mailingCity` | `string` | 64 | `address` | 
+| `ClientProfile_mailingStateProvince` | `string` | 32 | `address` | 
+| `ClientProfile_mailingZipPostalCode` | `string` | 16 | `address` | 
+| `ClientProfile_mailingCountry` | `string` | 4 | `address` | 
+| `ClientProfile_addressPermitMarketing` | `bool` |  | `address` | 
+| `ClientProfile_supplierVendorId` | `string` | 10 | `supplierProfile` | 
+| `ClientProfile_supplierCommissionRate` | `short` |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
+| `ClientProfile_clientInformalSalutation` | `string` | 128 | `clientProfile` | 
+| `ClientProfile_clientFormalSalutation` | `string` | 128 | `clientProfile` | 
+| `ClientProfile_firstId` | `string` | 32 | `trip` | 
+| `ClientProfile_profileCommType` | `short` |  | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| `ClientProfile_profileCommValue` | `string` | 256 | `communication` | 
+| `ClientProfile_profileCommIsBillingContact` | `bool` |  | `communication` | ProfileSearch.profileCommIsBillingContact is deprecated, use profileCommContactOption instead.
+| `ClientProfile_profileCommContactOption` | `short` |  | `communication` | Billing = 1, CustomerService = 2
+| `ClientProfile_actionRecNo` | `long` |  | `trip` | 
+| `ClientProfile_actionItemTriggerIndex` | `short` |  | `trip` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
+| `ClientProfile_actionItemDate` | `Date` |  | `trip` | 
+| `ClientProfile_actionItemTriggerFixedDate` | `Date` |  | `trip` | 
+| `ClientProfile_actionItemDescription` | `string` |  | `trip` | 
+| `ClientProfile_actionItemCompleted` | `DateTimeOffset` |  | `trip` | 
+| `ClientProfile_actionItemAssignedToAppUserRecNo` | `long` |  | `trip` | 
+| `ClientProfile_actionItemAssignedToAppUserId` | `string` | 64 | `trip` | 
+| `ClientProfile_imageCount` | `short` |  | `trip` | 
+| `ClientProfile_supplierAirlineNo` | `short` |  | `supplierProfile` | 
+| `ClientProfile_documentAcknowledgementRecNo` | `long` |  | `trip` | 
+| `ClientProfile_documentAcknowledgementStatus` | `short` |  | `trip` | Pending = 1, Acknowledged = 2, Expired = 3
+| `ClientProfile_documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -200,10 +276,12 @@ Permission Areas: Trip
 | `reservationFinalPayDueDateFrom` | `DateSearchParam` | `reservationFinalPayDueDate` | 
 | `reservationFinalPayDueDateTo` | `DateSearchParam` | `reservationFinalPayDueDate` | 
 | `reservationTravelCategory` | `EnumSearchParam<TravelCategory>` | `reservationTravelCategoryRecNo` | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
+| `subReservationTravelCategory` | `EnumSearchParam<TravelCategory>` |  | Air = 1, Hotel = 2, Car = 3, Cruise = 4, Tour = 5, Rail = 6, Transfer = 7, Insurance = 8, ServiceFee = 9, Excursion = 10, ClientVoucher = 11, GiftCertificate = 12, SupplierVoucher = 13, Misc = 99
 | `reservationTravelSubCategoryRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationTravelSubCategoryRecNo` | 
 | `reservationSupplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierProfileRecNo` | 
 | `reservationTrackClientPayments` | `bool` | `reservationTrackClientPayments` | 
 | `reservationStatus` | `EnumSearchParam<Status>` | `reservationStatus` | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
+| `subReservationStatus` | `EnumSearchParam<Status>` |  | Pending = 1, Confirmed = 2, Cancelled = 3, Voided = 4
 | `reservationClientBalance` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
 | `reservationClientBalanceMin` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
 | `reservationClientBalanceMax` | [`NumSearchParam`](NumSearchParam) | `reservationClientBalance` | 
@@ -217,6 +295,7 @@ Permission Areas: Trip
 | `reservationTravelerName` | [`StringSearchParam`](StringSearchParam) | `reservationTravelerName` | 
 | `reservationTicketNumber` | [`NumSearchParam`](NumSearchParam) | `reservationTicketNo` | 
 | `reservationConfirmationNumber` | [`StringSearchParam`](StringSearchParam) | `reservationConfirmationNo` | 
+| `reservationGroupBookingNumber` | [`StringSearchParam`](StringSearchParam) | `reservationGroupBookingNumber` | 
 | `reservationConfirmedDateTimeFrom` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationConfirmedDateTimeTo` | `DateSearchParam` | `reservationConfirmedDateTime` | 
 | `reservationRecordLocator` | [`StringSearchParam`](StringSearchParam) | `reservationRecordLocator` | 
@@ -257,6 +336,8 @@ Permission Areas: Trip
 | `tripDocumentAcknowledgementAcknowledgeByDateTimeFrom` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementAcknowledgeByDateTime` | 
 | `tripDocumentAcknowledgementAcknowledgeByDateTimeTo` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementAcknowledgeByDateTime` | 
 | `tripDocumentAcknowledgementDocumentTemplateRecNo` | [`NumSearchParam`](NumSearchParam) | `tripDocumentAcknowledgementDocumentTemplateRecNo` | 
+| `tripWarningMessages` | [`StringSearchParam`](StringSearchParam) | `tripWarningMessages` | 
+| `reservationWarningMessages` | [`StringSearchParam`](StringSearchParam) | `reservationWarningMessages` | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `includeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 
 | `excludeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 

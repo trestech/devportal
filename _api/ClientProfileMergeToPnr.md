@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfileMergeToPnr"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -24,6 +24,10 @@ assembly_version: "1.6.13.5"
 | `email ` | table |  |  | `clientProfileMergeToPnr` | 
 | `clientRecNo` | `long` |  | InsertOnly, FKey | `email` | 
 | `emailAddress` | `string` | 1024 |  | `email` | 
+| `pnrEntry ` | table |  |  | `clientProfileMergeToPnr` | 
+| `clientRecNo` | `long` |  | InsertOnly, FKey | `pnrEntry` | 
+| `value` | `string` | 128 |  | `pnrEntry` | 
+| `alwaysMove` | `bool` |  |  | `pnrEntry` | 
 | `traveler ` | table |  |  | `clientProfileMergeToPnr` | 
 | `recNo` | `long` |  | PKey | `traveler` | 
 | `clientRecNo` | `long` |  | InsertOnly, FKey | `traveler` | 
@@ -50,6 +54,10 @@ assembly_version: "1.6.13.5"
 | `passport ` | table |  |  | `traveler` | 
 | `travelerRecNo` | `long` |  | InsertOnly, FKey | `passport` | 
 | `passportNumber` | `string` | 1024 |  | `passport` | 
+| `travelerPnrEntry ` | table |  |  | `traveler` | 
+| `travelerRecNo` | `long` |  | InsertOnly, FKey | `travelerPnrEntry` | 
+| `value` | `string` | 128 |  | `travelerPnrEntry` | 
+| `alwaysMove` | `bool` |  |  | `travelerPnrEntry` | 
 
 | Status code | Description |
 | ----------- | ----------- |

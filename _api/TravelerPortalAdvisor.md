@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalAdvisor"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -19,6 +19,7 @@ assembly_version: "1.6.13.5"
 | `brandingName` | `string` | 64 |  | `travelerPortalAdvisor` | 
 | `photoDirectUrl` | `string` | 256 |  | `travelerPortalAdvisor` | 
 | `photoData` | `byte[]` |  |  | `travelerPortalAdvisor` | 
+| `addressPrintOption` | `short` |  |  | `travelerPortalAdvisor` | UseAdvisorAddress = 1, UseBranchAddress = 2, UseAgencyAddress = 3, NoAddress = 4
 | `address  [shared]` | table |  | Singleton | `travelerPortalAdvisor` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `address` | 
 | `street1` | `string` | 128 |  | `address` | 

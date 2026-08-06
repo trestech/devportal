@@ -2,7 +2,7 @@
 layout: api_page
 title: "Agency"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -23,8 +23,8 @@ assembly_version: "1.6.13.5"
 | `country` | `string` | 4 |  | `agency` | 
 | `headerInfo` | `string` | 512 |  | `agency` | 
 | `logoData` | `byte[]` |  | ReadOnly, Deprecated | `agency` | Obsolete. Use LogoAttachment instead.
-| `itineraryRemarks` | `string` |  |  | `agency` | 
-| `supplierStatementRemarks` | `string` |  |  | `agency` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `agency` | Obsolete. Use AgencyRemarks instead.
+| `supplierStatementRemarks` | `string` |  | Deprecated | `agency` | Obsolete. Use AgencyRemarks instead.
 | `merchantId` | `string` | 64 | Deprecated | `agency` | Obsolete.
 | `merchantUserName` | `string` | 64 | Deprecated | `agency` | Obsolete. Use AppFeature(3).Data instead.
 | `merchantPassword` | `string` | 256 | Deprecated | `agency` | Obsolete. Use AppFeature(3).Token instead.
@@ -84,6 +84,11 @@ assembly_version: "1.6.13.5"
 | `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `fieldRequirements` | 
 | `area` | `short` |  | PKey | `fieldRequirements` | ClientProfile = 7, Person = 12, Trip = 16, Reservation = 17
 | `fieldNo` | `short` |  | PKey | `fieldRequirements` | 
+| `agencyRemarks ` | table |  |  | `agency` | 
+| `agency_recNo` | `int` |  | PKey, InsertOnly, FKey | `agencyRemarks` | 
+| `remarks` | `string` |  | Required | `agencyRemarks` | 
+| `viewOptions` | `int` |  | Required | `agencyRemarks` | None = 0, TripStatementFooter = 1, SupplierStatementFooter = 2, TripProposalHeader = 4, TripProposalSummary = 8, TripProposalFooter = 16, ClientItinHeader = 32
+| `recNo` | `long` |  | PKey | `agencyRemarks` | 
 
 | Status code | Description |
 | ----------- | ----------- |

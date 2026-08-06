@@ -2,21 +2,36 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
 
 | Column | Type | Size | Flags | Table | Description |
 | ------ | ---- | ---- | ----- | ----- | ----------- |
-| `recNo` | `long` |  |  | `clientItinTrip` | 
-| `tripName` | `string` | 256 |  | `clientItinTrip` | 
-| `advisorProfile_recNo` | `long` |  | FKey | `clientItinTrip` | 
-| `tripStartDateTime` | `DateTime` |  |  | `clientItinTrip` | 
-| `tripEndDateTime` | `DateTime` |  |  | `clientItinTrip` | 
-| `tripClientName` | `string` | 256 |  | `clientItinTrip` | 
-| `remarks` | `string` |  |  | `clientItinTrip` | 
-| `branch_recNo` | `long` |  | FKey | `clientItinTrip` | 
+| `recNo` | `long` |  |  | `travelerPortalBase` | 
+| `tripName` | `string` | 256 |  | `travelerPortalBase` | 
+| `advisorProfile_recNo` | `long` |  | FKey | `travelerPortalBase` | 
+| `tripStartDateTime` | `DateTime` |  |  | `travelerPortalBase` | 
+| `tripEndDateTime` | `DateTime` |  |  | `travelerPortalBase` | 
+| `tripClientName` | `string` | 256 |  | `travelerPortalBase` | 
+| `remarks` | `string` |  | Deprecated | `travelerPortalBase` | Remarks is being deprecated; use the TripRemarks table instead
+| `branch_recNo` | `long` |  | FKey | `travelerPortalBase` | 
+| `tripAttachment ` | table |  |  | `travelerPortalBase` | 
+| `recNo` | `long` |  | PKey | `tripAttachment` | 
+| `tripRecNo` | `long` |  | InsertOnly, FKey | `tripAttachment` | 
+| `type` | `short` |  |  | `tripAttachment` | Link = 1, File = 2
+| `subType` | `short` |  |  | `tripAttachment` | Document = 1, Image = 2, Other = 3
+| `description` | `string` | 256 |  | `tripAttachment` | 
+| `fileNameLinkURL` | `string` | 256 |  | `tripAttachment` | 
+| `directUrl` | `string` | 256 |  | `tripAttachment` | 
+| `fileData` | `byte[]` |  |  | `tripAttachment` | 
+| `imageCredit` | `string` | 256 |  | `tripAttachment` | 
+| `tripRemarks  [shared]` | table |  |  | `travelerPortalBase` | 
+| `recNo` | `long` |  | PKey | `tripRemarks` | 
+| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripRemarks` | 
+| `remarks` | `string` |  | Required | `tripRemarks` | 
+| `viewOptions` | `int` |  | Required | `tripRemarks` | None = 0, TripStatementFooter = 1, SupplierStatementFooter = 2, TripProposalHeader = 4, TripProposalSummary = 8, TripProposalFooter = 16, ClientItinHeader = 32
 | `tripTraveler ` | table |  |  | `clientItinTrip` | 
 | `tripRecNo` | `long` |  | PKey, InsertOnly, FKey | `tripTraveler` | 
 | `travelerName` | `string` | 512 |  | `tripTraveler` | 
@@ -145,16 +160,6 @@ assembly_version: "1.6.13.5"
 | `directUrl` | `string` | 256 |  | `eventAttachment` | 
 | `fileData` | `byte[]` |  |  | `eventAttachment` | 
 | `imageCredit` | `string` | 256 |  | `eventAttachment` | 
-| `tripAttachment ` | table |  |  | `clientItinTrip` | 
-| `recNo` | `long` |  | PKey | `tripAttachment` | 
-| `tripRecNo` | `long` |  | InsertOnly, FKey | `tripAttachment` | 
-| `type` | `short` |  |  | `tripAttachment` | Link = 1, File = 2
-| `subType` | `short` |  |  | `tripAttachment` | Document = 1, Image = 2, Other = 3
-| `description` | `string` | 256 |  | `tripAttachment` | 
-| `fileNameLinkURL` | `string` | 256 |  | `tripAttachment` | 
-| `directUrl` | `string` | 256 |  | `tripAttachment` | 
-| `fileData` | `byte[]` |  |  | `tripAttachment` | 
-| `imageCredit` | `string` | 256 |  | `tripAttachment` | 
 
 | Status code | Description |
 | ----------- | ----------- |

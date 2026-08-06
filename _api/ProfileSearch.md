@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -77,7 +77,7 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `actionItemDate` | `Date` |  | `clientProfileActionItem` | 
 | `actionItemTriggerFixedDate` | `Date` |  | `clientProfileActionItem` | 
 | `actionItemDescription` | `string` |  | `clientProfileActionItem` | 
-| `actionItemCompleted` | `DateTime` |  | `clientProfileActionItem` | 
+| `actionItemCompleted` | `DateTimeOffset` |  | `clientProfileActionItem` | 
 | `actionItemAssignedToAppUserRecNo` | `long` |  | `clientProfileActionItem` | 
 | `actionItemAssignedToAppUserId` | `string` | 64 | `clientProfileActionItem` | 
 | `imageCount` | `short` |  | `profile` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 Search journal entries based on filters.
@@ -24,7 +24,8 @@ Permission Areas: JournalEntry
 | `supplierPaymentRecNo` | `long` |  | `journalEntry` | 
 | `otherPaymentRecNo` | `long` |  | `journalEntry` | 
 | `bankTransactionRecNo` | `long` |  | `journalEntry` | 
-| `reervationRecNo` | `long` |  | `journalEntry` | 
+| `reervationRecNo` | `long` |  | `journalEntry` | Deprecated. Use reservationRecNo instead.
+| `reservationRecNo` | `long` |  | `journalEntry` | 
 | `tripRecNo` | `long` |  | `journalEntry` | 
 | `profileRecNo` | `long` |  | `journalEntry` | 
 | `profileName` | `string` | 256 | `journalEntry` | 

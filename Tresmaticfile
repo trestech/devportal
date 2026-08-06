@@ -1,0 +1,15 @@
+version: 0
+kind: tresmatic-contract
+name: devportal
+status: sibling-consumer
+
+producers:
+  tres-app-server-markdown:
+    pinned-provider-path: tres-app-server/AppServer/HttpServer
+    match:
+      - pattern: ./TresTechnologies.App.Server.Http.csproj
+        destination: .tresmatic/staging/tres-app-server/AppServer/HttpServer
+      - pattern: ./Documentation/Markdown/*.md
+        destination: .tresmatic/staging/tres-app-server/AppServer/HttpServer/Documentation/Markdown
+      - pattern: ./Documentation/Markdown/Generated/*.md
+        destination: .tresmatic/staging/tres-app-server/AppServer/HttpServer/Documentation/Markdown/Generated

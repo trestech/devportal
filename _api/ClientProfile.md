@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -169,6 +169,15 @@ Permission Areas: ClientProfile
 | `clientAcknowledgementDateTime` | `DateTimeOffset` |  |  | `documentAcknowledgement` | 
 | `clientAcknowledgementIP` | `string` | 16 |  | `documentAcknowledgement` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `documentAcknowledgement` | 
+| `clientProfilePnrEntryLink ` | table |  |  | `clientProfile` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfilePnrEntryLink` | 
+| `pnrEntry_recNo` | `long` |  | PKey, Auto-Assign | `clientProfilePnrEntryLink` | 
+| `pnrEntry  [shared]` | table |  | Singleton | `clientProfilePnrEntryLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `pnrEntry` | 
+| `gdsType` | `int` |  | Required | `pnrEntry` | Amadeus = 1, Galileo = 2, Sabre = 3
+| `description` | `string` | 64 |  | `pnrEntry` | 
+| `alwaysMove` | `bool` |  |  | `pnrEntry` | 
+| `value` | `string` | 128 | Required | `pnrEntry` | 
 
 | Status code | Description |
 | ----------- | ----------- |

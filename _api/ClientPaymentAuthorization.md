@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPaymentAuthorization"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -24,6 +24,7 @@ assembly_version: "1.6.13.5"
 | `advisorProfile_recNo` | `long` |  | ReadOnly, FKey | `clientPaymentAuthorization` | 
 | `branch_recNo` | `long` |  | ReadOnly, FKey | `clientPaymentAuthorization` | 
 | `tripName` | `string` | 256 | ReadOnly | `clientPaymentAuthorization` | 
+| `captureCvv` | `bool` |  | ReadOnly | `clientPaymentAuthorization` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -42,7 +42,7 @@ In case of installation problems, make sure you have a ruby development environm
 sudo apt-get install ruby-dev
 ```
 
-Run `rake` commands through Bundler to ensure you're using the right versions:
+Run `rake` commands through Bundler to ensure you're using the right versions (the bundle now explicitly includes `rake`):
 
 ~~~bash
 $ bundle exec rake run 
@@ -57,6 +57,8 @@ http://localhost:4000
 
 The API markdown in `_api/` is imported from the AppServer documentation folders.
 
+This repo now also carries a small `Makefile` + `Tresmaticfile` companion so local maintainer refreshes follow the same `.tresmatic/target.py` pattern used by `tresmatic` siblings, while the existing `Rakefile` remains the implementation surface.
+
 Create a `.env` file with the base manual-markdown path:
 
 ~~~bash
@@ -66,13 +68,29 @@ MARKDOWN_PATH=/Users/anthony/Projects/tres/tres-app-server/AppServer/HttpServer/
 Then use one of these happy-path commands:
 
 ~~~bash
+# preferred maintainer import entrypoint: consume local staged markdown
+$ make tresmatic
+
+# refresh local .tresmatic staging directly when needed
+$ make tresmatic-stage
+
 # import manual markdown from MARKDOWN_PATH
-$ bundle exec rake import
+$ make import
 
 # import generated markdown from MARKDOWN_PATH/Generated/
-$ bundle exec rake import:generated
+$ make import-generated
 
 # import generated markdown first, then manual markdown
+$ make import-all
+~~~
+
+The current `make tresmatic` path is the durable local maintainer entrypoint for this repo: it reads only the local staged artifact under `.tresmatic/staging/tres-app-server/AppServer/HttpServer/Documentation/Markdown/` and runs the existing Ruby import workflow against that local path. Upstream preparation belongs to the `tresmatic` ecosystem: root `make tresmatic` in `../tresmatic` can materialize `devportal/.tresmatic/` by running this repo's local target tooling, and `make tresmatic-stage` remains available here when you want to refresh the staged artifact directly. The control surface is now `Makefile`/`Tresmaticfile`/`.tresmatic/target.py`; the durable import implementation still lives in Ruby. The `.tresmatic/` workdir is local/generated and stays out of git.
+
+The underlying Rake commands still work directly if you need them:
+
+~~~bash
+$ bundle exec rake import
+$ bundle exec rake import:generated
 $ bundle exec rake import:all
 ~~~
 

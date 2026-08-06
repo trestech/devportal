@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: "Search trip imports based on filters"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 Search trip imports based on filters.
@@ -55,6 +55,7 @@ Permission Areas: TripImport
 | `type` | `EnumSearchParam<ImportType>` | `type` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4, ConfirmationDocument = 5
 | `status` | `EnumSearchParam<Status>` | `status` | Pending = 1, Imported = 2, Error = 3, Warning = 4
 | `tripRecNo` | [`NumSearchParam`](NumSearchParam) | `trip_RecNo` | 
+| `recordLocator` | [`StringSearchParam`](StringSearchParam) | `recordLocator` | 
 
 | Status code | Description |
 | ----------- | ----------- |

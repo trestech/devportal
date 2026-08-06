@@ -2,7 +2,7 @@
 layout: api_page
 title: "SupplierProfile"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -22,6 +22,7 @@ Permission Areas: SupplierProfile
 | `termsAndConditionsUrl` | `string` | 256 |  | `supplierProfile` | 
 | `commissionRate` | `short` |  |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
 | `travelCategoryFlags` | `int` |  |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
+| `detectDuplicate` | `bool` |  |  | `supplierProfile` | 
 | `profile  [shared]` | table |  | Singleton | `supplierProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 

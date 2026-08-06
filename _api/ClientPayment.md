@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientPayment"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -22,6 +22,7 @@ Permission Areas: ClientPayment
 | `voucherRemarks` | `string` |  |  | `clientPayment` | 
 | `voucherAmount` | `long` |  |  | `clientPayment` | 
 | `noReservationRefresh` | `bool` |  |  | `clientPayment` | 
+| `cardNumberToken` | `string` | 64 |  | `clientPayment` | 
 | `transactionId` | `string` | 32 | ReadOnly, Lookup | `clientPayment` | 
 | `authorizationCode` | `string` | 16 | ReadOnly, Lookup | `clientPayment` | 
 | `originalTransactionId` | `string` | 32 |  | `clientPayment` | 
@@ -36,7 +37,7 @@ Permission Areas: ClientPayment
 | `checkNumber` | `long` |  |  | `payment` | 
 | `bank_recNo` | `long` |  | FKey | `payment` | 
 | `remarks` | `string` |  |  | `payment` | 
-| `cardNumberToken` | `string` | 64 |  | `payment` | 
+| `cardNumberToken` | `string` | 64 | Deprecated | `payment` | Obsolete. Use clientPayment cardNumberToken instead.
 | `voided` | `bool` |  |  | `payment` | 
 | `dateCleared` | `Date` |  |  | `payment` | 
 | `noBankBalanceRefresh` | `bool` |  |  | `payment` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -54,7 +54,7 @@ Permission Areas: Person
 | `actionItemDate` | `Date` |  | `personActionItem` | 
 | `actionItemTriggerFixedDate` | `Date` |  | `personActionItem` | 
 | `actionItemDescription` | `string` |  | `personActionItem` | 
-| `actionItemCompleted` | `DateTime` |  | `personActionItem` | 
+| `actionItemCompleted` | `DateTimeOffset` |  | `personActionItem` | 
 | `actionItemAssignedToAppUserRecNo` | `long` |  | `personActionItem` | 
 | `actionItemAssignedToAppUserId` | `string` | 64 | `personActionItem` | 
 | `associatedProfileNames` | `string` |  | `person` | 

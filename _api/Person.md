@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -134,6 +134,15 @@ Permission Areas: Person
 | `country` | `string` | 4 |  | `address` | 
 | `countryName` | `string` | 64 |  | `address` | 
 | `permitMarketing` | `bool` |  |  | `address` | 
+| `personPnrEntryLink ` | table |  |  | `person` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personPnrEntryLink` | 
+| `pnrEntry_recNo` | `long` |  | PKey, Auto-Assign | `personPnrEntryLink` | 
+| `pnrEntry  [shared]` | table |  | Singleton | `personPnrEntryLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `pnrEntry` | 
+| `gdsType` | `int` |  | Required | `pnrEntry` | Amadeus = 1, Galileo = 2, Sabre = 3
+| `description` | `string` | 64 |  | `pnrEntry` | 
+| `alwaysMove` | `bool` |  |  | `pnrEntry` | 
+| `value` | `string` | 128 | Required | `pnrEntry` | 
 
 | Status code | Description |
 | ----------- | ----------- |
@@ -372,7 +381,8 @@ Status: 200 Ok
           "permitMarketing": false
         }
       }
-    ]
+    ],
+    "personPnrEntryLink": []
   }
 ]
 ```

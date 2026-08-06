@@ -36,11 +36,13 @@ task :import, :folder do |t, args|
   folder = args[:folder] || ENV['MARKDOWN_PATH'] || abort('Folder required. Provide rake import[/path] or set MARKDOWN_PATH in .env.')
   dir = Dir.entries(folder)
   
-  csproj = if folder.end_with?("Generated/")
-    File.new("#{folder}../../../TresTechnologies.App.Server.Http.csproj", 'r').read
+  csproj_path = if folder.end_with?("Generated/")
+    "#{folder}../../../TresTechnologies.App.Server.Http.csproj"
   else
-    File.new("#{folder}../../TresTechnologies.App.Server.Http.csproj", 'r').read
+    "#{folder}../../TresTechnologies.App.Server.Http.csproj"
   end
+
+  csproj = File.read(csproj_path, encoding: 'bom|utf-8')
   
   assembly_version = csproj.scan(/<AssemblyVersion>(.*)<\/AssemblyVersion>/).flatten[0]
   
@@ -51,12 +53,7 @@ task :import, :folder do |t, args|
     File.open(folder + "/" + f) do |file|
       data = file.read
       title = data.split("# ")[1].split("\n").first
-      body = data.split("# #{title}")[1]
-
-      if body.nil?
-        puts "Skipping #{f} (empty body)"
-        next
-      end
+      body = data.split("# #{title}", 2)[1] || ""
 
       skip = false
       

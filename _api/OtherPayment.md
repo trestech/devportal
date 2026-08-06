@@ -2,7 +2,7 @@
 layout: api_page
 title: "OtherPayment"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -25,7 +25,7 @@ Permission Areas: OtherPayment
 | `checkNumber` | `long` |  |  | `payment` | 
 | `bank_recNo` | `long` |  | FKey | `payment` | 
 | `remarks` | `string` |  |  | `payment` | 
-| `cardNumberToken` | `string` | 64 |  | `payment` | 
+| `cardNumberToken` | `string` | 64 | Deprecated | `payment` | Obsolete. Use clientPayment cardNumberToken instead.
 | `voided` | `bool` |  |  | `payment` | 
 | `dateCleared` | `Date` |  |  | `payment` | 
 | `noBankBalanceRefresh` | `bool` |  |  | `payment` | 

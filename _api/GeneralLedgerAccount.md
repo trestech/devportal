@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccount"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -16,7 +16,7 @@ Permission Areas: GeneralLedgerAccount
 | `category` | `short` |  | Required, InsertOnly | `generalLedgerAccount` | Assets = 1, Liabilities = 2, Capital = 3, Sales = 4, CostOfSales = 5, Expenses = 6
 | `description` | `string` | 128 |  | `generalLedgerAccount` | 
 | `activeStatus` | `bool` |  |  | `generalLedgerAccount` | 
-| `balance` | `long` |  | Required, ReadOnly | `generalLedgerAccount` | 
+| `balance` | `long` |  | Required, ReadOnly, Deprecated | `generalLedgerAccount` | Deprecated. Calculate the balance from journal entries instead.
 | `indexNo` | `short` |  |  | `generalLedgerAccount` | 
 
 | Status code | Description |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.6.13.5"
+assembly_version: "1.7.5.5"
 ---
 
 
@@ -27,8 +27,8 @@ Permission Areas: Trip
 | `targetTravelDate` | `Date` |  |  | `trip` | 
 | `destination_recNo` | `long` |  | FKey, Deprecated | `trip` | Destination_RecNo is being deprecated; use TripDestinationLink.Destination_RecNo instead
 | `destinationName_Lookup` | `string` | 64 | ReadOnly, Deprecated, Lookup | `trip` | DestinationName_Lookup is being deprecated; use TripDestinationLink.DestinationName_Lookup instead
-| `remarks` | `string` |  |  | `trip` | 
-| `advisorRemarks` | `string` |  |  | `trip` | 
+| `remarks` | `string` |  | Deprecated | `trip` | Remarks is being deprecated; use the TripRemarks table instead
+| `advisorRemarks` | `string` |  | Deprecated | `trip` | AdvisorRemarks is being deprecated; use the TripAdvisorRemarks table instead
 | `marketingSource` | `string` | 64 | Deprecated | `trip` | MarketingSource is being deprecated; use the default TripMarketingSource tag or other tag instead
 | `recordLocator` | `string` | 32 |  | `trip` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `trip` | 
@@ -89,7 +89,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128, TripProposalTotalFare = 256, TripProposalSubReservationFares = 512
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -339,7 +339,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128, TripProposalTotalFare = 256, TripProposalSubReservationFares = 512
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -504,7 +504,7 @@ Permission Areas: Trip
 | `travelerDepartment` | `string` | 64 |  | `reservation` | 
 | `startInfo` | `string` | 256 |  | `reservation` | 
 | `endInfo` | `string` | 256 |  | `reservation` | 
-| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128
+| `viewOptions` | `int` |  | Required | `reservation` | TripStatement = 1, TripStatementTotalFare = 2, ClientItin = 4, TripProposal = 8, SupplierProfileImages = 64, TripStatementSubReservationTotalFare = 128, TripProposalTotalFare = 256, TripProposalSubReservationFares = 512
 | `foreignCurrencyCode` | `string` | 3 |  | `reservation` | 
 | `foreignTotalFare` | `long` |  |  | `reservation` | 
 | `foreignCommissionAmount` | `long` |  |  | `reservation` | 
@@ -720,6 +720,7 @@ Permission Areas: Trip
 | `clientAuthorizationIP` | `string` | 16 |  | `tripPaymentAuthorization` | 
 | `authorizationExpirationDateTime` | `DateTimeOffset` |  |  | `tripPaymentAuthorization` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `tripPaymentAuthorization` | 
+| `captureCvv` | `bool` |  |  | `tripPaymentAuthorization` | 
 | `tripHistory ` | table |  |  | `trip` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `history` | 
 | `timestamp` | `DateTimeOffset` |  |  | `history` | 
@@ -752,6 +753,11 @@ Permission Areas: Trip
 | `tripDismissedHistory ` | table |  |  | `trip` | 
 | `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripDismissedHistory` | 
 | `history_recNo` | `long` |  | PKey, Required, FKey | `tripDismissedHistory` | 
+| `tripRemarks  [shared]` | table |  |  | `trip` | 
+| `recNo` | `long` |  | PKey | `tripRemarks` | 
+| `trip_recNo` | `long` |  | PKey, InsertOnly, FKey | `tripRemarks` | 
+| `remarks` | `string` |  | Required | `tripRemarks` | 
+| `viewOptions` | `int` |  | Required | `tripRemarks` | None = 0, TripStatementFooter = 1, SupplierStatementFooter = 2, TripProposalHeader = 4, TripProposalSummary = 8, TripProposalFooter = 16, ClientItinHeader = 32
 
 | Status code | Description |
 | ----------- | ----------- |
