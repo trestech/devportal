@@ -2,7 +2,7 @@
 layout: api_page
 title: "BankTransactionSearch"
 description: "Search bank transactions based on filters"
-assembly_version: "1.7.5.5"
+assembly_version: "1.7.7.1"
 ---
 
 Search bank transactions based on filters.

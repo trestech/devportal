@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.7.5.5"
+assembly_version: "1.7.7.1"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -28,6 +28,7 @@ Permission Areas: ClientProfile
 | `travelPolicy` | `string` | 1024 |  | `clientProfile` | 
 | `itinAppToken` | `string` | 1024 |  | `clientProfile` | 
 | `tokenExpireDateTime` | `DateTimeOffset` |  |  | `clientProfile` | 
+| `detectDuplicate` | `bool` |  |  | `clientProfile` | 
 | `profile  [shared]` | table |  | Singleton | `clientProfile` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `profile` | 
 | `name` | `string` | 256 |  | `profile` | 

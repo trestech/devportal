@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.7.5.5"
+assembly_version: "1.7.7.1"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -59,7 +59,7 @@ Permission Areas: Person
 | `card ` | table |  |  | `person` | 
 | `recNo` | `long` |  | PKey | `card` | 
 | `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
-| `type` | `short` |  | Required | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `type` | `short` |  | Required, InsertOnly | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardNumber` | `string` | 64 | Required | `card` | 
 | `issueDate` | `Date` |  |  | `card` | 
 | `expirationDate` | `Date` |  |  | `card` | 

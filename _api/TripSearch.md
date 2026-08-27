@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.7.5.5"
+assembly_version: "1.7.7.1"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -49,6 +49,7 @@ Permission Areas: Trip
 | `tripTotalFare` | `long` |  | `trip` | 
 | `tripCommissionAmount` | `long` |  | `trip` | 
 | `tripClientBalance` | `long` |  | `trip` | 
+| `tripInternalRemarks` | `string` |  | `trip` | 
 | `reservationRecNo` | `long` |  | `reservation` | 
 | `reservationTagRecNo` | `long` |  | `reservation` | 
 | `reservationTagName` | `string` | 64 | `reservation` | 
@@ -223,6 +224,39 @@ Permission Areas: Trip
 | `ClientProfile_documentAcknowledgementRecNo` | `long` |  | `trip` | 
 | `ClientProfile_documentAcknowledgementStatus` | `short` |  | `trip` | Pending = 1, Acknowledged = 2, Expired = 3
 | `ClientProfile_documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientPayment_recNo` | `long` |  | `trip` | 
+| `ClientPayment_tagRecNo` | `long` |  | `trip` | 
+| `ClientPayment_tagName` | `string` | 64 | `trip` | 
+| `ClientPayment_tagValue` | `string` | 1024 | `trip` | 
+| `ClientPayment_tags` | `string` |  | `trip` | 
+| `ClientPayment_createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientPayment_lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientPayment_profileType` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3
+| `ClientPayment_profileRecNo` | `long` |  | `trip` | 
+| `ClientPayment_profileName` | `string` | 256 | `trip` | 
+| `ClientPayment_amount` | `long` |  | `trip` | 
+| `ClientPayment_paymentDate` | `Date` |  | `trip` | 
+| `ClientPayment_payType` | `short` |  | `trip` | Received = 1, Made = 2
+| `ClientPayment_method` | `short` |  | `trip` | Cash = 1, Check = 2, EFT = 3, CreditCard = 4, Other = 99
+| `ClientPayment_bankRecNo` | `long` |  | `trip` | 
+| `ClientPayment_bankName` | `string` | 64 | `trip` | 
+| `ClientPayment_agencyProcessed` | `bool` |  | `trip` | 
+| `ClientPayment_cardNumber` | `string` | 64 | `trip` | 
+| `ClientPayment_nameOnCard` | `string` | 64 | `trip` | 
+| `ClientPayment_checkNumber` | `long` |  | `trip` | 
+| `ClientPayment_reservationRecNo` | `long` |  | `trip` | 
+| `ClientPayment_reservationAmount` | `long` |  | `trip` | 
+| `ClientPayment_voided` | `bool` |  | `trip` | 
+| `ClientPayment_accountingEntryRecNo` | `long` |  | `trip` | 
+| `ClientPayment_remarks` | `string` | 256 | `trip` | 
+| `ClientPayment_dateCleared` | `Date` |  | `trip` | 
+| `ClientPayment_agencyCardRecNo` | `long` |  | `trip` | 
+| `ClientPayment_agencyCardName` | `string` | 512 | `trip` | 
+| `ClientPayment_bankTransactionRecNo` | `long` |  | `trip` | 
+| `ClientPayment_paidBy` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3
+| `ClientPayment_paidTo` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3
+| `ClientPayment_bankCurrencyCode` | `string` | 3 | `trip` | 
+| `ClientPayment_equivalentAmount` | `long` |  | `trip` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

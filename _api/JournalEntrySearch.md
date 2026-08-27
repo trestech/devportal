@@ -2,7 +2,7 @@
 layout: api_page
 title: "JournalEntrySearch"
 description: "Search journal entries based on filters"
-assembly_version: "1.7.5.5"
+assembly_version: "1.7.7.1"
 ---
 
 Search journal entries based on filters.
