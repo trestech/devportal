@@ -1,0 +1,38 @@
+<style>
+.city-pair-example { margin: 1.5rem 0; padding: 1.4rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-bg); color: var(--text); }
+.city-pair-example .cp-label { margin: 0 0 .8rem; color: var(--muted-text); font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.city-pair-example .cp-route { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .8rem; }
+.city-pair-example .cp-leg { padding: 1rem; background: var(--surface-alt-bg); border-radius: 8px; }
+.city-pair-example .cp-leg strong { display: block; color: var(--heading); font-size: 1.3rem; }
+.city-pair-example .cp-leg span { display: block; font-size: .9rem; margin-top: .35rem; }
+.city-pair-example .cp-arrow { color: var(--link); font-size: 1.6rem; }
+.city-pair-example .cp-result { margin-top: 1rem; padding: 1rem; border-left: 4px solid var(--link); background: var(--surface-alt-bg); }
+.city-pair-example .cp-result strong { color: var(--heading); font-size: 1.2rem; }
+.city-pair-example .cp-result p { margin: .5rem 0 0; }
+.city-pair-example figcaption { margin-top: .8rem; font-size: .85rem; color: var(--muted-text); }
+.city-pair-example details { margin-top: 1rem; }
+.city-pair-example summary { cursor: pointer; color: var(--link); font-weight: 600; }
+.city-pair-example details p { margin: .6rem 0 0; }
+@media (max-width: 480px) {
+  .city-pair-example { padding: 1rem; }
+  .city-pair-example .cp-route { grid-template-columns: 1fr; }
+  .city-pair-example .cp-arrow { text-align: center; transform: rotate(90deg); }
+}
+</style>
+<figure class="city-pair-example" aria-label="Two connecting flight segments become one city-pair result">
+  <p class="cp-label">Illustrative journey · confirmed air reservation</p>
+  <div class="cp-route">
+    <div class="cp-leg"><strong>LAX → ORD</strong><span>Origin segment · airline AA</span><span>Fare contribution: 120</span></div>
+    <span class="cp-arrow" aria-hidden="true">→</span>
+    <div class="cp-leg"><strong>ORD → JFK</strong><span>Connection segment · airline DL</span><span>Fare contribution: 80</span></div>
+  </div>
+  <div class="cp-result">
+    <strong>One result: LAX/JFK</strong>
+    <p>Fare: 120 + 80 = <b>200</b><br>Returned <code>airline</code>: <b>AA</b> · fare basis from the origin segment</p>
+  </div>
+  <figcaption>ORD is marked as a connection. Amounts are illustrative fare units; this is not an API response or currency-format example.</figcaption>
+  <details>
+    <summary>What changes on the return journey?</summary>
+    <p>A return journey starting at JFK creates a separate <code>JFK/LAX</code> result. Its fare includes its own connecting segments, and its airline comes from its own origin segment.</p>
+  </details>
+</figure>

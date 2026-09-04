@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripRemarks"
 description: ""
-assembly_version: "1.7.7.1"
+assembly_version: "1.7.7.5"
 ---
 
 

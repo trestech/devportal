@@ -2,7 +2,7 @@
 layout: api_page
 title: "TagSearch"
 description: "Search tags based on filters"
-assembly_version: "1.7.7.1"
+assembly_version: "1.7.7.5"
 ---
 
 Search tags based on filters.

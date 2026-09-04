@@ -1,24 +1,25 @@
 ---
 layout: api_page
-title: "AdvisorReconciliationSearch"
-description: "Search advisor reconciliation based on filters"
+title: "AirlineCityPairSearch"
+description: ""
 assembly_version: "1.7.7.5"
 ---
 
-Search advisor reconciliation based on filters.
 
-See: [Advisor Reconciliation](AdvisorReconciliation.html)
-
-Permission Areas: AdvisorReconciliation
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `advisorReconciliation` | 
-| `summaryCount` | `int` |  | `advisorReconciliation` | 
-| `createDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `advisorReconciliation` | 
-| `reconciliationDate` | `Date` |  | `advisorReconciliation` | 
-| `description` | `string` | 128 | `advisorReconciliation` | 
+| `recNo` | `long` |  | `airlineCityPair` | 
+| `summaryCount` | `int` |  | `airlineCityPair` | 
+| `createDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
+| `reservation_recNo` | `long` |  | `airlineCityPair` | 
+| `reservationConfirmationTicketNo` | `string` | 64 | `airlineCityPair` | 
+| `airline` | `string` | 8 | `airlineCityPair` | 
+| `travelerName` | `string` | 512 | `airlineCityPair` | 
+| `fare` | `long` |  | `airlineCityPair` | 
+| `fareBasis` | `string` | 16 | `airlineCityPair` | 
+| `cityPair` | `string` | 7 | `airlineCityPair` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -40,10 +41,16 @@ Permission Areas: AdvisorReconciliation
 | `reportName [inherited]` | `string` |  | 
 | `queryOptimizerFlags [inherited]` | [`int<int>`] |  | Recompile = 1
 | `priority [inherited]` | `long` |  | 
-| `reconciliationDateFrom` | `DateSearchParam` | `reconciliationDate` | 
-| `reconciliationDateTo` | `DateSearchParam` | `reconciliationDate` | 
-| `description` | [`StringSearchParam`](StringSearchParam) | `description` | 
-| `advisorProfileRecNo` | `long` |  | 
+| `supplierProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
+| `clientProfileRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
+| `branchRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
+| `reservationTravelSubCategoryRecNo` | [`NumSearchParam`](NumSearchParam) |  | 
+| `reservationBookingDateTimeFrom` | `DateSearchParam` |  | 
+| `reservationBookingDateTimeTo` | `DateSearchParam` |  | 
+| `cityPairDepartDateTimeFrom` | `DateSearchParam` |  | 
+| `cityPairDepartDateTimeTo` | `DateSearchParam` |  | 
+| `tripClientProfileTags` | `TagsSearchParams[]` |  | 
+| `reservationTags` | `TagsSearchParams[]` |  | 
 
 | Status code | Description |
 | ----------- | ----------- |

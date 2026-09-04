@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: "Search trip imports based on filters"
-assembly_version: "1.7.7.1"
+assembly_version: "1.7.7.5"
 ---
 
 Search trip imports based on filters.
