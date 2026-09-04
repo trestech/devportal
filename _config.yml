@@ -52,3 +52,4 @@ exclude:
   - Gemfile.lock
   - README
   - logo.png
+  - assets/vendor/mermaid/*/UPSTREAM.md

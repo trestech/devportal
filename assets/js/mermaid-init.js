@@ -1,22 +1,16 @@
 (function () {
   "use strict";
 
+  var darkScheme = matchMedia("(prefers-color-scheme: dark)");
+  var diagrams = [];
+
   function cssValue(styles, property) {
     return styles.getPropertyValue(property).trim();
   }
 
-  async function renderMermaidBlocks() {
-    var codeBlocks = Array.from(document.querySelectorAll("code.language-mermaid"));
-
-    if (codeBlocks.length === 0) {
-      return;
-    }
-
-    if (!globalThis.mermaid) {
-      console.error("Mermaid failed to load; diagram source remains visible.");
-      return;
-    }
-
+  // Theme variables are read from the live stylesheet so the diagram follows
+  // the site's light/dark palette. Called again whenever the scheme changes.
+  function initializeMermaid() {
     var rootStyles = getComputedStyle(document.documentElement);
     var bodyStyles = getComputedStyle(document.body);
 
@@ -35,9 +29,37 @@
         fontFamily: bodyStyles.fontFamily
       }
     });
+  }
+
+  async function renderDiagram(diagram, definition) {
+    diagram.removeAttribute("data-processed");
+    diagram.textContent = definition;
+    await globalThis.mermaid.run({ nodes: [diagram], suppressErrors: true });
+
+    if (!diagram.querySelector("svg")) {
+      throw new Error("Mermaid did not produce an SVG diagram.");
+    }
+  }
+
+  async function renderMermaidBlocks() {
+    var codeBlocks = Array.from(document.querySelectorAll("code.language-mermaid"));
+
+    if (codeBlocks.length === 0) {
+      return;
+    }
+
+    if (!globalThis.mermaid) {
+      console.error("Mermaid failed to load; diagram source remains visible.");
+      return;
+    }
+
+    initializeMermaid();
 
     for (var codeBlock of codeBlocks) {
-      var sourceContainer = codeBlock.closest(".highlighter-rouge") || codeBlock.closest("pre");
+      // Kramdown emits a bare <pre><code> for languages Rouge cannot highlight;
+      // when a highlighter wrapper is present, replace the whole wrapper.
+      var pre = codeBlock.closest("pre");
+      var sourceContainer = pre && (pre.closest(".highlighter-rouge") || pre);
       var diagram = document.createElement("pre");
       var definition = codeBlock.textContent;
 
@@ -47,16 +69,12 @@
       }
 
       diagram.className = "mermaid mermaid-diagram";
-      diagram.textContent = definition;
 
       try {
         await globalThis.mermaid.parse(definition);
         sourceContainer.replaceWith(diagram);
-        await globalThis.mermaid.run({ nodes: [diagram], suppressErrors: true });
-
-        if (!diagram.querySelector("svg")) {
-          throw new Error("Mermaid did not produce an SVG diagram.");
-        }
+        await renderDiagram(diagram, definition);
+        diagrams.push({ element: diagram, definition: definition });
       } catch (error) {
         if (diagram.isConnected) {
           diagram.replaceWith(sourceContainer);
@@ -67,6 +85,24 @@
       }
     }
   }
+
+  async function rerenderForScheme() {
+    if (diagrams.length === 0) {
+      return;
+    }
+
+    initializeMermaid();
+
+    for (var entry of diagrams) {
+      try {
+        await renderDiagram(entry.element, entry.definition);
+      } catch (error) {
+        console.error("Unable to re-render Mermaid diagram for the new color scheme.", error);
+      }
+    }
+  }
+
+  darkScheme.addEventListener("change", rerenderForScheme);
 
   renderMermaidBlocks();
 }());
