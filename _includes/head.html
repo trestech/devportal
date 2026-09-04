@@ -20,5 +20,9 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  {%- if page.mermaid -%}
+  <script defer src="{{ '/assets/vendor/mermaid/11.17.2/mermaid.tiny.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/mermaid-init.js' | relative_url }}"></script>
+  {%- endif -%}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>

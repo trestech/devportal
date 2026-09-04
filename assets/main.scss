@@ -471,3 +471,26 @@ hr {
 .tres-wrapper {
   max-width: 90%;
 }
+
+.mermaid-diagram {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  color: var(--text);
+  background-color: var(--surface-bg) !important;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+}
+
+.mermaid-diagram svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mermaid-error {
+  border-left: 0.25rem solid var(--code-tag);
+}
