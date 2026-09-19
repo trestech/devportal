@@ -2,7 +2,7 @@
 layout: api_page
 title: "AirlineCityPairSearch"
 description: ""
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 
@@ -13,9 +13,10 @@ assembly_version: "1.7.7.5"
 | `summaryCount` | `int` |  | `airlineCityPair` | 
 | `createDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
+| `trip_recNo` | `long` |  | `airlineCityPair` | 
 | `reservation_recNo` | `long` |  | `airlineCityPair` | 
+| `provider` | `string` | 8 | `airlineCityPair` | 
 | `reservationConfirmationTicketNo` | `string` | 64 | `airlineCityPair` | 
-| `airline` | `string` | 8 | `airlineCityPair` | 
 | `travelerName` | `string` | 512 | `airlineCityPair` | 
 | `fare` | `long` |  | `airlineCityPair` | 
 | `fareBasis` | `string` | 16 | `airlineCityPair` | 
@@ -49,6 +50,8 @@ assembly_version: "1.7.7.5"
 | `reservationBookingDateTimeTo` | `DateSearchParam` |  | 
 | `cityPairDepartDateTimeFrom` | `DateSearchParam` |  | 
 | `cityPairDepartDateTimeTo` | `DateSearchParam` |  | 
+| `cityPairDepartCityCode` | [`StringSearchParam`](StringSearchParam) |  | 
+| `cityPairArriveCityCode` | [`StringSearchParam`](StringSearchParam) |  | 
 | `tripClientProfileTags` | `TagsSearchParams[]` |  | 
 | `reservationTags` | `TagsSearchParams[]` |  | 
 

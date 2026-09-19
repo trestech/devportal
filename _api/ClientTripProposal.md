@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientTripProposal"
 description: ""
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 
@@ -41,7 +41,7 @@ assembly_version: "1.7.7.5"
 | `totalFare` | `long` |  |  | `component` | 
 | `startDateTime` | `DateTime` |  |  | `component` | 
 | `endDateTime` | `DateTime` |  |  | `component` | 
-| `itineraryRemarks` | `string` |  |  | `component` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `component` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
 | `foreignTotalFare` | `long` |  |  | `component` | 
 | `foreignCurrencyCode` | `string` | 3 |  | `component` | 
 | `numberOfUnits` | `short` |  |  | `component` | 
@@ -59,16 +59,26 @@ assembly_version: "1.7.7.5"
 | `directUrl` | `string` | 256 |  | `componentAttachment` | 
 | `fileData` | `byte[]` |  |  | `componentAttachment` | 
 | `imageCredit` | `string` | 256 |  | `componentAttachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `component` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `airComponent ` | table |  | Singleton | `component` | 
 | `componentIndexNo` | `long` |  | PKey, InsertOnly, FKey | `airComponent` | 
 | `airTraveler ` | table |  |  | `airComponent` | 
 | `indexNo` | `long` |  | PKey | `airTraveler` | 
 | `airComponentIndexNo` | `long` |  | InsertOnly, FKey | `airTraveler` | 
 | `travelerName` | `string` | 512 |  | `airTraveler` | 
-| `itineraryRemarks` | `string` |  |  | `airTraveler` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `airTraveler` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
 | `foreignTotalFare` | `long` |  |  | `airTraveler` | 
 | `foreignCurrencyCode` | `string` | 3 |  | `airTraveler` | 
 | `totalFare` | `long` |  |  | `airTraveler` | 
+| `reservationRemarks  [shared]` | table |  |  | `airTraveler` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `airTravelerDocument ` | table |  |  | `airTraveler` | 
 | `recNo` | `long` |  | PKey | `airTravelerDocument` | 
 | `airTravelerIndexNo` | `long` |  | InsertOnly, FKey | `airTravelerDocument` | 
@@ -118,7 +128,7 @@ assembly_version: "1.7.7.5"
 | `totalFare` | `long` |  |  | `cruiseSubComponent` | 
 | `startDateTime` | `DateTime` |  |  | `cruiseSubComponent` | 
 | `endDateTime` | `DateTime` |  |  | `cruiseSubComponent` | 
-| `itineraryRemarks` | `string` |  |  | `cruiseSubComponent` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `cruiseSubComponent` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
 | `foreignTotalFare` | `long` |  |  | `cruiseSubComponent` | 
 | `foreignCurrencyCode` | `string` | 3 |  | `cruiseSubComponent` | 
 | `numberOfUnits` | `short` |  |  | `cruiseSubComponent` | 
@@ -136,6 +146,11 @@ assembly_version: "1.7.7.5"
 | `directUrl` | `string` | 256 |  | `cruiseSubComponentAttachment` | 
 | `fileData` | `byte[]` |  |  | `cruiseSubComponentAttachment` | 
 | `imageCredit` | `string` | 256 |  | `cruiseSubComponentAttachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `cruiseSubComponent` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `tourComponent ` | table |  | Singleton | `component` | 
 | `indexNo` | `long` |  | PKey, InsertOnly, FKey | `tourComponent` | 
 | `componentIndexNo` | `long` |  | PKey, InsertOnly, FKey | `tourComponent` | 
@@ -149,7 +164,7 @@ assembly_version: "1.7.7.5"
 | `totalFare` | `long` |  |  | `tourSubComponent` | 
 | `startDateTime` | `DateTime` |  |  | `tourSubComponent` | 
 | `endDateTime` | `DateTime` |  |  | `tourSubComponent` | 
-| `itineraryRemarks` | `string` |  |  | `tourSubComponent` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `tourSubComponent` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
 | `foreignTotalFare` | `long` |  |  | `tourSubComponent` | 
 | `foreignCurrencyCode` | `string` | 3 |  | `tourSubComponent` | 
 | `numberOfUnits` | `short` |  |  | `tourSubComponent` | 
@@ -167,6 +182,11 @@ assembly_version: "1.7.7.5"
 | `directUrl` | `string` | 256 |  | `tourSubComponentAttachment` | 
 | `fileData` | `byte[]` |  |  | `tourSubComponentAttachment` | 
 | `imageCredit` | `string` | 256 |  | `tourSubComponentAttachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `tourSubComponent` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `railComponent ` | table |  | Singleton | `component` | 
 | `indexNo` | `long` |  | PKey | `railComponent` | 
 | `componentIndexNo` | `long` |  | PKey, InsertOnly, FKey | `railComponent` | 

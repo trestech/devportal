@@ -2,7 +2,7 @@
 layout: api_page
 title: "PaymentSearch"
 description: "Search payments based on filters"
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 Search payments based on filters.
@@ -43,8 +43,8 @@ Permission Areas: ClientPayment, SupplierPayment, OtherPayment
 | `agencyCardRecNo` | `long` |  | `payment` | 
 | `agencyCardName` | `string` | 512 | `payment` | 
 | `bankTransactionRecNo` | `long` |  | `payment` | 
-| `paidBy` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
-| `paidTo` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3
+| `paidBy` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3, Agency = 4
+| `paidTo` | `short` |  | `payment` | Client = 1, Supplier = 2, Other = 3, Agency = 4
 | `bankCurrencyCode` | `string` | 3 | `payment` | 
 | `equivalentAmount` | `long` |  | `payment` | 
 

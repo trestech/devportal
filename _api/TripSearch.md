@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -106,7 +106,8 @@ Permission Areas: Trip
 | `reservationCreateDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationLastModifiedDateTime` | `DateTimeOffset` |  | `reservation` | 
 | `reservationMarkupDiscount` | `long` |  | `reservation` | 
-| `reservationItineraryRemarks` | `string` |  | `reservation` | 
+| `reservationItineraryRemarks` | `string` |  | `reservation` | ReservationItineraryRemarks column is being deprecated. Use ReservationRemarks instead.
+| `reservationRemarks` | `string` |  | `reservation` | 
 | `reservationForeignCurrencyCode` | `string` | 3 | `reservation` | 
 | `reservationForeignTotalFare` | `long` |  | `reservation` | 
 | `reservationForeignCommissionAmount` | `long` |  | `reservation` | 
@@ -253,8 +254,8 @@ Permission Areas: Trip
 | `ClientPayment_agencyCardRecNo` | `long` |  | `trip` | 
 | `ClientPayment_agencyCardName` | `string` | 512 | `trip` | 
 | `ClientPayment_bankTransactionRecNo` | `long` |  | `trip` | 
-| `ClientPayment_paidBy` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3
-| `ClientPayment_paidTo` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3
+| `ClientPayment_paidBy` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3, Agency = 4
+| `ClientPayment_paidTo` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3, Agency = 4
 | `ClientPayment_bankCurrencyCode` | `string` | 3 | `trip` | 
 | `ClientPayment_equivalentAmount` | `long` |  | `trip` | 
 
@@ -362,7 +363,8 @@ Permission Areas: Trip
 | `tripPaymentAuthorizationExpirationDateTimeTo` | `DateTimeUTCSearchParam` | `tripPaymentAuthorizationExpirationDateTime` | 
 | `reservationSupplierPaymentTotal` | [`NumSearchParam`](NumSearchParam) | `reservationSupplierPaymentTotal` | 
 | `reservationSource` | [`StringSearchParam`](StringSearchParam) | `reservationSource` | 
-| `reservationItineraryRemarks` | [`StringSearchParam`](StringSearchParam) | `reservationItineraryRemarks` | 
+| `reservationItineraryRemarks` | [`StringSearchParam`](StringSearchParam) | `reservationItineraryRemarks` | ReservationItineraryRemarks parameter is being deprecated. Use ReservationRemarks instead.
+| `reservationRemarks` | [`StringSearchParam`](StringSearchParam) | `reservationRemarks` | 
 | `tripDocumentAcknowledgementRecNo` | [`NumSearchParam`](NumSearchParam) | `tripDocumentAcknowledgementRecNo` | 
 | `tripDocumentAcknowledgementStatus` | `EnumSearchParam<DocumentAcknowledgementStatus>` | `tripDocumentAcknowledgementStatus` | Pending = 1, Acknowledged = 2, Expired = 3
 | `tripDocumentAcknowledgementCreateDateTimeFrom` | `DateTimeUTCSearchParam` | `tripDocumentAcknowledgementCreateDateTime` | 

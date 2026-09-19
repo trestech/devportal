@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 PersonSearch returns data for persons (travelers).

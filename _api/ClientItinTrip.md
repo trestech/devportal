@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientItinTrip"
 description: ""
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 
@@ -51,7 +51,7 @@ assembly_version: "1.7.7.5"
 | `travelers` | `string` | 512 |  | `event` | 
 | `numberOfUnits` | `short` |  |  | `event` | 
 | `unitDescription` | `string` |  |  | `event` | 
-| `itineraryRemarks` | `string` |  |  | `event` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `event` | Obsolete. Use eventRemarks.remarks instead.
 | `startInfo` | `string` | 256 |  | `event` | 
 | `endInfo` | `string` | 256 |  | `event` | 
 | `confirmationNo` | `string` | 64 |  | `event` | 
@@ -79,6 +79,10 @@ assembly_version: "1.7.7.5"
 | `stateProvince` | `string` | 32 |  | `providerInfo` | 
 | `zipPostalCode` | `string` | 16 |  | `providerInfo` | 
 | `country` | `string` | 4 |  | `providerInfo` | 
+| `eventRemarks ` | table |  |  | `event` | 
+| `recNo` | `long` |  | PKey | `eventRemarks` | 
+| `eventIndexNo` | `long` |  | InsertOnly, FKey | `eventRemarks` | 
+| `remarks` | `string` |  |  | `eventRemarks` | 
 | `eventTraveler ` | table |  |  | `event` | 
 | `eventIndexNo` | `long` |  | PKey, InsertOnly, FKey | `eventTraveler` | 
 | `travelerName` | `string` | 512 |  | `eventTraveler` | 
@@ -112,10 +116,14 @@ assembly_version: "1.7.7.5"
 | `ticketNo` | `long` |  |  | `eventAirTraveler` | 
 | `confirmationNo` | `string` | 64 |  | `eventAirTraveler` | 
 | `recordLocator` | `string` | 32 |  | `eventAirTraveler` | 
-| `itineraryRemarks` | `string` |  |  | `eventAirTraveler` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `eventAirTraveler` | Obsolete. Use eventAirTravelerRemarks.remarks instead.
 | `seatNo` | `string` | 4 |  | `eventAirTraveler` | 
 | `classOfService` | `string` | 2 |  | `eventAirTraveler` | 
 | `remarks` | `string` | 256 |  | `eventAirTraveler` | 
+| `eventAirTravelerRemarks ` | table |  |  | `eventAirTraveler` | 
+| `recNo` | `long` |  | PKey | `eventAirTravelerRemarks` | 
+| `eventAirTravelerIndexNo` | `long` |  | InsertOnly, FKey | `eventAirTravelerRemarks` | 
+| `remarks` | `string` |  |  | `eventAirTravelerRemarks` | 
 | `eventAirTravelerAttachment ` | table |  |  | `eventAirTraveler` | 
 | `recNo` | `long` |  | PKey | `eventAirTravelerAttachment` | 
 | `airTravelerIndexNo` | `long` |  | InsertOnly, FKey | `eventAirTravelerAttachment` | 

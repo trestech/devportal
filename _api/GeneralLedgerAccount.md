@@ -2,7 +2,7 @@
 layout: api_page
 title: "GeneralLedgerAccount"
 description: ""
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 

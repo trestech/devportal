@@ -2,7 +2,7 @@
 layout: api_page
 title: "Trip"
 description: ""
-assembly_version: "1.7.7.5"
+assembly_version: "1.8.1.5"
 ---
 
 
@@ -81,8 +81,8 @@ Permission Areas: Trip
 | `source` | `string` | 32 |  | `reservation` | 
 | `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
-| `itineraryRemarks` | `string` |  |  | `reservation` | 
-| `supplierRemarks` | `string` |  |  | `reservation` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `reservation` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
+| `supplierRemarks` | `string` |  | Deprecated | `reservation` | Supplier Remarks is being deprecated. Use the ReservationRemarks table instead
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
@@ -212,6 +212,11 @@ Permission Areas: Trip
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `imageCredit` | `string` | 256 |  | `attachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `reservation` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `accountingEntry  [shared]` | table |  | Singleton | `reservation` | 
 | `recNo` | `long` |  | PKey, InsertOnly, FKey | `accountingEntry` | 
 | `createDate` | `Date` |  | InsertOnly | `accountingEntry` | 
@@ -331,8 +336,8 @@ Permission Areas: Trip
 | `source` | `string` | 32 |  | `reservation` | 
 | `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
-| `itineraryRemarks` | `string` |  |  | `reservation` | 
-| `supplierRemarks` | `string` |  |  | `reservation` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `reservation` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
+| `supplierRemarks` | `string` |  | Deprecated | `reservation` | Supplier Remarks is being deprecated. Use the ReservationRemarks table instead
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
@@ -458,6 +463,11 @@ Permission Areas: Trip
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `imageCredit` | `string` | 256 |  | `attachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `cruiseSubReservation` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `tourReservation ` | table |  | Singleton | `reservation` | 
 | `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `tourReservation` | 
 | `tourSubReservationLink ` | table |  |  | `tourReservation` | 
@@ -496,8 +506,8 @@ Permission Areas: Trip
 | `source` | `string` | 32 |  | `reservation` | 
 | `travelerName` | `string` | 512 |  | `reservation` | 
 | `promoId` | `string` | 256 |  | `reservation` | 
-| `itineraryRemarks` | `string` |  |  | `reservation` | 
-| `supplierRemarks` | `string` |  |  | `reservation` | 
+| `itineraryRemarks` | `string` |  | Deprecated | `reservation` | Itinerary Remarks is being deprecated. Use the ReservationRemarks table instead
+| `supplierRemarks` | `string` |  | Deprecated | `reservation` | Supplier Remarks is being deprecated. Use the ReservationRemarks table instead
 | `advisorInfo` | `string` | 256 |  | `reservation` | 
 | `trackClientPayments` | `bool` |  | Required | `reservation` | 
 | `tripStatementPrintOption` | `short` |  | Deprecated | `reservation` | Obsolete. Use ViewOptionsFlags instead.
@@ -623,6 +633,11 @@ Permission Areas: Trip
 | `directUrl` | `string` | 256 | ReadOnly | `attachment` | 
 | `subType` | `short` |  | Required | `attachment` | Document = 1, Image = 2, Other = 3
 | `imageCredit` | `string` | 256 |  | `attachment` | 
+| `reservationRemarks  [shared]` | table |  |  | `tourSubReservation` | 
+| `recNo` | `long` |  | PKey | `reservationRemarks` | 
+| `reservation_recNo` | `long` |  | PKey, InsertOnly, FKey | `reservationRemarks` | 
+| `remarks` | `string` |  | Required | `reservationRemarks` | 
+| `viewOptions` | `int` |  | Required | `reservationRemarks` | None = 0, TripProposal = 1, ClientItinerary = 2, TripStatement = 4
 | `reservationDeposit ` | table |  |  | `reservation` | 
 | `recNo` | `long` |  | PKey | `reservationDeposit` | 
 | `reservation_recNo` | `long` |  | InsertOnly, FKey | `reservationDeposit` | 
