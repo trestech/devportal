@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.8.1.5"
+assembly_version: "1.8.2.6"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -156,6 +156,7 @@ Permission Areas: Trip
 | `reservationFareSavings` | `long` |  | `reservation` | 
 | `reservationFareLoss` | `long` |  | `reservation` | 
 | `reservationAirItinerary` | `string` | 128 | `airReservation` | 
+| `reservationAirIndicator` | `short` |  | `airReservation` | Domestic = 1, International = 2, Transborder = 3
 | `ClientProfile_recNo` | `long` |  | `trip` | 
 | `ClientProfile_tagRecNo` | `long` |  | `trip` | 
 | `ClientProfile_tagName` | `string` | 64 | `trip` | 
@@ -374,6 +375,8 @@ Permission Areas: Trip
 | `tripDocumentAcknowledgementDocumentTemplateRecNo` | [`NumSearchParam`](NumSearchParam) | `tripDocumentAcknowledgementDocumentTemplateRecNo` | 
 | `tripWarningMessages` | [`StringSearchParam`](StringSearchParam) | `tripWarningMessages` | 
 | `reservationWarningMessages` | [`StringSearchParam`](StringSearchParam) | `reservationWarningMessages` | 
+| `reservationTicketType` | `EnumSearchParam<TicketType>` | `reservationTicketType` | Normal = 1, ExchangeAddCollect = 2, ExchangeRefund = 3, CreditMemo = 4, DebitMemo = 5, TAAD = 6
+| `reservationAirIndicator` | `EnumSearchParam<AirIndicator>` | `reservationAirIndicator` | Domestic = 1, International = 2, Transborder = 3
 | `reservationTags` | `TagsSearchParams[]` |  | 
 | `includeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 
 | `excludeParamSets` | [`TripSearchParams[]`](TripSearchParams) |  | 

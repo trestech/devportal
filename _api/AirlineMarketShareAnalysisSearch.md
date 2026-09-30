@@ -1,6 +1,6 @@
 ---
 layout: api_page
-title: "AirlineCityPairSearch"
+title: "AirlineMarketShareAnalysisSearch"
 description: ""
 assembly_version: "1.8.2.6"
 ---
@@ -9,19 +9,19 @@ assembly_version: "1.8.2.6"
 
 | Column | Type | Size | Table | Description |
 | ------ | ---- | ---- | ----- | ----------- |
-| `recNo` | `long` |  | `airlineCityPair` | 
-| `summaryCount` | `int` |  | `airlineCityPair` | 
-| `createDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
-| `lastModifiedDateTime` | `DateTimeOffset` |  | `airlineCityPair` | 
-| `trip_recNo` | `long` |  | `airlineCityPair` | 
-| `reservation_recNo` | `long` |  | `airlineCityPair` | 
-| `provider` | `string` | 8 | `airlineCityPair` | 
-| `cityPair` | `string` | 7 | `airlineCityPair` | 
-| `fare` | `long` |  | `airlineCityPair` | 
-| `fareBasis` | `string` | 16 | `airlineCityPair` | 
-| `reservationConfirmationTicketNo` | `string` | 64 | `airlineCityPair` | 
-| `supplierProfile_recNo` | `long` |  | `airlineCityPair` | 
-| `travelerName` | `string` | 512 | `airlineCityPair` | 
+| `recNo` | `long` |  | `airlineMarketShareAnalysis` | 
+| `summaryCount` | `int` |  | `airlineMarketShareAnalysis` | 
+| `createDateTime` | `DateTimeOffset` |  | `airlineMarketShareAnalysis` | 
+| `lastModifiedDateTime` | `DateTimeOffset` |  | `airlineMarketShareAnalysis` | 
+| `trip_recNo` | `long` |  | `airlineMarketShareAnalysis` | 
+| `reservation_recNo` | `long` |  | `airlineMarketShareAnalysis` | 
+| `provider` | `string` | 8 | `airlineMarketShareAnalysis` | 
+| `cityPair` | `string` | 7 | `airlineMarketShareAnalysis` | 
+| `fare` | `long` |  | `airlineMarketShareAnalysis` | 
+| `fareBasis` | `string` | 16 | `airlineMarketShareAnalysis` | 
+| `reservationConfirmationTicketNo` | `string` | 64 | `airlineMarketShareAnalysis` | 
+| `supplierProfile_recNo` | `long` |  | `airlineMarketShareAnalysis` | 
+| `travelerName` | `string` | 512 | `airlineMarketShareAnalysis` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

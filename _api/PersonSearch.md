@@ -2,7 +2,7 @@
 layout: api_page
 title: "PersonSearch"
 description: "PersonSearch returns data for persons (travelers)"
-assembly_version: "1.8.1.5"
+assembly_version: "1.8.2.6"
 ---
 
 PersonSearch returns data for persons (travelers).
@@ -100,8 +100,8 @@ Permission Areas: Person
 | `phonePermitMarketing` | `bool` |  | 
 | `cardType` | [`short<short>`] | `cardType` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardSubType` | [`NumSearchParam`](NumSearchParam) | `cardSubType` | 
-| `cardExpirationDateFrom` | `DateSearchParam` |  | 
-| `cardExpirationDateTo` | `DateSearchParam` |  | 
+| `cardExpirationDateFrom` | `DateSearchParam` | `cardExpDate` | 
+| `cardExpirationDateTo` | `DateSearchParam` | `cardExpDate` | 
 | `AdvisorProfileRecNo` | [`NumSearchParam`](NumSearchParam) | `advisorProfileRecNo` | 
 | `activeStatus` | [`short<short>`] | `activeStatus` | Inactive = 0, Active = 1, Pending = 2
 | `actionItemCompleted` | `bool` | `actionItemCompleted` | 

@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripImportSearch"
 description: "Search trip imports based on filters"
-assembly_version: "1.8.1.5"
+assembly_version: "1.8.2.6"
 ---
 
 Search trip imports based on filters.
@@ -18,7 +18,7 @@ Permission Areas: TripImport
 | `createDateTime` | `DateTimeOffset` |  | `tripImport` | 
 | `lastModifiedDateTime` | `DateTimeOffset` |  | `tripImport` | 
 | `type` | `short` |  | `tripImport` | NotSpecified = 0, DirectConnectXML = 1, GDSInterfaceText = 2, GDSPnrXml = 3, ReservationJson = 4, ConfirmationDocument = 5
-| `subType` | `string` | 8 | `tripImport` | 
+| `subType` | `string` | 10 | `tripImport` | 
 | `source` | `string` | 64 | `tripImport` | 
 | `recordLocator` | `string` | 6 | `tripImport` | 
 | `status` | `short` |  | `tripImport` | Pending = 1, Imported = 2, Error = 3, Warning = 4

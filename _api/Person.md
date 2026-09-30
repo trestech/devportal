@@ -2,7 +2,7 @@
 layout: api_page
 title: "Person"
 description: "Person provides methods to load and save person (traveler) data"
-assembly_version: "1.8.1.5"
+assembly_version: "1.8.2.6"
 ---
 
 Person provides methods to load and save person (traveler) data.
@@ -40,6 +40,7 @@ Permission Areas: Person
 | `activeStatus` | `short` |  | Required | `person` | Inactive = 0, Active = 1, Pending = 2
 | `age` | `short` |  | ReadOnly | `person` | 
 | `createDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `person` | 
+| `detectDuplicate` | `bool` |  |  | `person` | 
 | `personCommunicationLink ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCommunicationLink` | 
 | `communication_recNo` | `long` |  | PKey, Auto-Assign | `personCommunicationLink` | 
@@ -56,9 +57,12 @@ Permission Areas: Person
 | `permitMarketing` | `bool` |  |  | `communication` | 
 | `isBillingContact` | `bool` |  | Deprecated | `communication` | IsBillingContact is deprecated. Use contactOptions instead.
 | `contactOption` | `short` |  |  | `communication` | Billing = 1, CustomerService = 2
-| `card ` | table |  |  | `person` | 
-| `recNo` | `long` |  | PKey | `card` | 
-| `person_recNo` | `long` |  | InsertOnly, FKey | `card` | 
+| `personCardLink ` | table |  |  | `person` | 
+| `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personCardLink` | 
+| `card_recNo` | `long` |  | PKey, Auto-Assign | `personCardLink` | 
+| `card  [shared]` | table |  | Singleton | `personCardLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `card` | 
+| `person_recNo` | `long` |  | Deprecated | `card` | Person_RecNo is being deprecated; use PersonCardLink.Person_RecNo instead
 | `type` | `short` |  | Required, InsertOnly | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
 | `cardNumber` | `string` | 64 | Required | `card` | 
 | `issueDate` | `Date` |  |  | `card` | 
@@ -70,7 +74,7 @@ Permission Areas: Person
 | `cardNumberToken` | `string` | 64 |  | `card` | 
 | `code` | `string` | 8 |  | `card` | 
 | `nameOnCard` | `string` | 64 |  | `card` | 
-| `cvvCode` | `string` | 4 |  | `card` | 
+| `cvvCode` | `string` | 4 | Deprecated | `card` | CVVCode is deprecated. PCI does not allow storage of sensitive card data.
 | `subType` | `short` |  |  | `card` | 
 | `personMarketing ` | table |  |  | `person` | 
 | `person_recNo` | `long` |  | PKey, InsertOnly, FKey | `personMarketing` | 
@@ -191,6 +195,7 @@ Status: 200 Ok
     "activeStatus": 1,
     "age": null,
     "createDateTime": null,
+    "detectDuplicate": null,
     "personCommunicationLink": [
       {
         "person_recNo": 1969999,
@@ -247,74 +252,90 @@ Status: 200 Ok
         }
       }
     ],
-    "card": [
+    "personCardLink": [
       {
-        "recNo": 156971,
         "person_recNo": 1969999,
-        "type": 1,
-        "cardNumber": "VI 41-XXXX-1111",
-        "issueDate": null,
-        "expirationDate": "2025-12-31T00:00:00",
-        "issuingCity": "",
-        "issuingCountry": "",
-        "issuingCountryName": null,
-        "description": "Visa",
-        "cardNumberToken": null,
-        "code": "",
-        "nameOnCard": null,
-        "cvvCode": null,
-        "subType": null
+        "card_recNo": 156971,
+        "card": {
+          "recNo": 156971,
+          "person_recNo": null,
+          "type": 1,
+          "cardNumber": "VI 41-XXXX-1111",
+          "issueDate": null,
+          "expirationDate": "2025-12-31T00:00:00",
+          "issuingCity": "",
+          "issuingCountry": "",
+          "issuingCountryName": null,
+          "description": "Visa",
+          "cardNumberToken": null,
+          "code": "",
+          "nameOnCard": null,
+          "cvvCode": null,
+          "subType": null
+        }
       },
       {
-        "recNo": 156972,
         "person_recNo": 1969999,
-        "type": 2,
-        "cardNumber": "4567888",
-        "issueDate": null,
-        "expirationDate": null,
-        "issuingCity": "",
-        "issuingCountry": "",
-        "issuingCountryName": null,
-        "description": "Advantage",
-        "cardNumberToken": null,
-        "code": "",
-        "nameOnCard": null,
-        "cvvCode": null,
-        "subType": null
+        "card_recNo": 156972,
+        "card": {
+          "recNo": 156972,
+          "person_recNo": null,
+          "type": 2,
+          "cardNumber": "4567888",
+          "issueDate": null,
+          "expirationDate": null,
+          "issuingCity": "",
+          "issuingCountry": "",
+          "issuingCountryName": null,
+          "description": "Advantage",
+          "cardNumberToken": null,
+          "code": "",
+          "nameOnCard": null,
+          "cvvCode": null,
+          "subType": null
+        }
       },
       {
-        "recNo": 156973,
         "person_recNo": 1969999,
-        "type": 1,
-        "cardNumber": "VI 41-XXXX-1111",
-        "issueDate": null,
-        "expirationDate": "2025-12-31T00:00:00",
-        "issuingCity": "",
-        "issuingCountry": "",
-        "issuingCountryName": null,
-        "description": "Visa",
-        "cardNumberToken": null,
-        "code": "",
-        "nameOnCard": null,
-        "cvvCode": null,
-        "subType": null
+        "card_recNo": 156973,
+        "card": {
+          "recNo": 156973,
+          "person_recNo": null,
+          "type": 1,
+          "cardNumber": "VI 41-XXXX-1111",
+          "issueDate": null,
+          "expirationDate": "2025-12-31T00:00:00",
+          "issuingCity": "",
+          "issuingCountry": "",
+          "issuingCountryName": null,
+          "description": "Visa",
+          "cardNumberToken": null,
+          "code": "",
+          "nameOnCard": null,
+          "cvvCode": null,
+          "subType": null
+        }
       },
       {
-        "recNo": 156974,
         "person_recNo": 1969999,
-        "type": 2,
-        "cardNumber": "5656343",
-        "issueDate": null,
-        "expirationDate": null,
-        "issuingCity": "",
-        "issuingCountry": "",
-        "issuingCountryName": null,
-        "description": "Hilton Hotels",
-        "cardNumberToken": null,
-        "code": "",
-        "nameOnCard": null,
-        "cvvCode": null,
-        "subType": null
+        "card_recNo": 156974,
+        "card": {
+          "recNo": 156974,
+          "person_recNo": null,
+          "type": 2,
+          "cardNumber": "5656343",
+          "issueDate": null,
+          "expirationDate": null,
+          "issuingCity": "",
+          "issuingCountry": "",
+          "issuingCountryName": null,
+          "description": "Hilton Hotels",
+          "cardNumberToken": null,
+          "code": "",
+          "nameOnCard": null,
+          "cvvCode": null,
+          "subType": null
+        }
       }
     ],
     "personMarketing": [

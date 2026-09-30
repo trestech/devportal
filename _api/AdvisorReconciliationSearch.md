@@ -2,7 +2,7 @@
 layout: api_page
 title: "AdvisorReconciliationSearch"
 description: "Search advisor reconciliation based on filters"
-assembly_version: "1.8.1.5"
+assembly_version: "1.8.2.6"
 ---
 
 Search advisor reconciliation based on filters.
