@@ -12,7 +12,7 @@ As of October 22, 2026, hosted sign-in is available on dev-staging only, at `htt
 
 Hosted sign-in is a popup plus `postMessage`. It is not an OAuth authorization-code flow: there is no `/authorize` or `/token` endpoint, no client ID, no scopes, and no refresh token.
 
-1. From a user's click, open `https://auth-dev-staging.trestechnologies.com/?redirect_uri=<your origin>` in a popup and keep the window handle. Pass `redirect_uri` URL-encoded; the hosted page sends its result only to that origin, which must be `https` (or `http` on localhost). If `redirect_uri` is missing or unusable, or the page was not opened by your app, it shows an error instead of the sign-in form.
+1. From a user's click, open `https://auth-dev-staging.trestechnologies.com/?redirect_uri=<your origin>` in a popup and keep the window handle. Pass `redirect_uri` URL-encoded; the hosted page sends its result only to that origin, and only if Tres has approved it for that environment. If `redirect_uri` is missing, the page was not opened by your app, or the origin is not approved, it shows an error instead of the sign-in form.
 2. Listen for `message` events. Accept a message only when `event.origin` is the hosted sign-in origin, `event.source` is the popup you opened, and `event.data.type` is `"tres_auth"`.
 3. Read `event.data.data`, which contains only `sessionId` and `expireDate`. `sessionId` is an AppServer identity token, the same kind of credential the [Login]({{ '/api/Login.html' | relative_url }}) method returns. Send it as `Authorization: Bearer <sessionId>` on API calls. `expireDate` is when it expires.
 4. Handle a blocked popup, a popup the user closes, and an unusable or expired response. Remove your listener when the attempt ends.
@@ -115,7 +115,7 @@ A local development proxy can hide CORS problems. Test from your deployed origin
 
 Tell Tres:
 
-1. Your app's origins for development, testing, and production.
+1. Your app's origins (scheme, host, and port) for development, testing, and production. Tres approves each origin before sign-in returns to it, including `http://localhost` ports you develop on.
 2. Whether your app runs inside a host application, and whether that host allows popups and `postMessage`. Mention any provider sign-in, such as Google or Microsoft, you have already done from inside it.
 3. Which Tres API environments you plan to test against, and whether you call the API from the browser, your backend, or both.
 4. What you need for a trial on dev: sample code, a test agency, or a test account.
