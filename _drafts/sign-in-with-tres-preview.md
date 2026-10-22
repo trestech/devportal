@@ -12,14 +12,16 @@ As of October 22, 2026, hosted sign-in is available on dev-staging only, at `htt
 
 Hosted sign-in is a popup plus `postMessage`. It is not an OAuth authorization-code flow: there is no `/authorize` or `/token` endpoint, no client ID, no scopes, and no refresh token.
 
-1. From a user's click, open `https://auth-dev-staging.trestechnologies.com/?redirect_uri=<your origin>` in a popup and keep the window handle. Pass `redirect_uri` URL-encoded; the hosted page sends its result only to that origin. If `redirect_uri` is missing or unusable, or the page was not opened by your app, it shows an error instead of the sign-in form.
+1. From a user's click, open `https://auth-dev-staging.trestechnologies.com/?redirect_uri=<your origin>` in a popup and keep the window handle. Pass `redirect_uri` URL-encoded; the hosted page sends its result only to that origin, which must be `https` (or `http` on localhost). If `redirect_uri` is missing or unusable, or the page was not opened by your app, it shows an error instead of the sign-in form.
 2. Listen for `message` events. Accept a message only when `event.origin` is the hosted sign-in origin, `event.source` is the popup you opened, and `event.data.type` is `"tres_auth"`.
 3. Read `event.data.data`, which contains only `sessionId` and `expireDate`. `sessionId` is an AppServer identity token, the same kind of credential the [Login]({{ '/api/Login.html' | relative_url }}) method returns. Send it as `Authorization: Bearer <sessionId>` on API calls. `expireDate` is when it expires.
-4. Handle a blocked popup, a popup the user closes, a timeout, and an unusable response. Remove your listener when the attempt ends.
+4. Handle a blocked popup, a popup the user closes, and an unusable or expired response. Remove your listener when the attempt ends.
+
+If the page that opens sign-in sends `Cross-Origin-Opener-Policy: same-origin`, the popup loses its link to your page and cannot return a result. Use `same-origin-allow-popups` on that page.
 
 ## Using the `<tres-auth>` component
 
-The hosted app serves a component that does all of the above. Load it with a classic script tag; it signs in through the host that serves the script.
+The hosted app serves a component that does all of the above. Load it with a classic script tag from the sign-in host, not a copy; it signs in through whichever host serves the script.
 
 ```html
 <script src="https://auth-dev-staging.trestechnologies.com/tres-auth.js"></script>
@@ -30,7 +32,7 @@ The hosted app serves a component that does all of the above. Load it with a cla
     // Call Tres APIs with: Authorization: Bearer <sessionId>
   });
   document.addEventListener("tres-auth-error", (event) => {
-    // The popup was blocked, closed, timed out, or returned no usable session.
+    // The popup was blocked, closed, or returned no usable session.
     console.warn(event.detail.message);
   });
 </script>
@@ -57,7 +59,6 @@ function signInWithTres() {
       settled = true;
       window.removeEventListener("message", receive);
       clearInterval(closedTimer);
-      clearTimeout(timeout);
       popup.close();
       session ? resolve(session) : reject(new Error(error));
     };
@@ -65,7 +66,7 @@ function signInWithTres() {
       if (event.origin !== AUTH_ORIGIN || event.source !== popup) return;
       if (event.data?.type !== "tres_auth") return;
       const { sessionId, expireDate } = event.data.data ?? {};
-      const usable = typeof sessionId === "string" && sessionId && typeof expireDate === "string";
+      const usable = typeof sessionId === "string" && sessionId && Date.parse(expireDate) > Date.now();
       finish(usable && { sessionId, expireDate }, "Sign-in did not return a session.");
     };
     // The popup closes itself after posting; give that message time to arrive
@@ -75,7 +76,6 @@ function signInWithTres() {
       closedAt ||= Date.now();
       if (Date.now() - closedAt >= 750) finish(null, "Sign-in window was closed.");
     }, 250);
-    const timeout = setTimeout(() => finish(null, "Sign-in timed out."), 5 * 60 * 1000);
     window.addEventListener("message", receive);
   });
 }
