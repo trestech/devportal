@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfile"
 description: "ClientProfile provides methods to load and save client profile data"
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 ClientProfile provides methods to load and save client profile data.
@@ -179,6 +179,25 @@ Permission Areas: ClientProfile
 | `description` | `string` | 64 |  | `pnrEntry` | 
 | `alwaysMove` | `bool` |  |  | `pnrEntry` | 
 | `value` | `string` | 128 | Required | `pnrEntry` | 
+| `clientProfileCardLink ` | table |  |  | `clientProfile` | 
+| `clientProfile_recNo` | `long` |  | PKey, InsertOnly, FKey | `clientProfileCardLink` | 
+| `card_recNo` | `long` |  | PKey, Auto-Assign | `clientProfileCardLink` | 
+| `card  [shared]` | table |  | Singleton | `clientProfileCardLink` | 
+| `recNo` | `long` |  | PKey, InsertOnly, FKey | `card` | 
+| `person_recNo` | `long` |  | Deprecated | `card` | Person_RecNo is being deprecated; use PersonCardLink.Person_RecNo instead
+| `type` | `short` |  | Required, InsertOnly | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `cardNumber` | `string` | 64 | Required | `card` | 
+| `issueDate` | `Date` |  |  | `card` | 
+| `expirationDate` | `Date` |  |  | `card` | 
+| `issuingCity` | `string` | 64 |  | `card` | 
+| `issuingCountry` | `string` | 2 |  | `card` | 
+| `issuingCountryName` | `string` | 64 |  | `card` | 
+| `description` | `string` | 512 |  | `card` | 
+| `cardNumberToken` | `string` | 64 |  | `card` | 
+| `code` | `string` | 8 |  | `card` | 
+| `nameOnCard` | `string` | 64 |  | `card` | 
+| `cvvCode` | `string` | 4 | Deprecated | `card` | CVVCode is deprecated. PCI does not allow storage of sensitive card data.
+| `subType` | `short` |  |  | `card` | 
 
 | Status code | Description |
 | ----------- | ----------- |

@@ -2,7 +2,7 @@
 layout: api_page
 title: "TravelerPortalTripSearch"
 description: "Search client trip itineraries based on filters"
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 Search client trip itineraries based on filters.

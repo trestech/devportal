@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientDocumentAcknowledgementClientProfile"
 description: ""
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 

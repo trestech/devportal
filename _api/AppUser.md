@@ -2,7 +2,7 @@
 layout: api_page
 title: "AppUser"
 description: ""
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 
@@ -58,6 +58,7 @@ assembly_version: "1.8.2.6"
 | `otherPermissions` | `int` |  | Required | `appUser` | None = 0, AllowModifyTripAdvisor = 1, AllowViewOtherAdvisors = 2
 | `signatureAttachment_recNo` | `long` |  | Auto-Assign | `appUser` | 
 | `lastLoginDateTime` | `DateTimeOffset` |  | ReadOnly, Lookup | `appUser` | 
+| `authenticatorLinked` | `bool` |  | ReadOnly | `appUser` | True when an authenticator app is linked for reauthentication
 | `googleId` | `string` | 64 |  | `appUser` | 
 | `googleUserPrincipalName` | `string` | 64 |  | `appUser` | 
 | `appUserAdvisor ` | table |  |  | `appUser` | 
