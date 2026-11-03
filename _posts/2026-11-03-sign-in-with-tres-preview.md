@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Developer preview: Sign in with Tres for browser apps"
+date: 2026-11-03 08:00:00 -0800
 description: "Use the hosted Tres sign-in popup to obtain an AppServer identity token from a browser app, and what the dev-staging preview does not cover yet."
 ---
 
@@ -22,7 +23,7 @@ If the page that opens sign-in sends `Cross-Origin-Opener-Policy: same-origin`, 
 
 ## Using the `<tres-auth>` component
 
-The hosted app serves a component that does all of the above. Load it with a classic script tag from the sign-in host, not a copy; it signs in through whichever host serves the script.
+The hosted app serves a component that does all of the above. Load it with a classic script tag from the sign-in host, not a copy; it signs in through whichever host serves the script. The sign-in host's [integration guide](https://auth-dev-staging.trestechnologies.com/help) documents the component and includes a copy-paste example.
 
 ```html
 <script src="https://auth-dev-staging.trestechnologies.com/tres-auth.js"></script>
