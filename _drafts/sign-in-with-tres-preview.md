@@ -6,7 +6,7 @@ description: "Use the hosted Tres sign-in popup to obtain an AppServer identity 
 
 Browser apps can let Tres users sign in through a hosted Tres page instead of collecting Tres credentials themselves. Your app opens the hosted page in a popup, the user signs in with a Tres username and password, Google, or Microsoft, and the popup posts the result back to your page.
 
-As of October 22, 2026, hosted sign-in is available on dev-staging only, at `https://auth-dev-staging.trestechnologies.com`. A static browser app has used it from both localhost and an Azure Static Web Apps origin, then called the dev-staging and dev APIs with the returned credential for a test agency. Cert and production hosts do not exist yet.
+As of November 3, 2026, hosted sign-in is available on dev-staging only, at `https://auth-dev-staging.trestechnologies.com`. A static browser app has used it from both localhost and an Azure Static Web Apps origin, then called the dev-staging and dev APIs with the returned credential for a test agency. Google and Microsoft sign-in have both completed through it, including Microsoft from Safari on iPhone, where the popup opens as a tab. Cert and production hosts do not exist yet.
 
 ## How the handoff works
 
@@ -16,6 +16,7 @@ Hosted sign-in is a popup plus `postMessage`. It is not an OAuth authorization-c
 2. Listen for `message` events. Accept a message only when `event.origin` is the hosted sign-in origin, `event.source` is the popup you opened, and `event.data.type` is `"tres_auth"`.
 3. Read `event.data.data`, which contains only `sessionId` and `expireDate`. `sessionId` is an AppServer identity token, the same kind of credential the [Login]({{ '/api/Login.html' | relative_url }}) method returns. Send it as `Authorization: Bearer <sessionId>` on API calls. `expireDate` is when it expires.
 4. Handle a blocked popup, a popup the user closes, and an unusable or expired response. Remove your listener when the attempt ends.
+5. Give the user a way out. If a Google or Microsoft step fails inside the popup, the popup returns to its sign-in form and your page receives nothing. On a phone the popup is a tab that may never be closed. Offer a cancel control or a timeout instead of waiting only for a message or a closed popup.
 
 If the page that opens sign-in sends `Cross-Origin-Opener-Policy: same-origin`, the popup loses its link to your page and cannot return a result. Use `same-origin-allow-popups` on that page.
 
@@ -59,6 +60,7 @@ function signInWithTres() {
       settled = true;
       window.removeEventListener("message", receive);
       clearInterval(closedTimer);
+      clearTimeout(timeout);
       popup.close();
       session ? resolve(session) : reject(new Error(error));
     };
@@ -76,6 +78,7 @@ function signInWithTres() {
       closedAt ||= Date.now();
       if (Date.now() - closedAt >= 750) finish(null, "Sign-in window was closed.");
     }, 250);
+    const timeout = setTimeout(() => finish(null, "Sign-in timed out."), 5 * 60 * 1000);
     window.addEventListener("message", receive);
   });
 }
@@ -110,6 +113,7 @@ A local development proxy can hide CORS problems. Test from your deployed origin
 - **Cert and production.** Hosted sign-in exists only on dev-staging, and a dev-staging credential has been verified only against the dev-staging and dev APIs for a test agency.
 - **Embedded hosts.** The flow requires your page to open a popup and receive `postMessage` from it. If your app runs inside another application's frame, that host may block popups, leave `window.opener` empty, or block the message through its content security policy. There is no redirect-based or device-code alternative yet.
 - **Refresh.** There is no refresh contract; sign in again when the token expires.
+- **Installed iOS home-screen apps.** Sign-in has been tested in Safari tabs on iPhone, not from a web app added to the home screen, which handles popups differently and may not keep the popup's link to your page.
 
 ## Before you start
 
