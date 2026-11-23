@@ -2,7 +2,7 @@
 layout: api_page
 title: "TripSearch"
 description: "TripSearch returns data for trips and reservations"
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 TripSearch returns data for trips and reservations.
@@ -226,6 +226,13 @@ Permission Areas: Trip
 | `ClientProfile_documentAcknowledgementRecNo` | `long` |  | `trip` | 
 | `ClientProfile_documentAcknowledgementStatus` | `short` |  | `trip` | Pending = 1, Acknowledged = 2, Expired = 3
 | `ClientProfile_documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `trip` | 
+| `ClientProfile_cardRecNo` | `long` |  | `card` | 
+| `ClientProfile_cardType` | `short` |  | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `ClientProfile_cardSubType` | `short` |  | `card` | 
+| `ClientProfile_cardNumber` | `string` | 64 | `card` | 
+| `ClientProfile_cardExpDate` | `Date` |  | `card` | 
+| `ClientProfile_cardDescription` | `string` | 512 | `card` | 
+| `ClientProfile_nameOnCard` | `string` | 64 | `card` | 
 | `ClientPayment_recNo` | `long` |  | `trip` | 
 | `ClientPayment_tagRecNo` | `long` |  | `trip` | 
 | `ClientPayment_tagName` | `string` | 64 | `trip` | 
@@ -259,6 +266,124 @@ Permission Areas: Trip
 | `ClientPayment_paidTo` | `short` |  | `trip` | Client = 1, Supplier = 2, Other = 3, Agency = 4
 | `ClientPayment_bankCurrencyCode` | `string` | 3 | `trip` | 
 | `ClientPayment_equivalentAmount` | `long` |  | `trip` | 
+| `Traveler_recNo` | `long` |  | `trip` | 
+| `Traveler_tagRecNo` | `long` |  | `trip` | 
+| `Traveler_tagName` | `string` | 64 | `trip` | 
+| `Traveler_tagValue` | `string` | 1024 | `trip` | 
+| `Traveler_tags` | `string` |  | `trip` | 
+| `Traveler_createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `Traveler_lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `Traveler_name` | `string` | 256 | `trip` | 
+| `Traveler_uniqueId` | `string` | 64 | `trip` | 
+| `Traveler_firstName` | `string` | 64 | `trip` | 
+| `Traveler_middleName` | `string` | 64 | `trip` | 
+| `Traveler_lastName` | `string` | 64 | `trip` | 
+| `Traveler_primaryPhone` | `string` | 256 | `trip` | 
+| `Traveler_primaryPhoneMarketingPermission` | `bool` |  | `trip` | 
+| `Traveler_primaryEmail` | `string` | 256 | `trip` | 
+| `Traveler_primaryEmailMarketingPermission` | `bool` |  | `trip` | 
+| `Traveler_birthdayDay` | `short` |  | `trip` | 
+| `Traveler_birthdayMonth` | `short` |  | `trip` | 
+| `Traveler_birthdayYear` | `short` |  | `trip` | 
+| `Traveler_birthdayNote` | `string` | 256 | `trip` | 
+| `Traveler_remarks` | `string` | 256 | `trip` | 
+| `Traveler_cardType` | `short` |  | `trip` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `Traveler_cardSubType` | `short` |  | `trip` | 
+| `Traveler_cardNumber` | `string` | 64 | `card` | 
+| `Traveler_cardExpDate` | `Date` |  | `card` | 
+| `Traveler_cardDescription` | `string` | 512 | `card` | 
+| `Traveler_cardRecNo` | `long` |  | `card` | 
+| `Traveler_nameOnCard` | `string` | 64 | `card` | 
+| `Traveler_branchRecNo` | `long` |  | `trip` | 
+| `Traveler_branchRecName` | `string` | 64 | `trip` | 
+| `Traveler_advisorProfileRecNo` | `long` |  | `trip` | 
+| `Traveler_advisorProfileName` | `string` | 256 | `trip` | 
+| `Traveler_activeStatus` | `short` |  | `trip` | Inactive = 0, Active = 1, Pending = 2
+| `Traveler_actionRecNo` | `long` |  | `trip` | 
+| `Traveler_actionItemTriggerIndex` | `short` |  | `trip` | FixedDate = 1, CreateDate = 2, Birthday = 3
+| `Traveler_actionItemDate` | `Date` |  | `trip` | 
+| `Traveler_actionItemTriggerFixedDate` | `Date` |  | `trip` | 
+| `Traveler_actionItemDescription` | `string` |  | `trip` | 
+| `Traveler_actionItemCompleted` | `DateTimeOffset` |  | `trip` | 
+| `Traveler_actionItemAssignedToAppUserRecNo` | `long` |  | `trip` | 
+| `Traveler_actionItemAssignedToAppUserId` | `string` | 64 | `trip` | 
+| `Traveler_associatedProfileNames` | `string` |  | `trip` | 
+| `SupplierProfile_recNo` | `long` |  | `trip` | 
+| `SupplierProfile_tagRecNo` | `long` |  | `trip` | 
+| `SupplierProfile_tagName` | `string` | 64 | `trip` | 
+| `SupplierProfile_tagValue` | `string` | 1024 | `trip` | 
+| `SupplierProfile_tags` | `string` |  | `trip` | 
+| `SupplierProfile_createDateTime` | `DateTimeOffset` |  | `trip` | 
+| `SupplierProfile_lastModifiedDateTime` | `DateTimeOffset` |  | `trip` | 
+| `SupplierProfile_name` | `string` | 256 | `trip` | 
+| `SupplierProfile_uniqueId` | `string` | 64 | `trip` | 
+| `SupplierProfile_profileType` | `short` |  | `trip` | Client = 1, Supplier = 2, Advisor = 3, Other = 4
+| `SupplierProfile_clientType` | `short` |  | `clientProfile` | Personal = 1, Corporate = 2
+| `SupplierProfile_supplierType` | `short` |  | `supplierProfile` | BillingAndServiceProvider = 1, BillingProvider = 2, ServiceProvider = 3
+| `SupplierProfile_primaryPersonRecNo` | `long` |  | `trip` | 
+| `SupplierProfile_primaryPersonName` | `string` | 256 | `trip` | 
+| `SupplierProfile_primaryPersonFirstName` | `string` | 64 | `trip` | 
+| `SupplierProfile_primaryPersonLastName` | `string` | 64 | `trip` | 
+| `SupplierProfile_primaryPersonEmail` | `string` | 256 | `trip` | 
+| `SupplierProfile_primaryPersonPhone` | `string` | 256 | `trip` | 
+| `SupplierProfile_clientAnniversaryDay` | `short` |  | `clientProfile` | 
+| `SupplierProfile_clientAnniversaryMonth` | `short` |  | `clientProfile` | 
+| `SupplierProfile_clientAnniversaryYear` | `short` |  | `clientProfile` | 
+| `SupplierProfile_clientAnniversaryNote` | `string` | 256 | `clientProfile` | 
+| `SupplierProfile_clientAdvisorProfileRecNo` | `long` |  | `clientProfile` | 
+| `SupplierProfile_clientAdvisorName` | `string` | 256 | `clientProfile` | 
+| `SupplierProfile_clientBranchRecNo` | `long` |  | `clientProfile` | 
+| `SupplierProfile_clientBranchName` | `string` | 64 | `clientProfile` | 
+| `SupplierProfile_remarks` | `string` | 256 | `trip` | 
+| `SupplierProfile_activeStatus` | `short` |  | `trip` | Inactive = 0, Active = 1, Pending = 2
+| `SupplierProfile_primaryEmail` | `string` | 256 | `trip` | 
+| `SupplierProfile_primaryEmailPermitMarketing` | `bool` |  | `trip` | 
+| `SupplierProfile_primaryPhone` | `string` | 256 | `trip` | 
+| `SupplierProfile_primaryPhonePermitMarketing` | `bool` |  | `trip` | 
+| `SupplierProfile_preferredSupplier` | `bool` |  | `supplierProfile` | 
+| `SupplierProfile_supplierTravelCategoryFlags` | `int` |  | `supplierProfile` | Air = 1, Hotel = 2, Car = 4, Cruise = 8, Tour = 16, Rail = 32, Transfer = 64, Insurance = 128, ServiceFee = 256, Excursion = 512, Misc = 1024
+| `SupplierProfile_street1` | `string` | 128 | `address` | 
+| `SupplierProfile_street2` | `string` | 128 | `address` | 
+| `SupplierProfile_city` | `string` | 64 | `address` | 
+| `SupplierProfile_stateProvince` | `string` | 32 | `address` | 
+| `SupplierProfile_zipPostalCode` | `string` | 16 | `address` | 
+| `SupplierProfile_country` | `string` | 4 | `address` | 
+| `SupplierProfile_mailingStreet1` | `string` | 128 | `address` | 
+| `SupplierProfile_mailingStreet2` | `string` | 128 | `address` | 
+| `SupplierProfile_mailingCity` | `string` | 64 | `address` | 
+| `SupplierProfile_mailingStateProvince` | `string` | 32 | `address` | 
+| `SupplierProfile_mailingZipPostalCode` | `string` | 16 | `address` | 
+| `SupplierProfile_mailingCountry` | `string` | 4 | `address` | 
+| `SupplierProfile_addressPermitMarketing` | `bool` |  | `address` | 
+| `SupplierProfile_supplierVendorId` | `string` | 10 | `supplierProfile` | 
+| `SupplierProfile_supplierCommissionRate` | `short` |  | `supplierProfile` | Percentage values have an implied 2 digits after the decimal point. A value of 25% is represented as 2500
+| `SupplierProfile_clientInformalSalutation` | `string` | 128 | `clientProfile` | 
+| `SupplierProfile_clientFormalSalutation` | `string` | 128 | `clientProfile` | 
+| `SupplierProfile_firstId` | `string` | 32 | `trip` | 
+| `SupplierProfile_profileCommType` | `short` |  | `communication` | Phone = 1, Email = 2, SocialMedia = 3, Web = 4
+| `SupplierProfile_profileCommValue` | `string` | 256 | `communication` | 
+| `SupplierProfile_profileCommIsBillingContact` | `bool` |  | `communication` | ProfileSearch.profileCommIsBillingContact is deprecated, use profileCommContactOption instead.
+| `SupplierProfile_profileCommContactOption` | `short` |  | `communication` | Billing = 1, CustomerService = 2
+| `SupplierProfile_actionRecNo` | `long` |  | `trip` | 
+| `SupplierProfile_actionItemTriggerIndex` | `short` |  | `trip` | FixedDate = 1, CreateDate = 2, AnniversaryDate = 3
+| `SupplierProfile_actionItemDate` | `Date` |  | `trip` | 
+| `SupplierProfile_actionItemTriggerFixedDate` | `Date` |  | `trip` | 
+| `SupplierProfile_actionItemDescription` | `string` |  | `trip` | 
+| `SupplierProfile_actionItemCompleted` | `DateTimeOffset` |  | `trip` | 
+| `SupplierProfile_actionItemAssignedToAppUserRecNo` | `long` |  | `trip` | 
+| `SupplierProfile_actionItemAssignedToAppUserId` | `string` | 64 | `trip` | 
+| `SupplierProfile_imageCount` | `short` |  | `trip` | 
+| `SupplierProfile_supplierAirlineNo` | `short` |  | `supplierProfile` | 
+| `SupplierProfile_documentAcknowledgementRecNo` | `long` |  | `trip` | 
+| `SupplierProfile_documentAcknowledgementStatus` | `short` |  | `trip` | Pending = 1, Acknowledged = 2, Expired = 3
+| `SupplierProfile_documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `trip` | 
+| `SupplierProfile_cardRecNo` | `long` |  | `card` | 
+| `SupplierProfile_cardType` | `short` |  | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `SupplierProfile_cardSubType` | `short` |  | `card` | 
+| `SupplierProfile_cardNumber` | `string` | 64 | `card` | 
+| `SupplierProfile_cardExpDate` | `Date` |  | `card` | 
+| `SupplierProfile_cardDescription` | `string` | 512 | `card` | 
+| `SupplierProfile_nameOnCard` | `string` | 64 | `card` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |
@@ -345,6 +470,7 @@ Permission Areas: Trip
 | `tripActionItemDateFrom` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemDateTo` | `DateSearchParam` | `tripActionItemDate` | 
 | `tripActionItemAssignedToAppUserRecNo` | [`NumSearchParam`](NumSearchParam) | `tripActionItemAssignedToAppUserRecNo` | 
+| `tripActionItemDescription` | [`StringSearchParam`](StringSearchParam) | `tripActionItemDescription` | 
 | `reservationAdvisorReconciliationRecNo` | [`NumSearchParam`](NumSearchParam) | `reservationAdvisorReconciliationRecNo` | 
 | `reservationAdvisorReconciled` | `bool` | `reservationAdvisorReconciliationRecNo` | Parameter reservationAdvisorReconciled is deprecated, use reservationAdvisorReconciliationRecNo IS BLANK instead.
 | `reservationAdvisorReconciliationDateFrom` | `DateSearchParam` | `reservationAdvisorReconciliationDate` | 

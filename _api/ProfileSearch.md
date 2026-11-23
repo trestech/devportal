@@ -2,7 +2,7 @@
 layout: api_page
 title: "ProfileSearch"
 description: "ProfileSearch returns data for client, supplier, advisor and other profiles"
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 ProfileSearch returns data for client, supplier, advisor and other profiles.
@@ -85,6 +85,13 @@ Permission Areas: AdvisorProfile, ClientProfile, OtherProfile, SupplierProfile
 | `documentAcknowledgementRecNo` | `long` |  | `documentAcknowledgement` | 
 | `documentAcknowledgementStatus` | `short` |  | `documentAcknowledgement` | Pending = 1, Acknowledged = 2, Expired = 3
 | `documentAcknowledgementCreateDateTime` | `DateTimeOffset` |  | `documentAcknowledgement` | 
+| `cardRecNo` | `long` |  | `card` | 
+| `cardType` | `short` |  | `card` | CreditDebit = 1, Loyalty = 2, TravelDocument = 3
+| `cardSubType` | `short` |  | `card` | 
+| `cardNumber` | `string` | 64 | `card` | 
+| `cardExpDate` | `Date` |  | `card` | 
+| `cardDescription` | `string` | 512 | `card` | 
+| `nameOnCard` | `string` | 64 | `card` | 
 
 | Parameter | Type | Linked Column | Description |
 | --------- | ---- | ------------- | ----------- |

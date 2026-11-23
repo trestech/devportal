@@ -2,7 +2,7 @@
 layout: api_page
 title: "DocumentTemplate"
 description: ""
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 
@@ -17,7 +17,7 @@ assembly_version: "1.8.2.6"
 | `branch_recNo` | `long` |  | FKey | `documentTemplate` | 
 | `branchName_lookup` | `string` | 64 | ReadOnly, Lookup | `documentTemplate` | 
 | `appUser_recNo` | `long` |  | FKey | `documentTemplate` | 
-| `activeStatus` | `bool` |  |  | `documentTemplate` | 
+| `activeStatus` | `bool` |  | Required | `documentTemplate` | 
 | `documentType` | `short` |  | Required, InsertOnly | `documentTemplate` | Email = 1, ESign = 2, DocumentAcknowledgement = 3
 | `waiverTemplateId` | `string` | 32 |  | `documentTemplate` | 
 | `area` | `short` |  |  | `documentTemplate` | Trip = 1, ClientProfile = 2, Person = 3

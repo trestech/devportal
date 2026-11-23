@@ -2,7 +2,7 @@
 layout: api_page
 title: "ClientProfileMergeToPnr"
 description: ""
-assembly_version: "1.8.2.6"
+assembly_version: "1.8.4.7"
 ---
 
 
@@ -28,6 +28,13 @@ assembly_version: "1.8.2.6"
 | `clientRecNo` | `long` |  | InsertOnly, FKey | `pnrEntry` | 
 | `value` | `string` | 128 |  | `pnrEntry` | 
 | `alwaysMove` | `bool` |  |  | `pnrEntry` | 
+| `clientFrequentFlyer ` | table |  |  | `clientProfileMergeToPnr` | 
+| `clientRecNo` | `long` |  | InsertOnly, FKey | `clientFrequentFlyer` | 
+| `frequentFlyerNumber` | `string` | 1024 |  | `clientFrequentFlyer` | 
+| `clientCreditCard ` | table |  |  | `clientProfileMergeToPnr` | 
+| `clientRecNo` | `long` |  | InsertOnly, FKey | `clientCreditCard` | 
+| `recNo` | `long` |  | PKey | `clientCreditCard` | 
+| `maskedCardNumber` | `string` | 1024 |  | `clientCreditCard` | 
 | `traveler ` | table |  |  | `clientProfileMergeToPnr` | 
 | `recNo` | `long` |  | PKey | `traveler` | 
 | `clientRecNo` | `long` |  | InsertOnly, FKey | `traveler` | 
