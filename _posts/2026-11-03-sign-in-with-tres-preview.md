@@ -23,7 +23,7 @@ If the page that opens sign-in sends `Cross-Origin-Opener-Policy: same-origin`, 
 
 ## Using the `<tres-auth>` component
 
-The hosted app serves a component that does all of the above. Load it with a classic script tag from the sign-in host, not a copy; it signs in through whichever host serves the script. The sign-in host's [integration guide](https://auth-dev-staging.trestechnologies.com/help) documents the component and includes a copy-paste example.
+The hosted app serves a component that handles steps 1 to 4. Load it with a classic script tag from the sign-in host, not a copy; it signs in through whichever host serves the script. The component has no timeout or cancel control, so step 5 is up to your page, or [build your own button](#building-your-own-button) with a timeout, as shown below. The sign-in host's [integration guide](https://auth-dev-staging.trestechnologies.com/help) documents the component and includes a copy-paste example.
 
 ```html
 <script src="https://auth-dev-staging.trestechnologies.com/tres-auth.js"></script>
@@ -84,16 +84,25 @@ function signInWithTres() {
   });
 }
 
+const signInButton = document.querySelector("#sign-in");
+const personRecNo = 1969999; // a person record your Tres user can read
+
 signInButton.addEventListener("click", async () => {
-  const { sessionId } = await signInWithTres();
-  const response = await fetch(`https://api-dev.trestechnologies.com/person/${personRecNo}`, {
-    headers: { Authorization: `Bearer ${sessionId}` },
-  });
-  // ...
+  try {
+    const { sessionId } = await signInWithTres();
+    const response = await fetch(`https://api-dev.trestechnologies.com/person/${personRecNo}`, {
+      headers: { Authorization: `Bearer ${sessionId}` },
+    });
+    if (!response.ok) throw new Error(`The Tres API returned ${response.status}.`);
+    // ...
+  } catch (error) {
+    // The popup was blocked or closed, sign-in timed out, or the API call failed.
+    console.warn(error.message);
+  }
 });
 ```
 
-Confirm sign-in by completing an authenticated API call. Receiving the popup message alone does not prove your app can reach the API.
+Confirm sign-in by completing an authenticated API call, such as loading a [Person]({{ '/api/Person.html' | relative_url }}) your user can read. Receiving the popup message alone does not prove your app can reach the API.
 
 ## Handling the credential
 
